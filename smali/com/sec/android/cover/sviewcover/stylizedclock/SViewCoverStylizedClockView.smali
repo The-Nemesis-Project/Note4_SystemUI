@@ -76,115 +76,85 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 158
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 66
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
-    .line 70
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
-    .line 74
     new-instance v0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;-><init>(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)V
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateMonitorCallback:Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;
 
-    .line 159
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->init()V
 
-    .line 160
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
-    .line 153
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 66
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
-    .line 70
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
-    .line 74
     new-instance v0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;-><init>(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)V
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateMonitorCallback:Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;
 
-    .line 154
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->init()V
 
-    .line 155
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
 
-    .prologue
-    .line 148
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 66
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
-    .line 70
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
-    .line 74
     new-instance v0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$1;-><init>(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)V
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateMonitorCallback:Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;
 
-    .line 149
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->init()V
 
-    .line 150
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
 
-    .prologue
-    .line 33
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateTime()V
 
     return-void
@@ -192,11 +162,7 @@
 
 .method static synthetic access$102(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 33
     iput-boolean p1, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
     return p1
@@ -204,10 +170,7 @@
 
 .method static synthetic access$200(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
 
-    .prologue
-    .line 33
     iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIsFestivalEnabled:Z
 
     return v0
@@ -215,11 +178,7 @@
 
 .method static synthetic access$202(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 33
     iput-boolean p1, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIsFestivalEnabled:Z
 
     return p1
@@ -227,10 +186,7 @@
 
 .method static synthetic access$300(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
 
-    .prologue
-    .line 33
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->isFestivalEffectEnabled()Z
 
     move-result v0
@@ -240,10 +196,7 @@
 
 .method static synthetic access$400(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)Landroid/widget/ImageView;
     .locals 1
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
 
-    .prologue
-    .line 33
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
     return-object v0
@@ -251,10 +204,7 @@
 
 .method static synthetic access$500(Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;
 
-    .prologue
-    .line 33
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -263,28 +213,18 @@
 .method private getDateFormat()Ljava/lang/String;
     .locals 5
 
-    .prologue
-    .line 419
     const-string v0, ""
 
-    .line 420
-    .local v0, "dateFormat":Ljava/lang/String;
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverClockWidget;->getCurrentDateFormat(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 421
-    .local v3, "value":Ljava/lang/String;
     sget v1, Lcom/sec/android/sviewcover/R$string;->sview_cover_wday_month_day_no_year:I
 
-    .line 422
-    .local v1, "resId_MM_dd":I
     sget v2, Lcom/sec/android/sviewcover/R$string;->sview_cover_wday_day_month_no_year:I
 
-    .line 424
-    .local v2, "resId_dd_MM":I
     const-string v4, "yyyy-MM-dd"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -301,7 +241,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 425
     :cond_0
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
@@ -309,12 +248,10 @@
 
     move-result-object v0
 
-    .line 430
     :cond_1
     :goto_0
     return-object v0
 
-    .line 426
     :cond_2
     const-string v4, "dd-MM-yyyy"
 
@@ -324,7 +261,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 427
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -337,27 +273,18 @@
 .method private getTTSstylizedclock()Ljava/lang/String;
     .locals 10
 
-    .prologue
-    .line 253
     const-string v0, ""
 
-    .line 254
-    .local v0, "TTSMessage":Ljava/lang/String;
     const-string v2, ""
 
-    .line 255
-    .local v2, "dateFormat":Ljava/lang/String;
     const-string v5, ""
 
-    .line 257
-    .local v5, "value":Ljava/lang/String;
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverClockWidget;->getCurrentDateFormat(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 259
     const-string v6, "yyyy-MM-dd"
 
     invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -374,7 +301,6 @@
 
     if-eqz v6, :cond_2
 
-    .line 260
     :cond_0
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
@@ -384,7 +310,6 @@
 
     move-result-object v2
 
-    .line 264
     :cond_1
     :goto_0
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -393,8 +318,6 @@
 
     move-result-object v3
 
-    .line 267
-    .local v3, "dateText":Ljava/lang/CharSequence;
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -403,12 +326,10 @@
 
     invoke-virtual {v6, v8, v9}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 268
     iget-boolean v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
     if-eqz v6, :cond_3
 
-    .line 269
     const-string v6, "kk:mm"
 
     iget-object v7, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -421,8 +342,6 @@
 
     move-result-object v4
 
-    .line 281
-    .local v4, "mTTSTime":Ljava/lang/String;
     :goto_1
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -446,12 +365,8 @@
 
     move-result-object v0
 
-    .line 282
     return-object v0
 
-    .line 261
-    .end local v3    # "dateText":Ljava/lang/CharSequence;
-    .end local v4    # "mTTSTime":Ljava/lang/String;
     :cond_2
     const-string v6, "dd-MM-yyyy"
 
@@ -461,7 +376,6 @@
 
     if-eqz v6, :cond_1
 
-    .line 262
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     sget v7, Lcom/sec/android/sviewcover/R$string;->full_wday_day_month_no_year:I
@@ -472,8 +386,6 @@
 
     goto :goto_0
 
-    .line 272
-    .restart local v3    # "dateText":Ljava/lang/CharSequence;
     :cond_3
     sget-object v6, Lcom/sec/android/cover/sviewcover/widget/SViewCoverClockWidget;->mTimeFormat:Ljava/lang/String;
 
@@ -487,8 +399,6 @@
 
     move-result-object v4
 
-    .line 273
-    .restart local v4    # "mTTSTime":Ljava/lang/String;
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v6
@@ -497,8 +407,6 @@
 
     move-result-object v1
 
-    .line 274
-    .local v1, "currentLanguage":Ljava/lang/String;
     sget-object v6, Ljava/util/Locale;->KOREAN:Ljava/util/Locale;
 
     invoke-virtual {v6}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -511,7 +419,6 @@
 
     if-eqz v6, :cond_4
 
-    .line 275
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -538,7 +445,6 @@
 
     goto :goto_1
 
-    .line 278
     :cond_4
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -570,8 +476,6 @@
 .method private init()V
     .locals 1
 
-    .prologue
-    .line 163
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockManager;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockManager;
@@ -580,19 +484,16 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mManager:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockManager;
 
-    .line 164
     return-void
 .end method
 
 .method private isFestivalEffectEnabled()Z
     .locals 7
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 450
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/manager/CoverDatabaseManager;
@@ -609,8 +510,6 @@
 
     move v1, v2
 
-    .line 452
-    .local v1, "festivalMasterEnabled":Z
     :goto_0
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
@@ -628,8 +527,6 @@
 
     move v0, v2
 
-    .line 455
-    .local v0, "festivalLockscreenEnabled":Z
     :goto_1
     const-string v4, "SViewCoverStylizedClockView"
 
@@ -663,7 +560,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 457
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_2
@@ -671,40 +567,31 @@
     :goto_2
     return v2
 
-    .end local v0    # "festivalLockscreenEnabled":Z
-    .end local v1    # "festivalMasterEnabled":Z
     :cond_0
     move v1, v3
 
-    .line 450
     goto :goto_0
 
-    .restart local v1    # "festivalMasterEnabled":Z
     :cond_1
     move v0, v3
 
-    .line 452
     goto :goto_1
 
-    .restart local v0    # "festivalLockscreenEnabled":Z
     :cond_2
     move v2, v3
 
-    .line 457
     goto :goto_2
 .end method
 
 .method private updateAnalogTime()V
     .locals 14
 
-    .prologue
     const/high16 v5, 0x42700000    # 60.0f
 
     const/high16 v4, 0x3f000000    # 0.5f
 
     const/4 v3, 0x1
 
-    .line 366
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -713,7 +600,6 @@
 
     invoke-virtual {v0, v12, v13}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 369
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     const/16 v2, 0xa
@@ -722,8 +608,6 @@
 
     move-result v7
 
-    .line 370
-    .local v7, "hour":I
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     const/16 v2, 0xc
@@ -732,8 +616,6 @@
 
     move-result v9
 
-    .line 371
-    .local v9, "minutes":I
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     const/16 v2, 0xd
@@ -742,8 +624,6 @@
 
     move-result v11
 
-    .line 373
-    .local v11, "seconds":I
     mul-int/lit8 v0, v7, 0x3c
 
     add-int/2addr v0, v9
@@ -756,45 +636,35 @@
 
     div-float v8, v0, v2
 
-    .line 374
-    .local v8, "hoursAngle":F
     mul-int/lit16 v0, v9, 0x168
 
     int-to-float v0, v0
 
     div-float v10, v0, v5
 
-    .line 375
-    .local v10, "minutesAngle":F
     mul-int/lit16 v0, v11, 0x168
 
     int-to-float v0, v0
 
     div-float v1, v0, v5
 
-    .line 378
-    .local v1, "secondsAngle":F
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerHoursIV:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
 
-    .line 379
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerHoursIV:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 381
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerMinutesIV:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_1
 
-    .line 382
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerMinutesIV:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 389
     :cond_1
     new-instance v0, Landroid/view/animation/RotateAnimation;
 
@@ -810,7 +680,6 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
-    .line 391
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     new-instance v2, Landroid/view/animation/AccelerateInterpolator;
@@ -819,58 +688,48 @@
 
     invoke-virtual {v0, v2}, Landroid/view/animation/RotateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 392
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     const-wide/16 v4, 0xa
 
     invoke-virtual {v0, v4, v5}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 393
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillEnabled(Z)V
 
-    .line 394
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 395
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setRepeatCount(I)V
 
-    .line 396
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Landroid/view/animation/RotateAnimation;->setRepeatMode(I)V
 
-    .line 397
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerSecondsIV:Landroid/widget/ImageView;
 
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mRotateAnim:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 398
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerSecondsIV:Landroid/widget/ImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 399
     return-void
 .end method
 
 .method private updateDateTime()V
     .locals 6
 
-    .prologue
-    .line 403
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -879,7 +738,6 @@
 
     invoke-virtual {v2, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 406
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->getDateFormat()Ljava/lang/String;
 
     move-result-object v2
@@ -894,8 +752,6 @@
 
     move-result-object v0
 
-    .line 407
-    .local v0, "date":Ljava/lang/String;
     const-string v2, "d"
 
     iget-object v3, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -908,29 +764,23 @@
 
     move-result-object v1
 
-    .line 410
-    .local v1, "day":Ljava/lang/String;
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDateTV:Landroid/widget/TextView;
 
     if-eqz v2, :cond_0
 
-    .line 411
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDateTV:Landroid/widget/TextView;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 413
     :cond_0
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDayTV:Landroid/widget/TextView;
 
     if-eqz v2, :cond_1
 
-    .line 414
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDayTV:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 416
     :cond_1
     return-void
 .end method
@@ -938,12 +788,10 @@
 .method private updateDigitalTime()V
     .locals 10
 
-    .prologue
     const/16 v9, 0x8
 
     const/4 v8, 0x0
 
-    .line 301
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -952,13 +800,10 @@
 
     invoke-virtual {v5, v6, v7}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 303
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v2
 
-    .line 308
-    .local v2, "locale":Ljava/util/Locale;
     const-string v5, "mm"
 
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -971,8 +816,6 @@
 
     move-result-object v3
 
-    .line 309
-    .local v3, "minutes":Ljava/lang/String;
     const-string v5, "aa"
 
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -985,13 +828,10 @@
 
     move-result-object v0
 
-    .line 310
-    .local v0, "amPm":Ljava/lang/String;
     iget-boolean v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
     if-eqz v5, :cond_8
 
-    .line 311
     const-string v5, "kk:mm"
 
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -1004,8 +844,6 @@
 
     move-result-object v4
 
-    .line 312
-    .local v4, "time":Ljava/lang/String;
     const-string v5, "kk"
 
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -1018,69 +856,56 @@
 
     move-result-object v1
 
-    .line 314
-    .local v1, "hours":Ljava/lang/String;
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_0
 
-    .line 315
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 317
     :cond_0
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_1
 
-    .line 318
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 334
     :cond_1
     :goto_0
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mMinutesTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_2
 
-    .line 335
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mMinutesTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 337
     :cond_2
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mHoursTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_3
 
-    .line 338
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mHoursTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 340
     :cond_3
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mTimeTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_4
 
-    .line 341
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mTimeTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 343
     :cond_4
     iget-boolean v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
     if-nez v5, :cond_7
 
-    .line 344
     sget-object v5, Ljava/util/Locale;->KOREA:Ljava/util/Locale;
 
     invoke-virtual {v5, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
@@ -1097,41 +922,32 @@
 
     if-eqz v5, :cond_a
 
-    .line 345
     :cond_5
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_7
 
-    .line 346
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_6
 
-    .line 347
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 349
     :cond_6
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 350
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 362
     :cond_7
     :goto_1
     return-void
 
-    .line 321
-    .end local v1    # "hours":Ljava/lang/String;
-    .end local v4    # "time":Ljava/lang/String;
     :cond_8
     const-string v5, "hh:mm"
 
@@ -1145,8 +961,6 @@
 
     move-result-object v4
 
-    .line 322
-    .restart local v4    # "time":Ljava/lang/String;
     const-string v5, "hh"
 
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCalendar:Ljava/util/Calendar;
@@ -1159,53 +973,43 @@
 
     move-result-object v1
 
-    .line 325
-    .restart local v1    # "hours":Ljava/lang/String;
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_9
 
-    .line 326
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 328
     :cond_9
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_1
 
-    .line 329
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 353
     :cond_a
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_7
 
-    .line 354
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     if-eqz v5, :cond_b
 
-    .line 355
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 357
     :cond_b
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 358
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
     invoke-virtual {v5, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -1216,34 +1020,26 @@
 .method private updateTime()V
     .locals 1
 
-    .prologue
-    .line 288
     iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateDigitalTime:Z
 
     if-eqz v0, :cond_0
 
-    .line 289
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateDigitalTime()V
 
-    .line 291
     :cond_0
     iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateAnalogTime:Z
 
     if-eqz v0, :cond_1
 
-    .line 292
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateAnalogTime()V
 
-    .line 294
     :cond_1
     iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateDateTime:Z
 
     if-eqz v0, :cond_2
 
-    .line 295
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateDateTime()V
 
-    .line 297
     :cond_2
     return-void
 .end method
@@ -1253,11 +1049,8 @@
 .method protected onAttachedToWindow()V
     .locals 6
 
-    .prologue
-    .line 168
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 169
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
@@ -1266,10 +1059,8 @@
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIs24HTime:Z
 
-    .line 170
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateStyle()V
 
-    .line 172
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
@@ -1280,17 +1071,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->registerCallback(Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;)V
 
-    .line 174
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
     if-eqz v0, :cond_0
 
-    .line 175
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;->cancel()V
 
-    .line 177
     :cond_0
     new-instance v0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
@@ -1304,23 +1092,18 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
-    .line 178
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;->start()Landroid/os/CountDownTimer;
 
-    .line 179
     return-void
 .end method
 
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .prologue
-    .line 189
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 191
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
@@ -1331,49 +1114,39 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->unregisterCallback(Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;)V
 
-    .line 193
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
     if-eqz v0, :cond_0
 
-    .line 194
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mCounter:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView$Counter;->cancel()V
 
-    .line 196
     :cond_0
     return-void
 .end method
 
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .prologue
-    .line 183
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 184
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->getTTSstylizedclock()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 185
     return-void
 .end method
 
 .method public final updateStyle()V
     .locals 9
 
-    .prologue
     const/4 v5, 0x0
 
     const/4 v6, 0x1
 
-    .line 199
     const-string v4, "SViewCoverStylizedClockView"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1406,25 +1179,20 @@
 
     invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->removeAllViews()V
 
-    .line 202
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mManager:Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockManager;
 
     invoke-virtual {v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockManager;->getCurrentStyleResId()I
 
     move-result v3
 
-    .line 203
-    .local v3, "styleResId":I
     const/4 v4, -0x1
 
     if-eq v3, v4, :cond_5
 
     if-eqz v3, :cond_5
 
-    .line 204
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1435,8 +1203,6 @@
 
     move-result-object v2
 
-    .line 206
-    .local v2, "style":Landroid/content/res/TypedArray;
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -1453,7 +1219,6 @@
 
     invoke-virtual {v4, v7, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 209
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_digital_minutes:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1464,7 +1229,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mMinutesTV:Landroid/widget/TextView;
 
-    .line 210
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_digital_hours:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1475,7 +1239,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mHoursTV:Landroid/widget/TextView;
 
-    .line 211
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_digital_time:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1486,7 +1249,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mTimeTV:Landroid/widget/TextView;
 
-    .line 212
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_digital_ampm:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1497,7 +1259,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmTV:Landroid/widget/TextView;
 
-    .line 213
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_digital_ampm_kr:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1508,7 +1269,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mAmPmKrTV:Landroid/widget/TextView;
 
-    .line 215
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_day:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1519,7 +1279,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDayTV:Landroid/widget/TextView;
 
-    .line 216
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_date:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1530,7 +1289,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDateTV:Landroid/widget/TextView;
 
-    .line 218
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_analog_pointer_hours:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1541,7 +1299,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerHoursIV:Landroid/widget/ImageView;
 
-    .line 219
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_analog_pointer_minutes:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1552,7 +1309,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerMinutesIV:Landroid/widget/ImageView;
 
-    .line 220
     sget v4, Lcom/sec/android/sviewcover/R$id;->clock_analog_pointer_seconds:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1563,14 +1319,12 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerSecondsIV:Landroid/widget/ImageView;
 
-    .line 222
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->isFestivalEffectEnabled()Z
 
     move-result v4
 
     iput-boolean v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIsFestivalEnabled:Z
 
-    .line 223
     sget v4, Lcom/sec/android/sviewcover/R$id;->festival_icon:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->findViewById(I)Landroid/view/View;
@@ -1581,7 +1335,6 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
-    .line 224
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/manager/CoverDatabaseManager;
@@ -1594,8 +1347,6 @@
 
     move-result-object v1
 
-    .line 227
-    .local v1, "festivalString":Ljava/lang/String;
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
     if-eqz v4, :cond_0
@@ -1606,33 +1357,26 @@
 
     if-nez v4, :cond_0
 
-    .line 228
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mContext:Landroid/content/Context;
 
     invoke-static {v4, v1}, Lcom/sec/android/cover/CoverUtils;->getFestivalIcon(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 229
-    .local v0, "festivalIcon":I
     if-eqz v0, :cond_6
 
     iget-boolean v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mIsFestivalEnabled:Z
 
     if-ne v4, v6, :cond_6
 
-    .line 230
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 231
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 239
-    .end local v0    # "festivalIcon":I
     :cond_0
     :goto_0
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mMinutesTV:Landroid/widget/TextView;
@@ -1661,7 +1405,6 @@
     :goto_1
     iput-boolean v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateDigitalTime:Z
 
-    .line 241
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mDayTV:Landroid/widget/TextView;
 
     if-nez v4, :cond_2
@@ -1676,7 +1419,6 @@
     :goto_2
     iput-boolean v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateDateTime:Z
 
-    .line 242
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mPointerHoursIV:Landroid/widget/ImageView;
 
     if-nez v4, :cond_3
@@ -1695,12 +1437,8 @@
     :cond_4
     iput-boolean v5, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mUpdateAnalogTime:Z
 
-    .line 245
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 248
-    .end local v1    # "festivalString":Ljava/lang/String;
-    .end local v2    # "style":Landroid/content/res/TypedArray;
     :cond_5
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->getTTSstylizedclock()Ljava/lang/String;
 
@@ -1708,16 +1446,10 @@
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 249
     invoke-direct {p0}, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->updateTime()V
 
-    .line 250
     return-void
 
-    .line 233
-    .restart local v0    # "festivalIcon":I
-    .restart local v1    # "festivalString":Ljava/lang/String;
-    .restart local v2    # "style":Landroid/content/res/TypedArray;
     :cond_6
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/stylizedclock/SViewCoverStylizedClockView;->mFestivalIcon:Landroid/widget/ImageView;
 
@@ -1727,16 +1459,13 @@
 
     goto :goto_0
 
-    .end local v0    # "festivalIcon":I
     :cond_7
     move v4, v5
 
-    .line 239
     goto :goto_1
 
     :cond_8
     move v4, v5
 
-    .line 241
     goto :goto_2
 .end method

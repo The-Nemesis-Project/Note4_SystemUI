@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirplaneModeTile;)V
     .locals 0
 
-    .prologue
-    .line 230
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,21 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v6, 0x0
 
-    .line 234
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 235
-    .local v0, "action":Ljava/lang/String;
     const-string v3, "AirplaneModeTile"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -72,7 +64,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
     const-string v3, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -81,7 +72,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 237
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
@@ -103,7 +93,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 239
     :cond_0
     const-string v3, "state"
 
@@ -111,8 +100,6 @@
 
     move-result v1
 
-    .line 240
-    .local v1, "value":Z
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     if-eqz v1, :cond_2
@@ -125,21 +112,15 @@
     # invokes: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v3, v2}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->access$200(Lcom/android/systemui/qs/tiles/AirplaneModeTile;Ljava/lang/Object;)V
 
-    .line 257
-    .end local v1    # "value":Z
     :cond_1
     :goto_1
     return-void
 
-    .line 240
-    .restart local v1    # "value":Z
     :cond_2
     const/4 v2, 0x2
 
     goto :goto_0
 
-    .line 242
-    .end local v1    # "value":Z
     :cond_3
     const-string v3, "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
 
@@ -153,7 +134,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 246
     const-string v3, "PHONE_IN_ECM_STATE"
 
     invoke-virtual {p2, v3, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -171,13 +151,11 @@
 
     if-eqz v3, :cond_1
 
-    .line 248
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mIsWaitingForEcmExit:Z
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->access$302(Lcom/android/systemui/qs/tiles/AirplaneModeTile;Z)Z
 
-    .line 249
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->setEnabled(Z)V
@@ -185,7 +163,6 @@
 
     goto :goto_1
 
-    .line 251
     :cond_4
     const-string v2, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -199,7 +176,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 252
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -222,7 +198,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 253
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mAlertDialog:Landroid/app/AlertDialog;

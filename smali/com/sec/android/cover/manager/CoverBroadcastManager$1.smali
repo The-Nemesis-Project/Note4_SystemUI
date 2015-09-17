@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverBroadcastManager;)V
     .locals 0
 
-    .prologue
-    .line 21
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager$1;->this$0:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onDisasterViewUpdated(Ljava/lang/String;)V
     .locals 4
-    .param p1, "title"    # Ljava/lang/String;
 
-    .prologue
-    .line 31
     new-instance v0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -47,8 +42,6 @@
 
     invoke-direct {v0, p1, v2, v3}, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;-><init>(Ljava/lang/Object;J)V
 
-    .line 32
-    .local v0, "item":Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
     iget-object v1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager$1;->this$0:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverBroadcastManager;->mBroadcastInfoTable:Ljava/util/HashMap;
@@ -60,7 +53,6 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 34
     const-string v1, "CoverBroadcastManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -87,16 +79,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 35
     return-void
 .end method
 
 .method public onRefreshBatteryInfo(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;)V
     .locals 4
-    .param p1, "status"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;
 
-    .prologue
-    .line 24
     new-instance v0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -105,8 +93,6 @@
 
     invoke-direct {v0, p1, v2, v3}, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;-><init>(Ljava/lang/Object;J)V
 
-    .line 25
-    .local v0, "item":Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
     iget-object v1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager$1;->this$0:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverBroadcastManager;->mBroadcastInfoTable:Ljava/util/HashMap;
@@ -118,7 +104,6 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 27
     const-string v1, "CoverBroadcastManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -145,6 +130,5 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 28
     return-void
 .end method

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardClockDualView;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 170
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,28 +33,21 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 4
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/16 v3, 0x66
 
     const/16 v2, 0x65
 
     const/16 v1, 0x64
 
-    .line 172
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 173
     if-nez p2, :cond_1
 
-    .line 195
     :cond_0
     :goto_0
     return-void
 
-    .line 176
     :cond_1
     const-string v0, "lock_screen_date_and_year"
 
@@ -71,7 +61,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 177
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->mHandler:Landroid/os/Handler;
@@ -85,7 +74,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 178
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->mHandler:Landroid/os/Handler;
@@ -95,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 180
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -108,7 +95,6 @@
 
     goto :goto_0
 
-    .line 182
     :cond_3
     const-string v0, "lock_screen_show_clock"
 
@@ -122,7 +108,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 183
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->mHandler:Landroid/os/Handler;
@@ -136,7 +121,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 184
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->mHandler:Landroid/os/Handler;
@@ -146,7 +130,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 186
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -159,7 +142,6 @@
 
     goto :goto_0
 
-    .line 188
     :cond_5
     const-string v0, "lock_screen_clock_size"
 
@@ -185,7 +167,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 190
     :cond_6
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -200,7 +181,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 191
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->mHandler:Landroid/os/Handler;
@@ -210,7 +190,6 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 193
     :cond_7
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 

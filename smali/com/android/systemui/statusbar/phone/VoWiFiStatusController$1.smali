@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;)V
     .locals 0
 
-    .prologue
-    .line 49
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/VoWiFiStatusController$1;->this$0:Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 52
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 53
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "com.oem.smartwifisupport.VOWIFI_STATUS"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -54,13 +46,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 54
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/VoWiFiStatusController$1;->this$0:Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;
 
     # invokes: Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;->updateVoWiFi(Landroid/content/Context;Landroid/content/Intent;)V
     invoke-static {v1, p1, p2}, Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;->access$000(Lcom/android/systemui/statusbar/phone/VoWiFiStatusController;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 56
     :cond_0
     return-void
 .end method

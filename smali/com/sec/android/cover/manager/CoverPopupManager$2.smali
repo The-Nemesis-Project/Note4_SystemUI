@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverPopupManager;)V
     .locals 0
 
-    .prologue
-    .line 126
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverPopupManager$2;->this$0:Lcom/sec/android/cover/manager/CoverPopupManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 129
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverPopupManager$2;->this$0:Lcom/sec/android/cover/manager/CoverPopupManager;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPopupManager;->dismissPopupDialog()V
 
-    .line 130
     const/4 v0, 0x0
 
     return v0

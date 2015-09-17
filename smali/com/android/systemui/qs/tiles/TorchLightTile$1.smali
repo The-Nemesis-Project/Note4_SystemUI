@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/TorchLightTile;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 208
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$1;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,15 +33,11 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 5
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 210
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$1;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
@@ -62,8 +55,6 @@
 
     if-ne v2, v0, :cond_1
 
-    .line 212
-    .local v0, "torchState":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$1;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
@@ -74,26 +65,21 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 213
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$1;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$102(Lcom/android/systemui/qs/tiles/TorchLightTile;Z)Z
 
-    .line 215
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$1;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/TorchLightTile;->updateState()V
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$200(Lcom/android/systemui/qs/tiles/TorchLightTile;)V
 
-    .line 217
     :cond_0
     return-void
 
-    .end local v0    # "torchState":Z
     :cond_1
     move v0, v1
 
-    .line 210
     goto :goto_0
 .end method

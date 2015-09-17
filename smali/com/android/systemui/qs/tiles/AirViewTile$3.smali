@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 138
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,12 +33,9 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 4
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 141
     const-string v1, "AirViewTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -77,7 +69,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirViewTile$3;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
@@ -97,10 +88,8 @@
     # setter for: Lcom/android/systemui/qs/tiles/AirViewTile;->isMagnificationEnabled:Z
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$602(Lcom/android/systemui/qs/tiles/AirViewTile;Z)Z
 
-    .line 143
     return-void
 
-    .line 142
     :cond_0
     const/4 v0, 0x0
 

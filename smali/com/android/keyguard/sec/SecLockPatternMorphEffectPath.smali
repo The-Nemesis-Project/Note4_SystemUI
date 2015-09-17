@@ -37,45 +37,35 @@
 # direct methods
 .method public constructor <init>(F)V
     .locals 3
-    .param p1, "scale"    # F
 
-    .prologue
     const/16 v1, 0x3c
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
     const-string v0, "SecLockPatternViewMorphEffectPath"
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->TAG:Ljava/lang/String;
 
-    .line 12
     iput v1, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->pathTotal:I
 
-    .line 13
     new-array v0, v1, [Landroid/graphics/Path;
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
-    .line 17
     const v0, -0x3c3a8000    # -395.0f
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->offsetX:F
 
-    .line 18
     const v0, -0x3b900ccd    # -959.8f
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->offsetY:F
 
-    .line 25
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->TAG:Ljava/lang/String;
 
     const-string v1, "SecLockPatternMorphEffectPath : Constructor"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 26
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -98,52 +88,40 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 27
     iput p1, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->scale:F
 
-    .line 28
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->setPath()V
 
-    .line 29
     return-void
 .end method
 
 .method private setPath()V
     .locals 10
 
-    .prologue
-    .line 33
     new-instance v9, Landroid/graphics/Matrix;
 
     invoke-direct {v9}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 34
-    .local v9, "mtrx":Landroid/graphics/Matrix;
     const v0, -0x3c3a8000    # -395.0f
 
     const v2, -0x3b900ccd    # -959.8f
 
     invoke-virtual {v9, v0, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 35
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->scale:F
 
     iget v2, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->scale:F
 
     invoke-virtual {v9, v0, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 36
     const/high16 v0, 0x42b40000    # 90.0f
 
     invoke-virtual {v9, v0}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    .line 39
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 40
-    .local v1, "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43d8d7ae
@@ -152,7 +130,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 41
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -171,7 +148,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 42
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x413e76c9    # -0.378f
@@ -190,7 +166,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 43
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40b9db23    # -0.774f
@@ -209,7 +184,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 44
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40528f5c    # -1.355f
@@ -228,7 +202,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 45
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f26147b    # -6.81f
@@ -247,7 +220,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 46
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -266,7 +238,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 47
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -281,7 +252,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 48
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4123a5e3    # 10.228f
@@ -300,7 +270,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 49
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fe1a9fc    # 1.763f
@@ -319,7 +288,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 50
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f8db22d    # 1.107f
@@ -338,7 +306,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 51
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f0ccccd    # 0.55f
@@ -357,7 +324,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 52
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43d83a5e
@@ -376,29 +342,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 53
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 54
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 55
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 58
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 59
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43daed91
@@ -407,7 +366,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 60
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -426,7 +384,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 61
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40466666    # -1.45f
@@ -445,7 +402,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 62
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40c7ae14    # -0.72f
@@ -464,7 +420,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 63
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f26147b    # -6.81f
@@ -483,7 +438,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 64
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -502,7 +456,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 65
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -517,7 +470,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 66
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4123a5e3    # 10.228f
@@ -536,7 +488,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 67
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f916873    # 1.136f
@@ -555,7 +506,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 68
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fd7ae14    # 1.685f
@@ -574,7 +524,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 69
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43d930e5
@@ -593,29 +542,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 70
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 71
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 72
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 75
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 76
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43d7e958
@@ -624,7 +566,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 77
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fad2f1b    # -3.294f
@@ -643,7 +584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 78
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f44624e    # -5.863f
@@ -662,7 +602,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 79
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -681,7 +620,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 80
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -696,7 +634,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 81
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40f3126f    # 7.596f
@@ -715,7 +652,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 82
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40aaf9db    # 5.343f
@@ -734,7 +670,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 83
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d15810    # 6.542f
@@ -753,7 +688,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 84
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43dd8e35
@@ -772,29 +706,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 85
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 86
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 87
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 90
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 91
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e02ed9
@@ -803,7 +730,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 92
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -822,7 +748,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 93
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3faf5c29    # -3.26f
@@ -841,7 +766,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 94
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f45374c    # -5.837f
@@ -860,7 +784,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 95
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -879,7 +802,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 96
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -894,7 +816,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 97
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ec8312    # 7.391f
@@ -913,7 +834,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 98
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d8bc6a    # 6.773f
@@ -932,7 +852,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 99
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e73b646    # 0.238f
@@ -951,7 +870,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 100
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43dca4dd
@@ -970,29 +888,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 101
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 102
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 103
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 106
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 107
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e2c4fe
@@ -1001,7 +912,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 108
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -1020,7 +930,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 109
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x415cac08    # -0.319f
@@ -1039,7 +948,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 110
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc2e148    # -2.955f
@@ -1058,7 +966,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 111
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f451eb8    # -5.84f
@@ -1077,7 +984,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 112
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -1096,7 +1002,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 113
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -1111,7 +1016,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 114
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e9cac1    # 7.306f
@@ -1130,7 +1034,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 115
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4108b439    # 8.544f
@@ -1149,7 +1052,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 116
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x401f2b02    # 2.487f
@@ -1168,7 +1070,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 117
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3cac0831    # 0.021f
@@ -1187,7 +1088,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 118
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43dfb0c5
@@ -1206,29 +1106,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 119
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 120
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 121
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 124
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 125
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e55042
@@ -1237,7 +1130,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 126
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -1256,7 +1148,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 127
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f8676c9    # -3.899f
@@ -1275,7 +1166,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 128
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f44ac08    # -5.854f
@@ -1294,7 +1184,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 129
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -1313,7 +1202,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 130
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -1328,7 +1216,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 131
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/high16 v3, 0x40e80000    # 7.25f
@@ -1347,7 +1234,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 132
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412574bc    # 10.341f
@@ -1366,7 +1252,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 133
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f90a3d7    # 1.13f
@@ -1385,7 +1270,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 134
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43e14375
@@ -1404,29 +1288,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 135
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 136
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 137
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 140
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 141
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e7fba6
@@ -1435,7 +1312,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 142
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/4 v3, 0x0
@@ -1454,7 +1330,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 143
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4122d0e5    # -0.432f
@@ -1473,7 +1348,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 144
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f74f5c3    # -4.345f
@@ -1492,7 +1366,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 145
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f441893    # -5.872f
@@ -1511,7 +1384,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 146
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -1530,7 +1402,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 147
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -1545,7 +1416,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 148
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e64dd3    # 7.197f
@@ -1564,7 +1434,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 149
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4142a7f0    # 12.166f
@@ -1583,7 +1452,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 150
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f61cac1    # 0.882f
@@ -1602,7 +1470,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 151
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43e32d71
@@ -1621,29 +1488,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 152
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 153
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 154
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 157
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 158
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43dfe9ba
@@ -1652,7 +1512,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 159
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4062d0e5    # -1.228f
@@ -1671,7 +1530,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 160
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4165e354    # -0.301f
@@ -1690,7 +1548,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 161
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f66f1aa    # -4.783f
@@ -1709,7 +1566,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 162
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -1728,7 +1584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 163
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -1747,7 +1602,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 164
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -1762,7 +1616,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 165
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e49ba6    # 7.144f
@@ -1781,7 +1634,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 166
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416024dd    # 14.009f
@@ -1800,7 +1652,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 167
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fbd2f1b    # 1.478f
@@ -1819,7 +1670,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 168
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ed91687    # 0.424f
@@ -1838,7 +1688,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 169
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4147ba5e    # 12.483f
@@ -1857,7 +1706,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 170
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43e6278d
@@ -1872,29 +1720,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 171
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 172
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 173
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 176
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 177
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e3199a    # 454.2f
@@ -1903,7 +1744,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 178
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40160419    # -1.828f
@@ -1922,7 +1762,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 179
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40710625    # -1.117f
@@ -1941,7 +1780,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 180
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f399168    # -6.201f
@@ -1960,7 +1798,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 181
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -1979,7 +1816,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 182
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -1998,7 +1834,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 183
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -2013,7 +1848,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 184
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e49375    # 7.143f
@@ -2032,7 +1866,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 185
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416051ec    # 14.02f
@@ -2051,7 +1884,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 186
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x403e45a2    # 2.973f
@@ -2070,7 +1902,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 187
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f641893    # 0.891f
@@ -2089,7 +1920,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 188
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41459581    # 12.349f
@@ -2108,7 +1938,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 189
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43ee47ae    # 476.56f
@@ -2127,29 +1956,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 190
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 191
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 192
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 195
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 196
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e62ed9
@@ -2158,7 +1980,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 197
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ff6872b    # -2.148f
@@ -2177,7 +1998,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 198
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f727efa    # -4.422f
@@ -2192,7 +2012,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 199
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f0c4189    # -7.617f
@@ -2211,7 +2030,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 200
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4374bc    # -5.892f
@@ -2230,7 +2048,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 201
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -2249,7 +2066,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 202
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -2264,7 +2080,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 203
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e49375    # 7.143f
@@ -2283,7 +2098,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 204
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41607efa    # 14.031f
@@ -2302,7 +2116,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 205
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40a2b852    # 5.085f
@@ -2321,7 +2134,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 206
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40046a7f    # 2.069f
@@ -2336,7 +2148,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 207
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41436c8b    # 12.214f
@@ -2355,7 +2166,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 208
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43f13d71
@@ -2374,29 +2184,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 209
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 210
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 211
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 214
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 215
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43e8445a
@@ -2405,7 +2208,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 216
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ff0f5c3    # -2.235f
@@ -2424,7 +2226,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 217
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fdee979    # -2.517f
@@ -2443,7 +2244,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 218
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eef74bc    # -9.034f
@@ -2462,7 +2262,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 219
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -2481,7 +2280,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 220
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -2500,7 +2298,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 221
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -2515,7 +2312,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 222
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e49375    # 7.143f
@@ -2534,7 +2330,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 223
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4160ac08    # 14.042f
@@ -2553,7 +2348,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 224
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40c170a4    # 6.045f
@@ -2572,7 +2366,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 225
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f828f5c    # 1.02f
@@ -2591,7 +2384,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 226
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41413b64    # 12.077f
@@ -2610,7 +2402,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 227
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43f33396
@@ -2629,29 +2420,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 228
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 229
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 230
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    .line 233
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 234
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43ea8439
@@ -2660,7 +2444,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 235
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fec5a1d    # -2.307f
@@ -2679,7 +2462,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 236
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb70a3d    # -3.14f
@@ -2698,7 +2480,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 237
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ed8c49c    # -10.452f
@@ -2717,7 +2498,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 238
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -2736,7 +2516,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 239
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -2755,7 +2534,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 240
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -2770,7 +2548,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 241
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e49375    # 7.143f
@@ -2789,7 +2566,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 242
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4160d917    # 14.053f
@@ -2808,7 +2584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 243
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e69fbe    # 7.207f
@@ -2827,7 +2602,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 244
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f839581    # 1.028f
@@ -2846,7 +2620,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 245
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x413f1687    # 11.943f
@@ -2865,7 +2638,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 246
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43f55439
@@ -2884,29 +2656,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 247
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 248
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 249
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
-    .line 252
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 253
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43ec99ba
@@ -2915,7 +2680,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 254
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fe90625    # -2.359f
@@ -2934,7 +2698,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 255
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f915810    # -3.729f
@@ -2953,7 +2716,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 256
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ec21893    # -11.869f
@@ -2972,7 +2734,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 257
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -2991,7 +2752,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 258
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -3010,7 +2770,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 259
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -3025,7 +2784,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 260
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48b44    # 7.142f
@@ -3044,7 +2802,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 261
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41610625    # 14.064f
@@ -3063,7 +2820,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 262
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41025604    # 8.146f
@@ -3082,7 +2838,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 263
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f82f1aa    # 1.023f
@@ -3101,7 +2856,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 264
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x413ced91    # 11.808f
@@ -3120,7 +2874,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 265
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43f28127
@@ -3135,29 +2888,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 266
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 267
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 268
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xc
 
     aput-object v1, v0, v2
 
-    .line 271
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 272
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43ef24bc
@@ -3166,7 +2912,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 273
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fe33333    # -2.45f
@@ -3185,7 +2930,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 274
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f73ced9    # -4.381f
@@ -3204,7 +2948,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 275
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eab6873    # -13.287f
@@ -3223,7 +2966,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 276
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -3242,7 +2984,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 277
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -3261,7 +3002,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 278
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -3276,7 +3016,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 279
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48b44    # 7.142f
@@ -3295,7 +3034,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 280
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41613333    # 14.075f
@@ -3314,7 +3052,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 281
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x411a3127    # 9.637f
@@ -3333,7 +3070,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 282
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f88f5c3    # 1.07f
@@ -3352,7 +3088,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 283
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x413ac49c    # 11.673f
@@ -3371,7 +3106,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 284
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43f9b604
@@ -3390,29 +3124,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 285
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 286
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 287
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    .line 290
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 291
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43f20439
@@ -3421,7 +3148,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 292
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fdc1893    # -2.561f
@@ -3440,7 +3166,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 293
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f601893    # -4.997f
@@ -3459,7 +3184,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 294
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e94bc6a    # -14.704f
@@ -3478,7 +3202,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 295
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -3497,7 +3220,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 296
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -3516,7 +3238,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 297
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -3531,7 +3252,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 298
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48b44    # 7.142f
@@ -3550,7 +3270,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 299
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41616042    # 14.086f
@@ -3569,7 +3288,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 300
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412ec083    # 10.922f
@@ -3588,7 +3306,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 301
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e960419    # 0.293f
@@ -3607,7 +3324,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 302
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f93126f    # 1.149f
@@ -3626,7 +3342,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 303
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4138978d    # 11.537f
@@ -3645,7 +3360,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 304
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43fc7625
@@ -3664,29 +3378,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 305
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 306
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 307
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    .line 310
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 311
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43f45979
@@ -3695,7 +3402,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 312
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fd29fbe    # -2.709f
@@ -3714,7 +3420,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 313
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f5d5810    # -5.083f
@@ -3733,7 +3438,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 314
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e8374bc    # -15.784f
@@ -3752,7 +3456,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 315
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4374bc    # -5.892f
@@ -3771,7 +3474,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 316
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -3790,7 +3492,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 317
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -3805,7 +3506,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 318
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e47ae1    # 7.14f
@@ -3824,7 +3524,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 319
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41611687    # 14.068f
@@ -3843,7 +3542,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 320
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41412b02    # 12.073f
@@ -3862,7 +3560,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 321
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f641893    # 0.891f
@@ -3881,7 +3578,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 322
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fa645a2    # 1.299f
@@ -3900,7 +3596,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 323
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41366e98    # 11.402f
@@ -3919,7 +3614,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 324
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43fa0d0e
@@ -3934,29 +3628,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 325
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 326
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 327
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0xf
 
     aput-object v1, v0, v2
 
-    .line 330
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 331
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43f5c831
@@ -3965,7 +3652,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 332
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fcd6042    # -2.791f
@@ -3984,7 +3670,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 333
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f5fb646    # -5.009f
@@ -4003,7 +3688,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 334
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e79147b    # -16.865f
@@ -4022,7 +3706,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 335
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f43851f    # -5.89f
@@ -4041,7 +3724,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 336
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -4060,7 +3742,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 337
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -4075,7 +3756,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 338
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e41062    # 7.127f
@@ -4094,7 +3774,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 339
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4160e979    # 14.057f
@@ -4113,7 +3792,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 340
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4153999a    # 13.225f
@@ -4132,7 +3810,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 341
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3edba5e3    # 0.429f
@@ -4151,7 +3828,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 342
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fa8b439    # 1.318f
@@ -4170,7 +3846,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 343
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x413449ba    # 11.268f
@@ -4189,7 +3864,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 344
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x43fb6a7f    # 502.832f
@@ -4204,29 +3878,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 345
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 346
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 347
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x10
 
     aput-object v1, v0, v2
 
-    .line 350
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 351
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43f719ba
@@ -4235,7 +3902,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 352
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc8a3d7    # -2.865f
@@ -4254,7 +3920,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 353
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f543958    # -5.368f
@@ -4273,7 +3938,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 354
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e7070a4    # -17.945f
@@ -4292,7 +3956,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 355
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f438d50    # -5.889f
@@ -4311,7 +3974,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 356
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -4330,7 +3992,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 357
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -4345,7 +4006,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 358
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e4624e    # 7.137f
@@ -4364,7 +4024,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 359
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416072b0    # 14.028f
@@ -4383,7 +4042,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 360
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41660419    # 14.376f
@@ -4402,7 +4060,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 361
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f3126e9    # 0.692f
@@ -4421,7 +4078,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 362
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fb0a3d7    # 1.38f
@@ -4440,7 +4096,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 363
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41321cac    # 11.132f
@@ -4459,7 +4114,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 364
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440096c9
@@ -4478,29 +4132,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 365
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 366
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 367
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x11
 
     aput-object v1, v0, v2
 
-    .line 370
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 371
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43f90439
@@ -4509,7 +4156,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 372
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc5f3b6    # -2.907f
@@ -4528,7 +4174,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 373
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3849ba    # -6.241f
@@ -4547,7 +4192,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 374
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e67cccd    # -19.025f
@@ -4566,7 +4210,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 375
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f439581    # -5.888f
@@ -4585,7 +4228,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 376
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -4604,7 +4246,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 377
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -4619,7 +4260,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 378
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e45a1d    # 7.136f
@@ -4638,7 +4278,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 379
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41601cac    # 14.007f
@@ -4657,7 +4296,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 380
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41786a7f    # 15.526f
@@ -4676,7 +4314,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 381
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f856042    # 1.042f
@@ -4695,7 +4332,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 382
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fb8b439    # 1.443f
@@ -4714,7 +4350,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 383
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412fef9e    # 10.996f
@@ -4733,7 +4368,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 384
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44017c6a
@@ -4752,29 +4386,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 385
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 386
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 387
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x12
 
     aput-object v1, v0, v2
 
-    .line 390
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 391
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43fad560
@@ -4783,7 +4410,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 392
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc47ae1    # -2.93f
@@ -4802,7 +4428,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 393
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f12e979    # -7.409f
@@ -4821,7 +4446,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 394
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5f24dd    # -20.107f
@@ -4840,7 +4464,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 395
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f43a5e3    # -5.886f
@@ -4859,7 +4482,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 396
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -4878,7 +4500,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 397
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -4893,7 +4514,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 398
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e449ba    # 7.134f
@@ -4912,7 +4532,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 399
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415fbe77    # 13.984f
@@ -4931,7 +4550,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 400
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41856c8b    # 16.678f
@@ -4950,7 +4568,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 401
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fabe76d    # 1.343f
@@ -4969,7 +4586,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 402
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fbfbe77    # 1.498f
@@ -4988,7 +4604,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 403
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412dc6a8    # 10.861f
@@ -5007,7 +4622,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 404
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44025550
@@ -5026,29 +4640,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 405
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 406
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 407
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x13
 
     aput-object v1, v0, v2
 
-    .line 410
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 411
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43fcaefa
@@ -5057,7 +4664,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 412
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc47ae1    # -2.93f
@@ -5076,7 +4682,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 413
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41e76c8b    # -0.149f
@@ -5095,7 +4700,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 414
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ef7ced9    # -8.512f
@@ -5114,7 +4718,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 415
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e567cee    # -21.189f
@@ -5133,7 +4736,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 416
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f43ae14    # -5.885f
@@ -5152,7 +4754,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 417
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -5171,7 +4772,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 418
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -5186,7 +4786,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 419
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e44189    # 7.133f
@@ -5205,7 +4804,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 420
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415f6042    # 13.961f
@@ -5224,7 +4822,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 421
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ea1cb    # 17.829f
@@ -5243,7 +4840,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 422
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fda7efa    # 1.707f
@@ -5262,7 +4858,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 423
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fc5e354    # 1.546f
@@ -5281,7 +4876,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 424
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412b9db2    # 10.726f
@@ -5300,7 +4894,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 425
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4403326f
@@ -5319,29 +4912,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 426
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 427
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 428
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x14
 
     aput-object v1, v0, v2
 
-    .line 431
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 432
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x43fe6ed9
@@ -5350,7 +4936,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 433
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc47ae1    # -2.93f
@@ -5369,7 +4954,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 434
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4148b439    # -0.358f
@@ -5388,7 +4972,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 435
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eed374c    # -9.174f
@@ -5407,7 +4990,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 436
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e4e1687    # -22.239f
@@ -5426,7 +5008,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 437
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f437cee    # -5.891f
@@ -5445,7 +5026,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 438
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -5464,7 +5044,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 439
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -5479,7 +5058,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 440
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48312    # 7.141f
@@ -5498,7 +5076,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 441
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415f1aa0    # 13.944f
@@ -5517,7 +5094,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 442
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4197d70a    # 18.98f
@@ -5536,7 +5112,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 443
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ffccccd    # 1.975f
@@ -5555,7 +5130,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 444
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fcb851f    # 1.59f
@@ -5574,7 +5148,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 445
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x412978d5    # 10.592f
@@ -5593,7 +5166,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 446
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4401dd50
@@ -5608,29 +5180,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 447
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 448
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 449
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x15
 
     aput-object v1, v0, v2
 
-    .line 452
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 453
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44002cdd
@@ -5639,7 +5204,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 454
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc71aa0    # -2.889f
@@ -5658,7 +5222,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 455
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40d6872b    # -0.662f
@@ -5677,7 +5240,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 456
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee2a3d7    # -9.835f
@@ -5696,7 +5258,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 457
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e4578d5    # -23.316f
@@ -5715,7 +5276,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 458
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f43851f    # -5.89f
@@ -5734,7 +5294,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 459
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -5753,7 +5312,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 460
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -5768,7 +5326,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 461
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e47ae1    # 7.14f
@@ -5787,7 +5344,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 462
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415ec49c    # 13.923f
@@ -5806,7 +5362,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 463
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41a10c4a    # 20.131f
@@ -5825,7 +5380,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 464
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4023f7cf    # 2.562f
@@ -5844,7 +5398,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 465
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fcc0831    # 1.594f
@@ -5863,7 +5416,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 466
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41274bc7    # 10.456f
@@ -5882,7 +5434,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 467
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4404e883
@@ -5901,29 +5452,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 468
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 469
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 470
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x16
 
     aput-object v1, v0, v2
 
-    .line 473
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 474
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440196b8
@@ -5932,7 +5476,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 475
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc91687    # -2.858f
@@ -5951,7 +5494,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 476
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4090a3d7    # -0.935f
@@ -5970,7 +5512,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 477
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ed68b44    # -10.591f
@@ -5989,7 +5530,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 478
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e3bac08    # -24.541f
@@ -6008,7 +5548,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 479
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f43851f    # -5.89f
@@ -6027,7 +5566,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 480
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -6046,7 +5584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 481
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -6061,7 +5598,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 482
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e47ae1    # 7.14f
@@ -6080,7 +5616,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 483
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415dd70a    # 13.865f
@@ -6099,7 +5634,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 484
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41ab9168    # 21.446f
@@ -6118,7 +5652,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 485
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x403fbe77    # 2.996f
@@ -6137,7 +5670,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 486
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3df7ced9    # 0.121f
@@ -6156,7 +5688,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 487
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fc9db23    # 1.577f
@@ -6175,7 +5706,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 488
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41251eb8    # 10.32f
@@ -6194,7 +5724,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 489
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440642c1
@@ -6213,29 +5742,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 490
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 491
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 492
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x17
 
     aput-object v1, v0, v2
 
-    .line 495
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 496
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4402b76d
@@ -6244,7 +5766,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 497
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc3a5e3    # -2.943f
@@ -6263,7 +5784,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 498
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x409645a2    # -0.913f
@@ -6282,7 +5802,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 499
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eca6e98    # -11.348f
@@ -6301,7 +5820,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 500
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e31df3b    # -25.766f
@@ -6320,7 +5838,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 501
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f437cee    # -5.891f
@@ -6339,7 +5856,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 502
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -6358,7 +5874,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 503
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -6373,7 +5888,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 504
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e47ae1    # 7.14f
@@ -6392,7 +5906,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 505
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415cf1aa    # 13.809f
@@ -6411,7 +5924,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 506
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41b61893    # 22.762f
@@ -6430,7 +5942,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 507
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4032f1aa    # 2.796f
@@ -6449,7 +5960,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 508
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fe0e560    # 1.757f
@@ -6468,7 +5978,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 509
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4122f9db    # 10.186f
@@ -6487,7 +5996,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 510
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44054354
@@ -6502,29 +6010,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 511
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 512
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 513
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x18
 
     aput-object v1, v0, v2
 
-    .line 516
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 517
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44040429
@@ -6533,7 +6034,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 518
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc353f8    # -2.948f
@@ -6552,7 +6052,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 519
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40781062    # -1.062f
@@ -6571,7 +6070,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 520
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ebe5604    # -12.104f
@@ -6590,7 +6088,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 521
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e28147b    # -26.99f
@@ -6609,7 +6106,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 522
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f437cee    # -5.891f
@@ -6628,7 +6124,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 523
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -6647,7 +6142,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 524
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -6662,7 +6156,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 525
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e47ae1    # 7.14f
@@ -6681,7 +6174,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 526
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415c0419    # 13.751f
@@ -6700,7 +6192,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 527
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c09db2    # 24.077f
@@ -6719,7 +6210,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 528
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x404570a4    # 3.085f
@@ -6738,7 +6228,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 529
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fe66666    # 1.8f
@@ -6757,7 +6246,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 530
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4120cccd    # 10.05f
@@ -6776,7 +6264,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 531
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4406875c
@@ -6791,29 +6278,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 532
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 533
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 534
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x19
 
     aput-object v1, v0, v2
 
-    .line 537
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 538
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4405421d
@@ -6822,7 +6302,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 539
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc16873    # -2.978f
@@ -6841,7 +6320,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 540
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x406c6a7f    # -1.153f
@@ -6860,7 +6338,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 541
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eb24189    # -12.859f
@@ -6879,7 +6356,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 542
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e1e49ba    # -28.214f
@@ -6898,7 +6374,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 543
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4374bc    # -5.892f
@@ -6917,7 +6392,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 544
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -6936,7 +6410,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 545
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -6951,7 +6424,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 546
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48312    # 7.141f
@@ -6970,7 +6442,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 547
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415b22d1    # 13.696f
@@ -6989,7 +6460,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 548
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41cb26e9    # 25.394f
@@ -7008,7 +6478,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 549
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4049ba5e    # 3.152f
@@ -7027,7 +6496,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 550
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fef1aa0    # 1.868f
@@ -7046,7 +6514,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 551
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x411ea7f0    # 9.916f
@@ -7065,7 +6532,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 552
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4409bf1b
@@ -7084,29 +6550,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 553
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 554
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 555
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1a
 
     aput-object v1, v0, v2
 
-    .line 558
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 559
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4406977d
@@ -7115,7 +6574,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 560
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc2e148    # -2.955f
@@ -7134,7 +6592,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 561
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4057ef9e    # -1.313f
@@ -7153,7 +6610,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 562
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ea628f6    # -13.615f
@@ -7172,7 +6628,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 563
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e147efa    # -29.438f
@@ -7191,7 +6646,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 564
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4374bc    # -5.892f
@@ -7210,7 +6664,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 565
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -7229,7 +6682,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 566
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -7244,7 +6696,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 567
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48312    # 7.141f
@@ -7263,7 +6714,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 568
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415a4189    # 13.641f
@@ -7282,7 +6732,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 569
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41d5ac08    # 26.709f
@@ -7301,7 +6750,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 570
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4064ac08    # 3.573f
@@ -7320,7 +6768,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 571
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff1eb85    # 1.89f
@@ -7339,7 +6786,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 572
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x411c76c9    # 9.779f
@@ -7358,7 +6804,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 573
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440b04cd
@@ -7377,29 +6822,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 574
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 575
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 576
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1b
 
     aput-object v1, v0, v2
 
-    .line 579
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 580
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44080862
@@ -7408,7 +6846,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 581
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fca5e35    # -2.838f
@@ -7427,7 +6864,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 582
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x403e353f    # -1.514f
@@ -7446,7 +6882,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 583
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e9a1062    # -14.371f
@@ -7465,7 +6900,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 584
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0ab646    # -30.661f
@@ -7484,7 +6918,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 585
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4374bc    # -5.892f
@@ -7503,7 +6936,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 586
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -7522,7 +6954,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 587
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -7537,7 +6968,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 588
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48312    # 7.141f
@@ -7556,7 +6986,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 589
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41595c29    # 13.585f
@@ -7575,7 +7004,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 590
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41e03127    # 28.024f
@@ -7594,7 +7022,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 591
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40815810    # 4.042f
@@ -7613,7 +7040,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 592
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e29fbe7    # 0.166f
@@ -7632,7 +7058,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 593
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fea9fbe    # 1.833f
@@ -7651,7 +7076,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 594
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x411a51ec    # 9.645f
@@ -7670,7 +7094,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 595
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440c6604
@@ -7689,29 +7112,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 596
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 597
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 598
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1c
 
     aput-object v1, v0, v2
 
-    .line 601
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 602
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44093906
@@ -7720,7 +7136,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 603
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc6a7f0    # -2.896f
@@ -7739,7 +7154,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 604
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4036c8b4    # -1.572f
@@ -7758,7 +7172,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 605
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e8df3b6    # -15.128f
@@ -7777,7 +7190,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 606
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e00ef9e    # -31.883f
@@ -7796,7 +7208,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 607
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f436c8b    # -5.893f
@@ -7815,7 +7226,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 608
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -7834,7 +7244,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 609
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -7849,7 +7258,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 610
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e48312    # 7.141f
@@ -7868,7 +7276,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 611
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41587efa    # 13.531f
@@ -7887,7 +7294,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 612
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41eab852    # 29.34f
@@ -7906,7 +7312,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 613
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40880831    # 4.251f
@@ -7925,7 +7330,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 614
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3cb43958    # 0.022f
@@ -7944,7 +7348,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 615
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff83127    # 1.939f
@@ -7963,7 +7366,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 616
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x411828f6    # 9.51f
@@ -7982,7 +7384,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 617
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440d86fa
@@ -8001,29 +7402,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 618
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 619
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 620
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1d
 
     aput-object v1, v0, v2
 
-    .line 623
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 624
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440a8ccd    # 554.2f
@@ -8032,7 +7426,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 625
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fce978d    # -2.772f
@@ -8051,7 +7444,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 626
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ff020c5    # -2.248f
@@ -8070,7 +7462,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 627
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e7b8312    # -16.561f
@@ -8089,7 +7480,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 628
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e015e35    # -31.829f
@@ -8108,7 +7498,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 629
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4322d1    # -5.902f
@@ -8127,7 +7516,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 630
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -8146,7 +7534,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 631
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -8161,7 +7548,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 632
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e4ed91    # 7.154f
@@ -8180,7 +7566,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 633
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415a353f    # 13.638f
@@ -8199,7 +7584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 634
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41e75604    # 28.917f
@@ -8218,7 +7602,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 635
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40a3126f    # 5.096f
@@ -8237,7 +7620,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 636
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ec39581    # 0.382f
@@ -8256,7 +7638,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 637
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fee978d    # 1.864f
@@ -8275,7 +7656,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 638
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4115fbe7    # 9.374f
@@ -8294,7 +7674,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 639
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440ecb12
@@ -8313,29 +7692,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 640
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 641
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 642
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1e
 
     aput-object v1, v0, v2
 
-    .line 645
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 646
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440b9b33
@@ -8344,7 +7716,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 647
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc79db2    # -2.881f
@@ -8363,7 +7734,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 648
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc91687    # -2.858f
@@ -8382,7 +7752,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 649
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e700e56    # -17.993f
@@ -8401,7 +7770,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 650
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e01d2f2    # -31.772f
@@ -8420,7 +7788,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 651
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f42d0e5    # -5.912f
@@ -8439,7 +7806,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 652
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -8458,7 +7824,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 653
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -8473,7 +7838,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 654
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e54fdf    # 7.166f
@@ -8492,7 +7856,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 655
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415be354    # 13.743f
@@ -8511,7 +7874,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 656
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41e3f1aa    # 28.493f
@@ -8530,7 +7892,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 657
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40be147b    # 5.94f
@@ -8549,7 +7910,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 658
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e8624dd    # 0.262f
@@ -8568,7 +7928,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 659
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fff1aa0    # 1.993f
@@ -8587,7 +7946,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 660
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4113d2f2    # 9.239f
@@ -8606,7 +7964,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 661
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x440fc9db
@@ -8625,29 +7982,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 662
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 663
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 664
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x1f
 
     aput-object v1, v0, v2
 
-    .line 667
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 668
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440cd6fa
@@ -8656,7 +8006,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 669
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc820c5    # -2.873f
@@ -8675,7 +8024,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 670
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fafdf3b    # -3.252f
@@ -8694,7 +8042,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 671
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e649581    # -19.427f
@@ -8713,7 +8060,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 672
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0249ba    # -31.714f
@@ -8732,7 +8078,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 673
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f427efa    # -5.922f
@@ -8751,7 +8096,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 674
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -8770,7 +8114,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 675
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -8785,7 +8128,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 676
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e5c28f    # 7.18f
@@ -8804,7 +8146,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 677
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415da1cb    # 13.852f
@@ -8823,7 +8164,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 678
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41e08f5c    # 28.07f
@@ -8842,7 +8182,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 679
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d91eb8    # 6.785f
@@ -8861,7 +8200,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 680
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f0d4fdf    # 0.552f
@@ -8880,7 +8218,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 681
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff9374c    # 1.947f
@@ -8899,7 +8236,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 682
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4111a9fc    # 9.104f
@@ -8918,7 +8254,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 683
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4410f5f4
@@ -8937,29 +8272,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 684
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 685
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 686
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x20
 
     aput-object v1, v0, v2
 
-    .line 689
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 690
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440df77d
@@ -8968,7 +8296,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 691
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc47ae1    # -2.93f
@@ -8987,7 +8314,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 692
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f9353f8    # -3.698f
@@ -9006,7 +8332,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 693
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5920c5    # -20.859f
@@ -9025,7 +8350,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 694
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e02c49c    # -31.654f
@@ -9044,7 +8368,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 695
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4224dd    # -5.933f
@@ -9063,7 +8386,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 696
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -9082,7 +8404,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 697
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -9097,7 +8418,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 698
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e63d71    # 7.195f
@@ -9116,7 +8436,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 699
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415f6042    # 13.961f
@@ -9135,7 +8454,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 700
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41dd2d0e    # 27.647f
@@ -9154,7 +8472,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 701
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40f420c5    # 7.629f
@@ -9173,7 +8490,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 702
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f1df3b6    # 0.617f
@@ -9192,7 +8508,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 703
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ffdd2f2    # 1.983f
@@ -9211,7 +8526,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 704
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x410f8106    # 8.969f
@@ -9230,7 +8544,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 705
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441206c9
@@ -9249,29 +8562,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 706
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 707
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 708
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x21
 
     aput-object v1, v0, v2
 
-    .line 711
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 712
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x440f378d
@@ -9280,7 +8586,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 713
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc52f1b    # -2.919f
@@ -9299,7 +8604,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 714
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41926e98    # -0.232f
@@ -9318,7 +8622,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 715
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f7b3b64    # -4.149f
@@ -9337,7 +8640,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 716
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e4da7f0    # -22.293f
@@ -9356,7 +8658,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 717
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e034396    # -31.592f
@@ -9375,7 +8676,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 718
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f41cac1    # -5.944f
@@ -9394,7 +8694,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 719
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -9413,7 +8712,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 720
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -9428,7 +8726,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 721
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e6c083    # 7.211f
@@ -9447,7 +8744,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 722
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416126e9    # 14.072f
@@ -9466,7 +8762,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 723
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41d9cac1    # 27.224f
@@ -9485,7 +8780,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 724
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41079581    # 8.474f
@@ -9504,7 +8798,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 725
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f895810    # 1.073f
@@ -9523,7 +8816,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 726
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3d851eb8    # 0.065f
@@ -9542,7 +8834,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 727
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fef3b64    # 1.869f
@@ -9561,7 +8852,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 728
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x410d5810    # 8.834f
@@ -9580,7 +8870,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 729
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4413372b    # 588.862f
@@ -9599,29 +8888,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 730
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 731
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 732
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x22
 
     aput-object v1, v0, v2
 
-    .line 735
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 736
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4410577d
@@ -9630,7 +8912,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 737
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc1cac1    # -2.972f
@@ -9649,7 +8930,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 738
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x416f1aa0    # -0.283f
@@ -9668,7 +8948,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 739
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f6b4bc7    # -4.647f
@@ -9687,7 +8966,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 740
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e423333    # -23.725f
@@ -9706,7 +8984,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 741
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e03c28f    # -31.53f
@@ -9725,7 +9002,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 742
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4170a4    # -5.955f
@@ -9744,7 +9020,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 743
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -9763,7 +9038,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 744
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -9778,7 +9052,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 745
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e74bc7    # 7.228f
@@ -9797,7 +9070,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 746
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4162ed91    # 14.183f
@@ -9816,7 +9088,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 747
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41d66873    # 26.801f
@@ -9835,7 +9106,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 748
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41151687    # 9.318f
@@ -9854,7 +9124,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 749
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f98d4fe    # 1.194f
@@ -9873,7 +9142,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 750
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3d449ba6    # 0.048f
@@ -9892,7 +9160,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 751
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff20c4a    # 1.891f
@@ -9911,7 +9178,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 752
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x410b26e9    # 8.697f
@@ -9930,7 +9196,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 753
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4414476d
@@ -9949,29 +9214,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 754
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 755
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 756
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x23
 
     aput-object v1, v0, v2
 
-    .line 759
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 760
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4411821d
@@ -9980,7 +9238,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 761
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc15810    # -2.979f
@@ -9999,7 +9256,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 762
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x412c0831    # -0.414f
@@ -10018,7 +9274,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 763
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f5b53f8    # -5.146f
@@ -10037,7 +9292,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 764
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e36bc6a    # -25.158f
@@ -10056,7 +9310,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 765
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0445a2    # -31.466f
@@ -10075,7 +9328,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 766
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f410e56    # -5.967f
@@ -10094,7 +9346,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 767
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -10113,7 +9364,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 768
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -10128,7 +9378,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 769
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e7e76d    # 7.247f
@@ -10147,7 +9396,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 770
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4164bc6a    # 14.296f
@@ -10166,7 +9414,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 771
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41d30625    # 26.378f
@@ -10185,7 +9432,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 772
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41229ba6    # 10.163f
@@ -10204,7 +9450,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 773
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fa851ec    # 1.315f
@@ -10223,7 +9468,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 774
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e0d4fdf    # 0.138f
@@ -10242,7 +9486,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 775
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fef1aa0    # 1.868f
@@ -10261,7 +9504,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 776
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4109020c    # 8.563f
@@ -10280,7 +9522,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 777
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4415627f
@@ -10299,29 +9540,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 778
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 779
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 780
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x24
 
     aput-object v1, v0, v2
 
-    .line 783
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 784
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44127b64
@@ -10330,7 +9564,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 785
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb71aa0    # -3.139f
@@ -10349,7 +9582,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 786
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41a3d70a    # -0.215f
@@ -10368,7 +9600,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 787
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4b5c29    # -5.645f
@@ -10387,7 +9618,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 788
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e2b45a2    # -26.591f
@@ -10406,7 +9636,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 789
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e04d0e5    # -31.398f
@@ -10425,7 +9654,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 790
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f40a3d7    # -5.98f
@@ -10444,7 +9672,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 791
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -10463,7 +9690,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 792
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -10478,7 +9704,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 793
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e88b44    # 7.267f
@@ -10497,7 +9722,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 794
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41668f5c    # 14.41f
@@ -10516,7 +9740,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 795
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41cfa1cb    # 25.954f
@@ -10535,7 +9758,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 796
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41301cac    # 11.007f
@@ -10554,7 +9776,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 797
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f5ef9db    # 0.871f
@@ -10573,7 +9794,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 798
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40070a3d    # 2.11f
@@ -10592,7 +9812,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 799
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4106d917    # 8.428f
@@ -10611,7 +9830,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 800
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44164c08
@@ -10630,29 +9848,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 801
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 802
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 803
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x25
 
     aput-object v1, v0, v2
 
-    .line 806
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 807
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4413f76d
@@ -10661,7 +9872,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 808
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fc1eb85    # -2.97f
@@ -10680,7 +9890,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 809
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40d0624e    # -0.686f
@@ -10699,7 +9908,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 810
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f391eb8    # -6.215f
@@ -10718,7 +9926,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 811
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e1d3b64    # -28.346f
@@ -10737,7 +9944,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 812
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e05624e    # -31.327f
@@ -10756,7 +9962,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 813
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f403958    # -5.993f
@@ -10775,7 +9980,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 814
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -10794,7 +9998,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 815
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -10809,7 +10012,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 816
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e95810    # 7.292f
@@ -10828,7 +10030,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 817
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41690625    # 14.564f
@@ -10847,7 +10048,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 818
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41cd1687    # 25.636f
@@ -10866,7 +10066,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 819
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x413fd2f2    # 11.989f
@@ -10885,7 +10084,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 820
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fc9ba5e    # 1.576f
@@ -10904,7 +10102,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 821
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e6978d5    # 0.228f
@@ -10923,7 +10120,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 822
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff374bc    # 1.902f
@@ -10942,7 +10138,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 823
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4104b021    # 8.293f
@@ -10961,7 +10156,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 824
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4417b873
@@ -10980,29 +10174,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 825
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 826
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 827
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x26
 
     aput-object v1, v0, v2
 
-    .line 830
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 831
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441501ba
@@ -11011,7 +10198,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 832
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb374bc    # -3.196f
@@ -11030,7 +10216,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 833
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x411ba5e3    # -0.446f
@@ -11049,7 +10234,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 834
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f26e148    # -6.785f
@@ -11068,7 +10252,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 835
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0f3127    # -30.101f
@@ -11087,7 +10270,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 836
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e05f3b6    # -31.256f
@@ -11106,7 +10288,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 837
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3fced9    # -6.006f
@@ -11125,7 +10306,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 838
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -11144,7 +10324,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 839
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -11159,7 +10338,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 840
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ea1cac    # 7.316f
@@ -11178,7 +10356,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 841
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416b7cee    # 14.718f
@@ -11197,7 +10374,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 842
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41ca8937    # 25.317f
@@ -11216,7 +10392,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 843
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x414f8937    # 12.971f
@@ -11235,7 +10410,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 844
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f8a9fbe    # 1.083f
@@ -11254,7 +10428,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 845
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400b851f    # 2.18f
@@ -11273,7 +10446,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 846
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41028312    # 8.157f
@@ -11292,7 +10464,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 847
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4418b312
@@ -11311,29 +10482,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 848
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 849
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 850
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x27
 
     aput-object v1, v0, v2
 
-    .line 853
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 854
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4416622d
@@ -11342,7 +10506,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 855
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb83127    # -3.122f
@@ -11361,7 +10524,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 856
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40c49ba6    # -0.732f
@@ -11380,7 +10542,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 857
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f14ac08    # -7.354f
@@ -11399,7 +10560,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 858
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0128f6    # -31.855f
@@ -11418,7 +10578,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 859
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e06872b    # -31.184f
@@ -11437,7 +10596,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 860
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3f645a    # -6.019f
@@ -11456,7 +10614,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 861
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -11475,7 +10632,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 862
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -11490,7 +10646,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 863
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40eaf9db    # 7.343f
@@ -11509,7 +10664,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 864
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416e0419    # 14.876f
@@ -11528,7 +10682,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 865
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/high16 v3, 0x41c80000    # 25.0f
@@ -11547,7 +10700,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 866
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415f3f7d    # 13.953f
@@ -11566,7 +10718,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 867
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fd3d70a    # 1.655f
@@ -11585,7 +10736,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 868
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4006872b    # 2.102f
@@ -11604,7 +10754,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 869
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41005604    # 8.021f
@@ -11623,7 +10772,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 870
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441a03d7    # 616.06f
@@ -11642,29 +10790,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 871
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 872
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 873
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x28
 
     aput-object v1, v0, v2
 
-    .line 876
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 877
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4417821d
@@ -11673,7 +10814,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 878
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fafdf3b    # -3.252f
@@ -11692,7 +10832,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 879
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40da9fbe    # -0.646f
@@ -11711,7 +10850,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 880
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f026666    # -7.925f
@@ -11730,7 +10868,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 881
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3df98f5c    # -33.61f
@@ -11749,7 +10886,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 882
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e071cac    # -31.111f
@@ -11768,7 +10904,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 883
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3ef1aa    # -6.033f
@@ -11787,7 +10922,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 884
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -11806,7 +10940,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 885
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -11821,7 +10954,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 886
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/high16 v3, 0x40ec0000    # 7.375f
@@ -11840,7 +10972,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 887
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4170ac08    # 15.042f
@@ -11859,7 +10990,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 888
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c574bc    # 24.682f
@@ -11878,7 +11008,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 889
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416ef1aa    # 14.934f
@@ -11897,7 +11026,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 890
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f9ced91    # 1.226f
@@ -11916,7 +11044,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 891
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400fae14    # 2.245f
@@ -11935,7 +11062,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 892
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40fc6a7f    # 7.888f
@@ -11954,7 +11080,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 893
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441b1419
@@ -11973,29 +11098,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 894
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 895
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 896
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x29
 
     aput-object v1, v0, v2
 
-    .line 899
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 900
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4418d385
@@ -12004,7 +11122,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 901
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb1999a    # -3.225f
@@ -12023,7 +11140,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 902
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40a9fbe7    # -0.836f
@@ -12042,7 +11158,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 903
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ef8147b    # -8.495f
@@ -12061,7 +11176,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 904
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3df28a3d
@@ -12080,7 +11194,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 905
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e07a3d7    # -31.045f
@@ -12099,7 +11212,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 906
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3e8f5c    # -6.045f
@@ -12118,7 +11230,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 907
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -12137,7 +11248,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 908
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -12152,7 +11262,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 909
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ecfdf4    # 7.406f
@@ -12171,7 +11280,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 910
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41734bc7    # 15.206f
@@ -12190,7 +11298,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 911
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c2e560    # 24.362f
@@ -12209,7 +11316,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 912
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x417ea7f0    # 15.916f
@@ -12228,7 +11334,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 913
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fc6e979    # 1.554f
@@ -12247,7 +11352,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 914
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400df3b6    # 2.218f
@@ -12266,7 +11370,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 915
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40f81062    # 7.752f
@@ -12285,7 +11388,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 916
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441c55d3
@@ -12304,29 +11406,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 917
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 918
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 919
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2a
 
     aput-object v1, v0, v2
 
-    .line 922
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 923
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441a0800    # 616.125f
@@ -12335,7 +11430,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 924
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fada1cb    # -3.287f
@@ -12354,7 +11448,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 925
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40a20c4a    # -0.867f
@@ -12373,7 +11466,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 926
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3eeef9db    # -9.064f
@@ -12392,7 +11484,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 927
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3deb851f    # -37.12f
@@ -12411,7 +11502,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 928
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0820c5    # -30.984f
@@ -12430,7 +11520,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 929
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3e3d71    # -6.055f
@@ -12449,7 +11538,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 930
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -12468,7 +11556,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 931
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -12483,7 +11570,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 932
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40edf3b6    # 7.436f
@@ -12502,7 +11588,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 933
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4175df3b    # 15.367f
@@ -12521,7 +11606,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 934
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c05c29    # 24.045f
@@ -12540,7 +11624,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 935
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41872d0e    # 16.897f
@@ -12559,7 +11642,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 936
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fc3126f    # 1.524f
@@ -12578,7 +11660,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 937
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x401020c5    # 2.252f
@@ -12597,7 +11678,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 938
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40f3be77    # 7.617f
@@ -12616,7 +11696,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 939
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441d7aa0
@@ -12635,29 +11714,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 940
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 941
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 942
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2b
 
     aput-object v1, v0, v2
 
-    .line 945
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 946
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441b376d
@@ -12666,7 +11738,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 947
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3faa1cac    # -3.342f
@@ -12685,7 +11756,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 948
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x409ced91    # -0.887f
@@ -12704,7 +11774,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 949
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -12723,7 +11792,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 950
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de48000    # -38.875f
@@ -12742,7 +11810,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 951
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e089fbe    # -30.922f
@@ -12761,7 +11828,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 952
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3ddb23    # -6.067f
@@ -12780,7 +11846,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 953
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -12799,7 +11864,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 954
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -12814,7 +11878,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 955
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ef020c    # 7.469f
@@ -12833,7 +11896,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 956
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4178872b    # 15.533f
@@ -12852,7 +11914,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 957
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41bdd0e5    # 23.727f
@@ -12871,7 +11932,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 958
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418f0831    # 17.879f
@@ -12890,7 +11950,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 959
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fb6e979    # 1.429f
@@ -12909,7 +11968,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 960
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40127efa    # 2.289f
@@ -12928,7 +11986,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 961
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ef645a    # 7.481f
@@ -12947,7 +12004,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 962
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441e9a6f
@@ -12966,29 +12022,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 963
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 964
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 965
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2c
 
     aput-object v1, v0, v2
 
-    .line 968
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 969
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441c622d
@@ -12997,7 +12046,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 970
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3faea7f0    # -3.271f
@@ -13016,7 +12064,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 971
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x405624dd    # -1.327f
@@ -13035,7 +12082,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 972
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -13054,7 +12100,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 973
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de470a4    # -38.89f
@@ -13073,7 +12118,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 974
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e077cee    # -31.064f
@@ -13092,7 +12136,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 975
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3e6e98    # -6.049f
@@ -13111,7 +12154,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 976
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -13130,7 +12172,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 977
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -13145,7 +12186,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 978
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ed6042    # 7.418f
@@ -13164,7 +12204,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 979
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41741062    # 15.254f
@@ -13183,7 +12222,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 980
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41be645a    # 23.799f
@@ -13202,7 +12240,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 981
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ebe77    # 17.843f
@@ -13221,7 +12258,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 982
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x401353f8    # 2.302f
@@ -13240,7 +12276,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 983
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400fbe77    # 2.246f
@@ -13259,7 +12294,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 984
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40eb126f    # 7.346f
@@ -13278,7 +12312,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 985
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x441fb571
@@ -13297,29 +12330,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 986
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 987
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 988
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2d
 
     aput-object v1, v0, v2
 
-    .line 991
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 992
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441d719a
@@ -13328,7 +12354,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 993
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fae147b    # -3.28f
@@ -13347,7 +12372,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 994
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x4030c49c    # -1.619f
@@ -13366,7 +12390,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 995
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -13385,7 +12408,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 996
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4624e    # -38.904f
@@ -13404,7 +12426,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 997
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e064dd3    # -31.212f
@@ -13423,7 +12444,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 998
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3f020c    # -6.031f
@@ -13442,7 +12462,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 999
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -13461,7 +12480,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1000
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -13476,7 +12494,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1001
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ebbe77    # 7.367f
@@ -13495,7 +12512,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1002
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416f9168    # 14.973f
@@ -13514,7 +12530,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1003
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41bef5c3    # 23.87f
@@ -13533,7 +12548,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1004
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418e74bc    # 17.807f
@@ -13552,7 +12566,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1005
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4037ae14    # 2.87f
@@ -13571,7 +12584,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1006
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400fbe77    # 2.246f
@@ -13590,7 +12602,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1007
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e6c8b4    # 7.212f
@@ -13609,7 +12620,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1008
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4420b550
@@ -13628,29 +12638,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1009
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1010
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1011
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2e
 
     aput-object v1, v0, v2
 
-    .line 1014
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1015
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441ea158
@@ -13659,7 +12662,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1016
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb3f7cf    # -3.188f
@@ -13678,7 +12680,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1017
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ffcbc6a    # -2.051f
@@ -13697,7 +12698,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1018
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -13716,7 +12716,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1019
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de452f2
@@ -13735,7 +12734,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1020
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e05020c    # -31.374f
@@ -13754,7 +12752,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1021
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f3fb646    # -6.009f
@@ -13773,7 +12770,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1022
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -13792,7 +12788,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1023
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -13807,7 +12802,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1024
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ea4dd3    # 7.322f
@@ -13826,7 +12820,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1025
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x416b2f1b    # 14.699f
@@ -13845,7 +12838,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1026
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41bf8937    # 23.942f
@@ -13864,7 +12856,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1027
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418e28f6    # 17.77f
@@ -13883,7 +12874,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1028
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4078a3d7    # 3.885f
@@ -13902,7 +12892,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1029
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400d3f7d    # 2.207f
@@ -13921,7 +12910,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1030
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e26e98    # 7.076f
@@ -13940,7 +12928,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1031
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4421d550
@@ -13959,29 +12946,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1032
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1033
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1034
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x2f
 
     aput-object v1, v0, v2
 
-    .line 1037
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1038
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x441f976d
@@ -13990,7 +12970,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1039
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fadd2f2    # -3.284f
@@ -14009,7 +12988,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1040
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ff10625    # -2.234f
@@ -14028,7 +13006,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1041
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -14047,7 +13024,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1042
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de44396
@@ -14066,7 +13042,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1043
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e03bc6a    # -31.533f
@@ -14085,7 +13060,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1044
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f40624e    # -5.988f
@@ -14104,7 +13078,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1045
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -14123,7 +13096,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1046
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -14138,7 +13110,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1047
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e8fdf4    # 7.281f
@@ -14157,7 +13128,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1048
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4166ed91    # 14.433f
@@ -14176,7 +13146,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1049
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c01cac    # 24.014f
@@ -14195,7 +13164,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1050
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ddf3b    # 17.734f
@@ -14214,7 +13182,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1051
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x408428f6    # 4.13f
@@ -14233,7 +13200,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1052
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400e45a2    # 2.223f
@@ -14252,7 +13218,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1053
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40de147b    # 6.94f
@@ -14271,7 +13236,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1054
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4422bbc7
@@ -14290,29 +13254,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1055
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1056
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1057
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x30
 
     aput-object v1, v0, v2
 
-    .line 1060
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1061
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4420821d
@@ -14321,7 +13278,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1062
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3faa6e98    # -3.337f
@@ -14340,7 +13296,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1063
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x42c39581    # -0.046f
@@ -14359,7 +13314,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1064
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fe88312    # -2.367f
@@ -14378,7 +13332,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1065
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d2f2    # -9.636f
@@ -14397,7 +13350,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1066
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4353f
@@ -14416,7 +13368,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1067
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e0278d5    # -31.691f
@@ -14435,7 +13386,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1068
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f410625    # -5.968f
@@ -14454,7 +13404,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1069
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -14473,7 +13422,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1070
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -14488,7 +13436,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1071
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e7df3b    # 7.246f
@@ -14507,7 +13454,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1072
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4162d917    # 14.178f
@@ -14526,7 +13472,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1073
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c0b021    # 24.086f
@@ -14545,7 +13490,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1074
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418d9375    # 17.697f
@@ -14564,7 +13508,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1075
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4088ac08    # 4.271f
@@ -14583,7 +13526,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1076
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3d851eb8    # 0.065f
@@ -14602,7 +13544,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1077
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400d4fdf    # 2.208f
@@ -14621,7 +13562,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1078
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d9cac1    # 6.806f
@@ -14640,7 +13580,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1079
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x442396c9
@@ -14659,29 +13598,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1080
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1081
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1082
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x31
 
     aput-object v1, v0, v2
 
-    .line 1085
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1086
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4421a22d
@@ -14690,7 +13622,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1087
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3faea7f0    # -3.271f
@@ -14709,7 +13640,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1088
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x428e5604    # -0.059f
@@ -14728,7 +13658,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1089
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/high16 v3, -0x3fd00000    # -2.75f
@@ -14747,7 +13676,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1090
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -14766,7 +13694,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1091
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de425e3
@@ -14785,7 +13712,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1092
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e013f7d    # -31.844f
@@ -14804,7 +13730,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1093
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f41a1cb    # -5.949f
@@ -14823,7 +13748,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1094
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -14842,7 +13766,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1095
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -14857,7 +13780,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1096
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e6e148    # 7.215f
@@ -14876,7 +13798,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1097
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415ee148    # 13.93f
@@ -14895,7 +13816,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1098
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c14189    # 24.157f
@@ -14914,7 +13834,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1099
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418d49ba    # 17.661f
@@ -14933,7 +13852,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1100
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40a3020c    # 5.094f
@@ -14952,7 +13870,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1101
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3dd70a3d    # 0.105f
@@ -14971,7 +13888,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1102
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400a7efa    # 2.164f
@@ -14990,7 +13906,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1103
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d570a4    # 6.67f
@@ -15009,7 +13924,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1104
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4424a71b
@@ -15028,29 +13942,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1105
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1106
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1107
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x32
 
     aput-object v1, v0, v2
 
-    .line 1110
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1111
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4423021d
@@ -15059,7 +13966,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1112
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fbbc6a8    # -3.066f
@@ -15078,7 +13984,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1113
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41958106    # -0.229f
@@ -15097,7 +14002,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1114
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fa872b0    # -3.368f
@@ -15116,7 +14020,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1115
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d70a    # -9.635f
@@ -15135,7 +14038,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1116
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de41687    # -38.978f
@@ -15154,7 +14056,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1117
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e00020c    # -31.999f
@@ -15173,7 +14074,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1118
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f42353f    # -5.931f
@@ -15192,7 +14092,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1119
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -15211,7 +14110,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1120
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -15226,7 +14124,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1121
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e60419    # 7.188f
@@ -15245,7 +14142,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1122
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x415b020c    # 13.688f
@@ -15264,7 +14160,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1123
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c1d4fe    # 24.229f
@@ -15283,7 +14178,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1124
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const/high16 v3, 0x418d0000    # 17.625f
@@ -15302,7 +14196,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1125
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d276c9    # 6.577f
@@ -15321,7 +14214,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1126
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3de147ae    # 0.11f
@@ -15340,7 +14232,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1127
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3cd4fdf4    # 0.026f
@@ -15359,7 +14250,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1128
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4007be77    # 2.121f
@@ -15378,7 +14268,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1129
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d126e9    # 6.536f
@@ -15397,7 +14286,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1130
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4425f77d
@@ -15416,29 +14304,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1131
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1132
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1133
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x33
 
     aput-object v1, v0, v2
 
-    .line 1136
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1137
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4424177d
@@ -15447,7 +14328,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1138
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fbdb22d    # -3.036f
@@ -15466,7 +14346,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1139
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x414ac083    # -0.354f
@@ -15485,7 +14364,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1140
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f965604    # -3.651f
@@ -15504,7 +14382,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1141
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee5d2f2    # -9.636f
@@ -15523,7 +14400,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1142
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de40831    # -38.992f
@@ -15542,7 +14418,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1143
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dff676d
@@ -15561,7 +14436,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1144
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f42c8b4    # -5.913f
@@ -15580,7 +14454,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1145
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -15599,7 +14472,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1146
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -15614,7 +14486,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1147
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e547ae    # 7.165f
@@ -15633,7 +14504,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1148
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41573f7d    # 13.453f
@@ -15652,7 +14522,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1149
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c26873    # 24.301f
@@ -15671,7 +14540,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1150
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418cb646    # 17.589f
@@ -15690,7 +14558,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1151
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e58106    # 7.172f
@@ -15709,7 +14576,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1152
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3e353f7d    # 0.177f
@@ -15728,7 +14594,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1153
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3da5e354    # 0.081f
@@ -15747,7 +14612,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1154
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4004dd2f    # 2.076f
@@ -15766,7 +14630,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1155
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ccc49c    # 6.399f
@@ -15785,7 +14648,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1156
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4426fd1f
@@ -15804,29 +14666,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1157
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1158
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1159
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x34
 
     aput-object v1, v0, v2
 
-    .line 1162
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1163
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4425b560
@@ -15835,7 +14690,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1164
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fce872b    # -2.773f
@@ -15854,7 +14708,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1165
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x40f81062    # -0.531f
@@ -15873,7 +14726,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1166
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f956042    # -3.666f
@@ -15892,7 +14744,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1167
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee4c8b4    # -9.701f
@@ -15911,7 +14762,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1168
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4072b    # -38.993f
@@ -15930,7 +14780,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1169
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfe6d91
@@ -15949,7 +14798,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1170
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f42978d    # -5.919f
@@ -15968,7 +14816,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1171
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -15987,7 +14834,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1172
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -16002,7 +14848,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1173
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e56873    # 7.169f
@@ -16021,7 +14866,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1174
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41560c4a    # 13.378f
@@ -16040,7 +14884,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1175
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c2d0e5    # 24.352f
@@ -16059,7 +14902,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1176
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418cb22d    # 17.587f
@@ -16078,7 +14920,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1177
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e43127    # 7.131f
@@ -16097,7 +14938,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1178
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3eb8d4fe    # 0.361f
@@ -16116,7 +14956,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1179
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x400051ec    # 2.005f
@@ -16135,7 +14974,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1180
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40c87ae1    # 6.265f
@@ -16154,7 +14992,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1181
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44274656    # 669.099f
@@ -16169,29 +15006,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1182
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1183
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1184
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x35
 
     aput-object v1, v0, v2
 
-    .line 1187
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1188
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44270ccd    # 668.2f
@@ -16200,7 +15030,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1189
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fcf1aa0    # -2.764f
@@ -16219,7 +15048,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1190
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41d60419    # -0.166f
@@ -16238,7 +15066,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1191
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f947ae1    # -3.68f
@@ -16257,7 +15084,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1192
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee3c28f    # -9.765f
@@ -16276,7 +15102,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1193
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4051f
@@ -16295,7 +15120,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1194
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfd7cee
@@ -16314,7 +15138,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1195
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f426666    # -5.925f
@@ -16333,7 +15156,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1196
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -16352,7 +15174,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1197
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -16367,7 +15188,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1198
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e58937    # 7.173f
@@ -16386,7 +15206,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1199
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4154d917    # 13.303f
@@ -16405,7 +15224,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1200
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c3374c    # 24.402f
@@ -16424,7 +15242,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1201
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418cae14    # 17.585f
@@ -16443,7 +15260,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1202
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e2d917    # 7.089f
@@ -16462,7 +15278,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1203
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3d4ccccd    # 0.05f
@@ -16481,7 +15296,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1204
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ffc8b44    # 1.973f
@@ -16500,7 +15314,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1205
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40c428f6    # 6.13f
@@ -16519,7 +15332,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1206
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x4428951f
@@ -16534,29 +15346,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1207
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1208
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1209
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x36
 
     aput-object v1, v0, v2
 
-    .line 1212
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1213
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x44288958
@@ -16565,7 +15370,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1214
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fda0c4a    # -2.593f
@@ -16584,7 +15388,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1215
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x41e76c8b    # -0.149f
@@ -16603,7 +15406,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1216
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f939581    # -3.694f
@@ -16622,7 +15424,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1217
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee2bc6a    # -9.829f
@@ -16641,7 +15442,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1218
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4051f
@@ -16660,7 +15460,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1219
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfc926f
@@ -16679,7 +15478,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1220
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f422d0e    # -5.932f
@@ -16698,7 +15496,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1221
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -16717,7 +15514,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1222
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -16732,7 +15528,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1223
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e5b22d    # 7.178f
@@ -16751,7 +15546,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1224
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41539db2    # 13.226f
@@ -16770,7 +15564,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1225
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c39db2    # 24.452f
@@ -16789,7 +15582,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1226
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418cac08    # 17.584f
@@ -16808,7 +15600,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1227
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e18937    # 7.048f
@@ -16827,7 +15618,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1228
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3d9fbe77    # 0.078f
@@ -16846,7 +15636,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1229
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3ff18937    # 1.887f
@@ -16865,7 +15654,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1230
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40bfd70a    # 5.995f
@@ -16884,7 +15672,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1231
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x442b4000    # 685.0f
@@ -16903,29 +15690,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1232
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1233
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1234
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x37
 
     aput-object v1, v0, v2
 
-    .line 1237
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1238
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x4429d906
@@ -16934,7 +15714,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1239
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fdb74bc    # -2.571f
@@ -16953,7 +15732,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1240
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fa15810    # -3.479f
@@ -16972,7 +15750,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1241
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee1be77    # -9.891f
@@ -16991,7 +15768,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1242
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de40312
@@ -17010,7 +15786,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1243
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfbb127    # -33.077f
@@ -17029,7 +15804,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1244
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f41fbe7    # -5.938f
@@ -17048,7 +15822,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1245
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -17067,7 +15840,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1246
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -17082,7 +15854,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1247
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e5d2f2    # 7.182f
@@ -17101,7 +15872,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1248
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41525e35    # 13.148f
@@ -17120,7 +15890,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1249
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c4020c    # 24.501f
@@ -17139,7 +15908,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1250
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ca9fc    # 17.583f
@@ -17158,7 +15926,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1251
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d20419    # 6.563f
@@ -17177,7 +15944,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1252
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fed2f1b    # 1.853f
@@ -17196,7 +15962,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1253
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40bb7cee    # 5.859f
@@ -17215,7 +15980,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1254
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->S:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x442b5000    # 685.25f
@@ -17230,29 +15994,22 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1255
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1256
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1257
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x38
 
     aput-object v1, v0, v2
 
-    .line 1260
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1261
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x442b2cdd
@@ -17261,7 +16018,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1262
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fe0f5c3    # -2.485f
@@ -17280,7 +16036,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1263
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3fb27efa    # -3.211f
@@ -17299,7 +16054,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1264
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ee0c49c    # -9.952f
@@ -17318,7 +16072,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1265
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de40312
@@ -17337,7 +16090,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1266
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfadb23    # -33.286f
@@ -17356,7 +16108,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1267
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f41ba5e    # -5.946f
@@ -17375,7 +16126,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1268
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -17394,7 +16144,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1269
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -17409,7 +16158,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1270
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e5fbe7    # 7.187f
@@ -17428,7 +16176,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1271
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41511eb8    # 13.07f
@@ -17447,7 +16194,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1272
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c4645a    # 24.549f
@@ -17466,7 +16212,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1273
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ca5e3    # 17.581f
@@ -17485,7 +16230,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1274
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40c4fdf4    # 6.156f
@@ -17504,7 +16248,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1275
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fe6872b    # 1.801f
@@ -17523,7 +16266,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1276
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40b72b02    # 5.724f
@@ -17542,7 +16284,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1277
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x442dc429
@@ -17561,29 +16302,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1278
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1279
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1280
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x39
 
     aput-object v1, v0, v2
 
-    .line 1283
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1284
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x442c977d
@@ -17592,7 +16326,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1285
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3ff570a4    # -2.165f
@@ -17611,7 +16344,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1286
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f9d4fdf    # -3.542f
@@ -17630,7 +16362,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1287
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3edfdb23    # -10.009f
@@ -17649,7 +16380,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1288
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de4020c
@@ -17668,7 +16398,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1289
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3dfa1687    # -33.478f
@@ -17687,7 +16416,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1290
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f4170a4    # -5.955f
@@ -17706,7 +16434,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1291
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -17725,7 +16452,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1292
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -17740,7 +16466,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1293
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e61cac    # 7.191f
@@ -17759,7 +16484,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1294
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x414fe76d    # 12.994f
@@ -17778,7 +16502,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1295
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c4be77    # 24.593f
@@ -17797,7 +16520,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1296
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418ca3d7    # 17.58f
@@ -17816,7 +16538,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1297
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40d79581    # 6.737f
@@ -17835,7 +16556,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1298
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3fd126e9    # 1.634f
@@ -17854,7 +16574,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1299
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40b2d917    # 5.589f
@@ -17873,7 +16592,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1300
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x442f1f1b
@@ -17892,29 +16610,22 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1301
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1302
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1303
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x3a
 
     aput-object v1, v0, v2
 
-    .line 1306
     new-instance v1, Landroid/graphics/Path;
 
-    .end local v1    # "seqPath":Landroid/graphics/Path;
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
-    .line 1307
-    .restart local v1    # "seqPath":Landroid/graphics/Path;
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->M:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v2, 0x442dc800    # 695.125f
@@ -17923,7 +16634,6 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
 
-    .line 1308
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x402e147b    # -1.64f
@@ -17942,7 +16652,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1309
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x414c49ba    # -0.351f
@@ -17961,7 +16670,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1310
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f9051ec    # -3.745f
@@ -17980,7 +16688,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1311
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3edf1eb8    # -10.055f
@@ -17999,7 +16706,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1312
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3de40106    # -38.999f
@@ -18018,7 +16724,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1313
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3df97cee
@@ -18037,7 +16742,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1314
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3f413f7d    # -5.961f
@@ -18056,7 +16760,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1315
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, -0x3e5a4fdf    # -20.711f
@@ -18075,7 +16778,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1316
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41864fdf    # 16.789f
@@ -18090,7 +16792,6 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
 
-    .line 1317
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40e63d71    # 7.195f
@@ -18109,7 +16810,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1318
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x414ee979    # 12.932f
@@ -18128,7 +16828,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1319
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x41c50625    # 24.628f
@@ -18147,7 +16846,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1320
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x418c9fbe    # 17.578f
@@ -18166,7 +16864,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1321
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40dce560    # 6.903f
@@ -18185,7 +16882,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1322
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f0b4396    # 0.544f
@@ -18204,7 +16900,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1323
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x3f9c6a7f    # 1.222f
@@ -18223,7 +16918,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1324
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x40ae872b    # 5.454f
@@ -18242,7 +16936,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1325
     sget-object v2, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->C:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     const v3, 0x44304000    # 705.0f
@@ -18261,34 +16954,26 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1326
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->z:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
 
-    .line 1327
     invoke-virtual {v1, v9}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    .line 1328
     iget-object v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     const/16 v2, 0x3b
 
     aput-object v1, v0, v2
 
-    .line 1329
     return-void
 .end method
 
 .method private vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;)V
     .locals 9
-    .param p1, "p"    # Landroid/graphics/Path;
-    .param p2, "cmd"    # Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 1342
     move-object v0, p0
 
     move-object v1, p1
@@ -18307,21 +16992,14 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1343
     return-void
 .end method
 
 .method private vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FF)V
     .locals 9
-    .param p1, "p"    # Landroid/graphics/Path;
-    .param p2, "cmd"    # Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
-    .param p3, "x1"    # F
-    .param p4, "y1"    # F
 
-    .prologue
     const/4 v5, 0x0
 
-    .line 1346
     move-object v0, p0
 
     move-object v1, p1
@@ -18340,23 +17018,14 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1347
     return-void
 .end method
 
 .method private vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFF)V
     .locals 9
-    .param p1, "p"    # Landroid/graphics/Path;
-    .param p2, "cmd"    # Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
-    .param p3, "x1"    # F
-    .param p4, "y1"    # F
-    .param p5, "x2"    # F
-    .param p6, "y2"    # F
 
-    .prologue
     const/4 v7, 0x0
 
-    .line 1350
     move-object v0, p0
 
     move-object v1, p1
@@ -18375,27 +17044,14 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
 
-    .line 1351
     return-void
 .end method
 
 .method private vectorParsing(Landroid/graphics/Path;Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;FFFFFF)V
     .locals 11
-    .param p1, "p"    # Landroid/graphics/Path;
-    .param p2, "cmd"    # Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
-    .param p3, "x1"    # F
-    .param p4, "y1"    # F
-    .param p5, "x2"    # F
-    .param p6, "y2"    # F
-    .param p7, "x3"    # F
-    .param p8, "y3"    # F
 
-    .prologue
-    .line 1355
     const/4 v7, 0x0
 
-    .line 1356
-    .local v7, "wasCurve":Z
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$1;->$SwitchMap$com$android$keyguard$sec$SecLockPatternMorphEffectPath$SVGCommand:[I
 
     invoke-virtual {p2}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->ordinal()I
@@ -18406,49 +17062,37 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1467
     :goto_0
     if-nez v7, :cond_0
 
-    .line 1468
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX1:F
 
-    .line 1469
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY1:F
 
-    .line 1471
     :cond_0
     return-void
 
-    .line 1359
     :pswitch_0
     move v8, p3
 
-    .line 1360
-    .local v8, "x":F
     move v9, p4
 
-    .line 1361
-    .local v9, "y":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->m:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_1
 
-    .line 1362
     invoke-virtual {p1, v8, v9}, Landroid/graphics/Path;->rMoveTo(FF)V
 
-    .line 1363
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v0, v8
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1364
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v0, v9
@@ -18457,71 +17101,53 @@
 
     goto :goto_0
 
-    .line 1366
     :cond_1
     invoke-virtual {p1, v8, v9}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 1367
     iput v8, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1368
     iput v9, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto :goto_0
 
-    .line 1374
-    .end local v8    # "x":F
-    .end local v9    # "y":F
     :pswitch_1
     invoke-virtual {p1}, Landroid/graphics/Path;->close()V
 
-    .line 1375
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX1:F
 
-    .line 1376
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY1:F
 
-    .line 1377
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1378
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto :goto_0
 
-    .line 1383
     :pswitch_2
     move v8, p3
 
-    .line 1384
-    .restart local v8    # "x":F
     move v9, p4
 
-    .line 1385
-    .restart local v9    # "y":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->l:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_2
 
-    .line 1386
     invoke-virtual {p1, v8, v9}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 1387
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v0, v8
 
     iput v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1388
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v0, v9
@@ -18530,36 +17156,26 @@
 
     goto :goto_0
 
-    .line 1390
     :cond_2
     invoke-virtual {p1, v8, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1391
     iput v8, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1392
     iput v9, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto :goto_0
 
-    .line 1398
-    .end local v8    # "x":F
-    .end local v9    # "y":F
     :pswitch_3
     move v8, p3
 
-    .line 1399
-    .restart local v8    # "x":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->h:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_3
 
-    .line 1400
     const/4 v0, 0x0
 
     invoke-virtual {p1, v8, v0}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 1401
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v0, v8
@@ -18568,34 +17184,26 @@
 
     goto :goto_0
 
-    .line 1403
     :cond_3
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     invoke-virtual {p1, v8, v0}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1404
     iput v8, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     goto :goto_0
 
-    .line 1410
-    .end local v8    # "x":F
     :pswitch_4
     move v9, p4
 
-    .line 1411
-    .restart local v9    # "y":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->v:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_4
 
-    .line 1412
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v9}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 1413
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v0, v9
@@ -18604,77 +17212,54 @@
 
     goto :goto_0
 
-    .line 1415
     :cond_4
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     invoke-virtual {p1, v0, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1416
     iput v9, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto :goto_0
 
-    .line 1422
-    .end local v9    # "y":F
     :pswitch_5
     const/4 v7, 0x1
 
-    .line 1423
     move v1, p3
 
-    .line 1424
-    .local v1, "tx1":F
     move v2, p4
 
-    .line 1425
-    .local v2, "ty1":F
     move/from16 v3, p5
 
-    .line 1426
-    .local v3, "tx2":F
     move/from16 v4, p6
 
-    .line 1427
-    .local v4, "ty2":F
     move/from16 v5, p7
 
-    .line 1428
-    .local v5, "tx":F
     move/from16 v6, p8
 
-    .line 1429
-    .local v6, "ty":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->c:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_5
 
-    .line 1430
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v1, v0
 
-    .line 1431
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v3, v0
 
-    .line 1432
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v5, v0
 
-    .line 1433
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v2, v0
 
-    .line 1434
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v4, v0
 
-    .line 1435
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v6, v0
@@ -18682,75 +17267,49 @@
     :cond_5
     move-object v0, p1
 
-    .line 1437
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 1438
     iput v3, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX1:F
 
-    .line 1439
     iput v4, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY1:F
 
-    .line 1440
     iput v5, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1441
     iput v6, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto/16 :goto_0
 
-    .line 1446
-    .end local v1    # "tx1":F
-    .end local v2    # "ty1":F
-    .end local v3    # "tx2":F
-    .end local v4    # "ty2":F
-    .end local v5    # "tx":F
-    .end local v6    # "ty":F
     :pswitch_6
     const/4 v7, 0x1
 
-    .line 1447
     move v3, p3
 
-    .line 1448
-    .restart local v3    # "tx2":F
     move v4, p4
 
-    .line 1449
-    .restart local v4    # "ty2":F
     move/from16 v5, p5
 
-    .line 1450
-    .restart local v5    # "tx":F
     move/from16 v6, p6
 
-    .line 1451
-    .restart local v6    # "ty":F
     sget-object v0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->s:Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     if-ne p2, v0, :cond_6
 
-    .line 1452
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v3, v0
 
-    .line 1453
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
     add-float/2addr v5, v0
 
-    .line 1454
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v4, v0
 
-    .line 1455
     iget v0, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     add-float/2addr v6, v0
 
-    .line 1457
     :cond_6
     const/high16 v0, 0x40000000    # 2.0f
 
@@ -18762,8 +17321,6 @@
 
     sub-float v1, v0, v10
 
-    .line 1458
-    .restart local v1    # "tx1":F
     const/high16 v0, 0x40000000    # 2.0f
 
     iget v10, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
@@ -18774,27 +17331,20 @@
 
     sub-float v2, v0, v10
 
-    .restart local v2    # "ty1":F
     move-object v0, p1
 
-    .line 1459
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 1460
     iput v3, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX1:F
 
-    .line 1461
     iput v4, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY1:F
 
-    .line 1462
     iput v5, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastX:F
 
-    .line 1463
     iput v6, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->lastY:F
 
     goto/16 :goto_0
 
-    .line 1356
     nop
 
     :pswitch_data_0
@@ -18820,26 +17370,17 @@
 # virtual methods
 .method public getPath(IFF)Landroid/graphics/Path;
     .locals 2
-    .param p1, "index"    # I
-    .param p2, "centerX"    # F
-    .param p3, "centerY"    # F
 
-    .prologue
-    .line 1333
     iget-object v1, p0, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath;->path:[Landroid/graphics/Path;
 
     aget-object v0, v1, p1
 
-    .line 1334
-    .local v0, "tPath":Landroid/graphics/Path;
     return-object v0
 .end method
 
 .method public getPathTotal()I
     .locals 1
 
-    .prologue
-    .line 1338
     const/16 v0, 0x3c
 
     return v0

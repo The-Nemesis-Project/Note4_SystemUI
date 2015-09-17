@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
 
-    .prologue
-    .line 963
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$4;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,12 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 966
     new-instance v0, Lcom/android/systemui/power/PowerNotificationWarnings$4$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/power/PowerNotificationWarnings$4$1;-><init>(Lcom/android/systemui/power/PowerNotificationWarnings$4;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 972
     return-void
 .end method

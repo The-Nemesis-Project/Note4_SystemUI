@@ -55,8 +55,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 46
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -71,30 +69,25 @@
 
     :array_0
     .array-data 4
-        0x7f020159
-        0x7f020161
-        0x7f020162
-        0x7f020163
-        0x7f020164
+        0x7f02015e
+        0x7f020166
+        0x7f020167
+        0x7f020168
+        0x7f020169
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 57
     new-instance v0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$Receiver;
 
     const/4 v1, 0x0
@@ -103,17 +96,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mReceiver:Lcom/android/systemui/statusbar/policy/WifiAccessPointController$Receiver;
 
-    .line 159
     new-instance v0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$2;-><init>(Lcom/android/systemui/statusbar/policy/WifiAccessPointController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mByStrength:Ljava/util/Comparator;
 
-    .line 62
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mContext:Landroid/content/Context;
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mContext:Landroid/content/Context;
 
     const-string v1, "wifi"
@@ -126,16 +116,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 64
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/systemui/statusbar/policy/WifiAccessPointController;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/WifiAccessPointController;
 
-    .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -143,10 +129,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/statusbar/policy/WifiAccessPointController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/WifiAccessPointController;
 
-    .prologue
-    .line 42
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->updateAccessPoints()V
 
     return-void
@@ -154,11 +137,7 @@
 
 .method static synthetic access$302(Lcom/android/systemui/statusbar/policy/WifiAccessPointController;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/WifiAccessPointController;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 42
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mScanning:Z
 
     return p1
@@ -166,17 +145,13 @@
 
 .method private fireCallback([Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)V
     .locals 3
-    .param p1, "aps"    # [Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .prologue
-    .line 103
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -190,14 +165,10 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;
 
-    .line 104
-    .local v0, "callback":Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;->onAccessPointsChanged([Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)V
 
     goto :goto_0
 
-    .line 106
-    .end local v0    # "callback":Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;
     :cond_0
     return-void
 .end method
@@ -215,16 +186,12 @@
         }
     .end annotation
 
-    .prologue
-    .line 119
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v4}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
     move-result-object v1
 
-    .line 120
-    .local v1, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     if-eqz v1, :cond_0
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -236,23 +203,18 @@
     :cond_0
     sget-object v3, Landroid/util/ArrayMap;->EMPTY:Landroid/util/ArrayMap;
 
-    .line 125
     :cond_1
     return-object v3
 
-    .line 121
     :cond_2
     new-instance v3, Landroid/util/ArrayMap;
 
     invoke-direct {v3}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 122
-    .local v3, "rt":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -266,8 +228,6 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 123
-    .local v0, "config":Landroid/net/wifi/WifiConfiguration;
     iget-object v4, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->trimDoubleQuotes(Ljava/lang/String;)Ljava/lang/String;
@@ -282,16 +242,12 @@
 .method private getConnectedNetworkId()I
     .locals 2
 
-    .prologue
-    .line 114
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v0
 
-    .line 115
-    .local v0, "wifiInfo":Landroid/net/wifi/WifiInfo;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getNetworkId()I
@@ -309,12 +265,9 @@
 
 .method private static trimDoubleQuotes(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0, "v"    # Ljava/lang/String;
 
-    .prologue
     const/16 v2, 0x22
 
-    .line 109
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -357,7 +310,6 @@
 
     move-result-object p0
 
-    .end local p0    # "v":Ljava/lang/String;
     :cond_0
     return-object p0
 .end method
@@ -365,30 +317,22 @@
 .method private updateAccessPoints()V
     .locals 14
 
-    .prologue
     const/4 v12, -0x1
 
-    .line 129
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->getConnectedNetworkId()I
 
     move-result v4
 
-    .line 131
-    .local v4, "connectedNetworkId":I
     iget-object v11, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v11}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
 
     move-result-object v8
 
-    .line 132
-    .local v8, "scanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->getConfiguredNetworksBySsid()Landroid/util/ArrayMap;
 
     move-result-object v3
 
-    .line 134
-    .local v3, "configured":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
@@ -397,19 +341,14 @@
 
     invoke-direct {v1, v11}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 135
-    .local v1, "aps":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;>;"
     new-instance v10, Landroid/util/ArraySet;
 
     invoke-direct {v10}, Landroid/util/ArraySet;-><init>()V
 
-    .line 136
-    .local v10, "ssids":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    .local v5, "i$":Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -424,15 +363,10 @@
 
     check-cast v7, Landroid/net/wifi/ScanResult;
 
-    .line 137
-    .local v7, "scanResult":Landroid/net/wifi/ScanResult;
     if-eqz v7, :cond_0
 
-    .line 140
     iget-object v9, v7, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 141
-    .local v9, "ssid":Ljava/lang/String;
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v11
@@ -445,25 +379,20 @@
 
     if-nez v11, :cond_0
 
-    .line 142
     invoke-virtual {v3, v9}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v11
 
     if-eqz v11, :cond_0
 
-    .line 143
     invoke-virtual {v10, v9}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 144
     invoke-virtual {v3, v9}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/net/wifi/WifiConfiguration;
 
-    .line 145
-    .local v2, "config":Landroid/net/wifi/WifiConfiguration;
     iget v11, v7, Landroid/net/wifi/ScanResult;->level:I
 
     sget-object v13, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->ICONS:[I
@@ -474,14 +403,10 @@
 
     move-result v6
 
-    .line 146
-    .local v6, "level":I
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
     invoke-direct {v0}, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;-><init>()V
 
-    .line 147
-    .local v0, "ap":Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
     if-eqz v2, :cond_1
 
     iget v11, v2, Landroid/net/wifi/WifiConfiguration;->networkId:I
@@ -489,17 +414,14 @@
     :goto_1
     iput v11, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->networkId:I
 
-    .line 148
     iput-object v9, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->ssid:Ljava/lang/String;
 
-    .line 149
     sget-object v11, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->ICONS:[I
 
     aget v11, v11, v6
 
     iput v11, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->iconId:I
 
-    .line 150
     iget v11, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->networkId:I
 
     if-eq v11, v12, :cond_2
@@ -513,10 +435,8 @@
     :goto_2
     iput-boolean v11, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->isConnected:Z
 
-    .line 152
     iput v6, v0, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->level:I
 
-    .line 153
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -524,27 +444,18 @@
     :cond_1
     move v11, v12
 
-    .line 147
     goto :goto_1
 
-    .line 150
     :cond_2
     const/4 v11, 0x0
 
     goto :goto_2
 
-    .line 155
-    .end local v0    # "ap":Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
-    .end local v2    # "config":Landroid/net/wifi/WifiConfiguration;
-    .end local v6    # "level":I
-    .end local v7    # "scanResult":Landroid/net/wifi/ScanResult;
-    .end local v9    # "ssid":Ljava/lang/String;
     :cond_3
     iget-object v11, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mByStrength:Ljava/util/Comparator;
 
     invoke-static {v1, v11}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 156
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v11
@@ -559,7 +470,6 @@
 
     invoke-direct {p0, v11}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->fireCallback([Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)V
 
-    .line 157
     return-void
 .end method
 
@@ -567,10 +477,7 @@
 # virtual methods
 .method public addCallback(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;)V
     .locals 2
-    .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;
 
-    .prologue
-    .line 67
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
@@ -581,18 +488,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 71
     :cond_0
     :goto_0
     return-void
 
-    .line 69
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 70
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mReceiver:Lcom/android/systemui/statusbar/policy/WifiAccessPointController$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
@@ -618,22 +522,17 @@
 
 .method public connect(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)V
     .locals 3
-    .param p1, "ap"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .prologue
-    .line 87
     if-eqz p1, :cond_0
 
     iget v0, p1, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->networkId:I
 
     if-gez v0, :cond_1
 
-    .line 100
     :cond_0
     :goto_0
     return-void
 
-    .line 89
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -650,23 +549,17 @@
 
 .method public removeCallback(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;)V
     .locals 2
-    .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointCallback;
 
-    .prologue
-    .line 74
     if-nez p1, :cond_0
 
-    .line 78
     :goto_0
     return-void
 
-    .line 76
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 77
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mReceiver:Lcom/android/systemui/statusbar/policy/WifiAccessPointController$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mCallbacks:Ljava/util/ArrayList;
@@ -693,17 +586,13 @@
 .method public scan()V
     .locals 1
 
-    .prologue
-    .line 81
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mScanning:Z
 
     if-eqz v0, :cond_0
 
-    .line 84
     :goto_0
     return-void
 
-    .line 83
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController;->mWifiManager:Landroid/net/wifi/WifiManager;
 

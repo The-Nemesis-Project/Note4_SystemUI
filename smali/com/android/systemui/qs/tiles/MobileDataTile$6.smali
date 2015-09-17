@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/MobileDataTile;)V
     .locals 0
 
-    .prologue
-    .line 368
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$6;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 3
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 370
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$6;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$6;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
@@ -69,12 +64,10 @@
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v2, v0}, Lcom/android/systemui/qs/tiles/MobileDataTile;->access$2400(Lcom/android/systemui/qs/tiles/MobileDataTile;Ljava/lang/Object;)V
 
-    .line 371
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 370
     goto :goto_0
 .end method

@@ -98,8 +98,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .prologue
-    .line 67
     const-string v0, "QSTileHost"
 
     const/4 v1, 0x3
@@ -115,104 +113,69 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/policy/BluetoothController;Lcom/android/systemui/statusbar/policy/LocationController;Lcom/android/systemui/statusbar/policy/RotationLockController;Lcom/android/systemui/statusbar/policy/NetworkController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/statusbar/policy/HotspotController;Lcom/android/systemui/statusbar/policy/CastController;Lcom/android/systemui/statusbar/policy/FlashlightController;Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/KeyguardMonitor;Lcom/android/systemui/statusbar/policy/SecurityController;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "statusBar"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-    .param p3, "bluetooth"    # Lcom/android/systemui/statusbar/policy/BluetoothController;
-    .param p4, "location"    # Lcom/android/systemui/statusbar/policy/LocationController;
-    .param p5, "rotation"    # Lcom/android/systemui/statusbar/policy/RotationLockController;
-    .param p6, "network"    # Lcom/android/systemui/statusbar/policy/NetworkController;
-    .param p7, "zen"    # Lcom/android/systemui/statusbar/policy/ZenModeController;
-    .param p8, "hotspot"    # Lcom/android/systemui/statusbar/policy/HotspotController;
-    .param p9, "cast"    # Lcom/android/systemui/statusbar/policy/CastController;
-    .param p10, "flashlight"    # Lcom/android/systemui/statusbar/policy/FlashlightController;
-    .param p11, "userSwitcher"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
-    .param p12, "keyguard"    # Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
-    .param p13, "security"    # Lcom/android/systemui/statusbar/policy/SecurityController;
 
-    .prologue
-    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
 
-    .line 75
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
 
-    .line 76
     new-instance v2, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;-><init>(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mObserver:Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
 
-    .line 91
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mDeviceProvisioned:Z
 
-    .line 93
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mIsEditMode:Z
 
-    .line 99
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
 
-    .line 108
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
 
-    .line 109
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 110
     iput-object p3, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mBluetooth:Lcom/android/systemui/statusbar/policy/BluetoothController;
 
-    .line 111
     iput-object p4, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mLocation:Lcom/android/systemui/statusbar/policy/LocationController;
 
-    .line 112
     iput-object p5, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mRotation:Lcom/android/systemui/statusbar/policy/RotationLockController;
 
-    .line 113
     iput-object p6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mNetwork:Lcom/android/systemui/statusbar/policy/NetworkController;
 
-    .line 114
     iput-object p7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    .line 115
     iput-object p8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mHotspot:Lcom/android/systemui/statusbar/policy/HotspotController;
 
-    .line 116
     iput-object p9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCast:Lcom/android/systemui/statusbar/policy/CastController;
 
-    .line 117
     iput-object p10, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
-    .line 118
     iput-object p11, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 119
     move-object/from16 v0, p12
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    .line 120
     move-object/from16 v0, p13
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mSecurity:Lcom/android/systemui/statusbar/policy/SecurityController;
 
-    .line 122
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -221,7 +184,6 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 124
     new-instance v1, Landroid/os/HandlerThread;
 
     const-class v2, Lcom/android/systemui/statusbar/phone/QSTileHost;
@@ -232,18 +194,14 @@
 
     invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 125
-    .local v1, "ht":Landroid/os/HandlerThread;
     invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    .line 126
     invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mLooper:Landroid/os/Looper;
 
-    .line 128
     new-instance v2, Lcom/android/systemui/statusbar/phone/QSTileHost$1;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
@@ -252,29 +210,22 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
 
-    .line 139
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
 
-    .line 141
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
 
     invoke-virtual {v2}, Lcom/android/systemui/settings/CurrentUserTracker;->startTracking()V
 
-    .line 142
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mObserver:Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->register()V
 
-    .line 143
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
 
     return-void
@@ -282,10 +233,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/statusbar/phone/QSTileHost;)Ljava/util/LinkedHashMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
 
     return-object v0
@@ -293,10 +241,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/statusbar/phone/QSTileHost;)Lcom/android/systemui/statusbar/policy/SecurityController;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mSecurity:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     return-object v0
@@ -304,10 +249,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/statusbar/phone/QSTileHost;)Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mObserver:Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
 
     return-object v0
@@ -315,10 +257,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/statusbar/phone/QSTileHost;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -326,10 +265,7 @@
 
 .method static synthetic access$500(Lcom/android/systemui/statusbar/phone/QSTileHost;)Lcom/android/systemui/settings/CurrentUserTracker;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
 
     return-object v0
@@ -337,10 +273,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/statusbar/phone/QSTileHost;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
@@ -348,7 +281,6 @@
 
 .method private createTile(Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
     .locals 5
-    .param p1, "tileSpec"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -359,8 +291,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 316
     :try_start_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -390,8 +320,6 @@
 
     move-result-object v1
 
-    .line 317
-    .local v1, "tempClass":Ljava/lang/Class;
     const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/Class;
@@ -430,17 +358,12 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_6
 
-    .line 334
-    .end local v1    # "tempClass":Ljava/lang/Class;
     :goto_0
     return-object v2
 
-    .line 318
     :catch_0
     move-exception v0
 
-    .line 319
-    .local v0, "e":Ljava/lang/ClassNotFoundException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -463,8 +386,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 333
-    .end local v0    # "e":Ljava/lang/ClassNotFoundException;
     :goto_1
     iget v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
 
@@ -472,17 +393,13 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
 
-    .line 334
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 320
     :catch_1
     move-exception v0
 
-    .line 321
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -507,13 +424,9 @@
 
     goto :goto_1
 
-    .line 322
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :catch_2
     move-exception v0
 
-    .line 323
-    .local v0, "e":Ljava/lang/SecurityException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -538,13 +451,9 @@
 
     goto :goto_1
 
-    .line 324
-    .end local v0    # "e":Ljava/lang/SecurityException;
     :catch_3
     move-exception v0
 
-    .line 325
-    .local v0, "e":Ljava/lang/InstantiationException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -569,13 +478,9 @@
 
     goto :goto_1
 
-    .line 326
-    .end local v0    # "e":Ljava/lang/InstantiationException;
     :catch_4
     move-exception v0
 
-    .line 327
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -600,13 +505,9 @@
 
     goto :goto_1
 
-    .line 328
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_5
     move-exception v0
 
-    .line 329
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -631,13 +532,9 @@
 
     goto/16 :goto_1
 
-    .line 330
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :catch_6
     move-exception v0
 
-    .line 331
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     const-string v2, "STATUSBAR-QSTileHost"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -675,28 +572,22 @@
         }
     .end annotation
 
-    .prologue
-    .line 338
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
 
     invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 339
-    .local v5, "res":Landroid/content/res/Resources;
     sget-boolean v9, Lcom/android/systemui/statusbar/Feature;->upgradeLollipop:Z
 
     if-eqz v9, :cond_2
 
-    const v9, 0x7f0d01be
+    const v9, 0x7f0d01d9
 
     invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 340
-    .local v2, "defaultTileList":Ljava/lang/String;
     :goto_0
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -712,25 +603,20 @@
 
     move-result-object v7
 
-    .line 342
-    .local v7, "tileList":Ljava/lang/String;
     if-nez v7, :cond_3
 
-    .line 343
-    const v9, 0x7f0d01bf
+    const v9, 0x7f0d01da
 
     invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 344
     sget-boolean v9, Lcom/android/systemui/statusbar/Feature;->upgradeLollipop:Z
 
     if-nez v9, :cond_0
 
     move-object v7, v2
 
-    .line 345
     :cond_0
     const-string v9, "STATUSBAR-QSTileHost"
 
@@ -754,67 +640,46 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 349
     :goto_1
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 350
-    .local v8, "tiles":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
-    .line 351
-    .local v0, "addedDefault":Z
     const-string v9, ";"
 
     invoke-virtual {v7, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .local v1, "arr$":[Ljava/lang/String;
     array-length v4, v1
 
-    .local v4, "len$":I
     const/4 v3, 0x0
 
-    .local v3, "i$":I
     :goto_2
     if-ge v3, v4, :cond_6
 
     aget-object v6, v1, v3
 
-    .line 352
-    .local v6, "tile":Ljava/lang/String;
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 353
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
     move-result v9
 
     if-eqz v9, :cond_4
 
-    .line 351
     :cond_1
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 339
-    .end local v0    # "addedDefault":Z
-    .end local v1    # "arr$":[Ljava/lang/String;
-    .end local v2    # "defaultTileList":Ljava/lang/String;
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v6    # "tile":Ljava/lang/String;
-    .end local v7    # "tileList":Ljava/lang/String;
-    .end local v8    # "tiles":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_2
-    const v9, 0x7f0d01c2
+    const v9, 0x7f0d01dd
 
     invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -822,9 +687,6 @@
 
     goto :goto_0
 
-    .line 347
-    .restart local v2    # "defaultTileList":Ljava/lang/String;
-    .restart local v7    # "tileList":Ljava/lang/String;
     :cond_3
     const-string v9, "STATUSBAR-QSTileHost"
 
@@ -850,13 +712,6 @@
 
     goto :goto_1
 
-    .line 354
-    .restart local v0    # "addedDefault":Z
-    .restart local v1    # "arr$":[Ljava/lang/String;
-    .restart local v3    # "i$":I
-    .restart local v4    # "len$":I
-    .restart local v6    # "tile":Ljava/lang/String;
-    .restart local v8    # "tiles":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_4
     const-string v9, "default"
 
@@ -866,10 +721,8 @@
 
     if-eqz v9, :cond_5
 
-    .line 355
     if-nez v0, :cond_1
 
-    .line 356
     const-string v9, ";"
 
     invoke-virtual {v2, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -882,211 +735,110 @@
 
     invoke-virtual {v8, v9}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 357
     const/4 v0, 0x1
 
     goto :goto_3
 
-    .line 360
     :cond_5
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 363
-    .end local v6    # "tile":Ljava/lang/String;
     :cond_6
     return-object v8
 .end method
 
 .method private recreateTiles()V
-    .locals 11
+    .locals 12
 
-    .prologue
-    const/16 v10, 0xf
+    const/16 v11, 0xf
 
-    .line 270
-    const-string v7, "STATUSBAR-QSTileHost"
-
-    const-string v8, "Recreating tiles"
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 271
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->loadTileSpecs()Ljava/util/List;
-
-    move-result-object v6
-
-    .line 272
-    .local v6, "tileSpecs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/util/Map$Entry;
-
-    .line 273
-    .local v4, "tile":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/qs/QSTile<*>;>;"
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v7
-
-    invoke-interface {v6, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_0
-
-    .line 274
     const-string v8, "STATUSBAR-QSTileHost"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const-string v9, "Recreating tiles"
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v9, "Destroying tile: "
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->loadTileSpecs()Ljava/util/List;
 
     move-result-object v7
 
-    check-cast v7, Ljava/lang/String;
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v8, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 275
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcom/android/systemui/qs/QSTile;
-
-    invoke-virtual {v7}, Lcom/android/systemui/qs/QSTile;->destroy()V
-
-    goto :goto_0
-
-    .line 278
-    .end local v4    # "tile":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/qs/QSTile<*>;>;"
-    :cond_1
-    new-instance v2, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
-
-    .line 279
-    .local v2, "newTiles":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Ljava/lang/String;Lcom/android/systemui/qs/QSTile<*>;>;"
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7}, Ljava/util/LinkedHashMap;->clear()V
-
-    .line 281
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    .line 282
-    .local v5, "tileSpec":Ljava/lang/String;
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7, v5}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3
-
-    .line 283
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7, v5}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v5, v7}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 284
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
-
-    if-ge v7, v10, :cond_2
-
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
-
-    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v8, v5}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lcom/sec/android/app/CscFeature;->getInstance()Lcom/sec/android/app/CscFeature;
 
     move-result-object v8
 
-    invoke-virtual {v7, v5, v8}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v9, "CscFeature_Common_Sprint_Vowifi"
 
-    .line 299
-    :cond_2
-    :goto_2
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+    invoke-virtual {v8, v9}, Lcom/sec/android/app/CscFeature;->getEnableStatus(Ljava/lang/String;)Z
 
-    add-int/lit8 v7, v7, 0x1
+    move-result v8
 
-    iput v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+    if-nez v8, :cond_0
 
-    goto :goto_1
+    const-string v0, "VoWiFi"
 
-    .line 286
-    :cond_3
-    const-string v7, "STATUSBAR-QSTileHost"
+    invoke-interface {v7, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_0
+
+    invoke-interface {v7, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    :cond_0
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_1
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/util/Map$Entry;
+
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v8
+
+    invoke-interface {v7, v8}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_1
+
+    const-string v9, "STATUSBAR-QSTileHost"
 
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Creating tile: "
+    const-string v10, "Destroying tile: "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v8
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v8, Ljava/lang/String;
+
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
@@ -1094,102 +846,183 @@
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
-    :try_start_0
-    invoke-direct {p0, v5}, Lcom/android/systemui/statusbar/phone/QSTileHost;->createTile(Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/android/systemui/qs/QSTile;
+
+    invoke-virtual {v8}, Lcom/android/systemui/qs/QSTile;->destroy()V
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v3, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v3}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8}, Ljava/util/LinkedHashMap;->clear()V
+
+    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 289
-    .local v1, "newQsTile":Lcom/android/systemui/qs/QSTile;
-    if-eqz v1, :cond_2
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 290
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    move-result v8
 
-    invoke-virtual {v1, v7}, Lcom/android/systemui/qs/QSTile;->setStatusbar(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
+    if-eqz v8, :cond_5
 
-    .line 291
-    invoke-virtual {v2, v5, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 292
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+    move-result-object v6
 
-    if-ge v7, v10, :cond_2
+    check-cast v6, Ljava/lang/String;
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
 
-    invoke-virtual {v7, v5, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v6}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_4
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8, v6}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v6, v8}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+
+    if-ge v8, v11, :cond_3
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
+
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v9, v6}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v6, v9}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    :goto_2
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+
+    add-int/lit8 v8, v8, 0x1
+
+    iput v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+
+    goto :goto_1
+
+    :cond_4
+    const-string v8, "STATUSBAR-QSTileHost"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Creating tile: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_0
+    invoke-direct {p0, v6}, Lcom/android/systemui/statusbar/phone/QSTileHost;->createTile(Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v2, v8}, Lcom/android/systemui/qs/QSTile;->setStatusbar(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
+
+    invoke-virtual {v3, v6, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+
+    if-ge v8, v11, :cond_3
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTilesZero:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8, v6, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_2
 
-    .line 294
-    .end local v1    # "newQsTile":Lcom/android/systemui/qs/QSTile;
     :catch_0
-    move-exception v3
+    move-exception v4
 
-    .line 295
-    .local v3, "t":Ljava/lang/Throwable;
-    const-string v7, "STATUSBAR-QSTileHost"
+    const-string v8, "STATUSBAR-QSTileHost"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Error creating tile for spec: "
+    const-string v10, "Error creating tile for spec: "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v7, v8, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v8, v9, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 296
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    iput v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
+    iput v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCounter:I
 
     goto :goto_2
 
-    .line 307
-    .end local v3    # "t":Ljava/lang/Throwable;
-    .end local v5    # "tileSpec":Ljava/lang/String;
-    :cond_4
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7}, Ljava/util/LinkedHashMap;->clear()V
-
-    .line 308
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7, v2}, Ljava/util/LinkedHashMap;->putAll(Ljava/util/Map;)V
-
-    .line 309
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
-
-    if-eqz v7, :cond_5
-
-    .line 310
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
-
-    invoke-interface {v7}, Lcom/android/systemui/qs/QSTile$Host$Callback;->onTilesChanged()V
-
-    .line 312
     :cond_5
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8}, Ljava/util/LinkedHashMap;->clear()V
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v8, v3}, Ljava/util/LinkedHashMap;->putAll(Ljava/util/Map;)V
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
+
+    if-eqz v8, :cond_6
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
+
+    invoke-interface {v8}, Lcom/android/systemui/qs/QSTile$Host$Callback;->onTilesChanged()V
+
+    :cond_6
     return-void
 .end method
 
@@ -1198,21 +1031,16 @@
 .method public collapsePanels()V
     .locals 1
 
-    .prologue
-    .line 181
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->postAnimateCollapsePanels()V
 
-    .line 182
     return-void
 .end method
 
 .method public dismissKeyguard()V
     .locals 2
 
-    .prologue
-    .line 186
     const-string v1, "window"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1223,18 +1051,14 @@
 
     move-result-object v0
 
-    .line 188
-    .local v0, "windowManager":Landroid/view/IWindowManager;
     :try_start_0
     invoke-interface {v0}, Landroid/view/IWindowManager;->dismissKeyguard()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 190
     :goto_0
     return-void
 
-    .line 189
     :catch_0
     move-exception v1
 
@@ -1244,8 +1068,6 @@
 .method public getBluetoothController()Lcom/android/systemui/statusbar/policy/BluetoothController;
     .locals 1
 
-    .prologue
-    .line 214
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mBluetooth:Lcom/android/systemui/statusbar/policy/BluetoothController;
 
     return-object v0
@@ -1254,8 +1076,6 @@
 .method public getCastController()Lcom/android/systemui/statusbar/policy/CastController;
     .locals 1
 
-    .prologue
-    .line 244
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCast:Lcom/android/systemui/statusbar/policy/CastController;
 
     return-object v0
@@ -1264,8 +1084,6 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .prologue
-    .line 209
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -1274,8 +1092,6 @@
 .method public getFlashlightController()Lcom/android/systemui/statusbar/policy/FlashlightController;
     .locals 1
 
-    .prologue
-    .line 249
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     return-object v0
@@ -1284,8 +1100,6 @@
 .method public getHotspotController()Lcom/android/systemui/statusbar/policy/HotspotController;
     .locals 1
 
-    .prologue
-    .line 239
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mHotspot:Lcom/android/systemui/statusbar/policy/HotspotController;
 
     return-object v0
@@ -1294,8 +1108,6 @@
 .method public getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
     .locals 1
 
-    .prologue
-    .line 254
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     return-object v0
@@ -1304,8 +1116,6 @@
 .method public getLocationController()Lcom/android/systemui/statusbar/policy/LocationController;
     .locals 1
 
-    .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mLocation:Lcom/android/systemui/statusbar/policy/LocationController;
 
     return-object v0
@@ -1314,8 +1124,6 @@
 .method public getLooper()Landroid/os/Looper;
     .locals 1
 
-    .prologue
-    .line 204
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mLooper:Landroid/os/Looper;
 
     return-object v0
@@ -1324,8 +1132,6 @@
 .method public getNetworkController()Lcom/android/systemui/statusbar/policy/NetworkController;
     .locals 1
 
-    .prologue
-    .line 229
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mNetwork:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     return-object v0
@@ -1334,8 +1140,6 @@
 .method public getRotationLockController()Lcom/android/systemui/statusbar/policy/RotationLockController;
     .locals 1
 
-    .prologue
-    .line 224
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mRotation:Lcom/android/systemui/statusbar/policy/RotationLockController;
 
     return-object v0
@@ -1344,8 +1148,6 @@
 .method public getSecurityController()Lcom/android/systemui/statusbar/policy/SecurityController;
     .locals 1
 
-    .prologue
-    .line 266
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mSecurity:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     return-object v0
@@ -1363,8 +1165,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 152
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mIsEditMode:Z
 
     if-nez v0, :cond_0
@@ -1379,7 +1179,6 @@
 
     move-result-object v0
 
-    .line 153
     :goto_0
     return-object v0
 
@@ -1396,8 +1195,6 @@
 .method public getUserSwitcherController()Lcom/android/systemui/statusbar/policy/UserSwitcherController;
     .locals 1
 
-    .prologue
-    .line 258
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     return-object v0
@@ -1406,8 +1203,6 @@
 .method public getZenModeController()Lcom/android/systemui/statusbar/policy/ZenModeController;
     .locals 1
 
-    .prologue
-    .line 234
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     return-object v0
@@ -1416,10 +1211,8 @@
 .method public isDeviceProvisioned()Z
     .locals 3
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 194
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "device_provisioned"
@@ -1432,17 +1225,13 @@
 
     const/4 v0, 0x1
 
-    .line 196
-    .local v0, "provisioned":Z
     :cond_0
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mDeviceProvisioned:Z
 
     if-eq v0, v1, :cond_1
 
-    .line 197
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mDeviceProvisioned:Z
 
-    .line 199
     :cond_1
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mDeviceProvisioned:Z
 
@@ -1452,8 +1241,6 @@
 .method public onClickQuickConnectButton()V
     .locals 3
 
-    .prologue
-    .line 168
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -1461,16 +1248,12 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 172
     :goto_0
     return-void
 
-    .line 169
     :catch_0
     move-exception v0
 
-    .line 170
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string v1, "QSTileHost"
 
     const-string v2, "ActivityNotFoundException"
@@ -1482,34 +1265,23 @@
 
 .method public setCallback(Lcom/android/systemui/qs/QSTile$Host$Callback;)V
     .locals 0
-    .param p1, "callback"    # Lcom/android/systemui/qs/QSTile$Host$Callback;
 
-    .prologue
-    .line 147
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
 
-    .line 148
     return-void
 .end method
 
 .method public setEditMode(Z)V
     .locals 0
-    .param p1, "isEditMode"    # Z
 
-    .prologue
-    .line 262
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mIsEditMode:Z
 
-    .line 263
     return-void
 .end method
 
 .method public startSettingsActivity(Landroid/content/Intent;)V
     .locals 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 159
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -1519,16 +1291,12 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 163
     :goto_0
     return-void
 
-    .line 160
     :catch_0
     move-exception v0
 
-    .line 161
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string v1, "QSTileHost"
 
     const-string v2, "ActivityNotFoundException"
@@ -1540,10 +1308,6 @@
 
 .method public warn(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
-    .param p1, "message"    # Ljava/lang/String;
-    .param p2, "t"    # Ljava/lang/Throwable;
 
-    .prologue
-    .line 177
     return-void
 .end method

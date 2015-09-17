@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/TaskView;->onClick(Landroid/view/View;)V
+    value = Lcom/android/systemui/recents/views/TaskView;->handleOnClickMultiWindowBtn(ILandroid/content/Intent;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/recents/views/TaskView;
 
-.field final synthetic val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-.field final synthetic val$v:Landroid/view/View;
+.field final synthetic val$packageName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;Lcom/android/systemui/recents/views/TaskView;)V
+.method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Ljava/lang/String;)V
     .locals 0
 
-    .prologue
-    .line 1111
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$v:Landroid/view/View;
-
-    iput-object p3, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+    iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$packageName:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,170 +39,61 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 5
 
-    .prologue
-    const/4 v6, 0x0
+    new-instance v1, Landroid/content/Intent;
 
-    .line 1116
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$v:Landroid/view/View;
+    const-string v3, "com.samsung.android.systemui.recents.SHOW_SPLIT"
 
-    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+    const-string v3, "com.android.systemui"
 
-    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
+    const-string v4, "com.android.systemui.multiwindow.MultiWindowActivity"
 
-    if-ne v3, v4, :cond_1
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1117
+    const v3, 0x10818000
+
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    new-instance v2, Lcom/samsung/android/multiwindow/MultiWindowStyle;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v3}, Lcom/samsung/android/multiwindow/MultiWindowStyle;-><init>(I)V
+
+    const/16 v3, 0xc
+
+    invoke-virtual {v2, v3}, Lcom/samsung/android/multiwindow/MultiWindowStyle;->setZone(I)V
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setMultiWindowStyle(Lcom/samsung/android/multiwindow/MultiWindowStyle;)V
+
+    const-string v3, "recentUI.multiwindow.package"
+
+    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$packageName:Ljava/lang/String;
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    :try_start_0
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
+    # getter for: Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/systemui/recents/views/TaskView;->access$000(Lcom/android/systemui/recents/views/TaskView;)Landroid/content/Context;
 
-    .line 1146
-    :cond_0
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
     :goto_0
     return-void
 
-    .line 1118
-    :cond_1
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$v:Landroid/view/View;
+    :catch_0
+    move-exception v0
 
-    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
-
-    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskViewHeader;->mMultiWindowButton:Landroid/widget/ImageView;
-
-    if-ne v3, v4, :cond_0
-
-    .line 1119
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationZ(F)V
-
-    .line 1120
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
-
-    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v5
-
-    invoke-interface {v3, v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
-
-    .line 1121
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
-
-    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v5
-
-    invoke-interface {v3, v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onAltTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
-
-    .line 1133
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActivityInfo:Landroid/content/pm/ActivityInfo;
-
-    if-eqz v3, :cond_0
-
-    .line 1134
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
-
-    iget v2, v3, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
-
-    .line 1135
-    .local v2, "taskId":I
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$tv:Lcom/android/systemui/recents/views/TaskView;
-
-    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
-
-    iget-object v0, v3, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
-
-    .line 1136
-    .local v0, "intent":Landroid/content/Intent;
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActivityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v1, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    .line 1138
-    .local v1, "packageName":Ljava/lang/String;
-    if-ltz v2, :cond_2
-
-    if-eqz v0, :cond_2
-
-    if-nez v1, :cond_3
-
-    .line 1139
-    :cond_2
-    const-string v3, "Recents_TaskView"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "task has unvalid elements taskId = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " packageName = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 1142
-    :cond_3
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    invoke-virtual {v3, v2, v0, v1}, Lcom/android/systemui/recents/views/TaskView;->handleOnClickMultiWindowBtn(ILandroid/content/Intent;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
     goto :goto_0
 .end method

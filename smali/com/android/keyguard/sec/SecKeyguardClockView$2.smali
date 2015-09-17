@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardClockView;)V
     .locals 0
 
-    .prologue
-    .line 78
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/16 v3, 0x12cb
 
-    .line 81
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -50,7 +44,6 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 82
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mHandler:Landroid/os/Handler;
@@ -64,7 +57,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 83
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mHandler:Landroid/os/Handler;
@@ -74,7 +66,6 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 85
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
@@ -85,12 +76,10 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 95
     :cond_1
     :goto_0
     return-void
 
-    .line 86
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -100,7 +89,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 87
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -112,8 +100,6 @@
 
     move-result v0
 
-    .line 88
-    .local v0, "isNetworkRoaming":Z
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mIsNetworkRoaming:Z
@@ -123,7 +109,6 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 89
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mHandler:Landroid/os/Handler;
@@ -137,7 +122,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 90
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockView;->mHandler:Landroid/os/Handler;
@@ -147,7 +131,6 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 92
     :cond_3
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockView;
 

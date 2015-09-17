@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/cooldown/SafeMode;)V
     .locals 0
 
-    .prologue
-    .line 134
     iput-object p1, p0, Lcom/android/systemui/cooldown/SafeMode$4;->this$0:Lcom/android/systemui/cooldown/SafeMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,16 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "whichButton"    # I
 
-    .prologue
-    .line 136
     const-string v0, "SafeMode"
 
     const-string v1, "click Cancel in global"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
     iget-object v0, p0, Lcom/android/systemui/cooldown/SafeMode$4;->this$0:Lcom/android/systemui/cooldown/SafeMode;
 
     invoke-virtual {v0}, Lcom/android/systemui/cooldown/SafeMode;->finish()V
 
-    .line 138
     return-void
 .end method

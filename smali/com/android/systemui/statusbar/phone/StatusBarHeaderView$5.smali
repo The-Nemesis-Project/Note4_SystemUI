@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)V
     .locals 0
 
-    .prologue
-    .line 883
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$5;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
     const/4 v3, 0x1
 
-    .line 885
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$5;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -59,6 +54,5 @@
 
     invoke-virtual {v0, v1, v3, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->startActivityDismissingKeyguard(Landroid/content/Intent;ZZ)V
 
-    .line 887
     return-void
 .end method

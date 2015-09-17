@@ -31,8 +31,6 @@
 .method constructor <init>(Lcom/android/systemui/keyguard/KeyguardViewMediator$9;Ljava/lang/String;Landroid/content/ContentResolver;Ljava/lang/String;)V
     .locals 0
 
-    .prologue
-    .line 2609
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->this$1:Lcom/android/systemui/keyguard/KeyguardViewMediator$9;
 
     iput-object p2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->val$pathLock:Ljava/lang/String;
@@ -51,24 +49,18 @@
 .method public run()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 2612
     const-string v1, "KeyguardViewMediator"
 
     const-string v2, "reloadLockSound() - run"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2613
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->val$pathLock:Ljava/lang/String;
 
-    .line 2614
-    .local v0, "path":Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 2615
     const-string v1, ""
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -77,7 +69,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 2616
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->val$cr:Landroid/content/ContentResolver;
 
     const-string v2, "lock_sound"
@@ -86,7 +77,6 @@
 
     move-result-object v0
 
-    .line 2618
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->this$1:Lcom/android/systemui/keyguard/KeyguardViewMediator$9;
 
@@ -108,7 +98,6 @@
 
     invoke-virtual {v1, v2}, Landroid/media/SoundPool;->unload(I)Z
 
-    .line 2619
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->this$1:Lcom/android/systemui/keyguard/KeyguardViewMediator$9;
 
     iget-object v1, v1, Lcom/android/systemui/keyguard/KeyguardViewMediator$9;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -129,7 +118,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundId:I
     invoke-static {v1, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$5302(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2621
     :cond_1
     if-eqz v0, :cond_2
 
@@ -144,7 +132,6 @@
 
     if-nez v1, :cond_3
 
-    .line 2622
     :cond_2
     const-string v1, "KeyguardViewMediator"
 
@@ -168,14 +155,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2625
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->val$pathUnlock:Ljava/lang/String;
 
-    .line 2626
     if-eqz v0, :cond_5
 
-    .line 2627
     const-string v1, ""
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -184,7 +168,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 2628
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->val$cr:Landroid/content/ContentResolver;
 
     const-string v2, "unlock_sound"
@@ -193,7 +176,6 @@
 
     move-result-object v0
 
-    .line 2630
     :cond_4
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->this$1:Lcom/android/systemui/keyguard/KeyguardViewMediator$9;
 
@@ -215,7 +197,6 @@
 
     invoke-virtual {v1, v2}, Landroid/media/SoundPool;->unload(I)Z
 
-    .line 2631
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$9$1;->this$1:Lcom/android/systemui/keyguard/KeyguardViewMediator$9;
 
     iget-object v1, v1, Lcom/android/systemui/keyguard/KeyguardViewMediator$9;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -236,7 +217,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUnlockSoundId:I
     invoke-static {v1, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$5502(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2633
     :cond_5
     if-eqz v0, :cond_6
 
@@ -251,7 +231,6 @@
 
     if-nez v1, :cond_7
 
-    .line 2634
     :cond_6
     const-string v1, "KeyguardViewMediator"
 
@@ -275,7 +254,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2636
     :cond_7
     return-void
 .end method

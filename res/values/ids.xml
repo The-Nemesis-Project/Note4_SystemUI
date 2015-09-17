@@ -52,6 +52,14 @@
     <item type="id" name="content_root_pin_window" />
     <item type="id" name="usim_emergency_text" />
     <item type="id" name="emergencyCallButton" />
+    <item type="id" name="preview_container" />
+    <item type="id" name="camera_button" />
+    <item type="id" name="phone_button" />
+    <item type="id" name="lock_icon" />
+    <item type="id" name="keyguard_indication_text" />
+    <item type="id" name="call_icon" />
+    <item type="id" name="email_icon" />
+    <item type="id" name="dcm_keyguard_bottom_area" />
     <item type="id" name="translation_y_animator_tag" />
     <item type="id" name="translation_z_animator_tag" />
     <item type="id" name="scale_animator_tag" />
@@ -118,6 +126,7 @@
     <item type="id" name="usage_info_top_text">false</item>
     <item type="id" name="usage_period_text">false</item>
     <item type="id" name="usage_info_bottom_text">false</item>
+    <item type="id" name="keyguard_unlock_view">false</item>
     <item type="id" name="global_screenshot_background">false</item>
     <item type="id" name="global_screenshot">false</item>
     <item type="id" name="global_screenshot_flash">false</item>
@@ -154,11 +163,6 @@
     <item type="id" name="key_enter">false</item>
     <item type="id" name="keyguard_selector_fade_container">false</item>
     <item type="id" name="keyguard_bottom_area">false</item>
-    <item type="id" name="keyguard_indication_text">false</item>
-    <item type="id" name="preview_container">false</item>
-    <item type="id" name="camera_button">false</item>
-    <item type="id" name="phone_button">false</item>
-    <item type="id" name="lock_icon">false</item>
     <item type="id" name="airplane_mode">false</item>
     <item type="id" name="carrier1">false</item>
     <item type="id" name="carrier_divider1">false</item>
@@ -253,6 +257,7 @@
     <item type="id" name="simPinEntry">false</item>
     <item type="id" name="keyguard_sim_puk_view">false</item>
     <item type="id" name="pukEntry">false</item>
+    <item type="id" name="keyguard_unlock_view_help_text">false</item>
     <item type="id" name="keyguard_smartcardpin_view">false</item>
     <item type="id" name="keyguard_spass_account_view">false</item>
     <item type="id" name="keyguard_spass_password_view">false</item>
@@ -296,7 +301,6 @@
     <item type="id" name="btn_prev">false</item>
     <item type="id" name="btn_play">false</item>
     <item type="id" name="btn_next">false</item>
-    <item type="id" name="keyguard_unlock_view">false</item>
     <item type="id" name="keyguard_unlock_bouncer_help_text">false</item>
     <item type="id" name="keyguard_user_switcher">false</item>
     <item type="id" name="user_name">false</item>
@@ -333,15 +337,15 @@
     <item type="id" name="mini_cover_settings_description">false</item>
     <item type="id" name="mini_view_cover_weatherhealth_layout">false</item>
     <item type="id" name="mini_weather_layout">false</item>
-    <item type="id" name="mini_weather_icon">false</item>
-    <item type="id" name="mini_temperature">false</item>
-    <item type="id" name="mini_weather_temp">false</item>
-    <item type="id" name="clear_weather_unit">false</item>
-    <item type="id" name="mini_temperature_high_low">false</item>
-    <item type="id" name="mini_weather_temp_high">false</item>
-    <item type="id" name="clear_weather_divider">false</item>
-    <item type="id" name="mini_weather_temp_low">false</item>
-    <item type="id" name="clear_weather_unit_high_low">false</item>
+    <item type="id" name="mini_weather_container">false</item>
+    <item type="id" name="mini_weather_small_icon">false</item>
+    <item type="id" name="mini_weather_small_temp">false</item>
+    <item type="id" name="mini_weather_small_unit">false</item>
+    <item type="id" name="mini_weather_small_high_temp">false</item>
+    <item type="id" name="mini_weather_small_high_unit">false</item>
+    <item type="id" name="mini_weather_small_Separator">false</item>
+    <item type="id" name="mini_weather_small_low_temp">false</item>
+    <item type="id" name="mini_weather_small_low_unit">false</item>
     <item type="id" name="mini_clear_shealth_contatiner">false</item>
     <item type="id" name="msim_keyguard_sim_pin_view">false</item>
     <item type="id" name="msim_pinEntry">false</item>
@@ -829,7 +833,6 @@
     <item type="id" name="circle_arrow_emergnecy">false</item>
     <item type="id" name="emergency_button">false</item>
     <item type="id" name="dummy_emergency_button">false</item>
-    <item type="id" name="keyguard_unlock_view_help_text">false</item>
     <item type="id" name="keyguard_sec_profile_view">false</item>
     <item type="id" name="profile_text">false</item>
     <item type="id" name="profile_time">false</item>
@@ -859,6 +862,7 @@
     <item type="id" name="empty_time_view">false</item>
     <item type="id" name="status_bar">false</item>
     <item type="id" name="operatorLogoIcon_org">false</item>
+    <item type="id" name="mascot_view">false</item>
     <item type="id" name="header">false</item>
     <item type="id" name="settings_button2">false</item>
     <item type="id" name="edit_button_holder">false</item>
@@ -956,6 +960,8 @@
     <item type="id" name="tw_volume_panel_collapse_margin_view">false</item>
     <item type="id" name="stream_icon">false</item>
     <item type="id" name="seekbar">false</item>
+    <item type="id" name="attentionMsg">false</item>
+    <item type="id" name="attentionLink">false</item>
     <item type="id" name="notice_text">false</item>
     <item type="id" name="zen_mode_panel">false</item>
     <item type="id" name="zen_subhead">false</item>
@@ -974,4 +980,8 @@
     <item type="id" name="off">false</item>
     <item type="id" name="recent_remove_item">false</item>
     <item type="id" name="recent_inspect_item">false</item>
+    <item type="id" name="gradient">false</item>
+    <item type="id" name="battery2">false</item>
+    <item type="id" name="bytes_tx">false</item>
+    <item type="id" name="bytes_rx">false</item>
 </resources>

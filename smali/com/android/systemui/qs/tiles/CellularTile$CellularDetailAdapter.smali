@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/CellularTile;)V
     .locals 0
 
-    .prologue
-    .line 200
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/CellularTile;Lcom/android/systemui/qs/tiles/CellularTile$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile;
-    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/CellularTile$1;
 
-    .prologue
-    .line 200
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/CellularTile;)V
 
     return-void
@@ -50,12 +44,7 @@
 # virtual methods
 .method public createDetailView(Landroid/content/Context;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .prologue
-    .line 224
     if-eqz p2, :cond_0
 
     move-object v2, p2
@@ -67,8 +56,6 @@
 
     check-cast v1, Lcom/android/systemui/qs/tiles/DataUsageDetailView;
 
-    .line 227
-    .local v1, "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
@@ -80,17 +67,11 @@
 
     move-result-object v0
 
-    .line 228
-    .local v0, "info":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     if-nez v0, :cond_1
 
-    .line 230
     :goto_1
     return-object v1
 
-    .line 224
-    .end local v0    # "info":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
-    .end local v1    # "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
@@ -113,9 +94,6 @@
 
     goto :goto_0
 
-    .line 229
-    .restart local v0    # "info":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
-    .restart local v1    # "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     :cond_1
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->bind(Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;)V
 
@@ -125,8 +103,6 @@
 .method public getSettingsIntent()Landroid/content/Intent;
     .locals 1
 
-    .prologue
-    .line 214
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->CELLULAR_SETTINGS:Landroid/content/Intent;
     invoke-static {}, Lcom/android/systemui/qs/tiles/CellularTile;->access$500()Landroid/content/Intent;
 
@@ -138,9 +114,7 @@
 .method public getTitle()I
     .locals 1
 
-    .prologue
-    .line 204
-    const v0, 0x7f0d02df
+    const v0, 0x7f0d02fa
 
     return v0
 .end method
@@ -148,8 +122,6 @@
 .method public getToggleState()Ljava/lang/Boolean;
     .locals 1
 
-    .prologue
-    .line 209
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
@@ -189,24 +161,17 @@
 
 .method public setMobileDataEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 234
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/tiles/CellularTile;->fireToggleStateChanged(Z)V
 
-    .line 235
     return-void
 .end method
 
 .method public setToggleState(Z)V
     .locals 1
-    .param p1, "state"    # Z
 
-    .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
@@ -216,6 +181,5 @@
 
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/NetworkController;->setMobileDataEnabled(Z)V
 
-    .line 220
     return-void
 .end method

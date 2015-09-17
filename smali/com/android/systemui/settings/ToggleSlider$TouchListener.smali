@@ -27,18 +27,14 @@
 .method constructor <init>(Lcom/android/systemui/settings/ToggleSlider;)V
     .locals 1
 
-    .prologue
-    .line 660
     iput-object p1, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 661
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->mFocusInside:Z
 
-    .line 660
     return-void
 .end method
 
@@ -46,21 +42,15 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 9
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
     const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    .line 664
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 665
-    .local v0, "action":I
     const-string v3, "soo"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -83,15 +73,12 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 668
     new-array v2, v4, [Ljava/lang/String;
 
     const-string v3, "false"
 
     aput-object v3, v2, v5
 
-    .line 669
-    .local v2, "selectionArgs":[Ljava/lang/String;
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     iget-object v6, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
@@ -110,30 +97,24 @@
 
     move-result v1
 
-    .line 671
-    .local v1, "isSettingsChangesAllowed":I
     const/4 v3, -0x1
 
     if-eq v1, v3, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 672
     const-string v3, "toggleSlider"
 
     const-string v5, "onTouch(): Change brightness was not allowed"
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 704
     :goto_0
     return v4
 
-    .line 676
     :cond_0
     packed-switch v0, :pswitch_data_0
 
-    .line 700
     :cond_1
     :goto_1
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
@@ -145,7 +126,6 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/CompoundButton;->setPressed(Z)V
 
-    .line 701
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mIsTogglePressed:Z
@@ -153,7 +133,6 @@
 
     goto :goto_0
 
-    .line 678
     :pswitch_0
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -164,10 +143,8 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/CompoundButton;->setPressed(Z)V
 
-    .line 679
     iput-boolean v4, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->mFocusInside:Z
 
-    .line 680
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mIsTogglePressed:Z
@@ -175,7 +152,6 @@
 
     goto :goto_0
 
-    .line 683
     :pswitch_1
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
@@ -205,7 +181,6 @@
 
     if-gez v3, :cond_2
 
-    .line 684
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mToggle:Landroid/widget/CompoundButton;
@@ -217,7 +192,6 @@
 
     goto :goto_0
 
-    .line 686
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -228,12 +202,10 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/CompoundButton;->setPressed(Z)V
 
-    .line 687
     iput-boolean v5, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->mFocusInside:Z
 
     goto :goto_0
 
-    .line 691
     :pswitch_2
     const-string v3, "soo"
 
@@ -259,12 +231,10 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 692
     iget-boolean v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->mFocusInside:Z
 
     if-eqz v3, :cond_1
 
-    .line 693
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mToggle:Landroid/widget/CompoundButton;
@@ -285,7 +255,6 @@
     :goto_2
     invoke-virtual {v6, v3}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 694
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mToggle:Landroid/widget/CompoundButton;
@@ -295,7 +264,6 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/CompoundButton;->playSoundEffect(I)V
 
-    .line 695
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$TouchListener;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mIsTogglePressed:Z
@@ -306,10 +274,8 @@
     :cond_3
     move v3, v5
 
-    .line 693
     goto :goto_2
 
-    .line 676
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

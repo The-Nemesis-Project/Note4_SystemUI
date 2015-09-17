@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 1308
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onPhoneStateChanged(I)V
     .locals 3
-    .param p1, "phoneState"    # I
 
-    .prologue
-    .line 1310
     const-string v0, "KeyguardSPassView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -67,16 +62,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1312
     return-void
 .end method
 
 .method public onScreenTurnedOff(I)V
     .locals 1
-    .param p1, "why"    # I
 
-    .prologue
-    .line 1352
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mIsTProject:Z
@@ -86,13 +77,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1353
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->dismissHelpOverlayDialog()V
 
-    .line 1354
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->dismissPopupDialog()V
 
-    .line 1356
     :cond_0
     return-void
 .end method
@@ -100,10 +88,8 @@
 .method public onScreenTurnedOn()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x4
 
-    .line 1329
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mIsTProject:Z
@@ -113,13 +99,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 1330
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->updateOrientation()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$400(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
 
-    .line 1332
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mCurrentOrientation:I
@@ -131,7 +115,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1333
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mContext:Landroid/content/Context;
@@ -183,7 +166,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1335
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -193,7 +175,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1336
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -203,12 +184,10 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1348
     :cond_0
     :goto_0
     return-void
 
-    .line 1340
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
@@ -234,7 +213,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1342
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -244,7 +222,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1343
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -259,10 +236,7 @@
 
 .method public onUserSwitchComplete(I)V
     .locals 3
-    .param p1, "userId"    # I
 
-    .prologue
-    .line 1324
     const-string v0, "KeyguardSPassView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -291,16 +265,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1325
     return-void
 .end method
 
 .method public onUserSwitching(I)V
     .locals 3
-    .param p1, "userId"    # I
 
-    .prologue
-    .line 1316
     const-string v0, "KeyguardSPassView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -329,11 +299,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1317
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$11;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->stop()Z
 
-    .line 1320
     return-void
 .end method

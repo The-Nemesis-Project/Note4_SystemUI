@@ -23,23 +23,16 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/keyguard/MSimKeyguardSimPinView;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "pin"    # Ljava/lang/String;
-    .param p3, "sub"    # I
 
-    .prologue
-    .line 242
     iput-object p1, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin;->this$0:Lcom/android/keyguard/MSimKeyguardSimPinView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 243
     iput-object p2, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin;->mPin:Ljava/lang/String;
 
-    .line 244
     # setter for: Lcom/android/keyguard/MSimKeyguardSimPinView;->mSubscription:I
     invoke-static {p1, p3}, Lcom/android/keyguard/MSimKeyguardSimPinView;->access$202(Lcom/android/keyguard/MSimKeyguardSimPinView;I)I
 
-    .line 245
     return-void
 .end method
 
@@ -51,8 +44,6 @@
 .method public run()V
     .locals 6
 
-    .prologue
-    .line 252
     :try_start_0
     # getter for: Lcom/android/keyguard/MSimKeyguardSimPinView;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/android/keyguard/MSimKeyguardSimPinView;->access$300()Ljava/lang/String;
@@ -98,7 +89,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
     const-string v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -130,8 +120,6 @@
 
     move-result-object v1
 
-    .line 257
-    .local v1, "result":[I
     # getter for: Lcom/android/keyguard/MSimKeyguardSimPinView;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/android/keyguard/MSimKeyguardSimPinView;->access$300()Ljava/lang/String;
 
@@ -175,7 +163,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
     iget-object v2, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin;->this$0:Lcom/android/keyguard/MSimKeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin$1;
@@ -186,17 +173,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 270
-    .end local v1    # "result":[I
     :goto_0
     return-void
 
-    .line 263
     :catch_0
     move-exception v0
 
-    .line 264
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin;->this$0:Lcom/android/keyguard/MSimKeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin$2;

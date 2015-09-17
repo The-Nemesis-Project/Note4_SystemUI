@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/NumPadKey;)V
     .locals 0
 
-    .prologue
-    .line 190
     iput-object p1, p0, Lcom/android/keyguard/NumPadKey$2;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,14 +33,9 @@
 # virtual methods
 .method public onFontChanged(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "clockfont"    # Ljava/lang/String;
-    .param p2, "numfont"    # Ljava/lang/String;
 
-    .prologue
-    .line 192
     if-eqz p2, :cond_0
 
-    .line 193
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$2;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-static {p2}, Landroid/graphics/Typeface;->createFromFile(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -52,11 +45,9 @@
     # setter for: Lcom/android/keyguard/NumPadKey;->mNumericThemeTypeface:Landroid/graphics/Typeface;
     invoke-static {v0, v1}, Lcom/android/keyguard/NumPadKey;->access$302(Lcom/android/keyguard/NumPadKey;Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 198
     :goto_0
     return-void
 
-    .line 195
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$2;->this$0:Lcom/android/keyguard/NumPadKey;
 

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/SilentModeTile;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 379
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,9 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 6
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/4 v5, 0x1
 
-    .line 381
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/SilentModeTile;->mContext:Landroid/content/Context;
@@ -62,12 +55,8 @@
 
     move-result v1
 
-    .line 383
-    .local v1, "zenmode":I
     const/4 v0, 0x0
 
-    .line 384
-    .local v0, "isChange":Z
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/SilentModeTile;->mZenMode:I
@@ -77,7 +66,6 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 385
     if-eq v1, v5, :cond_0
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
@@ -89,26 +77,21 @@
 
     if-ne v2, v5, :cond_1
 
-    .line 387
     :cond_0
     const/4 v0, 0x1
 
-    .line 389
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/SilentModeTile;->mZenMode:I
     invoke-static {v2, v1}, Lcom/android/systemui/qs/tiles/SilentModeTile;->access$302(Lcom/android/systemui/qs/tiles/SilentModeTile;I)I
 
-    .line 390
     if-eqz v0, :cond_2
 
-    .line 391
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SilentModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/SilentModeTile;
 
     invoke-virtual {v2}, Lcom/android/systemui/qs/tiles/SilentModeTile;->updateStatus()V
 
-    .line 394
     :cond_2
     return-void
 .end method

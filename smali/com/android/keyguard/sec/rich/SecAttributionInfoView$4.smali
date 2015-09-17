@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
     .locals 0
 
-    .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$4;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +37,8 @@
 .method public onDismiss()Z
     .locals 7
 
-    .prologue
     const/4 v6, 0x0
 
-    .line 158
     iget-object v2, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$4;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mLandingPageUrl:Ljava/lang/String;
@@ -65,12 +61,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 167
     :cond_0
     :goto_0
     return v6
 
-    .line 161
     :cond_1
     new-instance v2, Landroid/content/Intent;
 
@@ -93,13 +87,10 @@
 
     move-result-object v0
 
-    .line 162
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 164
     iget-object v2, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$4;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mDelayedStartActivityHandler:Landroid/os/Handler;
@@ -110,8 +101,6 @@
 
     move-result-object v1
 
-    .line 165
-    .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$4;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mDelayedStartActivityHandler:Landroid/os/Handler;

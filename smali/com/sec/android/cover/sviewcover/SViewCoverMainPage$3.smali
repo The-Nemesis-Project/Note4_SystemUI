@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 226
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +36,11 @@
 # virtual methods
 .method public OnUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 1
-    .param p1, "info"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    .prologue
-    .line 229
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->adjustWidgetVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$500(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 230
     return-void
 .end method

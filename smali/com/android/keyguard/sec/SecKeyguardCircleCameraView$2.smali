@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardCircleCameraView;)V
     .locals 0
 
-    .prologue
-    .line 197
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardCircleCameraView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleCameraView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public onDismiss()Z
     .locals 1
 
-    .prologue
-    .line 199
     const/4 v0, 0x1
 
     return v0

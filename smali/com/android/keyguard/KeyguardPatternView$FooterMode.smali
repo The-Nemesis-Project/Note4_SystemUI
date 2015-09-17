@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .prologue
     const/4 v5, 0x3
 
     const/4 v4, 0x2
@@ -48,7 +47,6 @@
 
     const/4 v2, 0x0
 
-    .line 140
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     const-string v1, "Normal"
@@ -57,7 +55,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->Normal:Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
-    .line 141
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     const-string v1, "ForgotLockPattern"
@@ -66,7 +63,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->ForgotLockPattern:Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
-    .line 142
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     const-string v1, "BackupPIN"
@@ -75,7 +71,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->BackupPIN:Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
-    .line 143
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     const-string v1, "VerifyUnlocked"
@@ -84,7 +79,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->VerifyUnlocked:Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
-    .line 139
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/keyguard/KeyguardPatternView$FooterMode;
@@ -118,8 +112,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 139
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -127,10 +119,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/KeyguardPatternView$FooterMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 139
     const-class v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -145,8 +134,6 @@
 .method public static values()[Lcom/android/keyguard/KeyguardPatternView$FooterMode;
     .locals 1
 
-    .prologue
-    .line 139
     sget-object v0, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->$VALUES:[Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/KeyguardPatternView$FooterMode;->clone()Ljava/lang/Object;

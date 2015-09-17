@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DrivingModeTile;)V
     .locals 0
 
-    .prologue
-    .line 280
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DrivingModeTile$5;->this$0:Lcom/android/systemui/qs/tiles/DrivingModeTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,12 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 282
     const-string v0, "DrivingModeTile"
 
     const-string v1, "AlertDialog onDismiss()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 283
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Landroid/support/v4/widget/SwipeRefreshLayout;)V
     .locals 0
 
-    .prologue
-    .line 842
     iput-object p1, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
@@ -35,19 +33,11 @@
 # virtual methods
 .method public applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 5
-    .param p1, "interpolatedTime"    # F
-    .param p2, "t"    # Landroid/view/animation/Transformation;
 
-    .prologue
-    .line 845
     const/4 v2, 0x0
 
-    .line 846
-    .local v2, "targetTop":I
     const/4 v0, 0x0
 
-    .line 847
-    .local v0, "endTarget":I
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     # getter for: Landroid/support/v4/widget/SwipeRefreshLayout;->mUsingCustomStart:Z
@@ -57,7 +47,6 @@
 
     if-nez v3, :cond_0
 
-    .line 848
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     # getter for: Landroid/support/v4/widget/SwipeRefreshLayout;->mSpinnerFinalOffset:F
@@ -79,7 +68,6 @@
 
     float-to-int v0, v3
 
-    .line 852
     :goto_0
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
@@ -99,7 +87,6 @@
 
     add-int v2, v3, v4
 
-    .line 853
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     # getter for: Landroid/support/v4/widget/SwipeRefreshLayout;->mCircleView:Landroid/support/v4/widget/CircleImageView;
@@ -113,8 +100,6 @@
 
     sub-int v1, v2, v3
 
-    .line 854
-    .local v1, "offset":I
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     const/4 v4, 0x0
@@ -122,11 +107,8 @@
     # invokes: Landroid/support/v4/widget/SwipeRefreshLayout;->setTargetOffsetTopAndBottom(IZ)V
     invoke-static {v3, v1, v4}, Landroid/support/v4/widget/SwipeRefreshLayout;->access$900(Landroid/support/v4/widget/SwipeRefreshLayout;IZ)V
 
-    .line 855
     return-void
 
-    .line 850
-    .end local v1    # "offset":I
     :cond_0
     iget-object v3, p0, Landroid/support/v4/widget/SwipeRefreshLayout$6;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 

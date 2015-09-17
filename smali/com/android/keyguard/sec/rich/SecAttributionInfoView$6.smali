@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
     .locals 0
 
-    .prologue
-    .line 323
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
-    .line 327
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mLiveviewLocationView:Landroid/view/View;
@@ -64,7 +59,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 328
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
@@ -87,7 +81,6 @@
     # setter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->locationUrl:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->access$602(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 330
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->locationUrl:Ljava/lang/String;
@@ -110,7 +103,6 @@
 
     if-nez v0, :cond_0
 
-    .line 331
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$6;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
@@ -123,7 +115,6 @@
     # invokes: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->launchBrowser(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->access$800(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;Ljava/lang/String;)V
 
-    .line 334
     :cond_0
     return-void
 .end method

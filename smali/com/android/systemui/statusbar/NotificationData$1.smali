@@ -39,20 +39,16 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationData;)V
     .locals 1
 
-    .prologue
-    .line 134
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 135
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
-    .line 136
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
@@ -66,10 +62,7 @@
 # virtual methods
 .method public compare(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)I
     .locals 13
-    .param p1, "a"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
-    .param p2, "b"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .prologue
     const/4 v12, 0x2
 
     const/4 v10, 0x0
@@ -78,7 +71,6 @@
 
     const/4 v9, 0x1
 
-    .line 141
     iget-object v11, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationData;->mEnvironment:Lcom/android/systemui/statusbar/NotificationData$Environment;
@@ -90,30 +82,22 @@
 
     move-result-object v5
 
-    .line 142
-    .local v5, "mediaNotification":Ljava/lang/String;
     iget-object v11, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
 
     invoke-virtual {v11, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 143
-    .local v0, "aMedia":Z
     iget-object v11, p2, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
 
     invoke-virtual {v11, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    .line 144
-    .local v2, "bMedia":Z
     if-eq v0, v2, :cond_2
 
-    .line 145
     if-eqz v0, :cond_1
 
-    .line 173
     :cond_0
     :goto_0
     return v8
@@ -121,19 +105,13 @@
     :cond_1
     move v8, v9
 
-    .line 145
     goto :goto_0
 
-    .line 148
     :cond_2
     iget-object v6, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
-    .line 149
-    .local v6, "na":Landroid/service/notification/StatusBarNotification;
     iget-object v7, p2, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
-    .line 152
-    .local v7, "nb":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v11
@@ -151,8 +129,6 @@
 
     move v1, v9
 
-    .line 154
-    .local v1, "aSystemMax":Z
     :goto_1
     invoke-virtual {v7}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -171,35 +147,25 @@
 
     move v3, v9
 
-    .line 156
-    .local v3, "bSystemMax":Z
     :goto_2
     if-eq v1, v3, :cond_5
 
-    .line 157
     if-nez v1, :cond_0
 
     move v8, v9
 
     goto :goto_0
 
-    .end local v1    # "aSystemMax":Z
-    .end local v3    # "bSystemMax":Z
     :cond_3
     move v1, v10
 
-    .line 152
     goto :goto_1
 
-    .restart local v1    # "aSystemMax":Z
     :cond_4
     move v3, v10
 
-    .line 154
     goto :goto_2
 
-    .line 161
-    .restart local v3    # "bSystemMax":Z
     :cond_5
     iget-object v10, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -210,7 +176,6 @@
 
     if-eqz v10, :cond_6
 
-    .line 162
     iget-object v8, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationData;->mRankingMap:Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -224,7 +189,6 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 163
     iget-object v8, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationData;->mRankingMap:Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -238,7 +202,6 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 164
     iget-object v8, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v8}, Landroid/service/notification/NotificationListenerService$Ranking;->getRank()I
@@ -255,7 +218,6 @@
 
     goto :goto_0
 
-    .line 167
     :cond_6
     invoke-virtual {v7}, Landroid/service/notification/StatusBarNotification;->getScore()I
 
@@ -267,8 +229,6 @@
 
     sub-int v4, v10, v11
 
-    .line 168
-    .local v4, "d":I
     # getter for: Lcom/android/systemui/statusbar/NotificationData$Entry;->interruption:Z
     invoke-static {p1}, Lcom/android/systemui/statusbar/NotificationData$Entry;->access$300(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
 
@@ -281,7 +241,6 @@
 
     if-eq v10, v11, :cond_7
 
-    .line 169
     # getter for: Lcom/android/systemui/statusbar/NotificationData$Entry;->interruption:Z
     invoke-static {p1}, Lcom/android/systemui/statusbar/NotificationData$Entry;->access$300(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
 
@@ -293,16 +252,13 @@
 
     goto :goto_0
 
-    .line 170
     :cond_7
     if-eqz v4, :cond_8
 
     move v8, v4
 
-    .line 171
     goto :goto_0
 
-    .line 173
     :cond_8
     invoke-virtual {v7}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -325,17 +281,11 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 134
     check-cast p1, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/NotificationData$1;->compare(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)I
 
     move-result v0

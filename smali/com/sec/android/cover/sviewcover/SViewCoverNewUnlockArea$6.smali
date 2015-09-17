@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
     .locals 0
 
-    .prologue
-    .line 572
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$6;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,11 @@
 # virtual methods
 .method public onHover(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 575
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
-    .line 576
     invoke-virtual {p1}, Landroid/view/View;->requestAccessibilityFocus()Z
 
-    .line 577
     const/4 v0, 0x0
 
     return v0

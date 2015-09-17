@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
     .locals 0
 
-    .prologue
-    .line 353
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 356
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 357
-    .local v0, "action":Ljava/lang/String;
     const-string v7, "HotspotTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -68,7 +60,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
     const-string v7, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -77,7 +68,6 @@
 
     if-eqz v7, :cond_1
 
-    .line 359
     const-string v7, "wifi_state"
 
     const/16 v8, 0xe
@@ -86,8 +76,6 @@
 
     move-result v6
 
-    .line 360
-    .local v6, "state":I
     const-string v7, "HotspotTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -110,18 +98,13 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
     packed-switch v6, :pswitch_data_0
 
-    .line 422
-    .end local v6    # "state":I
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 363
-    .restart local v6    # "state":I
     :pswitch_1
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
@@ -132,7 +115,6 @@
 
     goto :goto_0
 
-    .line 367
     :pswitch_2
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
@@ -143,8 +125,6 @@
 
     goto :goto_0
 
-    .line 372
-    .end local v6    # "state":I
     :cond_1
     const-string v7, "android.net.wifi.WIFI_STATE_CHANGED"
 
@@ -154,7 +134,6 @@
 
     if-eqz v7, :cond_3
 
-    .line 373
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -166,8 +145,6 @@
 
     move-result-object v4
 
-    .line 374
-    .local v4, "resolver":Landroid/content/ContentResolver;
     const-string v7, "wifi_state"
 
     const/4 v8, 0x4
@@ -176,8 +153,6 @@
 
     move-result v6
 
-    .line 376
-    .restart local v6    # "state":I
     const-string v7, "wifi_ap_saved_state"
 
     const/4 v8, 0x0
@@ -188,8 +163,6 @@
 
     move-result v5
 
-    .line 378
-    .local v5, "savedState":I
     const-string v7, "HotspotTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -222,7 +195,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
     const/4 v7, 0x1
 
     if-eq v6, v7, :cond_2
@@ -236,7 +208,6 @@
 
     if-ne v5, v7, :cond_0
 
-    .line 381
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -252,15 +223,12 @@
 
     check-cast v3, Landroid/net/wifi/WifiManager;
 
-    .line 382
-    .local v3, "mgr":Landroid/net/wifi/WifiManager;
     const/4 v7, 0x0
 
     const/4 v8, 0x1
 
     invoke-virtual {v3, v7, v8}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
 
-    .line 383
     const-string v7, "wifi_ap_saved_state"
 
     const/4 v8, 0x0
@@ -271,11 +239,6 @@
 
     goto :goto_0
 
-    .line 386
-    .end local v3    # "mgr":Landroid/net/wifi/WifiManager;
-    .end local v4    # "resolver":Landroid/content/ContentResolver;
-    .end local v5    # "savedState":I
-    .end local v6    # "state":I
     :cond_3
     const-string v7, "android.net.conn.TETHER_STATE_CHANGED"
 
@@ -285,7 +248,6 @@
 
     if-eqz v7, :cond_4
 
-    .line 387
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->updateTetherState(Landroid/content/Intent;)V
@@ -293,7 +255,6 @@
 
     goto/16 :goto_0
 
-    .line 388
     :cond_4
     const-string v7, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -303,7 +264,6 @@
 
     if-eqz v7, :cond_6
 
-    .line 389
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -326,7 +286,6 @@
 
     if-eqz v7, :cond_5
 
-    .line 390
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -338,7 +297,6 @@
 
     goto/16 :goto_0
 
-    .line 391
     :cond_5
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
@@ -362,7 +320,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 392
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAttentionDialog:Landroid/app/AlertDialog;
@@ -374,7 +331,6 @@
 
     goto/16 :goto_0
 
-    .line 396
     :cond_6
     const-string v7, "android.net.wifi.SHOW_INFO_MESSAGE"
 
@@ -384,7 +340,6 @@
 
     if-eqz v7, :cond_8
 
-    .line 397
     const-string v7, "info_type"
 
     const/4 v8, 0x0
@@ -393,8 +348,6 @@
 
     move-result v1
 
-    .line 398
-    .local v1, "extraValue":I
     const-string v7, "HotspotTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -417,12 +370,10 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 399
     const/4 v7, 0x3
 
     if-ne v1, v7, :cond_0
 
-    .line 400
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -440,19 +391,15 @@
 
     const/4 v2, 0x1
 
-    .line 401
-    .local v2, "isProcessing":Z
     :goto_1
     if-eqz v2, :cond_0
 
-    .line 402
     const-string v7, "HotspotTile"
 
     const-string v8, "HotSpot is processing"
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     const/4 v8, 0x2
@@ -462,15 +409,11 @@
 
     goto/16 :goto_0
 
-    .line 400
-    .end local v2    # "isProcessing":Z
     :cond_7
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 406
-    .end local v1    # "extraValue":I
     :cond_8
     const-string v7, "android.intent.action.AIRPLANE_MODE"
 
@@ -480,7 +423,6 @@
 
     if-eqz v7, :cond_9
 
-    .line 407
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -503,7 +445,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 408
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -515,7 +456,6 @@
 
     goto/16 :goto_0
 
-    .line 412
     :cond_9
     const-string v7, "android.net.wifi.WIFI_DIALOG_CANCEL_ACTION"
 
@@ -525,7 +465,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 413
     const-string v7, "called_dialog"
 
     const/4 v8, 0x0
@@ -534,8 +473,6 @@
 
     move-result v1
 
-    .line 414
-    .restart local v1    # "extraValue":I
     const-string v8, "HotspotTile"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -579,12 +516,10 @@
 
     invoke-static {v8, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 415
     const/4 v7, 0x2
 
     if-ne v1, v7, :cond_0
 
-    .line 416
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -600,7 +535,6 @@
 
     if-ne v7, v8, :cond_0
 
-    .line 417
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$4;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     const/4 v8, 0x2
@@ -610,7 +544,6 @@
 
     goto/16 :goto_0
 
-    .line 361
     nop
 
     :pswitch_data_0

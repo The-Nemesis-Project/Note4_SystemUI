@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .prologue
     const/4 v5, 0x2
 
     const/4 v4, 0x1
@@ -32,7 +31,6 @@
 
     const/4 v2, 0x5
 
-    .line 22
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -49,7 +47,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->WIFI_SIGNAL_STRENGTH:[[I
 
-    .line 35
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -66,7 +63,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->QS_WIFI_SIGNAL_STRENGTH:[[I
 
-    .line 48
     sget-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->WIFI_SIGNAL_STRENGTH:[[I
 
     aget-object v0, v0, v3
@@ -75,7 +71,6 @@
 
     sput v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->WIFI_LEVEL_COUNT:I
 
-    .line 51
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -92,7 +87,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->NWBOOSTER_WIFI_SIGNAL_STRENGTH:[[I
 
-    .line 65
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -109,7 +103,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->WIFI_SIGNAL_STRENGTH_HIDEINANDOUT:[[I
 
-    .line 78
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -126,7 +119,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/WifiIcons;->WIFI_SIGNAL_STRENGTH_LGT:[[I
 
-    .line 93
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -145,126 +137,118 @@
 
     return-void
 
-    .line 22
     :array_0
     .array-data 4
-        0x7f020588
-        0x7f02058b
-        0x7f02058e
-        0x7f020591
-        0x7f020594
+        0x7f020590
+        0x7f020593
+        0x7f020596
+        0x7f020599
+        0x7f02059c
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f020589
-        0x7f02058c
-        0x7f02058f
-        0x7f020592
-        0x7f020595
+        0x7f020591
+        0x7f020594
+        0x7f020597
+        0x7f02059a
+        0x7f02059d
     .end array-data
 
-    .line 35
     :array_2
     .array-data 4
-        0x7f020159
-        0x7f02015a
-        0x7f02015b
-        0x7f02015c
-        0x7f02015d
+        0x7f02015e
+        0x7f02015f
+        0x7f020160
+        0x7f020161
+        0x7f020162
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f020160
-        0x7f020161
-        0x7f020162
-        0x7f020163
-        0x7f020164
+        0x7f020165
+        0x7f020166
+        0x7f020167
+        0x7f020168
+        0x7f020169
     .end array-data
 
-    .line 51
     :array_4
     .array-data 4
-        0x7f020583
-        0x7f020584
-        0x7f020585
-        0x7f020586
-        0x7f020587
+        0x7f02058b
+        0x7f02058c
+        0x7f02058d
+        0x7f02058e
+        0x7f02058f
     .end array-data
 
     :array_5
     .array-data 4
-        0x7f020583
-        0x7f020584
-        0x7f020585
-        0x7f020586
-        0x7f020587
+        0x7f02058b
+        0x7f02058c
+        0x7f02058d
+        0x7f02058e
+        0x7f02058f
     .end array-data
 
-    .line 65
     :array_6
     .array-data 4
-        0x7f02058a
-        0x7f02058d
-        0x7f020590
-        0x7f020593
-        0x7f020596
+        0x7f020592
+        0x7f020595
+        0x7f020598
+        0x7f02059b
+        0x7f02059e
     .end array-data
 
     :array_7
     .array-data 4
-        0x7f02058a
-        0x7f02058d
-        0x7f020590
-        0x7f020593
-        0x7f020596
+        0x7f020592
+        0x7f020595
+        0x7f020598
+        0x7f02059b
+        0x7f02059e
     .end array-data
 
-    .line 78
     :array_8
     .array-data 4
-        0x7f020578
-        0x7f020579
-        0x7f02057a
-        0x7f02057b
-        0x7f02057c
+        0x7f020580
+        0x7f020581
+        0x7f020582
+        0x7f020583
+        0x7f020584
     .end array-data
 
     :array_9
     .array-data 4
-        0x7f020578
-        0x7f020579
-        0x7f02057a
-        0x7f02057b
-        0x7f02057c
+        0x7f020580
+        0x7f020581
+        0x7f020582
+        0x7f020583
+        0x7f020584
     .end array-data
 
-    .line 93
     :array_a
     .array-data 4
-        0x7f0203f6
-        0x7f0203f7
-        0x7f0203f8
-        0x7f0203f9
-        0x7f0203fa
+        0x7f0203fd
+        0x7f0203fe
+        0x7f0203ff
+        0x7f020400
+        0x7f020401
     .end array-data
 
     :array_b
     .array-data 4
-        0x7f0203f6
-        0x7f0203f7
-        0x7f0203f8
-        0x7f0203f9
-        0x7f0203fa
+        0x7f0203fd
+        0x7f0203fe
+        0x7f0203ff
+        0x7f020400
+        0x7f020401
     .end array-data
 .end method
 
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -22,8 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 486
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile$State;-><init>()V
 
     return-void
@@ -33,16 +31,11 @@
 # virtual methods
 .method public copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
     .locals 4
-    .param p1, "other"    # Lcom/android/systemui/qs/QSTile$State;
 
-    .prologue
-    .line 491
     move-object v1, p1
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
-    .line 492
-    .local v1, "o":Lcom/android/systemui/qs/QSTile$BooleanState;
     invoke-super {p0, p1}, Lcom/android/systemui/qs/QSTile$State;->copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
 
     move-result v2
@@ -58,18 +51,13 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 493
-    .local v0, "changed":Z
     :goto_0
     iget-boolean v2, p0, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
     iput-boolean v2, v1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 494
     return v0
 
-    .line 492
-    .end local v0    # "changed":Z
     :cond_1
     const/4 v0, 0x0
 
@@ -79,14 +67,10 @@
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 4
 
-    .prologue
-    .line 499
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 500
-    .local v0, "rt":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -115,6 +99,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 501
     return-object v0
 .end method

@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .prologue
-    .line 195
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iput-object p2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->val$cameraPessed:Landroid/graphics/drawable/Drawable;
@@ -46,11 +44,7 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 12
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 200
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mIsFirstNoti:Z
@@ -90,15 +84,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 202
     :cond_0
     const/4 v4, 0x1
 
-    .line 287
     :goto_0
     return v4
 
-    .line 205
     :cond_1
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
@@ -113,32 +104,25 @@
 
     if-nez v4, :cond_2
 
-    .line 206
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 207
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 211
     :cond_2
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v2
 
-    .line 212
-    .local v2, "touchedEventX":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v3
 
-    .line 214
-    .local v3, "touchedEventY":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v4
@@ -156,14 +140,12 @@
 
     if-nez v4, :cond_3
 
-    .line 215
     const-string v4, "SViewCoverNewUnlockArea"
 
     const-string v5, "Multitouch detected!"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 216
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const/4 v5, 0x1
@@ -171,12 +153,10 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mIsMultiTouched:Z
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$402(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Z)Z
 
-    .line 217
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 220
     :cond_3
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -184,14 +164,12 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 287
     :cond_4
     :goto_1
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 222
     :pswitch_0
     const-string v4, "SViewCoverNewUnlockArea"
 
@@ -199,7 +177,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mContext:Landroid/content/Context;
@@ -213,19 +190,16 @@
 
     invoke-virtual {v4}, Lcom/sec/android/cover/manager/CoverPowerManager;->userActivity()V
 
-    .line 225
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mShortcutStartX:F
     invoke-static {v4, v2}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$602(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;F)F
 
-    .line 226
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mShortcutStartY:F
     invoke-static {v4, v3}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$702(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;F)F
 
-    .line 227
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const-wide/16 v6, 0x0
@@ -233,7 +207,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mDistance:D
     invoke-static {v4, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$802(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;D)D
 
-    .line 228
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const-string v5, "Right"
@@ -241,7 +214,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mTouchedShortcut:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$202(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 231
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const/4 v5, 0x1
@@ -277,19 +249,16 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->playAnimation(ZLcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$Dir;[Landroid/view/View;)V
     invoke-static {v4, v5, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1100(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;ZLcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$Dir;[Landroid/view/View;)V
 
-    .line 232
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->resetCircleAnimator()V
     invoke-static {v4}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1200(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
 
-    .line 233
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->cancelAllAnimator()V
     invoke-static {v4}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1300(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
 
-    .line 234
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mCameraCircleInAnimator:Landroid/animation/ValueAnimator;
@@ -299,7 +268,6 @@
 
     invoke-virtual {v4}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 235
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const/4 v5, 0x0
@@ -307,7 +275,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mIsMultiTouched:Z
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$402(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Z)Z
 
-    .line 236
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mCameraBgNormal:Landroid/widget/ImageView;
@@ -321,7 +288,6 @@
 
     goto :goto_1
 
-    .line 239
     :pswitch_1
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
@@ -334,7 +300,6 @@
 
     if-eq v4, v5, :cond_4
 
-    .line 243
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mContext:Landroid/content/Context;
@@ -348,7 +313,6 @@
 
     invoke-virtual {v4}, Lcom/sec/android/cover/manager/CoverPowerManager;->resetScreenOffTimer()V
 
-    .line 245
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mShortcutStartX:F
@@ -360,8 +324,6 @@
 
     float-to-int v0, v4
 
-    .line 246
-    .local v0, "diffX":I
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mShortcutStartY:F
@@ -373,8 +335,6 @@
 
     float-to-int v1, v4
 
-    .line 248
-    .local v1, "diffY":I
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     int-to-double v6, v0
@@ -402,7 +362,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mDistance:D
     invoke-static {v4, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$802(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;D)D
 
-    .line 249
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -426,7 +385,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mRatio:F
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1602(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;F)F
 
-    .line 258
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mRatio:F
@@ -440,7 +398,6 @@
 
     if-lez v4, :cond_5
 
-    .line 259
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -467,7 +424,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->updateDragCircle(Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;FLandroid/view/View;)V
     invoke-static {v4, v5, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1900(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;FLandroid/view/View;)V
 
-    .line 260
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->val$cameraPessed:Landroid/graphics/drawable/Drawable;
@@ -477,7 +433,6 @@
 
     goto/16 :goto_1
 
-    .line 262
     :cond_5
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
@@ -500,7 +455,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->updateDragCircle(Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;FLandroid/view/View;)V
     invoke-static {v4, v5, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1900(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;FLandroid/view/View;)V
 
-    .line 263
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->val$cameraNormal:Landroid/graphics/drawable/Drawable;
@@ -510,9 +464,6 @@
 
     goto/16 :goto_1
 
-    .line 268
-    .end local v0    # "diffX":I
-    .end local v1    # "diffY":I
     :pswitch_2
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
@@ -523,7 +474,6 @@
 
     if-nez v4, :cond_6
 
-    .line 269
     const-string v4, "SViewCoverNewUnlockArea"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -553,7 +503,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 270
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mDistance:D
@@ -572,7 +521,6 @@
 
     if-ltz v4, :cond_6
 
-    .line 272
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const-string v5, ""
@@ -580,7 +528,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mTouchedShortcut:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$202(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 273
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -593,14 +540,12 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->closeCircleEffect(Landroid/animation/ValueAnimator;)V
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$2200(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Landroid/animation/ValueAnimator;)V
 
-    .line 275
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     sget-object v5, Lcom/sec/android/cover/sviewcover/SViewCoverView$PageIndex;->CameraPage:Lcom/sec/android/cover/sviewcover/SViewCoverView$PageIndex;
 
     invoke-virtual {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->handleUnlock(Lcom/sec/android/cover/sviewcover/SViewCoverView$PageIndex;)V
 
-    .line 278
     :cond_6
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
@@ -609,7 +554,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mTouchedShortcut:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$202(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 279
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -622,7 +566,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->closeCircleEffect(Landroid/animation/ValueAnimator;)V
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$2200(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Landroid/animation/ValueAnimator;)V
 
-    .line 280
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     const/4 v5, 0x0
@@ -658,7 +601,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->playAnimation(ZLcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$Dir;[Landroid/view/View;)V
     invoke-static {v4, v5, v6, v7}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1100(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;ZLcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$Dir;[Landroid/view/View;)V
 
-    .line 281
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->val$cameraNormal:Landroid/graphics/drawable/Drawable;
@@ -666,7 +608,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->setCameraIcon(Landroid/graphics/drawable/Drawable;)V
     invoke-static {v4, v5}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$2000(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Landroid/graphics/drawable/Drawable;)V
 
-    .line 282
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mCameraBgNormal:Landroid/widget/ImageView;
@@ -680,7 +621,6 @@
 
     goto/16 :goto_1
 
-    .line 220
     nop
 
     :pswitch_data_0

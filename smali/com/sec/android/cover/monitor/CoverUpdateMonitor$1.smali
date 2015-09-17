@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 49
     iput-object p1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$1;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,25 +33,18 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 4
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 51
     if-nez p2, :cond_0
 
-    .line 52
     const-string v1, "CoverUpdateMonitor"
 
     const-string v2, "onChange contents, but uri is null"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
     :goto_0
     return-void
 
-    .line 56
     :cond_0
     const-string v1, "CoverUpdateMonitor"
 
@@ -82,7 +72,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 58
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$1;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     # getter for: Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -96,11 +85,8 @@
 
     move-result-object v0
 
-    .line 59
-    .local v0, "msg":Landroid/os/Message;
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 60
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$1;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     # getter for: Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mHandler:Landroid/os/Handler;

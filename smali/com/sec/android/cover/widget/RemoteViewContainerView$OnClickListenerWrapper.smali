@@ -26,23 +26,17 @@
 # direct methods
 .method public constructor <init>(Lcom/sec/android/cover/widget/RemoteViewContainerView;Landroid/view/View$OnClickListener;)V
     .locals 1
-    .param p2, "clickListener"    # Landroid/view/View$OnClickListener;
 
-    .prologue
-    .line 46
     iput-object p1, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->this$0:Lcom/sec/android/cover/widget/RemoteViewContainerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->mClickListener:Landroid/view/View$OnClickListener;
 
-    .line 47
     iput-object p2, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->mClickListener:Landroid/view/View$OnClickListener;
 
-    .line 48
     return-void
 .end method
 
@@ -50,26 +44,20 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
-    .line 52
     iget-object v0, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->mClickListener:Landroid/view/View$OnClickListener;
 
     if-eqz v0, :cond_0
 
-    .line 53
     iget-object v0, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->mClickListener:Landroid/view/View$OnClickListener;
 
     invoke-interface {v0, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 54
     iget-object v0, p0, Lcom/sec/android/cover/widget/RemoteViewContainerView$OnClickListenerWrapper;->this$0:Lcom/sec/android/cover/widget/RemoteViewContainerView;
 
     # invokes: Lcom/sec/android/cover/widget/RemoteViewContainerView;->onChildViewClicked(Landroid/view/View;)V
     invoke-static {v0, p1}, Lcom/sec/android/cover/widget/RemoteViewContainerView;->access$000(Lcom/sec/android/cover/widget/RemoteViewContainerView;Landroid/view/View;)V
 
-    .line 56
     :cond_0
     return-void
 .end method

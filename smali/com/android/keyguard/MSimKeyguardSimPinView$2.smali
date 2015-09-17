@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/MSimKeyguardSimPinView;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "x0"    # Ljava/lang/String;
-    .param p3, "x1"    # I
 
-    .prologue
-    .line 294
     iput-object p1, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPinView;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/keyguard/MSimKeyguardSimPinView$MSimCheckSimPin;-><init>(Lcom/android/keyguard/MSimKeyguardSimPinView;Ljava/lang/String;I)V
@@ -37,11 +33,7 @@
 # virtual methods
 .method onSimCheckResponse(II)V
     .locals 2
-    .param p1, "result"    # I
-    .param p2, "attemptsRemaining"    # I
 
-    .prologue
-    .line 296
     iget-object v0, p0, Lcom/android/keyguard/MSimKeyguardSimPinView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPinView;
 
     new-instance v1, Lcom/android/keyguard/MSimKeyguardSimPinView$2$1;
@@ -50,6 +42,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/MSimKeyguardSimPinView;->post(Ljava/lang/Runnable;)Z
 
-    .line 352
     return-void
 .end method

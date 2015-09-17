@@ -39,17 +39,13 @@
 # direct methods
 .method public constructor <init>(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
     .locals 5
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v4, 0x0
 
-    .line 422
     iput-object p1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 423
     const-string v0, "time"
 
     const-wide/16 v2, 0x0
@@ -60,7 +56,6 @@
 
     iput-wide v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mTime:J
 
-    .line 424
     const-string v0, "type"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -69,7 +64,6 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mType:Ljava/lang/String;
 
-    .line 425
     const-string v0, "visibility"
 
     invoke-virtual {p2, v0, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -78,7 +72,6 @@
 
     iput-boolean v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mVisibility:Z
 
-    .line 426
     const-string v0, "non_secure_only"
 
     invoke-virtual {p2, v0, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -87,7 +80,6 @@
 
     iput-boolean v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mNonSecureOnly:Z
 
-    .line 428
     const-string v0, "remote"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -98,7 +90,6 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mRemoteViews:Landroid/widget/RemoteViews;
 
-    .line 431
     const-string v0, "secure_mode_remote"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -109,17 +100,14 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mSecureModeRemoteViews:Landroid/widget/RemoteViews;
 
-    .line 433
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mSecureModeRemoteViews:Landroid/widget/RemoteViews;
 
     if-nez v0, :cond_0
 
-    .line 434
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mRemoteViews:Landroid/widget/RemoteViews;
 
     iput-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mSecureModeRemoteViews:Landroid/widget/RemoteViews;
 
-    .line 437
     :cond_0
     const-string v0, "count"
 
@@ -129,7 +117,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mCount:I
 
-    .line 438
     const-string v0, "contentIntent"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -140,10 +127,8 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mPendingIntent:Landroid/app/PendingIntent;
 
-    .line 440
     iput-object p2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mIntent:Landroid/content/Intent;
 
-    .line 441
     return-void
 .end method
 
@@ -152,8 +137,6 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .prologue
-    .line 445
     const-string v0, "type=%s / time=%s / visible=%s / non secure only = %s / remote view = %s / secure remote view = %s"
 
     const/4 v1, 0x6

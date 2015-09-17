@@ -17,10 +17,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "x0"    # Landroid/content/Context;
 
-    .prologue
-    .line 143
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -30,13 +27,9 @@
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
-    .line 145
     invoke-virtual {p0}, Lcom/android/keyguard/sec/SecPopupManager$2;->dismiss()V
 
-    .line 146
     const/4 v0, 0x0
 
     return v0

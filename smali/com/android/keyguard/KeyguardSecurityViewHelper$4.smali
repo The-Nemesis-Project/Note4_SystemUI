@@ -27,8 +27,6 @@
 .method constructor <init>(Landroid/view/View;Landroid/view/animation/ScaleAnimation;)V
     .locals 0
 
-    .prologue
-    .line 180
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSecurityViewHelper$4;->val$animationView:Landroid/view/View;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSecurityViewHelper$4;->val$Anim:Landroid/view/animation/ScaleAnimation;
@@ -43,14 +41,11 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 183
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityViewHelper$4;->val$animationView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityViewHelper$4;->val$Anim:Landroid/view/animation/ScaleAnimation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 184
     return-void
 .end method

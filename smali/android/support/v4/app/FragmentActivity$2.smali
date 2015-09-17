@@ -25,8 +25,6 @@
 .method constructor <init>(Landroid/support/v4/app/FragmentActivity;)V
     .locals 0
 
-    .prologue
-    .line 106
     iput-object p1, p0, Landroid/support/v4/app/FragmentActivity$2;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public findViewById(I)Landroid/view/View;
     .locals 1
-    .param p1, "id"    # I
 
-    .prologue
-    .line 109
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$2;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentActivity;->findViewById(I)Landroid/view/View;
@@ -54,16 +49,12 @@
 .method public hasView()Z
     .locals 2
 
-    .prologue
-    .line 114
     iget-object v1, p0, Landroid/support/v4/app/FragmentActivity$2;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 115
-    .local v0, "window":Landroid/view/Window;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;

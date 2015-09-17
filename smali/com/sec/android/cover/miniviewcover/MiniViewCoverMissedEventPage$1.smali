@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;)V
     .locals 0
 
-    .prologue
-    .line 67
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 4
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,9 +46,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 70
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->mMissedEventManager:Lcom/sec/android/cover/manager/CoverMissedEventManager;
@@ -71,8 +63,6 @@
 
     check-cast v0, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
 
-    .line 73
-    .local v0, "item":Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->mContext:Landroid/content/Context;
@@ -86,20 +76,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 74
     const-string v2, "MiniViewCoverMissedEventPage"
 
     const-string v3, "onItemClick - isKeyguardSecure"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->setPendingIntent(Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;)V
     invoke-static {v2, v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->access$200(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;)V
 
-    .line 76
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     sget-object v3, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;->OPEN_COVER_BY_SECURITY:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;
@@ -107,11 +94,9 @@
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->showCoverOpenPopup(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;)V
     invoke-static {v2, v3}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->access$300(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;)V
 
-    .line 91
     :goto_0
     return-void
 
-    .line 78
     :cond_0
     iget v2, v0, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;->mType:I
 
@@ -121,15 +106,12 @@
 
     move-object v2, v0
 
-    .line 79
     check-cast v2, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;
 
     invoke-virtual {v2}, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;->getRemoteType()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 80
-    .local v1, "remoteType":Ljava/lang/String;
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->mContext:Landroid/content/Context;
@@ -153,20 +135,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 82
     const-string v2, "MiniViewCoverMissedEventPage"
 
     const-string v3, "onItemClick - isTPhoneEnabled"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->setPendingIntent(Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;)V
     invoke-static {v2, v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->access$200(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;)V
 
-    .line 84
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     sget-object v3, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;->OPEN_COVER_TO_VIEW_CALL:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;
@@ -176,8 +155,6 @@
 
     goto :goto_0
 
-    .line 89
-    .end local v1    # "remoteType":Ljava/lang/String;
     :cond_1
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 

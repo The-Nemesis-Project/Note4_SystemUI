@@ -24,8 +24,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 979
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->values()[Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     move-result-object v0
@@ -259,7 +257,6 @@
     :try_end_d
     .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_b
 
-    .line 906
     :goto_d
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->values()[Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
@@ -504,7 +501,6 @@
 
     goto/16 :goto_e
 
-    .line 979
     :catch_b
     move-exception v0
 

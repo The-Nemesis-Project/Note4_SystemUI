@@ -39,25 +39,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 4
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
-    .line 88
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 85
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->isRegistered:Z
 
-    .line 214
     new-instance v0, Lcom/android/systemui/qs/tiles/EbookTile$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/EbookTile$2;-><init>(Lcom/android/systemui/qs/tiles/EbookTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 90
     new-instance v0, Lcom/android/systemui/qs/tiles/EbookTile$1;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
@@ -70,7 +64,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -79,20 +72,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 111
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/EbookTile;->init()V
 
-    .line 113
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/systemui/qs/tiles/EbookTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 71
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/EbookTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -100,10 +87,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/qs/tiles/EbookTile;)Landroid/app/AlertDialog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
 
-    .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -111,10 +95,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/qs/tiles/EbookTile;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
 
-    .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -122,11 +103,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/qs/tiles/EbookTile;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 71
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/EbookTile;->setEnabled(Z)V
 
     return-void
@@ -134,12 +111,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/qs/tiles/EbookTile;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 71
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/EbookTile;->startSettingsActivity(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -147,10 +119,7 @@
 
 .method static synthetic access$500(Lcom/android/systemui/qs/tiles/EbookTile;)Lcom/android/systemui/qs/SystemSetting;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
 
-    .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     return-object v0
@@ -158,11 +127,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/qs/tiles/EbookTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/EbookTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 71
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/EbookTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -171,33 +136,26 @@
 .method private init()V
     .locals 4
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 226
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 227
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 228
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 230
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/SystemSetting;->setListening(Z)V
 
-    .line 231
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -213,10 +171,8 @@
     :goto_0
     iput v2, v1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 232
     return-void
 
-    .line 231
     :cond_0
     const/4 v2, 0x2
 
@@ -225,10 +181,7 @@
 
 .method public static isVoiceCapable(Landroid/content/Context;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 334
     const-string v1, "phone"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -237,8 +190,6 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 336
-    .local v0, "telephony":Landroid/telephony/TelephonyManager;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->isVoiceCapable()Z
@@ -260,12 +211,9 @@
 
 .method public static isWifiOnly(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 340
     const-string v2, "connectivity"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -274,8 +222,6 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 342
-    .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->isNetworkSupported(I)Z
 
     move-result v2
@@ -291,8 +237,6 @@
 .method private onDisplayReadingModeAlert()V
     .locals 7
 
-    .prologue
-    .line 265
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     const-string v6, "layout_inflater"
@@ -303,9 +247,7 @@
 
     check-cast v2, Landroid/view/LayoutInflater;
 
-    .line 267
-    .local v2, "readingModeAlertLayout":Landroid/view/LayoutInflater;
-    const v5, 0x7f0400c8
+    const v5, 0x7f0400c9
 
     const/4 v6, 0x0
 
@@ -313,9 +255,7 @@
 
     move-result-object v3
 
-    .line 270
-    .local v3, "readingModeAlertView":Landroid/view/View;
-    const v5, 0x7f0e03c4
+    const v5, 0x7f0e03c8
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -323,28 +263,22 @@
 
     check-cast v4, Landroid/widget/CheckBox;
 
-    .line 272
-    .local v4, "readingModeCheckBox":Landroid/widget/CheckBox;
     new-instance v5, Lcom/android/systemui/qs/tiles/EbookTile$3;
 
     invoke-direct {v5, p0, v4}, Lcom/android/systemui/qs/tiles/EbookTile$3;-><init>(Lcom/android/systemui/qs/tiles/EbookTile;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v4, v5}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 280
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 281
-    .local v0, "builder":Landroid/app/AlertDialog$Builder;
-    const v5, 0x7f0d03c3
+    const v5, 0x7f0d03e3
 
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 284
     const v5, 0x104000a
 
     new-instance v6, Lcom/android/systemui/qs/tiles/EbookTile$4;
@@ -353,8 +287,7 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 294
-    const v5, 0x7f0d03c5
+    const v5, 0x7f0d03e5
 
     new-instance v6, Lcom/android/systemui/qs/tiles/EbookTile$5;
 
@@ -362,22 +295,18 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 309
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 311
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v5}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 313
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 316
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     new-instance v6, Lcom/android/systemui/qs/tiles/EbookTile$6;
@@ -386,7 +315,6 @@
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 323
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     const-string v6, "keyguard"
@@ -397,8 +325,6 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 324
-    .local v1, "kgm":Landroid/app/KeyguardManager;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
@@ -407,7 +333,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 325
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v5}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -418,16 +343,13 @@
 
     invoke-virtual {v5, v6}, Landroid/view/Window;->setType(I)V
 
-    .line 329
     :goto_0
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v5}, Landroid/app/AlertDialog;->show()V
 
-    .line 330
     return-void
 
-    .line 327
     :cond_0
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -444,22 +366,16 @@
 
 .method private setEnabled(Z)V
     .locals 4
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 166
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 168
-    .local v0, "mode":I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 170
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     new-instance v2, Landroid/content/Intent;
@@ -472,11 +388,8 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 171
     return-void
 
-    .line 166
-    .end local v0    # "mode":I
     :cond_0
     const/4 v0, 0x0
 
@@ -488,12 +401,10 @@
 .method public handleClick()V
     .locals 7
 
-    .prologue
     const/4 v6, 0x3
 
     const/4 v5, 0x0
 
-    .line 122
     const-string v3, "EbookTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -522,7 +433,6 @@
 
     invoke-static {v3, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 123
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v2, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -531,11 +441,9 @@
 
     if-ne v2, v6, :cond_0
 
-    .line 153
     :goto_0
     return-void
 
-    .line 127
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
@@ -547,16 +455,12 @@
 
     move-result v0
 
-    .line 128
-    .local v0, "isSettingsChangesAllowed":I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_1
 
-    .line 129
     if-nez v0, :cond_1
 
-    .line 130
     const-string v2, "EbookTile"
 
     const-string v3, "onClick(): Ebook state change is not allowed"
@@ -565,7 +469,6 @@
 
     goto :goto_0
 
-    .line 139
     :cond_1
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -573,7 +476,6 @@
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/tiles/EbookTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 141
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -588,8 +490,6 @@
 
     move-result v1
 
-    .line 144
-    .local v1, "mChecked":I
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v2, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -600,15 +500,12 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 145
     if-nez v1, :cond_2
 
-    .line 146
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/EbookTile;->onDisplayReadingModeAlert()V
 
     goto :goto_0
 
-    .line 148
     :cond_2
     const/4 v2, 0x1
 
@@ -616,7 +513,6 @@
 
     goto :goto_0
 
-    .line 151
     :cond_3
     invoke-direct {p0, v5}, Lcom/android/systemui/qs/tiles/EbookTile;->setEnabled(Z)V
 
@@ -626,90 +522,70 @@
 .method protected handleDestroy()V
     .locals 2
 
-    .prologue
-    .line 204
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 205
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 207
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setListening(Z)V
 
-    .line 208
     return-void
 .end method
 
 .method public handleLongClick()V
     .locals 2
 
-    .prologue
-    .line 162
     const-string v0, "com.android.settings"
 
     const-string v1, "com.android.settings.Settings$ReadingModeSettingsActivity"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/qs/tiles/EbookTile;->startSettingsActivity(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 163
     return-void
 .end method
 
 .method public handleSecondaryClick()V
     .locals 0
 
-    .prologue
-    .line 157
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/EbookTile;->handleLongClick()V
 
-    .line 158
     return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 7
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
-    const v6, 0x7f0d03c7
+    const v6, 0x7f0d03e7
 
     const/4 v5, 0x0
 
     const/4 v3, 0x1
 
-    .line 175
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 176
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 178
     iput-boolean v3, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 179
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d03c6
+    const v2, 0x7f0d03e6
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -717,16 +593,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 181
     packed-switch v0, :pswitch_data_0
 
-    .line 200
     :goto_1
     return-void
 
-    .line 175
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -736,22 +607,18 @@
 
     goto :goto_0
 
-    .line 183
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f02063e
+    const v1, 0x7f020649
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 184
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     new-array v2, v3, [Ljava/lang/Object;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0d0248
+    const v4, 0x7f0d0263
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -767,20 +634,18 @@
 
     goto :goto_1
 
-    .line 189
     :pswitch_1
-    const v1, 0x7f02063d
+    const v1, 0x7f020648
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 190
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
     new-array v2, v3, [Ljava/lang/Object;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0d0249
+    const v4, 0x7f0d0264
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -796,20 +661,17 @@
 
     goto :goto_1
 
-    .line 195
     :pswitch_2
-    const v1, 0x7f02063c
+    const v1, 0x7f020647
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 196
     const/4 v1, 0x0
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->contentDescription:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 181
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -820,14 +682,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 71
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/EbookTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -836,8 +693,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 117
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -848,8 +703,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 71
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/EbookTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -859,24 +712,18 @@
 
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 212
     return-void
 .end method
 
 .method public userSwitched()V
     .locals 2
 
-    .prologue
-    .line 384
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->onChange(Z)V
 
-    .line 385
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;)V
     .locals 0
 
-    .prologue
-    .line 1010
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$MSimWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;-><init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
@@ -35,23 +33,17 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 1013
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1029
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1032
     :cond_0
     :goto_0
     return-void
 
-    .line 1015
     :pswitch_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -61,14 +53,12 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 1016
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$MSimWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     iput v2, v1, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->mWifiActivity:I
 
-    .line 1017
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()J
 
     move-result-wide v2
@@ -77,15 +67,12 @@
 
     move-result v0
 
-    .line 1020
-    .local v0, "dataSub":I
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1021
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$MSimWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
     const/4 v2, 0x0
@@ -94,7 +81,6 @@
 
     goto :goto_0
 
-    .line 1023
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$MSimWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
@@ -102,7 +88,6 @@
 
     goto :goto_0
 
-    .line 1013
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

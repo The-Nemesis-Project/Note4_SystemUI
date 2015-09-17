@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/UltraPowerSavingTile;)V
     .locals 0
 
-    .prologue
-    .line 253
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/UltraPowerSavingTile$InitThread;->this$0:Lcom/android/systemui/qs/tiles/UltraPowerSavingTile;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -36,11 +34,8 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 256
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 258
     const/4 v2, 0x0
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/UltraPowerSavingTile$InitThread;->this$0:Lcom/android/systemui/qs/tiles/UltraPowerSavingTile;
@@ -56,11 +51,8 @@
 
     check-cast v1, Lcom/samsung/commonimsinterface/imsinterface/IMSInterfaceForCall;
 
-    .line 261
-    .local v1, "interfaceForCall":Lcom/samsung/commonimsinterface/imsinterface/IMSInterfaceForCall;
     if-eqz v1, :cond_0
 
-    .line 263
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/UltraPowerSavingTile$InitThread;->this$0:Lcom/android/systemui/qs/tiles/UltraPowerSavingTile;
 
@@ -73,22 +65,16 @@
     :try_end_0
     .catch Lcom/samsung/commonimsinterface/imscommon/IMSException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 270
     :goto_0
     return-void
 
-    .line 264
     :catch_0
     move-exception v0
 
-    .line 265
-    .local v0, "e":Lcom/samsung/commonimsinterface/imscommon/IMSException;
     invoke-virtual {v0}, Lcom/samsung/commonimsinterface/imscommon/IMSException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 268
-    .end local v0    # "e":Lcom/samsung/commonimsinterface/imscommon/IMSException;
     :cond_0
     const-string v2, "UltraPowerSavingTile"
 

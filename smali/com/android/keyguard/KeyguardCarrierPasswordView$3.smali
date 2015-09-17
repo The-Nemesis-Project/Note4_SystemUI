@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardCarrierPasswordView;JJ)V
     .locals 0
-    .param p2, "x0"    # J
-    .param p4, "x1"    # J
 
-    .prologue
-    .line 290
     iput-object p1, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -38,10 +34,8 @@
 .method public onFinish()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 308
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardCarrierPasswordView;->mBackupPin:Landroid/widget/EditText;
@@ -51,7 +45,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 309
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardCarrierPasswordView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -63,18 +56,14 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 310
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 3
-    .param p1, "millisUntilFinished"    # J
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 294
     const-string v0, "kr"
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
@@ -90,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 295
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardCarrierPasswordView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -102,11 +90,9 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 304
     :goto_0
     return-void
 
-    .line 297
     :cond_0
     const-string v0, "cn"
 
@@ -123,7 +109,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 298
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardCarrierPasswordView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -137,7 +122,6 @@
 
     goto :goto_0
 
-    .line 301
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 

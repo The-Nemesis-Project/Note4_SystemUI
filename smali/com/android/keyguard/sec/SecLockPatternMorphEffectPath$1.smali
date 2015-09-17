@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 1356
     invoke-static {}, Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;->values()[Lcom/android/keyguard/sec/SecLockPatternMorphEffectPath$SVGCommand;
 
     move-result-object v0

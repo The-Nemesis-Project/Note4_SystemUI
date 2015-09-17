@@ -63,41 +63,33 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 5
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
-    .line 128
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 99
     iput-boolean v3, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->isRegistered:Z
 
-    .line 113
     new-instance v0, Lcom/android/systemui/qs/tiles/DormantModeTile$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DormantModeTile$1;-><init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
 
-    .line 498
     new-instance v0, Lcom/android/systemui/qs/tiles/DormantModeTile$3;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DormantModeTile$3;-><init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 714
     new-instance v0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DormantModeTile$10;-><init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
-    .line 768
     new-instance v0, Lcom/android/systemui/qs/tiles/DormantModeTile$11;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -106,12 +98,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mCarmodeObserver:Landroid/database/ContentObserver;
 
-    .line 131
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -120,7 +110,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 135
     new-instance v0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
@@ -131,22 +120,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    .line 137
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     if-eqz v0, :cond_0
 
-    .line 138
     iput-boolean v3, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenModeAvailable:Z
 
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->addCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 
-    .line 141
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getZen()I
@@ -155,7 +140,6 @@
 
     iput v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenMode:I
 
-    .line 146
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -167,10 +151,8 @@
 
     if-ne v0, v4, :cond_1
 
-    .line 147
     iput-boolean v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mIsCarMode:Z
 
-    .line 151
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -184,19 +166,15 @@
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 153
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/DormantModeTile;->updateState()V
 
-    .line 180
     return-void
 
-    .line 143
     :cond_0
     iput v3, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenMode:I
 
     goto :goto_0
 
-    .line 149
     :cond_1
     iput-boolean v3, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mIsCarMode:Z
 
@@ -205,10 +183,7 @@
 
 .method static synthetic access$000(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/DormantModeTile;->updateState()V
 
     return-void
@@ -216,10 +191,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/qs/tiles/DormantModeTile;)Landroid/app/AlertDialog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -227,10 +199,7 @@
 
 .method static synthetic access$1000(Lcom/android/systemui/qs/tiles/DormantModeTile;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
 
     return-object v0
@@ -238,11 +207,7 @@
 
 .method static synthetic access$1102(Lcom/android/systemui/qs/tiles/DormantModeTile;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # I
 
-    .prologue
-    .line 80
     iput p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenMode:I
 
     return p1
@@ -250,10 +215,7 @@
 
 .method static synthetic access$1200(Lcom/android/systemui/qs/tiles/DormantModeTile;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
@@ -261,10 +223,7 @@
 
 .method static synthetic access$1300(Lcom/android/systemui/qs/tiles/DormantModeTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mIsCarMode:Z
 
     return v0
@@ -272,11 +231,7 @@
 
 .method static synthetic access$1302(Lcom/android/systemui/qs/tiles/DormantModeTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 80
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mIsCarMode:Z
 
     return p1
@@ -284,10 +239,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/qs/tiles/DormantModeTile;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -295,10 +247,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/qs/tiles/DormantModeTile;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -306,11 +255,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/qs/tiles/DormantModeTile;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 80
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setEnabled(Z)V
 
     return-void
@@ -318,11 +263,7 @@
 
 .method static synthetic access$500(Lcom/android/systemui/qs/tiles/DormantModeTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 80
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -330,10 +271,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/qs/tiles/DormantModeTile;)Lcom/android/systemui/qs/SystemSetting;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
 
-    .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     return-object v0
@@ -341,11 +279,7 @@
 
 .method static synthetic access$700(Lcom/android/systemui/qs/tiles/DormantModeTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 80
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -353,12 +287,7 @@
 
 .method static synthetic access$800(Lcom/android/systemui/qs/tiles/DormantModeTile;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 80
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/DormantModeTile;->startSettingsActivity(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -366,11 +295,7 @@
 
 .method static synthetic access$902(Lcom/android/systemui/qs/tiles/DormantModeTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DormantModeTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 80
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenModeAvailable:Z
 
     return p1
@@ -378,22 +303,17 @@
 
 .method private handleUpdateIconState(Lcom/android/systemui/qs/QSTile$MultiState;)V
     .locals 3
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .prologue
-    const v2, 0x7f020622
+    const v2, 0x7f02062a
 
-    const v1, 0x7f020620
+    const v1, 0x7f020628
 
-    .line 417
     sget-boolean v0, Lcom/android/systemui/statusbar/Feature;->upgradeLollipop:Z
 
     if-nez v0, :cond_1
 
-    .line 418
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 419
     const-string v0, "VZW"
 
     invoke-static {}, Lcom/android/systemui/statusbar/Feature;->getOperator()Ljava/lang/String;
@@ -406,16 +326,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 420
     iput v2, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 461
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 423
     :cond_1
     iget v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
@@ -424,13 +341,11 @@
     :pswitch_1
     goto :goto_0
 
-    .line 425
     :pswitch_2
-    const v0, 0x7f020621
+    const v0, 0x7f020629
 
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 426
     const-string v0, "VZW"
 
     invoke-static {}, Lcom/android/systemui/statusbar/Feature;->getOperator()Ljava/lang/String;
@@ -443,18 +358,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 427
-    const v0, 0x7f020623
+    const v0, 0x7f02062b
 
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
     goto :goto_0
 
-    .line 432
     :pswitch_3
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 433
     const-string v0, "VZW"
 
     invoke-static {}, Lcom/android/systemui/statusbar/Feature;->getOperator()Ljava/lang/String;
@@ -467,12 +379,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 434
     iput v2, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
     goto :goto_0
 
-    .line 423
     nop
 
     :pswitch_data_0
@@ -487,18 +397,14 @@
 .method private init()V
     .locals 3
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 510
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setListening(Z)V
 
-    .line 511
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setListening(Z)V
 
-    .line 512
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -514,10 +420,8 @@
     :goto_0
     iput v1, v0, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 513
     return-void
 
-    .line 512
     :cond_0
     const/4 v1, 0x2
 
@@ -527,20 +431,16 @@
 .method private isAllOptionsDisabled()Z
     .locals 9
 
-    .prologue
     const/4 v8, -0x2
 
     const/4 v5, 0x0
 
-    .line 516
     const-string v6, "ro.build.characteristics"
 
     invoke-static {v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 518
-    .local v1, "deviceType":Ljava/lang/String;
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v7, "dormant_disable_incoming_calls"
@@ -549,8 +449,6 @@
 
     move-result v2
 
-    .line 520
-    .local v2, "incoming":I
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v7, "dormant_disable_notifications"
@@ -559,8 +457,6 @@
 
     move-result v4
 
-    .line 522
-    .local v4, "notification":I
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v7, "dormant_disable_alarm_and_timer"
@@ -569,8 +465,6 @@
 
     move-result v0
 
-    .line 524
-    .local v0, "alarm":I
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v7, "dormant_disable_led_indicator"
@@ -579,8 +473,6 @@
 
     move-result v3
 
-    .line 527
-    .local v3, "indicator":I
     invoke-static {}, Lcom/samsung/android/feature/FloatingFeature;->getInstance()Lcom/samsung/android/feature/FloatingFeature;
 
     move-result-object v6
@@ -608,11 +500,9 @@
 
     if-eqz v6, :cond_2
 
-    .line 529
     :cond_1
     const/4 v3, 0x0
 
-    .line 533
     :cond_2
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
@@ -630,11 +520,9 @@
 
     if-eqz v6, :cond_4
 
-    .line 534
     :cond_3
     const/4 v2, 0x0
 
-    .line 537
     :cond_4
     if-nez v2, :cond_5
 
@@ -644,20 +532,15 @@
 
     if-nez v3, :cond_5
 
-    .line 538
     const/4 v5, 0x1
 
-    .line 540
     :cond_5
     return v5
 .end method
 
 .method public static isVoiceCapable(Landroid/content/Context;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 626
     const-string v1, "phone"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -666,8 +549,6 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 628
-    .local v0, "telephony":Landroid/telephony/TelephonyManager;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->isVoiceCapable()Z
@@ -689,12 +570,9 @@
 
 .method public static isWifiOnly(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 632
     const-string v2, "connectivity"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -703,8 +581,6 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 634
-    .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->isNetworkSupported(I)Z
 
     move-result v2
@@ -720,8 +596,6 @@
 .method private onDisplayDormantModeAlert()V
     .locals 8
 
-    .prologue
-    .line 545
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     const-string v6, "layout_inflater"
@@ -732,9 +606,7 @@
 
     check-cast v2, Landroid/view/LayoutInflater;
 
-    .line 547
-    .local v2, "mDormantModeAlertLayout":Landroid/view/LayoutInflater;
-    const v5, 0x7f0400c3
+    const v5, 0x7f0400c4
 
     const/4 v6, 0x0
 
@@ -742,9 +614,7 @@
 
     move-result-object v3
 
-    .line 550
-    .local v3, "mDormantModeAlertView":Landroid/view/View;
-    const v5, 0x7f0e03b7
+    const v5, 0x7f0e03bb
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -752,28 +622,22 @@
 
     check-cast v4, Landroid/widget/CheckBox;
 
-    .line 552
-    .local v4, "mDormantModeCheckBox":Landroid/widget/CheckBox;
     new-instance v5, Lcom/android/systemui/qs/tiles/DormantModeTile$4;
 
     invoke-direct {v5, p0, v4}, Lcom/android/systemui/qs/tiles/DormantModeTile$4;-><init>(Lcom/android/systemui/qs/tiles/DormantModeTile;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v4, v5}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 567
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 568
-    .local v0, "builder":Landroid/app/AlertDialog$Builder;
-    const v5, 0x7f0d038e
+    const v5, 0x7f0d03ae
 
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 571
     const v5, 0x104000a
 
     new-instance v6, Lcom/android/systemui/qs/tiles/DormantModeTile$5;
@@ -782,7 +646,6 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 577
     const/high16 v5, 0x1040000
 
     new-instance v6, Lcom/android/systemui/qs/tiles/DormantModeTile$6;
@@ -791,8 +654,7 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 586
-    const v5, 0x7f0e03b6
+    const v5, 0x7f0e03ba
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -806,7 +668,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d038c
+    const v7, 0x7f0d03ac
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -814,22 +676,18 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 601
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 603
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v5}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 605
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 608
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     new-instance v6, Lcom/android/systemui/qs/tiles/DormantModeTile$7;
@@ -838,7 +696,6 @@
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 615
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     const-string v6, "keyguard"
@@ -849,8 +706,6 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 616
-    .local v1, "kgm":Landroid/app/KeyguardManager;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
@@ -859,7 +714,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 617
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v5}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -870,16 +724,13 @@
 
     invoke-virtual {v5, v6}, Landroid/view/Window;->setType(I)V
 
-    .line 621
     :goto_0
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v5}, Landroid/app/AlertDialog;->show()V
 
-    .line 622
     return-void
 
-    .line 619
     :cond_0
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -896,27 +747,20 @@
 
 .method private setEnabled(Z)V
     .locals 4
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 304
     if-eqz p1, :cond_1
 
     const/4 v0, 0x1
 
-    .line 305
-    .local v0, "mode":I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     if-eqz v1, :cond_0
 
-    .line 306
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 308
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
@@ -930,11 +774,8 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 309
     return-void
 
-    .line 304
-    .end local v0    # "mode":I
     :cond_1
     const/4 v0, 0x0
 
@@ -944,12 +785,8 @@
 .method private showConfirmPopup()V
     .locals 5
 
-    .prologue
-    .line 638
     const/4 v1, 0x0
 
-    .line 643
-    .local v1, "theme":I
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
@@ -962,7 +799,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d038f
+    const v3, 0x7f0d03af
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -994,12 +831,10 @@
 
     iput-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mConfirmDialog:Landroid/app/AlertDialog;
 
-    .line 663
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v2}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 665
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     const-string v3, "keyguard"
@@ -1010,8 +845,6 @@
 
     check-cast v0, Landroid/app/KeyguardManager;
 
-    .line 666
-    .local v0, "kgm":Landroid/app/KeyguardManager;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
@@ -1020,7 +853,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 667
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mConfirmDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -1031,16 +863,13 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 671
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mConfirmDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
-    .line 672
     return-void
 
-    .line 669
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mConfirmDialog:Landroid/app/AlertDialog;
 
@@ -1057,17 +886,14 @@
 
 .method private showToast(I)V
     .locals 9
-    .param p1, "zen"    # I
 
-    .prologue
-    .line 741
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v6
 
-    const v7, 0x7f0400da
+    const v7, 0x7f0400dc
 
     const/4 v8, 0x0
 
@@ -1075,30 +901,22 @@
 
     move-result-object v5
 
-    .line 743
-    .local v5, "view":Landroid/view/View;
     packed-switch p1, :pswitch_data_0
 
-    .line 766
     :goto_0
     return-void
 
-    .line 745
     :pswitch_0
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f0d02f3
+    const v7, 0x7f0d030e
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 746
-    .local v3, "text":Ljava/lang/String;
-    const v1, 0x7f020166
+    const v1, 0x7f02016b
 
-    .line 756
-    .local v1, "iconRes":I
     :goto_1
     const v6, 0x102000b
 
@@ -1108,11 +926,8 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 757
-    .local v2, "message":Landroid/widget/TextView;
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 758
     const v6, 0x1020006
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1121,55 +936,37 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 759
-    .local v0, "icon":Landroid/widget/ImageView;
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 761
     new-instance v4, Landroid/widget/Toast;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     invoke-direct {v4, v6}, Landroid/widget/Toast;-><init>(Landroid/content/Context;)V
 
-    .line 762
-    .local v4, "toast":Landroid/widget/Toast;
     invoke-virtual {v4, v5}, Landroid/widget/Toast;->setView(Landroid/view/View;)V
 
-    .line 763
     const/16 v6, 0xbb8
 
     invoke-virtual {v4, v6}, Landroid/widget/Toast;->setDuration(I)V
 
-    .line 765
     invoke-virtual {v4}, Landroid/widget/Toast;->show()V
 
     goto :goto_0
 
-    .line 749
-    .end local v0    # "icon":Landroid/widget/ImageView;
-    .end local v1    # "iconRes":I
-    .end local v2    # "message":Landroid/widget/TextView;
-    .end local v3    # "text":Ljava/lang/String;
-    .end local v4    # "toast":Landroid/widget/Toast;
     :pswitch_1
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f0d02f4
+    const v7, 0x7f0d030f
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 750
-    .restart local v3    # "text":Ljava/lang/String;
-    const v1, 0x7f020167
+    const v1, 0x7f02016c
 
-    .line 751
-    .restart local v1    # "iconRes":I
     goto :goto_1
 
-    .line 743
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1180,22 +977,16 @@
 .method private updateState()V
     .locals 3
 
-    .prologue
-    .line 683
     const/4 v0, 0x2
 
-    .line 685
-    .local v0, "status":I
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mIsCarMode:Z
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 686
     const/4 v0, 0x3
 
-    .line 711
     :goto_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1203,10 +994,8 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 712
     return-void
 
-    .line 688
     :cond_0
     iget v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenMode:I
 
@@ -1214,27 +1003,21 @@
 
     goto :goto_0
 
-    .line 690
     :pswitch_0
     const/4 v0, 0x2
 
-    .line 691
     goto :goto_0
 
-    .line 694
     :pswitch_1
     const/4 v0, 0x1
 
-    .line 698
     goto :goto_0
 
-    .line 701
     :pswitch_2
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 688
     nop
 
     :pswitch_data_0
@@ -1250,12 +1033,10 @@
 .method public handleClick()V
     .locals 9
 
-    .prologue
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
-    .line 189
     const-string v5, "DormantModeTile"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1284,15 +1065,12 @@
 
     invoke-static {v5, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
     new-array v2, v8, [Ljava/lang/String;
 
     const-string v4, "false"
 
     aput-object v4, v2, v7
 
-    .line 193
-    .local v2, "selectionArgs":[Ljava/lang/String;
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     const-string v5, "content://com.sec.knox.provider/RestrictionPolicy3"
@@ -1303,21 +1081,16 @@
 
     move-result v1
 
-    .line 195
-    .local v1, "isSettingsChangesAllowed":I
     const/4 v4, -0x1
 
     if-eq v1, v4, :cond_1
 
-    .line 196
     if-nez v1, :cond_1
 
-    .line 273
     :cond_0
     :goto_0
     return-void
 
-    .line 202
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -1329,16 +1102,12 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 207
     const/4 v3, 0x2
 
-    .line 208
-    .local v3, "status":I
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     if-eqz v4, :cond_0
 
-    .line 210
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v4, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -1349,25 +1118,16 @@
 
     goto :goto_0
 
-    .line 223
     :pswitch_0
-    invoke-virtual {p0, v8}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setQsTileViewSoundEffectsEnabled(Z)V
-
-    .line 224
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v4, v7}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
 
-    .line 225
     invoke-direct {p0, v7}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setEnabled(Z)V
 
     goto :goto_0
 
-    .line 212
     :pswitch_1
-    invoke-virtual {p0, v7}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setQsTileViewSoundEffectsEnabled(Z)V
-
-    .line 213
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1380,22 +1140,17 @@
 
     move-result v0
 
-    .line 215
-    .local v0, "allowException":I
     if-ne v0, v8, :cond_2
 
-    .line 216
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v4, v8}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
 
-    .line 220
     :goto_1
     invoke-direct {p0, v8}, Lcom/android/systemui/qs/tiles/DormantModeTile;->setEnabled(Z)V
 
     goto :goto_0
 
-    .line 218
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
@@ -1405,7 +1160,6 @@
 
     goto :goto_1
 
-    .line 210
     nop
 
     :pswitch_data_0
@@ -1418,28 +1172,22 @@
 .method protected handleDestroy()V
     .locals 2
 
-    .prologue
-    .line 465
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 467
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     if-eqz v0, :cond_0
 
-    .line 468
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenModeAvailable:Z
 
-    .line 469
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->removeCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 
-    .line 475
     :cond_0
     return-void
 .end method
@@ -1447,8 +1195,6 @@
 .method public handleLongClick()V
     .locals 5
 
-    .prologue
-    .line 283
     const/4 v2, 0x1
 
     new-array v1, v2, [Ljava/lang/String;
@@ -1459,8 +1205,6 @@
 
     aput-object v3, v1, v2
 
-    .line 284
-    .local v1, "selectionArgs":[Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
     const-string v3, "content://com.sec.knox.provider/RestrictionPolicy3"
@@ -1471,27 +1215,21 @@
 
     move-result v0
 
-    .line 286
-    .local v0, "isSettingsChangesAllowed":I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_0
 
-    .line 287
     if-nez v0, :cond_0
 
-    .line 288
     const-string v2, "DormantModeTile"
 
     const-string v3, "onClick(): BlockingMode state change is not allowed"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 301
     :goto_0
     return-void
 
-    .line 295
     :cond_0
     const-string v2, "com.android.settings"
 
@@ -1505,51 +1243,38 @@
 .method public handleSecondaryClick()V
     .locals 0
 
-    .prologue
-    .line 277
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/DormantModeTile;->handleLongClick()V
 
-    .line 278
     return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
-    const v3, 0x7f0d0350
+    const v3, 0x7f0d036b
 
-    .line 313
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 315
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 316
     const/4 v1, 0x1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 318
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->handleUpdateIconState(Lcom/android/systemui/qs/QSTile$MultiState;)V
 
-    .line 320
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d0371
+    const v2, 0x7f0d038d
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1557,16 +1282,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 322
     packed-switch v0, :pswitch_data_0
 
-    .line 414
     :goto_1
     return-void
 
-    .line 313
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -1576,11 +1296,8 @@
 
     goto :goto_0
 
-    .line 324
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f0d033b
+    const v1, 0x7f0d0356
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -1590,9 +1307,8 @@
 
     goto :goto_1
 
-    .line 329
     :pswitch_1
-    const v1, 0x7f0d033c
+    const v1, 0x7f0d0357
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -1602,7 +1318,6 @@
 
     goto :goto_1
 
-    .line 322
     nop
 
     :pswitch_data_0
@@ -1614,14 +1329,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 80
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/DormantModeTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -1630,8 +1340,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 184
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -1642,8 +1350,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 80
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/DormantModeTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -1653,30 +1359,23 @@
 
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 496
     return-void
 .end method
 
 .method public userSwitched()V
     .locals 2
 
-    .prologue
-    .line 676
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     if-eqz v0, :cond_0
 
-    .line 677
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile;->mSetting:Lcom/android/systemui/qs/SystemSetting;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->onChange(Z)V
 
-    .line 679
     :cond_0
     return-void
 .end method

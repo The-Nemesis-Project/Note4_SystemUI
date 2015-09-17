@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/PickUpTutorial;)V
     .locals 0
 
-    .prologue
-    .line 207
     iput-object p1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$2;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,17 @@
 # virtual methods
 .method public onMotionListener(Landroid/hardware/motion/MREvent;)V
     .locals 2
-    .param p1, "motionEvent"    # Landroid/hardware/motion/MREvent;
 
-    .prologue
-    .line 211
     invoke-virtual {p1}, Landroid/hardware/motion/MREvent;->getMotion()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 224
     :cond_0
     :goto_0
     return-void
 
-    .line 214
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpTutorial$2;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
@@ -62,7 +55,6 @@
     # setter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mReadyToShowPutDownDialog:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/PickUpTutorial;->access$902(Lcom/android/systemui/statusbar/PickUpTutorial;Z)Z
 
-    .line 215
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpTutorial$2;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -85,7 +77,6 @@
 
     if-nez v0, :cond_0
 
-    .line 216
     const-string v0, "STATUSBAR-PickUpTutorial"
 
     const-string v1, "mMotionListener - MREvent.FLAT"
@@ -94,7 +85,6 @@
 
     goto :goto_0
 
-    .line 211
     :pswitch_data_0
     .packed-switch 0x47
         :pswitch_0

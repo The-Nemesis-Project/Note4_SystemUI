@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 433
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardUnlockView$3;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 435
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockView$3;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockView;
 
     invoke-virtual {v0, p2}, Lcom/android/keyguard/sec/KeyguardUnlockView;->onTouchEvent(Landroid/view/MotionEvent;)Z

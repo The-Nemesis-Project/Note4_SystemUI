@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,16 +30,8 @@
 # virtual methods
 .method public showAsDropDown(Landroid/widget/PopupWindow;Landroid/view/View;III)V
     .locals 0
-    .param p1, "popup"    # Landroid/widget/PopupWindow;
-    .param p2, "anchor"    # Landroid/view/View;
-    .param p3, "xoff"    # I
-    .param p4, "yoff"    # I
-    .param p5, "gravity"    # I
 
-    .prologue
-    .line 43
     invoke-virtual {p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
 
-    .line 44
     return-void
 .end method

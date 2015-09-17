@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="eca_overlap">-5.0dip</dimen>
+    <dimen name="kg_singleclock_ampm_text_size">16.0dip</dimen>
+    <dimen name="keyguard_bottom_area_trusted_shortcut_margin_phone_shortcut">77.0dip</dimen>
+    <dimen name="securityview_overlay_message_area_min_width">220.0dip</dimen>
+    <dimen name="sview_cover_mini_fpopup_padding">37.0dip</dimen>
+    <dimen name="sview_cover_mini_fpopup_textsize">17.0dip</dimen>
+    <dimen name="sview_cover_indicator_height">24.0dip</dimen>
+    <dimen name="sview_cover_fpopup_padding_left">34.0dip</dimen>
+    <dimen name="sview_cover_fpopup_padding_right">25.0dip</dimen>
+    <dimen name="sview_cover_fpopup_padding_top">15.0dip</dimen>
+    <dimen name="sview_cover_fpopup_title_height">42.0dip</dimen>
+    <dimen name="sview_cover_fpopup_title_textsize">20.0dip</dimen>
+    <dimen name="sview_cover_fpopup_body_height">167.0dip</dimen>
+    <dimen name="sview_cover_fpopup_body_padding_top">20.0dip</dimen>
+    <dimen name="sview_cover_fpopup_body_padding_bottom">20.0dip</dimen>
+    <dimen name="sview_cover_fpopup_body_textsize">18.0dip</dimen>
+    <dimen name="sview_cover_fpopup_buttonbar_height">56.0dip</dimen>
+    <dimen name="sview_cover_fpopup_buttonbar_between_buttons">12.0dip</dimen>
+    <dimen name="sview_cover_fpopup_buttonbar_paddingBottom">16.0dip</dimen>
+    <dimen name="sview_cover_fpopup_button1_width">88.0dip</dimen>
+    <dimen name="sview_cover_fpopup_button2_width">46.0dip</dimen>
+    <dimen name="sview_cover_fpopup_button_height">40.0dip</dimen>
+    <dimen name="sview_cover_fpopup_button_paddingEnd">6.0dip</dimen>
+    <dimen name="sview_cover_fpopup_button_textsize">15.0dip</dimen>
+    <dimen name="sview_cover_mini_fpopup_height">96.0dip</dimen>
+    <dimen name="sview_cover_mini_fpopup_indicator_height">29.0dip</dimen>
+    <dimen name="status_bar_carrier_text_size">14.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_027a">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027b">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027c">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027d">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027f">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03eb">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ec">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ed">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ee">false</item>
+</resources>

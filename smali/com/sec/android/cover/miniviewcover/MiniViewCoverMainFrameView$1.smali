@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;)V
     .locals 0
 
-    .prologue
-    .line 82
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 85
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->updatePage()V
     invoke-static {v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->access$000(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;)V
 
-    .line 86
     return-void
 .end method

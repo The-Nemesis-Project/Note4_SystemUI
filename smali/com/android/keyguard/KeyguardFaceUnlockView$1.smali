@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardFaceUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 59
     iput-object p1, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     invoke-direct {p0}, Landroid/view/IRotationWatcher$Stub;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onRotationChanged(I)V
     .locals 3
-    .param p1, "rotation"    # I
 
-    .prologue
-    .line 61
     const-string v0, "FULKeyguardFaceUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,7 +73,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mLastRotation:I
@@ -96,7 +90,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 69
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/keyguard/BiometricSensorUnlock;
@@ -106,7 +99,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 70
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/keyguard/BiometricSensorUnlock;
@@ -116,19 +108,16 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/BiometricSensorUnlock;->stop()Z
 
-    .line 71
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # invokes: Lcom/android/keyguard/KeyguardFaceUnlockView;->maybeStartBiometricUnlock()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardFaceUnlockView;->access$200(Lcom/android/keyguard/KeyguardFaceUnlockView;)V
 
-    .line 74
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # setter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mLastRotation:I
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardFaceUnlockView;->access$002(Lcom/android/keyguard/KeyguardFaceUnlockView;I)I
 
-    .line 75
     return-void
 .end method

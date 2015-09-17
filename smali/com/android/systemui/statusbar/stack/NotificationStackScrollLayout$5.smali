@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
     .locals 0
 
-    .prologue
-    .line 2482
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$5;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 2485
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$5;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     # getter for: Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mQconnectSfinderView:Lcom/android/systemui/statusbar/QconnectSfinderView;
@@ -52,7 +48,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/QconnectSfinderView;->setVisibility(I)V
 
-    .line 2486
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$5;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     # getter for: Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mQconnectSfinderView:Lcom/android/systemui/statusbar/QconnectSfinderView;
@@ -64,12 +59,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/QconnectSfinderView;->setWillBeGone(Z)V
 
-    .line 2487
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$5;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     # invokes: Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->updateContentHeight()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->access$400(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 2488
     return-void
 .end method

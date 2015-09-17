@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
-    .prologue
-    .line 975
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onConditionsChanged([Landroid/service/notification/Condition;)V
     .locals 2
-    .param p1, "conditions"    # [Landroid/service/notification/Condition;
 
-    .prologue
-    .line 983
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -52,7 +47,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 984
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -69,16 +63,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 985
     return-void
 .end method
 
 .method public onExitConditionChanged(Landroid/service/notification/Condition;)V
     .locals 2
-    .param p1, "exitCondition"    # Landroid/service/notification/Condition;
 
-    .prologue
-    .line 989
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -92,7 +82,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 990
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -109,16 +98,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 991
     return-void
 .end method
 
 .method public onZenChanged(I)V
     .locals 3
-    .param p1, "zen"    # I
 
-    .prologue
-    .line 978
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -132,7 +117,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 979
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -151,6 +135,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 980
     return-void
 .end method

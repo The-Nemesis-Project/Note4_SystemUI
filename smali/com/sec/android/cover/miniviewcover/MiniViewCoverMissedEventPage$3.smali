@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 135
     invoke-static {}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;->values()[Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$PopupType;
 
     move-result-object v0

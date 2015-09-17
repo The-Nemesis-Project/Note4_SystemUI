@@ -22,22 +22,18 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
     .locals 5
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 4148
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    .line 4149
     new-instance v2, Landroid/os/Handler;
 
     invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 4151
     iget-object v2, p1, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -58,10 +54,8 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mNwboosterSettingEnabled:Z
     invoke-static {p1, v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 4153
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->refreshViews()V
 
-    .line 4154
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -89,13 +83,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4155
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 4151
     goto :goto_0
 .end method
 
@@ -103,14 +95,11 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 6
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 4158
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -135,12 +124,10 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mNwboosterSettingEnabled:Z
     invoke-static {v2, v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 4160
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->refreshViews()V
 
-    .line 4161
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -170,12 +157,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4162
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 4158
     goto :goto_0
 .end method

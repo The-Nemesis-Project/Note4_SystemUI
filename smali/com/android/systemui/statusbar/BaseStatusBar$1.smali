@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 786
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,12 +33,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 5
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 789
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v3, v3, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
@@ -60,8 +54,6 @@
 
     const/4 v1, 0x1
 
-    .line 791
-    .local v1, "provisioned":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -72,18 +64,15 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 792
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mDeviceProvisioned:Z
     invoke-static {v3, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$102(Lcom/android/systemui/statusbar/BaseStatusBar;Z)Z
 
-    .line 793
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/BaseStatusBar;->updateNotifications()V
 
-    .line 795
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -99,25 +88,18 @@
 
     move-result v0
 
-    .line 797
-    .local v0, "mode":I
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v2, v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->setZenMode(I)V
 
-    .line 799
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$1;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->updateLockscreenNotificationSetting()V
 
-    .line 800
     return-void
 
-    .end local v0    # "mode":I
-    .end local v1    # "provisioned":Z
     :cond_1
     move v1, v2
 
-    .line 789
     goto :goto_0
 .end method

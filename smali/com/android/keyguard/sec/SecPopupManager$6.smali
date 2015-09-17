@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 368
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,10 +30,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "arg0"    # Landroid/view/View;
 
-    .prologue
-    .line 372
     # getter for: Lcom/android/keyguard/sec/SecPopupManager;->mHelpOverlyDialog:Landroid/app/Dialog;
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->access$300()Landroid/app/Dialog;
 
@@ -43,7 +38,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 373
     # getter for: Lcom/android/keyguard/sec/SecPopupManager;->mHelpOverlyDialog:Landroid/app/Dialog;
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->access$300()Landroid/app/Dialog;
 
@@ -51,14 +45,12 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 376
     const-string v0, "SecPopupManager"
 
     const-string v1, "help overlay dialog dismiss by onClick"
 
     invoke-static {v0, v1}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 378
     :cond_0
     return-void
 .end method

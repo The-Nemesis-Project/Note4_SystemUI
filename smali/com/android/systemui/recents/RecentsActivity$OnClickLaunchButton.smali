@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
 
-    .prologue
-    .line 1040
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/RecentsActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/recents/RecentsActivity;
-    .param p2, "x1"    # Lcom/android/systemui/recents/RecentsActivity$1;
 
-    .prologue
-    .line 1040
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchButton;-><init>(Lcom/android/systemui/recents/RecentsActivity;)V
 
     return-void
@@ -50,10 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 9
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 1045
     iget-object v5, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     # invokes: Lcom/android/systemui/recents/RecentsActivity;->isTaskManagerInstalled()Z
@@ -61,21 +52,15 @@
 
     move-result v4
 
-    .line 1047
-    .local v4, "useTaskManager":Z
     if-eqz v4, :cond_2
 
     const-string v1, "com.sec.android.app.taskmanager"
 
-    .line 1049
-    .local v1, "PACKAGE_NAME":Ljava/lang/String;
     :goto_0
     if-eqz v4, :cond_3
 
     const-string v0, "com.sec.android.app.taskmanager.activity.TaskManagerActivity"
 
-    .line 1050
-    .local v0, "CLASS_NAME":Ljava/lang/String;
     :goto_1
     if-eqz v4, :cond_0
 
@@ -88,7 +73,6 @@
 
     if-nez v5, :cond_1
 
-    .line 1051
     :cond_0
     const-string v5, "StatusBar_Recents"
 
@@ -96,28 +80,22 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1059
     :cond_1
     :try_start_0
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 1060
-    .local v3, "intent":Landroid/content/Intent;
     const-string v5, "android.intent.action.MAIN"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1061
     const v5, 0x10004000
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1062
     invoke-virtual {v3, v1, v0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1063
     iget-object v5, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v5}, Lcom/android/systemui/recents/RecentsActivity;->getBaseContext()Landroid/content/Context;
@@ -134,13 +112,11 @@
 
     invoke-virtual {v5, v3, v6, v7}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 1064
     const/4 v5, 0x0
 
     # invokes: Lcom/android/systemui/recents/RecentsActivity;->notifyRecentPanelVisiblity(Z)V
     invoke-static {v5}, Lcom/android/systemui/recents/RecentsActivity;->access$000(Z)V
 
-    .line 1065
     iget-object v5, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const/4 v6, 0x0
@@ -149,33 +125,22 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1070
-    .end local v3    # "intent":Landroid/content/Intent;
     :goto_2
     return-void
 
-    .line 1047
-    .end local v0    # "CLASS_NAME":Ljava/lang/String;
-    .end local v1    # "PACKAGE_NAME":Ljava/lang/String;
     :cond_2
     const-string v1, "com.sec.android.app.controlpanel"
 
     goto :goto_0
 
-    .line 1049
-    .restart local v1    # "PACKAGE_NAME":Ljava/lang/String;
     :cond_3
     const-string v0, "com.sec.android.app.controlpanel.activity.JobManagerActivity"
 
     goto :goto_1
 
-    .line 1067
-    .restart local v0    # "CLASS_NAME":Ljava/lang/String;
     :catch_0
     move-exception v2
 
-    .line 1068
-    .local v2, "e":Landroid/content/ActivityNotFoundException;
     const-string v5, "StatusBar_Recents"
 
     const-string v6, "Activity Not Found"

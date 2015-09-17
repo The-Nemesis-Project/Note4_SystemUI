@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardVoiceWrapper;)V
     .locals 0
 
-    .prologue
-    .line 58
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardVoiceWrapper$1;->this$0:Lcom/android/keyguard/sec/KeyguardVoiceWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,23 +37,17 @@
 .method public refreshVoiceUnlockHelpText()V
     .locals 0
 
-    .prologue
-    .line 72
     return-void
 .end method
 
 .method public setVoiceRecognitionFailCue()V
     .locals 0
 
-    .prologue
-    .line 62
     return-void
 .end method
 
 .method public unlock()V
     .locals 0
 
-    .prologue
-    .line 67
     return-void
 .end method

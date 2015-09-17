@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardAbsKeyInputView;)V
     .locals 0
 
-    .prologue
-    .line 91
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,14 +34,11 @@
 .method public onEmergencyCallAction()V
     .locals 2
 
-    .prologue
-    .line 94
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEMAPress:Z
 
-    .line 95
     return-void
 .end method

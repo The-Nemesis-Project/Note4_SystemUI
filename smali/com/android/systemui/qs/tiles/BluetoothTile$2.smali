@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
     .locals 0
 
-    .prologue
-    .line 221
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$2;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public onBluetoothPairedDevicesChanged()V
     .locals 2
 
-    .prologue
-    .line 230
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$2;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/BluetoothTile;->mUiHandler:Landroid/os/Handler;
@@ -54,42 +50,33 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 236
     const-string v0, "BluetoothTile"
 
     const-string v1, " onBluetoothPairedDevicesChanged:"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 237
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$2;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/BluetoothTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$400(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
 
-    .line 238
     return-void
 .end method
 
 .method public onBluetoothStateChange(ZZ)V
     .locals 2
-    .param p1, "enabled"    # Z
-    .param p2, "connecting"    # Z
 
-    .prologue
-    .line 224
     const-string v0, "BluetoothTile"
 
     const-string v1, " onBluetoothStateChange:"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$2;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/BluetoothTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$200(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
 
-    .line 226
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;)V
     .locals 0
 
-    .prologue
-    .line 114
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +36,6 @@
 # virtual methods
 .method public onReceive(ILjava/util/HashMap;)V
     .locals 3
-    .param p1, "status"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -47,14 +44,10 @@
         }
     .end annotation
 
-    .prologue
-    .local p2, "params":Ljava/util/HashMap;, "Ljava/util/HashMap<**>;"
     const/4 v2, 0x1
 
-    .line 118
     if-ne p1, v2, :cond_0
 
-    .line 120
     const-string v0, "sound"
 
     invoke-virtual {p2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -71,7 +64,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 121
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     const/4 v1, 0x0
@@ -79,12 +71,10 @@
     # invokes: Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->playSound(I)V
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->access$000(Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;I)V
 
-    .line 128
     :cond_0
     :goto_0
     return-void
 
-    .line 123
     :cond_1
     const-string v0, "sound"
 
@@ -102,7 +92,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 125
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->playSound(I)V

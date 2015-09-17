@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 3185
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$12;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 3
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromUser"    # Z
 
-    .prologue
-    .line 3188
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
 
@@ -73,7 +66,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3203
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$12;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
@@ -88,10 +80,8 @@
 
     invoke-virtual {v0, v1, p2, v2}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 3206
     if-nez p2, :cond_2
 
-    .line 3207
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$12;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mMediaVolumeIcon:Landroid/widget/ImageView;
@@ -99,11 +89,10 @@
 
     move-result-object v0
 
-    const v1, 0x1080a6e
+    const v1, 0x1080a6f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 3211
     :goto_0
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
@@ -118,17 +107,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3212
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$12;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1500(Lcom/android/systemui/volume/VolumePanel;)V
 
-    .line 3213
     return-void
 
-    .line 3209
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$12;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
@@ -137,7 +123,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080a6d
+    const v1, 0x1080a6e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -146,18 +132,12 @@
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 3217
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 3221
     return-void
 .end method

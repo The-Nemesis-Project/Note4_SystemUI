@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
     .locals 0
 
-    .prologue
-    .line 185
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 13
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v12, 0x2
 
     const-wide/16 v10, 0x0
@@ -47,13 +42,10 @@
 
     const/4 v6, 0x0
 
-    .line 188
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 189
-    .local v1, "intentAction":Ljava/lang/String;
     const-string v7, "DefaultDataTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -76,7 +68,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 190
     const-string v7, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -85,7 +76,6 @@
 
     if-eqz v7, :cond_2
 
-    .line 191
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -105,7 +95,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mIsAirPlaneMode:Z
     invoke-static {v7, v3}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$002(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 192
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -118,7 +107,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mMobileData:Z
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$102(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 193
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -131,7 +119,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 194
     const-string v3, "DefaultDataTile"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -178,13 +165,11 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->updateActivateStatus()V
     invoke-static {v3}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$200(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
 
-    .line 245
     :cond_0
     :goto_1
     return-void
@@ -192,10 +177,8 @@
     :cond_1
     move v3, v6
 
-    .line 191
     goto :goto_0
 
-    .line 196
     :cond_2
     const-string v7, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -221,7 +204,6 @@
 
     if-eqz v7, :cond_4
 
-    .line 199
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
@@ -235,7 +217,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mMobileData:Z
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$102(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 200
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -248,7 +229,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 201
     const-string v3, "DefaultDataTile"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -295,7 +275,6 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->updateActivateStatus()V
@@ -303,7 +282,6 @@
 
     goto :goto_1
 
-    .line 203
     :cond_4
     const-string v7, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGE_STARTED"
 
@@ -313,7 +291,6 @@
 
     if-eqz v7, :cond_5
 
-    .line 204
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -323,7 +300,6 @@
 
     invoke-virtual {v6, v12}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 205
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -335,8 +311,6 @@
 
     move-result-object v2
 
-    .line 206
-    .local v2, "msg":Landroid/os/Message;
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -346,7 +320,6 @@
 
     invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 208
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -359,15 +332,12 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mMobileData:Z
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$102(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 209
     const-string v3, "subscription"
 
     invoke-virtual {p2, v3, v10, v11}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v4
 
-    .line 210
-    .local v4, "subId":J
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-static {v4, v5}, Landroid/telephony/SubscriptionManager;->getSlotId(J)I
@@ -377,7 +347,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 211
     const-string v3, "DefaultDataTile"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -434,13 +403,11 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->updateActivateStatus()V
     invoke-static {v3}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$200(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
 
-    .line 214
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -452,8 +419,6 @@
 
     move-result-object v0
 
-    .line 215
-    .local v0, "delayReady":Landroid/os/Message;
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -467,10 +432,6 @@
 
     goto/16 :goto_1
 
-    .line 216
-    .end local v0    # "delayReady":Landroid/os/Message;
-    .end local v2    # "msg":Landroid/os/Message;
-    .end local v4    # "subId":J
     :cond_5
     const-string v7, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
@@ -480,7 +441,6 @@
 
     if-eqz v7, :cond_6
 
-    .line 217
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -492,8 +452,6 @@
 
     move-result-object v2
 
-    .line 218
-    .restart local v2    # "msg":Landroid/os/Message;
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -503,7 +461,6 @@
 
     invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 219
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -516,15 +473,12 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mMobileData:Z
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$102(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 220
     const-string v3, "subscription"
 
     invoke-virtual {p2, v3, v10, v11}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v4
 
-    .line 221
-    .restart local v4    # "subId":J
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-static {v4, v5}, Landroid/telephony/SubscriptionManager;->getSlotId(J)I
@@ -534,7 +488,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 222
     const-string v3, "DefaultDataTile"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -591,7 +544,6 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->updateActivateStatus()V
@@ -599,9 +551,6 @@
 
     goto/16 :goto_1
 
-    .line 224
-    .end local v2    # "msg":Landroid/os/Message;
-    .end local v4    # "subId":J
     :cond_6
     const-string v7, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_FAILED"
 
@@ -627,7 +576,6 @@
 
     if-eqz v7, :cond_9
 
-    .line 227
     :cond_7
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
@@ -640,8 +588,6 @@
 
     move-result-object v2
 
-    .line 228
-    .restart local v2    # "msg":Landroid/os/Message;
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mDelayHandler:Landroid/os/Handler;
@@ -651,7 +597,6 @@
 
     invoke-virtual {v7, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 230
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -664,15 +609,12 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mMobileData:Z
     invoke-static {v7, v8}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$102(Lcom/android/systemui/qs/tiles/DefaultDataTile;Z)Z
 
-    .line 231
     const-string v7, "subscription"
 
     invoke-virtual {p2, v7, v10, v11}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v4
 
-    .line 232
-    .restart local v4    # "subId":J
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-static {v4, v5}, Landroid/telephony/SubscriptionManager;->getSlotId(J)I
@@ -682,7 +624,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v7, v8}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 233
     const-string v7, "DefaultDataTile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -739,13 +680,11 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 234
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # operator++ for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v7}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$508(Lcom/android/systemui/qs/tiles/DefaultDataTile;)I
 
-    .line 235
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
@@ -755,20 +694,17 @@
 
     if-le v7, v3, :cond_8
 
-    .line 236
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mCurrentDataNW:I
     invoke-static {v3, v6}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$502(Lcom/android/systemui/qs/tiles/DefaultDataTile;I)I
 
-    .line 238
     :cond_8
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->updateActivateStatus()V
     invoke-static {v3}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$200(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
 
-    .line 239
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mContext:Landroid/content/Context;
@@ -793,9 +729,6 @@
 
     goto/16 :goto_1
 
-    .line 240
-    .end local v2    # "msg":Landroid/os/Message;
-    .end local v4    # "subId":J
     :cond_9
     const-string v3, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -809,7 +742,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 241
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -832,7 +764,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 242
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DefaultDataTile;->mAlertDialog:Landroid/app/AlertDialog;

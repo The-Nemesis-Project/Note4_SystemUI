@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/PagedView$9;)V
     .locals 0
 
-    .prologue
-    .line 2563
     iput-object p1, p0, Lcom/sec/android/cover/widget/PagedView$9$1;->this$1:Lcom/sec/android/cover/widget/PagedView$9;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,22 +33,16 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 2566
     new-instance v0, Lcom/sec/android/cover/widget/PagedView$9$1$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/widget/PagedView$9$1$1;-><init>(Lcom/sec/android/cover/widget/PagedView$9$1;)V
 
-    .line 2574
-    .local v0, "onCompleteRunnable":Ljava/lang/Runnable;
     iget-object v1, p0, Lcom/sec/android/cover/widget/PagedView$9$1;->this$1:Lcom/sec/android/cover/widget/PagedView$9;
 
     iget-object v1, v1, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     invoke-virtual {v1, v0}, Lcom/sec/android/cover/widget/PagedView;->zoomIn(Ljava/lang/Runnable;)Z
 
-    .line 2575
     return-void
 .end method

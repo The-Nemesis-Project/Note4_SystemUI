@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/settings/ToggleSlider;)V
     .locals 0
 
-    .prologue
-    .line 563
     iput-object p1, p0, Lcom/android/systemui/settings/ToggleSlider$7;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,23 +36,17 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 8
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 567
     new-array v1, v2, [Ljava/lang/String;
 
     const-string v4, "false"
 
     aput-object v4, v1, v3
 
-    .line 568
-    .local v1, "selectionArgs":[Ljava/lang/String;
     iget-object v4, p0, Lcom/android/systemui/settings/ToggleSlider$7;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     iget-object v5, p0, Lcom/android/systemui/settings/ToggleSlider$7;->this$0:Lcom/android/systemui/settings/ToggleSlider;
@@ -73,22 +65,18 @@
 
     move-result v0
 
-    .line 570
-    .local v0, "isSettingsChangesAllowed":I
     const/4 v4, -0x1
 
     if-eq v0, v4, :cond_0
 
     if-nez v0, :cond_0
 
-    .line 571
     const-string v3, "twToggleSlider"
 
     const-string v4, "onTouch(): Change brightness was not allowed"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 576
     :goto_0
     return v2
 

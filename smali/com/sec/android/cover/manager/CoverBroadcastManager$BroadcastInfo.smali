@@ -23,20 +23,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;J)V
     .locals 0
-    .param p1, "item"    # Ljava/lang/Object;
-    .param p2, "when"    # J
 
-    .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;->mItem:Ljava/lang/Object;
 
-    .line 44
     iput-wide p2, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;->mWhen:J
 
-    .line 45
     return-void
 .end method
 
@@ -45,8 +38,6 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .prologue
-    .line 49
     const-string v0, "when=%s, item=%s"
 
     const/4 v1, 0x2

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/settings/ToggleSlider;)V
     .locals 0
 
-    .prologue
-    .line 197
     iput-object p1, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,23 +36,17 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 9
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    .line 201
     new-array v2, v3, [Ljava/lang/String;
 
     const-string v5, "false"
 
     aput-object v5, v2, v4
 
-    .line 202
-    .local v2, "selectionArgs":[Ljava/lang/String;
     iget-object v5, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     iget-object v6, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
@@ -73,50 +65,40 @@
 
     move-result v1
 
-    .line 204
-    .local v1, "isSettingsChangesAllowed":I
     const/4 v5, -0x1
 
     if-eq v1, v5, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 205
     const-string v4, "toggleSlider"
 
     const-string v5, "onTouch(): Change brightness was not allowed"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
     :goto_0
     return v3
 
-    .line 210
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 211
-    .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
     :cond_1
     :goto_1
     move v3, v4
 
-    .line 224
     goto :goto_0
 
-    .line 213
     :pswitch_0
     iget-object v5, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mIsTogglePressed:Z
     invoke-static {v5, v3}, Lcom/android/systemui/settings/ToggleSlider;->access$202(Lcom/android/systemui/settings/ToggleSlider;Z)Z
 
-    .line 215
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mDiagnosticLogs:Z
     invoke-static {}, Lcom/android/systemui/settings/ToggleSlider;->access$300()Z
 
@@ -124,7 +106,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 216
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # invokes: Lcom/android/systemui/settings/ToggleSlider;->sendLogs()V
@@ -132,7 +113,6 @@
 
     goto :goto_1
 
-    .line 221
     :pswitch_1
     iget-object v3, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -145,7 +125,6 @@
 
     goto :goto_1
 
-    .line 211
     nop
 
     :pswitch_data_0

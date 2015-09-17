@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 1086
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning$CameraState;->values()[Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning$CameraState;
 
     move-result-object v0

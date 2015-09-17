@@ -53,9 +53,9 @@
         <item>@drawable/lock_circle_01_default</item>
         <item>@drawable/main_circle_ic_settings</item>
         <item>@drawable/lock_circle_ic_camera</item>
-        <item>@drawable/APKTOOL_DUMMY_022f</item>
-        <item>@drawable/APKTOOL_DUMMY_022b</item>
-        <item>@drawable/APKTOOL_DUMMY_022d</item>
+        <item>@drawable/APKTOOL_DUMMY_0236</item>
+        <item>@drawable/APKTOOL_DUMMY_0232</item>
+        <item>@drawable/APKTOOL_DUMMY_0234</item>
         <item>@color/sview_cover_wallpaper_title_text_color</item>
     </array>
     <array name="s_view_cover_stylized_clock_style_02">
@@ -65,9 +65,9 @@
         <item>@drawable/lock_circle_style_01_black</item>
         <item>@drawable/lock_circle_ic_style_01_settings</item>
         <item>@drawable/lock_circle_ic_style_01_camera</item>
-        <item>@drawable/APKTOOL_DUMMY_0237</item>
-        <item>@drawable/APKTOOL_DUMMY_0235</item>
-        <item>@drawable/APKTOOL_DUMMY_0231</item>
+        <item>@drawable/APKTOOL_DUMMY_023e</item>
+        <item>@drawable/APKTOOL_DUMMY_023c</item>
+        <item>@drawable/APKTOOL_DUMMY_0238</item>
         <item>@color/sview_cover_analog_01_text_color</item>
     </array>
     <array name="s_view_cover_stylized_clock_style_03">
@@ -77,9 +77,9 @@
         <item>@drawable/lock_circle_style_02_default</item>
         <item>@drawable/lock_circle_ic_style_02_settings</item>
         <item>@drawable/lock_circle_ic_style_02_camera</item>
-        <item>@drawable/APKTOOL_DUMMY_023f</item>
-        <item>@drawable/APKTOOL_DUMMY_023e</item>
-        <item>@drawable/APKTOOL_DUMMY_023c</item>
+        <item>@drawable/APKTOOL_DUMMY_0246</item>
+        <item>@drawable/APKTOOL_DUMMY_0245</item>
+        <item>@drawable/APKTOOL_DUMMY_0243</item>
         <item>@color/sview_cover_analog_02_text_color</item>
     </array>
     <array name="s_view_cover_default_wallpaper_drawable_list">
@@ -891,22 +891,43 @@
         <item>0</item>
     </integer-array>
     <string-array name="quick_settings_default_tiles_list">
+        <item>CS</item>
         <item>Wifi</item>
-        <item>Location</item>
-        <item>SilentMode</item>
-        <item>AutoRotate</item>
-        <item>Bluetooth</item>
         <item>MobileData</item>
-        <item>PowerSaving</item>
-        <item>AirplaneMode</item>
-        <item>WiFiHotspot</item>
-        <item>TorchLight</item>
-        <item>UltraPowerSaving</item>
-        <item>SmartStay</item>
-        <item>PersonalMode</item>
-        <item>AllShareCast</item>
+        <item>Location</item>
+        <item>Bluetooth</item>
+        <item>SilentMode</item>
+        <item>Flashlight</item>
         <item>Nfc</item>
+        <item>WiFiHotspot</item>
+        <item>AirplaneMode</item>
+        <item>CarMode</item>
+        <item>DormantMode</item>
+        <item>SBeam</item>
+        <item>PowerSaving</item>
+        <item>SmartStay</item>
+        <item>SmartScroll</item>
+        <item>AllShareCast</item>
+        <item>AutoRotate</item>
+        <item>MultiWindow</item>
         <item>Sync</item>
+        <item>Brightness</item>
+        <item>AirView</item>
+        <item>AirGesture</item>
+        <item>DoNotDisturb</item>
+        <item>NetworkBooster</item>
+        <item>QuickConnect</item>
+        <item>SFinder</item>
+        <item>SmartPause</item>
+        <item>TouchSensitivity</item>
+        <item>UltraPowerSaving</item>
+        <item>Camera</item>
+        <item>Battery</item>
+        <item>GlassMsg</item>
+        <item>PersonalMode</item>
+        <item>PowerOff</item>
+        <item>Reboot</item>
+        <item>Recovery</item>
     </string-array>
     <string-array name="quick_settings_default_tiles_list_vzw">
         <item>Wifi</item>
@@ -944,20 +965,43 @@
         <item>Sync</item>
     </string-array>
     <string-array name="quick_settings_default_tiles_list_tmo">
+        <item>CS</item>
         <item>Wifi</item>
+        <item>MobileData</item>
         <item>Location</item>
-        <item>SilentMode</item>
-        <item>AutoRotate</item>
         <item>Bluetooth</item>
-        <item>WifiCalling</item>
-        <item>UltraPowerSaving</item>
-        <item>AirplaneMode</item>
+        <item>SilentMode</item>
+        <item>Flashlight</item>
         <item>Nfc</item>
-        <item>TorchLight</item>
+        <item>WiFiHotspot</item>
+        <item>AirplaneMode</item>
+        <item>CarMode</item>
+        <item>DormantMode</item>
+        <item>SBeam</item>
         <item>PowerSaving</item>
         <item>SmartStay</item>
-        <item>PersonalMode</item>
+        <item>SmartScroll</item>
         <item>AllShareCast</item>
+        <item>AutoRotate</item>
+        <item>MultiWindow</item>
+        <item>Sync</item>
+        <item>Brightness</item>
+        <item>AirView</item>
+        <item>AirGesture</item>
+        <item>DoNotDisturb</item>
+        <item>NetworkBooster</item>
+        <item>QuickConnect</item>
+        <item>SFinder</item>
+        <item>SmartPause</item>
+        <item>TouchSensitivity</item>
+        <item>UltraPowerSaving</item>
+        <item>Camera</item>
+        <item>Battery</item>
+        <item>GlassMsg</item>
+        <item>PersonalMode</item>
+        <item>PowerOff</item>
+        <item>Reboot</item>
+        <item>Recovery</item>
     </string-array>
     <string-array name="quick_settings_default_tiles_list_spr">
         <item>Wifi</item>
@@ -1051,22 +1095,42 @@
         <item>Sync</item>
     </string-array>
     <string-array name="quick_settings_default_tiles_list_tab">
+        <item>CS</item>
         <item>Wifi</item>
-        <item>Location</item>
-        <item>SilentMode</item>
-        <item>AutoRotate</item>
-        <item>Bluetooth</item>
         <item>MobileData</item>
-        <item>PowerSaving</item>
-        <item>AirplaneMode</item>
-        <item>WiFiHotspot</item>
-        <item>TorchLight</item>
-        <item>EbookTile</item>
-        <item>UltraPowerSaving</item>
-        <item>SmartStay</item>
-        <item>PersonalMode</item>
-        <item>AllShareCast</item>
+        <item>Location</item>
+        <item>Bluetooth</item>
+        <item>SilentMode</item>
+        <item>Flashlight</item>
         <item>Nfc</item>
+        <item>WiFiHotspot</item>
+        <item>AirplaneMode</item>
+        <item>CarMode</item>
+        <item>DormantMode</item>
+        <item>SBeam</item>
+        <item>PowerSaving</item>
+        <item>SmartStay</item>
+        <item>SmartScroll</item>
+        <item>AllShareCast</item>
+        <item>AutoRotate</item>
+        <item>MultiWindow</item>
         <item>Sync</item>
+        <item>Brightness</item>
+        <item>AirView</item>
+        <item>AirGesture</item>
+        <item>DoNotDisturb</item>
+        <item>NetworkBooster</item>
+        <item>QuickConnect</item>
+        <item>SFinder</item>
+        <item>SmartPause</item>
+        <item>TouchSensitivity</item>
+        <item>UltraPowerSaving</item>
+        <item>Camera</item>
+        <item>Battery</item>
+        <item>GlassMsg</item>
+        <item>PersonalMode</item>
+        <item>PowerOff</item>
+        <item>Reboot</item>
+        <item>Recovery</item>
     </string-array>
 </resources>

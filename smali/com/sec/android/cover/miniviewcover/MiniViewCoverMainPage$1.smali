@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 48
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,18 +33,13 @@
 # virtual methods
 .method public onPowerConnectionUpdate(Z)V
     .locals 1
-    .param p1, "connected"    # Z
 
-    .prologue
-    .line 50
     if-nez p1, :cond_0
 
-    .line 51
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->updateMainPageLayout()V
 
-    .line 53
     :cond_0
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverView;)V
     .locals 0
 
-    .prologue
-    .line 258
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,27 +36,21 @@
 # virtual methods
 .method public OnUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 2
-    .param p1, "info"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 262
     iget-boolean v0, p1, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;->mVisibility:Z
 
     if-ne v0, v1, :cond_0
 
-    .line 263
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverView;->moveToMainPage()V
 
-    .line 264
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/sviewcover/SViewCoverView;->updateSViewCoverUnlockArea(Z)V
 
-    .line 266
     :cond_0
     return-void
 .end method

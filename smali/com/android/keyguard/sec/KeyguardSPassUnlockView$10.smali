@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 1259
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$10;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 1263
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$10;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->isDeviceDisabledForMaxFailedAttempt()Z
@@ -51,17 +46,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1264
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$10;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->disableDevicePermanently()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$800(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
 
-    .line 1269
     :goto_0
     return-void
 
-    .line 1268
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$10;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 

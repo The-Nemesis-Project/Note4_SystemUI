@@ -26,8 +26,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PanelView;Z)V
     .locals 0
 
-    .prologue
-    .line 597
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->val$clearAllExpandHack:Z
@@ -41,24 +39,17 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 602
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->mCancelled:Z
 
-    .line 603
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 607
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->val$clearAllExpandHack:Z
 
     if-eqz v0, :cond_0
@@ -67,7 +58,6 @@
 
     if-nez v0, :cond_0
 
-    .line 608
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
@@ -80,7 +70,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->setExpandedHeightInternal(F)V
 
-    .line 610
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
@@ -89,7 +78,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mHeightAnimator:Landroid/animation/ValueAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$402(Lcom/android/systemui/statusbar/phone/PanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 612
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PanelView;->mIsCollapseAnimating:Z
@@ -99,7 +87,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 613
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
@@ -107,19 +94,16 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mIsCollapseAnimating:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$502(Lcom/android/systemui/statusbar/phone/PanelView;Z)Z
 
-    .line 615
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->mCancelled:Z
 
     if-nez v0, :cond_2
 
-    .line 616
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PanelView;->notifyExpandingFinished()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->access$600(Lcom/android/systemui/statusbar/phone/PanelView;)V
 
-    .line 618
     :cond_2
     return-void
 .end method

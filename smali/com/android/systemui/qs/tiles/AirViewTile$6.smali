@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;)V
     .locals 0
 
-    .prologue
-    .line 372
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,20 +36,15 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 375
     const-string v0, "AirViewTile"
 
     const-string v1, "showConfirmPopup() - Positive onClick mode: ok"
 
     invoke-static {v0, v1}, Landroid/util/Log;->secW(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 376
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewType:I
     invoke-static {}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$900()I
 
@@ -59,7 +52,6 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 377
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     const-string v1, "com.android.settings"
@@ -69,12 +61,10 @@
     # invokes: Lcom/android/systemui/qs/tiles/AirViewTile;->startSettingsActivity(Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$1000(Lcom/android/systemui/qs/tiles/AirViewTile;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 385
     :cond_0
     :goto_0
     return-void
 
-    .line 378
     :cond_1
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewType:I
     invoke-static {}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$900()I
@@ -85,7 +75,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 379
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     const-string v1, "com.android.settings"
@@ -97,7 +86,6 @@
 
     goto :goto_0
 
-    .line 380
     :cond_2
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewType:I
     invoke-static {}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$900()I
@@ -108,7 +96,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 381
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewMasterSetting:Lcom/android/systemui/qs/SystemSetting;
@@ -118,13 +105,11 @@
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 382
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/AirViewTile;->setDBvalues(I)V
     invoke-static {v0, v2}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$1200(Lcom/android/systemui/qs/tiles/AirViewTile;I)V
 
-    .line 383
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$6;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     const-string v1, "com.android.settings"

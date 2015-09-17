@@ -24,8 +24,6 @@
 .method constructor <init>(Landroid/support/v4/widget/MaterialProgressDrawable;Landroid/support/v4/widget/MaterialProgressDrawable$Ring;)V
     .locals 0
 
-    .prologue
-    .line 331
     iput-object p1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iput-object p2, p0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -39,11 +37,7 @@
 # virtual methods
 .method public applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 18
-    .param p1, "interpolatedTime"    # F
-    .param p2, "t"    # Landroid/view/animation/Transformation;
 
-    .prologue
-    .line 336
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -74,8 +68,6 @@
 
     double-to-float v5, v12
 
-    .line 338
-    .local v5, "minProgressArc":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -84,8 +76,6 @@
 
     move-result v8
 
-    .line 339
-    .local v8, "startingEndTrim":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -94,8 +84,6 @@
 
     move-result v10
 
-    .line 340
-    .local v10, "startingTrim":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -104,14 +92,10 @@
 
     move-result v9
 
-    .line 343
-    .local v9, "startingRotation":F
     const v11, 0x3f4ccccd    # 0.8f
 
     sub-float v4, v11, v5
 
-    .line 344
-    .local v4, "minArc":F
     # getter for: Landroid/support/v4/widget/MaterialProgressDrawable;->START_CURVE_INTERPOLATOR:Landroid/view/animation/Interpolator;
     invoke-static {}, Landroid/support/v4/widget/MaterialProgressDrawable;->access$400()Landroid/view/animation/Interpolator;
 
@@ -127,15 +111,12 @@
 
     add-float v2, v8, v11
 
-    .line 346
-    .local v2, "endTrim":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v11, v2}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->setEndTrim(F)V
 
-    .line 348
     const v11, 0x3f4ccccd    # 0.8f
 
     # getter for: Landroid/support/v4/widget/MaterialProgressDrawable;->END_CURVE_INTERPOLATOR:Landroid/view/animation/Interpolator;
@@ -153,30 +134,24 @@
 
     add-float v7, v10, v11
 
-    .line 351
-    .local v7, "startTrim":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v11, v7}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->setStartTrim(F)V
 
-    .line 353
     const/high16 v11, 0x3e800000    # 0.25f
 
     mul-float v11, v11, p1
 
     add-float v6, v9, v11
 
-    .line 354
-    .local v6, "rotation":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v11, v6}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->setRotation(F)V
 
-    .line 356
     const/high16 v11, 0x43100000    # 144.0f
 
     mul-float v11, v11, p1
@@ -200,14 +175,11 @@
 
     add-float v3, v11, v12
 
-    .line 358
-    .local v3, "groupRotation":F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/support/v4/widget/MaterialProgressDrawable$3;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     invoke-virtual {v11, v3}, Landroid/support/v4/widget/MaterialProgressDrawable;->setRotation(F)V
 
-    .line 359
     return-void
 .end method

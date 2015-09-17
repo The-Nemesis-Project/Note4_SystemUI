@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/FloatingMessageTile;Landroid/widget/CheckBox;)V
     .locals 0
 
-    .prologue
-    .line 229
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->val$mDisableAlertCheckBox:Landroid/widget/CheckBox;
@@ -42,13 +40,9 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->val$mDisableAlertCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
@@ -57,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 232
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/FloatingMessageTile;->mContext:Landroid/content/Context;
@@ -73,7 +66,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 236
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
@@ -86,15 +78,12 @@
     # invokes: Lcom/android/systemui/qs/tiles/FloatingMessageTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/FloatingMessageTile;->access$200(Lcom/android/systemui/qs/tiles/FloatingMessageTile;Ljava/lang/Object;)V
 
-    .line 237
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$2;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/FloatingMessageTile;->setEnabled(Z)V
     invoke-static {v0, v2}, Lcom/android/systemui/qs/tiles/FloatingMessageTile;->access$300(Lcom/android/systemui/qs/tiles/FloatingMessageTile;Z)V
 
-    .line 238
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 240
     return-void
 .end method

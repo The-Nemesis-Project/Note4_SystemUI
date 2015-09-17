@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/MassRippleUnlockTwin;)V
     .locals 0
 
-    .prologue
-    .line 159
     iput-object p1, p0, Lcom/android/keyguard/sec/MassRippleUnlockTwin$1;->this$0:Lcom/android/keyguard/sec/MassRippleUnlockTwin;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 162
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-nez v0, :cond_1
 
-    .line 163
     iget-object v0, p0, Lcom/android/keyguard/sec/MassRippleUnlockTwin$1;->this$0:Lcom/android/keyguard/sec/MassRippleUnlockTwin;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -60,18 +54,15 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lcom/android/keyguard/sec/MassRippleUnlockTwin;->rippeDown(FFIZ)V
 
-    .line 168
     :cond_0
     :goto_0
     return-void
 
-    .line 164
     :cond_1
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v4, :cond_0
 
-    .line 165
     iget-object v0, p0, Lcom/android/keyguard/sec/MassRippleUnlockTwin$1;->this$0:Lcom/android/keyguard/sec/MassRippleUnlockTwin;
 
     iget v1, p1, Landroid/os/Message;->arg1:I

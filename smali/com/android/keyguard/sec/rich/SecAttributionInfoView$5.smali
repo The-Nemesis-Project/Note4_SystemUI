@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;Landroid/content/Context;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .prologue
-    .line 245
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$5;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
@@ -36,15 +33,11 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 1
-    .param p1, "orientation"    # I
 
-    .prologue
-    .line 248
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$5;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # invokes: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->updateOrientation()V
     invoke-static {v0}, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->access$400(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
 
-    .line 249
     return-void
 .end method

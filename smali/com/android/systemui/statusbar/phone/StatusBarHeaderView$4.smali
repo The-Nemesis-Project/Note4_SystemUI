@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)V
     .locals 0
 
-    .prologue
-    .line 782
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 782
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleToggleStateChanged(Z)V
 
     return-void
@@ -50,11 +44,7 @@
 
 .method static synthetic access$700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
-    .param p1, "x1"    # Lcom/android/systemui/qs/QSTile$DetailAdapter;
 
-    .prologue
-    .line 782
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleShowingDetail(Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
 
     return-void
@@ -62,11 +52,7 @@
 
 .method static synthetic access$800(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 782
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleScanStateChanged(Z)V
 
     return-void
@@ -74,23 +60,17 @@
 
 .method private handleScanStateChanged(Z)V
     .locals 3
-    .param p1, "state"    # Z
 
-    .prologue
-    .line 820
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->mScanState:Z
 
     if-ne v1, p1, :cond_0
 
-    .line 830
     :goto_0
     return-void
 
-    .line 821
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->mScanState:Z
 
-    .line 822
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderProgress:Landroid/widget/ImageView;
@@ -104,11 +84,8 @@
 
     check-cast v0, Landroid/graphics/drawable/Animatable;
 
-    .line 823
-    .local v0, "anim":Landroid/graphics/drawable/Animatable;
     if-eqz p1, :cond_1
 
-    .line 824
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderProgress:Landroid/widget/ImageView;
@@ -124,12 +101,10 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 825
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
 
     goto :goto_0
 
-    .line 827
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -146,7 +121,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 828
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
 
     goto :goto_0
@@ -154,20 +128,15 @@
 
 .method private handleShowingDetail(Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
     .locals 6
-    .param p1, "detail"    # Lcom/android/systemui/qs/QSTile$DetailAdapter;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 833
     if-eqz p1, :cond_0
 
     move v0, v2
 
-    .line 835
-    .local v0, "showingDetail":Z
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -183,7 +152,6 @@
     :goto_1
     invoke-direct {p0, v5, v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->transition(Landroid/view/View;Z)V
 
-    .line 839
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
@@ -193,16 +161,13 @@
 
     invoke-direct {p0, v4, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->transition(Landroid/view/View;Z)V
 
-    .line 840
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # setter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowingDetail:Z
     invoke-static {v4, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
 
-    .line 841
     if-eqz v0, :cond_3
 
-    .line 842
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderTitle:Landroid/widget/TextView;
@@ -216,16 +181,12 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 843
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$DetailAdapter;->getToggleState()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    .line 844
-    .local v1, "toggleState":Ljava/lang/Boolean;
     if-nez v1, :cond_2
 
-    .line 845
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
@@ -237,7 +198,6 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/Switch;->setVisibility(I)V
 
-    .line 846
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
@@ -247,27 +207,19 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setClickable(Z)V
 
-    .line 861
-    .end local v1    # "toggleState":Ljava/lang/Boolean;
     :goto_2
     return-void
 
-    .end local v0    # "showingDetail":Z
     :cond_0
     move v0, v3
 
-    .line 833
     goto :goto_0
 
-    .restart local v0    # "showingDetail":Z
     :cond_1
     move v4, v3
 
-    .line 835
     goto :goto_1
 
-    .line 848
-    .restart local v1    # "toggleState":Ljava/lang/Boolean;
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -278,7 +230,6 @@
 
     invoke-virtual {v4, v3}, Landroid/widget/Switch;->setVisibility(I)V
 
-    .line 849
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
@@ -292,7 +243,6 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 850
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
@@ -302,7 +252,6 @@
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setClickable(Z)V
 
-    .line 851
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
@@ -318,8 +267,6 @@
 
     goto :goto_2
 
-    .line 859
-    .end local v1    # "toggleState":Ljava/lang/Boolean;
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -335,10 +282,7 @@
 
 .method private handleToggleStateChanged(Z)V
     .locals 1
-    .param p1, "state"    # Z
 
-    .prologue
-    .line 816
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
@@ -348,28 +292,20 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 817
     return-void
 .end method
 
 .method private transition(Landroid/view/View;Z)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "in"    # Z
 
-    .prologue
-    .line 864
     if-eqz p2, :cond_0
 
-    .line 865
     invoke-virtual {p1}, Landroid/view/View;->bringToFront()V
 
-    .line 866
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 868
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -398,10 +334,8 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 880
     return-void
 
-    .line 868
     :cond_1
     const/4 v0, 0x0
 
@@ -412,10 +346,7 @@
 # virtual methods
 .method public onScanStateChanged(Z)V
     .locals 2
-    .param p1, "state"    # Z
 
-    .prologue
-    .line 807
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$3;
@@ -424,16 +355,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->post(Ljava/lang/Runnable;)Z
 
-    .line 813
     return-void
 .end method
 
 .method public onShowingDetail(Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
     .locals 2
-    .param p1, "detail"    # Lcom/android/systemui/qs/QSTile$DetailAdapter;
 
-    .prologue
-    .line 797
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$2;
@@ -442,16 +369,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->post(Ljava/lang/Runnable;)Z
 
-    .line 803
     return-void
 .end method
 
 .method public onToggleStateChanged(Z)V
     .locals 2
-    .param p1, "state"    # Z
 
-    .prologue
-    .line 787
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$1;
@@ -460,6 +383,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->post(Ljava/lang/Runnable;)Z
 
-    .line 793
     return-void
 .end method

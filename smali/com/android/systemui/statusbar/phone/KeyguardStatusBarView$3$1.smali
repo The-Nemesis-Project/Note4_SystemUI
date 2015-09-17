@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;)V
     .locals 0
 
-    .prologue
-    .line 251
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 254
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
@@ -54,7 +50,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->setAlpha(F)V
 
-    .line 255
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
@@ -74,6 +69,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
-    .line 256
     return-void
 .end method

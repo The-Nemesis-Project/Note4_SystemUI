@@ -22,18 +22,14 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 1
 
-    .prologue
-    .line 1638
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$KidsModeObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 1639
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1640
     return-void
 .end method
 
@@ -41,17 +37,13 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 5
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 1643
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 1644
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$KidsModeObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -75,21 +67,16 @@
 
     if-ne v2, v0, :cond_0
 
-    .line 1645
-    .local v0, "mEnabled":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$KidsModeObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKidsModeActivated:Z
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$4002(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 1646
     return-void
 
-    .end local v0    # "mEnabled":Z
     :cond_0
     move v0, v1
 
-    .line 1644
     goto :goto_0
 .end method

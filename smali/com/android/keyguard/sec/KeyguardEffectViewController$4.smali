@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
 
-    .prologue
-    .line 331
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,19 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "cxt"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/16 v4, 0x12f2
 
-    .line 334
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 336
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "KeyguardEffectViewController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,7 +66,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 337
     const-string v1, "android.intent.action.TIME_TICK"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -83,7 +74,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 338
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     iget-object v1, v1, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
@@ -115,7 +105,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 350
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
@@ -131,7 +120,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 351
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -141,7 +129,6 @@
 
     invoke-virtual {v1, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 352
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -152,11 +139,9 @@
 
     invoke-virtual {v1, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 353
     :goto_1
     return-void
 
-    .line 341
     :cond_2
     const-string v1, "KeyguardEffectViewController"
 
@@ -166,7 +151,6 @@
 
     goto :goto_1
 
-    .line 344
     :cond_3
     const-string v1, "com.sec.android.slidingGallery.LOCKSCREEN_IMAGE_CHANGED"
 
@@ -176,7 +160,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 345
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardEffectViewController;->getDataFromSlideshow(Landroid/content/Context;)V
@@ -184,7 +167,6 @@
 
     goto :goto_0
 
-    .line 346
     :cond_4
     const-string v1, "android.intent.action.sec.LSO_CONFIG_CHANGED"
 

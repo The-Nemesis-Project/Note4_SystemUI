@@ -26,11 +26,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/SystemUI;->mFlipfont:I
@@ -42,12 +39,7 @@
 # virtual methods
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .prologue
-    .line 55
     return-void
 .end method
 
@@ -63,9 +55,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 62
-    .local p1, "interfaceType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     if-eqz v0, :cond_0
@@ -88,17 +77,12 @@
 .method protected onBootCompleted()V
     .locals 0
 
-    .prologue
-    .line 58
     return-void
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 2
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
-    .prologue
-    .line 41
     if-eqz p1, :cond_0
 
     iget v0, p1, Landroid/content/res/Configuration;->FlipFont:I
@@ -111,12 +95,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 43
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_1
 
-    .line 44
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
@@ -127,17 +109,14 @@
 
     invoke-static {v0, v1}, Landroid/graphics/Typeface;->SetAppTypeFace(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 49
     :goto_0
     iget v0, p1, Landroid/content/res/Configuration;->FlipFont:I
 
     iput v0, p0, Lcom/android/systemui/SystemUI;->mFlipfont:I
 
-    .line 52
     :cond_0
     return-void
 
-    .line 47
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
 
@@ -160,20 +139,14 @@
         }
     .end annotation
 
-    .prologue
-    .line 66
-    .local p1, "interfaceType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "component":Ljava/lang/Object;, "TC;"
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     if-eqz v0, :cond_0
 
-    .line 67
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 69
     :cond_0
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardRecoveryView;)V
     .locals 0
 
-    .prologue
-    .line 175
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardRecoveryView$3;->this$0:Lcom/android/keyguard/sec/KeyguardRecoveryView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardRecoveryView$3;->this$0:Lcom/android/keyguard/sec/KeyguardRecoveryView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardRecoveryView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -51,13 +46,11 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 178
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardRecoveryView$3;->this$0:Lcom/android/keyguard/sec/KeyguardRecoveryView;
 
     iget-object v0, v0, Lcom/android/keyguard/sec/KeyguardRecoveryView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodManager;->showInputMethodPicker()V
 
-    .line 179
     return-void
 .end method

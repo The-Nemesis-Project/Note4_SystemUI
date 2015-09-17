@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;)V
     .locals 0
 
-    .prologue
-    .line 205
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$2;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 208
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$2;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -50,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 209
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$2;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -60,13 +55,11 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->userActivity()V
 
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$2;->this$0:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->launch()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->access$100(Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;)V
 
-    .line 212
     :cond_0
     return-void
 .end method

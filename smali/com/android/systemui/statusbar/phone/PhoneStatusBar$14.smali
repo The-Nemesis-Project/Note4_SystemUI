@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 1019
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,12 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 8
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 1022
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->clearAllNotifications()V
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$3000(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 1025
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
@@ -57,7 +51,6 @@
 
     monitor-enter v5
 
-    .line 1026
     :try_start_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -70,13 +63,10 @@
 
     move-result-object v1
 
-    .line 1027
-    .local v1, "entryArrayList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/NotificationData$Entry;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -90,16 +80,12 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 1028
-    .local v0, "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
     new-instance v3, Landroid/content/Intent;
 
     const-string v4, "com.samsung.accessory.intent.action.CHECK_NOTIFICATION_ITEM"
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1029
-    .local v3, "iForClear":Landroid/content/Intent;
     const-string v4, "NOTIFICATION_PACKAGE_NAME"
 
     iget-object v6, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
@@ -110,7 +96,6 @@
 
     invoke-virtual {v3, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1030
     const-string v4, "NOTIFICATION_ID"
 
     iget-object v6, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
@@ -121,7 +106,6 @@
 
     invoke-virtual {v3, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1031
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -130,11 +114,6 @@
 
     goto :goto_0
 
-    .line 1035
-    .end local v0    # "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
-    .end local v1    # "entryArrayList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/NotificationData$Entry;>;"
-    .end local v2    # "i$":Ljava/util/Iterator;
-    .end local v3    # "iForClear":Landroid/content/Intent;
     :catchall_0
     move-exception v4
 
@@ -144,9 +123,6 @@
 
     throw v4
 
-    .line 1034
-    .restart local v1    # "entryArrayList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/NotificationData$Entry;>;"
-    .restart local v2    # "i$":Ljava/util/Iterator;
     :cond_0
     :try_start_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -161,11 +137,9 @@
 
     invoke-virtual {v4, v6}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 1035
     monitor-exit v5
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1037
     return-void
 .end method

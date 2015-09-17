@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 114
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
     .locals 1
-    .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .prologue
-    .line 117
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->setClockVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$300(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 118
     return-void
 .end method

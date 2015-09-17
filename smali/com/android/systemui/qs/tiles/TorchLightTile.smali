@@ -45,19 +45,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 5
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v4, -0x2
 
     const/4 v1, 0x0
 
-    .line 70
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 208
     new-instance v2, Lcom/android/systemui/qs/tiles/TorchLightTile$1;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -66,14 +62,12 @@
 
     iput-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchObserver:Landroid/database/ContentObserver;
 
-    .line 306
     new-instance v2, Lcom/android/systemui/qs/tiles/TorchLightTile$4;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/qs/tiles/TorchLightTile$4;-><init>(Lcom/android/systemui/qs/tiles/TorchLightTile;)V
 
     iput-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mRecentlyOnTimeout:Ljava/lang/Runnable;
 
-    .line 72
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -82,7 +76,6 @@
 
     iput-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 74
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v3, "torch_light"
@@ -96,7 +89,6 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
 
-    .line 77
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "Quickpanel_torch_brightness_level"
@@ -107,12 +99,10 @@
 
     iput v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
-    .line 79
     iget v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     if-nez v0, :cond_0
 
-    .line 80
     invoke-static {}, Lcom/samsung/android/feature/FloatingFeature;->getInstance()Lcom/samsung/android/feature/FloatingFeature;
 
     move-result-object v0
@@ -125,17 +115,14 @@
 
     iput v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
-    .line 81
     iget v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     if-nez v0, :cond_0
 
-    .line 82
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
-    .line 85
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->TAG:Ljava/lang/String;
 
@@ -161,7 +148,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "torch_light"
@@ -174,7 +160,6 @@
 
     invoke-virtual {v0, v2, v1, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     const-string v1, "CustomFrequencyManagerService"
@@ -187,30 +172,23 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
 
-    .line 92
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
 
-    .line 94
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->updateState()V
 
-    .line 95
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 74
     goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/android/systemui/qs/tiles/TorchLightTile;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
@@ -218,10 +196,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/qs/tiles/TorchLightTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
 
     return v0
@@ -229,10 +204,7 @@
 
 .method static synthetic access$1000(Lcom/android/systemui/qs/tiles/TorchLightTile;)Lcom/android/systemui/qs/QSTile$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     return-object v0
@@ -240,11 +212,7 @@
 
 .method static synthetic access$102(Lcom/android/systemui/qs/tiles/TorchLightTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 51
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
 
     return p1
@@ -252,10 +220,7 @@
 
 .method static synthetic access$1100(Lcom/android/systemui/qs/tiles/TorchLightTile;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     return v0
@@ -263,11 +228,7 @@
 
 .method static synthetic access$1102(Lcom/android/systemui/qs/tiles/TorchLightTile;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
-    .param p1, "x1"    # I
 
-    .prologue
-    .line 51
     iput p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     return p1
@@ -275,10 +236,7 @@
 
 .method static synthetic access$1200(Lcom/android/systemui/qs/tiles/TorchLightTile;)Landroid/os/CustomFrequencyManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
 
     return-object v0
@@ -286,10 +244,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/qs/tiles/TorchLightTile;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->updateState()V
 
     return-void
@@ -297,11 +252,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/qs/tiles/TorchLightTile;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 51
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/TorchLightTile;->updateTorchState(Z)V
 
     return-void
@@ -309,10 +260,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/qs/tiles/TorchLightTile;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-wide v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
 
     return-wide v0
@@ -320,11 +268,7 @@
 
 .method static synthetic access$402(Lcom/android/systemui/qs/tiles/TorchLightTile;J)J
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
-    .param p1, "x1"    # J
 
-    .prologue
-    .line 51
     iput-wide p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
 
     return-wide p1
@@ -332,10 +276,7 @@
 
 .method static synthetic access$500(Lcom/android/systemui/qs/tiles/TorchLightTile;)Ljava/lang/Runnable;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mRecentlyOnTimeout:Ljava/lang/Runnable;
 
     return-object v0
@@ -343,10 +284,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/qs/tiles/TorchLightTile;)Lcom/android/systemui/qs/QSTile$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     return-object v0
@@ -354,10 +292,7 @@
 
 .method static synthetic access$700(Lcom/android/systemui/qs/tiles/TorchLightTile;)Lcom/android/systemui/qs/QSTile$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     return-object v0
@@ -365,10 +300,7 @@
 
 .method static synthetic access$800(Lcom/android/systemui/qs/tiles/TorchLightTile;)Lcom/android/systemui/qs/QSTile$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     return-object v0
@@ -376,10 +308,7 @@
 
 .method static synthetic access$900(Lcom/android/systemui/qs/tiles/TorchLightTile;)Lcom/android/systemui/qs/QSTile$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/TorchLightTile;
 
-    .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     return-object v0
@@ -388,8 +317,6 @@
 .method private getBrightness()I
     .locals 1
 
-    .prologue
-    .line 231
     iget v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     add-int/lit8 v0, v0, -0x1
@@ -400,15 +327,13 @@
 .method private showSecondaryMenu()V
     .locals 12
 
-    .prologue
-    .line 235
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     invoke-static {v9}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v9
 
-    const v10, 0x7f040068
+    const v10, 0x7f040069
 
     const/4 v11, 0x0
 
@@ -416,9 +341,7 @@
 
     move-result-object v3
 
-    .line 237
-    .local v3, "content":Landroid/view/View;
-    const v9, 0x7f0e01fd
+    const v9, 0x7f0e0201
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -426,9 +349,7 @@
 
     check-cast v6, Landroid/widget/RadioButton;
 
-    .line 238
-    .local v6, "noneRadio":Landroid/widget/RadioButton;
-    const v9, 0x7f0e01fe
+    const v9, 0x7f0e0202
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -436,9 +357,7 @@
 
     check-cast v5, Landroid/widget/RadioButton;
 
-    .line 239
-    .local v5, "fiveMinRadio":Landroid/widget/RadioButton;
-    const v9, 0x7f0e01ff
+    const v9, 0x7f0e0203
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -446,9 +365,7 @@
 
     check-cast v8, Landroid/widget/RadioButton;
 
-    .line 240
-    .local v8, "tenMinRadio":Landroid/widget/RadioButton;
-    const v9, 0x7f0e0200
+    const v9, 0x7f0e0204
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -456,9 +373,7 @@
 
     check-cast v4, Landroid/widget/Button;
 
-    .line 241
-    .local v4, "doneBtn":Landroid/widget/Button;
-    const v9, 0x7f0e01f5
+    const v9, 0x7f0e01f9
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -466,9 +381,7 @@
 
     check-cast v1, Landroid/widget/Button;
 
-    .line 243
-    .local v1, "cancelBtn":Landroid/widget/Button;
-    const v9, 0x7f0e01fb
+    const v9, 0x7f0e01ff
 
     invoke-virtual {v3, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -476,75 +389,54 @@
 
     check-cast v0, Landroid/widget/SeekBar;
 
-    .line 245
-    .local v0, "brightnessProgress":Landroid/widget/SeekBar;
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->getBrightness()I
 
     move-result v7
 
-    .line 247
-    .local v7, "progress":I
     const/4 v9, 0x1
 
     invoke-virtual {v6, v9}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 249
     new-instance v2, Lcom/android/systemui/qs/tiles/TorchLightTile$2;
 
     invoke-direct {v2, p0, v5, v8}, Lcom/android/systemui/qs/tiles/TorchLightTile$2;-><init>(Lcom/android/systemui/qs/tiles/TorchLightTile;Landroid/widget/RadioButton;Landroid/widget/RadioButton;)V
 
-    .line 274
-    .local v2, "clickListener":Landroid/view/View$OnClickListener;
     invoke-virtual {v6, v2}, Landroid/widget/RadioButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 275
     invoke-virtual {v5, v2}, Landroid/widget/RadioButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 276
     invoke-virtual {v8, v2}, Landroid/widget/RadioButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 277
     invoke-virtual {v4, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 278
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 280
     invoke-virtual {v0, v7}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 281
     new-instance v9, Lcom/android/systemui/qs/tiles/TorchLightTile$3;
 
     invoke-direct {v9, p0}, Lcom/android/systemui/qs/tiles/TorchLightTile$3;-><init>(Lcom/android/systemui/qs/tiles/TorchLightTile;)V
 
     invoke-virtual {v0, v9}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    .line 303
     const/4 v9, 0x3
 
     invoke-virtual {p0, v3, v9}, Lcom/android/systemui/qs/tiles/TorchLightTile;->showDetailviewPanel(Landroid/view/View;I)Z
 
-    .line 304
     return-void
 .end method
 
 .method private updateState()V
     .locals 2
 
-    .prologue
-    .line 221
     const/4 v0, 0x2
 
-    .line 222
-    .local v0, "status":I
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
 
     if-eqz v1, :cond_0
 
-    .line 223
     const/4 v0, 0x1
 
-    .line 227
     :goto_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -552,10 +444,8 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/TorchLightTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 228
     return-void
 
-    .line 225
     :cond_0
     const/4 v0, 0x2
 
@@ -564,22 +454,17 @@
 
 .method private updateTorchState(Z)V
     .locals 6
-    .param p1, "on"    # Z
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 167
     if-eqz p1, :cond_0
 
-    .line 168
     const-wide/16 v4, 0x0
 
     iput-wide v4, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
 
-    .line 171
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -592,10 +477,8 @@
 
     invoke-static {v3, v4, v1, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 175
     if-eqz p1, :cond_3
 
-    .line 176
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->TAG:Ljava/lang/String;
 
@@ -621,17 +504,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
     iget v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     if-lez v1, :cond_2
 
-    .line 178
     iget v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
 
     invoke-static {v1}, Lcom/sec/android/hardware/SecHardwareInterface;->setTorchLight(I)V
 
-    .line 179
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
 
     const-string v2, "CLOCK_SET_TORCH_LIGHT"
@@ -660,52 +540,41 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 197
     :goto_1
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 198
-    .local v0, "intent":Landroid/content/Intent;
     if-eqz p1, :cond_4
 
-    .line 199
     const-string v1, "android.intent.action.ACTION_ASSISTIVE_ON_WIDGETUPDATE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 200
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->TAG:Ljava/lang/String;
 
     const-string v2, "intent : ASSISTIVELIGHT_ON"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     :goto_2
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 206
     return-void
 
-    .end local v0    # "intent":Landroid/content/Intent;
     :cond_1
     move v1, v2
 
-    .line 171
     goto :goto_0
 
-    .line 181
     :cond_2
     const/4 v1, 0x1
 
     :try_start_1
     invoke-static {v1}, Lcom/sec/android/hardware/SecHardwareInterface;->setTorchLight(I)V
 
-    .line 182
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
 
     const-string v2, "CLOCK_SET_TORCH_LIGHT"
@@ -716,19 +585,16 @@
 
     goto :goto_1
 
-    .line 188
     :catch_0
     move-exception v1
 
     goto :goto_1
 
-    .line 185
     :cond_3
     const/4 v1, 0x0
 
     invoke-static {v1}, Lcom/sec/android/hardware/SecHardwareInterface;->setTorchLight(I)V
 
-    .line 186
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
 
     const-string v2, "CLOCK_SET_TORCH_LIGHT"
@@ -741,14 +607,11 @@
 
     goto :goto_1
 
-    .line 202
-    .restart local v0    # "intent":Landroid/content/Intent;
     :cond_4
     const-string v1, "android.intent.action.ACTION_ASSISTIVE_OFF_WIDGETUPDATE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 203
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->TAG:Ljava/lang/String;
 
     const-string v2, "intent : ASSISTIVELIGHT_OFF"
@@ -763,12 +626,10 @@
 .method protected handleClick()V
     .locals 7
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    .line 117
     const-string v5, "STATUSBAR-TorchLightQuickSettingButton"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -797,15 +658,12 @@
 
     invoke-static {v5, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
     new-array v1, v3, [Ljava/lang/String;
 
     const-string v2, "false"
 
     aput-object v2, v1, v4
 
-    .line 120
-    .local v1, "selectionArgs":[Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     const-string v5, "content://com.sec.knox.provider/RestrictionPolicy3"
@@ -816,21 +674,16 @@
 
     move-result v0
 
-    .line 122
-    .local v0, "isSettingsChangesAllowed":I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_1
 
-    .line 123
     if-nez v0, :cond_1
 
-    .line 133
     :cond_0
     :goto_0
     return-void
 
-    .line 128
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -842,7 +695,6 @@
 
     if-eq v2, v5, :cond_0
 
-    .line 132
     iget-boolean v2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
 
     if-nez v2, :cond_2
@@ -863,64 +715,47 @@
 .method protected handleDestroy()V
     .locals 0
 
-    .prologue
-    .line 112
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 113
     return-void
 .end method
 
 .method public handleLongClick()V
     .locals 0
 
-    .prologue
-    .line 141
     return-void
 .end method
 
 .method public handleSecondaryClick()V
     .locals 0
 
-    .prologue
-    .line 137
     return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
     const/4 v3, 0x1
 
-    const v2, 0x7f0d02e6
+    const v2, 0x7f0d0301
 
-    .line 145
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 146
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 147
     iput-boolean v3, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 148
     iput-boolean v3, p1, Lcom/android/systemui/qs/QSTile$MultiState;->textTruncate:Z
 
-    .line 149
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -929,16 +764,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 150
     packed-switch v0, :pswitch_data_0
 
-    .line 164
     :goto_1
     return-void
 
-    .line 145
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -948,15 +778,11 @@
 
     goto :goto_0
 
-    .line 152
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f020602
+    const v1, 0x7f02060a
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 153
     invoke-virtual {p0, v2, v2}, Lcom/android/systemui/qs/tiles/TorchLightTile;->makeContentDescription(II)Ljava/lang/String;
 
     move-result-object v1
@@ -965,13 +791,11 @@
 
     goto :goto_1
 
-    .line 158
     :pswitch_1
-    const v1, 0x7f020601
+    const v1, 0x7f020609
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 159
     invoke-virtual {p0, v2, v2}, Lcom/android/systemui/qs/tiles/TorchLightTile;->makeContentDescription(II)Ljava/lang/String;
 
     move-result-object v1
@@ -980,7 +804,6 @@
 
     goto :goto_1
 
-    .line 150
     nop
 
     :pswitch_data_0
@@ -992,14 +815,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 51
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/TorchLightTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -1008,8 +826,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 99
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -1020,8 +836,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 51
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -1031,18 +845,12 @@
 
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 105
     return-void
 .end method
 
 .method public setListeningLocal(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 108
     return-void
 .end method

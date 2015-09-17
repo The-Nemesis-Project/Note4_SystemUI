@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Z)V
     .locals 0
 
-    .prologue
-    .line 654
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     iput-boolean p2, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->val$state:Z
@@ -42,13 +40,9 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 5
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 656
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -64,15 +58,12 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 657
-    .local v0, "mgr":Landroid/net/wifi/WifiManager;
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiState()I
 
     move-result v3
 
     if-eq v3, v2, :cond_0
 
-    .line 658
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     iget-boolean v3, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->val$state:Z
@@ -80,11 +71,9 @@
     # invokes: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->showWarningDialog(Z)V
     invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->access$1900(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Z)V
 
-    .line 673
     :goto_0
     return-void
 
-    .line 660
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
@@ -93,18 +82,14 @@
     # invokes: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->updateState(I)V
     invoke-static {v3, v4}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->access$100(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;I)V
 
-    .line 663
     sget-boolean v3, Lcom/android/systemui/statusbar/Feature;->mSetDefaultSSID:Z
 
     if-eqz v3, :cond_1
 
-    .line 664
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v1
 
-    .line 665
-    .local v1, "wifiConfig":Landroid/net/wifi/WifiConfiguration;
     if-eqz v1, :cond_1
 
     const-string v3, ""
@@ -117,14 +102,11 @@
 
     if-eqz v3, :cond_1
 
-    .line 666
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->generateDefaultSSID(Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiConfiguration;)V
     invoke-static {v3, v0, v1}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->access$1500(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiConfiguration;)V
 
-    .line 671
-    .end local v1    # "wifiConfig":Landroid/net/wifi/WifiConfiguration;
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$13;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 

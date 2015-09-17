@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;)V
     .locals 0
 
-    .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onMethodSecureChanged(Z)V
     .locals 1
-    .param p1, "methodSecure"    # Z
 
-    .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # getter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mKeyguardShowing:Z
@@ -51,13 +46,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # invokes: Lcom/android/systemui/statusbar/phone/ScrimController;->scheduleUpdate()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$100(Lcom/android/systemui/statusbar/phone/ScrimController;)V
 
-    .line 99
     :cond_0
     return-void
 .end method

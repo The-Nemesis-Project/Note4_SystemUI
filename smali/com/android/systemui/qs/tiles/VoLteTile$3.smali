@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/VoLteTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 106
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/VoLteTile$3;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,12 +33,9 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 3
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 109
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$3;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     if-ne p1, v1, :cond_0
@@ -54,7 +46,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mVoLTEState:Z
     invoke-static {v2, v0}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$802(Lcom/android/systemui/qs/tiles/VoLteTile;Z)Z
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$3;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$3;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
@@ -74,16 +65,13 @@
     # invokes: Lcom/android/systemui/qs/tiles/VoLteTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$900(Lcom/android/systemui/qs/tiles/VoLteTile;Ljava/lang/Object;)V
 
-    .line 111
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 109
     goto :goto_0
 
-    .line 110
     :cond_1
     const/4 v1, 0x2
 

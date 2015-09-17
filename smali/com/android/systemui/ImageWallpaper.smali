@@ -40,8 +40,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 69
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/ImageWallpaper;->USE_BLENDEDFILTER:Z
@@ -52,19 +50,14 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 63
     invoke-direct {p0}, Landroid/service/wallpaper/WallpaperService;-><init>()V
 
-    .line 873
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .prologue
-    .line 63
     sget-boolean v0, Lcom/android/systemui/ImageWallpaper;->USE_BLENDEDFILTER:Z
 
     return v0
@@ -72,10 +65,7 @@
 
 .method static synthetic access$002(Z)Z
     .locals 0
-    .param p0, "x0"    # Z
 
-    .prologue
-    .line 63
     sput-boolean p0, Lcom/android/systemui/ImageWallpaper;->USE_BLENDEDFILTER:Z
 
     return p0
@@ -84,8 +74,6 @@
 .method private static isEmulator()Z
     .locals 3
 
-    .prologue
-    .line 101
     const-string v0, "1"
 
     const-string v1, "ro.kernel.qemu"
@@ -108,11 +96,8 @@
 .method public onCreate()V
     .locals 1
 
-    .prologue
-    .line 82
     invoke-super {p0}, Landroid/service/wallpaper/WallpaperService;->onCreate()V
 
-    .line 83
     const-string v0, "wallpaper"
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/ImageWallpaper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -123,21 +108,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/ImageWallpaper;->mWallpaperManager:Landroid/app/WallpaperManager;
 
-    .line 87
     invoke-static {}, Lcom/android/systemui/ImageWallpaper;->isEmulator()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 88
     invoke-static {}, Landroid/app/ActivityManager;->isHighEndGfx()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/ImageWallpaper;->mIsHwAccelerated:Z
 
-    .line 91
     :cond_0
     return-void
 .end method
@@ -145,15 +127,12 @@
 .method public onCreateEngine()Landroid/service/wallpaper/WallpaperService$Engine;
     .locals 1
 
-    .prologue
-    .line 106
     new-instance v0, Lcom/android/systemui/ImageWallpaper$DrawableEngine;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/ImageWallpaper$DrawableEngine;-><init>(Lcom/android/systemui/ImageWallpaper;)V
 
     iput-object v0, p0, Lcom/android/systemui/ImageWallpaper;->mEngine:Lcom/android/systemui/ImageWallpaper$DrawableEngine;
 
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/ImageWallpaper;->mEngine:Lcom/android/systemui/ImageWallpaper$DrawableEngine;
 
     return-object v0
@@ -161,20 +140,15 @@
 
 .method public onTrimMemory(I)V
     .locals 1
-    .param p1, "level"    # I
 
-    .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/systemui/ImageWallpaper;->mEngine:Lcom/android/systemui/ImageWallpaper$DrawableEngine;
 
     if-eqz v0, :cond_0
 
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/ImageWallpaper;->mEngine:Lcom/android/systemui/ImageWallpaper$DrawableEngine;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->trimMemory(I)V
 
-    .line 98
     :cond_0
     return-void
 .end method

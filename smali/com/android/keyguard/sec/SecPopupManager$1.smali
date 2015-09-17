@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,15 +30,10 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 138
     # invokes: Lcom/android/keyguard/sec/SecPopupManager;->dismissdDialog()V
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->access$000()V
 
-    .line 139
     const/4 v0, 0x0
 
     return v0

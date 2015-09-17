@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/VoLteTile;)V
     .locals 0
 
-    .prologue
-    .line 196
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,21 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
-    .line 199
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 200
-    .local v0, "intentAction":Ljava/lang/String;
     const-string v2, "VoLteTile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -72,7 +64,6 @@
 
     invoke-static {v2, v5}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
     const-string v2, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -81,7 +72,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 202
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
@@ -103,7 +93,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mIsAirPlaneMode:Z
     invoke-static {v5, v2}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$002(Lcom/android/systemui/qs/tiles/VoLteTile;Z)Z
 
-    .line 204
     const-string v2, "VoLteTile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -133,7 +122,6 @@
 
     invoke-static {v2, v5}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 207
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
@@ -153,12 +141,10 @@
     # invokes: Lcom/android/systemui/qs/tiles/VoLteTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$1100(Lcom/android/systemui/qs/tiles/VoLteTile;Ljava/lang/Object;)V
 
-    .line 215
     :cond_0
     :goto_2
     return-void
 
-    .line 202
     :cond_1
     const/4 v2, 0x0
 
@@ -167,10 +153,8 @@
     :cond_2
     move v3, v4
 
-    .line 207
     goto :goto_1
 
-    .line 208
     :cond_3
     const-string v2, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -180,15 +164,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 209
     const-string v2, "ss"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 210
-    .local v1, "simState":Ljava/lang/String;
     const-string v2, "LOADED"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -205,14 +186,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 211
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mInitialized:Z
     invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$1202(Lcom/android/systemui/qs/tiles/VoLteTile;Z)Z
 
-    .line 213
     :cond_5
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoLteTile$4;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 

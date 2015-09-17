@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/ScreenshotShareActivity;)V
     .locals 0
 
-    .prologue
-    .line 39
     iput-object p1, p0, Lcom/android/systemui/screenshot/ScreenshotShareActivity$1;->this$0:Lcom/android/systemui/screenshot/ScreenshotShareActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,9 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/screenshot/ScreenshotShareActivity$1;->this$0:Lcom/android/systemui/screenshot/ScreenshotShareActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/screenshot/ScreenshotShareActivity;->startChooserActivity()V
 
-    .line 43
     return-void
 .end method

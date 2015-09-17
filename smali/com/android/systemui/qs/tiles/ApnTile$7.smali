@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ApnTile;)V
     .locals 0
 
-    .prologue
-    .line 393
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ApnTile$7;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +36,11 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 395
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ApnTile$7;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/ApnTile;->access$200(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 396
     return-void
 .end method

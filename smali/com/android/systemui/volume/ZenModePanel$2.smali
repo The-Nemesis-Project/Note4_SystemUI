@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
-    .prologue
-    .line 254
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$2;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,9 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 256
     const/4 v0, -0x1
 
-    .line 260
-    .local v0, "ringerModeIndex":I
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$2;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mSoundModeMuteButton:Landroid/widget/Button;
@@ -55,7 +48,6 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 261
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -69,11 +61,9 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 262
     :cond_0
     const/4 v0, 0x0
 
-    .line 272
     :cond_1
     :goto_0
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
@@ -105,17 +95,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 273
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$2;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->setRingerModeAsRingerIndex(I)V
     invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$700(Lcom/android/systemui/volume/ZenModePanel;I)V
 
-    .line 274
     return-void
 
-    .line 263
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$2;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -126,7 +113,6 @@
 
     if-ne p1, v1, :cond_5
 
-    .line 264
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -140,13 +126,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 265
     :cond_4
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 266
     :cond_5
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$2;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -157,7 +141,6 @@
 
     if-ne p1, v1, :cond_7
 
-    .line 267
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -171,13 +154,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 268
     :cond_6
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 270
     :cond_7
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z

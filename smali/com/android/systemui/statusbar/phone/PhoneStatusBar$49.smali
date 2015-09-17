@@ -3,12 +3,12 @@
 .source "PhoneStatusBar.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->fadeKeyguardAfterLaunchTransition(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
+.field final synthetic val$beforeFading:Ljava/lang/Runnable;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 6656
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->val$beforeFading:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,80 +38,68 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 6
-    .param p1, "v"    # Landroid/view/View;
+.method public run()V
+    .locals 4
 
-    .prologue
-    .line 6659
-    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDiagnosticLogs:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11400()Z
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    move-result v2
+    const/4 v1, 0x1
 
-    if-eqz v2, :cond_0
+    # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mLaunchTransitionFadingAway:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10402(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 6660
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->val$beforeFading:Ljava/lang/Runnable;
 
-    const-string v3, "EDITBUTTON"
+    if-eqz v0, :cond_0
 
-    # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->sendLogs(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11500(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)V
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->val$beforeFading:Ljava/lang/Runnable;
 
-    .line 6665
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
     :cond_0
-    const/4 v2, 0x1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    new-array v1, v2, [Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    const/4 v2, 0x0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const-string v3, "false"
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setAlpha(F)V
 
-    aput-object v3, v1, v2
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 6666
-    .local v1, "selectionArgs":[Ljava/lang/String;
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->animate()Landroid/view/ViewPropertyAnimator;
 
-    iget-object v3, v3, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
+    move-result-object v0
 
-    const-string v4, "content://com.sec.knox.provider/RestrictionPolicy3"
+    const/4 v1, 0x0
 
-    const-string v5, "isSettingsChangesAllowed"
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getEnterprisePolicyEnabled(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-    invoke-static {v2, v3, v4, v5, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11600(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    move-result-object v0
 
-    move-result v0
+    const-wide/16 v2, 0x64
 
-    .line 6668
-    .local v0, "isSettingsChangesAllowed":I
-    const/4 v2, -0x1
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
-    if-eq v0, v2, :cond_1
+    move-result-object v0
 
-    if-nez v0, :cond_1
+    const-wide/16 v2, 0x12c
 
-    .line 6669
-    const-string v2, "PhoneStatusBar"
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    const-string v3, "onTouch(): Edit button was not allowed"
+    move-result-object v0
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
 
-    .line 6675
-    :goto_0
+    move-result-object v0
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49$1;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49$1;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
     return-void
-
-    .line 6674
-    :cond_1
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateExpandSettingsPanel()V
-
-    goto :goto_0
 .end method

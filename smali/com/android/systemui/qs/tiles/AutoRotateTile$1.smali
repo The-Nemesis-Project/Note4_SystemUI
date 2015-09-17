@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AutoRotateTile;)V
     .locals 0
 
-    .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 69
     const-string v0, "android.intent.action.CONFIGURATION_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 70
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AutoRotateTile;->mSupportFolderType:Z
@@ -62,7 +55,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
@@ -75,7 +67,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/AutoRotateTile;->mAutoRotation:Z
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/AutoRotateTile;->access$102(Lcom/android/systemui/qs/tiles/AutoRotateTile;Z)Z
 
-    .line 72
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AutoRotateTile$1;->this$0:Lcom/android/systemui/qs/tiles/AutoRotateTile;
@@ -97,7 +88,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/AutoRotateTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/AutoRotateTile;->access$300(Lcom/android/systemui/qs/tiles/AutoRotateTile;Ljava/lang/Object;)V
 
-    .line 73
     const-string v0, "STATUSBAR-AutoRotateQuickSettingButton"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,11 +134,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
     :cond_0
     return-void
 
-    .line 72
     :cond_1
     const/4 v0, 0x2
 

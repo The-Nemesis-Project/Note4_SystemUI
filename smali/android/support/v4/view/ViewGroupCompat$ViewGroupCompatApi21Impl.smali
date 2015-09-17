@@ -18,8 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 114
     invoke-direct {p0}, Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl;-><init>()V
 
     return-void
@@ -29,10 +27,7 @@
 # virtual methods
 .method public isTransitionGroup(Landroid/view/ViewGroup;)Z
     .locals 1
-    .param p1, "group"    # Landroid/view/ViewGroup;
 
-    .prologue
-    .line 122
     invoke-static {p1}, Landroid/support/v4/view/ViewGroupCompatApi21;->isTransitionGroup(Landroid/view/ViewGroup;)Z
 
     move-result v0
@@ -42,13 +37,8 @@
 
 .method public setTransitionGroup(Landroid/view/ViewGroup;Z)V
     .locals 0
-    .param p1, "group"    # Landroid/view/ViewGroup;
-    .param p2, "isTransitionGroup"    # Z
 
-    .prologue
-    .line 117
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewGroupCompatApi21;->setTransitionGroup(Landroid/view/ViewGroup;Z)V
 
-    .line 118
     return-void
 .end method

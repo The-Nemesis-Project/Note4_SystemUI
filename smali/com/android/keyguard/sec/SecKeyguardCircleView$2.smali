@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardCircleView;)V
     .locals 0
 
-    .prologue
-    .line 147
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,25 +36,19 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 151
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     iget-object v0, v0, Lcom/android/keyguard/sec/SecKeyguardCircleView;->mScrollView:Landroid/widget/ScrollView;
 
     if-eqz v0, :cond_0
 
-    .line 152
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 164
     :cond_0
     :goto_0
     :pswitch_0
@@ -70,7 +62,6 @@
 
     return v0
 
-    .line 154
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
@@ -78,7 +69,6 @@
 
     invoke-virtual {v0}, Landroid/widget/ScrollView;->clearFocus()V
 
-    .line 155
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     iget-object v0, v0, Lcom/android/keyguard/sec/SecKeyguardCircleView;->mScrollView:Landroid/widget/ScrollView;
@@ -89,7 +79,6 @@
 
     goto :goto_0
 
-    .line 159
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
@@ -101,7 +90,6 @@
 
     goto :goto_0
 
-    .line 152
     nop
 
     :pswitch_data_0

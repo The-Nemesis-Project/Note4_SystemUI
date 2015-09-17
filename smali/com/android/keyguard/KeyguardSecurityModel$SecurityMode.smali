@@ -69,7 +69,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -80,7 +79,6 @@
 
     const/4 v3, 0x0
 
-    .line 57
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Invalid"
@@ -89,7 +87,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Invalid:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 58
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "None"
@@ -98,7 +95,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->None:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 59
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Pattern"
@@ -107,7 +103,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Pattern:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 60
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Password"
@@ -116,7 +111,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Password:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 61
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "PIN"
@@ -125,7 +119,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->PIN:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 62
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Biometric"
@@ -136,7 +129,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Biometric:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 63
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Signature"
@@ -147,7 +139,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Signature:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 64
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Account"
@@ -158,7 +149,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Account:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 65
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SimPin"
@@ -169,7 +159,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SimPin:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 66
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SimPuk"
@@ -180,7 +169,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SimPuk:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 67
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SimPerso"
@@ -191,7 +179,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SimPerso:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 68
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "BackupPin"
@@ -202,7 +189,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->BackupPin:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 69
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "Recovery"
@@ -213,7 +199,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Recovery:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 70
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SPass"
@@ -224,7 +209,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SPass:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 71
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SPassPassword"
@@ -235,7 +219,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SPassPassword:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 72
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "FMM"
@@ -246,7 +229,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->FMM:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 73
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "SmartcardPIN"
@@ -257,7 +239,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->SmartcardPIN:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 74
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "CarrierLockPlus"
@@ -268,7 +249,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->CarrierLockPlus:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 75
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const-string v1, "CarrierPassword"
@@ -279,7 +259,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->CarrierPassword:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .line 56
     const/16 v0, 0x13
 
     new-array v0, v0, [Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
@@ -401,8 +380,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 56
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -410,10 +387,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 56
     const-class v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -428,8 +402,6 @@
 .method public static values()[Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
     .locals 1
 
-    .prologue
-    .line 56
     sget-object v0, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->$VALUES:[Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->clone()Ljava/lang/Object;

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;)V
     .locals 0
 
-    .prologue
-    .line 441
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 444
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut$4;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;->fadeOutSound()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;->access$200(Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;)V
 
-    .line 445
     return-void
 .end method

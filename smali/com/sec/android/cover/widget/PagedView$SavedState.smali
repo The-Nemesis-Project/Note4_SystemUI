@@ -35,8 +35,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 2062
     new-instance v0, Lcom/sec/android/cover/widget/PagedView$SavedState$1;
 
     invoke-direct {v0}, Lcom/sec/android/cover/widget/PagedView$SavedState$1;-><init>()V
@@ -48,35 +46,25 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .prologue
-    .line 2052
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 2045
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$SavedState;->currentPage:I
 
-    .line 2053
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$SavedState;->currentPage:I
 
-    .line 2054
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/sec/android/cover/widget/PagedView$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lcom/sec/android/cover/widget/PagedView$1;
 
-    .prologue
-    .line 2044
     invoke-direct {p0, p1}, Lcom/sec/android/cover/widget/PagedView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -84,18 +72,13 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 1
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .prologue
-    .line 2048
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 2045
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$SavedState;->currentPage:I
 
-    .line 2049
     return-void
 .end method
 
@@ -103,18 +86,12 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .prologue
-    .line 2058
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2059
     iget v0, p0, Lcom/sec/android/cover/widget/PagedView$SavedState;->currentPage:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2060
     return-void
 .end method

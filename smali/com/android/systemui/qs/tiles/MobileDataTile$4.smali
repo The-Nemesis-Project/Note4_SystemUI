@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/MobileDataTile;)V
     .locals 0
 
-    .prologue
-    .line 177
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,21 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x2
 
-    .line 180
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 181
-    .local v0, "intentAction":Ljava/lang/String;
     const-string v1, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -58,7 +50,6 @@
 
     if-eqz v1, :cond_5
 
-    .line 182
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
@@ -80,7 +71,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/MobileDataTile;->isAirPlaneMode:Z
     invoke-static {v4, v1}, Lcom/android/systemui/qs/tiles/MobileDataTile;->access$002(Lcom/android/systemui/qs/tiles/MobileDataTile;Z)Z
 
-    .line 183
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
@@ -93,7 +83,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/MobileDataTile;->mMobileData:Z
     invoke-static {v1, v4}, Lcom/android/systemui/qs/tiles/MobileDataTile;->access$102(Lcom/android/systemui/qs/tiles/MobileDataTile;Z)Z
 
-    .line 185
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->isMSim()Z
@@ -112,7 +101,6 @@
 
     if-nez v1, :cond_2
 
-    .line 186
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -122,18 +110,15 @@
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/MobileDataTile;->access$800(Lcom/android/systemui/qs/tiles/MobileDataTile;Ljava/lang/Object;)V
 
-    .line 234
     :cond_0
     :goto_1
     return-void
 
-    .line 182
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 187
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -144,7 +129,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 188
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -156,7 +140,6 @@
 
     goto :goto_1
 
-    .line 190
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -184,7 +167,6 @@
 
     goto :goto_2
 
-    .line 192
     :cond_5
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -210,7 +192,6 @@
 
     if-eqz v1, :cond_f
 
-    .line 195
     :cond_6
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -224,7 +205,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/MobileDataTile;->mMobileData:Z
     invoke-static {v1, v4}, Lcom/android/systemui/qs/tiles/MobileDataTile;->access$102(Lcom/android/systemui/qs/tiles/MobileDataTile;Z)Z
 
-    .line 197
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->isMSim()Z
@@ -234,7 +214,6 @@
 
     if-eqz v1, :cond_a
 
-    .line 198
     const-string v1, "MobileDataTile"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -264,7 +243,6 @@
 
     invoke-static {v1, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 200
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->getReadySimCount()I
@@ -274,7 +252,6 @@
 
     if-nez v1, :cond_7
 
-    .line 201
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -286,7 +263,6 @@
 
     goto/16 :goto_1
 
-    .line 203
     :cond_7
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -297,7 +273,6 @@
 
     if-eqz v1, :cond_8
 
-    .line 204
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -309,7 +284,6 @@
 
     goto/16 :goto_1
 
-    .line 206
     :cond_8
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -337,7 +311,6 @@
 
     goto :goto_3
 
-    .line 211
     :cond_a
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -359,7 +332,6 @@
 
     if-nez v1, :cond_c
 
-    .line 213
     :cond_b
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -372,7 +344,6 @@
 
     goto/16 :goto_1
 
-    .line 215
     :cond_c
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -383,7 +354,6 @@
 
     if-eqz v1, :cond_d
 
-    .line 216
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -395,7 +365,6 @@
 
     goto/16 :goto_1
 
-    .line 218
     :cond_d
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
@@ -423,7 +392,6 @@
 
     goto :goto_4
 
-    .line 223
     :cond_f
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -437,7 +405,6 @@
 
     if-eqz v1, :cond_10
 
-    .line 225
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/MobileDataTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -460,7 +427,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 226
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/MobileDataTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -472,7 +438,6 @@
 
     goto/16 :goto_1
 
-    .line 230
     :cond_10
     const-string v1, "android.net.conn.MOBILE_DATA_ENABLE_POPUP"
 
@@ -486,14 +451,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 231
     const-string v1, "MobileDataTile"
 
     const-string v2, "onReceive: ACTION_MOBILE_DATA_ENABLE_POPUP"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/MobileDataTile$4;->this$0:Lcom/android/systemui/qs/tiles/MobileDataTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/MobileDataTile;->onDisplayMobileDataOnAlert()V

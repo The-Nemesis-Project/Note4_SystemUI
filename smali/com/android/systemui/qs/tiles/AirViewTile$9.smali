@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;)V
     .locals 0
 
-    .prologue
-    .line 424
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$9;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 426
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$9;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->doNext()V
 
-    .line 427
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewType:I
     invoke-static {}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$900()I
 
@@ -57,7 +50,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 428
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$9;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->isAllOptionDisabled()Z
@@ -66,7 +58,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 429
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$9;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewMasterSetting:Lcom/android/systemui/qs/SystemSetting;
@@ -78,13 +69,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 430
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$9;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/AirViewTile;->showConfirmPopup()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$1400(Lcom/android/systemui/qs/tiles/AirViewTile;)V
 
-    .line 433
     :cond_0
     return-void
 .end method

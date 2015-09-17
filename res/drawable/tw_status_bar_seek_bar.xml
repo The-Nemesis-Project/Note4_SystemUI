@@ -4,7 +4,7 @@
     <item android:state_enabled="false">
         <layer-list>
             <item android:id="@id/background">
-                <nine-patch android:src="@android:drawable/scrubber_primary_mtrl_alpha" android:tint="@color/tw_progress_color_control_disabled_bg" />
+                <nine-patch android:src="@android:drawable/scrubber_primary_mtrl_alpha" android:tint="@color/tw_progress_color_control_normal" />
             </item>
             <item android:id="@id/progress">
                 <scale android:scaleWidth="100%">

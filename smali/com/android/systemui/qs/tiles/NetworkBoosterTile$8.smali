@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;)V
     .locals 0
 
-    .prologue
-    .line 427
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +36,15 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .prologue
     const/4 v0, 0x2
 
-    .line 429
     const-string v1, "NetworkBoosterTile"
 
     const-string v2, "AlertDialog onDismiss()"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 433
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->mIsWfcRegistered:Z
@@ -60,23 +54,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 435
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
-
-    const/4 v1, 0x3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    # invokes: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->refreshState(Ljava/lang/Object;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->access$2500(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Ljava/lang/Object;)V
-
-    .line 443
-    :goto_0
-    return-void
-
-    .line 436
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
@@ -87,7 +64,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 437
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -97,9 +73,9 @@
     # invokes: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->access$2600(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Ljava/lang/Object;)V
 
-    goto :goto_0
+    :goto_0
+    return-void
 
-    .line 438
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
@@ -110,7 +86,6 @@
 
     if-nez v1, :cond_2
 
-    .line 439
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -122,7 +97,6 @@
 
     goto :goto_0
 
-    .line 441
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$8;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 

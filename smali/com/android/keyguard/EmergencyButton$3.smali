@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/EmergencyButton;J)V
     .locals 0
-    .param p2, "x0"    # J
 
-    .prologue
-    .line 175
     iput-object p1, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-direct {p0, p2, p3}, Landroid/telephony/PhoneStateListener;-><init>(J)V
@@ -36,13 +33,9 @@
 # virtual methods
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
     .locals 5
-    .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .prologue
-    .line 178
     invoke-super {p0, p1}, Landroid/telephony/PhoneStateListener;->onServiceStateChanged(Landroid/telephony/ServiceState;)V
 
-    .line 179
     const-string v2, "EmergencyButton"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -69,7 +62,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     iget-object v2, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     # getter for: Lcom/android/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
@@ -85,8 +77,6 @@
 
     move-result v0
 
-    .line 181
-    .local v0, "phoneState":I
     iget-object v2, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     # getter for: Lcom/android/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
@@ -102,8 +92,6 @@
 
     move-result-object v1
 
-    .line 183
-    .local v1, "simState":Lcom/android/internal/telephony/IccCardConstants$State;
     iget-object v2, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
@@ -113,12 +101,10 @@
     # setter for: Lcom/android/keyguard/EmergencyButton;->mServiceState:I
     invoke-static {v2, v3}, Lcom/android/keyguard/EmergencyButton;->access$502(Lcom/android/keyguard/EmergencyButton;I)I
 
-    .line 185
     iget-object v2, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     # invokes: Lcom/android/keyguard/EmergencyButton;->updateEmergencyCallButton(Lcom/android/internal/telephony/IccCardConstants$State;I)V
     invoke-static {v2, v1, v0}, Lcom/android/keyguard/EmergencyButton;->access$100(Lcom/android/keyguard/EmergencyButton;Lcom/android/internal/telephony/IccCardConstants$State;I)V
 
-    .line 186
     return-void
 .end method

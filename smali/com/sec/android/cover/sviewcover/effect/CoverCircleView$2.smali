@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;)V
     .locals 0
 
-    .prologue
-    .line 87
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView$2;->this$0:Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +36,13 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 91
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView$2;->this$0:Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;
 
     iget-object v0, v0, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;->mCoverUnlockEventHandler:Lcom/sec/android/cover/sviewcover/effect/CoverUnlockEventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView$2;->this$0:Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;
 
     iget-object v0, v0, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView;->mCoverUnlockEventHandler:Lcom/sec/android/cover/sviewcover/effect/CoverUnlockEventHandler;
@@ -58,7 +51,6 @@
 
     move-result v0
 
-    .line 94
     :goto_0
     return v0
 

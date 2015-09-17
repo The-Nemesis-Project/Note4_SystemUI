@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/TorchLightTile;)V
     .locals 0
 
-    .prologue
-    .line 281
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 4
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromUser"    # Z
 
-    .prologue
-    .line 292
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     add-int/lit8 v1, p2, 0x1
@@ -51,7 +44,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$1102(Lcom/android/systemui/qs/tiles/TorchLightTile;I)I
 
-    .line 293
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mContentResolver:Landroid/content/ContentResolver;
@@ -72,7 +64,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 296
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
@@ -82,7 +73,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 297
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchLevel:I
@@ -92,7 +82,6 @@
 
     invoke-static {v0}, Lcom/sec/android/hardware/SecHardwareInterface;->setTorchLight(I)V
 
-    .line 298
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$3;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->cfmsService:Landroid/os/CustomFrequencyManager;
@@ -129,25 +118,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/CustomFrequencyManager;->sendCommandToSSRM(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 300
     :cond_0
     return-void
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 288
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 284
     return-void
 .end method

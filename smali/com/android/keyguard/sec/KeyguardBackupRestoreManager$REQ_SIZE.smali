@@ -39,12 +39,10 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
-    .line 85
     new-instance v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
 
     const-string v1, "SUCCESS"
@@ -63,7 +61,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->MINIMUM_SIZE:Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
 
-    .line 84
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
@@ -83,35 +80,26 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 1
-    .param p3, "num"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .prologue
-    .line 88
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 86
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->value:I
 
-    .line 89
     iput p3, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->value:I
 
-    .line 90
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 84
     const-class v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -126,8 +114,6 @@
 .method public static values()[Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
     .locals 1
 
-    .prologue
-    .line 84
     sget-object v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->$VALUES:[Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->clone()Ljava/lang/Object;
@@ -144,8 +130,6 @@
 .method public getValue()I
     .locals 1
 
-    .prologue
-    .line 93
     iget v0, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$REQ_SIZE;->value:I
 
     return v0

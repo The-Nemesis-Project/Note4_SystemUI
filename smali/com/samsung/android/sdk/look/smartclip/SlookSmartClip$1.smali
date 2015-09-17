@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;)V
     .locals 0
 
-    .prologue
-    .line 135
     iput-object p1, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$1;->this$0:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onExtractSmartClipData(Landroid/view/View;Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipDataElement;Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipCroppedArea;)I
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "resultElement"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipDataElement;
-    .param p3, "croppedArea"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipCroppedArea;
 
-    .prologue
-    .line 138
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$1;->this$0:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;
 
     # getter for: Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mDataExtractionListener:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;

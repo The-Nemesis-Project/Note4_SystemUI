@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 3476
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,8 @@
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 0
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "hasFocus"    # Z
 
-    .prologue
-    .line 3480
     invoke-virtual {p1, p2}, Landroid/view/View;->setSelected(Z)V
 
-    .line 3481
     return-void
 .end method

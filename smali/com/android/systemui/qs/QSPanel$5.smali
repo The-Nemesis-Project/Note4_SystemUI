@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;)V
     .locals 0
 
-    .prologue
-    .line 704
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$5;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,6 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 708
     return-void
 .end method

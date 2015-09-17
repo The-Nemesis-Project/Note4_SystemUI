@@ -31,41 +31,30 @@
 # direct methods
 .method public constructor <init>(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
     .locals 3
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    .line 345
     iput-object p1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 346
     if-nez p2, :cond_0
 
-    .line 347
     iput v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->status:I
 
-    .line 348
     iput v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->plugged:I
 
-    .line 349
     iput v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->level:I
 
-    .line 350
     iput v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->health:I
 
-    .line 351
     iput v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->batteryOnline:I
 
-    .line 359
     :goto_0
     return-void
 
-    .line 353
     :cond_0
     const-string v0, "status"
 
@@ -75,7 +64,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->status:I
 
-    .line 354
     const-string v0, "plugged"
 
     invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -84,7 +72,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->plugged:I
 
-    .line 355
     const-string v0, "level"
 
     invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -93,7 +80,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->level:I
 
-    .line 356
     const-string v0, "health"
 
     invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -102,7 +88,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->health:I
 
-    .line 357
     const-string v0, "online"
 
     invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -119,8 +104,6 @@
 .method public isBatteryLow()Z
     .locals 2
 
-    .prologue
-    .line 391
     iget v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->level:I
 
     const/16 v1, 0x14
@@ -141,8 +124,6 @@
 .method public isCharged()Z
     .locals 2
 
-    .prologue
-    .line 382
     iget v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->status:I
 
     const/4 v1, 0x5
@@ -163,10 +144,8 @@
 .method isPluggedIn()Z
     .locals 3
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 367
     iget v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->plugged:I
 
     if-eq v1, v0, :cond_0
@@ -196,8 +175,6 @@
 .method public isWirelssCharged()Z
     .locals 2
 
-    .prologue
-    .line 400
     iget v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;->plugged:I
 
     const/4 v1, 0x4
@@ -218,8 +195,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .prologue
-    .line 405
     const-string v0, "status=%d / plugged=%d / level=%d / health=%d / batteryOnline=%d"
 
     const/4 v1, 0x5

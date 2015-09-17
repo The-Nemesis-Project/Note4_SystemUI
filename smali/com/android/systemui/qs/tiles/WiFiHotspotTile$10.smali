@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;
-.super Landroid/webkit/WebViewClient;
+.super Ljava/lang/Object;
 .source "WiFiHotspotTile.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -17,55 +20,43 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
+.field final synthetic val$link:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
+.method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Ljava/lang/String;)V
     .locals 0
 
-    .prologue
-    .line 634
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+    iput-object p2, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;->val$link:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
 
-    .prologue
-    .line 637
-    const-string v1, "http://"
-
-    invoke-virtual {p2, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 638
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
 
-    invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;->val$link:Ljava/lang/String;
+
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 639
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 640
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -77,7 +68,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 642
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$10;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAttentionDialog:Landroid/app/AlertDialog;
@@ -87,16 +77,5 @@
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->cancel()V
 
-    .line 643
-    const/4 v1, 0x1
-
-    .line 645
-    .end local v0    # "intent":Landroid/content/Intent;
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
+    return-void
 .end method

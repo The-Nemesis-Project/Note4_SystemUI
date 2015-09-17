@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;)V
     .locals 0
 
-    .prologue
-    .line 119
     iput-object p1, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$2;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,8 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "whichButton"    # I
 
-    .prologue
-    .line 121
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 122
     return-void
 .end method

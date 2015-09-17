@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 458
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,14 +30,9 @@
 # virtual methods
 .method public build(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
     .locals 5
-    .param p1, "b"    # Landroid/support/v4/app/NotificationCompat$Builder;
 
-    .prologue
-    .line 461
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    .line 462
-    .local v0, "result":Landroid/app/Notification;
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
     iget-object v2, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
@@ -50,30 +43,23 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 465
     iget v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
 
     if-lez v1, :cond_0
 
-    .line 466
     iget v1, v0, Landroid/app/Notification;->flags:I
 
     or-int/lit16 v1, v1, 0x80
 
     iput v1, v0, Landroid/app/Notification;->flags:I
 
-    .line 468
     :cond_0
     return-object v0
 .end method
 
 .method public getAction(Landroid/app/Notification;I)Landroid/support/v4/app/NotificationCompat$Action;
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
-    .param p2, "actionIndex"    # I
 
-    .prologue
-    .line 483
     const/4 v0, 0x0
 
     return-object v0
@@ -81,10 +67,7 @@
 
 .method public getActionCount(Landroid/app/Notification;)I
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 478
     const/4 v0, 0x0
 
     return v0
@@ -103,9 +86,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 489
-    .local p1, "parcelables":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/Parcelable;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -113,10 +93,7 @@
 
 .method public getCategory(Landroid/app/Notification;)Ljava/lang/String;
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 499
     const/4 v0, 0x0
 
     return-object v0
@@ -124,10 +101,7 @@
 
 .method public getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 473
     const/4 v0, 0x0
 
     return-object v0
@@ -135,10 +109,7 @@
 
 .method public getGroup(Landroid/app/Notification;)Ljava/lang/String;
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 509
     const/4 v0, 0x0
 
     return-object v0
@@ -146,10 +117,7 @@
 
 .method public getLocalOnly(Landroid/app/Notification;)Z
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 504
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +125,6 @@
 
 .method public getParcelableArrayListForActions([Landroid/support/v4/app/NotificationCompat$Action;)Ljava/util/ArrayList;
     .locals 1
-    .param p1, "actions"    # [Landroid/support/v4/app/NotificationCompat$Action;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -170,8 +137,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 494
     const/4 v0, 0x0
 
     return-object v0
@@ -179,10 +144,7 @@
 
 .method public getSortKey(Landroid/app/Notification;)Ljava/lang/String;
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 519
     const/4 v0, 0x0
 
     return-object v0
@@ -190,10 +152,7 @@
 
 .method public isGroupSummary(Landroid/app/Notification;)Z
     .locals 1
-    .param p1, "n"    # Landroid/app/Notification;
 
-    .prologue
-    .line 514
     const/4 v0, 0x0
 
     return v0

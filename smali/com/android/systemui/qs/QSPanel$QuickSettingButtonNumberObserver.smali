@@ -22,18 +22,14 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;)V
     .locals 1
 
-    .prologue
-    .line 813
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$QuickSettingButtonNumberObserver;->this$0:Lcom/android/systemui/qs/QSPanel;
 
-    .line 814
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 815
     # invokes: Lcom/android/systemui/qs/QSPanel;->getButtonNumberFromDB()I
     invoke-static {p1}, Lcom/android/systemui/qs/QSPanel;->access$1200(Lcom/android/systemui/qs/QSPanel;)I
 
@@ -42,7 +38,6 @@
     # setter for: Lcom/android/systemui/qs/QSPanel;->mVisibleButtonNum:I
     invoke-static {p1, v0}, Lcom/android/systemui/qs/QSPanel;->access$1102(Lcom/android/systemui/qs/QSPanel;I)I
 
-    .line 816
     return-void
 .end method
 
@@ -50,13 +45,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .prologue
-    .line 820
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 821
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$QuickSettingButtonNumberObserver;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$QuickSettingButtonNumberObserver;->this$0:Lcom/android/systemui/qs/QSPanel;
@@ -69,7 +60,6 @@
     # setter for: Lcom/android/systemui/qs/QSPanel;->mVisibleButtonNum:I
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$1102(Lcom/android/systemui/qs/QSPanel;I)I
 
-    .line 822
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$QuickSettingButtonNumberObserver;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$QuickSettingButtonNumberObserver;->this$0:Lcom/android/systemui/qs/QSPanel;
@@ -81,6 +71,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setSingleLine(Z)I
 
-    .line 823
     return-void
 .end method

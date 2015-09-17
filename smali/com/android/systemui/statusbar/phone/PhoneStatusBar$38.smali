@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;ZZLandroid/content/Intent;Z)V
     .locals 0
 
-    .prologue
-    .line 4514
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->val$keyguardShowing:Z
@@ -55,22 +53,18 @@
 .method public onDismiss()Z
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 4517
     new-instance v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 4539
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->val$dismissShade:Z
 
     if-eqz v0, :cond_0
 
-    .line 4541
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mState:I
@@ -80,19 +74,16 @@
 
     if-nez v0, :cond_1
 
-    .line 4543
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 4548
     :cond_0
     :goto_0
     return v2
 
-    .line 4545
     :cond_1
     const-string v0, "PhoneStatusBar"
 

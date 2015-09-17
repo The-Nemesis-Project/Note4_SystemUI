@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WifiTile;)V
     .locals 0
 
-    .prologue
-    .line 294
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,56 +36,29 @@
 # virtual methods
 .method public onAirplaneModeChanged(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 338
     return-void
 .end method
 
 .method public onMobileDataEnabled(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 343
     return-void
 .end method
 
 .method public onMobileDataSignalChanged(ZILjava/lang/String;IZZLjava/lang/String;Ljava/lang/String;ZZ)V
     .locals 0
-    .param p1, "enabled"    # Z
-    .param p2, "mobileSignalIconId"    # I
-    .param p3, "mobileSignalContentDescriptionId"    # Ljava/lang/String;
-    .param p4, "dataTypeIconId"    # I
-    .param p5, "activityIn"    # Z
-    .param p6, "activityOut"    # Z
-    .param p7, "dataTypeContentDescriptionId"    # Ljava/lang/String;
-    .param p8, "description"    # Ljava/lang/String;
-    .param p9, "noSim"    # Z
-    .param p10, "isDataTypeIconWide"    # Z
 
-    .prologue
-    .line 333
     return-void
 .end method
 
 .method public onWifiSignalChanged(ZZIZZLjava/lang/String;Ljava/lang/String;)V
     .locals 7
-    .param p1, "enabled"    # Z
-    .param p2, "connected"    # Z
-    .param p3, "wifiSignalIconId"    # I
-    .param p4, "activityIn"    # Z
-    .param p5, "activityOut"    # Z
-    .param p6, "wifiSignalContentDescriptionId"    # Ljava/lang/String;
-    .param p7, "description"    # Ljava/lang/String;
 
-    .prologue
     const/4 v4, 0x0
 
     const/4 v3, 0x1
 
-    .line 300
     const-string v2, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -120,42 +91,31 @@
 
     invoke-static {v2, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 301
     new-instance v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;
 
     const/4 v2, 0x0
 
     invoke-direct {v0, v2}, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;-><init>(Lcom/android/systemui/qs/tiles/WifiTile$1;)V
 
-    .line 302
-    .local v0, "info":Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;
     iput-boolean p1, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabled:Z
 
-    .line 303
     iput-boolean p2, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->connected:Z
 
-    .line 304
     iput p3, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->wifiSignalIconId:I
 
-    .line 305
     iput-object p7, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabledDesc:Ljava/lang/String;
 
-    .line 306
     iput-boolean p4, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->activityIn:Z
 
-    .line 307
     iput-boolean p5, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->activityOut:Z
 
-    .line 308
     iput-object p6, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->wifiSignalContentDescription:Ljava/lang/String;
 
-    .line 309
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiName:Ljava/lang/String;
     invoke-static {v2, p7}, Lcom/android/systemui/qs/tiles/WifiTile;->access$1002(Lcom/android/systemui/qs/tiles/WifiTile;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 310
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiName:Ljava/lang/String;
@@ -178,7 +138,6 @@
 
     if-nez v2, :cond_1
 
-    .line 311
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiName:Ljava/lang/String;
@@ -194,7 +153,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 312
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
@@ -211,7 +169,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiName:Ljava/lang/String;
     invoke-static {v2, v5}, Lcom/android/systemui/qs/tiles/WifiTile;->access$1002(Lcom/android/systemui/qs/tiles/WifiTile;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 314
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -228,7 +185,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 315
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
@@ -258,7 +214,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiName:Ljava/lang/String;
     invoke-static {v2, v5}, Lcom/android/systemui/qs/tiles/WifiTile;->access$1002(Lcom/android/systemui/qs/tiles/WifiTile;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 318
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -280,7 +235,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/WifiTile;->mWifiConnected:Z
     invoke-static {v5, v2}, Lcom/android/systemui/qs/tiles/WifiTile;->access$1102(Lcom/android/systemui/qs/tiles/WifiTile;Z)Z
 
-    .line 319
     iget v2, v0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->wifiSignalIconId:I
 
     if-lez v2, :cond_5
@@ -291,8 +245,6 @@
 
     move v1, v3
 
-    .line 320
-    .local v1, "wifiNotConnected":Z
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -323,7 +275,6 @@
 
     if-eq v2, v4, :cond_3
 
-    .line 321
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiTile$2;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -333,20 +284,16 @@
     # invokes: Lcom/android/systemui/qs/tiles/WifiTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/WifiTile;->access$1300(Lcom/android/systemui/qs/tiles/WifiTile;Ljava/lang/Object;)V
 
-    .line 323
     :cond_3
     return-void
 
-    .end local v1    # "wifiNotConnected":Z
     :cond_4
     move v2, v4
 
-    .line 318
     goto :goto_0
 
     :cond_5
     move v1, v4
 
-    .line 319
     goto :goto_1
 .end method

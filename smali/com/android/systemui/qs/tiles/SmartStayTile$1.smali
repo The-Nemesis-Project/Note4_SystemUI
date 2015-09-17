@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/SmartStayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 48
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/SmartStayTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartStayTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,12 +33,9 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 4
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 52
     const-string v1, "SmartStayTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -66,7 +58,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SmartStayTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartStayTile;
 
     if-ne p1, v0, :cond_0
@@ -79,7 +70,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/SmartStayTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/SmartStayTile;->access$000(Lcom/android/systemui/qs/tiles/SmartStayTile;Ljava/lang/Object;)V
 
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SmartStayTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartStayTile;
 
     const/4 v1, 0x0
@@ -87,10 +77,8 @@
     # setter for: Lcom/android/systemui/qs/tiles/SmartStayTile;->mIsProcessing:Z
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/SmartStayTile;->access$102(Lcom/android/systemui/qs/tiles/SmartStayTile;Z)Z
 
-    .line 58
     return-void
 
-    .line 54
     :cond_0
     const/4 v0, 0x2
 

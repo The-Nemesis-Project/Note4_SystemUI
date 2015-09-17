@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 1730
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,30 +36,22 @@
 # virtual methods
 .method public onLongPress(Landroid/view/View;II)Z
     .locals 10
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
 
-    .prologue
     const/4 v8, 0x0
 
-    .line 1733
     iget-object v5, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/BaseStatusBar;->dismissPopups()V
 
-    .line 1735
     instance-of v5, p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-nez v5, :cond_0
 
     move v5, v8
 
-    .line 1771
     :goto_0
     return v5
 
-    .line 1738
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
@@ -69,7 +59,6 @@
 
     if-nez v5, :cond_1
 
-    .line 1739
     const-string v5, "StatusBar"
 
     const-string v9, "Trying to show notification guts, but not attached to window"
@@ -78,10 +67,8 @@
 
     move v5, v8
 
-    .line 1740
     goto :goto_0
 
-    .line 1743
     :cond_1
     iget-object v9, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -92,8 +79,7 @@
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->inflateGuts(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     invoke-static {v9, v5}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$1200(Lcom/android/systemui/statusbar/BaseStatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 
-    .line 1746
-    const v5, 0x7f0e01d5
+    const v5, 0x7f0e01d9
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -101,16 +87,12 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 1748
-    .local v1, "guts":Lcom/android/systemui/statusbar/NotificationGuts;
     if-nez v1, :cond_2
 
     move v5, v8
 
-    .line 1750
     goto :goto_0
 
-    .line 1754
     :cond_2
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/NotificationGuts;->getVisibility()I
 
@@ -118,7 +100,6 @@
 
     if-nez v5, :cond_3
 
-    .line 1755
     const-string v5, "StatusBar"
 
     const-string v9, "Trying to show notification guts, but already visible"
@@ -127,14 +108,11 @@
 
     move v5, v8
 
-    .line 1756
     goto :goto_0
 
-    .line 1759
     :cond_3
     invoke-virtual {v1, v8}, Lcom/android/systemui/statusbar/NotificationGuts;->setVisibility(I)V
 
-    .line 1760
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/NotificationGuts;->getWidth()I
 
     move-result v5
@@ -147,8 +125,6 @@
 
     int-to-double v2, v5
 
-    .line 1761
-    .local v2, "horz":D
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/NotificationGuts;->getActualHeight()I
 
     move-result v5
@@ -161,29 +137,22 @@
 
     int-to-double v6, v5
 
-    .line 1762
-    .local v6, "vert":D
     invoke-static {v2, v3, v6, v7}, Ljava/lang/Math;->hypot(DD)D
 
     move-result-wide v8
 
     double-to-float v4, v8
 
-    .line 1763
-    .local v4, "r":F
     const/4 v5, 0x0
 
     invoke-static {v1, p2, p3, v5, v4}, Landroid/view/ViewAnimationUtils;->createCircularReveal(Landroid/view/View;IIFF)Landroid/animation/Animator;
 
     move-result-object v0
 
-    .line 1765
-    .local v0, "a":Landroid/animation/Animator;
     const-wide/16 v8, 0x190
 
     invoke-virtual {v0, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 1766
     iget-object v5, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mLinearOutSlowIn:Landroid/animation/TimeInterpolator;
@@ -193,16 +162,13 @@
 
     invoke-virtual {v0, v5}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1767
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 1769
     iget-object v5, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mNotificationGutsExposed:Lcom/android/systemui/statusbar/NotificationGuts;
     invoke-static {v5, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$1402(Lcom/android/systemui/statusbar/BaseStatusBar;Lcom/android/systemui/statusbar/NotificationGuts;)Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 1771
     const/4 v5, 0x1
 
     goto :goto_0

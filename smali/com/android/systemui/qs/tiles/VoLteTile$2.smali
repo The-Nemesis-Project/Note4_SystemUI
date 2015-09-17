@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/VoLteTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 92
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/GlobalSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,14 +33,11 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 4
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v2, 0x2
 
     const/4 v1, 0x1
 
-    .line 95
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     if-ne p1, v1, :cond_0
@@ -56,7 +48,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mMobileData:Z
     invoke-static {v3, v0}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$302(Lcom/android/systemui/qs/tiles/VoLteTile;Z)Z
 
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mMobileData:Z
@@ -66,7 +57,6 @@
 
     if-nez v0, :cond_1
 
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mSettingVoLTE:Lcom/android/systemui/qs/SystemSetting;
@@ -76,7 +66,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 98
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/VoLteTile;->mContext:Landroid/content/Context;
@@ -86,7 +75,6 @@
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/VoLteTile;->manualIMSDeregister(Landroid/content/Context;)V
 
-    .line 99
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -96,17 +84,14 @@
     # invokes: Lcom/android/systemui/qs/tiles/VoLteTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/VoLteTile;->access$600(Lcom/android/systemui/qs/tiles/VoLteTile;Ljava/lang/Object;)V
 
-    .line 103
     :goto_1
     return-void
 
-    .line 95
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 101
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$2;->this$0:Lcom/android/systemui/qs/tiles/VoLteTile;
 

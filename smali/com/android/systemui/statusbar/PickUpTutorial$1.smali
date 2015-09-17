@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/PickUpTutorial;)V
     .locals 0
 
-    .prologue
-    .line 154
     iput-object p1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/4 v7, 0x6
 
     const/4 v6, 0x5
@@ -46,18 +42,15 @@
 
     const-wide/16 v4, 0x3e8
 
-    .line 156
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 204
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 158
     :pswitch_1
     const-string v1, "STATUSBAR-PickUpTutorial"
 
@@ -65,7 +58,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mVibrator:Landroid/os/SystemVibrator;
@@ -95,7 +87,6 @@
 
     goto :goto_0
 
-    .line 163
     :pswitch_2
     const-string v1, "STATUSBAR-PickUpTutorial"
 
@@ -103,7 +94,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mLCDisOn:Z
@@ -113,7 +103,6 @@
 
     if-nez v1, :cond_0
 
-    .line 165
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mHandler:Landroid/os/Handler;
@@ -123,7 +112,6 @@
 
     invoke-virtual {v1, v7, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 166
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     const/4 v2, 0x1
@@ -133,7 +121,6 @@
 
     goto :goto_0
 
-    .line 170
     :pswitch_3
     const-string v1, "STATUSBAR-PickUpTutorial"
 
@@ -141,7 +128,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 171
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->pm:Landroid/os/PowerManager;
@@ -160,23 +146,18 @@
 
     if-nez v1, :cond_0
 
-    .line 172
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 173
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.pickuptutorial.PICKUPBLACKSCREEN"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 174
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     invoke-virtual {v1, v0, v3}, Lcom/android/systemui/statusbar/PickUpTutorial;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 176
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mLCDisOn:Z
@@ -186,7 +167,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 177
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mHandler:Landroid/os/Handler;
@@ -196,7 +176,6 @@
 
     invoke-virtual {v1, v6, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 178
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # setter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mLCDisOn:Z
@@ -204,8 +183,6 @@
 
     goto :goto_0
 
-    .line 183
-    .end local v0    # "intent":Landroid/content/Intent;
     :pswitch_4
     const-string v1, "STATUSBAR-PickUpTutorial"
 
@@ -213,7 +190,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mLCDisOn:Z
@@ -232,7 +208,6 @@
 
     if-nez v1, :cond_0
 
-    .line 185
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mHandler:Landroid/os/Handler;
@@ -244,7 +219,6 @@
 
     goto/16 :goto_0
 
-    .line 189
     :pswitch_5
     const-string v1, "STATUSBAR-PickUpTutorial"
 
@@ -275,7 +249,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 190
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mLCDisOn:Z
@@ -285,7 +258,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 191
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mHandler:Landroid/os/Handler;
@@ -295,14 +267,12 @@
 
     invoke-virtual {v1, v7, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 193
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # operator++ for: Lcom/android/systemui/statusbar/PickUpTutorial;->mCount:I
     invoke-static {v1}, Lcom/android/systemui/statusbar/PickUpTutorial;->access$708(Lcom/android/systemui/statusbar/PickUpTutorial;)I
 
-    .line 194
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mCount:I
@@ -314,7 +284,6 @@
 
     if-le v1, v2, :cond_0
 
-    .line 195
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -337,14 +306,12 @@
 
     if-nez v1, :cond_0
 
-    .line 196
     const-string v1, "STATUSBAR-PickUpTutorial"
 
     const-string v2, "mCount > 3 "
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 197
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mReadyToShowPutDownDialog:Z
@@ -354,7 +321,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 198
     iget-object v1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$1;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # invokes: Lcom/android/systemui/statusbar/PickUpTutorial;->tryPickUpDialog()V
@@ -362,7 +328,6 @@
 
     goto/16 :goto_0
 
-    .line 156
     nop
 
     :pswitch_data_0

@@ -21,16 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/usb/StorageNotification;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "l"    # Landroid/os/Looper;
 
-    .prologue
-    .line 652
     iput-object p1, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationHandler;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
-    .line 653
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 654
     return-void
 .end method
 
@@ -38,22 +33,17 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 17
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 657
     move-object/from16 v0, p1
 
     iget v1, v0, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 683
     :goto_0
     :pswitch_0
     return-void
 
-    .line 659
     :pswitch_1
     move-object/from16 v0, p1
 
@@ -61,8 +51,6 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 660
-    .local v8, "path":Ljava/lang/String;
     const-string v1, "StorageNotification"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -85,7 +73,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 661
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationHandler;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -107,8 +94,6 @@
 
     goto :goto_0
 
-    .line 668
-    .end local v8    # "path":Ljava/lang/String;
     :pswitch_2
     move-object/from16 v0, p1
 
@@ -118,8 +103,6 @@
 
     check-cast v16, Ljava/lang/String;
 
-    .line 669
-    .local v16, "path2":Ljava/lang/String;
     const-string v1, "StorageNotification"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -144,13 +127,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 670
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 671
-    .local v3, "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationHandler;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -161,14 +141,12 @@
 
     invoke-virtual {v3, v1, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 672
     const-string v1, "storage_volume"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v3, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 673
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationHandler;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -187,8 +165,6 @@
 
     move-result-object v15
 
-    .line 675
-    .local v15, "pi":Landroid/app/PendingIntent;
     move-object/from16 v0, p0
 
     iget-object v9, v0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationHandler;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -208,7 +184,6 @@
 
     goto/16 :goto_0
 
-    .line 657
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

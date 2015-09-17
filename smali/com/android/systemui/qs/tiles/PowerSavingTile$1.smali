@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/PowerSavingTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 95
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/PowerSavingTile$1;->this$0:Lcom/android/systemui/qs/tiles/PowerSavingTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,10 +33,7 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 3
-    .param p1, "value"    # I
 
-    .prologue
-    .line 98
     const-string v0, "PowerSavingTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +56,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/PowerSavingTile$1;->this$0:Lcom/android/systemui/qs/tiles/PowerSavingTile;
 
     if-eqz p1, :cond_0
@@ -79,10 +70,8 @@
     # invokes: Lcom/android/systemui/qs/tiles/PowerSavingTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/PowerSavingTile;->access$000(Lcom/android/systemui/qs/tiles/PowerSavingTile;Ljava/lang/Object;)V
 
-    .line 101
     return-void
 
-    .line 99
     :cond_0
     const/4 v0, 0x2
 

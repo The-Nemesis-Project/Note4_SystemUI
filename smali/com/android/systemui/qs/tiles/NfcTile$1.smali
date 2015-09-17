@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/NfcTile;)V
     .locals 0
 
-    .prologue
-    .line 196
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 199
     const-string v2, "NfcTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -66,29 +60,50 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
+
+    # getter for: Lcom/android/systemui/qs/tiles/NfcTile;->mNfcAdapter:Landroid/nfc/NfcAdapter;
+    invoke-static {v2}, Lcom/android/systemui/qs/tiles/NfcTile;->access$000(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
+
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
+
+    # getter for: Lcom/android/systemui/qs/tiles/NfcTile;->mContext:Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$100(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v3
+
+    # setter for: Lcom/android/systemui/qs/tiles/NfcTile;->mNfcAdapter:Landroid/nfc/NfcAdapter;
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$002(Lcom/android/systemui/qs/tiles/NfcTile;Landroid/nfc/NfcAdapter;)Landroid/nfc/NfcAdapter;
+
+    :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 203
-    .local v0, "action":Ljava/lang/String;
     const-string v2, "com.samsung.felica.action.LOCKSTATUS_LOCK"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
-    .line 204
     const-string v2, "NfcTile"
 
     const-string v3, "FeliCa Lock"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     const/4 v3, 0x3
@@ -98,47 +113,41 @@
     move-result-object v3
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->refreshState(Ljava/lang/Object;)V
-    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$000(Lcom/android/systemui/qs/tiles/NfcTile;Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$200(Lcom/android/systemui/qs/tiles/NfcTile;Ljava/lang/Object;)V
 
-    .line 243
     :goto_0
     return-void
 
-    .line 206
-    :cond_0
+    :cond_1
     const-string v2, "com.samsung.felica.action.LOCKSTATUS_UNLOCK"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    .line 207
     const-string v2, "NfcTile"
 
     const-string v3, "FeliCa UnLock"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NfcTile;->mNfcAdapter:Landroid/nfc/NfcAdapter;
-    invoke-static {v2}, Lcom/android/systemui/qs/tiles/NfcTile;->access$100(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
+    invoke-static {v2}, Lcom/android/systemui/qs/tiles/NfcTile;->access$000(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
-    .line 210
     const-string v2, "NfcTile"
 
     const-string v3, "mIntentReceiver mNfcAdapter : null"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 211
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     const/4 v3, 0x2
@@ -148,12 +157,11 @@
     move-result-object v3
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->refreshState(Ljava/lang/Object;)V
-    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$200(Lcom/android/systemui/qs/tiles/NfcTile;Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$300(Lcom/android/systemui/qs/tiles/NfcTile;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 213
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
@@ -161,7 +169,7 @@
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NfcTile;->mNfcAdapter:Landroid/nfc/NfcAdapter;
-    invoke-static {v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$100(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
+    invoke-static {v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$000(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
 
     move-result-object v4
 
@@ -170,14 +178,13 @@
     move-result v4
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->handleStateChanged(I)I
-    invoke-static {v3, v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$300(Lcom/android/systemui/qs/tiles/NfcTile;I)I
+    invoke-static {v3, v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)I
 
     move-result v3
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->refreshButtonState(I)V
-    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)V
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$500(Lcom/android/systemui/qs/tiles/NfcTile;I)V
 
-    .line 214
     const-string v2, "NfcTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -193,7 +200,7 @@
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NfcTile;->mNfcAdapter:Landroid/nfc/NfcAdapter;
-    invoke-static {v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$100(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
+    invoke-static {v4}, Lcom/android/systemui/qs/tiles/NfcTile;->access$000(Lcom/android/systemui/qs/tiles/NfcTile;)Landroid/nfc/NfcAdapter;
 
     move-result-object v4
 
@@ -213,17 +220,15 @@
 
     goto :goto_0
 
-    .line 217
-    :cond_2
+    :cond_3
     const-string v2, "com.felicanetworks.nfc.action.ADAPTER_RW_P2P_STATE_CHANGED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    .line 218
     const-string v2, "com.felicanetworks.nfc.extra.ADAPTER_RW_P2P_STATE"
 
     const/16 v3, 0xb
@@ -232,25 +237,21 @@
 
     move-result v1
 
-    .line 219
-    .local v1, "state":I
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->handleStateChanged(I)I
-    invoke-static {v3, v1}, Lcom/android/systemui/qs/tiles/NfcTile;->access$300(Lcom/android/systemui/qs/tiles/NfcTile;I)I
+    invoke-static {v3, v1}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)I
 
     move-result v3
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->refreshButtonState(I)V
-    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)V
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$500(Lcom/android/systemui/qs/tiles/NfcTile;I)V
 
     goto :goto_0
 
-    .line 223
-    .end local v1    # "state":I
-    :cond_3
+    :cond_4
     const-string v2, "android.nfc.extra.ADAPTER_STATE"
 
     const/4 v3, 0x1
@@ -259,19 +260,17 @@
 
     move-result v1
 
-    .line 225
-    .restart local v1    # "state":I
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/NfcTile$1;->this$0:Lcom/android/systemui/qs/tiles/NfcTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->handleStateChanged(I)I
-    invoke-static {v3, v1}, Lcom/android/systemui/qs/tiles/NfcTile;->access$300(Lcom/android/systemui/qs/tiles/NfcTile;I)I
+    invoke-static {v3, v1}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)I
 
     move-result v3
 
     # invokes: Lcom/android/systemui/qs/tiles/NfcTile;->refreshButtonState(I)V
-    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$400(Lcom/android/systemui/qs/tiles/NfcTile;I)V
+    invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/NfcTile;->access$500(Lcom/android/systemui/qs/tiles/NfcTile;I)V
 
     goto/16 :goto_0
 .end method

@@ -48,23 +48,18 @@
 .method private constructor <init>(Lcom/sec/android/cover/sviewcover/BatteryMeterView;)V
     .locals 1
 
-    .prologue
-    .line 94
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->this$0:Lcom/sec/android/cover/sviewcover/BatteryMeterView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 98
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->level:I
 
-    .line 107
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->testmode:Z
 
-    .line 108
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->online:I
@@ -74,11 +69,7 @@
 
 .method synthetic constructor <init>(Lcom/sec/android/cover/sviewcover/BatteryMeterView;Lcom/sec/android/cover/sviewcover/BatteryMeterView$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/sec/android/cover/sviewcover/BatteryMeterView;
-    .param p2, "x1"    # Lcom/sec/android/cover/sviewcover/BatteryMeterView$1;
 
-    .prologue
-    .line 94
     invoke-direct {p0, p1}, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;-><init>(Lcom/sec/android/cover/sviewcover/BatteryMeterView;)V
 
     return-void
@@ -88,21 +79,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 12
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v8, 0x0
 
     const/4 v7, 0x1
 
-    .line 112
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 113
-    .local v0, "action":Ljava/lang/String;
     const-string v6, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -111,7 +96,6 @@
 
     if-eqz v6, :cond_c
 
-    .line 115
     iget-boolean v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->testmode:Z
 
     if-eqz v6, :cond_1
@@ -124,12 +108,10 @@
 
     if-nez v6, :cond_1
 
-    .line 193
     :cond_0
     :goto_0
     return-void
 
-    .line 118
     :cond_1
     const/high16 v6, 0x42c80000    # 100.0f
 
@@ -157,23 +139,17 @@
 
     float-to-int v1, v6
 
-    .line 121
-    .local v1, "battLevel":I
     iget v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->level:I
 
     if-eq v6, v1, :cond_7
 
     move v3, v7
 
-    .line 122
-    .local v3, "levelChange":Z
     :goto_1
     if-eqz v3, :cond_2
 
-    .line 123
     iput v1, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->level:I
 
-    .line 125
     :cond_2
     iget v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->plugType:I
 
@@ -187,12 +163,9 @@
 
     move v4, v7
 
-    .line 127
-    .local v4, "plugTypeChange":Z
     :goto_2
     if-eqz v4, :cond_3
 
-    .line 128
     const-string v6, "plugged"
 
     invoke-virtual {p2, v6, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -201,7 +174,6 @@
 
     iput v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->plugType:I
 
-    .line 129
     :cond_3
     iget v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->plugType:I
 
@@ -212,7 +184,6 @@
     :goto_3
     iput-boolean v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->plugged:Z
 
-    .line 131
     iget v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->health:I
 
     const-string v9, "health"
@@ -225,12 +196,9 @@
 
     move v2, v7
 
-    .line 133
-    .local v2, "healthChange":Z
     :goto_4
     if-eqz v2, :cond_4
 
-    .line 134
     const-string v6, "health"
 
     invoke-virtual {p2, v6, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -239,7 +207,6 @@
 
     iput v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->health:I
 
-    .line 137
     :cond_4
     iget v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->status:I
 
@@ -253,12 +220,9 @@
 
     move v5, v7
 
-    .line 139
-    .local v5, "statusChange":Z
     :goto_5
     if-eqz v5, :cond_5
 
-    .line 140
     const-string v6, "status"
 
     invoke-virtual {p2, v6, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -267,7 +231,6 @@
 
     iput v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->status:I
 
-    .line 143
     :cond_5
     const-string v6, "technology"
 
@@ -277,7 +240,6 @@
 
     iput-object v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->technology:Ljava/lang/String;
 
-    .line 144
     const-string v6, "voltage"
 
     invoke-virtual {p2, v6, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -286,7 +248,6 @@
 
     iput v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->voltage:I
 
-    .line 145
     const-string v6, "temperature"
 
     invoke-virtual {p2, v6, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -295,7 +256,6 @@
 
     iput v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->temperature:I
 
-    .line 147
     sget-object v6, Lcom/sec/android/cover/sviewcover/BatteryMeterView;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -344,7 +304,6 @@
 
     invoke-static {v6, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
     if-nez v3, :cond_6
 
     if-nez v4, :cond_6
@@ -353,7 +312,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 150
     :cond_6
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->this$0:Lcom/sec/android/cover/sviewcover/BatteryMeterView;
 
@@ -375,7 +333,6 @@
 
     invoke-virtual {v6, v8}, Lcom/sec/android/cover/sviewcover/BatteryMeterView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 154
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->this$0:Lcom/sec/android/cover/sviewcover/BatteryMeterView;
 
     # getter for: Lcom/sec/android/cover/sviewcover/BatteryMeterView;->mPostInvalidateHandler:Landroid/os/Handler;
@@ -389,7 +346,6 @@
 
     if-nez v6, :cond_0
 
-    .line 155
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->this$0:Lcom/sec/android/cover/sviewcover/BatteryMeterView;
 
     # getter for: Lcom/sec/android/cover/sviewcover/BatteryMeterView;->mPostInvalidateHandler:Landroid/os/Handler;
@@ -401,48 +357,31 @@
 
     goto/16 :goto_0
 
-    .end local v2    # "healthChange":Z
-    .end local v3    # "levelChange":Z
-    .end local v4    # "plugTypeChange":Z
-    .end local v5    # "statusChange":Z
     :cond_7
     move v3, v8
 
-    .line 121
     goto/16 :goto_1
 
-    .restart local v3    # "levelChange":Z
     :cond_8
     move v4, v8
 
-    .line 125
     goto/16 :goto_2
 
-    .restart local v4    # "plugTypeChange":Z
     :cond_9
     move v6, v8
 
-    .line 129
     goto/16 :goto_3
 
     :cond_a
     move v2, v8
 
-    .line 131
     goto/16 :goto_4
 
-    .restart local v2    # "healthChange":Z
     :cond_b
     move v5, v8
 
-    .line 137
     goto/16 :goto_5
 
-    .line 158
-    .end local v1    # "battLevel":I
-    .end local v2    # "healthChange":Z
-    .end local v3    # "levelChange":Z
-    .end local v4    # "plugTypeChange":Z
     :cond_c
     const-string v6, "com.android.systemui.BATTERY_LEVEL_TEST"
 
@@ -452,10 +391,8 @@
 
     if-eqz v6, :cond_0
 
-    .line 159
     iput-boolean v7, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->testmode:Z
 
-    .line 160
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker;->this$0:Lcom/sec/android/cover/sviewcover/BatteryMeterView;
 
     new-instance v7, Lcom/sec/android/cover/sviewcover/BatteryMeterView$BatteryTracker$1;

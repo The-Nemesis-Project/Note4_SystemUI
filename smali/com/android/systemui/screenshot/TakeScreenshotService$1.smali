@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/TakeScreenshotService;)V
     .locals 0
 
-    .prologue
-    .line 35
     iput-object p1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->this$0:Lcom/android/systemui/screenshot/TakeScreenshotService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,28 +33,21 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 38
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 58
     :goto_0
     return-void
 
-    .line 40
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 41
-    .local v0, "callback":Landroid/os/Messenger;
     # getter for: Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
     invoke-static {}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -64,7 +55,6 @@
 
     if-nez v1, :cond_0
 
-    .line 42
     new-instance v1, Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     iget-object v4, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->this$0:Lcom/android/systemui/screenshot/TakeScreenshotService;
@@ -74,7 +64,6 @@
     # setter for: Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
     invoke-static {v1}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$002(Lcom/android/systemui/screenshot/GlobalScreenshot;)Lcom/android/systemui/screenshot/GlobalScreenshot;
 
-    .line 44
     :cond_0
     # getter for: Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
     invoke-static {}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
@@ -121,7 +110,6 @@
 
     goto :goto_2
 
-    .line 38
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

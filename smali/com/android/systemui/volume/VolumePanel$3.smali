@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 809
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 6
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 812
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const/4 v1, -0x1
@@ -51,7 +46,6 @@
     # setter for: Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumePanel;->access$902(Lcom/android/systemui/volume/VolumePanel;I)I
 
-    .line 813
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -68,13 +62,11 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
-    .line 814
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->setZenPanelVisible(Z)V
     invoke-static {v0, v2}, Lcom/android/systemui/volume/VolumePanel;->access$1000(Lcom/android/systemui/volume/VolumePanel;Z)V
 
-    .line 815
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mMoreButton:Landroid/view/View;
@@ -84,7 +76,6 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 817
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
 
@@ -98,7 +89,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 818
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$3;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
@@ -123,6 +113,5 @@
     # invokes: Lcom/android/systemui/volume/VolumePanel;->insertLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/volume/VolumePanel;->access$1400(Lcom/android/systemui/volume/VolumePanel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 819
     return-void
 .end method

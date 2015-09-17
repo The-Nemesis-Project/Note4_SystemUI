@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 129
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,14 +33,11 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 4
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    .line 132
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
@@ -71,7 +63,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/AirViewTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v3, v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$200(Lcom/android/systemui/qs/tiles/AirViewTile;Ljava/lang/Object;)V
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
@@ -91,16 +82,13 @@
     # setter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewState:Z
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$302(Lcom/android/systemui/qs/tiles/AirViewTile;Z)Z
 
-    .line 134
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mIsProcessing:Z
     invoke-static {v0, v2}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$402(Lcom/android/systemui/qs/tiles/AirViewTile;Z)Z
 
-    .line 135
     return-void
 
-    .line 132
     :cond_0
     const/4 v0, 0x2
 
@@ -109,6 +97,5 @@
     :cond_1
     move v1, v2
 
-    .line 133
     goto :goto_1
 .end method

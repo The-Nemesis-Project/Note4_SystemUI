@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
     .locals 0
 
-    .prologue
-    .line 250
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$3;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 252
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$3;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     const/4 v1, 0x0
@@ -49,6 +44,5 @@
     # setter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mAlertDialog:Landroid/app/AlertDialog;
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->access$202(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 253
     return-void
 .end method

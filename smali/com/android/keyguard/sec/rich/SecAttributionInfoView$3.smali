@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 123
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$3;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     iput-object p2, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$3;->val$intent:Landroid/content/Intent;
@@ -55,8 +53,6 @@
 .method public run()V
     .locals 15
 
-    .prologue
-    .line 127
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -106,8 +102,6 @@
 
     move-result-object v13
 
-    .line 139
-    .local v13, "result":Landroid/app/IActivityManager$WaitResult;
     const-string v0, "SecAttributionInfoView"
 
     const-string v1, "waitResult[%s,%s,%s,%s] at %s"
@@ -172,7 +166,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 147
     :try_start_1
     iget-object v0, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$3;->val$onStarted:Ljava/lang/Runnable;
 
@@ -180,17 +173,12 @@
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 151
-    .end local v13    # "result":Landroid/app/IActivityManager$WaitResult;
     :goto_0
     return-void
 
-    .line 142
     :catch_0
     move-exception v12
 
-    .line 143
-    .local v12, "e":Landroid/os/RemoteException;
     const-string v0, "SecAttributionInfoView"
 
     const-string v1, "Error starting activity"
@@ -199,14 +187,9 @@
 
     goto :goto_0
 
-    .line 148
-    .end local v12    # "e":Landroid/os/RemoteException;
-    .restart local v13    # "result":Landroid/app/IActivityManager$WaitResult;
     :catch_1
     move-exception v14
 
-    .line 149
-    .local v14, "t":Ljava/lang/Throwable;
     const-string v0, "SecAttributionInfoView"
 
     const-string v1, "Error running onStarted callback"

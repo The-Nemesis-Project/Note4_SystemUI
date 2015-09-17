@@ -37,8 +37,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;Ljava/util/HashMap;Lcom/android/systemui/recents/views/TaskView;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 0
 
-    .prologue
-    .line 67
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
@@ -63,15 +61,12 @@
 .method public run()V
     .locals 8
 
-    .prologue
-    .line 70
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v4, v5}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->isEmpty()Z
@@ -80,14 +75,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 73
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childrenToRemove:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -101,8 +94,6 @@
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 74
-    .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;
 
     iget-object v4, v4, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;->mViewPool:Lcom/android/systemui/recents/views/ViewPool;
@@ -111,19 +102,15 @@
 
     goto :goto_0
 
-    .line 77
-    .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     iget-boolean v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$unifyNewViewAnimation:Z
 
     if-nez v4, :cond_1
 
-    .line 79
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->clear()V
 
-    .line 80
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$tasks:Ljava/util/ArrayList;
@@ -136,8 +123,6 @@
 
     move-result v0
 
-    .line 82
-    .local v0, "duration":I
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -161,8 +146,6 @@
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 83
-    .restart local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm$1;->val$childViewTransforms:Ljava/util/HashMap;
 
     invoke-virtual {v4, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -171,17 +154,10 @@
 
     check-cast v2, Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 84
-    .local v2, "t":Lcom/android/systemui/recents/views/TaskViewTransform;
     invoke-virtual {v3, v2, v0}, Lcom/android/systemui/recents/views/TaskView;->updateViewPropertiesToTaskTransform(Lcom/android/systemui/recents/views/TaskViewTransform;I)V
 
     goto :goto_1
 
-    .line 88
-    .end local v0    # "duration":I
-    .end local v1    # "i$":Ljava/util/Iterator;
-    .end local v2    # "t":Lcom/android/systemui/recents/views/TaskViewTransform;
-    .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
     return-void
 .end method

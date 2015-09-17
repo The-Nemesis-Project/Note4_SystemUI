@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,50 +30,30 @@
 # virtual methods
 .method public addAction(Ljava/lang/Object;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "action"    # I
 
-    .prologue
-    .line 289
     return-void
 .end method
 
 .method public addAction(Ljava/lang/Object;ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "id"    # I
-    .param p3, "label"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 616
     return-void
 .end method
 
 .method public addChild(Ljava/lang/Object;Landroid/view/View;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "child"    # Landroid/view/View;
 
-    .prologue
-    .line 294
     return-void
 .end method
 
 .method public addChild(Ljava/lang/Object;Landroid/view/View;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "child"    # Landroid/view/View;
-    .param p3, "virtualDescendantId"    # I
 
-    .prologue
-    .line 299
     return-void
 .end method
 
 .method public findAccessibilityNodeInfosByText(Ljava/lang/Object;Ljava/lang/String;)Ljava/util/List;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "text"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,8 +67,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 303
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -100,11 +76,7 @@
 
 .method public findFocus(Ljava/lang/Object;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "focus"    # I
 
-    .prologue
-    .line 543
     const/4 v0, 0x0
 
     return-object v0
@@ -112,11 +84,7 @@
 
 .method public focusSearch(Ljava/lang/Object;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "direction"    # I
 
-    .prologue
-    .line 548
     const/4 v0, 0x0
 
     return-object v0
@@ -124,7 +92,6 @@
 
 .method public getActionList(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,8 +104,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 611
     const/4 v0, 0x0
 
     return-object v0
@@ -146,10 +111,7 @@
 
 .method public getActions(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 308
     const/4 v0, 0x0
 
     return v0
@@ -157,31 +119,19 @@
 
 .method public getBoundsInParent(Ljava/lang/Object;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "outBounds"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 314
     return-void
 .end method
 
 .method public getBoundsInScreen(Ljava/lang/Object;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "outBounds"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 319
     return-void
 .end method
 
 .method public getChild(Ljava/lang/Object;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "index"    # I
 
-    .prologue
-    .line 323
     const/4 v0, 0x0
 
     return-object v0
@@ -189,10 +139,7 @@
 
 .method public getChildCount(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 328
     const/4 v0, 0x0
 
     return v0
@@ -200,10 +147,7 @@
 
 .method public getClassName(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 333
     const/4 v0, 0x0
 
     return-object v0
@@ -211,10 +155,7 @@
 
 .method public getCollectionInfo(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 588
     const/4 v0, 0x0
 
     return-object v0
@@ -222,10 +163,7 @@
 
 .method public getCollectionInfoColumnCount(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 626
     const/4 v0, 0x0
 
     return v0
@@ -233,10 +171,7 @@
 
 .method public getCollectionInfoRowCount(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 631
     const/4 v0, 0x0
 
     return v0
@@ -244,10 +179,7 @@
 
 .method public getCollectionItemColumnIndex(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 647
     const/4 v0, 0x0
 
     return v0
@@ -255,10 +187,7 @@
 
 .method public getCollectionItemColumnSpan(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 652
     const/4 v0, 0x0
 
     return v0
@@ -266,10 +195,7 @@
 
 .method public getCollectionItemInfo(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 597
     const/4 v0, 0x0
 
     return-object v0
@@ -277,10 +203,7 @@
 
 .method public getCollectionItemRowIndex(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 657
     const/4 v0, 0x0
 
     return v0
@@ -288,10 +211,7 @@
 
 .method public getCollectionItemRowSpan(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 662
     const/4 v0, 0x0
 
     return v0
@@ -299,10 +219,7 @@
 
 .method public getContentDescription(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 338
     const/4 v0, 0x0
 
     return-object v0
@@ -310,10 +227,7 @@
 
 .method public getLiveRegion(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 578
     const/4 v0, 0x0
 
     return v0
@@ -321,10 +235,7 @@
 
 .method public getMovementGranularities(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 438
     const/4 v0, 0x0
 
     return v0
@@ -332,10 +243,7 @@
 
 .method public getPackageName(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 343
     const/4 v0, 0x0
 
     return-object v0
@@ -343,10 +251,7 @@
 
 .method public getParent(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 348
     const/4 v0, 0x0
 
     return-object v0
@@ -354,10 +259,7 @@
 
 .method public getRangeInfo(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 606
     const/4 v0, 0x0
 
     return-object v0
@@ -365,10 +267,7 @@
 
 .method public getText(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 353
     const/4 v0, 0x0
 
     return-object v0
@@ -376,10 +275,7 @@
 
 .method public getViewIdResourceName(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 568
     const/4 v0, 0x0
 
     return-object v0
@@ -387,10 +283,7 @@
 
 .method public getWindowId(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 358
     const/4 v0, 0x0
 
     return v0
@@ -398,10 +291,7 @@
 
 .method public isAccessibilityFocused(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 398
     const/4 v0, 0x0
 
     return v0
@@ -409,10 +299,7 @@
 
 .method public isCheckable(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 363
     const/4 v0, 0x0
 
     return v0
@@ -420,10 +307,7 @@
 
 .method public isChecked(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 368
     const/4 v0, 0x0
 
     return v0
@@ -431,10 +315,7 @@
 
 .method public isClickable(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 373
     const/4 v0, 0x0
 
     return v0
@@ -442,10 +323,7 @@
 
 .method public isCollectionInfoHierarchical(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 636
     const/4 v0, 0x0
 
     return v0
@@ -453,10 +331,7 @@
 
 .method public isCollectionItemHeading(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 667
     const/4 v0, 0x0
 
     return v0
@@ -464,10 +339,7 @@
 
 .method public isCollectionItemSelected(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 672
     const/4 v0, 0x0
 
     return v0
@@ -475,10 +347,7 @@
 
 .method public isEnabled(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 378
     const/4 v0, 0x0
 
     return v0
@@ -486,10 +355,7 @@
 
 .method public isFocusable(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 383
     const/4 v0, 0x0
 
     return v0
@@ -497,10 +363,7 @@
 
 .method public isFocused(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 388
     const/4 v0, 0x0
 
     return v0
@@ -508,10 +371,7 @@
 
 .method public isLongClickable(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 403
     const/4 v0, 0x0
 
     return v0
@@ -519,10 +379,7 @@
 
 .method public isPassword(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 408
     const/4 v0, 0x0
 
     return v0
@@ -530,10 +387,7 @@
 
 .method public isScrollable(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 413
     const/4 v0, 0x0
 
     return v0
@@ -541,10 +395,7 @@
 
 .method public isSelected(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 418
     const/4 v0, 0x0
 
     return v0
@@ -552,10 +403,7 @@
 
 .method public isVisibleToUser(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 393
     const/4 v0, 0x0
 
     return v0
@@ -564,8 +412,6 @@
 .method public obtain()Ljava/lang/Object;
     .locals 1
 
-    .prologue
-    .line 268
     const/4 v0, 0x0
 
     return-object v0
@@ -573,10 +419,7 @@
 
 .method public obtain(Landroid/view/View;)Ljava/lang/Object;
     .locals 1
-    .param p1, "source"    # Landroid/view/View;
 
-    .prologue
-    .line 273
     const/4 v0, 0x0
 
     return-object v0
@@ -584,11 +427,7 @@
 
 .method public obtain(Landroid/view/View;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "root"    # Landroid/view/View;
-    .param p2, "virtualDescendantId"    # I
 
-    .prologue
-    .line 278
     const/4 v0, 0x0
 
     return-object v0
@@ -596,10 +435,7 @@
 
 .method public obtain(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 283
     const/4 v0, 0x0
 
     return-object v0
@@ -607,13 +443,7 @@
 
 .method public obtainCollectionInfo(IIZI)Ljava/lang/Object;
     .locals 1
-    .param p1, "rowCount"    # I
-    .param p2, "columnCount"    # I
-    .param p3, "hierarchical"    # Z
-    .param p4, "selectionMode"    # I
 
-    .prologue
-    .line 621
     const/4 v0, 0x0
 
     return-object v0
@@ -621,15 +451,7 @@
 
 .method public obtainCollectionItemInfo(IIIIZZ)Ljava/lang/Object;
     .locals 1
-    .param p1, "rowIndex"    # I
-    .param p2, "rowSpan"    # I
-    .param p3, "columnIndex"    # I
-    .param p4, "columnSpan"    # I
-    .param p5, "heading"    # Z
-    .param p6, "selected"    # Z
 
-    .prologue
-    .line 642
     const/4 v0, 0x0
 
     return-object v0
@@ -637,11 +459,7 @@
 
 .method public performAction(Ljava/lang/Object;I)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "action"    # I
 
-    .prologue
-    .line 423
     const/4 v0, 0x0
 
     return v0
@@ -649,12 +467,7 @@
 
 .method public performAction(Ljava/lang/Object;ILandroid/os/Bundle;)Z
     .locals 1
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "action"    # I
-    .param p3, "arguments"    # Landroid/os/Bundle;
 
-    .prologue
-    .line 428
     const/4 v0, 0x0
 
     return v0
@@ -662,281 +475,168 @@
 
 .method public recycle(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 559
     return-void
 .end method
 
 .method public setAccessibilityFocused(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "focused"    # Z
 
-    .prologue
-    .line 499
     return-void
 .end method
 
 .method public setBoundsInParent(Ljava/lang/Object;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "bounds"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 444
     return-void
 .end method
 
 .method public setBoundsInScreen(Ljava/lang/Object;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "bounds"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 449
     return-void
 .end method
 
 .method public setCheckable(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "checkable"    # Z
 
-    .prologue
-    .line 454
     return-void
 .end method
 
 .method public setChecked(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "checked"    # Z
 
-    .prologue
-    .line 459
     return-void
 .end method
 
 .method public setClassName(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "className"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 464
     return-void
 .end method
 
 .method public setClickable(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "clickable"    # Z
 
-    .prologue
-    .line 469
     return-void
 .end method
 
 .method public setCollectionInfo(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "collectionInfo"    # Ljava/lang/Object;
 
-    .prologue
-    .line 593
     return-void
 .end method
 
 .method public setCollectionItemInfo(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "collectionItemInfo"    # Ljava/lang/Object;
 
-    .prologue
-    .line 602
     return-void
 .end method
 
 .method public setContentDescription(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "contentDescription"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 474
     return-void
 .end method
 
 .method public setEnabled(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "enabled"    # Z
 
-    .prologue
-    .line 479
     return-void
 .end method
 
 .method public setFocusable(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "focusable"    # Z
 
-    .prologue
-    .line 484
     return-void
 .end method
 
 .method public setFocused(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "focused"    # Z
 
-    .prologue
-    .line 489
     return-void
 .end method
 
 .method public setLiveRegion(Ljava/lang/Object;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "mode"    # I
 
-    .prologue
-    .line 584
     return-void
 .end method
 
 .method public setLongClickable(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "longClickable"    # Z
 
-    .prologue
-    .line 504
     return-void
 .end method
 
 .method public setMovementGranularities(Ljava/lang/Object;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "granularities"    # I
 
-    .prologue
-    .line 434
     return-void
 .end method
 
 .method public setPackageName(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "packageName"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 509
     return-void
 .end method
 
 .method public setParent(Ljava/lang/Object;Landroid/view/View;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "parent"    # Landroid/view/View;
 
-    .prologue
-    .line 514
     return-void
 .end method
 
 .method public setParent(Ljava/lang/Object;Landroid/view/View;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "root"    # Landroid/view/View;
-    .param p3, "virtualDescendantId"    # I
 
-    .prologue
-    .line 564
     return-void
 .end method
 
 .method public setPassword(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "password"    # Z
 
-    .prologue
-    .line 519
     return-void
 .end method
 
 .method public setScrollable(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "scrollable"    # Z
 
-    .prologue
-    .line 524
     return-void
 .end method
 
 .method public setSelected(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "selected"    # Z
 
-    .prologue
-    .line 529
     return-void
 .end method
 
 .method public setSource(Ljava/lang/Object;Landroid/view/View;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "source"    # Landroid/view/View;
 
-    .prologue
-    .line 534
     return-void
 .end method
 
 .method public setSource(Ljava/lang/Object;Landroid/view/View;I)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "root"    # Landroid/view/View;
-    .param p3, "virtualDescendantId"    # I
 
-    .prologue
-    .line 539
     return-void
 .end method
 
 .method public setText(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "text"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 554
     return-void
 .end method
 
 .method public setViewIdResourceName(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "viewId"    # Ljava/lang/String;
 
-    .prologue
-    .line 574
     return-void
 .end method
 
 .method public setVisibleToUser(Ljava/lang/Object;Z)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
-    .param p2, "visibleToUser"    # Z
 
-    .prologue
-    .line 494
     return-void
 .end method

@@ -38,23 +38,18 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 41
     const/4 v0, 0x0
 
     sput v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_DISCONNECTED:I
 
-    .line 42
     const/4 v0, 0x1
 
     sput v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_CONNECTING:I
 
-    .line 43
     const/4 v0, 0x2
 
     sput v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_CONNECTED:I
 
-    .line 44
     const/4 v0, 0x3
 
     sput v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_DISCONNECTING:I
@@ -65,11 +60,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     sget v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_DISCONNECTED:I
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->state:I
@@ -79,21 +71,16 @@
 
 .method public static stateToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "state"    # I
 
-    .prologue
-    .line 52
     sget v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_DISCONNECTED:I
 
     if-ne p0, v0, :cond_0
 
     const-string v0, "STATE_DISCONNECTED"
 
-    .line 56
     :goto_0
     return-object v0
 
-    .line 53
     :cond_0
     sget v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_CONNECTING:I
 
@@ -103,7 +90,6 @@
 
     goto :goto_0
 
-    .line 54
     :cond_1
     sget v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_CONNECTED:I
 
@@ -113,7 +99,6 @@
 
     goto :goto_0
 
-    .line 55
     :cond_2
     sget v0, Lcom/android/systemui/statusbar/policy/BluetoothController$PairedDevice;->STATE_DISCONNECTING:I
 
@@ -123,7 +108,6 @@
 
     goto :goto_0
 
-    .line 56
     :cond_3
     const-string v0, "UNKNOWN"
 

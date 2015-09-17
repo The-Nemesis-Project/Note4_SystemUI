@@ -3,7 +3,7 @@
 .source "TaskView.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -26,16 +26,14 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;)V
+.method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
 
-    .prologue
-    .line 1162
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+    iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
 
-    iput-object p3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
+    iput-object p3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,102 +42,153 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public run()V
     .locals 7
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "arg1"    # I
 
-    .prologue
-    const/4 v2, 0x1
+    const/4 v6, 0x0
 
-    const/4 v1, 0x0
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
 
-    .line 1164
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    .line 1165
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    iget-object v3, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
+
+    if-ne v3, v4, :cond_1
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
+
+    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v4, v4, Lcom/android/systemui/recents/views/TaskViewHeader;->mMultiWindowButton:Landroid/widget/ImageView;
+
+    if-ne v3, v4, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationZ(F)V
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
-    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+    invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v5
 
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
+    invoke-interface {v3, v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
 
-    iget-object v6, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iget-object v6, v6, Lcom/android/systemui/recents/views/TaskView;->mFooterView:Lcom/android/systemui/recents/views/TaskViewFooter;
-
-    if-eq v0, v6, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
-
-    iget-object v6, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v6, v6, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
-
-    if-ne v0, v6, :cond_3
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    invoke-interface {v3, v4, v5, v0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
-
-    .line 1167
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
-
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
-    invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+
+    move-result-object v5
+
+    invoke-interface {v3, v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onAltTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActivityInfo:Landroid/content/pm/ActivityInfo;
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget v2, v3, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget-object v0, v3, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
+
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskView;->mActivityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v1, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    if-ltz v2, :cond_2
+
+    if-eqz v0, :cond_2
+
+    if-nez v1, :cond_3
+
+    :cond_2
+    const-string v3, "Recents_TaskView"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "task has unvalid elements taskId = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v6, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    move-result-object v4
 
-    iget-object v6, v6, Lcom/android/systemui/recents/views/TaskView;->mFooterView:Lcom/android/systemui/recents/views/TaskViewFooter;
+    const-string v5, " packageName = "
 
-    if-eq v5, v6, :cond_1
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView$12;->val$v:Landroid/view/View;
+    move-result-object v4
 
-    iget-object v6, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v6, v6, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
+    move-result-object v4
 
-    if-ne v5, v6, :cond_2
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_1
-    move v1, v2
+    move-result-object v4
 
-    :cond_2
-    invoke-interface {v0, v3, v4, v1}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onAltTaskViewClicked(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;Z)V
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1169
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
-
-    invoke-interface {v0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->dismiss()V
-
-    .line 1170
-    return-void
+    goto :goto_0
 
     :cond_3
-    move v0, v1
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView$12;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    .line 1165
+    invoke-virtual {v3, v2, v0, v1}, Lcom/android/systemui/recents/views/TaskView;->handleOnClickMultiWindowBtn(ILandroid/content/Intent;Ljava/lang/String;)V
+
     goto :goto_0
 .end method

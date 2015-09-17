@@ -7,8 +7,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 7
     invoke-direct {p0}, Lcom/android/keyguard/sec/AbstractWeatherImageArchive;-><init>()V
 
     return-void
@@ -17,8 +15,6 @@
 .method private checkDayOrNight()Z
     .locals 1
 
-    .prologue
-    .line 249
     const/4 v0, 0x1
 
     return v0
@@ -28,19 +24,14 @@
 # virtual methods
 .method public getImage(I)I
     .locals 1
-    .param p1, "index"    # I
 
-    .prologue
-    .line 10
     sparse-switch p1, :sswitch_data_0
 
-    .line 240
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_01:I
 
     :goto_0
     return v0
 
-    .line 20
     :sswitch_0
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -48,18 +39,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 21
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_01:I
 
     goto :goto_0
 
-    .line 23
     :cond_0
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_18:I
 
     goto :goto_0
 
-    .line 39
     :sswitch_1
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -67,30 +55,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 40
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_02:I
 
     goto :goto_0
 
-    .line 42
     :cond_1
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_19:I
 
     goto :goto_0
 
-    .line 48
     :sswitch_2
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_03:I
 
     goto :goto_0
 
-    .line 62
     :sswitch_3
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_09:I
 
     goto :goto_0
 
-    .line 84
     :sswitch_4
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -98,24 +81,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 85
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_06:I
 
     goto :goto_0
 
-    .line 87
     :cond_2
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 108
     :sswitch_5
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 118
     :sswitch_6
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -123,24 +102,20 @@
 
     if-eqz v0, :cond_3
 
-    .line 119
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_06:I
 
     goto :goto_0
 
-    .line 121
     :cond_3
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 128
     :sswitch_7
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 141
     :sswitch_8
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -148,18 +123,15 @@
 
     if-eqz v0, :cond_4
 
-    .line 142
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_06:I
 
     goto :goto_0
 
-    .line 144
     :cond_4
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 150
     :sswitch_9
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -167,24 +139,20 @@
 
     if-eqz v0, :cond_5
 
-    .line 151
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_06:I
 
     goto :goto_0
 
-    .line 153
     :cond_5
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_05:I
 
     goto :goto_0
 
-    .line 181
     :sswitch_a
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_10:I
 
     goto :goto_0
 
-    .line 188
     :sswitch_b
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -192,18 +160,15 @@
 
     if-eqz v0, :cond_6
 
-    .line 189
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_11:I
 
     goto :goto_0
 
-    .line 191
     :cond_6
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_12:I
 
     goto :goto_0
 
-    .line 203
     :sswitch_c
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -211,30 +176,25 @@
 
     if-eqz v0, :cond_7
 
-    .line 204
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_12:I
 
     goto :goto_0
 
-    .line 206
     :cond_7
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_12:I
 
     goto :goto_0
 
-    .line 226
     :sswitch_d
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_13:I
 
     goto :goto_0
 
-    .line 229
     :sswitch_e
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_14:I
 
     goto :goto_0
 
-    .line 233
     :sswitch_f
     invoke-direct {p0}, Lcom/android/keyguard/sec/JPWeatherImageArchive;->checkDayOrNight()Z
 
@@ -242,18 +202,15 @@
 
     if-eqz v0, :cond_8
 
-    .line 234
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_15:I
 
     goto :goto_0
 
-    .line 236
     :cond_8
     sget v0, Lcom/android/keyguard/R$drawable;->weather_icon_s_18:I
 
     goto/16 :goto_0
 
-    .line 10
     :sswitch_data_0
     .sparse-switch
         0x64 -> :sswitch_0

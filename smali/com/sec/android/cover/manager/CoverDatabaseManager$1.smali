@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverDatabaseManager;)V
     .locals 0
 
-    .prologue
-    .line 25
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,14 +33,11 @@
 # virtual methods
 .method public onContentChanged(Landroid/net/Uri;)V
     .locals 7
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/4 v6, 0x1
 
     const/4 v5, -0x2
 
-    .line 27
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->access$000()Ljava/lang/String;
 
@@ -72,13 +67,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 29
     invoke-virtual {p1}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 31
-    .local v0, "dbKey":Ljava/lang/String;
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->mHashIntValues:Ljava/util/HashMap;
@@ -92,7 +84,6 @@
 
     if-ne v2, v6, :cond_0
 
-    .line 32
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->mContext:Landroid/content/Context;
@@ -125,8 +116,6 @@
 
     move-result v1
 
-    .line 34
-    .local v1, "value":I
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->mHashIntValues:Ljava/util/HashMap;
@@ -140,7 +129,6 @@
 
     invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 36
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->access$000()Ljava/lang/String;
 
@@ -176,12 +164,9 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 46
-    .end local v1    # "value":I
     :goto_0
     return-void
 
-    .line 37
     :cond_0
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
@@ -196,7 +181,6 @@
 
     if-ne v2, v6, :cond_1
 
-    .line 38
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->mContext:Landroid/content/Context;
@@ -212,8 +196,6 @@
 
     move-result-object v1
 
-    .line 40
-    .local v1, "value":Ljava/lang/String;
     iget-object v2, p0, Lcom/sec/android/cover/manager/CoverDatabaseManager$1;->this$0:Lcom/sec/android/cover/manager/CoverDatabaseManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->mHashStringValues:Ljava/util/HashMap;
@@ -223,7 +205,6 @@
 
     invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 42
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->access$000()Ljava/lang/String;
 
@@ -261,8 +242,6 @@
 
     goto :goto_0
 
-    .line 44
-    .end local v1    # "value":Ljava/lang/String;
     :cond_1
     # getter for: Lcom/sec/android/cover/manager/CoverDatabaseManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->access$000()Ljava/lang/String;

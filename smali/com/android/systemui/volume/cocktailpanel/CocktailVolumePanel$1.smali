@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 86
     iput-object p1, p0, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel$1;->this$0:Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 3
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromUser"    # Z
 
-    .prologue
-    .line 89
     const-string v0, "CocktailVolumePanel"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,10 +69,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
     if-eqz p3, :cond_0
 
-    .line 91
     iget-object v0, p0, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel$1;->this$0:Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;
 
     iget-object v1, p0, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel$1;->this$0:Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;
@@ -94,37 +85,28 @@
     # invokes: Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->setStreamVolume(III)V
     invoke-static {v0, v1, p2, v2}, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->access$100(Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;III)V
 
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel$1;->this$0:Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;
 
     # setter for: Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->mSeekbarProgress:I
     invoke-static {v0, p2}, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->access$202(Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;I)I
 
-    .line 93
     iget-object v0, p0, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel$1;->this$0:Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;
 
     # invokes: Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->makePanelView()V
     invoke-static {v0}, Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;->access$300(Lcom/android/systemui/volume/cocktailpanel/CocktailVolumePanel;)V
 
-    .line 95
     :cond_0
     return-void
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 101
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .prologue
-    .line 107
     return-void
 .end method

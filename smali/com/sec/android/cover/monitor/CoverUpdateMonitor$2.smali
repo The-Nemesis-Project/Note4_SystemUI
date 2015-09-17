@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
-    .prologue
-    .line 124
     iput-object p1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 127
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 243
     :goto_0
     return-void
 
-    .line 129
     :pswitch_0
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 133
     :pswitch_1
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -69,7 +61,6 @@
 
     goto :goto_0
 
-    .line 137
     :pswitch_2
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -78,7 +69,6 @@
 
     goto :goto_0
 
-    .line 141
     :pswitch_3
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -87,7 +77,6 @@
 
     goto :goto_0
 
-    .line 145
     :pswitch_4
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -96,7 +85,6 @@
 
     goto :goto_0
 
-    .line 149
     :pswitch_5
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -113,7 +101,6 @@
 
     goto :goto_0
 
-    .line 153
     :pswitch_6
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -122,7 +109,6 @@
 
     goto :goto_0
 
-    .line 157
     :pswitch_7
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -131,7 +117,6 @@
 
     goto :goto_0
 
-    .line 161
     :pswitch_8
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -144,7 +129,6 @@
 
     goto :goto_0
 
-    .line 165
     :pswitch_9
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -157,7 +141,6 @@
 
     goto :goto_0
 
-    .line 169
     :pswitch_a
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -166,7 +149,6 @@
 
     goto :goto_0
 
-    .line 173
     :pswitch_b
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -183,7 +165,6 @@
 
     goto :goto_0
 
-    .line 177
     :pswitch_c
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -192,7 +173,6 @@
 
     goto :goto_0
 
-    .line 181
     :pswitch_d
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -201,7 +181,6 @@
 
     goto :goto_0
 
-    .line 185
     :pswitch_e
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -210,7 +189,6 @@
 
     goto :goto_0
 
-    .line 189
     :pswitch_f
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -219,7 +197,6 @@
 
     goto :goto_0
 
-    .line 193
     :pswitch_10
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -232,7 +209,6 @@
 
     goto/16 :goto_0
 
-    .line 197
     :pswitch_11
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -245,7 +221,6 @@
 
     goto/16 :goto_0
 
-    .line 201
     :pswitch_12
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -254,7 +229,6 @@
 
     goto/16 :goto_0
 
-    .line 205
     :pswitch_13
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -267,7 +241,6 @@
 
     goto/16 :goto_0
 
-    .line 209
     :pswitch_14
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -276,7 +249,6 @@
 
     goto/16 :goto_0
 
-    .line 213
     :pswitch_15
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -289,7 +261,6 @@
 
     goto/16 :goto_0
 
-    .line 217
     :pswitch_16
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -298,7 +269,6 @@
 
     goto/16 :goto_0
 
-    .line 221
     :pswitch_17
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -307,7 +277,6 @@
 
     goto/16 :goto_0
 
-    .line 225
     :pswitch_18
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -320,7 +289,6 @@
 
     goto/16 :goto_0
 
-    .line 229
     :pswitch_19
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -333,7 +301,6 @@
 
     goto/16 :goto_0
 
-    .line 233
     :pswitch_1a
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -346,7 +313,6 @@
 
     goto/16 :goto_0
 
-    .line 237
     :pswitch_1b
     iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -359,7 +325,6 @@
 
     goto/16 :goto_0
 
-    .line 127
     :pswitch_data_0
     .packed-switch 0x12d
         :pswitch_0

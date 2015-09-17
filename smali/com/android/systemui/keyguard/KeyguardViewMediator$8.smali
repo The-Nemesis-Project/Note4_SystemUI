@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
     .locals 0
 
-    .prologue
-    .line 2437
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v7, 0x0
 
-    .line 2440
     const-string v4, "android.bluetooth.device.action.AUTO_LOCK_SERVICE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -54,7 +48,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 2441
     const-string v4, "android.bluetooth.device.extra.DEVICE"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -63,16 +56,12 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
-    .line 2442
-    .local v1, "device":Landroid/bluetooth/BluetoothDevice;
     const-string v4, "com.sec.android.service.connectionmanager.extra.AUTO_LOCK_SERVICE"
 
     invoke-virtual {p2, v4, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v2
 
-    .line 2445
-    .local v2, "isEnabled":Z
     const-string v4, "KeyguardViewMediator"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -119,19 +108,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2447
     if-eqz v2, :cond_2
 
-    .line 2448
     if-eqz v1, :cond_0
 
-    .line 2449
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
     invoke-static {v4, v1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3002(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
 
-    .line 2451
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const-string v5, "extra.AUTO_LOCK_SERVICE_VALID"
@@ -143,7 +128,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mIsValidValue:Z
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$5002(Lcom/android/systemui/keyguard/KeyguardViewMediator;Z)Z
 
-    .line 2452
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mIsValidValue:Z
@@ -153,7 +137,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 2453
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const-string v5, "extra.AUTO_LOCK_SERVICE_IN_CRITERIA"
@@ -165,7 +148,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mCriteria_IN_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3102(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2454
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const-string v5, "extra.AUTO_LOCK_SERVICE_OUT_CRITERIA"
@@ -177,7 +159,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mCriteria_OUT_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3202(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2455
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const-string v5, "extra.AUTO_LOCK_SERVICE_IN_MARGIN"
@@ -189,7 +170,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mOffset_IN_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3302(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2456
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const-string v5, "extra.AUTO_LOCK_SERVICE_OUT_MARGIN"
@@ -201,7 +181,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mOffset_OUT_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3402(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2464
     :goto_0
     const-string v4, "KeyguardViewMediator"
 
@@ -300,16 +279,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2519
-    .end local v1    # "device":Landroid/bluetooth/BluetoothDevice;
-    .end local v2    # "isEnabled":Z
     :cond_0
     :goto_1
     return-void
 
-    .line 2458
-    .restart local v1    # "device":Landroid/bluetooth/BluetoothDevice;
-    .restart local v2    # "isEnabled":Z
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -320,7 +293,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mCriteria_IN_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3102(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2459
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-static {}, Landroid/bluetooth/BluetoothDevice;->getModelLowRssi()I
@@ -330,7 +302,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mCriteria_OUT_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3202(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2460
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const/4 v5, 0x3
@@ -338,7 +309,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mOffset_IN_RSSI:I
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3302(Lcom/android/systemui/keyguard/KeyguardViewMediator;I)I
 
-    .line 2461
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mOffset_OUT_RSSI:I
@@ -346,7 +316,6 @@
 
     goto :goto_0
 
-    .line 2472
     :cond_2
     const-string v4, "KeyguardViewMediator"
 
@@ -387,7 +356,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2474
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
@@ -399,7 +367,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 2475
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
@@ -421,7 +388,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 2476
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const/4 v5, 0x0
@@ -429,7 +395,6 @@
     # setter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
     invoke-static {v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$3002(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
 
-    .line 2477
     const-string v4, "KeyguardViewMediator"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -445,7 +410,7 @@
     iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v6
 
@@ -463,11 +428,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2479
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -480,7 +444,7 @@
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -490,26 +454,22 @@
 
     if-nez v4, :cond_0
 
-    .line 2481
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
     invoke-virtual {v4, v7}, Lcom/android/internal/widget/LockPatternUtils;->setSwipeSmartLock(Z)V
 
-    .line 2482
     sput-boolean v7, Lcom/android/keyguard/KeyguardUpdateMonitor;->mSwipeLockShowingBeforeTimeout:Z
 
-    .line 2483
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->adjustStatusBarLocked()V
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$200(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$400(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
 
-    .line 2484
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->resetStateLocked()V
@@ -517,7 +477,6 @@
 
     goto/16 :goto_1
 
-    .line 2488
     :cond_3
     const-string v4, "KeyguardViewMediator"
 
@@ -527,9 +486,6 @@
 
     goto/16 :goto_1
 
-    .line 2491
-    .end local v1    # "device":Landroid/bluetooth/BluetoothDevice;
-    .end local v2    # "isEnabled":Z
     :cond_4
     const-string v4, "android.bluetooth.device.action.ACTION_OUT_OF_RANGE_ALERT"
 
@@ -543,7 +499,6 @@
 
     if-eqz v4, :cond_6
 
-    .line 2492
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
@@ -556,7 +511,7 @@
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -569,7 +524,7 @@
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -582,7 +537,7 @@
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -592,7 +547,6 @@
 
     if-nez v4, :cond_0
 
-    .line 2495
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
@@ -613,7 +567,6 @@
 
     if-eqz v4, :cond_5
 
-    .line 2496
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
@@ -630,7 +583,6 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2498
     :cond_5
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -657,7 +609,6 @@
 
     goto/16 :goto_1
 
-    .line 2500
     :cond_6
     const-string v4, "android.bluetooth.device.action.ACTION_IN_RANGE_ALERT"
 
@@ -671,7 +622,6 @@
 
     if-eqz v4, :cond_8
 
-    .line 2501
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
@@ -681,7 +631,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 2502
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
@@ -702,7 +651,6 @@
 
     if-eqz v4, :cond_7
 
-    .line 2503
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
@@ -719,12 +667,11 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2505
     :cond_7
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -737,7 +684,7 @@
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -747,11 +694,10 @@
 
     if-nez v4, :cond_0
 
-    .line 2507
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$500(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$700(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v4
 
@@ -759,13 +705,11 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/LockPatternUtils;->setSwipeSmartLock(Z)V
 
-    .line 2508
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->adjustStatusBarLocked()V
-    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$200(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
+    invoke-static {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$400(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
 
-    .line 2509
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->resetStateLocked()V
@@ -773,7 +717,6 @@
 
     goto/16 :goto_1
 
-    .line 2512
     :cond_8
     const-string v4, "android.bluetooth.device.action.RSSI"
 
@@ -787,7 +730,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 2513
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWearabledevice:Landroid/bluetooth/BluetoothDevice;
@@ -797,13 +739,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 2514
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 2515
-    .local v0, "bundle":Landroid/os/Bundle;
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
@@ -817,8 +756,6 @@
 
     move-result-object v3
 
-    .line 2516
-    .local v3, "msg":Landroid/os/Message;
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$8;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;

@@ -39,12 +39,10 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 56
     new-instance v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
 
     const-string v1, "OK"
@@ -61,7 +59,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->FAIL:Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
 
-    .line 55
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
@@ -81,35 +78,26 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 1
-    .param p3, "num"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .prologue
-    .line 60
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 58
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->value:I
 
-    .line 61
     iput p3, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->value:I
 
-    .line 62
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 55
     const-class v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,8 +112,6 @@
 .method public static values()[Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
     .locals 1
 
-    .prologue
-    .line 55
     sget-object v0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->$VALUES:[Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->clone()Ljava/lang/Object;
@@ -142,8 +128,6 @@
 .method public getValue()I
     .locals 1
 
-    .prologue
-    .line 65
     iget v0, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$RESULT;->value:I
 
     return v0

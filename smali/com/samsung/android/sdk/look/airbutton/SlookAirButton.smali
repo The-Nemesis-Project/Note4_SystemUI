@@ -54,32 +54,23 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;Lcom/samsung/android/sdk/look/airbutton/SlookAirButtonAdapter;I)V
     .locals 2
-    .param p1, "parentView"    # Landroid/view/View;
-    .param p2, "adapter"    # Lcom/samsung/android/sdk/look/airbutton/SlookAirButtonAdapter;
-    .param p3, "uiType"    # I
 
-    .prologue
-    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
-    .line 98
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mUIType:I
 
-    .line 102
     new-instance v0, Lcom/samsung/android/sdk/look/Slook;
 
     invoke-direct {v0}, Lcom/samsung/android/sdk/look/Slook;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
-    .line 131
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -88,15 +79,12 @@
 
     if-nez v0, :cond_0
 
-    .line 140
     :goto_0
     return-void
 
-    .line 134
     :cond_0
     if-nez p2, :cond_1
 
-    .line 135
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "adapter is null"
@@ -105,11 +93,9 @@
 
     throw v0
 
-    .line 138
     :cond_1
     iput p3, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mUIType:I
 
-    .line 139
     new-instance v0, Lcom/samsung/android/airbutton/AirButtonImpl;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/samsung/android/airbutton/AirButtonImpl;-><init>(Landroid/view/View;Lcom/samsung/android/sdk/look/airbutton/SlookAirButtonAdapter;I)V
@@ -121,10 +107,7 @@
 
 .method static synthetic access$000(Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;)Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;
     .locals 1
-    .param p0, "x0"    # Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;
 
-    .prologue
-    .line 20
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mItemSelectListener:Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;
 
     return-object v0
@@ -132,12 +115,9 @@
 
 .method private isSupport(I)Z
     .locals 2
-    .param p1, "ver"    # I
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 295
     iget-object v1, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     invoke-virtual {v1, v0}, Lcom/samsung/android/sdk/look/Slook;->isFeatureEnabled(I)Z
@@ -146,7 +126,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 298
     :goto_0
     return v0
 
@@ -161,8 +140,6 @@
 .method public dismiss()V
     .locals 1
 
-    .prologue
-    .line 343
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -171,11 +148,9 @@
 
     if-nez v0, :cond_0
 
-    .line 347
     :goto_0
     return-void
 
-    .line 346
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -187,8 +162,6 @@
 .method public getDirection()I
     .locals 1
 
-    .prologue
-    .line 244
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -197,10 +170,8 @@
 
     if-nez v0, :cond_0
 
-    .line 245
     const/4 v0, 0x0
 
-    .line 247
     :goto_0
     return v0
 
@@ -217,8 +188,6 @@
 .method public getGravity()I
     .locals 1
 
-    .prologue
-    .line 198
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -227,10 +196,8 @@
 
     if-nez v0, :cond_0
 
-    .line 199
     const/4 v0, 0x0
 
-    .line 201
     :goto_0
     return v0
 
@@ -247,8 +214,6 @@
 .method public hide()V
     .locals 1
 
-    .prologue
-    .line 332
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -257,11 +222,9 @@
 
     if-nez v0, :cond_0
 
-    .line 336
     :goto_0
     return-void
 
-    .line 335
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -273,8 +236,6 @@
 .method public isAutoControlEnabled()Z
     .locals 1
 
-    .prologue
-    .line 368
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -283,10 +244,8 @@
 
     if-nez v0, :cond_0
 
-    .line 369
     const/4 v0, 0x0
 
-    .line 371
     :goto_0
     return v0
 
@@ -303,8 +262,6 @@
 .method public isBounceEffectEnabled()Z
     .locals 1
 
-    .prologue
-    .line 321
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -313,10 +270,8 @@
 
     if-nez v0, :cond_0
 
-    .line 322
     const/4 v0, 0x0
 
-    .line 324
     :goto_0
     return v0
 
@@ -333,8 +288,6 @@
 .method public isScrollEnabled()Z
     .locals 1
 
-    .prologue
-    .line 285
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -343,10 +296,8 @@
 
     if-nez v0, :cond_0
 
-    .line 286
     const/4 v0, 0x0
 
-    .line 288
     :goto_0
     return v0
 
@@ -362,10 +313,7 @@
 
 .method public moveAnimationIcon(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 400
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -374,11 +322,9 @@
 
     if-nez v0, :cond_0
 
-    .line 411
     :goto_0
     return-void
 
-    .line 403
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -388,7 +334,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 404
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The mode is auto control. Please disable auto control."
@@ -397,7 +342,6 @@
 
     throw v0
 
-    .line 407
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -407,7 +351,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 408
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The event isn\'t ACTION_HOVER_MOVE."
@@ -416,7 +359,6 @@
 
     throw v0
 
-    .line 410
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -427,10 +369,7 @@
 
 .method public setAutoControlEnabled(Z)V
     .locals 1
-    .param p1, "enable"    # Z
 
-    .prologue
-    .line 355
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -439,11 +378,9 @@
 
     if-nez v0, :cond_0
 
-    .line 359
     :goto_0
     return-void
 
-    .line 358
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -454,10 +391,7 @@
 
 .method public setBounceEffectEnabled(Z)V
     .locals 1
-    .param p1, "enable"    # Z
 
-    .prologue
-    .line 308
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -466,11 +400,9 @@
 
     if-nez v0, :cond_0
 
-    .line 312
     :goto_0
     return-void
 
-    .line 311
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -481,29 +413,23 @@
 
 .method public setDirection(I)V
     .locals 5
-    .param p1, "direction"    # I
 
-    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
-    .line 213
     invoke-direct {p0, v3}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 236
     :goto_0
     return-void
 
-    .line 216
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 224
     :pswitch_0
     const-string v0, "AirButtonWidget"
 
@@ -533,7 +459,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
     :pswitch_1
     iget v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mUIType:I
 
@@ -543,7 +468,6 @@
 
     if-ne p1, v4, :cond_2
 
-    .line 230
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -553,7 +477,6 @@
 
     throw v0
 
-    .line 231
     :cond_2
     iget v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mUIType:I
 
@@ -567,7 +490,6 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 233
     :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -577,7 +499,6 @@
 
     throw v0
 
-    .line 235
     :cond_4
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -585,7 +506,6 @@
 
     goto :goto_0
 
-    .line 216
     :pswitch_data_0
     .packed-switch -0x1
         :pswitch_1
@@ -599,27 +519,21 @@
 
 .method public setGravity(I)V
     .locals 4
-    .param p1, "gravity"    # I
 
-    .prologue
     const/4 v3, 0x1
 
-    .line 170
     invoke-direct {p0, v3}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 190
     :goto_0
     return-void
 
-    .line 173
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 183
     :pswitch_0
     const-string v0, "AirButtonWidget"
 
@@ -649,7 +563,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 186
     :pswitch_1
     iget v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mUIType:I
 
@@ -663,7 +576,6 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 188
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -673,7 +585,6 @@
 
     throw v0
 
-    .line 189
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -681,7 +592,6 @@
 
     goto :goto_0
 
-    .line 173
     nop
 
     :pswitch_data_0
@@ -698,10 +608,7 @@
 
 .method public setItemSelectListener(Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;
 
-    .prologue
-    .line 150
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -710,21 +617,17 @@
 
     if-nez v0, :cond_1
 
-    .line 162
     :cond_0
     :goto_0
     return-void
 
-    .line 153
     :cond_1
     iput-object p1, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mItemSelectListener:Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;
 
-    .line 155
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mItemSelectListener:Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$ItemSelectListener;
 
     if-eqz v0, :cond_0
 
-    .line 156
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
     new-instance v1, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton$1;
@@ -738,11 +641,7 @@
 
 .method public setPosition(II)V
     .locals 1
-    .param p1, "x"    # I
-    .param p2, "y"    # I
 
-    .prologue
-    .line 257
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -751,11 +650,9 @@
 
     if-nez v0, :cond_0
 
-    .line 261
     :goto_0
     return-void
 
-    .line 260
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -766,10 +663,7 @@
 
 .method public setScrollEnabled(Z)V
     .locals 1
-    .param p1, "enable"    # Z
 
-    .prologue
-    .line 271
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -778,11 +672,9 @@
 
     if-nez v0, :cond_0
 
-    .line 276
     :goto_0
     return-void
 
-    .line 274
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -793,10 +685,7 @@
 
 .method public show(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 439
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -805,11 +694,9 @@
 
     if-nez v0, :cond_0
 
-    .line 449
     :goto_0
     return-void
 
-    .line 442
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -819,7 +706,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 443
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The mode is auto control. Please disable auto control."
@@ -828,7 +714,6 @@
 
     throw v0
 
-    .line 445
     :cond_1
     const/4 v0, 0x0
 
@@ -840,7 +725,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 446
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The event isn\'t TOOL_TYPE_STYLUS."
@@ -849,7 +733,6 @@
 
     throw v0
 
-    .line 448
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -860,10 +743,7 @@
 
 .method public startAnimationIcon(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 381
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -872,11 +752,9 @@
 
     if-nez v0, :cond_0
 
-    .line 391
     :goto_0
     return-void
 
-    .line 384
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -886,7 +764,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 385
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The mode is auto control. Please disable auto control."
@@ -895,7 +772,6 @@
 
     throw v0
 
-    .line 387
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -905,7 +781,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 388
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The event isn\'t ACTION_HOVER_ENTER"
@@ -914,7 +789,6 @@
 
     throw v0
 
-    .line 390
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -925,10 +799,7 @@
 
 .method public stopAnimationIcon(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 420
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->isSupport(I)Z
@@ -937,11 +808,9 @@
 
     if-nez v0, :cond_0
 
-    .line 430
     :goto_0
     return-void
 
-    .line 423
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 
@@ -951,7 +820,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 424
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The mode is auto control. Please disable auto control."
@@ -960,7 +828,6 @@
 
     throw v0
 
-    .line 426
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -970,7 +837,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 427
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The event isn\'t ACTION_HOVER_EXIT."
@@ -979,7 +845,6 @@
 
     throw v0
 
-    .line 429
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/airbutton/SlookAirButton;->mAirButtonImpl:Lcom/samsung/android/airbutton/AirButtonImpl;
 

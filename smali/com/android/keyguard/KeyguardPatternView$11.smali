@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 306
     invoke-static {}, Lcom/android/keyguard/KeyguardPatternView$FooterMode;->values()[Lcom/android/keyguard/KeyguardPatternView$FooterMode;
 
     move-result-object v0

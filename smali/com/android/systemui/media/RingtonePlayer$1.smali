@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/media/RingtonePlayer;)V
     .locals 0
 
-    .prologue
-    .line 96
     iput-object p1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     invoke-direct {p0}, Landroid/media/IRingtonePlayer$Stub;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public isPlaying(Landroid/os/IBinder;)Z
     .locals 3
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .prologue
-    .line 133
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     # getter for: Lcom/android/systemui/media/RingtonePlayer;->mClients:Ljava/util/HashMap;
@@ -48,7 +43,6 @@
 
     monitor-enter v2
 
-    .line 134
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -63,16 +57,12 @@
 
     check-cast v0, Lcom/android/systemui/media/RingtonePlayer$Client;
 
-    .line 135
-    .local v0, "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 136
     if-eqz v0, :cond_0
 
-    .line 137
     # getter for: Lcom/android/systemui/media/RingtonePlayer$Client;->mRingtone:Landroid/media/Ringtone;
     invoke-static {v0}, Lcom/android/systemui/media/RingtonePlayer$Client;->access$200(Lcom/android/systemui/media/RingtonePlayer$Client;)Landroid/media/Ringtone;
 
@@ -82,12 +72,9 @@
 
     move-result v1
 
-    .line 139
     :goto_0
     return v1
 
-    .line 135
-    .end local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     :catchall_0
     move-exception v1
 
@@ -98,8 +85,6 @@
 
     throw v1
 
-    .line 139
-    .restart local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     :cond_0
     const/4 v1, 0x0
 
@@ -108,17 +93,12 @@
 
 .method public play(Landroid/os/IBinder;Landroid/net/Uri;Landroid/media/AudioAttributes;)V
     .locals 7
-    .param p1, "token"    # Landroid/os/IBinder;
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "aa"    # Landroid/media/AudioAttributes;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .prologue
-    .line 104
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     # getter for: Lcom/android/systemui/media/RingtonePlayer;->mClients:Ljava/util/HashMap;
@@ -128,7 +108,6 @@
 
     monitor-enter v6
 
-    .line 105
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -143,20 +122,14 @@
 
     check-cast v0, Lcom/android/systemui/media/RingtonePlayer$Client;
 
-    .line 106
-    .local v0, "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     if-nez v0, :cond_0
 
-    .line 107
     invoke-static {}, Landroid/os/Binder;->getCallingUserHandle()Landroid/os/UserHandle;
 
     move-result-object v4
 
-    .line 108
-    .local v4, "user":Landroid/os/UserHandle;
     new-instance v0, Lcom/android/systemui/media/RingtonePlayer$Client;
 
-    .end local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     move-object v2, p1
@@ -167,13 +140,10 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/media/RingtonePlayer$Client;-><init>(Lcom/android/systemui/media/RingtonePlayer;Landroid/os/IBinder;Landroid/net/Uri;Landroid/os/UserHandle;Landroid/media/AudioAttributes;)V
 
-    .line 109
-    .restart local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     const/4 v1, 0x0
 
     invoke-interface {p1, v0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 110
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     # getter for: Lcom/android/systemui/media/RingtonePlayer;->mClients:Ljava/util/HashMap;
@@ -183,14 +153,11 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
-    .end local v4    # "user":Landroid/os/UserHandle;
     :cond_0
     monitor-exit v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 113
     # getter for: Lcom/android/systemui/media/RingtonePlayer$Client;->mRingtone:Landroid/media/Ringtone;
     invoke-static {v0}, Lcom/android/systemui/media/RingtonePlayer$Client;->access$200(Lcom/android/systemui/media/RingtonePlayer$Client;)Landroid/media/Ringtone;
 
@@ -198,11 +165,8 @@
 
     invoke-virtual {v1}, Landroid/media/Ringtone;->play()V
 
-    .line 114
     return-void
 
-    .line 112
-    .end local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     :catchall_0
     move-exception v1
 
@@ -216,13 +180,7 @@
 
 .method public playAsync(Landroid/net/Uri;Landroid/os/UserHandle;ZLandroid/media/AudioAttributes;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "user"    # Landroid/os/UserHandle;
-    .param p3, "looping"    # Z
-    .param p4, "aa"    # Landroid/media/AudioAttributes;
 
-    .prologue
-    .line 146
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -231,7 +189,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 147
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Async playback only available from system UID."
@@ -240,7 +197,6 @@
 
     throw v0
 
-    .line 150
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -258,16 +214,12 @@
 
     invoke-virtual {v0, v1, p1, p3, p4}, Lcom/android/systemui/media/NotificationPlayer;->play(Landroid/content/Context;Landroid/net/Uri;ZLandroid/media/AudioAttributes;)V
 
-    .line 151
     return-void
 .end method
 
 .method public setOnCompletionListener(Landroid/app/INotificationPlayerOnCompletionListener;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "l"    # Landroid/app/INotificationPlayerOnCompletionListener;
 
-    .prologue
-    .line 165
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -276,7 +228,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 166
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "setOnCompletionListener only available from system UID."
@@ -285,7 +236,6 @@
 
     throw v0
 
-    .line 169
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -303,10 +253,7 @@
 
 .method public stop(Landroid/os/IBinder;)V
     .locals 3
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .prologue
-    .line 120
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
     # getter for: Lcom/android/systemui/media/RingtonePlayer;->mClients:Ljava/util/HashMap;
@@ -316,7 +263,6 @@
 
     monitor-enter v2
 
-    .line 121
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -331,16 +277,12 @@
 
     check-cast v0, Lcom/android/systemui/media/RingtonePlayer$Client;
 
-    .line 122
-    .local v0, "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 123
     if-eqz v0, :cond_0
 
-    .line 124
     # getter for: Lcom/android/systemui/media/RingtonePlayer$Client;->mToken:Landroid/os/IBinder;
     invoke-static {v0}, Lcom/android/systemui/media/RingtonePlayer$Client;->access$300(Lcom/android/systemui/media/RingtonePlayer$Client;)Landroid/os/IBinder;
 
@@ -350,7 +292,6 @@
 
     invoke-interface {v1, v0, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 125
     # getter for: Lcom/android/systemui/media/RingtonePlayer$Client;->mRingtone:Landroid/media/Ringtone;
     invoke-static {v0}, Lcom/android/systemui/media/RingtonePlayer$Client;->access$200(Lcom/android/systemui/media/RingtonePlayer$Client;)Landroid/media/Ringtone;
 
@@ -358,12 +299,9 @@
 
     invoke-virtual {v1}, Landroid/media/Ringtone;->stop()V
 
-    .line 127
     :cond_0
     return-void
 
-    .line 122
-    .end local v0    # "client":Lcom/android/systemui/media/RingtonePlayer$Client;
     :catchall_0
     move-exception v1
 
@@ -378,8 +316,6 @@
 .method public stopAsync()V
     .locals 2
 
-    .prologue
-    .line 156
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -388,7 +324,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 157
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Async playback only available from system UID."
@@ -397,7 +332,6 @@
 
     throw v0
 
-    .line 159
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
 
@@ -408,6 +342,5 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/media/NotificationPlayer;->stop()V
 
-    .line 160
     return-void
 .end method

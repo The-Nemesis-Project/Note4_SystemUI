@@ -5,6 +5,6 @@
         <bitmap android:gravity="center" android:src="@drawable/lock_circle_style_01_black" />
     </item>
     <item android:id="@id/first_image">
-        <bitmap android:gravity="center" android:src="@drawable/APKTOOL_DUMMY_0235" />
+        <bitmap android:gravity="center" android:src="@drawable/APKTOOL_DUMMY_023c" />
     </item>
 </layer-list>

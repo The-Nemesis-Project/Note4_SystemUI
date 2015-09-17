@@ -27,27 +27,16 @@
 # direct methods
 .method public constructor <init>(IIII)V
     .locals 0
-    .param p1, "type"    # I
-    .param p2, "containerId"    # I
-    .param p3, "iconId"    # I
-    .param p4, "titleId"    # I
 
-    .prologue
-    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
     iput p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$ShortcutItem;->mType:I
 
-    .line 103
     iput p2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$ShortcutItem;->mContainerId:I
 
-    .line 104
     iput p3, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$ShortcutItem;->mIconId:I
 
-    .line 105
     iput p4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$ShortcutItem;->mTitleId:I
 
-    .line 106
     return-void
 .end method

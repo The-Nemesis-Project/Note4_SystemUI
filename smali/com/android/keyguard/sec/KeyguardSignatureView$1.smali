@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSignatureView;)V
     .locals 0
 
-    .prologue
-    .line 204
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$1;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 208
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$1;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -53,6 +48,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->showBackupSecurity(Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;)V
 
-    .line 209
     return-void
 .end method

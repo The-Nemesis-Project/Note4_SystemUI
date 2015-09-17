@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
-    .prologue
-    .line 1101
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public onInteraction()V
     .locals 2
 
-    .prologue
-    .line 1113
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -54,24 +50,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1114
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->fireInteraction()V
     invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2600(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    .line 1115
     return-void
 .end method
 
 .method public onSelected(Landroid/view/View;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .prologue
-    .line 1104
     if-eqz p2, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
@@ -87,7 +77,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1105
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -122,7 +111,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1106
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -141,12 +129,10 @@
 
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
 
-    .line 1107
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "value":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -154,7 +140,6 @@
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->fireNotifyZen(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->access$2500(Lcom/android/systemui/volume/ZenModePanel;I)V
 
-    .line 1109
     :cond_1
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;)V
     .locals 0
 
-    .prologue
-    .line 131
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "arg0"    # Landroid/view/View;
 
-    .prologue
-    .line 134
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$3;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->finish()V
 
-    .line 135
     return-void
 .end method

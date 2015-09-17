@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 573
     invoke-static {}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;->values()[Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
 
     move-result-object v0

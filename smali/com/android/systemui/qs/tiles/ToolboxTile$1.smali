@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ToolboxTile;)V
     .locals 0
 
-    .prologue
-    .line 39
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v0, 0x2
 
     const/4 v4, 0x0
 
-    .line 42
     const-string v1, "ToolboxTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -70,7 +64,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 43
     const-string v1, "com.android.settings.action.talkback_off"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,7 +76,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 44
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
@@ -105,18 +97,15 @@
     # invokes: Lcom/android/systemui/qs/tiles/ToolboxTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/ToolboxTile;->access$100(Lcom/android/systemui/qs/tiles/ToolboxTile;Ljava/lang/Object;)V
 
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/ToolboxTile;->mIsProcessing:Z
     invoke-static {v0, v4}, Lcom/android/systemui/qs/tiles/ToolboxTile;->access$202(Lcom/android/systemui/qs/tiles/ToolboxTile;Z)Z
 
-    .line 50
     :cond_1
     :goto_0
     return-void
 
-    .line 46
     :cond_2
     const-string v1, "com.android.settings.action.talkback_on"
 
@@ -130,7 +119,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 47
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -140,7 +128,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/ToolboxTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/ToolboxTile;->access$300(Lcom/android/systemui/qs/tiles/ToolboxTile;Ljava/lang/Object;)V
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ToolboxTile$1;->this$0:Lcom/android/systemui/qs/tiles/ToolboxTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/ToolboxTile;->mIsProcessing:Z

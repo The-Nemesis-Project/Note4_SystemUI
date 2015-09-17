@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/MSimSignalClusterView;)V
     .locals 0
 
-    .prologue
-    .line 367
     iput-object p1, p0, Lcom/android/systemui/statusbar/MSimSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MSimSignalClusterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 371
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubId()J
 
     move-result-wide v0
@@ -55,7 +51,6 @@
 
     if-nez v0, :cond_0
 
-    .line 373
     iget-object v0, p0, Lcom/android/systemui/statusbar/MSimSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MSimSignalClusterView;
 
     const/4 v1, 0x0
@@ -63,11 +58,9 @@
     # invokes: Lcom/android/systemui/statusbar/MSimSignalClusterView;->apply(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/MSimSignalClusterView;->access$000(Lcom/android/systemui/statusbar/MSimSignalClusterView;I)V
 
-    .line 377
     :goto_0
     return-void
 
-    .line 375
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/MSimSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MSimSignalClusterView;
 

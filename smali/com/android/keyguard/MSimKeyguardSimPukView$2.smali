@@ -1,11 +1,14 @@
 .class Lcom/android/keyguard/MSimKeyguardSimPukView$2;
-.super Lcom/android/keyguard/MSimKeyguardSimPukView$MSimCheckSimPuk;
+.super Ljava/lang/Object;
 .source "MSimKeyguardSimPukView.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/keyguard/MSimKeyguardSimPukView;->updateSim()V
+    value = Lcom/android/keyguard/MSimKeyguardSimPukView;->onFinishInflate()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,38 +22,67 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/keyguard/MSimKeyguardSimPukView;Ljava/lang/String;Ljava/lang/String;I)V
+.method constructor <init>(Lcom/android/keyguard/MSimKeyguardSimPukView;)V
     .locals 0
-    .param p2, "x0"    # Ljava/lang/String;
-    .param p3, "x1"    # Ljava/lang/String;
-    .param p4, "x2"    # I
 
-    .prologue
-    .line 252
     iput-object p1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/keyguard/MSimKeyguardSimPukView$MSimCheckSimPuk;-><init>(Lcom/android/keyguard/MSimKeyguardSimPukView;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method onSimLockChangedResponse(II)V
-    .locals 2
-    .param p1, "result"    # I
-    .param p2, "attemptsRemaining"    # I
+.method public onClick(Landroid/view/View;)V
+    .locals 4
 
-    .prologue
-    .line 254
-    iget-object v0, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
+    iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
 
-    new-instance v1, Lcom/android/keyguard/MSimKeyguardSimPukView$2$1;
+    iget-object v1, v1, Lcom/android/keyguard/MSimKeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/android/keyguard/MSimKeyguardSimPukView$2$1;-><init>(Lcom/android/keyguard/MSimKeyguardSimPukView$2;II)V
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/android/keyguard/MSimKeyguardSimPukView;->post(Ljava/lang/Runnable;)Z
-
-    .line 321
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
+
+    iget-object v1, v1, Lcom/android/keyguard/MSimKeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    invoke-interface {v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.CALL_EMERGENCY"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "tel"
+
+    const-string v2, "911"
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const/high16 v1, 0x10000000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$2;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
+
+    # getter for: Lcom/android/keyguard/MSimKeyguardSimPukView;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/keyguard/MSimKeyguardSimPukView;->access$100(Lcom/android/keyguard/MSimKeyguardSimPukView;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
 .end method

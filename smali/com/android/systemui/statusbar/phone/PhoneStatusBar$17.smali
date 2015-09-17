@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/phone/QSTileHost;)V
     .locals 0
 
-    .prologue
-    .line 1356
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->val$qsh:Lcom/android/systemui/statusbar/phone/QSTileHost;
@@ -43,15 +41,12 @@
 .method public onTilesChanged()V
     .locals 2
 
-    .prologue
-    .line 1359
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->val$qsh:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->setEditMode(Z)V
 
-    .line 1360
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
@@ -67,13 +62,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;)V
 
-    .line 1361
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->val$qsh:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->setEditMode(Z)V
 
-    .line 1362
     return-void
 .end method

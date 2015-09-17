@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/recents/model/Task;Lcom/android/systemui/recents/misc/SystemServicesProxy;Landroid/app/ActivityOptions;Z)V
     .locals 0
 
-    .prologue
-    .line 668
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$task:Lcom/android/systemui/recents/model/Task;
@@ -55,20 +53,16 @@
 .method public run()V
     .locals 5
 
-    .prologue
-    .line 671
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$task:Lcom/android/systemui/recents/model/Task;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/model/Task;->isActive:Z
 
     if-eqz v0, :cond_1
 
-    .line 689
     :cond_0
     :goto_0
     return-void
 
-    .line 675
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -96,7 +90,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 677
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$launchOpts:Landroid/app/ActivityOptions;
 
     if-nez v0, :cond_0
@@ -105,14 +98,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 678
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->lockCurrentTask()V
 
     goto :goto_0
 
-    .line 683
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -120,14 +111,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/RecentsView;->onTaskViewDismissed(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 684
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 685
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;

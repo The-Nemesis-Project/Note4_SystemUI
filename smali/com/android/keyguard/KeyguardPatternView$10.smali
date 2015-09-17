@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPatternView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 781
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$10;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardPatternView$10;->val$finishListener:Ljava/lang/Runnable;
@@ -39,14 +37,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 784
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$10;->val$finishListener:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 785
     return-void
 .end method

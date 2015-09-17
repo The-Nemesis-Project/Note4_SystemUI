@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DrivingModeTile;Landroid/widget/CheckBox;)V
     .locals 0
 
-    .prologue
-    .line 265
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DrivingModeTile$4;->this$0:Lcom/android/systemui/qs/tiles/DrivingModeTile;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/DrivingModeTile$4;->val$mDrivingModeCheckBox:Landroid/widget/CheckBox;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
-    .prologue
-    .line 267
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DrivingModeTile$4;->val$mDrivingModeCheckBox:Landroid/widget/CheckBox;
 
     if-eqz v0, :cond_0
@@ -59,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 268
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DrivingModeTile$4;->this$0:Lcom/android/systemui/qs/tiles/DrivingModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DrivingModeTile;->mContext:Landroid/content/Context;
@@ -79,10 +72,8 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 271
     :cond_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 272
     return-void
 .end method

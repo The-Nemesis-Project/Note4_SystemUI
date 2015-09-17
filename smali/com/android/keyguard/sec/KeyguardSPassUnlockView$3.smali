@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "arg0"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 230
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mAnimationView:Landroid/widget/ImageView;
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$100()Landroid/widget/ImageView;
 
@@ -58,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 231
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mAnimationView:Landroid/widget/ImageView;
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$100()Landroid/widget/ImageView;
 
@@ -73,25 +67,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 233
     :cond_0
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "arg0"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 226
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "arg0"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 221
     return-void
 .end method

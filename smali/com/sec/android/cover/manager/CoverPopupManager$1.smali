@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverPopupManager;)V
     .locals 0
 
-    .prologue
-    .line 40
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverPopupManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPopupManager;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onCoverStateChanged(Lcom/samsung/android/cover/CoverState;)V
     .locals 2
-    .param p1, "coverState"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 42
     if-eqz p1, :cond_0
 
     iget-boolean v0, p1, Lcom/samsung/android/cover/CoverState;->switchState:Z
@@ -47,19 +42,16 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 44
     const-string v0, "CoverPopupManager"
 
     const-string v1, "onCoverStateChanged() cover open"
 
     invoke-static {v0, v1}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 46
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverPopupManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPopupManager;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPopupManager;->dismissPopupDialog()V
 
-    .line 48
     :cond_0
     return-void
 .end method
@@ -67,19 +59,15 @@
 .method public onScreenTurnedOff()V
     .locals 2
 
-    .prologue
-    .line 52
     const-string v0, "CoverPopupManager"
 
     const-string v1, "onScreenTurnedOff()"
 
     invoke-static {v0, v1}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverPopupManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPopupManager;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPopupManager;->dismissPopupDialog()V
 
-    .line 55
     return-void
 .end method

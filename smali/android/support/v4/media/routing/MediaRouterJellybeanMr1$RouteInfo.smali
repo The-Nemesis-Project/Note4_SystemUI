@@ -18,8 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,13 +25,9 @@
 
 .method public static getPresentationDisplay(Ljava/lang/Object;)Landroid/view/Display;
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 43
     check-cast p0, Landroid/media/MediaRouter$RouteInfo;
 
-    .end local p0    # "routeObj":Ljava/lang/Object;
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteInfo;->getPresentationDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -43,13 +37,9 @@
 
 .method public static isEnabled(Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 39
     check-cast p0, Landroid/media/MediaRouter$RouteInfo;
 
-    .end local p0    # "routeObj":Ljava/lang/Object;
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteInfo;->isEnabled()Z
 
     move-result v0

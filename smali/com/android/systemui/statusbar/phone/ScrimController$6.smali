@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;)V
     .locals 0
 
-    .prologue
-    .line 399
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 402
     # getter for: Lcom/android/systemui/statusbar/phone/ScrimController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$300()Z
 
@@ -77,7 +73,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
@@ -88,11 +83,9 @@
 
     if-nez v0, :cond_1
 
-    .line 409
     :goto_0
     return-void
 
-    .line 404
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
@@ -112,7 +105,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mDurationOverride:J
     invoke-static {v0, v2, v3}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$502(Lcom/android/systemui/statusbar/phone/ScrimController;J)J
 
-    .line 405
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     const-wide/16 v2, 0x0
@@ -120,7 +112,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mAnimationDelay:J
     invoke-static {v0, v2, v3}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$702(Lcom/android/systemui/statusbar/phone/ScrimController;J)J
 
-    .line 406
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     const/4 v1, 0x1
@@ -128,7 +119,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mAnimateChange:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$802(Lcom/android/systemui/statusbar/phone/ScrimController;Z)Z
 
-    .line 407
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
@@ -141,7 +131,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mOnAnimationFinished:Ljava/lang/Runnable;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$202(Lcom/android/systemui/statusbar/phone/ScrimController;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 408
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;

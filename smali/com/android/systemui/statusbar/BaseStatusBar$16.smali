@@ -24,8 +24,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 2644
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar$RemoteViewType;->values()[Lcom/android/systemui/statusbar/BaseStatusBar$RemoteViewType;
 
     move-result-object v0
@@ -83,7 +81,6 @@
     :try_end_2
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_5
 
-    .line 440
     :goto_2
     invoke-static {}, Landroid/content/pm/PersonaState;->values()[Landroid/content/pm/PersonaState;
 
@@ -202,7 +199,6 @@
 
     goto :goto_3
 
-    .line 2644
     :catch_5
     move-exception v0
 

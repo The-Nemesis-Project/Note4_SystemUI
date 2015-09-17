@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;)V
     .locals 0
 
-    .prologue
-    .line 201
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$3;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public onScreenOffTimerExpired()V
     .locals 2
 
-    .prologue
-    .line 204
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->access$400()Ljava/lang/String;
 
@@ -50,7 +46,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$3;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->mPowerManager:Lcom/sec/android/cover/manager/CoverPowerManager;
@@ -76,7 +71,6 @@
 
     if-nez v0, :cond_0
 
-    .line 206
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$3;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->mPowerManager:Lcom/sec/android/cover/manager/CoverPowerManager;
@@ -86,11 +80,9 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPowerManager;->goToSleep()V
 
-    .line 210
     :goto_0
     return-void
 
-    .line 208
     :cond_0
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->access$400()Ljava/lang/String;

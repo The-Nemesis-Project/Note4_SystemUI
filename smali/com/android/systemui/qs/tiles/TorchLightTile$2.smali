@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/TorchLightTile;Landroid/widget/RadioButton;Landroid/widget/RadioButton;)V
     .locals 0
 
-    .prologue
-    .line 249
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->val$fiveMinRadio:Landroid/widget/RadioButton;
@@ -46,19 +44,15 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 6
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
-    .line 251
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    const v1, 0x7f0e0200
+    const v1, 0x7f0e0204
 
     if-ne v0, v1, :cond_5
 
-    .line 252
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mTorchEnabled:Z
@@ -68,7 +62,6 @@
 
     if-nez v0, :cond_0
 
-    .line 253
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
@@ -86,7 +79,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/TorchLightTile;->updateTorchState(Z)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$300(Lcom/android/systemui/qs/tiles/TorchLightTile;Z)V
 
-    .line 254
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->val$fiveMinRadio:Landroid/widget/RadioButton;
 
     invoke-virtual {v0}, Landroid/widget/RadioButton;->isChecked()Z
@@ -95,7 +87,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 255
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -105,7 +96,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
     invoke-static {v0, v2, v3}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$402(Lcom/android/systemui/qs/tiles/TorchLightTile;J)J
 
-    .line 256
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -122,7 +112,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 257
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -150,25 +139,21 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/qs/QSTile$H;->postAtTime(Ljava/lang/Runnable;J)Z
 
-    .line 267
     :cond_0
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->closeDetailviewPanel()V
 
-    .line 271
     :cond_1
     :goto_2
     return-void
 
-    .line 253
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 258
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->val$tenMinRadio:Landroid/widget/RadioButton;
 
@@ -178,7 +163,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 259
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -188,7 +172,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mWasLastOn:J
     invoke-static {v0, v2, v3}, Lcom/android/systemui/qs/tiles/TorchLightTile;->access$402(Lcom/android/systemui/qs/tiles/TorchLightTile;J)J
 
-    .line 260
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -205,7 +188,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/TorchLightTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
@@ -235,7 +217,6 @@
 
     goto :goto_1
 
-    .line 263
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
@@ -253,7 +234,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 264
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     const-wide/16 v2, 0x0
@@ -263,17 +243,15 @@
 
     goto :goto_1
 
-    .line 268
     :cond_5
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    const v1, 0x7f0e01f5
+    const v1, 0x7f0e01f9
 
     if-ne v0, v1, :cond_1
 
-    .line 269
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/TorchLightTile$2;->this$0:Lcom/android/systemui/qs/tiles/TorchLightTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/TorchLightTile;->closeDetailviewPanel()V

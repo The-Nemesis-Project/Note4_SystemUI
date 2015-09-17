@@ -25,8 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 23
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -35,63 +33,38 @@
 .method private showDiagnosticeReportStatus()V
     .locals 22
 
-    .prologue
-    .line 43
     const/4 v14, 0x0
 
-    .line 44
-    .local v14, "setupWizardContext":Landroid/content/Context;
     const/4 v11, 0x0
 
-    .line 45
-    .local v11, "settingContext":Landroid/content/Context;
     const/16 v16, 0x0
 
-    .line 46
-    .local v16, "setupWizardResources":Landroid/content/res/Resources;
     const/4 v13, 0x0
 
-    .line 47
-    .local v13, "settingResources":Landroid/content/res/Resources;
     const/4 v5, 0x0
 
-    .line 48
-    .local v5, "collectionString":Ljava/lang/String;
     const/16 v18, 0x0
 
-    .line 49
-    .local v18, "yes":Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 50
-    .local v9, "no":Ljava/lang/String;
     const/16 v17, 0x0
 
-    .line 52
-    .local v17, "title":Ljava/lang/String;
     const-string v15, "com.sec.android.app.SecSetupWizard"
 
-    .line 53
-    .local v15, "setupWizardName":Ljava/lang/String;
     const-string v12, "com.android.settings"
 
-    .line 55
-    .local v12, "settingName":Ljava/lang/String;
     const-string v19, "ro.csc.sales_code"
 
     invoke-static/range {v19 .. v19}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 57
-    .local v10, "salesCode":Ljava/lang/String;
     const-string v19, "DiagonosticAlertDialog"
 
     const-string v20, "showDiagnosticeReportStatus"
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -103,7 +76,6 @@
 
     move-result-object v16
 
-    .line 61
     const/16 v19, 0x2
 
     move-object/from16 v0, p0
@@ -114,7 +86,6 @@
 
     move-result-object v14
 
-    .line 63
     const/16 v19, 0x2
 
     move-object/from16 v0, p0
@@ -125,8 +96,6 @@
 
     move-result-object v4
 
-    .line 64
-    .local v4, "c":Landroid/content/Context;
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -152,8 +121,6 @@
 
     move-result-object v5
 
-    .line 73
-    .end local v4    # "c":Landroid/content/Context;
     :goto_0
     :try_start_1
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -166,7 +133,6 @@
 
     move-result-object v13
 
-    .line 74
     const/16 v19, 0x2
 
     move-object/from16 v0, p0
@@ -177,7 +143,6 @@
 
     move-result-object v11
 
-    .line 76
     invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -198,7 +163,6 @@
 
     move-result-object v18
 
-    .line 77
     invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -219,7 +183,6 @@
 
     move-result-object v9
 
-    .line 78
     invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -243,7 +206,6 @@
 
     move-result-object v17
 
-    .line 85
     :goto_1
     if-eqz v10, :cond_1
 
@@ -287,7 +249,6 @@
 
     if-eqz v19, :cond_1
 
-    .line 86
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->getResources()Landroid/content/res/Resources;
 
@@ -299,7 +260,6 @@
 
     move-result-object v18
 
-    .line 87
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -310,7 +270,6 @@
 
     move-result-object v9
 
-    .line 90
     :cond_1
     const-string v19, "DiagonosticAlertDialog"
 
@@ -336,7 +295,6 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
     const-string v19, "DiagonosticAlertDialog"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -389,7 +347,6 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 93
     if-eqz v5, :cond_2
 
     if-eqz v18, :cond_2
@@ -398,7 +355,6 @@
 
     if-nez v17, :cond_3
 
-    .line 94
     :cond_2
     const-string v19, "DiagonosticAlertDialog"
 
@@ -406,7 +362,6 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v19
@@ -417,7 +372,6 @@
 
     invoke-static/range {v19 .. v21}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 96
     new-instance v8, Landroid/content/Intent;
 
     const-string v19, "android.settings.DIAGNOSTIC_INFO_CHANGED"
@@ -426,8 +380,6 @@
 
     invoke-direct {v8, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 97
-    .local v8, "intent":Landroid/content/Intent;
     const-string v19, "diagnostic_info_changed"
 
     const/16 v20, 0x0
@@ -438,25 +390,18 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 98
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 100
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->finish()V
 
-    .line 127
-    .end local v8    # "intent":Landroid/content/Intent;
     :goto_2
     return-void
 
-    .line 66
     :catch_0
     move-exception v7
 
-    .line 67
-    .local v7, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v19, "DiagonosticAlertDialog"
 
     const-string v20, "error getting activity for setupwizard package resources"
@@ -469,13 +414,9 @@
 
     goto/16 :goto_0
 
-    .line 68
-    .end local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v7
 
-    .line 69
-    .local v7, "e":Landroid/content/res/Resources$NotFoundException;
     const-string v19, "DiagonosticAlertDialog"
 
     const-string v20, "error getting setupwizard package resources"
@@ -488,13 +429,9 @@
 
     goto/16 :goto_0
 
-    .line 79
-    .end local v7    # "e":Landroid/content/res/Resources$NotFoundException;
     :catch_2
     move-exception v7
 
-    .line 80
-    .local v7, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v19, "DiagonosticAlertDialog"
 
     const-string v20, "error getting activity for settings package resources"
@@ -507,13 +444,9 @@
 
     goto/16 :goto_1
 
-    .line 81
-    .end local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_3
     move-exception v7
 
-    .line 82
-    .local v7, "e":Landroid/content/res/Resources$NotFoundException;
     const-string v19, "DiagonosticAlertDialog"
 
     const-string v20, "error getting settings package resources"
@@ -526,8 +459,6 @@
 
     goto/16 :goto_1
 
-    .line 103
-    .end local v7    # "e":Landroid/content/res/Resources$NotFoundException;
     :cond_3
     new-instance v19, Landroid/app/AlertDialog$Builder;
 
@@ -591,14 +522,10 @@
 
     move-result-object v3
 
-    .line 124
-    .local v3, "alert":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v3}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v6
 
-    .line 125
-    .local v6, "dialogWindow":Landroid/app/AlertDialog;
     invoke-virtual {v6}, Landroid/app/AlertDialog;->show()V
 
     goto/16 :goto_2
@@ -608,25 +535,18 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .prologue
-    .line 35
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 36
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->requestWindowFeature(I)Z
 
-    .line 37
-    const v0, 0x7f04000a
+    const v0, 0x7f04000b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->setContentView(I)V
 
-    .line 39
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/DiagonosticAlertDialog;->showDiagnosticeReportStatus()V
 
-    .line 40
     return-void
 .end method

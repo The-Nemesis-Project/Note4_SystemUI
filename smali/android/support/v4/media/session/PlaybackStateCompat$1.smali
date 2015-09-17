@@ -31,8 +31,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 395
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,10 +40,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/PlaybackStateCompat;
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .prologue
-    .line 398
     new-instance v0, Landroid/support/v4/media/session/PlaybackStateCompat;
 
     const/4 v1, 0x0
@@ -57,10 +52,7 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Landroid/os/Parcel;
 
-    .prologue
-    .line 395
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/PlaybackStateCompat$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/PlaybackStateCompat;
 
     move-result-object v0
@@ -70,10 +62,7 @@
 
 .method public newArray(I)[Landroid/support/v4/media/session/PlaybackStateCompat;
     .locals 1
-    .param p1, "size"    # I
 
-    .prologue
-    .line 403
     new-array v0, p1, [Landroid/support/v4/media/session/PlaybackStateCompat;
 
     return-object v0
@@ -81,10 +70,7 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # I
 
-    .prologue
-    .line 395
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/PlaybackStateCompat$1;->newArray(I)[Landroid/support/v4/media/session/PlaybackStateCompat;
 
     move-result-object v0

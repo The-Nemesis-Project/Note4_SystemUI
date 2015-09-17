@@ -24,16 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
     iput-object p1, p0, Lcom/sec/android/cover/BaseCoverController;->mContext:Landroid/content/Context;
 
-    .line 21
     return-void
 .end method
 
@@ -42,8 +37,6 @@
 .method public getCoverState()Lcom/samsung/android/cover/CoverState;
     .locals 1
 
-    .prologue
-    .line 24
     iget-object v0, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
     return-object v0
@@ -52,8 +45,6 @@
 .method public getCoverType()I
     .locals 1
 
-    .prologue
-    .line 41
     iget-object v0, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
     invoke-virtual {v0}, Lcom/samsung/android/cover/CoverState;->getType()I
@@ -66,22 +57,18 @@
 .method public isCoverOpen()Z
     .locals 3
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 32
     iget-object v1, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
     if-nez v1, :cond_1
 
-    .line 33
     const-string v1, "BaseCoverController"
 
     const-string v2, "isCoverOpen : mCoverState is null!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 37
     :cond_0
     :goto_0
     return v0
@@ -102,48 +89,32 @@
 
 .method public onCoverAttached(Lcom/samsung/android/cover/CoverState;)V
     .locals 0
-    .param p1, "state"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 45
     iput-object p1, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    .line 46
     return-void
 .end method
 
 .method public onCoverDetatched(Lcom/samsung/android/cover/CoverState;)V
     .locals 0
-    .param p1, "state"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 49
     iput-object p1, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    .line 50
     return-void
 .end method
 
 .method public onCoverEvent(Lcom/samsung/android/cover/CoverState;)V
     .locals 0
-    .param p1, "state"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 53
     iput-object p1, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    .line 54
     return-void
 .end method
 
 .method public setCoverState(Lcom/samsung/android/cover/CoverState;)V
     .locals 0
-    .param p1, "coverState"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 28
     iput-object p1, p0, Lcom/sec/android/cover/BaseCoverController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    .line 29
     return-void
 .end method

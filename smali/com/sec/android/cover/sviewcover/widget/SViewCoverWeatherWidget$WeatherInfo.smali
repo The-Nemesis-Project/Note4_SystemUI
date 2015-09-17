@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4
+    accessFlags = 0x9
     name = "WeatherInfo"
 .end annotation
 
@@ -25,70 +25,57 @@
 
 .field private mIconNumber:I
 
+.field private mIsShowLockAndCover:Z
+
 .field private mLowTemperature:F
 
 .field private mTempScale:I
 
 .field private mTrusted:Z
 
-.field final synthetic this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
-
 
 # direct methods
-.method protected constructor <init>(Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;)V
+.method public constructor <init>()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    .line 165
-    iput-object p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
     const/16 v0, 0xc8
 
     iput v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->WEATHER_INFO_TRUSTED:I
 
-    .line 166
     iput v2, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIconNumber:I
 
-    .line 167
     iput v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentTemperature:F
 
-    .line 168
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTempScale:I
 
-    .line 169
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentCityId:Ljava/lang/String;
 
-    .line 170
     iput v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mHighTemperature:F
 
-    .line 171
     iput v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mLowTemperature:F
 
-    .line 172
     iput-boolean v2, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTrusted:Z
 
-    .line 173
+    iput-boolean v2, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIsShowLockAndCover:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method protected dump()V
+.method public dump()V
     .locals 3
 
-    .prologue
-    .line 245
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$000()Ljava/lang/String;
 
@@ -182,6 +169,18 @@
 
     move-result-object v1
 
+    const-string v2, ", showLockAndCover = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIsShowLockAndCover:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     const-string v2, ", trusted = "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -200,172 +199,154 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
     return-void
 .end method
 
-.method protected getCurrentCityId()Ljava/lang/String;
+.method public getCurrentCityId()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 200
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentCityId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method protected getCurrentTemperature()F
+.method public getCurrentTemperature()F
     .locals 1
 
-    .prologue
-    .line 184
     iget v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentTemperature:F
 
     return v0
 .end method
 
-.method protected getHighTemperature()F
+.method public getHighTemperature()F
     .locals 1
 
-    .prologue
-    .line 208
     iget v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mHighTemperature:F
 
     return v0
 .end method
 
-.method protected getIconNumber()I
+.method public getIconNumber()I
     .locals 1
 
-    .prologue
-    .line 176
     iget v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIconNumber:I
 
     return v0
 .end method
 
-.method protected getLowTemperature()F
+.method public getLowTemperature()F
     .locals 1
 
-    .prologue
-    .line 216
     iget v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mLowTemperature:F
 
     return v0
 .end method
 
-.method protected getTempScale()I
+.method public getTempScale()I
     .locals 1
 
-    .prologue
-    .line 192
     iget v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTempScale:I
 
     return v0
 .end method
 
-.method protected isTrusted()Z
+.method public isShowLockAndCover()Z
     .locals 1
 
-    .prologue
-    .line 224
+    iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIsShowLockAndCover:Z
+
+    return v0
+.end method
+
+.method public isTrusted()Z
+    .locals 1
+
     iget-boolean v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTrusted:Z
 
     return v0
 .end method
 
-.method protected setCurrentCityId(Ljava/lang/String;)V
+.method public setCurrentCityId(Ljava/lang/String;)V
     .locals 0
-    .param p1, "id"    # Ljava/lang/String;
 
-    .prologue
-    .line 204
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentCityId:Ljava/lang/String;
 
-    .line 205
     return-void
 .end method
 
-.method protected setCurrentTemperature(F)V
+.method public setCurrentTemperature(F)V
     .locals 0
-    .param p1, "temp"    # F
 
-    .prologue
-    .line 188
     iput p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentTemperature:F
 
-    .line 189
     return-void
 .end method
 
-.method protected setHighTemperature(F)V
+.method public setHighTemperature(F)V
     .locals 0
-    .param p1, "temp"    # F
 
-    .prologue
-    .line 212
     iput p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mHighTemperature:F
 
-    .line 213
     return-void
 .end method
 
-.method protected setIconNumber(I)V
+.method public setIconNumber(I)V
     .locals 0
-    .param p1, "n"    # I
 
-    .prologue
-    .line 180
     iput p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIconNumber:I
 
-    .line 181
     return-void
 .end method
 
-.method protected setLowTemperature(F)V
+.method public setLowTemperature(F)V
     .locals 0
-    .param p1, "temp"    # F
 
-    .prologue
-    .line 220
     iput p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mLowTemperature:F
 
-    .line 221
     return-void
 .end method
 
-.method protected setTempScale(I)V
-    .locals 0
-    .param p1, "scale"    # I
+.method public setShowLockAndCover(I)V
+    .locals 1
 
-    .prologue
-    .line 196
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mIsShowLockAndCover:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setTempScale(I)V
+    .locals 0
+
     iput p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTempScale:I
 
-    .line 197
     return-void
 .end method
 
-.method protected setTrusted(I)V
+.method public setTrusted(I)V
     .locals 3
-    .param p1, "errCode"    # I
 
-    .prologue
     const/16 v2, 0xc8
 
-    .line 228
     if-ne p1, v2, :cond_1
 
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentCityId:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 229
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTrusted:Z
 
-    .line 231
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$000()Ljava/lang/String;
 
@@ -397,23 +378,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 242
     :cond_0
     :goto_0
     return-void
 
-    .line 233
     :cond_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mTrusted:Z
 
-    .line 235
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$WeatherInfo;->mCurrentCityId:Ljava/lang/String;
 
     if-nez v0, :cond_2
 
-    .line 236
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$000()Ljava/lang/String;
 
@@ -423,11 +400,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
     :cond_2
     if-eq p1, v2, :cond_0
 
-    .line 239
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$000()Ljava/lang/String;
 

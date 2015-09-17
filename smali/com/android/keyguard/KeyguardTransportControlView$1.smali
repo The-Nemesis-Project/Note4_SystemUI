@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardTransportControlView;)V
     .locals 0
 
-    .prologue
-    .line 101
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,92 +36,64 @@
 # virtual methods
 .method public onClientChange(Z)V
     .locals 1
-    .param p1, "clearing"    # Z
 
-    .prologue
-    .line 104
     if-eqz p1, :cond_0
 
-    .line 105
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardTransportControlView;->clearMetadata()V
 
-    .line 107
     :cond_0
     return-void
 .end method
 
 .method public onClientFolderInfoBrowsedPlayer(Ljava/lang/String;)V
     .locals 0
-    .param p1, "stringUri"    # Ljava/lang/String;
 
-    .prologue
-    .line 143
     return-void
 .end method
 
 .method public onClientMetadataUpdate(Landroid/media/RemoteController$MetadataEditor;)V
     .locals 1
-    .param p1, "metadataEditor"    # Landroid/media/RemoteController$MetadataEditor;
 
-    .prologue
-    .line 139
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/KeyguardTransportControlView;->updateMetadata(Landroid/media/RemoteController$MetadataEditor;)V
 
-    .line 140
     return-void
 .end method
 
 .method public onClientNowPlayingContentChange()V
     .locals 0
 
-    .prologue
-    .line 149
     return-void
 .end method
 
 .method public onClientPlayItemResponse(Z)V
     .locals 0
-    .param p1, "success"    # Z
 
-    .prologue
-    .line 152
     return-void
 .end method
 
 .method public onClientPlaybackStateUpdate(I)V
     .locals 1
-    .param p1, "state"    # I
 
-    .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # invokes: Lcom/android/keyguard/KeyguardTransportControlView;->updatePlayPauseState(I)V
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardTransportControlView;->access$000(Lcom/android/keyguard/KeyguardTransportControlView;I)V
 
-    .line 112
     return-void
 .end method
 
 .method public onClientPlaybackStateUpdate(IJJF)V
     .locals 4
-    .param p1, "state"    # I
-    .param p2, "stateChangeTimeMs"    # J
-    .param p4, "currentPosMs"    # J
-    .param p6, "speed"    # F
 
-    .prologue
-    .line 117
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # invokes: Lcom/android/keyguard/KeyguardTransportControlView;->updatePlayPauseState(I)V
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardTransportControlView;->access$000(Lcom/android/keyguard/KeyguardTransportControlView;I)V
 
-    .line 118
     const-string v0, "TransportControlView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -182,7 +152,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
@@ -194,7 +163,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTransportControlView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 126
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # getter for: Lcom/android/keyguard/KeyguardTransportControlView;->mTransientSeek:Landroid/view/View;
@@ -222,7 +190,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 128
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
@@ -236,41 +203,29 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/keyguard/KeyguardTransportControlView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 130
     :cond_0
     return-void
 .end method
 
 .method public onClientSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "event"    # Ljava/lang/String;
-    .param p2, "extras"    # Landroid/os/Bundle;
 
-    .prologue
-    .line 156
     return-void
 .end method
 
 .method public onClientTransportControlUpdate(I)V
     .locals 1
-    .param p1, "transportControlFlags"    # I
 
-    .prologue
-    .line 134
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # invokes: Lcom/android/keyguard/KeyguardTransportControlView;->updateTransportControls(I)V
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardTransportControlView;->access$500(Lcom/android/keyguard/KeyguardTransportControlView;I)V
 
-    .line 135
     return-void
 .end method
 
 .method public onClientUpdateNowPlayingEntries([J)V
     .locals 0
-    .param p1, "playList"    # [J
 
-    .prologue
-    .line 146
     return-void
 .end method

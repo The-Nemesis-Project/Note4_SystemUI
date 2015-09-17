@@ -40,18 +40,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Landroid/accounts/AccountManager;)V
     .locals 3
-    .param p2, "accountManager"    # Landroid/accounts/AccountManager;
 
-    .prologue
-    .line 1397
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1398
     iput-object p2, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountManager:Landroid/accounts/AccountManager;
 
-    .line 1399
     const-string v0, "com.google"
 
     new-instance v1, Landroid/os/UserHandle;
@@ -73,18 +68,12 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccounts:[Landroid/accounts/Account;
 
-    .line 1401
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Landroid/accounts/AccountManager;Lcom/android/keyguard/sec/KeyguardSPassUnlockView$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
-    .param p2, "x1"    # Landroid/accounts/AccountManager;
-    .param p3, "x2"    # Lcom/android/keyguard/sec/KeyguardSPassUnlockView$1;
 
-    .prologue
-    .line 1392
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;-><init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Landroid/accounts/AccountManager;)V
 
     return-void
@@ -93,10 +82,8 @@
 .method private next()V
     .locals 7
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 1406
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEnableFallback:Z
 
     if-nez v0, :cond_0
@@ -109,12 +96,10 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1413
     :cond_0
     :goto_0
     return-void
 
-    .line 1411
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountManager:Landroid/accounts/AccountManager;
 
@@ -164,9 +149,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 1423
-    .local p1, "future":Landroid/accounts/AccountManagerFuture;, "Landroid/accounts/AccountManagerFuture<Landroid/os/Bundle;>;"
     :try_start_0
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -174,8 +156,6 @@
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 1424
-    .local v0, "result":Landroid/os/Bundle;
     const-string v1, "intent"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -184,12 +164,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1425
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEnableFallback:Z
 
-    .line 1426
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->updateSPassButtonArea()V
@@ -199,7 +177,6 @@
     .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1435
     :cond_0
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
@@ -207,63 +184,50 @@
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1436
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
-    .line 1438
-    .end local v0    # "result":Landroid/os/Bundle;
     :goto_0
     return-void
 
-    .line 1428
     :catch_0
     move-exception v1
 
-    .line 1435
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1436
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
-    .line 1430
     :catch_1
     move-exception v1
 
-    .line 1435
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1436
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
-    .line 1432
     :catch_2
     move-exception v1
 
-    .line 1435
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1436
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
-    .line 1435
     :catchall_0
     move-exception v1
 
@@ -273,7 +237,6 @@
 
     iput v2, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1436
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
     throw v1
@@ -282,18 +245,13 @@
 .method public start()V
     .locals 1
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 1416
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEnableFallback:Z
 
-    .line 1417
     iput v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->mAccountIndex:I
 
-    .line 1418
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$AccountAnalyzer;->next()V
 
-    .line 1419
     return-void
 .end method

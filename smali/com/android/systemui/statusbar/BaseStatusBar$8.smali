@@ -31,8 +31,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;ZLandroid/content/Intent;I)V
     .locals 0
 
-    .prologue
-    .line 1615
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$8;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$8;->val$keyguardShowing:Z
@@ -51,35 +49,29 @@
 .method public onDismiss()Z
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 1618
     new-instance v0, Lcom/android/systemui/statusbar/BaseStatusBar$8$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/BaseStatusBar$8$1;-><init>(Lcom/android/systemui/statusbar/BaseStatusBar$8;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 1635
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$8;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mState:I
 
     if-nez v0, :cond_0
 
-    .line 1637
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$8;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 1641
     :goto_0
     return v2
 
-    .line 1639
     :cond_0
     const-string v0, "StatusBar"
 

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardAccountView;)V
     .locals 0
 
-    .prologue
-    .line 117
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAccountView$2;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 121
     const/4 v0, 0x1
 
     return v0

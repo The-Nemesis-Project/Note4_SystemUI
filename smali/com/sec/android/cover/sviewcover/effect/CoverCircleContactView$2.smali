@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 90
     invoke-static {}, Lcom/sec/android/cover/sviewcover/effect/CoverCircleView$ContentStates;->values()[Lcom/sec/android/cover/sviewcover/effect/CoverCircleView$ContentStates;
 
     move-result-object v0

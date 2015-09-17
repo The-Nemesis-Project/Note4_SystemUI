@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverPowerManager;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .prologue
-    .line 35
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverPowerManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPowerManager;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 37
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 46
     :goto_0
     return-void
 
-    .line 39
     :pswitch_0
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverPowerManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPowerManager;
 
@@ -59,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 40
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverPowerManager$1;->this$0:Lcom/sec/android/cover/manager/CoverPowerManager;
 
     # getter for: Lcom/sec/android/cover/manager/CoverPowerManager;->mTimerExpireHandler:Lcom/sec/android/cover/manager/CoverPowerManager$OnScreenOffTimerHandler;
@@ -71,7 +62,6 @@
 
     goto :goto_0
 
-    .line 42
     :cond_0
     const-string v0, "CoverPowerManager"
 
@@ -81,7 +71,6 @@
 
     goto :goto_0
 
-    .line 37
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

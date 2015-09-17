@@ -32,6 +32,8 @@
 
 .field public static final EFFECT_GEOMETRICMOSAIC:I = 0xc
 
+.field public static final EFFECT_HOME:I = -0x2
+
 .field public static final EFFECT_JUST_LOCK_LIVE_WALLPAPER:I = 0x64
 
 .field public static final EFFECT_LIGHT:I = 0x2
@@ -296,33 +298,24 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .prologue
     const-wide/16 v2, 0x0
 
     const/4 v0, 0x0
 
-    .line 234
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
-    .line 235
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTotalCount:I
 
-    .line 236
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingHour:I
 
-    .line 237
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingMin:I
 
-    .line 238
     sput-wide v2, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTime:J
 
-    .line 239
     sput-wide v2, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingScreenOffTime:J
 
-    .line 241
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
-    .line 242
     sput v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOrientation:I
 
     return-void
@@ -330,145 +323,109 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v5, 0x1
 
     const/4 v4, 0x0
 
     const/4 v2, 0x0
 
-    .line 373
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
     iput v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->UNLOCK_EFFECT_VIEW_FOREGROUND:I
 
-    .line 120
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->UNLOCK_EFFECT_VIEW_BACKGROUND:I
 
-    .line 145
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
-    .line 146
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
-    .line 147
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
-    .line 148
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
-    .line 149
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
-    .line 150
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mNotificationPanel:Landroid/widget/FrameLayout;
 
-    .line 151
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 153
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 154
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 155
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 156
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
-    .line 157
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffectEnabled:Z
 
-    .line 159
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 161
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->wallpaper:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 162
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->circle:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 163
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->unspecified:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 164
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->unspecified:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 170
     iput-boolean v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mIsVisible:Z
 
-    .line 176
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAttributionInfoView:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
-    .line 182
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUserSwitching:Z
 
-    .line 200
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
-    .line 201
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mRegisterReceiver:Z
 
-    .line 208
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBootCompleted:Z
 
-    .line 215
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mEmergencyModeStateChanged:Z
 
-    .line 270
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;-><init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
-    .line 295
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$2;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController$2;-><init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 323
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$3;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController$3;-><init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUpdateMonitorCallbacks:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 331
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController$4;-><init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAdminReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 357
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$5;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController$5;-><init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentVoiceCallChnageReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 374
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
-    .line 375
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -477,7 +434,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 377
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -494,7 +450,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
-    .line 381
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -509,12 +464,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 382
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getDataFromSlideshow(Landroid/content/Context;)V
 
-    .line 384
     const-string v1, "KeyguardEffectViewController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -539,14 +492,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
     :cond_0
     new-instance v0, Lcom/samsung/android/theme/SThemeManager;
 
     invoke-direct {v0, p1}, Lcom/samsung/android/theme/SThemeManager;-><init>(Landroid/content/Context;)V
 
-    .line 387
-    .local v0, "mSThemeManager":Lcom/samsung/android/theme/SThemeManager;
     const-string v1, "2"
 
     invoke-virtual {v0, v5}, Lcom/samsung/android/theme/SThemeManager;->getVersionFromFeature(I)Ljava/lang/String;
@@ -559,10 +509,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 388
     iput-boolean v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffectEnabled:Z
 
-    .line 392
     :goto_0
     new-instance v1, Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -572,7 +520,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
-    .line 393
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     const-string v2, "power"
@@ -585,13 +532,10 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 394
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->initWallpaperTypes()V
 
-    .line 395
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setWallpaperContentObservers()V
 
-    .line 396
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -604,7 +548,6 @@
 
     sput v1, Lcom/android/keyguard/sec/KeyguardEffectViewController;->displayWidth:I
 
-    .line 397
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -617,10 +560,8 @@
 
     sput v1, Lcom/android/keyguard/sec/KeyguardEffectViewController;->displayHeight:I
 
-    .line 398
     return-void
 
-    .line 390
     :cond_1
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffectEnabled:Z
 
@@ -629,10 +570,7 @@
 
 .method static synthetic access$000(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleWallpaperTypeChanged()V
 
     return-void
@@ -640,10 +578,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleWallpaperImageChanged()V
 
     return-void
@@ -651,10 +586,7 @@
 
 .method static synthetic access$1000(Lcom/android/keyguard/sec/KeyguardEffectViewController;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -662,11 +594,7 @@
 
 .method static synthetic access$1102(Lcom/android/keyguard/sec/KeyguardEffectViewController;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 76
     iput-boolean p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBootCompleted:Z
 
     return p1
@@ -674,11 +602,7 @@
 
 .method static synthetic access$1200(Lcom/android/keyguard/sec/KeyguardEffectViewController;Landroid/content/Context;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
-    .param p1, "x1"    # Landroid/content/Context;
 
-    .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getDataFromSlideshow(Landroid/content/Context;)V
 
     return-void
@@ -686,10 +610,7 @@
 
 .method static synthetic access$1300(Lcom/android/keyguard/sec/KeyguardEffectViewController;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -697,11 +618,7 @@
 
 .method static synthetic access$1402(Lcom/android/keyguard/sec/KeyguardEffectViewController;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 76
     iput-boolean p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mEmergencyModeStateChanged:Z
 
     return p1
@@ -709,10 +626,7 @@
 
 .method static synthetic access$200(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleSetGradationLayer()V
 
     return-void
@@ -720,10 +634,7 @@
 
 .method static synthetic access$300(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleChargeStateChange()V
 
     return-void
@@ -731,11 +642,7 @@
 
 .method static synthetic access$402(Lcom/android/keyguard/sec/KeyguardEffectViewController;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 76
     iput-boolean p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUserSwitching:Z
 
     return p1
@@ -743,10 +650,7 @@
 
 .method static synthetic access$500(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setWallpaperFileObserver()V
 
     return-void
@@ -754,10 +658,7 @@
 
 .method static synthetic access$600(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->chenckSlidingWallpaperByScreenon()V
 
     return-void
@@ -765,10 +666,7 @@
 
 .method static synthetic access$702(J)J
     .locals 0
-    .param p0, "x0"    # J
 
-    .prologue
-    .line 76
     sput-wide p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingScreenOffTime:J
 
     return-wide p0
@@ -776,10 +674,7 @@
 
 .method static synthetic access$800(Lcom/android/keyguard/sec/KeyguardEffectViewController;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mRegisterReceiver:Z
 
     return v0
@@ -787,11 +682,7 @@
 
 .method static synthetic access$802(Lcom/android/keyguard/sec/KeyguardEffectViewController;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 76
     iput-boolean p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mRegisterReceiver:Z
 
     return p1
@@ -799,10 +690,7 @@
 
 .method static synthetic access$900(Lcom/android/keyguard/sec/KeyguardEffectViewController;)Landroid/content/BroadcastReceiver;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAdminReceiver:Landroid/content/BroadcastReceiver;
 
     return-object v0
@@ -810,19 +698,13 @@
 
 .method private static adjustPhotoRotation(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 8
-    .param p0, "bm"    # Landroid/graphics/Bitmap;
-    .param p1, "orientationDegree"    # I
 
-    .prologue
     const/high16 v3, 0x40000000    # 2.0f
 
-    .line 1719
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 1720
-    .local v5, "m":Landroid/graphics/Matrix;
     int-to-float v0, p1
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -843,7 +725,6 @@
 
     invoke-virtual {v5, v0, v1, v2}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 1723
     const/4 v1, 0x0
 
     const/4 v2, 0x0
@@ -867,15 +748,12 @@
 
     move-result-object v7
 
-    .line 1727
     :goto_0
     return-object v7
 
-    .line 1725
     :catch_0
     move-exception v0
 
-    .line 1727
     const/4 v7, 0x0
 
     goto :goto_0
@@ -884,61 +762,48 @@
 .method private chenckSlidingWallpaperByScreenon()V
     .locals 5
 
-    .prologue
     const/16 v4, 0x12f2
 
-    .line 1501
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1502
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v2, "com.sec.android.slidingGallery.LOCKSCREEN_IMAGE_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1503
     const-string v2, "android.intent.action.TIME_TICK"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1504
     const-string v2, "android.intent.action.TIME_SET"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1507
     const-string v2, "android.intent.action.sec.LSO_CONFIG_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1511
     const-string v2, "android.intent.action.DEFAULT_CS_SIM_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1512
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAdminReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1513
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mRegisterReceiver:Z
 
-    .line 1515
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.SCREEN_ON"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1516
-    .local v1, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v2, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setSlidingWallpaperInfo(Landroid/content/Context;Landroid/content/Intent;)Z
@@ -947,7 +812,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 1517
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->hasMessages(I)Z
@@ -956,18 +820,15 @@
 
     if-eqz v2, :cond_0
 
-    .line 1518
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1519
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 1521
     :cond_1
     return-void
 .end method
@@ -975,37 +836,24 @@
 .method private getCurrentSeasonEffect()I
     .locals 14
 
-    .prologue
-    .line 2026
     const/4 v3, 0x0
 
-    .line 2027
-    .local v3, "season":I
     new-instance v6, Landroid/text/format/Time;
 
     const-string v9, "GMT+8"
 
     invoke-direct {v6, v9}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
 
-    .line 2028
-    .local v6, "time":Landroid/text/format/Time;
     invoke-virtual {v6}, Landroid/text/format/Time;->setToNow()V
 
-    .line 2030
     iget v8, v6, Landroid/text/format/Time;->year:I
 
-    .line 2031
-    .local v8, "year":I
     iget v9, v6, Landroid/text/format/Time;->month:I
 
     add-int/lit8 v2, v9, 0x1
 
-    .line 2032
-    .local v2, "month":I
     iget v1, v6, Landroid/text/format/Time;->monthDay:I
 
-    .line 2034
-    .local v1, "day":I
     add-int/lit16 v9, v8, -0x7d0
 
     int-to-double v10, v9
@@ -1028,8 +876,6 @@
 
     double-to-int v4, v10
 
-    .line 2035
-    .local v4, "springday":I
     add-int/lit16 v9, v8, -0x7d0
 
     int-to-double v10, v9
@@ -1052,8 +898,6 @@
 
     double-to-int v5, v10
 
-    .line 2036
-    .local v5, "summerday":I
     add-int/lit16 v9, v8, -0x7d0
 
     int-to-double v10, v9
@@ -1076,8 +920,6 @@
 
     double-to-int v0, v10
 
-    .line 2037
-    .local v0, "autumnday":I
     add-int/lit16 v9, v8, -0x7d0
 
     int-to-double v10, v9
@@ -1100,19 +942,14 @@
 
     double-to-int v7, v10
 
-    .line 2038
-    .local v7, "winterday":I
     const/4 v9, 0x2
 
     if-ne v2, v9, :cond_2
 
-    .line 2039
     if-lt v1, v4, :cond_1
 
-    .line 2040
     const/16 v3, 0x51
 
-    .line 2072
     :cond_0
     :goto_0
     const-string v9, "KeyguardEffectViewController"
@@ -1137,16 +974,13 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2074
     return v3
 
-    .line 2042
     :cond_1
     const/16 v3, 0x54
 
     goto :goto_0
 
-    .line 2044
     :cond_2
     const/4 v9, 0x2
 
@@ -1156,32 +990,26 @@
 
     if-ge v2, v9, :cond_3
 
-    .line 2045
     const/16 v3, 0x51
 
     goto :goto_0
 
-    .line 2046
     :cond_3
     const/4 v9, 0x5
 
     if-ne v2, v9, :cond_5
 
-    .line 2047
     if-lt v1, v5, :cond_4
 
-    .line 2048
     const/16 v3, 0x52
 
     goto :goto_0
 
-    .line 2050
     :cond_4
     const/16 v3, 0x51
 
     goto :goto_0
 
-    .line 2052
     :cond_5
     const/4 v9, 0x5
 
@@ -1191,32 +1019,26 @@
 
     if-ge v2, v9, :cond_6
 
-    .line 2053
     const/16 v3, 0x52
 
     goto :goto_0
 
-    .line 2054
     :cond_6
     const/16 v9, 0x8
 
     if-ne v2, v9, :cond_8
 
-    .line 2055
     if-lt v1, v0, :cond_7
 
-    .line 2056
     const/16 v3, 0x53
 
     goto :goto_0
 
-    .line 2058
     :cond_7
     const/16 v3, 0x52
 
     goto :goto_0
 
-    .line 2060
     :cond_8
     const/16 v9, 0x8
 
@@ -1226,32 +1048,26 @@
 
     if-ge v2, v9, :cond_9
 
-    .line 2061
     const/16 v3, 0x53
 
     goto :goto_0
 
-    .line 2062
     :cond_9
     const/16 v9, 0xb
 
     if-ne v2, v9, :cond_b
 
-    .line 2063
     if-lt v1, v7, :cond_a
 
-    .line 2064
     const/16 v3, 0x54
 
     goto :goto_0
 
-    .line 2066
     :cond_a
     const/16 v3, 0x53
 
     goto :goto_0
 
-    .line 2068
     :cond_b
     const/16 v9, 0xb
 
@@ -1261,7 +1077,6 @@
 
     if-ge v2, v9, :cond_0
 
-    .line 2069
     :cond_c
     const/16 v3, 0x54
 
@@ -1270,10 +1085,7 @@
 
 .method private getDataFromSlideshow(Landroid/content/Context;)V
     .locals 14
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 1602
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v10
@@ -1294,8 +1106,6 @@
 
     const/4 v4, 0x1
 
-    .line 1605
-    .local v4, "isEmergencyMode":Z
     :goto_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1315,8 +1125,6 @@
 
     const/4 v5, 0x1
 
-    .line 1607
-    .local v5, "isUltraPowerSavingMode":Z
     :goto_1
     const-string v10, "KeyguardEffectViewController"
 
@@ -1350,54 +1158,40 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1608
     if-nez v4, :cond_0
 
     if-eqz v5, :cond_4
 
-    .line 1609
     :cond_0
     const/4 v10, 0x0
 
     sput-object v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
-    .line 1645
     :cond_1
     :goto_2
     return-void
 
-    .line 1602
-    .end local v4    # "isEmergencyMode":Z
-    .end local v5    # "isUltraPowerSavingMode":Z
     :cond_2
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 1605
-    .restart local v4    # "isEmergencyMode":Z
     :cond_3
     const/4 v5, 0x0
 
     goto :goto_1
 
-    .line 1612
-    .restart local v5    # "isUltraPowerSavingMode":Z
     :cond_4
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
-    .line 1613
-    .local v7, "resolver":Landroid/content/ContentResolver;
     const-string v10, "content://com.samsung.slidinggallery"
 
     invoke-static {v10}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v8
 
-    .line 1614
-    .local v8, "uri":Landroid/net/Uri;
     const-string v10, "getData"
 
     const/4 v11, 0x0
@@ -1408,11 +1202,8 @@
 
     move-result-object v0
 
-    .line 1616
-    .local v0, "bundle":Landroid/os/Bundle;
     if-eqz v0, :cond_6
 
-    .line 1617
     const-string v10, "interval"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1421,7 +1212,6 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
-    .line 1618
     const-string v10, "imgCount"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1430,7 +1220,6 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTotalCount:I
 
-    .line 1619
     const-string v10, "time"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -1439,7 +1228,6 @@
 
     sput-wide v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTime:J
 
-    .line 1620
     const-string v10, "hour"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1448,7 +1236,6 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingHour:I
 
-    .line 1621
     const-string v10, "minute"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1457,18 +1244,14 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingMin:I
 
-    .line 1622
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 1623
-    .local v1, "calendar":Ljava/util/Calendar;
     sget-wide v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTime:J
 
     invoke-virtual {v1, v10, v11}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1624
     new-instance v10, Ljava/text/SimpleDateFormat;
 
     const-string v11, "HH"
@@ -1483,8 +1266,6 @@
 
     move-result-object v2
 
-    .line 1625
-    .local v2, "hourText":Ljava/lang/String;
     new-instance v10, Ljava/text/SimpleDateFormat;
 
     const-string v11, "mm"
@@ -1499,15 +1280,12 @@
 
     move-result-object v6
 
-    .line 1626
-    .local v6, "minuteText":Ljava/lang/String;
     sget v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
     const/4 v11, 0x2
 
     if-ne v10, v11, :cond_5
 
-    .line 1627
     new-instance v10, Ljava/text/SimpleDateFormat;
 
     const-string v11, "hh"
@@ -1522,7 +1300,6 @@
 
     move-result-object v2
 
-    .line 1629
     :cond_5
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
@@ -1534,7 +1311,6 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingHour:I
 
-    .line 1630
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v10
@@ -1545,7 +1321,6 @@
 
     sput v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingMin:I
 
-    .line 1631
     const-string v10, "uriArray"
 
     invoke-virtual {v0, v10}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
@@ -1554,7 +1329,6 @@
 
     sput-object v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
-    .line 1633
     const-string v10, "KeyguardEffectViewController"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1579,7 +1353,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1634
     const-string v10, "KeyguardEffectViewController"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1604,7 +1377,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1635
     const-string v10, "KeyguardEffectViewController"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1653,19 +1425,16 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1637
     sget-object v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
     if-eqz v10, :cond_1
 
-    .line 1638
     sget-object v10, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
     :goto_3
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1679,8 +1448,6 @@
 
     check-cast v9, Ljava/lang/String;
 
-    .line 1639
-    .local v9, "uriStr":Ljava/lang/String;
     const-string v10, "KeyguardEffectViewController"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1705,12 +1472,6 @@
 
     goto :goto_3
 
-    .line 1643
-    .end local v1    # "calendar":Ljava/util/Calendar;
-    .end local v2    # "hourText":Ljava/lang/String;
-    .end local v3    # "i$":Ljava/util/Iterator;
-    .end local v6    # "minuteText":Ljava/lang/String;
-    .end local v9    # "uriStr":Ljava/lang/String;
     :cond_6
     const/4 v10, 0x0
 
@@ -1721,29 +1482,23 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/android/keyguard/sec/KeyguardEffectViewController;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 401
     sget-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->sKeyguardEffectViewController:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     if-nez v0, :cond_0
 
-    .line 402
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->sKeyguardEffectViewController:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
-    .line 403
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "*** KeyguardEffectView create instance ***"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
     :cond_0
     sget-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->sKeyguardEffectViewController:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -1752,17 +1507,13 @@
 
 .method public static getInstanceIfExists(Landroid/content/Context;)Lcom/android/keyguard/sec/KeyguardEffectViewController;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 410
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "*** KeyguardEffectView getInstanceIfExists ***"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 412
     sget-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->sKeyguardEffectViewController:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     return-object v0
@@ -1770,16 +1521,11 @@
 
 .method public static getScaledBitmapDrawable(Landroid/content/Context;)Landroid/graphics/drawable/BitmapDrawable;
     .locals 12
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 1648
     invoke-static {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSlidingWallpaperPath(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1650
-    .local v8, "tempPath":Ljava/lang/String;
     const-string v9, "KeyguardEffectViewController"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1802,19 +1548,12 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1652
     const/4 v3, 0x0
 
-    .line 1653
-    .local v3, "sis":Ljava/io/InputStream;
     const/4 v5, 0x0
 
-    .line 1654
-    .local v5, "tempBitmap":Landroid/graphics/Bitmap;
     const/4 v6, 0x0
 
-    .line 1656
-    .local v6, "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     const-string v9, "/system/wallpaper/keyguard_empty_image.jpg"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -1823,7 +1562,6 @@
 
     if-eqz v9, :cond_0
 
-    .line 1657
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
@@ -1834,45 +1572,31 @@
 
     move-result-object v3
 
-    .line 1658
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
-    .end local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
     invoke-direct {v6, v9, v3}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Ljava/io/InputStream;)V
 
-    .restart local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     move-object v7, v6
 
-    .line 1691
-    .end local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
-    .local v7, "tempBitmapDrawable":Ljava/lang/Object;
     :goto_0
     return-object v7
 
-    .line 1663
-    .end local v7    # "tempBitmapDrawable":Ljava/lang/Object;
-    .restart local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :cond_0
     :try_start_0
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1664
-    .local v1, "mdmFile":Ljava/io/File;
     new-instance v4, Ljava/io/FileInputStream;
 
     invoke-direct {v4, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1665
-    .end local v3    # "sis":Ljava/io/InputStream;
-    .local v4, "sis":Ljava/io/InputStream;
     :try_start_1
     invoke-static {v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSlidingWallpaperDegree(Ljava/lang/String;)I
 
@@ -1880,37 +1604,30 @@
 
     sput v9, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOrientation:I
 
-    .line 1666
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 1667
-    .local v2, "opts":Landroid/graphics/BitmapFactory$Options;
     const/4 v9, 0x4
 
     iput v9, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 1668
     const/4 v9, 0x0
 
     invoke-static {v4, v9, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 1669
     sget v9, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOrientation:I
 
     if-lez v9, :cond_1
 
-    .line 1670
     sget v9, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOrientation:I
 
     invoke-static {v5, v9}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->adjustPhotoRotation(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 1673
     :cond_1
     const-string v9, "KeyguardEffectViewController"
 
@@ -1986,7 +1703,6 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1675
     if-eqz v5, :cond_2
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
@@ -2001,7 +1717,6 @@
 
     if-nez v9, :cond_3
 
-    .line 1676
     :cond_2
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2015,9 +1730,6 @@
 
     move-result-object v3
 
-    .line 1677
-    .end local v4    # "sis":Ljava/io/InputStream;
-    .restart local v3    # "sis":Ljava/io/InputStream;
     :try_start_2
     new-instance v9, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -2027,19 +1739,13 @@
 
     move-result-object v5
 
-    .line 1681
     :goto_1
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
-    .end local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     invoke-direct {v6, v5}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1687
-    .end local v1    # "mdmFile":Ljava/io/File;
-    .end local v2    # "opts":Landroid/graphics/BitmapFactory$Options;
-    .restart local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :goto_2
     :try_start_3
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
@@ -2049,16 +1755,8 @@
     :goto_3
     move-object v7, v6
 
-    .line 1691
-    .restart local v7    # "tempBitmapDrawable":Ljava/lang/Object;
     goto/16 :goto_0
 
-    .line 1679
-    .end local v3    # "sis":Ljava/io/InputStream;
-    .end local v7    # "tempBitmapDrawable":Ljava/lang/Object;
-    .restart local v1    # "mdmFile":Ljava/io/File;
-    .restart local v2    # "opts":Landroid/graphics/BitmapFactory$Options;
-    .restart local v4    # "sis":Ljava/io/InputStream;
     :cond_3
     :try_start_4
     sget v9, Lcom/android/keyguard/sec/KeyguardEffectViewController;->displayWidth:I
@@ -2075,19 +1773,11 @@
 
     move-object v3, v4
 
-    .end local v4    # "sis":Ljava/io/InputStream;
-    .restart local v3    # "sis":Ljava/io/InputStream;
     goto :goto_1
 
-    .line 1682
-    .end local v1    # "mdmFile":Ljava/io/File;
-    .end local v2    # "opts":Landroid/graphics/BitmapFactory$Options;
-    .end local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :catch_0
     move-exception v0
 
-    .line 1683
-    .local v0, "e":Ljava/io/IOException;
     :goto_4
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2099,7 +1789,6 @@
 
     move-result-object v3
 
-    .line 1684
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2108,120 +1797,83 @@
 
     invoke-direct {v6, v9, v3}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Ljava/io/InputStream;)V
 
-    .restart local v6    # "tempBitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     goto :goto_2
 
-    .line 1688
-    .end local v0    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 1689
-    .restart local v0    # "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_3
 
-    .line 1682
-    .end local v0    # "e":Ljava/io/IOException;
-    .end local v3    # "sis":Ljava/io/InputStream;
-    .restart local v1    # "mdmFile":Ljava/io/File;
-    .restart local v4    # "sis":Ljava/io/InputStream;
     :catch_2
     move-exception v0
 
     move-object v3, v4
 
-    .end local v4    # "sis":Ljava/io/InputStream;
-    .restart local v3    # "sis":Ljava/io/InputStream;
     goto :goto_4
 .end method
 
 .method private getSeasonalLockSoundId(IZ)I
     .locals 1
-    .param p1, "season"    # I
-    .param p2, "isLock"    # Z
 
-    .prologue
-    .line 2118
     const/4 v0, 0x0
 
-    .line 2120
-    .local v0, "soundId":I
     packed-switch p1, :pswitch_data_0
 
-    .line 2150
     const/4 v0, 0x0
 
-    .line 2153
     :goto_0
     return v0
 
-    .line 2122
     :pswitch_0
     if-eqz p2, :cond_0
 
-    .line 2123
     sget v0, Lcom/android/keyguard/R$raw;->spring_lock:I
 
     goto :goto_0
 
-    .line 2125
     :cond_0
     sget v0, Lcom/android/keyguard/R$raw;->spring_unlock:I
 
-    .line 2127
     goto :goto_0
 
-    .line 2129
     :pswitch_1
     if-eqz p2, :cond_1
 
-    .line 2130
     sget v0, Lcom/android/keyguard/R$raw;->summer_lock:I
 
     goto :goto_0
 
-    .line 2132
     :cond_1
     sget v0, Lcom/android/keyguard/R$raw;->summer_unlock:I
 
-    .line 2134
     goto :goto_0
 
-    .line 2136
     :pswitch_2
     if-eqz p2, :cond_2
 
-    .line 2137
     sget v0, Lcom/android/keyguard/R$raw;->autumn_lock:I
 
     goto :goto_0
 
-    .line 2139
     :cond_2
     sget v0, Lcom/android/keyguard/R$raw;->autumn_unlock:I
 
-    .line 2141
     goto :goto_0
 
-    .line 2143
     :pswitch_3
     if-eqz p2, :cond_3
 
-    .line 2144
     sget v0, Lcom/android/keyguard/R$raw;->winter_lock:I
 
     goto :goto_0
 
-    .line 2146
     :cond_3
     sget v0, Lcom/android/keyguard/R$raw;->winter_unlock:I
 
-    .line 2148
     goto :goto_0
 
-    .line 2120
     :pswitch_data_0
     .packed-switch 0x51
         :pswitch_0
@@ -2233,102 +1885,62 @@
 
 .method private getSeasonalLockSoundPath(IZ)Ljava/lang/String;
     .locals 1
-    .param p1, "season"    # I
-    .param p2, "isLock"    # Z
 
-    .prologue
-    .line 2080
     packed-switch p1, :pswitch_data_0
 
-    .line 2110
     const/4 v0, 0x0
 
-    .line 2113
-    .local v0, "path":Ljava/lang/String;
     :goto_0
     return-object v0
 
-    .line 2082
-    .end local v0    # "path":Ljava/lang/String;
     :pswitch_0
     if-eqz p2, :cond_0
 
-    .line 2083
     const-string v0, "/system/media/audio/ui/spring_lock.ogg"
 
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2085
-    .end local v0    # "path":Ljava/lang/String;
     :cond_0
     const-string v0, "/system/media/audio/ui/spring_unlock.ogg"
 
-    .line 2087
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2089
-    .end local v0    # "path":Ljava/lang/String;
     :pswitch_1
     if-eqz p2, :cond_1
 
-    .line 2090
     const-string v0, "/system/media/audio/ui/summer_lock.ogg"
 
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2092
-    .end local v0    # "path":Ljava/lang/String;
     :cond_1
     const-string v0, "/system/media/audio/ui/summer_unlock.ogg"
 
-    .line 2094
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2096
-    .end local v0    # "path":Ljava/lang/String;
     :pswitch_2
     if-eqz p2, :cond_2
 
-    .line 2097
     const-string v0, "/system/media/audio/ui/autumn_lock.ogg"
 
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2099
-    .end local v0    # "path":Ljava/lang/String;
     :cond_2
     const-string v0, "/system/media/audio/ui/autumn_unlock.ogg"
 
-    .line 2101
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2103
-    .end local v0    # "path":Ljava/lang/String;
     :pswitch_3
     if-eqz p2, :cond_3
 
-    .line 2104
     const-string v0, "/system/media/audio/ui/winter_lock.ogg"
 
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2106
-    .end local v0    # "path":Ljava/lang/String;
     :cond_3
     const-string v0, "/system/media/audio/ui/winter_unlock.ogg"
 
-    .line 2108
-    .restart local v0    # "path":Ljava/lang/String;
     goto :goto_0
 
-    .line 2080
     nop
 
     :pswitch_data_0
@@ -2342,21 +1954,14 @@
 
 .method private static getSlidingWallpaperDegree(Ljava/lang/String;)I
     .locals 6
-    .param p0, "path"    # Ljava/lang/String;
 
-    .prologue
-    .line 1695
     const/4 v0, 0x0
 
-    .line 1697
-    .local v0, "degree":I
     :try_start_0
     new-instance v2, Landroid/media/ExifInterface;
 
     invoke-direct {v2, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 1698
-    .local v2, "exifInterface":Landroid/media/ExifInterface;
     const-string v4, "Orientation"
 
     const/4 v5, 0x1
@@ -2367,52 +1972,34 @@
 
     move-result v3
 
-    .line 1699
-    .local v3, "orientation":I
     packed-switch v3, :pswitch_data_0
 
-    .line 1713
-    .end local v2    # "exifInterface":Landroid/media/ExifInterface;
-    .end local v3    # "orientation":I
     :goto_0
     :pswitch_0
     return v0
 
-    .line 1701
-    .restart local v2    # "exifInterface":Landroid/media/ExifInterface;
-    .restart local v3    # "orientation":I
     :pswitch_1
     const/16 v0, 0x5a
 
-    .line 1702
     goto :goto_0
 
-    .line 1704
     :pswitch_2
     const/16 v0, 0xb4
 
-    .line 1705
     goto :goto_0
 
-    .line 1707
     :pswitch_3
     const/16 v0, 0x10e
 
     goto :goto_0
 
-    .line 1710
-    .end local v2    # "exifInterface":Landroid/media/ExifInterface;
-    .end local v3    # "orientation":I
     :catch_0
     move-exception v1
 
-    .line 1711
-    .local v1, "e":Ljava/io/IOException;
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 1699
     nop
 
     :pswitch_data_0
@@ -2428,23 +2015,15 @@
 
 .method public static getSlidingWallpaperPath(Landroid/content/Context;)Ljava/lang/String;
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 1479
     const/4 v2, 0x0
 
-    .line 1480
-    .local v2, "ret":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1482
-    .local v1, "path":Ljava/lang/String;
     sget-object v3, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_2
 
-    .line 1483
     const-string v3, "KeyguardEffectViewController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2485,7 +2064,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1485
     sget v3, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
     sget-object v4, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
@@ -2496,12 +2074,10 @@
 
     if-lt v3, v4, :cond_0
 
-    .line 1486
     const/4 v3, 0x0
 
     sput v3, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
-    .line 1489
     :cond_0
     sget-object v3, Lcom/android/keyguard/sec/KeyguardEffectViewController;->uriArray:Ljava/util/ArrayList;
 
@@ -2511,28 +2087,20 @@
 
     move-result-object v2
 
-    .end local v2    # "ret":Ljava/lang/String;
     check-cast v2, Ljava/lang/String;
 
-    .line 1490
-    .restart local v2    # "ret":Ljava/lang/String;
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1491
-    .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 1492
     const-string v2, "/system/wallpaper/keyguard_empty_image.jpg"
 
-    .line 1496
-    .end local v0    # "file":Ljava/io/File;
     :cond_1
     :goto_0
     const-string v3, "KeyguardEffectViewController"
@@ -2557,10 +2125,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1497
     return-object v2
 
-    .line 1494
     :cond_2
     const-string v2, "/system/wallpaper/keyguard_empty_image.jpg"
 
@@ -2570,14 +2136,12 @@
 .method private handleChargeStateChange()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x0
 
     const/4 v3, 0x0
 
     const/4 v2, 0x1
 
-    .line 845
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->isChargeState()Z
@@ -2586,12 +2150,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 846
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
     if-ne v0, v2, :cond_0
 
-    .line 847
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -2600,13 +2162,10 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 848
     iput-boolean v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
-    .line 849
     iput-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 851
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -2616,17 +2175,14 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 852
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 853
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-nez v0, :cond_2
 
-    .line 854
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -2635,16 +2191,13 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
-    .line 858
     :goto_0
     iput-boolean v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
-    .line 867
     :cond_1
     :goto_1
     return-void
 
-    .line 856
     :cond_2
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
@@ -2656,13 +2209,11 @@
 
     goto :goto_0
 
-    .line 861
     :cond_3
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
     if-ne v0, v2, :cond_1
 
-    .line 862
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -2671,10 +2222,8 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 863
     iput-boolean v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
-    .line 864
     iput-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     goto :goto_1
@@ -2683,10 +2232,8 @@
 .method private handleFestivalEffect()Z
     .locals 6
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 690
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v3}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->isEnabled()Z
@@ -2703,7 +2250,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 691
     :cond_0
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -2711,18 +2257,12 @@
 
     move-result v1
 
-    .line 692
-    .local v1, "isStrongPowerSavingEnabled":Z
     if-eqz v1, :cond_2
 
-    .line 750
-    .end local v1    # "isStrongPowerSavingEnabled":Z
     :cond_1
     :goto_0
     return v2
 
-    .line 696
-    .restart local v1    # "isStrongPowerSavingEnabled":Z
     :cond_2
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -2730,26 +2270,20 @@
 
     move-result-object v0
 
-    .line 697
-    .local v0, "festivalView":Lcom/android/keyguard/sec/KeyguardEffectViewBase;
     if-eqz v0, :cond_1
 
-    .line 698
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eq v3, v0, :cond_3
 
-    .line 699
     const-string v3, "KeyguardFestivalEffect"
 
     const-string v4, "change festival"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 700
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 701
     const-string v3, "KeyguardEffectViewController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2774,10 +2308,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 717
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 720
     :cond_3
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -2787,12 +2319,10 @@
 
     if-eqz v3, :cond_4
 
-    .line 721
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 722
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v2}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->getUnlockEffectView()Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -2801,52 +2331,42 @@
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 723
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 724
     const/16 v2, 0x55
 
     iput v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 725
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setForeground()V
 
-    .line 746
     :goto_1
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 736
     :cond_4
     sget-object v3, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->circle:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 737
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     invoke-direct {p0, v3}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->makeForeground(Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;)V
 
-    .line 738
     iput v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 739
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v2, :cond_5
 
-    .line 740
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     goto :goto_1
 
-    .line 742
     :cond_5
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -2858,19 +2378,16 @@
 .method private handleSetGradationLayer()V
     .locals 6
 
-    .prologue
     const/4 v5, -0x2
 
     const/4 v0, 0x1
 
     const/4 v4, -0x1
 
-    .line 2157
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
-    .line 2158
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2883,10 +2400,8 @@
 
     move-result v1
 
-    if-ne v1, v0, :cond_2
+    if-ne v1, v0, :cond_4
 
-    .line 2160
-    .local v0, "isPreloadedWallpaper":Z
     :goto_0
     const-string v1, "KeyguardEffectViewController"
 
@@ -2910,21 +2425,28 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2161
-    if-nez v0, :cond_4
+    if-nez v0, :cond_0
 
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isSupportBlendedFilter()Z
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-eqz v1, :cond_1
 
-    .line 2162
+    :cond_0
+    iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardProperties;->isDcmLauncherWithoutSecure(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    :cond_1
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 2163
     new-instance v1, Landroid/view/View;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -2933,14 +2455,12 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
-    .line 2164
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
     sget v2, Lcom/android/keyguard/R$drawable;->gradation_indi_bg:I
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 2165
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
@@ -2949,8 +2469,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2168
-    :cond_0
+    :cond_2
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
@@ -2959,30 +2478,24 @@
 
     move-result v1
 
-    if-ne v1, v4, :cond_3
+    if-ne v1, v4, :cond_5
 
-    .line 2169
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 2181
-    .end local v0    # "isPreloadedWallpaper":Z
-    :cond_1
+    :cond_3
     :goto_1
     return-void
 
-    .line 2158
-    :cond_2
+    :cond_4
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 2172
-    .restart local v0    # "isPreloadedWallpaper":Z
-    :cond_3
+    :cond_5
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
@@ -2991,20 +2504,17 @@
 
     goto :goto_1
 
-    .line 2175
-    :cond_4
+    :cond_6
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
-    .line 2176
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 2177
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mStatusBarGradationView:Landroid/view/View;
@@ -3015,8 +2525,6 @@
 .method private handleWallpaperImageChanged()V
     .locals 3
 
-    .prologue
-    .line 1169
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
     if-eqz v0, :cond_1
@@ -3033,25 +2541,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 1184
     :cond_0
     :goto_0
     return-void
 
-    .line 1172
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1175
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isRichLockWallpaper()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1176
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3064,14 +2568,15 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1181
     :cond_2
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleWallpaperTypeChanged()V
 
-    .line 1182
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->updateMontblancEffectType()V
 
-    .line 1183
+    iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
@@ -3082,21 +2587,19 @@
 .method private handleWallpaperTypeChanged()V
     .locals 6
 
-    .prologue
     const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v4, -0x2
 
-    .line 754
+    const/4 v3, 0x0
+
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     if-nez v1, :cond_0
 
-    .line 836
     :goto_0
     return-void
 
-    .line 758
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -3106,20 +2609,16 @@
 
     const-string v2, "lockscreen_ripple_effect"
 
-    const/4 v3, -0x2
-
-    invoke-static {v1, v2, v4, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 760
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-nez v1, :cond_1
 
-    .line 762
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewNone;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3128,7 +2627,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 772
     :cond_1
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isZoomPanningEffectEnabled()Z
 
@@ -3142,12 +2640,10 @@
 
     if-ne v1, v5, :cond_2
 
-    .line 773
     const/16 v1, 0x50
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 775
     :cond_2
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleFestivalEffect()Z
 
@@ -3155,19 +2651,16 @@
 
     if-eqz v1, :cond_3
 
-    .line 776
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->unspecified:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 777
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->unspecified:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     goto :goto_0
 
-    .line 785
     :cond_3
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -3175,11 +2668,8 @@
 
     move-result v0
 
-    .line 787
-    .local v0, "wallpaperType":I
     packed-switch v0, :pswitch_data_0
 
-    .line 797
     :pswitch_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
@@ -3187,23 +2677,21 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 801
     :goto_1
+    invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleSetGradationLayer()V
+
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldEffect:I
 
     iget v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
     if-eq v1, v2, :cond_4
 
-    .line 802
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldEffect:I
 
-    .line 803
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->reloadLockSound()V
 
-    .line 806
     :cond_4
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
@@ -3221,17 +2709,14 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 807
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     if-nez v1, :cond_5
 
-    .line 808
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->circle:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 810
     :cond_5
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
@@ -3249,17 +2734,14 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 811
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     if-nez v1, :cond_6
 
-    .line 812
     sget-object v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->wallpaper:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 814
     :cond_6
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
@@ -3273,18 +2755,15 @@
 
     if-ne v1, v2, :cond_8
 
-    .line 815
     :cond_7
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .line 816
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
     invoke-direct {p0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->makeForeground(Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;)V
 
-    .line 818
     :cond_8
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
@@ -3292,17 +2771,14 @@
 
     if-eq v1, v2, :cond_a
 
-    .line 819
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mOldBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .line 820
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     invoke-direct {p0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->makeBackground(Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;)V
 
-    .line 825
     :cond_9
     :goto_2
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
@@ -3345,47 +2821,48 @@
 
     if-ne v1, v2, :cond_b
 
-    .line 827
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 834
     :goto_3
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setLayerAndBitmapForParticleEffect()V
 
-    .line 835
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->updateAttributionInfoView()V
 
     goto/16 :goto_0
 
-    .line 789
     :pswitch_1
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 790
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     goto/16 :goto_1
 
-    .line 793
     :pswitch_2
     const/16 v1, 0x64
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    .line 794
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     goto/16 :goto_1
 
-    .line 821
+    :pswitch_3
+    iput v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
+
+    iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    goto/16 :goto_1
+
     :cond_a
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isJustLockLiveEnabled()Z
 
@@ -3393,27 +2870,23 @@
 
     if-eqz v1, :cond_9
 
-    .line 822
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto :goto_2
 
-    .line 828
     :cond_b
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-nez v1, :cond_c
 
-    .line 829
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     goto :goto_3
 
-    .line 831
     :cond_c
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3421,7 +2894,6 @@
 
     goto :goto_3
 
-    .line 787
     nop
 
     :pswitch_data_0
@@ -3429,37 +2901,69 @@
         :pswitch_1
         :pswitch_0
         :pswitch_2
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method private initWallpaperTypes()V
-    .locals 4
+    .locals 6
 
-    .prologue
-    const/4 v3, -0x1
+    const/4 v5, 0x1
 
-    .line 449
+    const/4 v4, -0x1
+
+    const/4 v3, -0x2
+
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
-    .line 450
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
-    .line 451
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
-    .line 454
+    iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->none:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->circle:Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3470,7 +2974,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 455
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3481,36 +2984,28 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 456
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 458
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setDefaultEffectViewTypes()V
 
-    .line 459
     return-void
 .end method
 
 .method public static isLockScreenEffect(I)Z
     .locals 2
-    .param p0, "effectType"    # I
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 416
     if-eqz p0, :cond_0
 
     if-eq p0, v0, :cond_0
@@ -3591,7 +3086,6 @@
 
     if-ne p0, v1, :cond_1
 
-    .line 440
     :cond_0
     :goto_0
     return v0
@@ -3604,12 +3098,9 @@
 
 .method private makeBackground(Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;)V
     .locals 3
-    .param p1, "background"    # Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 979
     sget-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController$8;->$SwitchMap$com$android$keyguard$sec$KeyguardEffectViewController$Background:[I
 
     invoke-virtual {p1}, Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;->ordinal()I
@@ -3620,19 +3111,15 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1135
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1136
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1138
     :cond_0
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 1142
     :cond_1
     :goto_0
     :pswitch_0
@@ -3640,10 +3127,8 @@
 
     iput-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUserSwitching:Z
 
-    .line 1143
     return-void
 
-    .line 982
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3651,10 +3136,8 @@
 
     if-nez v0, :cond_2
 
-    .line 983
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 984
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3663,25 +3146,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 985
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto :goto_0
 
-    .line 986
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 987
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v0, v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
 
     if-eqz v0, :cond_3
 
-    .line 988
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
@@ -3692,7 +3171,6 @@
 
     goto :goto_0
 
-    .line 991
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3700,7 +3178,6 @@
 
     goto :goto_0
 
-    .line 1006
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3708,10 +3185,8 @@
 
     if-nez v0, :cond_4
 
-    .line 1007
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1008
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3720,25 +3195,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1009
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto :goto_0
 
-    .line 1010
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1011
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto :goto_0
 
-    .line 1015
     :pswitch_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3746,10 +3217,8 @@
 
     if-nez v0, :cond_5
 
-    .line 1016
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1017
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewWaterColor;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3758,30 +3227,25 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1018
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 1019
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto :goto_0
 
-    .line 1020
     :cond_5
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1021
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto :goto_0
 
-    .line 1026
     :pswitch_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3789,10 +3253,8 @@
 
     if-nez v0, :cond_6
 
-    .line 1027
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1028
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3801,25 +3263,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1029
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto/16 :goto_0
 
-    .line 1030
     :cond_6
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1031
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1046
     :pswitch_5
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3827,10 +3285,8 @@
 
     if-nez v0, :cond_7
 
-    .line 1047
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1048
     new-instance v0, Lcom/android/keyguard/sec/rich/KeyguardEffectViewLiveWallpaper;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3839,25 +3295,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1049
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto/16 :goto_0
 
-    .line 1050
     :cond_7
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1051
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1069
     :pswitch_6
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3865,10 +3317,8 @@
 
     if-nez v0, :cond_8
 
-    .line 1070
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1071
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3877,30 +3327,25 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1075
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 1076
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1077
     :cond_8
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1078
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1083
     :pswitch_7
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3908,10 +3353,8 @@
 
     if-nez v0, :cond_9
 
-    .line 1084
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1085
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3920,25 +3363,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1086
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto/16 :goto_0
 
-    .line 1087
     :cond_9
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1088
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1093
     :pswitch_8
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3946,10 +3385,8 @@
 
     if-nez v0, :cond_a
 
-    .line 1094
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1095
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3958,25 +3395,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1096
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto/16 :goto_0
 
-    .line 1097
     :cond_a
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1098
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1113
     :pswitch_9
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -3984,10 +3417,8 @@
 
     if-nez v0, :cond_b
 
-    .line 1114
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1115
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewGeometricMosaic;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -3996,30 +3427,25 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1116
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 1117
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1118
     :cond_b
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1119
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1123
     :pswitch_a
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -4027,10 +3453,8 @@
 
     if-nez v0, :cond_c
 
-    .line 1124
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1125
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewAbstractTile;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -4039,30 +3463,25 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1126
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
-    .line 1127
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 1128
     :cond_c
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1129
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
     goto/16 :goto_0
 
-    .line 979
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -4083,12 +3502,9 @@
 
 .method private makeForeground(Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;)V
     .locals 3
-    .param p1, "foreground"    # Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 906
     sget-object v0, Lcom/android/keyguard/sec/KeyguardEffectViewController$8;->$SwitchMap$com$android$keyguard$sec$KeyguardEffectViewController$Foreground:[I
 
     invoke-virtual {p1}, Lcom/android/keyguard/sec/KeyguardEffectViewController$Foreground;->ordinal()I
@@ -4099,18 +3515,14 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 953
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 957
     :cond_0
     :goto_0
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setForeground()V
 
-    .line 958
     return-void
 
-    .line 908
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -4118,10 +3530,8 @@
 
     if-nez v0, :cond_0
 
-    .line 909
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 910
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewLensFlare;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -4132,7 +3542,6 @@
 
     goto :goto_0
 
-    .line 914
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -4140,10 +3549,8 @@
 
     if-nez v0, :cond_0
 
-    .line 915
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 916
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -4154,7 +3561,6 @@
 
     goto :goto_0
 
-    .line 920
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -4162,10 +3568,8 @@
 
     if-nez v0, :cond_0
 
-    .line 921
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 922
     new-instance v0, Lcom/android/keyguard/sec/MassRippleUnlockTwin;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -4176,7 +3580,6 @@
 
     goto :goto_0
 
-    .line 926
     :pswitch_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -4184,10 +3587,8 @@
 
     if-nez v0, :cond_0
 
-    .line 927
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 928
     new-instance v0, Lcom/android/keyguard/sec/MassTensionUnlockView;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -4198,7 +3599,6 @@
 
     goto :goto_0
 
-    .line 933
     :pswitch_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4214,7 +3614,6 @@
 
     goto :goto_0
 
-    .line 937
     :pswitch_5
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4230,7 +3629,6 @@
 
     goto :goto_0
 
-    .line 941
     :pswitch_6
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4246,7 +3644,6 @@
 
     goto :goto_0
 
-    .line 945
     :pswitch_7
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4262,7 +3659,6 @@
 
     goto :goto_0
 
-    .line 948
     :pswitch_8
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4278,7 +3674,6 @@
 
     goto/16 :goto_0
 
-    .line 906
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -4296,31 +3691,25 @@
 .method private setBackground()V
     .locals 3
 
-    .prologue
     const/4 v2, -0x1
 
-    .line 1146
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1147
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->cleanUp()V
 
-    .line 1149
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 1151
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1152
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -4329,10 +3718,8 @@
 
     invoke-virtual {v1, v0, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 1153
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleSetGradationLayer()V
 
-    .line 1156
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -4342,7 +3729,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 1157
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->getChargeEffectView()Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -4351,12 +3737,10 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 1158
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1159
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -4365,12 +3749,10 @@
 
     invoke-virtual {v1, v0, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 1160
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBgHasAddChargeView:Z
 
-    .line 1163
     :cond_2
     return-void
 .end method
@@ -4378,7 +3760,6 @@
 .method private setDefaultEffectViewTypes()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -4389,7 +3770,6 @@
 
     const/4 v3, 0x1
 
-    .line 463
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4400,7 +3780,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 464
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4411,7 +3790,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 465
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4424,7 +3802,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 468
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4435,7 +3812,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 469
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4446,7 +3822,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 470
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4459,7 +3834,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 473
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4470,7 +3844,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 474
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4481,7 +3854,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 475
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4494,7 +3866,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 478
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x51
@@ -4507,7 +3878,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 479
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x51
@@ -4520,7 +3890,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 480
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x51
@@ -4535,7 +3904,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 483
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x52
@@ -4548,7 +3916,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 484
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x52
@@ -4561,7 +3928,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 485
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x52
@@ -4576,7 +3942,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 488
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x53
@@ -4589,7 +3954,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 489
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x53
@@ -4602,7 +3966,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 490
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x53
@@ -4617,7 +3980,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 493
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x54
@@ -4630,7 +3992,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 494
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x54
@@ -4643,7 +4004,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 495
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x54
@@ -4658,7 +4018,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 498
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x55
@@ -4671,7 +4030,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 499
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x55
@@ -4684,7 +4042,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 500
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x55
@@ -4699,7 +4056,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 503
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4710,7 +4066,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 504
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4721,7 +4076,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 505
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4734,7 +4088,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 508
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4745,7 +4098,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 509
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4756,7 +4108,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 510
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4769,7 +4120,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 513
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -4782,7 +4132,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 514
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -4795,7 +4144,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 515
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -4810,7 +4158,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 518
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -4823,7 +4170,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 519
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -4836,7 +4182,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 520
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -4851,7 +4196,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 523
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -4864,7 +4208,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 524
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -4877,7 +4220,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 525
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -4892,7 +4234,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 528
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -4905,7 +4246,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 529
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -4918,7 +4258,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 530
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -4933,7 +4272,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 533
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -4946,7 +4284,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 534
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -4959,7 +4296,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 535
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -4974,7 +4310,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 538
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x64
@@ -4987,7 +4322,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 539
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x64
@@ -5000,7 +4334,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 540
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x64
@@ -5015,7 +4348,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 543
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x50
@@ -5028,7 +4360,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 544
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x50
@@ -5041,7 +4372,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 545
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x50
@@ -5056,7 +4386,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 548
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -5069,7 +4398,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 549
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -5082,7 +4410,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 550
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -5097,7 +4424,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 553
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x65
@@ -5110,7 +4436,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 554
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x65
@@ -5123,7 +4448,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 555
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0x65
@@ -5138,7 +4462,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 557
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -5151,7 +4474,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 558
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -5164,7 +4486,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 559
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -5179,7 +4500,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 562
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xc
@@ -5192,7 +4512,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 563
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundTypeMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xc
@@ -5205,7 +4524,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 564
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectViewMapping:Ljava/util/HashMap;
 
     const/16 v1, 0xc
@@ -5220,32 +4538,26 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 565
     return-void
 .end method
 
 .method private setForeground()V
     .locals 3
 
-    .prologue
     const/4 v2, -0x1
 
-    .line 961
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 962
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 964
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 965
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -5254,7 +4566,6 @@
 
     invoke-virtual {v1, v0, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 967
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -5263,12 +4574,10 @@
 
     invoke-virtual {v1, v0, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 976
     :cond_0
     :goto_0
     return-void
 
-    .line 971
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
@@ -5283,21 +4592,13 @@
 
 .method public static setSlidingWallpaperInfo(Landroid/content/Context;Landroid/content/Intent;)Z
     .locals 18
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 1523
     const/4 v12, 0x0
 
-    .line 1525
-    .local v12, "results":Z
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1527
-    .local v0, "action":Ljava/lang/String;
     const-string v13, "KeyguardEffectViewController"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -5334,40 +4635,32 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1528
     const-wide/16 v8, 0x0
 
-    .line 1529
-    .local v8, "minuteThreshold":J
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
     packed-switch v13, :pswitch_data_0
 
-    .line 1590
     :cond_0
     :goto_0
     if-eqz v12, :cond_1
 
-    .line 1591
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
     add-int/lit8 v13, v13, 0x1
 
     sput v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
-    .line 1592
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
     sget v14, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTotalCount:I
 
     if-lt v13, v14, :cond_1
 
-    .line 1593
     const/4 v13, 0x0
 
     sput v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingWallpaperIndex:I
 
-    .line 1596
     :cond_1
     const-string v13, "KeyguardEffectViewController"
 
@@ -5403,10 +4696,8 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1598
     return v12
 
-    .line 1531
     :pswitch_0
     const-string v13, "android.intent.action.SCREEN_OFF"
 
@@ -5416,12 +4707,10 @@
 
     if-eqz v13, :cond_0
 
-    .line 1532
     const/4 v12, 0x1
 
     goto :goto_0
 
-    .line 1536
     :pswitch_1
     const-wide/16 v14, 0x0
 
@@ -5429,10 +4718,8 @@
 
     if-nez v13, :cond_2
 
-    .line 1537
     const-wide/16 v8, 0x3c
 
-    .line 1540
     :cond_2
     :pswitch_2
     const-wide/16 v14, 0x0
@@ -5441,10 +4728,8 @@
 
     if-nez v13, :cond_3
 
-    .line 1541
     const-wide/16 v8, 0x2d0
 
-    .line 1544
     :cond_3
     :pswitch_3
     const-wide/16 v14, 0x0
@@ -5453,10 +4738,8 @@
 
     if-nez v13, :cond_4
 
-    .line 1545
     const-wide/16 v8, 0x5a0
 
-    .line 1547
     :cond_4
     const-wide/16 v14, 0x3c
 
@@ -5466,7 +4749,6 @@
 
     mul-long v8, v14, v16
 
-    .line 1548
     const-string v13, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5475,7 +4757,6 @@
 
     if-eqz v13, :cond_6
 
-    .line 1549
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
@@ -5488,8 +4769,6 @@
 
     move-result-wide v10
 
-    .line 1550
-    .local v10, "minutesCount":J
     sget-wide v14, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingScreenOffTime:J
 
     sget-wide v16, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTime:J
@@ -5498,7 +4777,6 @@
 
     if-lez v13, :cond_5
 
-    .line 1551
     sget-wide v14, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingScreenOffTime:J
 
     sget-wide v16, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingTime:J
@@ -5513,7 +4791,6 @@
 
     add-long/2addr v10, v14
 
-    .line 1555
     :goto_1
     const-string v13, "KeyguardEffectViewController"
 
@@ -5553,17 +4830,14 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1556
     cmp-long v13, v10, v8
 
     if-ltz v13, :cond_0
 
-    .line 1557
     const/4 v12, 0x1
 
     goto/16 :goto_0
 
-    .line 1553
     :cond_5
     sget-wide v14, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingScreenOffTime:J
 
@@ -5583,8 +4857,6 @@
 
     goto :goto_1
 
-    .line 1559
-    .end local v10    # "minutesCount":J
     :cond_6
     const-string v13, "android.intent.action.TIME_TICK"
 
@@ -5594,20 +4866,16 @@
 
     if-eqz v13, :cond_0
 
-    .line 1560
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 1561
-    .local v1, "calendar":Ljava/util/Calendar;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
 
     invoke-virtual {v1, v14, v15}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1563
     new-instance v13, Ljava/text/SimpleDateFormat;
 
     const-string v14, "HH"
@@ -5622,8 +4890,6 @@
 
     move-result-object v2
 
-    .line 1564
-    .local v2, "hourText":Ljava/lang/String;
     new-instance v13, Ljava/text/SimpleDateFormat;
 
     const-string v14, "hh"
@@ -5638,8 +4904,6 @@
 
     move-result-object v3
 
-    .line 1565
-    .local v3, "hourTextBy12":Ljava/lang/String;
     new-instance v13, Ljava/text/SimpleDateFormat;
 
     const-string v14, "mm"
@@ -5654,8 +4918,6 @@
 
     move-result-object v7
 
-    .line 1566
-    .local v7, "minuteText":Ljava/lang/String;
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v13
@@ -5664,8 +4926,6 @@
 
     move-result v4
 
-    .line 1567
-    .local v4, "mHour":I
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v13
@@ -5674,8 +4934,6 @@
 
     move-result v5
 
-    .line 1568
-    .local v5, "mHour12":I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v13
@@ -5684,8 +4942,6 @@
 
     move-result v6
 
-    .line 1569
-    .local v6, "mMinute":I
     const-string v13, "KeyguardEffectViewController"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -5742,24 +4998,20 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1571
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
     const/4 v14, 0x1
 
     if-ne v13, v14, :cond_7
 
-    .line 1572
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingMin:I
 
     if-ne v6, v13, :cond_0
 
-    .line 1573
     const/4 v12, 0x1
 
     goto/16 :goto_0
 
-    .line 1575
     :cond_7
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
@@ -5767,7 +5019,6 @@
 
     if-ne v13, v14, :cond_8
 
-    .line 1576
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingHour:I
 
     if-ne v5, v13, :cond_0
@@ -5776,12 +5027,10 @@
 
     if-ne v6, v13, :cond_0
 
-    .line 1577
     const/4 v12, 0x1
 
     goto/16 :goto_0
 
-    .line 1579
     :cond_8
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingInterval:I
 
@@ -5789,7 +5038,6 @@
 
     if-ne v13, v14, :cond_0
 
-    .line 1580
     sget v13, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mSlidingHour:I
 
     if-ne v4, v13, :cond_0
@@ -5798,12 +5046,10 @@
 
     if-ne v6, v13, :cond_0
 
-    .line 1581
     const/4 v12, 0x1
 
     goto/16 :goto_0
 
-    .line 1529
     nop
 
     :pswitch_data_0
@@ -5818,12 +5064,10 @@
 .method private final setWallpaperContentObservers()V
     .locals 6
 
-    .prologue
     const/4 v5, 0x0
 
     const/4 v4, -0x1
 
-    .line 568
     new-instance v1, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -5832,7 +5076,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 615
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5849,7 +5092,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 617
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5866,7 +5108,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 619
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5883,7 +5124,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 621
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5900,7 +5140,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 623
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5917,7 +5156,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 625
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5934,7 +5172,6 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 627
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5951,61 +5188,48 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 630
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setWallpaperFileObserver()V
 
-    .line 632
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 633
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "com.sec.android.slidingGallery.LOCKSCREEN_IMAGE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 634
     const-string v1, "android.intent.action.TIME_TICK"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 635
     const-string v1, "android.intent.action.TIME_SET"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 638
     const-string v1, "android.intent.action.sec.LSO_CONFIG_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 642
     const-string v1, "android.intent.action.DEFAULT_CS_SIM_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 643
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAdminReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 644
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mRegisterReceiver:Z
 
-    .line 645
     return-void
 .end method
 
 .method private setWallpaperFileObserver()V
     .locals 3
 
-    .prologue
-    .line 648
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -6022,7 +5246,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
-    .line 651
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6047,16 +5270,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 652
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 687
     :goto_0
     return-void
 
-    .line 655
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
@@ -6072,28 +5292,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 656
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getDataFromSlideshow(Landroid/content/Context;)V
 
-    .line 659
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFileObserver:Landroid/os/FileObserver;
 
     if-eqz v0, :cond_2
 
-    .line 660
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFileObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v0}, Landroid/os/FileObserver;->stopWatching()V
 
-    .line 661
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFileObserver:Landroid/os/FileObserver;
 
-    .line 664
     :cond_2
     new-instance v0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;
 
@@ -6103,7 +5318,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFileObserver:Landroid/os/FileObserver;
 
-    .line 686
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFileObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v0}, Landroid/os/FileObserver;->startWatching()V
@@ -6116,31 +5330,25 @@
 .method public changeEffectType()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x0
 
     const/4 v3, -0x2
 
-    .line 1799
     const-string v1, "KeyguardEffectViewController"
 
     const-string v2, "changeEffectType()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1801
     iget-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mEmergencyModeStateChanged:Z
 
     if-eqz v1, :cond_0
 
-    .line 1802
     iput-boolean v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mEmergencyModeStateChanged:Z
 
-    .line 1819
     :goto_0
     return-void
 
-    .line 1806
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -6154,8 +5362,6 @@
 
     move-result v0
 
-    .line 1809
-    .local v0, "changedDefaultWallpaperType":I
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -6166,7 +5372,6 @@
 
     invoke-static {v1, v2, v4, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1816
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -6183,17 +5388,14 @@
 .method public changeWallpaperByScreenOff()V
     .locals 4
 
-    .prologue
     const/16 v3, 0x12f2
 
-    .line 1822
     const-string v1, "KeyguardEffectViewController"
 
     const-string v2, "changeWallpaperByScreenOff()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1824
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
     if-eqz v1, :cond_1
@@ -6208,22 +5410,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 1825
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1826
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "KeyguardEffectViewController"
 
     const-string v2, "change sliding wallpaper()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1827
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v1, v0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setSlidingWallpaperInfo(Landroid/content/Context;Landroid/content/Intent;)Z
@@ -6232,7 +5430,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 1828
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -6241,19 +5438,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 1829
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1831
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 1834
-    .end local v0    # "intent":Landroid/content/Intent;
     :cond_1
     return-void
 .end method
@@ -6261,65 +5454,53 @@
 .method public cleanUp()V
     .locals 2
 
-    .prologue
-    .line 1307
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "cleanUp()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1309
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->SetShowState(Z)V
 
-    .line 1310
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1311
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->cleanUp()V
 
-    .line 1313
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1314
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->cleanUp()V
 
-    .line 1316
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1317
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->cleanUp()V
 
-    .line 1319
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_3
 
-    .line 1320
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->cleanUp()V
 
-    .line 1322
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -6331,32 +5512,24 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 1323
     return-void
 .end method
 
 .method public getARGB8888Bitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 9
-    .param p1, "srcBitmap"    # Landroid/graphics/Bitmap;
 
-    .prologue
     const/4 v8, 0x0
 
     const/4 v4, 0x0
 
-    .line 1238
     if-nez p1, :cond_1
 
     move-object p1, v4
 
-    .line 1256
-    .end local p1    # "srcBitmap":Landroid/graphics/Bitmap;
     :cond_0
     :goto_0
     return-object p1
 
-    .line 1241
-    .restart local p1    # "srcBitmap":Landroid/graphics/Bitmap;
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
@@ -6366,26 +5539,20 @@
 
     if-eq v5, v6, :cond_0
 
-    .line 1244
     const-string v5, "KeyguardEffectViewController"
 
     const-string v6, "start to convert album art"
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1245
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 1246
-    .local v3, "width":I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    .line 1248
-    .local v2, "height":I
     if-lez v3, :cond_2
 
     if-gtz v2, :cond_3
@@ -6393,10 +5560,8 @@
     :cond_2
     move-object p1, v4
 
-    .line 1249
     goto :goto_0
 
-    .line 1251
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -6412,27 +5577,20 @@
 
     move-result-object v0
 
-    .line 1253
-    .local v0, "destBitmap":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1254
-    .local v1, "destCanvas":Landroid/graphics/Canvas;
     invoke-virtual {v1, p1, v8, v8, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     move-object p1, v0
 
-    .line 1256
     goto :goto_0
 .end method
 
 .method protected getBackgroundEffectType()Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
     .locals 1
 
-    .prologue
-    .line 1747
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     return-object v0
@@ -6441,8 +5599,6 @@
 .method public getBackgroundLayout()Landroid/widget/FrameLayout;
     .locals 1
 
-    .prologue
-    .line 1475
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     return-object v0
@@ -6451,8 +5607,6 @@
 .method public getCircleView()Lcom/android/keyguard/sec/KeyguardEffectViewBase;
     .locals 1
 
-    .prologue
-    .line 2198
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     return-object v0
@@ -6461,8 +5615,6 @@
 .method protected getCurrentEffecType()I
     .locals 1
 
-    .prologue
-    .line 1755
     iget v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
     return v0
@@ -6471,12 +5623,8 @@
 .method public getDefaultWallpaperTypeForEffect()I
     .locals 4
 
-    .prologue
-    .line 1789
     const/4 v0, 0x1
 
-    .line 1793
-    .local v0, "defaultType":I
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -6497,8 +5645,6 @@
 .method protected getForegroundEffectType()Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
     .locals 1
 
-    .prologue
-    .line 1751
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
     return-object v0
@@ -6507,8 +5653,6 @@
 .method public getForegroundLayout()Landroid/widget/FrameLayout;
     .locals 1
 
-    .prologue
-    .line 1471
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     return-object v0
@@ -6517,20 +5661,16 @@
 .method public getUnlockDelay()J
     .locals 2
 
-    .prologue
-    .line 1363
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1364
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->getUnlockDelay()J
 
     move-result-wide v0
 
-    .line 1366
     :goto_0
     return-wide v0
 
@@ -6542,23 +5682,17 @@
 
 .method public handleHoverEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 1445
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1446
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v0, v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
 
     if-eqz v0, :cond_0
 
-    .line 1447
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
@@ -6567,7 +5701,6 @@
 
     move-result v0
 
-    .line 1450
     :goto_0
     return v0
 
@@ -6579,52 +5712,40 @@
 
 .method public handleSensorEvent(Landroid/hardware/SensorEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/hardware/SensorEvent;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 1454
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
     if-eqz v0, :cond_0
 
-    .line 1462
     :cond_0
     return v1
 .end method
 
 .method public handleTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 1426
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1427
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 1431
     :goto_0
     return v0
 
-    .line 1428
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1429
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
@@ -6633,7 +5754,6 @@
 
     goto :goto_0
 
-    .line 1431
     :cond_1
     const/4 v0, 0x0
 
@@ -6642,23 +5762,17 @@
 
 .method public handleTouchEventForPatternLock(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 1437
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1438
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleTouchEventForPatternLock(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 1440
     :goto_0
     return v0
 
@@ -6670,34 +5784,26 @@
 
 .method public handleUnlock(Landroid/view/View;Landroid/view/MotionEvent;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 1415
     if-eqz p1, :cond_1
 
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1416
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleUnlock(Landroid/view/View;Landroid/view/MotionEvent;)V
 
-    .line 1420
     :cond_0
     :goto_0
     return-void
 
-    .line 1417
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1418
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleUnlock(Landroid/view/View;Landroid/view/MotionEvent;)V
@@ -6707,10 +5813,7 @@
 
 .method public handleUpdateKeyguardMusicBackground(Landroid/graphics/Bitmap;)V
     .locals 3
-    .param p1, "bmp"    # Landroid/graphics/Bitmap;
 
-    .prologue
-    .line 1197
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6733,33 +5836,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1198
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-nez v0, :cond_1
 
-    .line 1235
     :cond_0
     :goto_0
     return-void
 
-    .line 1202
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
-    .line 1203
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->updateAttributionInfoView()V
 
-    .line 1212
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v0, v0, Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
 
     if-eqz v0, :cond_2
 
-    .line 1213
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
@@ -6768,7 +5865,6 @@
 
     goto :goto_0
 
-    .line 1214
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6776,7 +5872,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 1215
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewRippleInk;
@@ -6789,7 +5884,6 @@
 
     goto :goto_0
 
-    .line 1216
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6797,7 +5891,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 1217
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewWaterColor;
@@ -6810,7 +5903,6 @@
 
     goto :goto_0
 
-    .line 1220
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6818,7 +5910,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 1221
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewBrilliantCut;
@@ -6831,7 +5922,6 @@
 
     goto :goto_0
 
-    .line 1225
     :cond_5
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6839,7 +5929,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 1226
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
@@ -6852,7 +5941,6 @@
 
     goto :goto_0
 
-    .line 1229
     :cond_6
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6860,7 +5948,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 1230
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
@@ -6873,7 +5960,6 @@
 
     goto :goto_0
 
-    .line 1231
     :cond_7
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6881,7 +5967,6 @@
 
     if-eqz v0, :cond_8
 
-    .line 1232
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewAbstractTile;
@@ -6894,7 +5979,6 @@
 
     goto :goto_0
 
-    .line 1233
     :cond_8
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -6902,7 +5986,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1234
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewGeometricMosaic;
@@ -6917,107 +6000,118 @@
 .end method
 
 .method public isCategoriesWallpaper()Z
-    .locals 7
+    .locals 8
 
-    .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    .line 893
-    iget-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
-    .line 902
     :goto_0
-    return v3
+    return v4
 
-    .line 897
     :cond_0
-    iget-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
-    const-string v5, "/data/data/com.samsung.android.keyguardwallpaperupdator/files/wallpaper_images"
+    const-string v6, "/data/data/com.samsung.android.keyguardwallpaperupdator/files/wallpaper_images"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 898
-    .local v0, "isCategoriesWallpaper":Z
-    iget v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
+    iget v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
-    if-ne v4, v5, :cond_1
+    if-ne v5, v6, :cond_1
 
-    move v1, v2
+    move v2, v3
 
-    .line 900
-    .local v1, "isLiveWallpaper":Z
     :goto_1
-    const-string v4, "KeyguardEffectViewController"
+    iget v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const/4 v6, -0x2
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    if-ne v5, v6, :cond_2
 
-    const-string v6, "isCategoriesWallpaper = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", isLiveWallpaper = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 902
-    if-eqz v0, :cond_2
-
-    if-nez v1, :cond_2
+    move v1, v3
 
     :goto_2
-    move v3, v2
+    const-string v5, "KeyguardEffectViewController"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "isCategoriesWallpaper = "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ", isLiveWallpaper = "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, "isHomeWallpaper = "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v0, :cond_3
+
+    if-nez v2, :cond_3
+
+    if-nez v1, :cond_3
+
+    :goto_3
+    move v4, v3
 
     goto :goto_0
 
-    .end local v1    # "isLiveWallpaper":Z
     :cond_1
-    move v1, v3
+    move v2, v4
 
-    .line 898
     goto :goto_1
 
-    .restart local v1    # "isLiveWallpaper":Z
     :cond_2
-    move v2, v3
+    move v1, v4
 
-    .line 902
     goto :goto_2
+
+    :cond_3
+    move v3, v4
+
+    goto :goto_3
 .end method
 
 .method public isFestivalActivated()Z
     .locals 3
 
-    .prologue
-    .line 2018
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7042,7 +6136,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2019
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffectEnabled:Z
 
     if-eqz v0, :cond_0
@@ -7059,10 +6152,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 2020
     const/4 v0, 0x1
 
-    .line 2022
     :goto_0
     return v0
 
@@ -7075,12 +6166,10 @@
 .method public isJustLockLiveEnabled()Z
     .locals 5
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 839
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v3, :cond_0
@@ -7093,8 +6182,6 @@
 
     move v0, v1
 
-    .line 841
-    .local v0, "isLiveWallpaperBackground":Z
     :goto_0
     iget v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
@@ -7107,26 +6194,20 @@
     :goto_1
     return v1
 
-    .end local v0    # "isLiveWallpaperBackground":Z
     :cond_0
     move v0, v2
 
-    .line 839
     goto :goto_0
 
-    .restart local v0    # "isLiveWallpaperBackground":Z
     :cond_1
     move v1, v2
 
-    .line 841
     goto :goto_1
 .end method
 
 .method public isMusicBackgroundSet()Z
     .locals 1
 
-    .prologue
-    .line 1837
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
     return v0
@@ -7135,20 +6216,15 @@
 .method public isRichLockWallpaper()Z
     .locals 4
 
-    .prologue
-    .line 881
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 882
     const/4 v0, 0x0
 
-    .line 889
     :goto_0
     return v0
 
-    .line 885
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mWallpaperPath:Ljava/lang/String;
 
@@ -7158,8 +6234,6 @@
 
     move-result v0
 
-    .line 887
-    .local v0, "isRichLock":Z
     const-string v1, "KeyguardEffectViewController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7188,12 +6262,10 @@
 .method public isZoomPanningEffectEnabled()Z
     .locals 7
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 870
     iget-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -7212,8 +6284,6 @@
 
     move v1, v2
 
-    .line 872
-    .local v1, "isZoomPanningEffect":Z
     :goto_0
     iget-object v4, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
@@ -7221,8 +6291,6 @@
 
     move-result v0
 
-    .line 874
-    .local v0, "isPowerSavingModeEnabled":Z
     const-string v4, "KeyguardEffectViewController"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -7255,7 +6323,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 877
     if-eqz v1, :cond_1
 
     if-nez v0, :cond_1
@@ -7263,38 +6330,28 @@
     :goto_1
     return v2
 
-    .end local v0    # "isPowerSavingModeEnabled":Z
-    .end local v1    # "isZoomPanningEffect":Z
     :cond_0
     move v1, v3
 
-    .line 870
     goto :goto_0
 
-    .restart local v0    # "isPowerSavingModeEnabled":Z
-    .restart local v1    # "isZoomPanningEffect":Z
     :cond_1
     move v2, v3
 
-    .line 877
     goto :goto_1
 .end method
 
 .method public playLockSound()V
     .locals 1
 
-    .prologue
-    .line 1371
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1372
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->playLockSound()V
 
-    .line 1373
     :cond_0
     return-void
 .end method
@@ -7302,7 +6359,6 @@
 .method public reloadLockSound()V
     .locals 12
 
-    .prologue
     const/16 v11, 0x53
 
     const/16 v10, 0x52
@@ -7313,54 +6369,39 @@
 
     const/4 v7, 0x0
 
-    .line 1920
     const-string v5, "KeyguardEffectViewController"
 
     const-string v6, "reloadLockSound()"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1921
     const/4 v2, 0x0
 
-    .line 1922
-    .local v2, "pathLock":Ljava/lang/String;
     const/4 v3, 0x0
 
-    .line 1923
-    .local v3, "pathUnlock":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 1924
-    .local v0, "idLock":I
     const/4 v1, 0x0
 
-    .line 1926
-    .local v1, "idUnlock":I
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isFestivalActivated()Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 1927
     iget v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 1934
     const-string v2, "/system/media/audio/ui/Lock_none_effect.ogg"
 
-    .line 1935
     const-string v3, "/system/media/audio/ui/Unlock_none_effect.ogg"
 
-    .line 2006
     :goto_0
     iget-object v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mLockSoundChangeCallback:Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;
 
     if-eqz v5, :cond_0
 
-    .line 2007
     if-eqz v0, :cond_2
 
     if-eqz v1, :cond_2
@@ -7375,184 +6416,136 @@
 
     if-eqz v5, :cond_2
 
-    .line 2010
     iget-object v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mLockSoundChangeCallback:Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;
 
     invoke-interface {v5, v0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;->reloadLockSound(II)V
 
-    .line 2015
     :cond_0
     :goto_1
     return-void
 
-    .line 1929
     :pswitch_0
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getCurrentSeasonEffect()I
 
     move-result v4
 
-    .line 1930
-    .local v4, "season":I
     invoke-direct {p0, v4, v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v0
 
-    .line 1931
     invoke-direct {p0, v4, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1932
     goto :goto_0
 
-    .line 1939
-    .end local v4    # "season":I
     :cond_1
     iget v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mCurrentEffect:I
 
     sparse-switch v5, :sswitch_data_0
 
-    .line 2000
     const-string v2, "/system/media/audio/ui/Lock_none_effect.ogg"
 
-    .line 2001
     const-string v3, "/system/media/audio/ui/Unlock_none_effect.ogg"
 
     goto :goto_0
 
-    .line 1941
     :sswitch_0
     const-string v2, "/system/media/audio/ui/lens_flare_lock.ogg"
 
-    .line 1942
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1943
     goto :goto_0
 
-    .line 1947
     :sswitch_1
     const-string v2, ""
 
-    .line 1948
     const-string v3, ""
 
-    .line 1949
     goto :goto_0
 
-    .line 1951
     :sswitch_2
     const-string v2, ""
 
-    .line 1952
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1953
     goto :goto_0
 
-    .line 1955
     :sswitch_3
     const-string v2, "/system/media/audio/ui/blind_lock.ogg"
 
-    .line 1956
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1957
     goto :goto_0
 
-    .line 1959
     :sswitch_4
     const-string v2, "/system/media/audio/ui/Particle_Lock.ogg"
 
-    .line 1960
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1961
     goto :goto_0
 
-    .line 1963
     :sswitch_5
     const-string v2, "/system/media/audio/ui/brilliantring_lock.ogg"
 
-    .line 1964
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1965
     goto :goto_0
 
-    .line 1967
     :sswitch_6
     const-string v2, "/system/media/audio/ui/brilliantcut_lock.ogg"
 
-    .line 1968
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1969
     goto :goto_0
 
-    .line 1971
     :sswitch_7
     const-string v2, "/system/media/audio/ui/abstracttile_lock.ogg"
 
-    .line 1972
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1973
     goto :goto_0
 
-    .line 1975
     :sswitch_8
     const-string v2, "/system/media/audio/ui/GeometricMosaic_lock.ogg"
 
-    .line 1976
     const-string v3, "/system/media/audio/ui/lock_screen_silence.ogg"
 
-    .line 1977
     goto :goto_0
 
-    .line 1979
     :sswitch_9
     invoke-direct {p0, v9, v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v0
 
-    .line 1980
     invoke-direct {p0, v9, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1981
     goto :goto_0
 
-    .line 1983
     :sswitch_a
     invoke-direct {p0, v10, v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v0
 
-    .line 1984
     invoke-direct {p0, v10, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1985
     goto :goto_0
 
-    .line 1987
     :sswitch_b
     invoke-direct {p0, v11, v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v0
 
-    .line 1988
     invoke-direct {p0, v11, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1989
     goto :goto_0
 
-    .line 1991
     :sswitch_c
     const/16 v5, 0x54
 
@@ -7560,38 +6553,29 @@
 
     move-result v0
 
-    .line 1992
     const/16 v5, 0x54
 
     invoke-direct {p0, v5, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1993
     goto/16 :goto_0
 
-    .line 1995
     :sswitch_d
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getCurrentSeasonEffect()I
 
     move-result v4
 
-    .line 1996
-    .restart local v4    # "season":I
     invoke-direct {p0, v4, v8}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v0
 
-    .line 1997
     invoke-direct {p0, v4, v7}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getSeasonalLockSoundId(IZ)I
 
     move-result v1
 
-    .line 1998
     goto/16 :goto_0
 
-    .line 2012
-    .end local v4    # "season":I
     :cond_2
     iget-object v5, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mLockSoundChangeCallback:Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;
 
@@ -7599,13 +6583,11 @@
 
     goto/16 :goto_1
 
-    .line 1927
     :pswitch_data_0
     .packed-switch 0x55
         :pswitch_0
     .end packed-switch
 
-    .line 1939
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -7630,84 +6612,67 @@
 .method public removeMusicWallpaper()V
     .locals 2
 
-    .prologue
-    .line 1772
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mMusicBackgroundSet:Z
 
-    .line 1773
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->updateAttributionInfoView()V
 
-    .line 1775
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v1, v1, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
 
     if-eqz v1, :cond_0
 
-    .line 1776
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v1, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
 
     invoke-virtual {v1}, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;->removeMusicWallpaper()V
 
-    .line 1778
     :cond_0
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->getDefaultWallpaperTypeForEffect()I
 
     move-result v0
 
-    .line 1786
-    .local v0, "changedDefaultWallpaperType":I
     return-void
 .end method
 
 .method public reset()V
     .locals 2
 
-    .prologue
-    .line 1327
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "reset()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1329
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1330
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->reset()V
 
-    .line 1332
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1333
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->reset()V
 
-    .line 1335
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1336
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->reset()V
 
-    .line 1338
     :cond_2
     return-void
 .end method
@@ -7715,58 +6680,47 @@
 .method public screenTurnedOff()V
     .locals 2
 
-    .prologue
-    .line 1377
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->SetScreenState(Z)V
 
-    .line 1379
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1380
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOff()V
 
-    .line 1382
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1383
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOff()V
 
-    .line 1385
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1386
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOff()V
 
-    .line 1388
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_3
 
-    .line 1389
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOff()V
 
-    .line 1391
     :cond_3
     return-void
 .end method
@@ -7774,47 +6728,38 @@
 .method public screenTurnedOn()V
     .locals 2
 
-    .prologue
-    .line 1342
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->SetScreenState(Z)V
 
-    .line 1344
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1345
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOn()V
 
-    .line 1347
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1348
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOn()V
 
-    .line 1350
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1351
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOn()V
 
-    .line 1353
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -7824,80 +6769,55 @@
 
     if-eqz v0, :cond_3
 
-    .line 1354
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_3
 
-    .line 1355
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->screenTurnedOn()V
 
-    .line 1356
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->pauseAnimation()V
 
-    .line 1359
     :cond_3
     return-void
 .end method
 
 .method public setAttributionInfoView(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
     .locals 0
-    .param p1, "view"    # Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
-    .prologue
-    .line 1852
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAttributionInfoView:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
-    .line 1853
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->updateAttributionInfoView()V
 
-    .line 1854
     return-void
 .end method
 
 .method public setEffectLayout(Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
     .locals 0
-    .param p1, "background"    # Landroid/view/View;
-    .param p2, "foreground"    # Landroid/view/View;
-    .param p3, "panel"    # Landroid/view/View;
 
-    .prologue
-    .line 1864
     check-cast p1, Landroid/widget/FrameLayout;
 
-    .end local p1    # "background":Landroid/view/View;
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
-    .line 1865
     check-cast p2, Landroid/widget/FrameLayout;
 
-    .end local p2    # "foreground":Landroid/view/View;
     iput-object p2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
-    .line 1866
     check-cast p3, Landroid/widget/FrameLayout;
 
-    .end local p3    # "panel":Landroid/view/View;
     iput-object p3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mNotificationPanel:Landroid/widget/FrameLayout;
 
-    .line 1868
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleWallpaperTypeChanged()V
 
-    .line 1869
     return-void
 .end method
 
 .method public setFestivalKeyguardShowing(ZI)V
     .locals 6
-    .param p1, "showing"    # Z
-    .param p2, "visibility"    # I
 
-    .prologue
-    .line 1893
     const-string v3, "KeyguardEffectViewController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7934,34 +6854,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1894
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isFestivalActivated()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 1907
     :cond_0
     :goto_0
     return-void
 
-    .line 1896
     :cond_1
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v3, :cond_0
 
-    .line 1897
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 1898
-    .local v2, "convertedView":Landroid/view/ViewGroup;
     const/4 v0, 0x0
 
-    .local v0, "childIdx":I
     :goto_1
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -7969,33 +6882,25 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 1899
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1900
-    .local v1, "childView":Landroid/view/View;
     if-nez v1, :cond_2
 
-    .line 1898
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1902
     :cond_2
     invoke-virtual {v1, p2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 
-    .line 1904
-    .end local v1    # "childView":Landroid/view/View;
     :cond_3
     invoke-virtual {v2, p2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1905
     invoke-virtual {v2}, Landroid/view/ViewGroup;->invalidate()V
 
     goto :goto_0
@@ -8003,10 +6908,7 @@
 
 .method public setHidden(Z)V
     .locals 3
-    .param p1, "isHidden"    # Z
 
-    .prologue
-    .line 1732
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8029,39 +6931,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1734
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1735
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->setHidden(Z)V
 
-    .line 1737
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1738
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->setHidden(Z)V
 
-    .line 1740
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1741
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->setHidden(Z)V
 
-    .line 1743
     :cond_2
     if-nez p1, :cond_3
 
@@ -8070,10 +6965,8 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mIsVisible:Z
 
-    .line 1744
     return-void
 
-    .line 1743
     :cond_3
     const/4 v0, 0x0
 
@@ -8082,10 +6975,7 @@
 
 .method public setKeyguardShowing(Z)V
     .locals 4
-    .param p1, "showing"    # Z
 
-    .prologue
-    .line 1872
     const-string v1, "KeyguardEffectViewController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -8108,59 +6998,44 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1873
     if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1875
-    .local v0, "visibility":I
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1876
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundRootLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1878
     if-eqz p1, :cond_2
 
-    .line 1879
     iget-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mIsShowing:Z
 
     if-eqz v1, :cond_1
 
-    .line 1880
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->reset()V
 
-    .line 1888
     :goto_1
     iput-boolean p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mIsShowing:Z
 
-    .line 1889
     invoke-virtual {p0, p1, v0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setFestivalKeyguardShowing(ZI)V
 
-    .line 1890
     return-void
 
-    .line 1873
-    .end local v0    # "visibility":I
     :cond_0
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 1882
-    .restart local v0    # "visibility":I
     :cond_1
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->show()V
 
     goto :goto_1
 
-    .line 1885
     :cond_2
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->cleanUp()V
 
@@ -8170,34 +7045,24 @@
 .method public setLayerAndBitmapForParticleEffect()V
     .locals 4
 
-    .prologue
-    .line 1759
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v3, v3, Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;
 
     if-eqz v3, :cond_0
 
-    .line 1760
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v0, Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;
 
-    .line 1761
-    .local v0, "effectViewParticleSpace":Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v2, Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
 
-    .line 1762
-    .local v2, "effectWallpaper":Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mNotificationPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2, v3}, Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;->setLayers(Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;Landroid/widget/FrameLayout;)V
 
-    .line 1765
-    .end local v0    # "effectViewParticleSpace":Lcom/android/keyguard/sec/KeyguardEffectViewParticleSpace;
-    .end local v2    # "effectWallpaper":Lcom/android/keyguard/sec/KeyguardEffectViewWallpaper;
     :cond_0
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -8205,44 +7070,33 @@
 
     if-eqz v3, :cond_1
 
-    .line 1766
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     check-cast v1, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
 
-    .line 1767
-    .local v1, "effectViewZoomPanning":Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mNotificationPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;->setLayers(Landroid/view/View;)V
 
-    .line 1769
-    .end local v1    # "effectViewZoomPanning":Lcom/android/keyguard/sec/KeyguardEffectViewZoomPanning;
     :cond_1
     return-void
 .end method
 
 .method public setLiveWallpaperBg(Landroid/graphics/Bitmap;)V
     .locals 4
-    .param p1, "bmp"    # Landroid/graphics/Bitmap;
 
-    .prologue
-    .line 1188
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardEffectViewUtil;->getWallpaperType(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 1189
-    .local v0, "wallpaperType":I
     if-eqz v0, :cond_0
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 1191
     :cond_0
     const-string v2, "KeyguardEffectViewController"
 
@@ -8271,18 +7125,15 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1192
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     check-cast v1, Lcom/android/keyguard/sec/EffectBehindView;
 
     invoke-virtual {v1, p1}, Lcom/android/keyguard/sec/EffectBehindView;->setLiveWallpaperBg(Landroid/graphics/Bitmap;)V
 
-    .line 1194
     :cond_1
     return-void
 
-    .line 1191
     :cond_2
     const/4 v1, 0x0
 
@@ -8291,20 +7142,15 @@
 
 .method public setLiveWeatherViewVisibility(Z)V
     .locals 2
-    .param p1, "isVisible"    # Z
 
-    .prologue
-    .line 2184
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_1
 
-    .line 2195
     :cond_0
     :goto_0
     return-void
 
-    .line 2186
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundType:Lcom/android/keyguard/sec/KeyguardEffectViewController$Background;
 
@@ -8312,10 +7158,8 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2187
     if-eqz p1, :cond_2
 
-    .line 2188
     new-instance v0, Lcom/android/keyguard/sec/rich/KeyguardEffectViewLiveWallpaper;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
@@ -8324,21 +7168,17 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 2189
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->setBackground()V
 
     goto :goto_0
 
-    .line 2190
     :cond_2
     if-nez p1, :cond_0
 
-    .line 2191
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundRootLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 2192
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -8348,26 +7188,19 @@
 
 .method public setLockSoundChangeCallback(Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;)V
     .locals 0
-    .param p1, "callback"    # Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;
 
-    .prologue
-    .line 1910
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mLockSoundChangeCallback:Lcom/android/keyguard/sec/KeyguardEffectViewController$LockSoundChangeCallback;
 
-    .line 1911
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->reloadLockSound()V
 
-    .line 1912
     return-void
 .end method
 
 .method public shouldShowAttributionInfoView()Z
     .locals 2
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 1841
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardEffectViewUtil;->isStrongPowerSavingMode(Landroid/content/Context;)Z
@@ -8376,12 +7209,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 1848
     :cond_0
     :goto_0
     return v0
 
-    .line 1845
     :cond_1
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->isCategoriesWallpaper()Z
 
@@ -8395,7 +7226,6 @@
 
     if-nez v1, :cond_0
 
-    .line 1846
     const/4 v0, 0x1
 
     goto :goto_0
@@ -8404,15 +7234,12 @@
 .method public show()V
     .locals 2
 
-    .prologue
-    .line 1281
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "show()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1282
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -8423,46 +7250,40 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 1284
+    invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleWallpaperTypeChanged()V
+
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->SetShowState(Z)V
 
-    .line 1286
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1287
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->show()V
 
-    .line 1289
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1290
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->show()V
 
-    .line 1292
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1293
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->show()V
 
-    .line 1295
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
@@ -8480,43 +7301,33 @@
 
     if-eqz v0, :cond_3
 
-    .line 1296
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_3
 
-    .line 1297
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mChargeView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->show()V
 
-    .line 1300
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mFestivalEffect:Lcom/android/keyguard/sec/KeyguardFestivalEffect;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardFestivalEffect;->pauseAnimation()V
 
-    .line 1303
     :cond_3
     return-void
 .end method
 
 .method public showUnlockAffordance(JLandroid/graphics/Rect;)V
     .locals 1
-    .param p1, "startDelay"    # J
-    .param p3, "rect"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 1407
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1408
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mUnlockEffectView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->showUnlockAffordance(JLandroid/graphics/Rect;)V
 
-    .line 1409
     :cond_0
     return-void
 .end method
@@ -8524,40 +7335,32 @@
 .method public update()V
     .locals 1
 
-    .prologue
-    .line 1395
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_0
 
-    .line 1396
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
-    .line 1398
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_1
 
-    .line 1399
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mForegroundCircleView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
-    .line 1401
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v0, :cond_2
 
-    .line 1402
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->update()V
 
-    .line 1403
     :cond_2
     return-void
 .end method
@@ -8565,17 +7368,13 @@
 .method public updateAttributionInfoView()V
     .locals 1
 
-    .prologue
-    .line 1857
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAttributionInfoView:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     if-nez v0, :cond_0
 
-    .line 1861
     :goto_0
     return-void
 
-    .line 1860
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mAttributionInfoView:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
@@ -8587,15 +7386,12 @@
 .method public updateMontblancEffectType()V
     .locals 6
 
-    .prologue
-    .line 1260
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     instance-of v2, v2, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     if-eqz v2, :cond_1
 
-    .line 1261
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -8612,20 +7408,14 @@
 
     move-result v0
 
-    .line 1265
-    .local v0, "montblancWallpaperInkType":I
     const/4 v1, 0x0
 
-    .line 1266
-    .local v1, "type":I
     const/4 v2, 0x2
 
     if-ne v0, v2, :cond_0
 
-    .line 1267
     const/4 v1, 0x1
 
-    .line 1270
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController;->mBackgroundView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
@@ -8633,9 +7423,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->settingsForImageType(I)V
 
-    .line 1272
-    .end local v0    # "montblancWallpaperInkType":I
-    .end local v1    # "type":I
     :cond_1
     return-void
 .end method

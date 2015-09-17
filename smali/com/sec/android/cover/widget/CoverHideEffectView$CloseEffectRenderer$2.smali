@@ -27,13 +27,10 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;)V
     .locals 1
 
-    .prologue
-    .line 232
     iput-object p1, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 233
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->canceled:Z
@@ -45,24 +42,17 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 254
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->canceled:Z
 
-    .line 255
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 243
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     const/4 v1, -0x1
@@ -70,7 +60,6 @@
     # setter for: Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->mTextureHandle:I
     invoke-static {v0, v1}, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->access$402(Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;I)I
 
-    .line 244
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     const/4 v1, 0x0
@@ -78,12 +67,10 @@
     # setter for: Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->mAnimator:Landroid/animation/ObjectAnimator;
     invoke-static {v0, v1}, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->access$502(Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 245
     iget-boolean v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->canceled:Z
 
     if-nez v0, :cond_0
 
-    .line 246
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->this$0:Lcom/sec/android/cover/widget/CoverHideEffectView;
@@ -95,7 +82,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 247
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->this$0:Lcom/sec/android/cover/widget/CoverHideEffectView;
@@ -107,26 +93,19 @@
 
     invoke-interface {v0}, Lcom/sec/android/cover/widget/CoverHideEffectView$SViewCoverHideAnimationListener;->onHideAnimationFinished()V
 
-    .line 250
     :cond_0
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 260
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 238
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     iget-object v1, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$2;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
@@ -138,6 +117,5 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->setFadePosition(F)V
 
-    .line 239
     return-void
 .end method

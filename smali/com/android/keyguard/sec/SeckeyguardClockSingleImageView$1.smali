@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView;)V
     .locals 0
 
-    .prologue
-    .line 104
     iput-object p1, p0, Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView$1;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 109
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 137
     :goto_0
     return-void
 
-    .line 113
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView$1;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 119
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView$1;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView;
 
@@ -65,7 +57,6 @@
 
     goto :goto_0
 
-    .line 125
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView$1;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockSingleImageView;
 
@@ -74,7 +65,6 @@
 
     goto :goto_0
 
-    .line 109
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

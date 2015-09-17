@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/AdaptiveEventManager;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .prologue
-    .line 95
     iput-object p1, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$1;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,21 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 98
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 99
-    .local v0, "what":I
     packed-switch v0, :pswitch_data_0
 
-    .line 109
     :goto_0
     return-void
 
-    .line 101
     :pswitch_0
     iget-object v1, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$1;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
@@ -59,7 +49,6 @@
 
     goto :goto_0
 
-    .line 104
     :pswitch_1
     iget-object v1, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$1;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
@@ -68,7 +57,6 @@
 
     goto :goto_0
 
-    .line 99
     :pswitch_data_0
     .packed-switch 0x132e
         :pswitch_0

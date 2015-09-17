@@ -27,28 +27,17 @@
 # direct methods
 .method public constructor <init>(IIII)V
     .locals 0
-    .param p1, "status"    # I
-    .param p2, "level"    # I
-    .param p3, "plugged"    # I
-    .param p4, "health"    # I
 
-    .prologue
-    .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 634
     iput p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->status:I
 
-    .line 635
     iput p2, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->level:I
 
-    .line 636
     iput p3, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->plugged:I
 
-    .line 637
     iput p4, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->health:I
 
-    .line 638
     return-void
 .end method
 
@@ -57,8 +46,6 @@
 .method public isBatteryLow()Z
     .locals 2
 
-    .prologue
-    .line 667
     iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->level:I
 
     const/16 v1, 0x14
@@ -79,8 +66,6 @@
 .method public isCharged()Z
     .locals 2
 
-    .prologue
-    .line 659
     iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->status:I
 
     const/4 v1, 0x5
@@ -101,10 +86,8 @@
 .method isPluggedIn()Z
     .locals 3
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 645
     iget v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->plugged:I
 
     if-eq v1, v0, :cond_0
@@ -134,8 +117,6 @@
 .method public isWirelssCharged()Z
     .locals 2
 
-    .prologue
-    .line 676
     iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->plugged:I
 
     const/4 v1, 0x4

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/PagedView;)V
     .locals 0
 
-    .prologue
-    .line 2242
     iput-object p1, p0, Lcom/sec/android/cover/widget/PagedView$5;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 2246
     iget-object v0, p0, Lcom/sec/android/cover/widget/PagedView$5;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     # getter for: Lcom/sec/android/cover/widget/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -48,7 +43,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2247
     iget-object v0, p0, Lcom/sec/android/cover/widget/PagedView$5;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     # getter for: Lcom/sec/android/cover/widget/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -60,7 +54,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2248
     iget-object v0, p0, Lcom/sec/android/cover/widget/PagedView$5;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     # getter for: Lcom/sec/android/cover/widget/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -95,7 +88,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 2257
     :cond_0
     return-void
 .end method

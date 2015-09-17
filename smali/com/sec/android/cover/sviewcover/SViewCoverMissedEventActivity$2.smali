@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;)V
     .locals 0
 
-    .prologue
-    .line 74
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 10
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,21 +46,14 @@
         }
     .end annotation
 
-    .prologue
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     const/4 v6, 0x0
 
     const/4 v5, 0x1
 
-    .line 77
     const/4 v4, 0x1
 
-    .line 78
-    .local v4, "showContent":Z
     const/4 v1, 0x1
 
-    .line 80
-    .local v1, "enableNoti":Z
     :try_start_0
     iget-object v7, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
@@ -90,7 +78,6 @@
 
     move v4, v5
 
-    .line 83
     :goto_0
     iget-object v7, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
@@ -117,7 +104,6 @@
 
     move v1, v5
 
-    .line 90
     :goto_1
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
@@ -132,14 +118,12 @@
 
     if-eqz v6, :cond_3
 
-    .line 91
     const-string v5, "SViewCoverMissedEventActivity"
 
     const-string v6, "onItemClick - isKeyguardSecure"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     sget-object v6, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;->OPEN_COVER_BY_SECURITY:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;
@@ -147,7 +131,6 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->showCoverOpenPopup(Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;)V
     invoke-static {v5, v6}, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->access$200(Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;)V
 
-    .line 124
     :cond_0
     :goto_2
     return-void
@@ -155,21 +138,16 @@
     :cond_1
     move v4, v6
 
-    .line 80
     goto :goto_0
 
     :cond_2
     move v1, v6
 
-    .line 83
     goto :goto_1
 
-    .line 85
     :catch_0
     move-exception v0
 
-    .line 86
-    .local v0, "e":Landroid/provider/Settings$SettingNotFoundException;
     const-string v6, "SViewCoverMissedEventActivity"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -196,26 +174,21 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     invoke-virtual {v0}, Landroid/provider/Settings$SettingNotFoundException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 94
-    .end local v0    # "e":Landroid/provider/Settings$SettingNotFoundException;
     :cond_3
     if-ne v1, v5, :cond_5
 
     if-nez v4, :cond_5
 
-    .line 96
     const-string v6, "SViewCoverMissedEventActivity"
 
     const-string v7, "onItemClick - Hide sensitive content"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->mMissedEventManager:Lcom/sec/android/cover/manager/CoverMissedEventManager;
@@ -233,8 +206,6 @@
 
     check-cast v2, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
 
-    .line 99
-    .local v2, "item":Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
     if-eqz v2, :cond_0
 
     iget v6, v2, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;->mType:I
@@ -243,15 +214,12 @@
 
     move-object v5, v2
 
-    .line 100
     check-cast v5, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;
 
     invoke-virtual {v5}, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;->getRemoteType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 101
-    .local v3, "remoteType":Ljava/lang/String;
     const-string v5, "missed_call"
 
     invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -260,7 +228,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 102
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     sget-object v6, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;->OPEN_COVER_TO_VIEW_CALL:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;
@@ -270,7 +237,6 @@
 
     goto :goto_2
 
-    .line 104
     :cond_4
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
@@ -281,9 +247,6 @@
 
     goto :goto_2
 
-    .line 108
-    .end local v2    # "item":Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
-    .end local v3    # "remoteType":Ljava/lang/String;
     :cond_5
     iget-object v6, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
@@ -302,15 +265,12 @@
 
     check-cast v2, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
 
-    .line 110
-    .restart local v2    # "item":Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;
     if-eqz v2, :cond_6
 
     iget v6, v2, Lcom/sec/android/cover/manager/CoverMissedEventManager$MissedEventItem;->mType:I
 
     if-nez v6, :cond_6
 
-    .line 111
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     sget-object v6, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;->OPEN_COVER_TO_VIEW_MESSAGE:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;
@@ -320,7 +280,6 @@
 
     goto/16 :goto_2
 
-    .line 113
     :cond_6
     if-eqz v2, :cond_7
 
@@ -330,15 +289,12 @@
 
     move-object v5, v2
 
-    .line 114
     check-cast v5, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;
 
     invoke-virtual {v5}, Lcom/sec/android/cover/manager/CoverMissedEventManager$RemoteViewsItem;->getRemoteType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 115
-    .restart local v3    # "remoteType":Ljava/lang/String;
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->mContext:Landroid/content/Context;
@@ -360,7 +316,6 @@
 
     if-eqz v5, :cond_7
 
-    .line 116
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     sget-object v6, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;->OPEN_COVER_TO_VIEW_CALL:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$PopupType;
@@ -370,8 +325,6 @@
 
     goto/16 :goto_2
 
-    .line 121
-    .end local v3    # "remoteType":Ljava/lang/String;
     :cond_7
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 

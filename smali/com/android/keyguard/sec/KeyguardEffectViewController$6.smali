@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 568
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 5
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/16 v4, 0x12f3
 
     const/16 v2, 0x12f2
@@ -48,15 +42,12 @@
 
     const/16 v1, 0x12f0
 
-    .line 571
     if-nez p2, :cond_1
 
-    .line 612
     :cond_0
     :goto_0
     return-void
 
-    .line 574
     :cond_1
     const-string v0, "lockscreen_wallpaper"
 
@@ -70,7 +61,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 575
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -84,7 +74,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 576
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -94,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 578
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -107,7 +95,6 @@
 
     goto :goto_0
 
-    .line 579
     :cond_3
     const-string v0, "lockscreen_ripple_effect"
 
@@ -121,7 +108,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 580
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -135,7 +121,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 581
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -145,7 +130,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 583
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -158,7 +142,6 @@
 
     goto :goto_0
 
-    .line 584
     :cond_5
     const-string v0, "lockscreen_wallpaper_path"
 
@@ -184,17 +167,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 586
     :cond_6
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 588
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardEffectViewController;->setWallpaperFileObserver()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->access$500(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
 
-    .line 590
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -221,7 +201,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 591
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -235,7 +214,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 592
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -245,7 +223,6 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 594
     :cond_7
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -258,7 +235,6 @@
 
     goto/16 :goto_0
 
-    .line 595
     :cond_8
     const-string v0, "emergency_mode"
 
@@ -272,7 +248,6 @@
 
     if-eqz v0, :cond_a
 
-    .line 596
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -286,7 +261,6 @@
 
     if-eqz v0, :cond_9
 
-    .line 597
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -296,7 +270,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 599
     :cond_9
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -305,7 +278,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mEmergencyModeStateChanged:Z
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->access$1402(Lcom/android/keyguard/sec/KeyguardEffectViewController;Z)Z
 
-    .line 600
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -317,7 +289,6 @@
 
     goto/16 :goto_0
 
-    .line 601
     :cond_a
     const-string v0, "lockscreen_wallpaper_transparent"
 
@@ -331,7 +302,6 @@
 
     if-eqz v0, :cond_c
 
-    .line 602
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -345,7 +315,6 @@
 
     if-eqz v0, :cond_b
 
-    .line 603
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -355,7 +324,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 605
     :cond_b
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -368,7 +336,6 @@
 
     goto/16 :goto_0
 
-    .line 606
     :cond_c
     const-string v0, "lockscreen_zoom_panning_effect"
 
@@ -382,7 +349,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 607
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -396,7 +362,6 @@
 
     if-eqz v0, :cond_d
 
-    .line 608
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -406,7 +371,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 610
     :cond_d
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$6;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 

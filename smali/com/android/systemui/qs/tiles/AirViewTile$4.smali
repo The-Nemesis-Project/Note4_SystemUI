@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 148
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$4;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,10 +33,7 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 3
-    .param p1, "value"    # I
 
-    .prologue
-    .line 151
     const-string v0, "AirViewTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -75,7 +67,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$4;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$4;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
@@ -92,6 +83,5 @@
     # setter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mAirViewMode:I
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$802(Lcom/android/systemui/qs/tiles/AirViewTile;I)I
 
-    .line 153
     return-void
 .end method

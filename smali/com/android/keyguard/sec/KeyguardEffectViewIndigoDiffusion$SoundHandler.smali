@@ -22,8 +22,6 @@
 .method public constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;)V
     .locals 0
 
-    .prologue
-    .line 308
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 311
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 312
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->mSoundPool:Landroid/media/SoundPool;
@@ -51,7 +45,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 314
     const v1, 0x3e4ccccd    # 0.2f
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
@@ -64,8 +57,6 @@
 
     mul-float v0, v1, v2
 
-    .line 315
-    .local v0, "volume":F
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->mSoundPool:Landroid/media/SoundPool;
@@ -81,12 +72,10 @@
 
     invoke-virtual {v1, v2, v0, v0}, Landroid/media/SoundPool;->setVolume(IFF)V
 
-    .line 317
     iget v1, p1, Landroid/os/Message;->arg2:I
 
     if-eqz v1, :cond_0
 
-    .line 319
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
@@ -102,7 +91,6 @@
 
     iput-object v2, v1, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->soundMsg:Landroid/os/Message;
 
-    .line 320
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     iget-object v1, v1, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->soundMsg:Landroid/os/Message;
@@ -111,7 +99,6 @@
 
     iput v2, v1, Landroid/os/Message;->arg1:I
 
-    .line 321
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     iget-object v1, v1, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->soundMsg:Landroid/os/Message;
@@ -122,7 +109,6 @@
 
     iput v2, v1, Landroid/os/Message;->arg2:I
 
-    .line 322
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     iget-object v1, v1, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->soundMsg:Landroid/os/Message;
@@ -131,8 +117,6 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$SoundHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 325
-    .end local v0    # "volume":F
     :cond_0
     return-void
 .end method

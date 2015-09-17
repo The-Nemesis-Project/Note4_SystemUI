@@ -47,39 +47,30 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 25
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 35
     iput-boolean v1, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->isSafeMode:Z
 
-    .line 38
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->NOTI_LEVEL:I
 
-    .line 40
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->NOTI_END_LEVEL:I
 
-    .line 45
     iput v1, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->NOTI_END_LEVEL_GLOBAL:I
 
-    .line 46
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->NOTI_LEVEL_GLOBAL_1:I
 
-    .line 47
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->NOTI_LEVEL_GLOBAL_2:I
 
-    .line 54
     const-string v0, "ro.csc.sales_code"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -88,7 +79,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->mSalesCode:Ljava/lang/String;
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/cooldown/OverheatReceiver;->mSalesCode:Ljava/lang/String;
 
     const-string v1, "VZW"
@@ -106,11 +96,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 22
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 62
     if-eqz p1, :cond_0
 
     if-eqz p2, :cond_0
@@ -121,7 +107,6 @@
 
     if-nez v17, :cond_2
 
-    .line 63
     :cond_0
     const-string v17, "OverheatReceiver"
 
@@ -129,12 +114,10 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 280
     :cond_1
     :goto_0
     return-void
 
-    .line 68
     :cond_2
     const-string v17, "OverheatReceiver"
 
@@ -162,7 +145,6 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v17
@@ -189,7 +171,6 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 73
     :try_start_0
     const-string v17, "notification"
 
@@ -203,8 +184,6 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 75
-    .local v8, "notiManager":Landroid/app/NotificationManager;
     const-string v17, "check_cooldown_level"
 
     const/16 v18, -0x1
@@ -225,7 +204,6 @@
 
     iput v0, v1, Lcom/android/systemui/cooldown/OverheatReceiver;->Compare_cool_level:I
 
-    .line 76
     const-string v17, "OverheatReceiver"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -254,7 +232,6 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     const/16 v17, 0x0
 
     new-instance v18, Landroid/content/Intent;
@@ -277,8 +254,6 @@
 
     move-result-object v10
 
-    .line 82
-    .local v10, "overheatIntent":Landroid/app/PendingIntent;
     const-string v17, "alarm"
 
     move-object/from16 v0, p1
@@ -297,8 +272,6 @@
 
     move-object v4, v0
 
-    .line 86
-    .local v4, "alarmManager":Landroid/app/AlarmManager;
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/cooldown/OverheatReceiver;->Compare_cool_level:I
@@ -321,7 +294,6 @@
 
     if-lt v0, v1, :cond_3
 
-    .line 87
     const-string v17, "OverheatReceiver"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -350,7 +322,6 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
     const/16 v17, 0x2
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -371,15 +342,9 @@
 
     goto/16 :goto_0
 
-    .line 96
-    .end local v4    # "alarmManager":Landroid/app/AlarmManager;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v10    # "overheatIntent":Landroid/app/PendingIntent;
     :catch_0
     move-exception v6
 
-    .line 97
-    .local v6, "e5":Ljava/lang/Exception;
     const-string v17, "OverheatReceiver"
 
     const-string v18, "Failed try statement"
@@ -388,11 +353,6 @@
 
     goto/16 :goto_0
 
-    .line 90
-    .end local v6    # "e5":Ljava/lang/Exception;
-    .restart local v4    # "alarmManager":Landroid/app/AlarmManager;
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    .restart local v10    # "overheatIntent":Landroid/app/PendingIntent;
     :cond_3
     :try_start_1
     move-object/from16 v0, p0
@@ -417,17 +377,14 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 91
     const v17, 0x1c379
 
     move/from16 v0, v17
 
     invoke-virtual {v8, v0}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 92
     invoke-virtual {v4, v10}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 93
     const-string v17, "OverheatReceiver"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -460,10 +417,6 @@
 
     goto/16 :goto_0
 
-    .line 99
-    .end local v4    # "alarmManager":Landroid/app/AlarmManager;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v10    # "overheatIntent":Landroid/app/PendingIntent;
     :cond_4
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -485,19 +438,12 @@
 
     if-nez v17, :cond_5
 
-    .line 102
-    const v15, 0x7f0d0481
+    const v15, 0x7f0d04a2
 
-    .line 103
-    .local v15, "tickerTitle":I
-    const v12, 0x7f0d047d
+    const v12, 0x7f0d049e
 
-    .line 104
-    .local v12, "tickerText":I
-    const v13, 0x7f0d0482
+    const v13, 0x7f0d04a3
 
-    .line 106
-    .local v13, "tickerText2":I
     :try_start_2
     const-string v17, "notification"
 
@@ -511,8 +457,6 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 107
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
     const-string v17, "battery_overheat_level"
 
     const/16 v18, -0x1
@@ -533,7 +477,6 @@
 
     iput v0, v1, Lcom/android/systemui/cooldown/OverheatReceiver;->Compare_cool_level:I
 
-    .line 108
     const-string v17, "OverheatReceiver"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -562,13 +505,10 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
 
-    .line 111
-    .local v5, "coolingintent":Landroid/content/Intent;
     const-string v17, "com.android.systemui"
 
     const-string v18, "com.android.systemui.cooldown.Overheat"
@@ -579,7 +519,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 113
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v17
@@ -598,12 +537,8 @@
 
     move-result-object v11
 
-    .line 115
-    .local v11, "pendingIntent":Landroid/app/PendingIntent;
     const/4 v9, 0x0
 
-    .line 117
-    .local v9, "notification":Landroid/app/Notification;
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/cooldown/OverheatReceiver;->Compare_cool_level:I
@@ -612,7 +547,6 @@
 
     packed-switch v17, :pswitch_data_0
 
-    .line 150
     const-string v17, "OverheatReceiver"
 
     const-string v18, "Ivalid level value"
@@ -623,16 +557,9 @@
 
     goto/16 :goto_0
 
-    .line 158
-    .end local v5    # "coolingintent":Landroid/content/Intent;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v9    # "notification":Landroid/app/Notification;
-    .end local v11    # "pendingIntent":Landroid/app/PendingIntent;
     :catch_1
     move-exception v6
 
-    .line 159
-    .restart local v6    # "e5":Ljava/lang/Exception;
     const-string v17, "OverheatReceiver"
 
     const-string v18, "Failed try statement"
@@ -641,12 +568,6 @@
 
     goto/16 :goto_0
 
-    .line 120
-    .end local v6    # "e5":Ljava/lang/Exception;
-    .restart local v5    # "coolingintent":Landroid/content/Intent;
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    .restart local v9    # "notification":Landroid/app/Notification;
-    .restart local v11    # "pendingIntent":Landroid/app/PendingIntent;
     :pswitch_0
     const v17, 0x1c379
 
@@ -657,12 +578,10 @@
 
     goto/16 :goto_0
 
-    .line 125
     :pswitch_1
     new-instance v9, Landroid/app/Notification;
 
-    .end local v9    # "notification":Landroid/app/Notification;
-    const v17, 0x7f020340
+    const v17, 0x7f020347
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -686,8 +605,6 @@
 
     invoke-direct {v9, v0, v1, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 128
-    .restart local v9    # "notification":Landroid/app/Notification;
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -698,7 +615,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 129
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
@@ -727,7 +643,6 @@
 
     invoke-virtual {v9, v0, v1, v2, v11}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 133
     const v17, 0x1c379
 
     move/from16 v0, v17
@@ -736,7 +651,6 @@
 
     goto/16 :goto_0
 
-    .line 137
     :pswitch_2
     new-instance v17, Landroid/app/Notification$BigTextStyle;
 
@@ -776,7 +690,7 @@
 
     move-result-object v18
 
-    const v19, 0x7f020340
+    const v19, 0x7f020347
 
     invoke-virtual/range {v18 .. v19}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -814,7 +728,6 @@
 
     move-result-object v9
 
-    .line 145
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -825,7 +738,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 146
     const v17, 0x1c379
 
     move/from16 v0, v17
@@ -836,14 +748,6 @@
 
     goto/16 :goto_0
 
-    .line 161
-    .end local v5    # "coolingintent":Landroid/content/Intent;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v9    # "notification":Landroid/app/Notification;
-    .end local v11    # "pendingIntent":Landroid/app/PendingIntent;
-    .end local v12    # "tickerText":I
-    .end local v13    # "tickerText2":I
-    .end local v15    # "tickerTitle":I
     :cond_5
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -857,7 +761,6 @@
 
     if-eqz v17, :cond_7
 
-    .line 163
     :try_start_4
     move-object/from16 v0, p0
 
@@ -873,7 +776,6 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 165
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -886,22 +788,14 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 167
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    const v15, 0x7f0d0483
+    const v15, 0x7f0d04a4
 
-    .line 168
-    .restart local v15    # "tickerTitle":I
-    const v12, 0x7f0d0485
+    const v12, 0x7f0d04a6
 
-    .line 171
-    .restart local v12    # "tickerText":I
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
 
-    .line 172
-    .restart local v5    # "coolingintent":Landroid/content/Intent;
     const-string v17, "com.android.systemui"
 
     const-string v18, "com.android.systemui.cooldown.Overheat"
@@ -912,7 +806,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 175
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v17
@@ -931,11 +824,9 @@
 
     move-result-object v11
 
-    .line 177
-    .restart local v11    # "pendingIntent":Landroid/app/PendingIntent;
     new-instance v9, Landroid/app/Notification;
 
-    const v17, 0x7f020340
+    const v17, 0x7f020347
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -959,8 +850,6 @@
 
     invoke-direct {v9, v0, v1, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 180
-    .restart local v9    # "notification":Landroid/app/Notification;
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -971,7 +860,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 181
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
@@ -1000,7 +888,6 @@
 
     invoke-virtual {v9, v0, v1, v2, v11}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 185
     const v17, 0x1c379
 
     move/from16 v0, v17
@@ -1011,18 +898,9 @@
 
     goto/16 :goto_0
 
-    .line 211
-    .end local v5    # "coolingintent":Landroid/content/Intent;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v9    # "notification":Landroid/app/Notification;
-    .end local v11    # "pendingIntent":Landroid/app/PendingIntent;
-    .end local v12    # "tickerText":I
-    .end local v15    # "tickerTitle":I
     :catch_2
     move-exception v7
 
-    .line 212
-    .local v7, "e6":Ljava/lang/Exception;
     const-string v17, "OverheatReceiver"
 
     const-string v18, "Failed try statement"
@@ -1031,8 +909,6 @@
 
     goto/16 :goto_0
 
-    .line 189
-    .end local v7    # "e6":Ljava/lang/Exception;
     :cond_6
     :try_start_5
     const-string v17, "notification"
@@ -1047,22 +923,14 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 191
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    const v15, 0x7f0d047b
+    const v15, 0x7f0d049c
 
-    .line 192
-    .restart local v15    # "tickerTitle":I
-    const v12, 0x7f0d047d
+    const v12, 0x7f0d049e
 
-    .line 195
-    .restart local v12    # "tickerText":I
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
 
-    .line 196
-    .restart local v5    # "coolingintent":Landroid/content/Intent;
     const-string v17, "com.android.systemui"
 
     const-string v18, "com.android.systemui.cooldown.Overheat"
@@ -1073,7 +941,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 199
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v17
@@ -1092,11 +959,9 @@
 
     move-result-object v11
 
-    .line 201
-    .restart local v11    # "pendingIntent":Landroid/app/PendingIntent;
     new-instance v9, Landroid/app/Notification;
 
-    const v17, 0x7f020340
+    const v17, 0x7f020347
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1120,8 +985,6 @@
 
     invoke-direct {v9, v0, v1, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 204
-    .restart local v9    # "notification":Landroid/app/Notification;
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -1132,7 +995,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 205
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
@@ -1161,7 +1023,6 @@
 
     invoke-virtual {v9, v0, v1, v2, v11}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 209
     const v17, 0x1c379
 
     move/from16 v0, v17
@@ -1172,13 +1033,6 @@
 
     goto/16 :goto_0
 
-    .line 214
-    .end local v5    # "coolingintent":Landroid/content/Intent;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v9    # "notification":Landroid/app/Notification;
-    .end local v11    # "pendingIntent":Landroid/app/PendingIntent;
-    .end local v12    # "tickerText":I
-    .end local v15    # "tickerTitle":I
     :cond_7
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -1204,7 +1058,6 @@
 
     if-eqz v17, :cond_1
 
-    .line 216
     :cond_8
     :try_start_6
     const-string v17, "OverheatReceiver"
@@ -1213,14 +1066,12 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 217
     const-string v17, "OverheatReceiver"
 
     const-string v18, "VZW on -> change to Global UX [safe mode]"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 218
     const-string v17, "window"
 
     invoke-static/range {v17 .. v17}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1241,7 +1092,6 @@
 
     iput-boolean v0, v1, Lcom/android/systemui/cooldown/OverheatReceiver;->isSafeMode:Z
 
-    .line 219
     const-string v17, "OverheatReceiver"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -1270,7 +1120,6 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 220
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/systemui/cooldown/OverheatReceiver;->isVZW:Z
@@ -1293,14 +1142,12 @@
 
     if-eqz v17, :cond_9
 
-    .line 222
     const-string v17, "OverheatReceiver"
 
     const-string v18, "VZW on"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -1313,22 +1160,14 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 225
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    const v16, 0x7f0d0494
+    const v16, 0x7f0d04b5
 
-    .line 226
-    .local v16, "tickerTitle_safemode":I
-    const v14, 0x7f0d0495
+    const v14, 0x7f0d04b6
 
-    .line 229
-    .local v14, "tickerText_safemode":I
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
 
-    .line 230
-    .restart local v5    # "coolingintent":Landroid/content/Intent;
     const-string v17, "com.android.systemui"
 
     const-string v18, "com.android.systemui.cooldown.SafeMode"
@@ -1339,7 +1178,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 234
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v17
@@ -1358,11 +1196,9 @@
 
     move-result-object v11
 
-    .line 236
-    .restart local v11    # "pendingIntent":Landroid/app/PendingIntent;
     new-instance v9, Landroid/app/Notification;
 
-    const v17, 0x7f020346
+    const v17, 0x7f02034d
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1388,8 +1224,6 @@
 
     invoke-direct {v9, v0, v1, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 239
-    .restart local v9    # "notification":Landroid/app/Notification;
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -1400,7 +1234,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 240
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
@@ -1431,7 +1264,6 @@
 
     invoke-virtual {v9, v0, v1, v2, v11}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 244
     const v17, 0x22354
 
     move/from16 v0, v17
@@ -1442,31 +1274,19 @@
 
     goto/16 :goto_0
 
-    .line 273
-    .end local v5    # "coolingintent":Landroid/content/Intent;
-    .end local v8    # "notiManager":Landroid/app/NotificationManager;
-    .end local v9    # "notification":Landroid/app/Notification;
-    .end local v11    # "pendingIntent":Landroid/app/PendingIntent;
-    .end local v14    # "tickerText_safemode":I
-    .end local v16    # "tickerTitle_safemode":I
     :catch_3
     move-exception v6
 
-    .line 274
-    .restart local v6    # "e5":Ljava/lang/Exception;
     const-string v17, "TAG"
 
     const-string v18, "SAFEMODE Exception catch!!"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     invoke-virtual {v6}, Ljava/lang/Exception;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 246
-    .end local v6    # "e5":Ljava/lang/Exception;
     :cond_9
     :try_start_7
     move-object/from16 v0, p0
@@ -1485,14 +1305,12 @@
 
     if-eqz v17, :cond_1
 
-    .line 248
     const-string v17, "OverheatReceiver"
 
     const-string v18, "Global on"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 249
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -1505,22 +1323,14 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 251
-    .restart local v8    # "notiManager":Landroid/app/NotificationManager;
-    const v16, 0x7f0d048e
+    const v16, 0x7f0d04af
 
-    .line 252
-    .restart local v16    # "tickerTitle_safemode":I
-    const v14, 0x7f0d048f
+    const v14, 0x7f0d04b0
 
-    .line 255
-    .restart local v14    # "tickerText_safemode":I
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
 
-    .line 256
-    .restart local v5    # "coolingintent":Landroid/content/Intent;
     const-string v17, "com.android.systemui"
 
     const-string v18, "com.android.systemui.cooldown.SafeMode"
@@ -1531,7 +1341,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 260
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v17
@@ -1550,11 +1359,9 @@
 
     move-result-object v11
 
-    .line 262
-    .restart local v11    # "pendingIntent":Landroid/app/PendingIntent;
     new-instance v9, Landroid/app/Notification;
 
-    const v17, 0x7f020346
+    const v17, 0x7f02034d
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1580,8 +1387,6 @@
 
     invoke-direct {v9, v0, v1, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 265
-    .restart local v9    # "notification":Landroid/app/Notification;
     iget v0, v9, Landroid/app/Notification;->flags:I
 
     move/from16 v17, v0
@@ -1592,7 +1397,6 @@
 
     iput v0, v9, Landroid/app/Notification;->flags:I
 
-    .line 266
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
@@ -1623,7 +1427,6 @@
 
     invoke-virtual {v9, v0, v1, v2, v11}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 270
     const v17, 0x22354
 
     move/from16 v0, v17
@@ -1634,7 +1437,6 @@
 
     goto/16 :goto_0
 
-    .line 117
     nop
 
     :pswitch_data_0

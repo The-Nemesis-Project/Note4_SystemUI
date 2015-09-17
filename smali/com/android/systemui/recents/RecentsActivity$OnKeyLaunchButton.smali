@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
 
-    .prologue
-    .line 1142
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$OnKeyLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/RecentsActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/recents/RecentsActivity;
-    .param p2, "x1"    # Lcom/android/systemui/recents/RecentsActivity$1;
 
-    .prologue
-    .line 1142
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/RecentsActivity$OnKeyLaunchButton;-><init>(Lcom/android/systemui/recents/RecentsActivity;)V
 
     return-void
@@ -50,27 +44,19 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 1145
     const/4 v1, 0x4
 
     if-ne p2, v1, :cond_0
 
-    .line 1146
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$OnKeyLaunchButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHome(Z)Z
 
-    .line 1147
     const/4 v0, 0x1
 
-    .line 1149
     :cond_0
     return v0
 .end method

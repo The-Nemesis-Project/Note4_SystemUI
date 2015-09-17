@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/EmergencyButton;)V
     .locals 0
 
-    .prologue
-    .line 161
     iput-object p1, p0, Lcom/android/keyguard/EmergencyButton$2;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,26 +36,20 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 163
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isKoreaFeature()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 164
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$2;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-virtual {v0}, Lcom/android/keyguard/EmergencyButton;->takeEmergencyCallList()V
 
-    .line 168
     :goto_0
     return-void
 
-    .line 166
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$2;->this$0:Lcom/android/keyguard/EmergencyButton;
 

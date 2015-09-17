@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;)V
     .locals 0
 
-    .prologue
-    .line 196
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
     .locals 5
-    .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .prologue
-    .line 199
     invoke-super {p0, p1}, Landroid/telephony/PhoneStateListener;->onServiceStateChanged(Landroid/telephony/ServiceState;)V
 
-    .line 200
     const-string v2, "SecKeyguardEmergencyDummyCircle"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -68,7 +62,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->mContext:Landroid/content/Context;
@@ -84,8 +77,6 @@
 
     move-result v0
 
-    .line 202
-    .local v0, "phoneState":I
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->mContext:Landroid/content/Context;
@@ -101,8 +92,6 @@
 
     move-result-object v1
 
-    .line 204
-    .local v1, "simState":Lcom/android/internal/telephony/IccCardConstants$State;
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;
 
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
@@ -112,12 +101,10 @@
     # setter for: Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->mServiceState:I
     invoke-static {v2, v3}, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->access$502(Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;I)I
 
-    .line 206
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;
 
     # invokes: Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->updateEmergencyCallButton(Lcom/android/internal/telephony/IccCardConstants$State;I)V
     invoke-static {v2, v1, v0}, Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;->access$100(Lcom/android/keyguard/sec/SecKeyguardEmergencyDummyCircle;Lcom/android/internal/telephony/IccCardConstants$State;I)V
 
-    .line 207
     return-void
 .end method

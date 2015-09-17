@@ -18,8 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 476
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
@@ -29,13 +27,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 0
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 478
     # invokes: Lcom/android/keyguard/sec/SecPopupManager;->dismissdDialog()V
     invoke-static {}, Lcom/android/keyguard/sec/SecPopupManager;->access$000()V
 
-    .line 479
     return-void
 .end method

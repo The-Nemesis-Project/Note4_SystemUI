@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -54,7 +53,6 @@
 
     const/4 v3, 0x0
 
-    .line 56
     new-instance v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
 
     const-string v1, "SettingPage"
@@ -105,7 +103,6 @@
 
     sput-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;->WeatherHealthPage:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
 
-    .line 55
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
@@ -149,8 +146,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 55
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -158,10 +153,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 55
     const-class v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -176,8 +168,6 @@
 .method public static values()[Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
     .locals 1
 
-    .prologue
-    .line 55
     sget-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;->$VALUES:[Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;
 
     invoke-virtual {v0}, [Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$PageIndex;->clone()Ljava/lang/Object;

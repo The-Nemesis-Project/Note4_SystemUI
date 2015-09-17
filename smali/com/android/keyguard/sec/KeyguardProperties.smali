@@ -42,6 +42,8 @@
 
 .field private static final HK:Z
 
+.field private static final HKTW:Z
+
 .field private static final HUT:Z
 
 .field private static final H_PROJECT:Z
@@ -122,6 +124,8 @@
 
 .field private static final TMO:Z
 
+.field private static final TW:Z
+
 .field private static final T_PROJECT:Z
 
 .field private static final USA:Z
@@ -181,12 +185,10 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v1, 0x0
 
-    .line 23
     const-string v0, "ro.product.name"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -195,7 +197,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
-    .line 24
     const-string v0, "ro.csc.country_code"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -204,7 +205,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mCountryCode:Ljava/lang/String;
 
-    .line 25
     const-string v0, "ro.csc.sales_code"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -213,7 +213,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
 
-    .line 26
     const-string v0, "ro.build.characteristics"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -222,7 +221,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mBuildCharacteristics:Ljava/lang/String;
 
-    .line 31
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "spi"
@@ -233,7 +231,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPI:Z
 
-    .line 32
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "xar"
@@ -244,7 +241,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->XAR:Z
 
-    .line 33
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "mtr"
@@ -255,7 +251,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->MTR:Z
 
-    .line 34
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "vmu"
@@ -266,7 +261,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VMU:Z
 
-    .line 35
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "vzw"
@@ -277,7 +271,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VZW:Z
 
-    .line 36
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "att"
@@ -304,7 +297,6 @@
     :goto_0
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ATT:Z
 
-    .line 37
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "aio"
@@ -315,7 +307,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->AIO:Z
 
-    .line 38
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zig"
@@ -326,7 +317,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ZIG:Z
 
-    .line 39
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "spr"
@@ -337,7 +327,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR:Z
 
-    .line 40
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "tmo"
@@ -364,7 +353,6 @@
     :goto_1
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TMO:Z
 
-    .line 41
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "usc"
@@ -375,7 +363,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->USCC:Z
 
-    .line 42
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "bst"
@@ -386,7 +373,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->BST:Z
 
-    .line 43
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "tfn"
@@ -397,7 +383,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TFN:Z
 
-    .line 44
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "xas"
@@ -408,7 +393,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->XAS:Z
 
-    .line 45
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "cri"
@@ -419,7 +403,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CRI:Z
 
-    .line 46
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "csp"
@@ -430,7 +413,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CSP:Z
 
-    .line 47
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "skt"
@@ -441,7 +423,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SKT:Z
 
-    .line 48
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "ktt"
@@ -452,7 +433,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KTT:Z
 
-    .line 49
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "lgt"
@@ -463,7 +443,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->LGT:Z
 
-    .line 50
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zm"
@@ -474,7 +453,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CMCC:Z
 
-    .line 51
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zn"
@@ -485,7 +463,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CU:Z
 
-    .line 52
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "ctc"
@@ -496,7 +473,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CTC:Z
 
-    .line 53
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zh"
@@ -507,7 +483,26 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->HK:Z
 
-    .line 54
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "zt"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TW:Z
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "zs"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->HKTW:Z
+
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zc"
@@ -518,7 +513,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CHN_OPEN:Z
 
-    .line 55
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "xx"
@@ -529,7 +523,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->EUR_OPEN:Z
 
-    .line 56
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "wifiue"
@@ -540,7 +533,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->USA_WIFI:Z
 
-    .line 57
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "lra"
@@ -551,7 +543,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->LRA:Z
 
-    .line 58
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "acg"
@@ -562,7 +553,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ACG:Z
 
-    .line 59
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "bmc"
@@ -573,7 +563,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->BMC:Z
 
-    .line 60
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VZW:Z
 
     if-nez v0, :cond_2
@@ -660,7 +649,6 @@
     :goto_2
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->USA:Z
 
-    .line 62
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SKT:Z
 
     if-nez v0, :cond_3
@@ -679,7 +667,6 @@
     :goto_3
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KOR:Z
 
-    .line 63
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CHN_OPEN:Z
 
     if-nez v0, :cond_4
@@ -702,10 +689,8 @@
     :goto_4
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CHN:Z
 
-    .line 64
     sput-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->mIsGgsmTabletEnabledSpass:Z
 
-    .line 66
     const-string v0, "DBT"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -716,7 +701,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->DBT:Z
 
-    .line 67
     const-string v0, "Germany"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mCountryCode:Ljava/lang/String;
@@ -737,7 +721,6 @@
     :goto_5
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->GERMAN:Z
 
-    .line 69
     const-string v0, "TEL"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -748,7 +731,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TEL:Z
 
-    .line 70
     const-string v0, "VAU"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -759,7 +741,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VAU:Z
 
-    .line 71
     const-string v0, "HUT"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -770,7 +751,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->HUT:Z
 
-    .line 72
     const-string v0, "BST"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -781,7 +761,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->BST_SALES:Z
 
-    .line 73
     const-string v0, "OPS"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -792,7 +771,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->OPS:Z
 
-    .line 74
     const-string v0, "OPP"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -803,7 +781,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->OPP:Z
 
-    .line 75
     const-string v0, "TLP"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -814,7 +791,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TLP:Z
 
-    .line 76
     const-string v0, "XSA"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -825,7 +801,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->XSA:Z
 
-    .line 77
     const-string v0, "Australia"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mCountryCode:Ljava/lang/String;
@@ -874,7 +849,6 @@
     :goto_6
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->AUSTRALIAN:Z
 
-    .line 79
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR:Z
 
     if-nez v0, :cond_7
@@ -901,7 +875,6 @@
     :goto_7
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR_SALES:Z
 
-    .line 81
     const-string v0, "DCM"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -912,7 +885,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->DCM:Z
 
-    .line 82
     const-string v0, "KDI"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -923,7 +895,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KDI:Z
 
-    .line 83
     const-string v0, "SBM"
 
     sget-object v3, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -934,7 +905,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SBM:Z
 
-    .line 104
     const-string v0, "ro.build.scafe"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -943,7 +913,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeName:Ljava/lang/String;
 
-    .line 105
     const-string v0, "ro.build.scafe.size"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -952,7 +921,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeSize:Ljava/lang/String;
 
-    .line 106
     const-string v0, "ro.build.scafe.shot"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -961,7 +929,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeShot:Ljava/lang/String;
 
-    .line 107
     const-string v0, "ro.build.scafe.syrup"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -970,7 +937,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeSyrup:Ljava/lang/String;
 
-    .line 108
     const-string v0, "ro.build.scafe.cream"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -979,7 +945,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeCream:Ljava/lang/String;
 
-    .line 109
     const-string v0, "ro.build.scafe.extra"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -988,7 +953,6 @@
 
     sput-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeExtra:Ljava/lang/String;
 
-    .line 114
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "klte"
@@ -1017,6 +981,46 @@
 
     move-result v0
 
+    if-nez v0, :cond_8
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "kccat6"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "SC-04F"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "SCL23"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v3, "SC-02G"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
     if-eqz v0, :cond_15
 
     :cond_8
@@ -1025,7 +1029,6 @@
     :goto_8
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->K_PROJECT_MR:Z
 
-    .line 117
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "lentislte"
@@ -1036,7 +1039,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->LENTIS_PROJECT_MR:Z
 
-    .line 119
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "ja3g"
@@ -1103,7 +1105,6 @@
     :goto_9
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->J_PROJECT:Z
 
-    .line 124
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "h3g"
@@ -1140,7 +1141,6 @@
     :goto_a
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->H_PROJECT:Z
 
-    .line 127
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "tblte"
@@ -1267,7 +1267,6 @@
     :goto_b
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->T_PROJECT:Z
 
-    .line 135
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "zero"
@@ -1278,7 +1277,6 @@
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ZERO_PROJECT:Z
 
-    .line 137
     sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     const-string v3, "tb"
@@ -1313,18 +1311,14 @@
     :goto_c
     sput-boolean v2, Lcom/android/keyguard/sec/KeyguardProperties;->TB_PROJECT_MR:Z
 
-    .line 143
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ATT:Z
 
     sput-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->mRoamingTextNotAllowedOnDualClock:Z
 
-    .line 325
     sput-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabled:Z
 
-    .line 326
     sput-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabledChecked:Z
 
-    .line 349
     const/4 v0, -0x1
 
     sput v0, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
@@ -1334,87 +1328,72 @@
     :cond_d
     move v0, v1
 
-    .line 36
     goto/16 :goto_0
 
     :cond_e
     move v0, v1
 
-    .line 40
     goto/16 :goto_1
 
     :cond_f
     move v0, v1
 
-    .line 60
     goto/16 :goto_2
 
     :cond_10
     move v0, v1
 
-    .line 62
     goto/16 :goto_3
 
     :cond_11
     move v0, v1
 
-    .line 63
     goto/16 :goto_4
 
     :cond_12
     move v0, v1
 
-    .line 67
     goto/16 :goto_5
 
     :cond_13
     move v0, v1
 
-    .line 77
     goto/16 :goto_6
 
     :cond_14
     move v0, v1
 
-    .line 79
     goto/16 :goto_7
 
     :cond_15
     move v0, v1
 
-    .line 114
     goto/16 :goto_8
 
     :cond_16
     move v0, v1
 
-    .line 119
     goto/16 :goto_9
 
     :cond_17
     move v0, v1
 
-    .line 124
     goto/16 :goto_a
 
     :cond_18
     move v0, v1
 
-    .line 127
     goto :goto_b
 
     :cond_19
     move v2, v1
 
-    .line 137
     goto :goto_c
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1422,10 +1401,7 @@
 
 .method public static hasCocktailBar(Landroid/content/Context;)Z
     .locals 1
-    .param p0, "mContext"    # Landroid/content/Context;
 
-    .prologue
-    .line 153
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TB_PROJECT_MR:Z
 
     return v0
@@ -1434,8 +1410,6 @@
 .method public static isATTFeature()Z
     .locals 1
 
-    .prologue
-    .line 235
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ATT:Z
 
     return v0
@@ -1444,8 +1418,6 @@
 .method public static isAmericanoLook()Z
     .locals 3
 
-    .prologue
-    .line 169
     const-string v1, "americano"
 
     sget-object v2, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeName:Ljava/lang/String;
@@ -1454,14 +1426,10 @@
 
     move-result v0
 
-    .line 171
-    .local v0, "isAmericanoLook":Z
     if-eqz v0, :cond_0
 
-    .line 172
     const/4 v1, 0x1
 
-    .line 174
     :goto_0
     return v1
 
@@ -1474,8 +1442,6 @@
 .method public static isAutoWipeFeature()Z
     .locals 1
 
-    .prologue
-    .line 243
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VZW:Z
 
     return v0
@@ -1484,8 +1450,6 @@
 .method public static isCMCCModel()Z
     .locals 1
 
-    .prologue
-    .line 195
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CMCC:Z
 
     return v0
@@ -1494,8 +1458,6 @@
 .method public static isCTCModel()Z
     .locals 1
 
-    .prologue
-    .line 191
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CTC:Z
 
     return v0
@@ -1504,8 +1466,6 @@
 .method public static isCUModel()Z
     .locals 1
 
-    .prologue
-    .line 199
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CU:Z
 
     return v0
@@ -1514,18 +1474,78 @@
 .method public static isChinaFeature()Z
     .locals 1
 
-    .prologue
-    .line 183
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->CHN:Z
 
     return v0
 .end method
 
+.method public static isDCMModel()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->DCM:Z
+
+    return v0
+.end method
+
+.method public static isDcmLauncher(Landroid/content/Context;)Z
+    .locals 1
+
+    invoke-static {p0}, Lcom/android/keyguard/sec/KeyguardProperties;->isDcmLauncherWithoutSecure(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lcom/android/keyguard/KeyguardSecurityModel;
+
+    invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardSecurityModel;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSecurityModel;->isNoneSecureLock()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isDcmLauncherWithoutSecure(Landroid/content/Context;)Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->DCM:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "com.nttdocomo.android.dhome"
+
+    invoke-static {p0, v0}, Lcom/android/keyguard/sec/KeyguardProperties;->isPreferedActivity(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static isDirectCallToEcc()Z
     .locals 1
 
-    .prologue
-    .line 261
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->AUSTRALIAN:Z
 
     return v0
@@ -1534,8 +1554,6 @@
 .method public static isDirectLaunchCamera()Z
     .locals 1
 
-    .prologue
-    .line 396
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->J_PROJECT:Z
 
     if-nez v0, :cond_0
@@ -1558,10 +1576,7 @@
 
 .method public static isDisplayDualImsi(Landroid/content/Context;)Z
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 410
     const-string v1, "LGT"
 
     sget-object v2, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -1592,7 +1607,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 411
     :cond_0
     const-string v1, "phone"
 
@@ -1602,8 +1616,6 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 413
-    .local v0, "telephonyManager":Landroid/telephony/TelephonyManager;
     const-string v1, "KeyguardProperties"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1630,18 +1642,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 415
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 416
     const/4 v1, 0x1
 
-    .line 419
-    .end local v0    # "telephonyManager":Landroid/telephony/TelephonyManager;
     :goto_0
     return v1
 
@@ -1654,9 +1662,23 @@
 .method public static isHKFeature()Z
     .locals 1
 
-    .prologue
-    .line 187
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->HK:Z
+
+    return v0
+.end method
+
+.method public static isHKTWFeature()Z
+    .locals 2
+
+    sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->HK:Z
+
+    sget-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->TW:Z
+
+    or-int/2addr v0, v1
+
+    sget-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->HKTW:Z
+
+    or-int/2addr v0, v1
 
     return v0
 .end method
@@ -1664,8 +1686,6 @@
 .method public static isIgnoreNationalRoaming()Z
     .locals 2
 
-    .prologue
-    .line 296
     const-string v0, "XEO"
 
     sget-object v1, Lcom/android/keyguard/sec/KeyguardProperties;->mSalesCode:Ljava/lang/String;
@@ -1703,21 +1723,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 298
     const-string v0, "KeyguardProperties"
 
     const-string v1, "isIgnoreNationalRoaming() = true"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
     const/4 v0, 0x1
 
-    .line 302
     :goto_0
     return v0
 
-    .line 301
     :cond_1
     const-string v0, "KeyguardProperties"
 
@@ -1725,7 +1741,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
     const/4 v0, 0x0
 
     goto :goto_0
@@ -1734,8 +1749,6 @@
 .method public static isJapanFeature()Z
     .locals 2
 
-    .prologue
-    .line 207
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->DCM:Z
 
     sget-boolean v1, Lcom/android/keyguard/sec/KeyguardProperties;->KDI:Z
@@ -1752,8 +1765,6 @@
 .method public static isKDIFeature()Z
     .locals 1
 
-    .prologue
-    .line 211
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KDI:Z
 
     return v0
@@ -1762,8 +1773,6 @@
 .method public static isKModelWeatherDeamon()Z
     .locals 1
 
-    .prologue
-    .line 457
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isTProject()Z
 
     move-result v0
@@ -1790,8 +1799,6 @@
 .method public static isKProject()Z
     .locals 1
 
-    .prologue
-    .line 376
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->K_PROJECT_MR:Z
 
     return v0
@@ -1800,8 +1807,6 @@
 .method public static isKoreaFeature()Z
     .locals 1
 
-    .prologue
-    .line 215
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KOR:Z
 
     return v0
@@ -1810,8 +1815,6 @@
 .method public static isKttModel()Z
     .locals 1
 
-    .prologue
-    .line 223
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->KTT:Z
 
     return v0
@@ -1820,8 +1823,6 @@
 .method public static isLegacyUX()Z
     .locals 2
 
-    .prologue
-    .line 178
     const-string v0, "americano"
 
     sget-object v1, Lcom/android/keyguard/sec/KeyguardProperties;->mSCafeName:Ljava/lang/String;
@@ -1857,8 +1858,6 @@
 .method public static isLgtModel()Z
     .locals 1
 
-    .prologue
-    .line 227
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->LGT:Z
 
     return v0
@@ -1867,8 +1866,6 @@
 .method public static isLowFestival()Z
     .locals 1
 
-    .prologue
-    .line 388
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->LENTIS_PROJECT_MR:Z
 
     return v0
@@ -1877,8 +1874,6 @@
 .method public static isMultiSIMDevice()Z
     .locals 1
 
-    .prologue
-    .line 268
     const/4 v0, 0x0
 
     return v0
@@ -1887,12 +1882,10 @@
 .method public static isNationalRoaming()Z
     .locals 8
 
-    .prologue
     const/4 v7, 0x3
 
     const/4 v4, 0x0
 
-    .line 307
     const-string v5, "gsm.sim.operator.numeric"
 
     const-string v6, ""
@@ -1901,8 +1894,6 @@
 
     move-result-object v3
 
-    .line 308
-    .local v3, "simNumeric":Ljava/lang/String;
     const-string v5, "gsm.operator.numeric"
 
     const-string v6, ""
@@ -1911,8 +1902,6 @@
 
     move-result-object v1
 
-    .line 310
-    .local v1, "plmnNumeric":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -1941,31 +1930,22 @@
 
     if-nez v5, :cond_0
 
-    .line 311
     invoke-virtual {v3, v4, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 312
-    .local v2, "simMCC":Ljava/lang/String;
     invoke-virtual {v1, v4, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 315
-    .local v0, "plmnMCC":Ljava/lang/String;
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 316
     const/4 v4, 0x1
 
-    .line 322
-    .end local v0    # "plmnMCC":Ljava/lang/String;
-    .end local v2    # "simMCC":Ljava/lang/String;
     :cond_0
     return v4
 .end method
@@ -1973,8 +1953,6 @@
 .method public static isNotRequireSIMPUKCode()Z
     .locals 1
 
-    .prologue
-    .line 239
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TMO:Z
 
     return v0
@@ -1982,26 +1960,21 @@
 
 .method public static isOneHandOperationEnabled(Landroid/content/Context;)Z
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v4, -0x2
 
     const/4 v1, 0x0
 
     const/4 v0, 0x1
 
-    .line 351
     sget v2, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
 
     const/4 v3, -0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 352
     sput v1, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
 
-    .line 353
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
@@ -2014,10 +1987,8 @@
 
     if-ne v2, v0, :cond_1
 
-    .line 354
     sput v0, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
 
-    .line 355
     sget-object v2, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
 
     if-eqz v2, :cond_1
@@ -2042,17 +2013,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 356
     :cond_0
     sput v1, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
 
-    .line 360
     :cond_1
     sget v2, Lcom/android/keyguard/sec/KeyguardProperties;->mOneHandSettingUnified:I
 
     if-ne v2, v0, :cond_4
 
-    .line 361
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -2065,7 +2033,6 @@
 
     if-ne v2, v0, :cond_3
 
-    .line 363
     :cond_2
     :goto_0
     return v0
@@ -2073,10 +2040,8 @@
     :cond_3
     move v0, v1
 
-    .line 361
     goto :goto_0
 
-    .line 363
     :cond_4
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2098,8 +2063,6 @@
 .method public static isOneStepUnlockNotAllowed()Z
     .locals 1
 
-    .prologue
-    .line 252
     const/4 v0, 0x1
 
     return v0
@@ -2107,14 +2070,11 @@
 
 .method public static isPhoneShortcutEnable(Landroid/content/Context;)Z
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 400
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -2131,8 +2091,6 @@
 
     move v0, v1
 
-    .line 402
-    .local v0, "isPhoneShortcutOn":Z
     :goto_0
     sget-boolean v3, Lcom/android/keyguard/sec/KeyguardProperties;->T_PROJECT:Z
 
@@ -2147,26 +2105,54 @@
     :goto_1
     return v1
 
-    .end local v0    # "isPhoneShortcutOn":Z
     :cond_0
     move v0, v2
 
-    .line 400
     goto :goto_0
 
-    .restart local v0    # "isPhoneShortcutOn":Z
     :cond_1
     move v1, v2
 
-    .line 402
     goto :goto_1
+.end method
+
+.method public static isPreferedActivity(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 3
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1, v0, p1}, Landroid/content/pm/PackageManager;->getPreferredActivities(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)I
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_0
+
+    const/4 v2, 0x1
+
+    :goto_0
+    return v2
+
+    :cond_0
+    const/4 v2, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static isPresidentialCMASFeature()Z
     .locals 1
 
-    .prologue
-    .line 247
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR:Z
 
     return v0
@@ -2174,42 +2160,32 @@
 
 .method public static isRichLockEnabled(Landroid/content/Context;)Z
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v5, 0x1
 
-    .line 330
     if-nez p0, :cond_0
 
-    .line 346
     :goto_0
     return v2
 
-    .line 333
     :cond_0
     sget-boolean v3, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabledChecked:Z
 
     if-ne v3, v5, :cond_1
 
-    .line 334
     sget-boolean v2, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabled:Z
 
     goto :goto_0
 
-    .line 336
     :cond_1
     sput-boolean v5, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabledChecked:Z
 
-    .line 338
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 340
-    .local v1, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     const-string v3, "com.samsung.android.keyguardwallpaperupdator"
 
@@ -2219,21 +2195,16 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 345
     :goto_1
     sput-boolean v5, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabled:Z
 
-    .line 346
     sget-boolean v2, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabled:Z
 
     goto :goto_0
 
-    .line 341
     :catch_0
     move-exception v0
 
-    .line 342
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     sput-boolean v2, Lcom/android/keyguard/sec/KeyguardProperties;->mIsRichLockEnabled:Z
 
     goto :goto_1
@@ -2242,8 +2213,6 @@
 .method public static isRoamingTextNotAllowedOnDualClock()Z
     .locals 1
 
-    .prologue
-    .line 149
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->mRoamingTextNotAllowedOnDualClock:Z
 
     return v0
@@ -2252,16 +2221,12 @@
 .method public static isSIMToastEnabled()Z
     .locals 2
 
-    .prologue
-    .line 469
     const-string v1, "ro.csc.sales_code"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 470
-    .local v0, "SalesCode":Ljava/lang/String;
     const-string v1, "ATT"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2286,11 +2251,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 471
     :cond_0
     const/4 v1, 0x1
 
-    .line 473
     :goto_0
     return v1
 
@@ -2303,8 +2266,6 @@
 .method public static isSPRModel()Z
     .locals 1
 
-    .prologue
-    .line 423
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR_SALES:Z
 
     return v0
@@ -2313,8 +2274,6 @@
 .method public static isSPRPLMN()Z
     .locals 1
 
-    .prologue
-    .line 477
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SPR:Z
 
     return v0
@@ -2323,8 +2282,6 @@
 .method public static isShowHighLowTemp()Z
     .locals 1
 
-    .prologue
-    .line 203
     const/4 v0, 0x0
 
     return v0
@@ -2333,8 +2290,6 @@
 .method public static isSimpleHelpText()Z
     .locals 1
 
-    .prologue
-    .line 461
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ZERO_PROJECT:Z
 
     if-eqz v0, :cond_0
@@ -2359,8 +2314,6 @@
 .method public static isSingleClockCenterAlign()Z
     .locals 1
 
-    .prologue
-    .line 392
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isKProject()Z
 
     move-result v0
@@ -2389,9 +2342,21 @@
 .method public static isSktModel()Z
     .locals 1
 
-    .prologue
-    .line 219
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->SKT:Z
+
+    return v0
+.end method
+
+.method public static isSupportActivityZoneLaunch()Z
+    .locals 2
+
+    sget-object v0, Lcom/android/keyguard/sec/KeyguardProperties;->mProductName:Ljava/lang/String;
+
+    const-string v1, "marinelteuc"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
 
     return v0
 .end method
@@ -2399,8 +2364,6 @@
 .method public static isSupportBlendedFilter()Z
     .locals 1
 
-    .prologue
-    .line 427
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ZERO_PROJECT:Z
 
     return v0
@@ -2409,8 +2372,6 @@
 .method public static isSupportElasticPlugin()Z
     .locals 1
 
-    .prologue
-    .line 162
     const/4 v0, 0x0
 
     return v0
@@ -2419,8 +2380,6 @@
 .method public static isTMOModel()Z
     .locals 1
 
-    .prologue
-    .line 465
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->TMO:Z
 
     return v0
@@ -2429,8 +2388,6 @@
 .method public static isTProject()Z
     .locals 1
 
-    .prologue
-    .line 380
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->T_PROJECT:Z
 
     return v0
@@ -2439,8 +2396,6 @@
 .method public static isUSAFeature()Z
     .locals 1
 
-    .prologue
-    .line 231
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->USA:Z
 
     return v0
@@ -2449,8 +2404,6 @@
 .method public static isUSIMPersoFeatureEnable()Z
     .locals 1
 
-    .prologue
-    .line 371
     const/4 v0, 0x0
 
     return v0
@@ -2459,8 +2412,6 @@
 .method public static isVZWModel()Z
     .locals 1
 
-    .prologue
-    .line 406
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->VZW:Z
 
     return v0
@@ -2469,8 +2420,6 @@
 .method public static isZeroProject()Z
     .locals 1
 
-    .prologue
-    .line 384
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ZERO_PROJECT:Z
 
     return v0
@@ -2478,16 +2427,13 @@
 
 .method public static shouldShowPopupForDualClock(Landroid/content/Context;)Z
     .locals 9
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v8, -0x2
 
     const/4 v5, 0x0
 
     const/4 v4, 0x1
 
-    .line 272
     const-string v6, "phone"
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2496,8 +2442,6 @@
 
     check-cast v3, Landroid/telephony/TelephonyManager;
 
-    .line 275
-    .local v3, "tManager":Landroid/telephony/TelephonyManager;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
@@ -2512,8 +2456,6 @@
 
     move v2, v4
 
-    .line 277
-    .local v2, "isProfileOn":Z
     :goto_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2529,8 +2471,6 @@
 
     move v0, v4
 
-    .line 279
-    .local v0, "isDualClockOn":Z
     :goto_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2546,8 +2486,6 @@
 
     move v1, v4
 
-    .line 282
-    .local v1, "isHometimeExist":Z
     :goto_2
     const-string v6, "KeyguardProperties"
 
@@ -2605,7 +2543,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 285
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isIgnoreNationalRoaming()Z
 
     move-result v6
@@ -2614,36 +2551,25 @@
 
     move v4, v5
 
-    .line 290
     :cond_0
     :goto_3
     return v4
 
-    .end local v0    # "isDualClockOn":Z
-    .end local v1    # "isHometimeExist":Z
-    .end local v2    # "isProfileOn":Z
     :cond_1
     move v2, v5
 
-    .line 275
     goto :goto_0
 
-    .restart local v2    # "isProfileOn":Z
     :cond_2
     move v0, v5
 
-    .line 277
     goto :goto_1
 
-    .restart local v0    # "isDualClockOn":Z
     :cond_3
     move v1, v5
 
-    .line 279
     goto :goto_2
 
-    .line 287
-    .restart local v1    # "isHometimeExist":Z
     :cond_4
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isKoreaFeature()Z
 
@@ -2651,7 +2577,6 @@
 
     if-eqz v6, :cond_6
 
-    .line 288
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
 
     move-result v6
@@ -2667,7 +2592,6 @@
 
     goto :goto_3
 
-    .line 290
     :cond_6
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
 
@@ -2687,12 +2611,12 @@
     goto :goto_3
 .end method
 
-.method public static useBigClockWithNoti()Z
+.method public static useBigClockWithNoti(Landroid/content/Context;)Z
     .locals 1
 
-    .prologue
-    .line 431
-    const/4 v0, 0x0
+    invoke-static {p0}, Lcom/android/keyguard/sec/KeyguardProperties;->isDcmLauncher(Landroid/content/Context;)Z
+
+    move-result v0
 
     return v0
 .end method
@@ -2700,8 +2624,6 @@
 .method public static useIndependentLockTimeout()Z
     .locals 1
 
-    .prologue
-    .line 256
     sget-boolean v0, Lcom/android/keyguard/sec/KeyguardProperties;->ATT:Z
 
     if-nez v0, :cond_0
@@ -2724,14 +2646,9 @@
 
 .method public static usePatternBGEffect(Landroid/content/Context;)Z
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 435
     const/4 v0, 0x0
 
-    .line 438
-    .local v0, "ret":Z
     invoke-static {}, Lcom/samsung/android/feature/FloatingFeature;->getInstance()Lcom/samsung/android/feature/FloatingFeature;
 
     move-result-object v1
@@ -2744,7 +2661,6 @@
 
     if-nez v1, :cond_1
 
-    .line 440
     const-string v1, "NONE,ABSTRACTTILES,POPPINGCOLOURS,WATERCOLOUR,RIPPLE"
 
     const-string v2, "WATERCOLOUR"
@@ -2755,7 +2671,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 443
     sget-object v1, Lcom/android/keyguard/sec/KeyguardProperties;->mBuildCharacteristics:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -2778,7 +2693,6 @@
 
     if-nez v1, :cond_1
 
-    .line 446
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2796,10 +2710,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 448
     const/4 v0, 0x1
 
-    .line 453
     :cond_1
     return v0
 .end method

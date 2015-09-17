@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 80
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onContentChanged(Landroid/net/Uri;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 100
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -51,20 +46,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     const-string v0, "SViewCoverMainPage"
 
     const-string v1, "DualClockSettingObserver.onChagne : DualClockSetting changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->setClockVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$300(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 105
     :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -78,50 +70,40 @@
 
     if-eqz v0, :cond_1
 
-    .line 106
     const-string v0, "SViewCoverMainPage"
 
     const-string v1, "StylizedClockSettingObserver.onChange : StylizedClockSetting changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->setupStylizedClockStyle()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$400(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 108
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->adjustWidgetVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$500(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 110
     :cond_1
     return-void
 .end method
 
 .method public onDisasterViewUpdated(Ljava/lang/String;)V
     .locals 1
-    .param p1, "title"    # Ljava/lang/String;
 
-    .prologue
-    .line 82
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->updateDisasterAlertWidgetState(Ljava/lang/Object;)V
     invoke-static {v0, p1}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$000(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;Ljava/lang/Object;)V
 
-    .line 83
     return-void
 .end method
 
 .method public onLocaleChanged()V
     .locals 4
 
-    .prologue
-    .line 90
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->mContext:Landroid/content/Context;
@@ -133,19 +115,14 @@
 
     move-result-object v1
 
-    .line 93
-    .local v1, "bcm":Lcom/sec/android/cover/manager/CoverBroadcastManager;
     const-string v2, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v1, v2}, Lcom/sec/android/cover/manager/CoverBroadcastManager;->getLastBroadcastInfo(Ljava/lang/String;)Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
 
     move-result-object v0
 
-    .line 94
-    .local v0, "bcInfo":Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
     if-eqz v0, :cond_0
 
-    .line 95
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     iget-object v3, v0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;->mItem:Ljava/lang/Object;
@@ -153,22 +130,17 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->updateBatteryStateWidgetState(Ljava/lang/Object;)V
     invoke-static {v2, v3}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$100(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;Ljava/lang/Object;)V
 
-    .line 97
     :cond_0
     return-void
 .end method
 
 .method public onRefreshBatteryInfo(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;)V
     .locals 1
-    .param p1, "status"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$BatteryStatus;
 
-    .prologue
-    .line 86
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->updateBatteryStateWidgetState(Ljava/lang/Object;)V
     invoke-static {v0, p1}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$100(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;Ljava/lang/Object;)V
 
-    .line 87
     return-void
 .end method

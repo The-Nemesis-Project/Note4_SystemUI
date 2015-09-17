@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/BluetoothTile$2;)V
     .locals 0
 
-    .prologue
-    .line 230
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$2$1;->this$1:Lcom/android/systemui/qs/tiles/BluetoothTile$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,5 @@
 .method public run()V
     .locals 0
 
-    .prologue
-    .line 234
     return-void
 .end method

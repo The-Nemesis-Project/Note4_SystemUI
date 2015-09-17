@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
     .locals 0
 
-    .prologue
-    .line 371
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$7;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 3
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
     const/4 v1, 0x2
 
-    .line 373
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$7;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$7;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
@@ -69,10 +64,8 @@
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v2, v0}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$1300(Lcom/android/systemui/qs/tiles/DefaultDataTile;Ljava/lang/Object;)V
 
-    .line 375
     return-void
 
-    .line 373
     :cond_0
     const/4 v0, 0x1
 

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
     .locals 0
 
-    .prologue
-    .line 409
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$8;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
-    .line 413
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$8;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mAttributionRootView:Landroid/view/View;
@@ -64,7 +59,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 414
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$8;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->getContext()Landroid/content/Context;
@@ -81,8 +75,6 @@
 
     move-result-object v0
 
-    .line 417
-    .local v0, "landingPageUrl":Ljava/lang/String;
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isChinaFeature()Z
 
     move-result v1
@@ -99,14 +91,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 426
-    .end local v0    # "landingPageUrl":Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 421
-    .restart local v0    # "landingPageUrl":Ljava/lang/String;
     :cond_1
     if-eqz v0, :cond_0
 
@@ -116,7 +104,6 @@
 
     if-nez v1, :cond_0
 
-    .line 422
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$8;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # invokes: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->launchBrowser(Ljava/lang/String;)V

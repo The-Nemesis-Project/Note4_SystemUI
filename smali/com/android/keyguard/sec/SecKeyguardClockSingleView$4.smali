@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardClockSingleView;Lcom/android/keyguard/sec/SecKeyguardTextClock;Lcom/android/keyguard/sec/SecKeyguardTextClock;ZLandroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 327
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     iput-object p2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->val$time:Lcom/android/keyguard/sec/SecKeyguardTextClock;
@@ -55,8 +53,6 @@
 .method public run()V
     .locals 9
 
-    .prologue
-    .line 330
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->val$time:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     invoke-virtual {v1}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->getText()Ljava/lang/CharSequence;
@@ -67,8 +63,6 @@
 
     move-result-object v0
 
-    .line 331
-    .local v0, "strText":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->val$ampm:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     if-eqz v1, :cond_0
@@ -81,12 +75,10 @@
 
     if-nez v1, :cond_0
 
-    .line 332
     iget-boolean v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->val$isKorean:Z
 
     if-eqz v1, :cond_1
 
-    .line 333
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -119,7 +111,6 @@
 
     move-result-object v0
 
-    .line 337
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$4;->val$view:Landroid/view/View;
@@ -198,10 +189,8 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 341
     return-void
 
-    .line 335
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 

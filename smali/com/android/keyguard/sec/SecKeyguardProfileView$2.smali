@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 117
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,28 +33,21 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 5
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/16 v4, 0x66
 
     const/16 v3, 0x65
 
     const/16 v2, 0x64
 
-    .line 120
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 121
     if-nez p2, :cond_1
 
-    .line 144
     :cond_0
     :goto_0
     return-void
 
-    .line 124
     :cond_1
     const-string v0, "lock_screen_date_and_year"
 
@@ -71,7 +61,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 125
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -85,7 +74,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 126
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -95,7 +83,6 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 127
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
@@ -119,7 +106,6 @@
 
     goto :goto_0
 
-    .line 129
     :cond_3
     const-string v0, "show_clock"
 
@@ -133,7 +119,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 130
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -147,7 +132,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 131
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -157,7 +141,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 132
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
@@ -181,7 +164,6 @@
 
     goto :goto_0
 
-    .line 134
     :cond_5
     const-string v0, "location_name"
 
@@ -255,7 +237,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 140
     :cond_6
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
@@ -270,7 +251,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 141
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -280,7 +260,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 142
     :cond_7
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 

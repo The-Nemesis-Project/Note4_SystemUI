@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/PickUpTutorial;)V
     .locals 0
 
-    .prologue
-    .line 368
     iput-object p1, p0, Lcom/android/systemui/statusbar/PickUpTutorial$3;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 371
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpTutorial$3;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -52,7 +48,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 372
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpTutorial$3;->this$0:Lcom/android/systemui/statusbar/PickUpTutorial;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpTutorial;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -66,6 +61,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 373
     return-void
 .end method

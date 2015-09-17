@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ApnTile;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 314
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ApnTile$5;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,23 +33,17 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 2
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 316
     const-string v0, "ApnTile"
 
     const-string v1, "mApnObserver changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ApnTile$5;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/ApnTile;->access$200(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 318
     return-void
 .end method

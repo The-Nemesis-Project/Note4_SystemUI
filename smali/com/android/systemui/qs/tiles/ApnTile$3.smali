@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ApnTile;)V
     .locals 0
 
-    .prologue
-    .line 252
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,19 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 255
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 256
-    .local v0, "intentAction":Ljava/lang/String;
     const-string v2, "ApnTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -70,7 +62,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
     const-string v2, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -79,7 +70,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 258
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
@@ -99,7 +89,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mIsAirPlaneMode:Z
     invoke-static {v2, v1}, Lcom/android/systemui/qs/tiles/ApnTile;->access$002(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 259
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
@@ -112,7 +101,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mMobileData:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/ApnTile;->access$102(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 260
     const-string v1, "ApnTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -142,24 +130,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/ApnTile;->access$200(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 283
     :cond_0
     :goto_1
     return-void
 
-    .line 258
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 262
     :cond_2
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -193,7 +177,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 266
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
@@ -207,7 +190,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mMobileData:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/ApnTile;->access$102(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 267
     const-string v1, "ApnTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -237,7 +219,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 268
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
@@ -245,7 +226,6 @@
 
     goto :goto_1
 
-    .line 269
     :cond_4
     const-string v1, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
@@ -271,7 +251,6 @@
 
     if-eqz v1, :cond_6
 
-    .line 272
     :cond_5
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
@@ -285,7 +264,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mMobileData:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/ApnTile;->access$102(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 273
     const-string v1, "ApnTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -315,7 +293,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
@@ -323,7 +300,6 @@
 
     goto/16 :goto_1
 
-    .line 275
     :cond_6
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -337,7 +313,6 @@
 
     if-eqz v1, :cond_7
 
-    .line 276
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/ApnTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -360,7 +335,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 277
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/ApnTile;->mAlertDialog:Landroid/app/AlertDialog;
@@ -372,7 +346,6 @@
 
     goto/16 :goto_1
 
-    .line 279
     :cond_7
     const-string v1, "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
 
@@ -386,13 +359,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 280
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->unregisterPhoneStateListener()V
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/ApnTile;->access$600(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 281
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$3;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;

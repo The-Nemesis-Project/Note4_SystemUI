@@ -37,13 +37,10 @@
 .method private constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 2
 
-    .prologue
-    .line 1041
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1042
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/android/systemui/volume/ZenModePanel;->access$2000(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
@@ -53,7 +50,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0039
+    const v1, 0x7f0f003a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -61,30 +58,22 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneDangerousThreshold:I
 
-    .line 1044
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0, p0}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 1045
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->updateMinuteIndex()V
 
-    .line 1046
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->updateNoneSelected()V
 
-    .line 1047
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
-    .param p2, "x1"    # Lcom/android/systemui/volume/ZenModePanel$1;
 
-    .prologue
-    .line 1032
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$Prefs;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
     return-void
@@ -92,10 +81,7 @@
 
 .method private clampIndex(I)I
     .locals 2
-    .param p1, "index"    # I
 
-    .prologue
-    .line 1088
     const/4 v0, -0x1
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
@@ -116,10 +102,7 @@
 
 .method private clampNoneSelected(I)I
     .locals 2
-    .param p1, "noneSelected"    # I
 
-    .prologue
-    .line 1097
     const/4 v0, 0x0
 
     const v1, 0x7fffffff
@@ -134,8 +117,6 @@
 .method private prefs()Landroid/content/SharedPreferences;
     .locals 3
 
-    .prologue
-    .line 1079
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
@@ -161,8 +142,6 @@
 .method private updateMinuteIndex()V
     .locals 3
 
-    .prologue
-    .line 1083
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -184,7 +163,6 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mMinuteIndex:I
 
-    .line 1084
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -221,7 +199,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1085
     :cond_0
     return-void
 .end method
@@ -229,8 +206,6 @@
 .method private updateNoneSelected()V
     .locals 3
 
-    .prologue
-    .line 1092
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -249,7 +224,6 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneSelected:I
 
-    .line 1093
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -286,7 +260,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1094
     :cond_0
     return-void
 .end method
@@ -296,8 +269,6 @@
 .method public getMinuteIndex()I
     .locals 1
 
-    .prologue
-    .line 1061
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mMinuteIndex:I
 
     return v0
@@ -306,8 +277,6 @@
 .method public isNoneDangerous()Z
     .locals 2
 
-    .prologue
-    .line 1050
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneSelected:I
 
     iget v1, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneDangerousThreshold:I
@@ -327,40 +296,28 @@
 
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
-    .param p1, "prefs"    # Landroid/content/SharedPreferences;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .prologue
-    .line 1074
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->updateMinuteIndex()V
 
-    .line 1075
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->updateNoneSelected()V
 
-    .line 1076
     return-void
 .end method
 
 .method public setMinuteIndex(I)V
     .locals 3
-    .param p1, "minuteIndex"    # I
 
-    .prologue
-    .line 1065
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->clampIndex(I)I
 
     move-result p1
 
-    .line 1066
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mMinuteIndex:I
 
     if-ne p1, v0, :cond_0
 
-    .line 1070
     :goto_0
     return-void
 
-    .line 1067
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->clampIndex(I)I
 
@@ -368,7 +325,6 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mMinuteIndex:I
 
-    .line 1068
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -405,7 +361,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1069
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->prefs()Landroid/content/SharedPreferences;
 
@@ -431,8 +386,6 @@
 .method public trackNoneSelected()V
     .locals 3
 
-    .prologue
-    .line 1054
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneSelected:I
 
     add-int/lit8 v0, v0, 0x1
@@ -443,7 +396,6 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$Prefs;->mNoneSelected:I
 
-    .line 1055
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$400()Z
 
@@ -492,7 +444,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1057
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$Prefs;->prefs()Landroid/content/SharedPreferences;
 
@@ -512,6 +463,5 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1058
     return-void
 .end method

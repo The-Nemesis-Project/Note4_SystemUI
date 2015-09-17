@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
     .locals 0
 
-    .prologue
-    .line 194
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$4;->this$0:Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 197
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.CALL_PRIVILEGED"
@@ -63,13 +58,10 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 199
-    .local v0, "phoneIntent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 200
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$4;->this$0:Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
@@ -79,6 +71,5 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 201
     return-void
 .end method

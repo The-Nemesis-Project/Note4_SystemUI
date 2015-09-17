@@ -21,13 +21,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 1
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
-    .line 23
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 25
     const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -36,7 +32,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/SFinderTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 26
     return-void
 .end method
 
@@ -45,8 +40,6 @@
 .method protected handleClick()V
     .locals 5
 
-    .prologue
-    .line 37
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SFinderTile;->mContext:Landroid/content/Context;
 
@@ -58,31 +51,23 @@
 
     move-result v1
 
-    .line 38
-    .local v1, "isKioskModeEnabled":I
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_0
 
-    .line 39
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 40
     const-string v2, "SFinderTile"
 
     const-string v3, "mSFinderButtonListener: Kiosk mode is enabled"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 55
-    .end local v1    # "isKioskModeEnabled":I
     :goto_0
     return-void
 
-    .line 47
-    .restart local v1    # "isKioskModeEnabled":I
     :cond_0
     const-string v2, "com.samsung.android.app.galaxyfinder"
 
@@ -90,7 +75,6 @@
 
     invoke-virtual {p0, v2, v3}, Lcom/android/systemui/qs/tiles/SFinderTile;->startSettingsActivity(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 51
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SFinderTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v2}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
@@ -99,13 +83,9 @@
 
     goto :goto_0
 
-    .line 52
-    .end local v1    # "isKioskModeEnabled":I
     :catch_0
     move-exception v0
 
-    .line 53
-    .local v0, "e":Ljava/lang/Exception;
     const-string v2, "SFinderTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -133,35 +113,26 @@
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
-    const v2, 0x7f0d033e
+    const v2, 0x7f0d0359
 
-    .line 59
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 60
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 61
     const/4 v1, 0x1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 62
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SFinderTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -170,16 +141,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 64
     packed-switch v0, :pswitch_data_0
 
-    .line 84
     :goto_1
     return-void
 
-    .line 59
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SFinderTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -189,16 +155,12 @@
 
     goto :goto_0
 
-    .line 66
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f020646
+    const v1, 0x7f020651
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 67
-    const v1, 0x7f0d033b
+    const v1, 0x7f0d0356
 
     invoke-virtual {p0, v2, v1}, Lcom/android/systemui/qs/tiles/SFinderTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -208,14 +170,12 @@
 
     goto :goto_1
 
-    .line 72
     :pswitch_1
-    const v1, 0x7f020645
+    const v1, 0x7f020650
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 73
-    const v1, 0x7f0d033c
+    const v1, 0x7f0d0357
 
     invoke-virtual {p0, v2, v1}, Lcom/android/systemui/qs/tiles/SFinderTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -225,14 +185,12 @@
 
     goto :goto_1
 
-    .line 78
     :pswitch_2
-    const v1, 0x7f020644
+    const v1, 0x7f02064f
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 79
-    const v1, 0x7f0d033d
+    const v1, 0x7f0d0358
 
     invoke-virtual {p0, v2, v1}, Lcom/android/systemui/qs/tiles/SFinderTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -242,7 +200,6 @@
 
     goto :goto_1
 
-    .line 64
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -253,14 +210,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 17
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/SFinderTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -269,8 +221,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 30
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -281,8 +231,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 17
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/SFinderTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -292,9 +240,6 @@
 
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 90
     return-void
 .end method

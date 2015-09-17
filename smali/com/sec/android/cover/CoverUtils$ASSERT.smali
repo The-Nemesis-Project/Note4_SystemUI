@@ -32,18 +32,14 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 281
     const/4 v0, 0x0
 
     sput-object v0, Lcom/sec/android/cover/CoverUtils$ASSERT;->mContext:Landroid/content/Context;
 
-    .line 282
     sput-boolean v1, Lcom/sec/android/cover/CoverUtils$ASSERT;->mIsEngMode:Z
 
-    .line 283
     sput-boolean v1, Lcom/sec/android/cover/CoverUtils$ASSERT;->mIsMobileCareInstalled:Z
 
     return-void
@@ -52,60 +48,44 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 280
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 285
     return-void
 .end method
 
 .method private static assertionFailed(Ljava/lang/String;)V
     .locals 4
-    .param p0, "errStr"    # Ljava/lang/String;
 
-    .prologue
-    .line 316
     if-nez p0, :cond_1
 
-    .line 317
     const-string v1, "CoverUtils"
 
     const-string v2, "Assertion failed"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
     const-string p0, ""
 
-    .line 324
     :goto_0
     new-instance v0, Lcom/sec/android/cover/CoverUtils$ASSERT$AssertionFailedException;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/CoverUtils$ASSERT$AssertionFailedException;-><init>(Ljava/lang/String;)V
 
-    .line 325
-    .local v0, "e":Lcom/sec/android/cover/CoverUtils$ASSERT$AssertionFailedException;
     invoke-virtual {v0}, Lcom/sec/android/cover/CoverUtils$ASSERT$AssertionFailedException;->printStackTrace()V
 
-    .line 327
     sget-boolean v1, Lcom/sec/android/cover/CoverUtils$ASSERT;->mIsMobileCareInstalled:Z
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 328
     sget-object v1, Lcom/sec/android/cover/CoverUtils$ASSERT;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/sec/android/cover/CoverUtils;->requestDumpUpload(Landroid/content/Context;)Z
 
-    .line 333
     :cond_0
     return-void
 
-    .line 320
-    .end local v0    # "e":Lcom/sec/android/cover/CoverUtils$ASSERT$AssertionFailedException;
     :cond_1
     const-string v1, "CoverUtils"
 
@@ -134,48 +114,34 @@
 
 .method public static e(Z)V
     .locals 1
-    .param p0, "condition"    # Z
 
-    .prologue
-    .line 300
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/sec/android/cover/CoverUtils$ASSERT;->e(ZLjava/lang/String;)V
 
-    .line 301
     return-void
 .end method
 
 .method public static e(ZLjava/lang/String;)V
     .locals 0
-    .param p0, "condition"    # Z
-    .param p1, "errStr"    # Ljava/lang/String;
 
-    .prologue
-    .line 304
     if-nez p0, :cond_0
 
-    .line 305
     invoke-static {p1}, Lcom/sec/android/cover/CoverUtils$ASSERT;->assertionFailed(Ljava/lang/String;)V
 
-    .line 307
     :cond_0
     return-void
 .end method
 
 .method public static init(Landroid/content/Context;)V
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 293
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     sput-object v0, Lcom/sec/android/cover/CoverUtils$ASSERT;->mContext:Landroid/content/Context;
 
-    .line 294
     const-string v0, "com.samsung.mobilecare"
 
     invoke-static {p0, v0}, Lcom/sec/android/cover/CoverUtils;->isPackageInstalled(Landroid/content/Context;Ljava/lang/String;)Z
@@ -184,7 +150,6 @@
 
     sput-boolean v0, Lcom/sec/android/cover/CoverUtils$ASSERT;->mIsMobileCareInstalled:Z
 
-    .line 295
     const-string v0, "eng"
 
     const-string v1, "ro.build.type"
@@ -199,7 +164,6 @@
 
     sput-boolean v0, Lcom/sec/android/cover/CoverUtils$ASSERT;->mIsEngMode:Z
 
-    .line 296
     const-string v0, "CoverUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -236,24 +200,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     return-void
 .end method
 
 .method public static notNull(Ljava/lang/Object;)V
     .locals 1
-    .param p0, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 310
     if-nez p0, :cond_0
 
-    .line 311
     const-string v0, "The object is null!"
 
     invoke-static {v0}, Lcom/sec/android/cover/CoverUtils$ASSERT;->assertionFailed(Ljava/lang/String;)V
 
-    .line 313
     :cond_0
     return-void
 .end method

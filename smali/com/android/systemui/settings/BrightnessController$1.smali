@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/settings/BrightnessController;Landroid/content/Context;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/systemui/settings/BrightnessController$1;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-direct {p0, p2}, Lcom/android/systemui/settings/CurrentUserTracker;-><init>(Landroid/content/Context;)V
@@ -36,20 +33,15 @@
 # virtual methods
 .method public onUserSwitched(I)V
     .locals 1
-    .param p1, "newUserId"    # I
 
-    .prologue
-    .line 159
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$1;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     # invokes: Lcom/android/systemui/settings/BrightnessController;->updateMode()V
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$100(Lcom/android/systemui/settings/BrightnessController;)V
 
-    .line 168
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$1;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-virtual {v0}, Lcom/android/systemui/settings/BrightnessController;->initValues()V
 
-    .line 169
     return-void
 .end method

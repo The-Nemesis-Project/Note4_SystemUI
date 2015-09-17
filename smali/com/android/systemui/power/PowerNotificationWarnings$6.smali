@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
 
-    .prologue
-    .line 1044
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$6;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,9 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 1046
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$6;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-virtual {v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->showChargingInterruptionWarning()V
 
-    .line 1047
     return-void
 .end method

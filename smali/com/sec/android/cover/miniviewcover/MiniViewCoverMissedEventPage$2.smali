@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;)V
     .locals 0
 
-    .prologue
-    .line 157
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClose(Lcom/sec/android/cover/widget/PopupFrameView;)V
     .locals 2
-    .param p1, "popupView"    # Lcom/sec/android/cover/widget/PopupFrameView;
 
-    .prologue
-    .line 160
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->mMissedEvnetClickListener:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$OnMissedEventClickListenr;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 161
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;->mMissedEvnetClickListener:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$OnMissedEventClickListenr;
@@ -63,7 +57,6 @@
 
     invoke-interface {v0, v1}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$OnMissedEventClickListenr;->OnMissedEventClick(Z)V
 
-    .line 164
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMissedEventPage;
 
@@ -76,6 +69,5 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->setPendingIntent(Landroid/app/PendingIntent;)V
 
-    .line 165
     return-void
 .end method

@@ -26,8 +26,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardCircleView;FLandroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 452
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$4;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     iput p2, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$4;->val$to:F
@@ -43,17 +41,13 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 454
     const-string v0, "SecKeyguardCircleView"
 
     const-string v1, "animation end"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 455
     iget v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$4;->val$to:F
 
     const/4 v1, 0x0
@@ -62,37 +56,30 @@
 
     if-nez v0, :cond_0
 
-    .line 456
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$4;->val$view:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 458
     :cond_0
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 461
     const-string v0, "SecKeyguardCircleView"
 
     const-string v1, "animation start"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 462
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$4;->val$view:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 463
     return-void
 .end method

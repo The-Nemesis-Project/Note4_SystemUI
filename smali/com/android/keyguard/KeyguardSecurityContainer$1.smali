@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSecurityContainer;)V
     .locals 0
 
-    .prologue
-    .line 871
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public dismiss(Z)V
     .locals 1
-    .param p1, "authenticated"    # Z
 
-    .prologue
-    .line 880
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -51,18 +46,12 @@
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->dismiss(Z)Z
 
-    .line 881
     return-void
 .end method
 
 .method public dismissWithAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;ZZ)V
     .locals 1
-    .param p1, "r"    # Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
-    .param p2, "afterKeyguardGone"    # Z
-    .param p3, "dismissIfInsecure"    # Z
 
-    .prologue
-    .line 920
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -72,7 +61,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 921
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -82,7 +70,6 @@
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->dismissWithAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;ZZ)V
 
-    .line 923
     :cond_0
     return-void
 .end method
@@ -90,8 +77,6 @@
 .method public isVerifyUnlockOnly()Z
     .locals 1
 
-    .prologue
-    .line 884
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mIsVerifyUnlockOnly:Z
@@ -104,10 +89,7 @@
 
 .method public reportUnlockAttempt(Z)V
     .locals 3
-    .param p1, "success"    # Z
 
-    .prologue
-    .line 888
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
@@ -119,14 +101,10 @@
 
     move-result-object v0
 
-    .line 889
-    .local v0, "monitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     if-eqz p1, :cond_0
 
-    .line 890
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->clearFailedUnlockAttempts()V
 
-    .line 891
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -136,11 +114,9 @@
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->reportSuccessfulPasswordAttempt()V
 
-    .line 899
     :goto_0
     return-void
 
-    .line 893
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
@@ -153,12 +129,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 894
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportFailedBiometricUnlockAttempt()V
 
     goto :goto_0
 
-    .line 896
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
@@ -170,10 +144,7 @@
 
 .method public setOnDismissAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
     .locals 1
-    .param p1, "r"    # Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
-    .prologue
-    .line 913
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -183,7 +154,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 914
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -193,46 +163,35 @@
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->setOnDismissAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
 
-    .line 916
     :cond_0
     return-void
 .end method
 
 .method public showBackupSecurity(Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;)V
     .locals 1
-    .param p1, "mode"    # Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    .prologue
-    .line 903
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # invokes: Lcom/android/keyguard/KeyguardSecurityContainer;->showBackupSecurityScreen(Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;)V
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardSecurityContainer;->access$600(Lcom/android/keyguard/KeyguardSecurityContainer;Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;)V
 
-    .line 904
     return-void
 .end method
 
 .method public showWipeDialog(I)V
     .locals 1
-    .param p1, "attempts"    # I
 
-    .prologue
-    .line 908
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # invokes: Lcom/android/keyguard/KeyguardSecurityContainer;->showWipeDialog(I)V
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardSecurityContainer;->access$700(Lcom/android/keyguard/KeyguardSecurityContainer;I)V
 
-    .line 909
     return-void
 .end method
 
 .method public userActivity()V
     .locals 1
 
-    .prologue
-    .line 874
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -242,7 +201,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 875
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -252,7 +210,6 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->userActivity()V
 
-    .line 877
     :cond_0
     return-void
 .end method

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .prologue
-    .line 664
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {p0, p2}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;)V
@@ -36,20 +33,14 @@
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
     .locals 5
-    .param p1, "event"    # I
-    .param p2, "path"    # Ljava/lang/String;
 
-    .prologue
     const/16 v4, 0x12f2
 
-    .line 667
     sparse-switch p1, :sswitch_data_0
 
-    .line 683
     :goto_0
     return-void
 
-    .line 671
     :sswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -70,7 +61,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 674
     :sswitch_1
     const-string v0, "KeyguardEffectViewController"
 
@@ -78,7 +68,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 675
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -92,7 +81,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 676
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardEffectViewController;->mHandler:Landroid/os/Handler;
@@ -102,7 +90,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 678
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$7;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -115,7 +102,6 @@
 
     goto :goto_0
 
-    .line 667
     :sswitch_data_0
     .sparse-switch
         0x8 -> :sswitch_1

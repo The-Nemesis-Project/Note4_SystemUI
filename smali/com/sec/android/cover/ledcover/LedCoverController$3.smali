@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/ledcover/LedCoverController;)V
     .locals 0
 
-    .prologue
-    .line 141
     iput-object p1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 143
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 144
-    .local v0, "action":Ljava/lang/String;
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$500()Ljava/lang/String;
 
@@ -75,7 +67,6 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 147
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->mAlarmType:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
@@ -87,13 +78,10 @@
 
     if-eq v1, v4, :cond_1
 
-    .line 148
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 149
-    .local v2, "curTime":J
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->mAlarmStartTime:J
@@ -124,7 +112,6 @@
 
     if-lez v1, :cond_1
 
-    .line 150
     :cond_0
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
@@ -133,7 +120,6 @@
     # setter for: Lcom/sec/android/cover/ledcover/LedCoverController;->mAlarmType:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
     invoke-static {v1, v4}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$602(Lcom/sec/android/cover/ledcover/LedCoverController;Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;)Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
 
-    .line 151
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$500()Ljava/lang/String;
 
@@ -143,8 +129,6 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
-    .end local v2    # "curTime":J
     :cond_1
     const-string v1, "android.intent.action.SCREEN_ON"
 
@@ -154,7 +138,6 @@
 
     if-eqz v1, :cond_5
 
-    .line 156
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     const/4 v4, 0x1
@@ -162,7 +145,6 @@
     # setter for: Lcom/sec/android/cover/ledcover/LedCoverController;->isScreenOn:Z
     invoke-static {v1, v4}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$802(Lcom/sec/android/cover/ledcover/LedCoverController;Z)Z
 
-    .line 157
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->isCoverOpen()Z
@@ -171,20 +153,17 @@
 
     if-nez v1, :cond_2
 
-    .line 158
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # invokes: Lcom/sec/android/cover/ledcover/LedCoverController;->sendCommandByPriority()V
     invoke-static {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$900(Lcom/sec/android/cover/ledcover/LedCoverController;)V
 
-    .line 159
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/hardware/input/InputManager;->coverEventFinished()V
 
-    .line 165
     :cond_2
     :goto_0
     const-string v1, "android.intent.action.TIME_TICK"
@@ -221,17 +200,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 168
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendClockInformation()V
 
-    .line 207
     :cond_4
     :goto_1
     return-void
 
-    .line 161
     :cond_5
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -241,7 +217,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 162
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     const/4 v4, 0x0
@@ -251,7 +226,6 @@
 
     goto :goto_0
 
-    .line 169
     :cond_6
     const-string v1, "android.intent.action.BATTERY_LOW"
 
@@ -261,14 +235,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 170
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1, p2}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendLowBatteryInformation(Landroid/content/Intent;)V
 
     goto :goto_1
 
-    .line 171
     :cond_7
     const-string v1, "com.samsung.sec.android.clockpackage.alarm.ALARM_ALERT"
 
@@ -286,7 +258,6 @@
 
     if-eqz v1, :cond_9
 
-    .line 173
     :cond_8
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
@@ -296,21 +267,18 @@
 
     if-nez v1, :cond_4
 
-    .line 174
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     sget-object v4, Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;->ALARM:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
 
     invoke-virtual {v1, v4}, Lcom/sec/android/cover/ledcover/LedCoverController;->setAlarmType(Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;)V
 
-    .line 175
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendAlarmInformation()V
 
     goto :goto_1
 
-    .line 177
     :cond_9
     const-string v1, "com.samsung.sec.android.clockpackage.alarm.ALARM_STOPPED_IN_ALERT"
 
@@ -320,7 +288,6 @@
 
     if-eqz v1, :cond_a
 
-    .line 178
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->mAlarmType:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
@@ -332,12 +299,10 @@
 
     if-ne v1, v4, :cond_4
 
-    .line 179
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->resetAlarmType()V
 
-    .line 181
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->isIncomingCallStatus:Z
@@ -347,7 +312,6 @@
 
     if-nez v1, :cond_4
 
-    .line 182
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     const/16 v4, 0xf
@@ -359,7 +323,6 @@
 
     goto :goto_1
 
-    .line 185
     :cond_a
     const-string v1, "com.sec.android.app.clockpackage.timer.REMOTE_TIMER_FINISH"
 
@@ -369,7 +332,6 @@
 
     if-eqz v1, :cond_b
 
-    .line 186
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->isCoverOpen()Z
@@ -378,21 +340,18 @@
 
     if-nez v1, :cond_4
 
-    .line 187
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     sget-object v4, Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;->TIMER:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
 
     invoke-virtual {v1, v4}, Lcom/sec/android/cover/ledcover/LedCoverController;->setAlarmType(Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;)V
 
-    .line 188
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendAlarmInformation()V
 
     goto/16 :goto_1
 
-    .line 190
     :cond_b
     const-string v1, "com.android.calendar.SEND_ALERTINFO_ACTION"
 
@@ -402,7 +361,6 @@
 
     if-eqz v1, :cond_c
 
-    .line 191
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->isCoverOpen()Z
@@ -411,21 +369,18 @@
 
     if-nez v1, :cond_4
 
-    .line 192
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     sget-object v4, Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;->SPLANNER:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
 
     invoke-virtual {v1, v4}, Lcom/sec/android/cover/ledcover/LedCoverController;->setAlarmType(Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;)V
 
-    .line 193
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendAlarmInformation()V
 
     goto/16 :goto_1
 
-    .line 195
     :cond_c
     const-string v1, "android.intent.action.PHONE_STATE"
 
@@ -435,7 +390,6 @@
 
     if-eqz v1, :cond_d
 
-    .line 196
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # invokes: Lcom/sec/android/cover/ledcover/LedCoverController;->processCallEvent(Landroid/content/Intent;)V
@@ -443,7 +397,6 @@
 
     goto/16 :goto_1
 
-    .line 197
     :cond_d
     const-string v1, "android.media.VOLUME_CHANGED_ACTION"
 
@@ -453,7 +406,6 @@
 
     if-eqz v1, :cond_f
 
-    .line 198
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->prevCallSatus:I
@@ -497,14 +449,12 @@
 
     if-nez v1, :cond_4
 
-    .line 200
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-virtual {v1, p2}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendVolumeInformation(Landroid/content/Intent;)V
 
     goto/16 :goto_1
 
-    .line 202
     :cond_f
     const-string v1, "com.sec.android.phone.action.ACTION_CALL_ENDED"
 
@@ -514,7 +464,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 203
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # getter for: Lcom/sec/android/cover/ledcover/LedCoverController;->mAlarmType:Lcom/sec/android/cover/ledcover/LedCoverController$AlarmType;
@@ -526,7 +475,6 @@
 
     if-ne v1, v4, :cond_4
 
-    .line 204
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$3;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # invokes: Lcom/sec/android/cover/ledcover/LedCoverController;->sendEndCallInformation(Landroid/content/Intent;)V

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardViewBase;)V
     .locals 0
 
-    .prologue
-    .line 471
     iput-object p1, p0, Lcom/android/keyguard/KeyguardViewBase$1;->this$0:Lcom/android/keyguard/KeyguardViewBase;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardActivityLauncher;-><init>()V
@@ -36,8 +34,6 @@
 .method getContext()Landroid/content/Context;
     .locals 1
 
-    .prologue
-    .line 474
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase$1;->this$0:Lcom/android/keyguard/KeyguardViewBase;
 
     # getter for: Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
@@ -51,8 +47,6 @@
 .method getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
     .locals 1
 
-    .prologue
-    .line 484
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase$1;->this$0:Lcom/android/keyguard/KeyguardViewBase;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardViewBase;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -63,28 +57,21 @@
 .method requestDismissKeyguard()V
     .locals 2
 
-    .prologue
-    .line 489
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase$1;->this$0:Lcom/android/keyguard/KeyguardViewBase;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardViewBase;->dismiss(Z)Z
 
-    .line 490
     return-void
 .end method
 
 .method setOnDismissAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
     .locals 1
-    .param p1, "action"    # Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
-    .prologue
-    .line 479
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase$1;->this$0:Lcom/android/keyguard/KeyguardViewBase;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/KeyguardViewBase;->setOnDismissAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
 
-    .line 480
     return-void
 .end method

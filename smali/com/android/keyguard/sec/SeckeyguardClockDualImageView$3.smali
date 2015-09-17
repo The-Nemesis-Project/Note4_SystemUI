@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;)V
     .locals 0
 
-    .prologue
-    .line 288
     iput-object p1, p0, Lcom/android/keyguard/sec/SeckeyguardClockDualImageView$3;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 291
     sget-object v0, Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,12 +60,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
     iget-object v0, p0, Lcom/android/keyguard/sec/SeckeyguardClockDualImageView$3;->this$0:Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;
 
     # invokes: Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;->updateClock()V
     invoke-static {v0}, Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;->access$200(Lcom/android/keyguard/sec/SeckeyguardClockDualImageView;)V
 
-    .line 293
     return-void
 .end method

@@ -35,25 +35,27 @@
 
 .field public static final config_vibration_duration:I = 0x7f0f000e
 
-.field public static final days_to_show_timeout_tiles:I = 0x7f0f0038
+.field public static final days_to_show_timeout_tiles:I = 0x7f0f0039
 
-.field public static final doze_pickup_vibration_threshold:I = 0x7f0f0032
+.field public static final doze_pickup_vibration_threshold:I = 0x7f0f0033
 
-.field public static final doze_pulse_duration_in:I = 0x7f0f0033
+.field public static final doze_pulse_duration_in:I = 0x7f0f0034
 
-.field public static final doze_pulse_duration_out:I = 0x7f0f0035
+.field public static final doze_pulse_duration_out:I = 0x7f0f0036
 
-.field public static final doze_pulse_duration_visible:I = 0x7f0f0034
+.field public static final doze_pulse_duration_visible:I = 0x7f0f0035
 
-.field public static final doze_pulse_schedule_resets:I = 0x7f0f0031
+.field public static final doze_pulse_schedule_resets:I = 0x7f0f0032
 
-.field public static final doze_small_icon_alpha:I = 0x7f0f0036
+.field public static final doze_small_icon_alpha:I = 0x7f0f0037
 
 .field public static final heads_up_notification_decay:I = 0x7f0f001c
 
 .field public static final heads_up_sensitivity_delay:I = 0x7f0f001d
 
 .field public static final keyguard_max_notification_count:I = 0x7f0f0030
+
+.field public static final keyguard_max_notification_count_for_dcm:I = 0x7f0f0031
 
 .field public static final kg_carousel_angle:I = 0x7f0f0005
 
@@ -69,15 +71,15 @@
 
 .field public static final navigation_bar_deadzone_hold:I = 0x7f0f0012
 
-.field public static final notification_panel_layout_gravity:I = 0x7f0f0041
+.field public static final notification_panel_layout_gravity:I = 0x7f0f0042
 
 .field public static final one_finger_pop_duration_ms:I = 0x7f0f0010
 
-.field public static final quick_setting_active_apps_min_num:I = 0x7f0f003c
+.field public static final quick_setting_active_apps_min_num:I = 0x7f0f003d
 
-.field public static final quick_setting_buttons_num_land:I = 0x7f0f003e
+.field public static final quick_setting_buttons_num_land:I = 0x7f0f003f
 
-.field public static final quick_setting_buttons_num_port:I = 0x7f0f003d
+.field public static final quick_setting_buttons_num_port:I = 0x7f0f003e
 
 .field public static final quick_settings_brightness_dialog_long_timeout:I = 0x7f0f001a
 
@@ -125,9 +127,9 @@
 
 .field public static final recents_task_bar_dismiss_delay_seconds:I = 0x7f0f001f
 
-.field public static final standard_notification_panel_layout_gravity:I = 0x7f0f0040
+.field public static final standard_notification_panel_layout_gravity:I = 0x7f0f0041
 
-.field public static final status_bar_config_maxNotificationIcons:I = 0x7f0f003f
+.field public static final status_bar_config_maxNotificationIcons:I = 0x7f0f0040
 
 .field public static final status_bar_recents_bg_gradient_degrees:I = 0x7f0f0011
 
@@ -139,21 +141,19 @@
 
 .field public static final sview_cover_wallpaper_gallery_index:I = 0x7f0f0003
 
-.field public static final volume_panel_dismiss_delay:I = 0x7f0f0037
+.field public static final volume_panel_dismiss_delay:I = 0x7f0f0038
 
-.field public static final zen_mode_alarm_warning_threshold:I = 0x7f0f0039
+.field public static final zen_mode_alarm_warning_threshold:I = 0x7f0f003a
 
-.field public static final zen_toast_animation_duration:I = 0x7f0f003a
+.field public static final zen_toast_animation_duration:I = 0x7f0f003b
 
-.field public static final zen_toast_visible_duration:I = 0x7f0f003b
+.field public static final zen_toast_visible_duration:I = 0x7f0f003c
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 6612
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

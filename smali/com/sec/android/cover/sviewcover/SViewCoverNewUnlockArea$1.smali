@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
     .locals 0
 
-    .prologue
-    .line 129
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onContentChanged(Landroid/net/Uri;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 131
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -51,20 +46,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 132
     const-string v0, "SViewCoverNewUnlockArea"
 
     const-string v1, "StylizedClockSettingObserver.onChange : StylizedClockSetting changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->setupStylizedClockStyle()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$000(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
 
-    .line 135
     :cond_0
     return-void
 .end method

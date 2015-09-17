@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 364
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .prologue
-    .line 367
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 369
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->mHandler:Landroid/os/Handler;
@@ -54,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 370
     return-void
 .end method

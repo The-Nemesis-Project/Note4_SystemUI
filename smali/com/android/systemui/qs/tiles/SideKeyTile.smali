@@ -29,20 +29,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 5
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 46
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 36
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mIsProcessing:Z
 
-    .line 47
     new-instance v1, Lcom/android/systemui/qs/tiles/SideKeyTile$1;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mContext:Landroid/content/Context;
@@ -55,12 +50,10 @@
 
     iput-object v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
-    .line 59
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/SystemSetting;->setListening(Z)V
 
-    .line 60
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->getSideKeyEnabled()Z
 
     move-result v1
@@ -74,10 +67,8 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 61
     return-void
 
-    .line 60
     :cond_0
     const/4 v0, 0x2
 
@@ -86,11 +77,7 @@
 
 .method static synthetic access$000(Lcom/android/systemui/qs/tiles/SideKeyTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/SideKeyTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 30
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/SideKeyTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -98,11 +85,7 @@
 
 .method static synthetic access$102(Lcom/android/systemui/qs/tiles/SideKeyTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/SideKeyTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 30
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mIsProcessing:Z
 
     return p1
@@ -111,12 +94,10 @@
 .method private getSideKeyEnabled()Z
     .locals 5
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 169
     const-string v3, "SideKeyTile"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -150,7 +131,6 @@
 
     invoke-static {v3, v0}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/SystemSetting;->getValue()I
@@ -165,22 +145,17 @@
     :cond_0
     move v0, v2
 
-    .line 169
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 170
     goto :goto_1
 .end method
 
 .method private setSideKeyEnabled(Z)V
     .locals 3
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 174
     const-string v0, "SideKeyTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -203,7 +178,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
     if-eqz p1, :cond_0
@@ -213,10 +187,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 176
     return-void
 
-    .line 175
     :cond_0
     const/4 v0, 0x0
 
@@ -228,11 +200,8 @@
 .method public doNext()V
     .locals 1
 
-    .prologue
-    .line 106
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->removeEnabledScreenReaderValue()V
 
-    .line 107
     const/4 v0, 0x3
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -241,32 +210,26 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 108
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->setSideKeyEnabled(Z)V
 
-    .line 109
     return-void
 .end method
 
 .method public doPrevious()V
     .locals 0
 
-    .prologue
-    .line 112
     return-void
 .end method
 
 .method protected handleClick()V
     .locals 7
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    .line 76
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v2, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -279,8 +242,6 @@
 
     move v0, v3
 
-    .line 77
-    .local v0, "buttonStatus":Z
     :goto_0
     const-string v2, "SideKeyTile"
 
@@ -304,7 +265,6 @@
 
     invoke-static {v2, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mContext:Landroid/content/Context;
 
     const-string v5, "enterprise_policy"
@@ -315,8 +275,6 @@
 
     check-cast v1, Landroid/app/enterprise/EnterpriseDeviceManager;
 
-    .line 81
-    .local v1, "edm":Landroid/app/enterprise/EnterpriseDeviceManager;
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/app/enterprise/EnterpriseDeviceManager;->getRestrictionPolicy()Landroid/app/enterprise/RestrictionPolicy;
@@ -329,34 +287,25 @@
 
     if-nez v2, :cond_1
 
-    .line 82
     const-string v2, "SideKeyTile"
 
     const-string v3, "handleClick(): SideKey state change is not allowed"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     :goto_1
     return-void
 
-    .end local v0    # "buttonStatus":Z
-    .end local v1    # "edm":Landroid/app/enterprise/EnterpriseDeviceManager;
     :cond_0
     move v0, v4
 
-    .line 76
     goto :goto_0
 
-    .line 87
-    .restart local v0    # "buttonStatus":Z
-    .restart local v1    # "edm":Landroid/app/enterprise/EnterpriseDeviceManager;
     :cond_1
     iget-boolean v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mIsProcessing:Z
 
     if-eqz v2, :cond_2
 
-    .line 88
     const-string v2, "SideKeyTile"
 
     const-string v3, "handleClick(): Processing..."
@@ -365,31 +314,26 @@
 
     goto :goto_1
 
-    .line 92
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 93
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->isEnabledScreenReaderService()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 94
-    const v2, 0x7f0d0457
+    const v2, 0x7f0d0478
 
-    const v3, 0x7f0d0458
+    const v3, 0x7f0d0479
 
     invoke-virtual {p0, v2, v3}, Lcom/android/systemui/qs/tiles/SideKeyTile;->showTalkBackDisablePopup(II)V
 
     goto :goto_1
 
-    .line 99
     :cond_3
     iput-boolean v3, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mIsProcessing:Z
 
-    .line 101
     const/4 v2, 0x3
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -398,7 +342,6 @@
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/tiles/SideKeyTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 102
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->setSideKeyEnabled(Z)V
 
     goto :goto_1
@@ -407,26 +350,20 @@
 .method protected handleDestroy()V
     .locals 2
 
-    .prologue
-    .line 70
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setListening(Z)V
 
-    .line 72
     return-void
 .end method
 
 .method protected handleLongClick()V
     .locals 4
 
-    .prologue
-    .line 124
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mContext:Landroid/content/Context;
 
     const-string v3, "enterprise_policy"
@@ -437,8 +374,6 @@
 
     check-cast v0, Landroid/app/enterprise/EnterpriseDeviceManager;
 
-    .line 125
-    .local v0, "edm":Landroid/app/enterprise/EnterpriseDeviceManager;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/app/enterprise/EnterpriseDeviceManager;->getRestrictionPolicy()Landroid/app/enterprise/RestrictionPolicy;
@@ -453,23 +388,19 @@
 
     if-nez v2, :cond_0
 
-    .line 126
     const-string v2, "SideKeyTile"
 
     const-string v3, "handleLongClick(): SideKey state change is not allowed"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v2}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 135
     :goto_0
     return-void
 
-    .line 132
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
@@ -477,8 +408,6 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 134
-    .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/SideKeyTile;->startSettingsActivity(Landroid/content/Intent;)V
 
     goto :goto_0
@@ -487,48 +416,36 @@
 .method public handleSecondaryClick()V
     .locals 0
 
-    .prologue
-    .line 117
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->handleLongClick()V
 
-    .line 118
     return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
-    const v3, 0x7f0d0360
+    const v3, 0x7f0d037c
 
-    .line 139
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 140
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 141
     const/4 v1, 0x1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 142
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d0381
+    const v2, 0x7f0d039e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -536,16 +453,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 143
     packed-switch v0, :pswitch_data_0
 
-    .line 161
     :goto_1
     return-void
 
-    .line 139
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -555,16 +467,12 @@
 
     goto :goto_0
 
-    .line 145
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f02066e
+    const v1, 0x7f020679
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 146
-    const v1, 0x7f0d033b
+    const v1, 0x7f0d0356
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/SideKeyTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -574,14 +482,12 @@
 
     goto :goto_1
 
-    .line 151
     :pswitch_1
-    const v1, 0x7f02066d
+    const v1, 0x7f020678
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 152
-    const v1, 0x7f0d033c
+    const v1, 0x7f0d0357
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/SideKeyTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -591,20 +497,17 @@
 
     goto :goto_1
 
-    .line 157
     :pswitch_2
-    const v1, 0x7f02066c
+    const v1, 0x7f020677
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 158
     const/4 v1, 0x0
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->contentDescription:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 143
     nop
 
     :pswitch_data_0
@@ -617,14 +520,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 30
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/SideKeyTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -633,8 +531,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 65
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -645,8 +541,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 30
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/SideKeyTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -656,25 +550,18 @@
 
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 43
     return-void
 .end method
 
 .method public userSwitch(I)V
     .locals 2
-    .param p1, "newUserId"    # I
 
-    .prologue
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SideKeyTile;->mSideKeySettings:Lcom/android/systemui/qs/SystemSetting;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->onChange(Z)V
 
-    .line 166
     return-void
 .end method

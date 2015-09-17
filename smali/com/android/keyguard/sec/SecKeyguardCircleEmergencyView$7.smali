@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 343
     invoke-static {}, Lcom/android/keyguard/sec/SecKeyguardCircleView$ContentStates;->values()[Lcom/android/keyguard/sec/SecKeyguardCircleView$ContentStates;
 
     move-result-object v0

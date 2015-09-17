@@ -25,9 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSTile;)V
     .locals 0
 
-    .prologue
-    .line 771
-    .local p0, "this":Lcom/android/systemui/qs/QSTile$2;, "Lcom/android/systemui/qs/QSTile.2;"
     iput-object p1, p0, Lcom/android/systemui/qs/QSTile$2;->this$0:Lcom/android/systemui/qs/QSTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,16 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 773
-    .local p0, "this":Lcom/android/systemui/qs/QSTile$2;, "Lcom/android/systemui/qs/QSTile.2;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile$2;->this$0:Lcom/android/systemui/qs/QSTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTile;->doPrevious()V
 
-    .line 774
     return-void
 .end method

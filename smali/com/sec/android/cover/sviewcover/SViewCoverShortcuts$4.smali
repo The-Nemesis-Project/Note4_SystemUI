@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;)V
     .locals 0
 
-    .prologue
-    .line 338
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "arg0"    # Landroid/view/View;
 
-    .prologue
-    .line 342
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;->mOpenPopup:Lcom/sec/android/cover/widget/PopupFrameView;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 343
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;->mOpenPopup:Lcom/sec/android/cover/widget/PopupFrameView;
@@ -61,7 +55,6 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/widget/PopupFrameView;->close()V
 
-    .line 345
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
@@ -72,7 +65,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 346
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;->mSviewCover:Lcom/sec/android/cover/sviewcover/SViewCoverView;
@@ -82,7 +74,6 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverView;->moveToMainPage()V
 
-    .line 348
     :cond_1
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts$4;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverShortcuts;
 
@@ -97,6 +88,5 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPowerManager;->resetScreenOffTimer()V
 
-    .line 349
     return-void
 .end method

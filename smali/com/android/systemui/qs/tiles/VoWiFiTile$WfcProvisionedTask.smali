@@ -33,8 +33,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/VoWiFiTile;)V
     .locals 0
 
-    .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -44,11 +42,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/VoWiFiTile;Lcom/android/systemui/qs/tiles/VoWiFiTile$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/VoWiFiTile;
-    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/VoWiFiTile$1;
 
-    .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;-><init>(Lcom/android/systemui/qs/tiles/VoWiFiTile;)V
 
     return-void
@@ -58,13 +52,9 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # [Ljava/lang/Object;
 
-    .prologue
-    .line 57
     check-cast p1, [Ljava/lang/Boolean;
 
-    .end local p1    # "x0":[Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->doInBackground([Ljava/lang/Boolean;)Ljava/lang/Void;
 
     move-result-object v0
@@ -74,12 +64,9 @@
 
 .method protected varargs doInBackground([Ljava/lang/Boolean;)Ljava/lang/Void;
     .locals 4
-    .param p1, "args"    # [Ljava/lang/Boolean;
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 60
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
@@ -92,7 +79,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/VoWiFiTile;->mIsWfcProvisioned:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/VoWiFiTile;->access$102(Lcom/android/systemui/qs/tiles/VoWiFiTile;Z)Z
 
-    .line 61
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/VoWiFiTile;->mIsWfcProvisioned:Z
@@ -102,7 +88,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 62
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/VoWiFiTile;->isAirplaneModeOn()Z
@@ -112,7 +97,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 63
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
     const-string v2, "com.oem.smartwifi.WFC_AIR_PLANE_MODE"
@@ -120,11 +104,9 @@
     # invokes: Lcom/android/systemui/qs/tiles/VoWiFiTile;->startSettingsActivity(Ljava/lang/String;)V
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/VoWiFiTile;->access$400(Lcom/android/systemui/qs/tiles/VoWiFiTile;Ljava/lang/String;)V
 
-    .line 74
     :goto_0
     return-object v3
 
-    .line 66
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
 
@@ -141,7 +123,6 @@
 
     goto :goto_0
 
-    .line 69
     :cond_1
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/VoWiFiTile$WfcProvisionedTask;->this$0:Lcom/android/systemui/qs/tiles/VoWiFiTile;
@@ -155,12 +136,9 @@
 
     goto :goto_0
 
-    .line 70
     :catch_0
     move-exception v0
 
-    .line 71
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string v1, "VoWiFiTile"
 
     const-string v2, "Cannot find WfcStartupActivity!"

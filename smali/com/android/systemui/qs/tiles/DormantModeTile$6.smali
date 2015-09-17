@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
     .locals 0
 
-    .prologue
-    .line 577
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$6;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
-    .prologue
-    .line 579
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$6;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     const/4 v1, 0x2
@@ -54,7 +48,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/DormantModeTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->access$500(Lcom/android/systemui/qs/tiles/DormantModeTile;Ljava/lang/Object;)V
 
-    .line 580
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$6;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     const/4 v1, 0x0
@@ -62,9 +55,7 @@
     # invokes: Lcom/android/systemui/qs/tiles/DormantModeTile;->setEnabled(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->access$400(Lcom/android/systemui/qs/tiles/DormantModeTile;Z)V
 
-    .line 581
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 582
     return-void
 .end method

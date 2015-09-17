@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardBottomAreaView;)V
     .locals 0
 
-    .prologue
-    .line 96
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardBottomAreaView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardBottomAreaView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,19 +34,15 @@
 .method public onCMASChanged()V
     .locals 2
 
-    .prologue
-    .line 99
     const-string v0, "SecKeyguardBottomAreaView"
 
     const-string v1, "onCMASChanged()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardBottomAreaView$2;->this$0:Lcom/android/keyguard/sec/SecKeyguardBottomAreaView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/SecKeyguardBottomAreaView;->updateCMASText()V
 
-    .line 101
     return-void
 .end method

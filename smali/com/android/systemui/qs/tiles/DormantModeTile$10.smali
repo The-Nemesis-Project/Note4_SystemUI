@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
     .locals 0
 
-    .prologue
-    .line 714
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -36,23 +34,17 @@
 .method public onEffectsSupressorChanged()V
     .locals 0
 
-    .prologue
-    .line 725
     return-void
 .end method
 
 .method public onZenAvailableChanged(Z)V
     .locals 3
-    .param p1, "available"    # Z
 
-    .prologue
-    .line 717
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenModeAvailable:Z
     invoke-static {v1, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->access$902(Lcom/android/systemui/qs/tiles/DormantModeTile;Z)Z
 
-    .line 719
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
@@ -66,8 +58,6 @@
 
     move-result-object v0
 
-    .line 720
-    .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
@@ -77,16 +67,12 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 721
     return-void
 .end method
 
 .method public onZenChanged(I)V
     .locals 4
-    .param p1, "zen"    # I
 
-    .prologue
-    .line 729
     const-string v1, "DormantModeTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -109,13 +95,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 730
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mZenMode:I
     invoke-static {v1, p1}, Lcom/android/systemui/qs/tiles/DormantModeTile;->access$1102(Lcom/android/systemui/qs/tiles/DormantModeTile;I)I
 
-    .line 732
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
@@ -129,8 +113,6 @@
 
     move-result-object v0
 
-    .line 733
-    .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DormantModeTile;->mHandlerInterrupt:Landroid/os/Handler;
@@ -140,6 +122,5 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 734
     return-void
 .end method

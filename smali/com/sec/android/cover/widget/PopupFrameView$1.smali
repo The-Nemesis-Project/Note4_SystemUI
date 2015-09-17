@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/PopupFrameView;)V
     .locals 0
 
-    .prologue
-    .line 28
     iput-object p1, p0, Lcom/sec/android/cover/widget/PopupFrameView$1;->this$0:Lcom/sec/android/cover/widget/PopupFrameView;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,28 +33,21 @@
 # virtual methods
 .method public onCoverStateChanged(Lcom/samsung/android/cover/CoverState;)V
     .locals 1
-    .param p1, "coverState"    # Lcom/samsung/android/cover/CoverState;
 
-    .prologue
-    .line 34
     iget-object v0, p0, Lcom/sec/android/cover/widget/PopupFrameView$1;->this$0:Lcom/sec/android/cover/widget/PopupFrameView;
 
     # setter for: Lcom/sec/android/cover/widget/PopupFrameView;->mCoverState:Lcom/samsung/android/cover/CoverState;
     invoke-static {v0, p1}, Lcom/sec/android/cover/widget/PopupFrameView;->access$002(Lcom/sec/android/cover/widget/PopupFrameView;Lcom/samsung/android/cover/CoverState;)Lcom/samsung/android/cover/CoverState;
 
-    .line 35
     return-void
 .end method
 
 .method public onScreenTurnedOff()V
     .locals 1
 
-    .prologue
-    .line 30
     iget-object v0, p0, Lcom/sec/android/cover/widget/PopupFrameView$1;->this$0:Lcom/sec/android/cover/widget/PopupFrameView;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/widget/PopupFrameView;->close()V
 
-    .line 31
     return-void
 .end method

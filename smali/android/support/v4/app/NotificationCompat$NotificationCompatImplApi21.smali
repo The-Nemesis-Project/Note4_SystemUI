@@ -18,8 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 727
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplApi20;-><init>()V
 
     return-void
@@ -29,10 +27,7 @@
 # virtual methods
 .method public build(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
     .locals 29
-    .param p1, "b"    # Landroid/support/v4/app/NotificationCompat$Builder;
 
-    .prologue
-    .line 730
     new-instance v1, Landroid/support/v4/app/NotificationCompatApi21$Builder;
 
     move-object/from16 v0, p1
@@ -171,8 +166,6 @@
 
     invoke-direct/range {v1 .. v28}, Landroid/support/v4/app/NotificationCompatApi21$Builder;-><init>(Landroid/content/Context;Landroid/app/Notification;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/widget/RemoteViews;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/graphics/Bitmap;IIZZZILjava/lang/CharSequence;ZLjava/lang/String;Ljava/util/ArrayList;Landroid/os/Bundle;IILandroid/app/Notification;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 737
-    .local v1, "builder":Landroid/support/v4/app/NotificationCompatApi21$Builder;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mActions:Ljava/util/ArrayList;
@@ -180,7 +173,6 @@
     # invokes: Landroid/support/v4/app/NotificationCompat;->addActionsToBuilder(Landroid/support/v4/app/NotificationBuilderWithActions;Ljava/util/ArrayList;)V
     invoke-static {v1, v2}, Landroid/support/v4/app/NotificationCompat;->access$000(Landroid/support/v4/app/NotificationBuilderWithActions;Ljava/util/ArrayList;)V
 
-    .line 738
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mStyle:Landroid/support/v4/app/NotificationCompat$Style;
@@ -188,7 +180,6 @@
     # invokes: Landroid/support/v4/app/NotificationCompat;->addStyleToBuilderJellybean(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;Landroid/support/v4/app/NotificationCompat$Style;)V
     invoke-static {v1, v2}, Landroid/support/v4/app/NotificationCompat;->access$100(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;Landroid/support/v4/app/NotificationCompat$Style;)V
 
-    .line 739
     invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompatApi21$Builder;->build()Landroid/app/Notification;
 
     move-result-object v2
@@ -198,10 +189,7 @@
 
 .method public getCategory(Landroid/app/Notification;)Ljava/lang/String;
     .locals 1
-    .param p1, "notif"    # Landroid/app/Notification;
 
-    .prologue
-    .line 744
     invoke-static {p1}, Landroid/support/v4/app/NotificationCompatApi21;->getCategory(Landroid/app/Notification;)Ljava/lang/String;
 
     move-result-object v0

@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSignatureView;JJ)V
     .locals 0
-    .param p2, "x0"    # J
-    .param p4, "x1"    # J
 
-    .prologue
-    .line 363
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$4;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -38,10 +34,8 @@
 .method public onFinish()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 373
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$4;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignView:Lcom/android/internal/widget/SignView;
@@ -51,7 +45,6 @@
 
     invoke-virtual {v0, v2}, Lcom/android/internal/widget/SignView;->setUserInputEnabled(Z)V
 
-    .line 376
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$4;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -68,26 +61,20 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 377
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 7
-    .param p1, "millisUntilFinished"    # J
 
-    .prologue
     const/4 v6, 0x1
 
-    .line 366
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v0, v2
 
-    .line 367
-    .local v0, "secondsRemaining":I
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$4;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -109,6 +96,5 @@
 
     invoke-interface {v1, v2, v6, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ[Ljava/lang/Object;)V
 
-    .line 369
     return-void
 .end method

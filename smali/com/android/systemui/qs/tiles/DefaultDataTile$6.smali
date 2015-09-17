@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DefaultDataTile;)V
     .locals 0
 
-    .prologue
-    .line 359
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$6;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "arg1"    # I
 
-    .prologue
-    .line 361
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DefaultDataTile$6;->this$0:Lcom/android/systemui/qs/tiles/DefaultDataTile;
 
     const/4 v1, 0x2
@@ -54,9 +48,7 @@
     # invokes: Lcom/android/systemui/qs/tiles/DefaultDataTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DefaultDataTile;->access$1100(Lcom/android/systemui/qs/tiles/DefaultDataTile;Ljava/lang/Object;)V
 
-    .line 362
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 363
     return-void
 .end method

@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AllShareCastTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 65
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$1;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/GlobalSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,12 +33,9 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 4
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v0, 0x2
 
-    .line 68
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$1;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$1;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
@@ -84,6 +76,5 @@
     # invokes: Lcom/android/systemui/qs/tiles/AllShareCastTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/AllShareCastTile;->access$100(Lcom/android/systemui/qs/tiles/AllShareCastTile;Ljava/lang/Object;)V
 
-    .line 70
     return-void
 .end method

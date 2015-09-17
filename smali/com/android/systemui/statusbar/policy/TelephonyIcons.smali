@@ -82,15 +82,15 @@
 
 .field static final DEFAULT_SUB:I = 0x0
 
-.field static final FLIGHT_MODE_ICON:I = 0x7f020357
+.field static final FLIGHT_MODE_ICON:I = 0x7f02035e
 
-.field static final ICON_1X:I = 0x7f0203b3
+.field static final ICON_1X:I = 0x7f0203ba
 
-.field static final ICON_3G:I = 0x7f0203b5
+.field static final ICON_3G:I = 0x7f0203bc
 
-.field static final ICON_4G:I = 0x7f0203b6
+.field static final ICON_4G:I = 0x7f0203bd
 
-.field static final ICON_LTE:I = 0x7f0203bd
+.field static final ICON_LTE:I = 0x7f0203c4
 
 .field static final NS:Ljava/lang/String; = "com.android.systemui"
 
@@ -110,17 +110,17 @@
 
 .field static final QS_DATA_R:[I
 
-.field static final QS_ICON_1X:I = 0x7f020143
+.field static final QS_ICON_1X:I = 0x7f020148
 
-.field static final QS_ICON_3G:I = 0x7f020146
+.field static final QS_ICON_3G:I = 0x7f02014b
 
-.field static final QS_ICON_4G:I = 0x7f020148
+.field static final QS_ICON_4G:I = 0x7f02014d
 
-.field static final QS_ICON_LTE:I = 0x7f020153
+.field static final QS_ICON_LTE:I = 0x7f020158
 
 .field static final QS_TELEPHONY_SIGNAL_STRENGTH:[[I
 
-.field static final ROAMING_ICON:I = 0x7f0203be
+.field static final ROAMING_ICON:I = 0x7f0203c5
 
 .field static final SIGNAL_STRENGTH_TYPE_1X:I = 0x6
 
@@ -195,7 +195,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .prologue
     const/4 v6, 0x5
 
     const/4 v5, 0x1
@@ -206,7 +205,6 @@
 
     const/4 v2, 0x4
 
-    .line 33
     new-array v0, v3, [[I
 
     new-array v1, v6, [I
@@ -223,7 +221,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH:[[I
 
-    .line 46
     new-array v0, v3, [[I
 
     const/4 v1, 0x7
@@ -244,7 +241,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_TELEPHONY_SIGNAL_STRENGTH:[[I
 
-    .line 63
     new-array v0, v3, [[I
 
     new-array v1, v6, [I
@@ -261,14 +257,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_ROAMING:[[I
 
-    .line 76
     new-array v0, v6, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_CTC:[I
 
-    .line 84
     const/16 v0, 0x19
 
     new-array v0, v0, [I
@@ -277,29 +271,24 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_CTC_2:[I
 
-    .line 116
     new-array v0, v3, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_R:[I
 
-    .line 121
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH:[[I
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_SIGNAL_STRENGTH:[[I
 
-    .line 123
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_CTC:[I
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_SIGNAL_STRENGTH_CTC:[I
 
-    .line 124
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_CTC_2:[I
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_SIGNAL_STRENGTH_CTC_2:[I
 
-    .line 127
     new-array v0, v3, [[I
 
     const/4 v1, 0x6
@@ -320,7 +309,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_5_LEVEL_SIGNAL_STRENGTH:[[I
 
-    .line 142
     new-array v0, v3, [[I
 
     const/4 v1, 0x7
@@ -341,24 +329,20 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_6_LEVEL_SIGNAL_STRENGTH:[[I
 
-    .line 159
     new-array v0, v6, [I
 
     fill-array-data v0, :array_d
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_SIGNAL_STRENGTH_FOCUS:[I
 
-    .line 166
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_5_LEVEL_SIGNAL_STRENGTH:[[I
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_5_LEVEL_SIGNAL_STRENGTH:[[I
 
-    .line 167
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_6_LEVEL_SIGNAL_STRENGTH:[[I
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_6_LEVEL_SIGNAL_STRENGTH:[[I
 
-    .line 173
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -375,14 +359,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_G:[[I
 
-    .line 184
     new-array v0, v3, [I
 
     fill-array-data v0, :array_10
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_G:[I
 
-    .line 189
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -399,14 +381,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G:[[I
 
-    .line 200
     new-array v0, v3, [I
 
     fill-array-data v0, :array_13
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
 
-    .line 205
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -423,14 +403,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_E:[[I
 
-    .line 216
     new-array v0, v3, [I
 
     fill-array-data v0, :array_16
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_E:[I
 
-    .line 222
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -447,14 +425,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_H:[[I
 
-    .line 233
     new-array v0, v3, [I
 
     fill-array-data v0, :array_19
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_H:[I
 
-    .line 238
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -471,7 +447,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_H_PLUS:[[I
 
-    .line 251
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -488,14 +463,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_1X:[[I
 
-    .line 262
     new-array v0, v3, [I
 
     fill-array-data v0, :array_1e
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_1X:[I
 
-    .line 268
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -512,14 +485,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G:[[I
 
-    .line 279
     new-array v0, v3, [I
 
     fill-array-data v0, :array_21
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_4G:[I
 
-    .line 285
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -536,17 +507,14 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_LTE:[[I
 
-    .line 296
     new-array v0, v3, [I
 
     fill-array-data v0, :array_24
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_LTE:[I
 
-    .line 353
     sput-boolean v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->isInitiated:Z
 
-    .line 707
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -563,7 +531,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G_LTE:[[I
 
-    .line 718
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -580,7 +547,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G_LTE_PLUS:[[I
 
-    .line 731
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -597,7 +563,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G_ATT:[[I
 
-    .line 742
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -614,7 +579,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_LTE_ATT:[[I
 
-    .line 754
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -631,7 +595,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G_SPR:[[I
 
-    .line 766
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -648,7 +611,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_GSM_SPR:[[I
 
-    .line 780
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -665,7 +627,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_LTE_SPR:[[I
 
-    .line 793
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -682,7 +643,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_TMO:[[I
 
-    .line 805
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -699,7 +659,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_LTE_PLUS:[[I
 
-    .line 816
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -716,7 +675,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G_PLUS:[[I
 
-    .line 827
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -733,7 +691,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G_LTE_LTN:[[I
 
-    .line 838
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -750,7 +707,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_2G:[[I
 
-    .line 849
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -767,7 +723,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G_PLUS:[[I
 
-    .line 860
     new-array v0, v3, [[I
 
     new-array v1, v2, [I
@@ -786,89 +741,77 @@
 
     return-void
 
-    .line 33
     nop
 
     :array_0
     .array-data 4
-        0x7f02048f
-        0x7f0204b7
-        0x7f0204e3
-        0x7f02050b
-        0x7f020537
+        0x7f020496
+        0x7f0204be
+        0x7f0204ea
+        0x7f020512
+        0x7f02053e
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f02048f
-        0x7f0204b7
-        0x7f0204e3
-        0x7f02050b
-        0x7f020537
+        0x7f020496
+        0x7f0204be
+        0x7f0204ea
+        0x7f020512
+        0x7f02053e
     .end array-data
 
-    .line 46
     :array_2
     .array-data 4
-        0x7f020141
-        0x7f020142
-        0x7f020144
-        0x7f020145
+        0x7f020146
         0x7f020147
-        0x7f020147
-        0x7f020147
+        0x7f020149
+        0x7f02014a
+        0x7f02014c
+        0x7f02014c
+        0x7f02014c
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f02014b
-        0x7f02014c
-        0x7f02014d
-        0x7f02014e
-        0x7f02014f
-        0x7f02014f
-        0x7f02014f
+        0x7f020150
+        0x7f020151
+        0x7f020152
+        0x7f020153
+        0x7f020154
+        0x7f020154
+        0x7f020154
     .end array-data
 
-    .line 63
     :array_4
     .array-data 4
-        0x7f02047e
-        0x7f0204a6
-        0x7f0204d2
-        0x7f0204fa
-        0x7f020526
+        0x7f020485
+        0x7f0204ad
+        0x7f0204d9
+        0x7f020501
+        0x7f02052d
     .end array-data
 
     :array_5
     .array-data 4
-        0x7f02047e
-        0x7f0204a6
-        0x7f0204d2
-        0x7f0204fa
-        0x7f020526
+        0x7f020485
+        0x7f0204ad
+        0x7f0204d9
+        0x7f020501
+        0x7f02052d
     .end array-data
 
-    .line 76
     :array_6
     .array-data 4
-        0x7f020490
-        0x7f0204b8
-        0x7f0204e4
-        0x7f02050c
-        0x7f020538
+        0x7f020497
+        0x7f0204bf
+        0x7f0204eb
+        0x7f020513
+        0x7f02053f
     .end array-data
 
-    .line 84
     :array_7
     .array-data 4
-        0x7f020465
-        0x7f020466
-        0x7f020467
-        0x7f020468
-        0x7f020469
-        0x7f02046a
-        0x7f02046b
         0x7f02046c
         0x7f02046d
         0x7f02046e
@@ -887,498 +830,470 @@
         0x7f02047b
         0x7f02047c
         0x7f02047d
+        0x7f02047e
+        0x7f02047f
+        0x7f020480
+        0x7f020481
+        0x7f020482
+        0x7f020483
+        0x7f020484
     .end array-data
 
-    .line 116
     :array_8
     .array-data 4
-        0x7f020156
-        0x7f020156
+        0x7f02015b
+        0x7f02015b
     .end array-data
 
-    .line 127
     :array_9
     .array-data 4
-        0x7f0206a9
-        0x7f0206aa
-        0x7f0206ab
-        0x7f0206ac
-        0x7f0206ad
-        0x7f0206ae
+        0x7f0206b4
+        0x7f0206b5
+        0x7f0206b6
+        0x7f0206b7
+        0x7f0206b8
+        0x7f0206b9
     .end array-data
 
     :array_a
     .array-data 4
-        0x7f0206a9
-        0x7f0206aa
-        0x7f0206ab
-        0x7f0206ac
-        0x7f0206ad
-        0x7f0206ae
-    .end array-data
-
-    .line 142
-    :array_b
-    .array-data 4
-        0x7f0206af
-        0x7f0206b0
-        0x7f0206b1
-        0x7f0206b2
-        0x7f0206b3
         0x7f0206b4
         0x7f0206b5
+        0x7f0206b6
+        0x7f0206b7
+        0x7f0206b8
+        0x7f0206b9
+    .end array-data
+
+    :array_b
+    .array-data 4
+        0x7f0206ba
+        0x7f0206bb
+        0x7f0206bc
+        0x7f0206bd
+        0x7f0206be
+        0x7f0206bf
+        0x7f0206c0
     .end array-data
 
     :array_c
     .array-data 4
-        0x7f0206af
-        0x7f0206b0
-        0x7f0206b1
-        0x7f0206b2
-        0x7f0206b3
-        0x7f0206b4
-        0x7f0206b5
+        0x7f0206ba
+        0x7f0206bb
+        0x7f0206bc
+        0x7f0206bd
+        0x7f0206be
+        0x7f0206bf
+        0x7f0206c0
     .end array-data
 
-    .line 159
     :array_d
     .array-data 4
-        0x7f02054e
-        0x7f02054f
-        0x7f020550
-        0x7f020551
-        0x7f020552
+        0x7f020555
+        0x7f020556
+        0x7f020557
+        0x7f020558
+        0x7f020559
     .end array-data
 
-    .line 173
     :array_e
     .array-data 4
-        0x7f0203ba
-        0x7f0203ba
-        0x7f0203ba
-        0x7f0203ba
+        0x7f0203c1
+        0x7f0203c1
+        0x7f0203c1
+        0x7f0203c1
     .end array-data
 
     :array_f
     .array-data 4
-        0x7f0203ba
-        0x7f0203ba
-        0x7f0203ba
-        0x7f0203ba
+        0x7f0203c1
+        0x7f0203c1
+        0x7f0203c1
+        0x7f0203c1
     .end array-data
 
-    .line 184
     :array_10
     .array-data 4
-        0x7f020150
-        0x7f020150
+        0x7f020155
+        0x7f020155
     .end array-data
 
-    .line 189
     :array_11
     .array-data 4
-        0x7f0203b5
-        0x7f0203b5
-        0x7f0203b5
-        0x7f0203b5
+        0x7f0203bc
+        0x7f0203bc
+        0x7f0203bc
+        0x7f0203bc
     .end array-data
 
     :array_12
     .array-data 4
-        0x7f0203b5
-        0x7f0203b5
-        0x7f0203b5
-        0x7f0203b5
+        0x7f0203bc
+        0x7f0203bc
+        0x7f0203bc
+        0x7f0203bc
     .end array-data
 
-    .line 200
     :array_13
     .array-data 4
-        0x7f020146
-        0x7f020146
+        0x7f02014b
+        0x7f02014b
     .end array-data
 
-    .line 205
     :array_14
     .array-data 4
-        0x7f0203b9
-        0x7f0203b9
-        0x7f0203b9
-        0x7f0203b9
+        0x7f0203c0
+        0x7f0203c0
+        0x7f0203c0
+        0x7f0203c0
     .end array-data
 
     :array_15
     .array-data 4
-        0x7f0203b9
-        0x7f0203b9
-        0x7f0203b9
-        0x7f0203b9
+        0x7f0203c0
+        0x7f0203c0
+        0x7f0203c0
+        0x7f0203c0
     .end array-data
 
-    .line 216
     :array_16
     .array-data 4
-        0x7f02014a
-        0x7f02014a
+        0x7f02014f
+        0x7f02014f
     .end array-data
 
-    .line 222
     :array_17
     .array-data 4
-        0x7f0203bb
-        0x7f0203bb
-        0x7f0203bb
-        0x7f0203bb
+        0x7f0203c2
+        0x7f0203c2
+        0x7f0203c2
+        0x7f0203c2
     .end array-data
 
     :array_18
     .array-data 4
-        0x7f0203bb
-        0x7f0203bb
-        0x7f0203bb
-        0x7f0203bb
+        0x7f0203c2
+        0x7f0203c2
+        0x7f0203c2
+        0x7f0203c2
     .end array-data
 
-    .line 233
     :array_19
     .array-data 4
-        0x7f020151
-        0x7f020151
+        0x7f020156
+        0x7f020156
     .end array-data
 
-    .line 238
     :array_1a
     .array-data 4
-        0x7f0203a1
-        0x7f0203a1
-        0x7f0203a1
-        0x7f0203a1
+        0x7f0203a8
+        0x7f0203a8
+        0x7f0203a8
+        0x7f0203a8
     .end array-data
 
     :array_1b
     .array-data 4
-        0x7f0203a1
-        0x7f0203a1
-        0x7f0203a1
-        0x7f0203a1
+        0x7f0203a8
+        0x7f0203a8
+        0x7f0203a8
+        0x7f0203a8
     .end array-data
 
-    .line 251
     :array_1c
     .array-data 4
-        0x7f0203b3
-        0x7f0203b3
-        0x7f0203b3
-        0x7f0203b3
+        0x7f0203ba
+        0x7f0203ba
+        0x7f0203ba
+        0x7f0203ba
     .end array-data
 
     :array_1d
     .array-data 4
-        0x7f0203b3
-        0x7f0203b3
-        0x7f0203b3
-        0x7f0203b3
+        0x7f0203ba
+        0x7f0203ba
+        0x7f0203ba
+        0x7f0203ba
     .end array-data
 
-    .line 262
     :array_1e
     .array-data 4
-        0x7f020143
-        0x7f020143
+        0x7f020148
+        0x7f020148
     .end array-data
 
-    .line 268
     :array_1f
     .array-data 4
-        0x7f0203b6
-        0x7f0203b6
-        0x7f0203b6
-        0x7f0203b6
+        0x7f0203bd
+        0x7f0203bd
+        0x7f0203bd
+        0x7f0203bd
     .end array-data
 
     :array_20
     .array-data 4
-        0x7f0203b6
-        0x7f0203b6
-        0x7f0203b6
-        0x7f0203b6
+        0x7f0203bd
+        0x7f0203bd
+        0x7f0203bd
+        0x7f0203bd
     .end array-data
 
-    .line 279
     :array_21
     .array-data 4
-        0x7f020148
-        0x7f020148
+        0x7f02014d
+        0x7f02014d
     .end array-data
 
-    .line 285
     :array_22
     .array-data 4
-        0x7f0203bd
-        0x7f0203bd
-        0x7f0203bd
-        0x7f0203bd
+        0x7f0203c4
+        0x7f0203c4
+        0x7f0203c4
+        0x7f0203c4
     .end array-data
 
     :array_23
     .array-data 4
-        0x7f0203bd
-        0x7f0203bd
-        0x7f0203bd
-        0x7f0203bd
+        0x7f0203c4
+        0x7f0203c4
+        0x7f0203c4
+        0x7f0203c4
     .end array-data
 
-    .line 296
     :array_24
     .array-data 4
-        0x7f020153
-        0x7f020153
+        0x7f020158
+        0x7f020158
     .end array-data
 
-    .line 707
     :array_25
     .array-data 4
-        0x7f020382
-        0x7f020382
-        0x7f020382
-        0x7f020382
+        0x7f020389
+        0x7f020389
+        0x7f020389
+        0x7f020389
     .end array-data
 
     :array_26
     .array-data 4
-        0x7f020382
-        0x7f020382
-        0x7f020382
-        0x7f020382
+        0x7f020389
+        0x7f020389
+        0x7f020389
+        0x7f020389
     .end array-data
 
-    .line 718
     :array_27
     .array-data 4
-        0x7f020385
-        0x7f020385
-        0x7f020385
-        0x7f020385
+        0x7f02038c
+        0x7f02038c
+        0x7f02038c
+        0x7f02038c
     .end array-data
 
     :array_28
     .array-data 4
-        0x7f020385
-        0x7f020385
-        0x7f020385
-        0x7f020385
+        0x7f02038c
+        0x7f02038c
+        0x7f02038c
+        0x7f02038c
     .end array-data
 
-    .line 731
     :array_29
     .array-data 4
-        0x7f020380
-        0x7f0203c8
-        0x7f0203ef
-        0x7f0203d0
+        0x7f020387
+        0x7f0203cf
+        0x7f0203f6
+        0x7f0203d7
     .end array-data
 
     :array_2a
     .array-data 4
-        0x7f020380
-        0x7f0203c8
-        0x7f0203ef
-        0x7f0203d0
+        0x7f020387
+        0x7f0203cf
+        0x7f0203f6
+        0x7f0203d7
     .end array-data
 
-    .line 742
     :array_2b
     .array-data 4
-        0x7f0203a4
-        0x7f0203c8
-        0x7f0203ef
-        0x7f0203d0
+        0x7f0203ab
+        0x7f0203cf
+        0x7f0203f6
+        0x7f0203d7
     .end array-data
 
     :array_2c
     .array-data 4
-        0x7f0203a4
-        0x7f0203c8
-        0x7f0203ef
-        0x7f0203d0
+        0x7f0203ab
+        0x7f0203cf
+        0x7f0203f6
+        0x7f0203d7
     .end array-data
 
-    .line 754
     :array_2d
     .array-data 4
-        0x7f02036c
-        0x7f02035e
-        0x7f02035e
-        0x7f02035e
+        0x7f020373
+        0x7f020365
+        0x7f020365
+        0x7f020365
     .end array-data
 
     :array_2e
     .array-data 4
-        0x7f02036c
-        0x7f02035e
-        0x7f02035e
-        0x7f02035e
+        0x7f020373
+        0x7f020365
+        0x7f020365
+        0x7f020365
     .end array-data
 
-    .line 766
     :array_2f
     .array-data 4
-        0x7f02036b
-        0x7f02035e
-        0x7f02035e
-        0x7f02035e
+        0x7f020372
+        0x7f020365
+        0x7f020365
+        0x7f020365
     .end array-data
 
     :array_30
     .array-data 4
-        0x7f02036b
-        0x7f02035e
-        0x7f02035e
-        0x7f02035e
+        0x7f020372
+        0x7f020365
+        0x7f020365
+        0x7f020365
     .end array-data
 
-    .line 780
     :array_31
     .array-data 4
-        0x7f02035b
-        0x7f02036d
-        0x7f02036d
-        0x7f02036d
+        0x7f020362
+        0x7f020374
+        0x7f020374
+        0x7f020374
     .end array-data
 
     :array_32
     .array-data 4
-        0x7f02035b
-        0x7f02036d
-        0x7f02036d
-        0x7f02036d
+        0x7f020362
+        0x7f020374
+        0x7f020374
+        0x7f020374
     .end array-data
 
-    .line 793
     :array_33
     .array-data 4
-        0x7f020568
-        0x7f020564
-        0x7f020571
-        0x7f020566
+        0x7f020570
+        0x7f02056b
+        0x7f020579
+        0x7f02056d
     .end array-data
 
     :array_34
     .array-data 4
-        0x7f020568
-        0x7f020564
-        0x7f020571
-        0x7f020566
+        0x7f020570
+        0x7f02056b
+        0x7f020579
+        0x7f02056d
     .end array-data
 
-    .line 805
     :array_35
     .array-data 4
-        0x7f0203a5
-        0x7f0203a5
-        0x7f0203a5
-        0x7f0203a5
+        0x7f0203ac
+        0x7f0203ac
+        0x7f0203ac
+        0x7f0203ac
     .end array-data
 
     :array_36
     .array-data 4
-        0x7f0203a5
-        0x7f0203a5
-        0x7f0203a5
-        0x7f0203a5
+        0x7f0203ac
+        0x7f0203ac
+        0x7f0203ac
+        0x7f0203ac
     .end array-data
 
-    .line 816
     :array_37
     .array-data 4
-        0x7f020387
-        0x7f020387
-        0x7f020387
-        0x7f020387
+        0x7f02038e
+        0x7f02038e
+        0x7f02038e
+        0x7f02038e
     .end array-data
 
     :array_38
     .array-data 4
-        0x7f020387
-        0x7f020387
-        0x7f020387
-        0x7f020387
+        0x7f02038e
+        0x7f02038e
+        0x7f02038e
+        0x7f02038e
     .end array-data
 
-    .line 827
     :array_39
     .array-data 4
-        0x7f020384
-        0x7f020384
-        0x7f020384
-        0x7f020384
+        0x7f02038b
+        0x7f02038b
+        0x7f02038b
+        0x7f02038b
     .end array-data
 
     :array_3a
     .array-data 4
-        0x7f0203b7
-        0x7f0203b7
-        0x7f0203b7
-        0x7f0203b7
+        0x7f0203be
+        0x7f0203be
+        0x7f0203be
+        0x7f0203be
     .end array-data
 
-    .line 838
     :array_3b
     .array-data 4
-        0x7f020372
-        0x7f020372
-        0x7f020372
-        0x7f020372
+        0x7f020379
+        0x7f020379
+        0x7f020379
+        0x7f020379
     .end array-data
 
     :array_3c
     .array-data 4
-        0x7f0203b4
-        0x7f0203b4
-        0x7f0203b4
-        0x7f0203b4
+        0x7f0203bb
+        0x7f0203bb
+        0x7f0203bb
+        0x7f0203bb
     .end array-data
 
-    .line 849
     :array_3d
     .array-data 4
-        0x7f02037a
-        0x7f02037a
-        0x7f02037a
-        0x7f02037a
+        0x7f020381
+        0x7f020381
+        0x7f020381
+        0x7f020381
     .end array-data
 
     :array_3e
     .array-data 4
-        0x7f02037a
-        0x7f02037a
-        0x7f02037a
-        0x7f02037a
+        0x7f020381
+        0x7f020381
+        0x7f020381
+        0x7f020381
     .end array-data
 
-    .line 860
     :array_3f
     .array-data 4
-        0x7f02038d
-        0x7f02038d
-        0x7f02038d
-        0x7f02038d
+        0x7f020394
+        0x7f020394
+        0x7f020394
+        0x7f020394
     .end array-data
 
     :array_40
     .array-data 4
-        0x7f0203b8
-        0x7f0203b8
-        0x7f0203b8
-        0x7f0203b8
+        0x7f0203bf
+        0x7f0203bf
+        0x7f0203bf
+        0x7f0203bf
     .end array-data
 .end method
 
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1386,10 +1301,7 @@
 
 .method static getDataActivity(I)I
     .locals 1
-    .param p0, "activity"    # I
 
-    .prologue
-    .line 637
     const/4 v0, 0x0
 
     invoke-static {v0, p0}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->getDataActivity(II)I
@@ -1401,13 +1313,9 @@
 
 .method static getDataActivity(II)I
     .locals 8
-    .param p0, "sub"    # I
-    .param p1, "activity"    # I
 
-    .prologue
     const/4 v7, 0x0
 
-    .line 641
     const-string v2, "TelephonyIcons"
 
     const-string v3, "getDataActivity, sub=%d, activity=%d"
@@ -1438,7 +1346,6 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 644
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -1457,8 +1364,6 @@
 
     move-result-object v0
 
-    .line 646
-    .local v0, "dataActivityArray":[Ljava/lang/String;
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -1479,8 +1384,6 @@
 
     move-result-object v1
 
-    .line 649
-    .local v1, "selectedTypeArray":[Ljava/lang/String;
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     aget-object v3, v1, p1
@@ -1497,8 +1400,6 @@
 .method static getDataTypeDesc()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 633
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
     return-object v0
@@ -1507,8 +1408,6 @@
 .method static getDataTypeIcon()I
     .locals 2
 
-    .prologue
-    .line 624
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     const/4 v1, 0x0
@@ -1520,10 +1419,7 @@
 
 .method static getDataTypeIcon(I)I
     .locals 6
-    .param p0, "sub"    # I
 
-    .prologue
-    .line 628
     const-string v0, "TelephonyIcons"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1564,7 +1460,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 629
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     aget v0, v0, p0
@@ -1575,8 +1470,6 @@
 .method static getNoSimIcon()I
     .locals 1
 
-    .prologue
-    .line 409
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->getNoSimIcon(I)I
@@ -1588,29 +1481,21 @@
 
 .method static getNoSimIcon(I)I
     .locals 5
-    .param p0, "sub"    # I
 
-    .prologue
-    .line 413
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mNoSimArray:[Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 414
     const/4 v0, 0x0
 
-    .line 419
     :goto_0
     return v0
 
-    .line 416
     :cond_0
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mNoSimArray:[Ljava/lang/String;
 
     aget-object v1, v2, p0
 
-    .line 417
-    .local v1, "resName":Ljava/lang/String;
     const-string v2, "TelephonyIcons"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1633,7 +1518,6 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 418
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const/4 v3, 0x0
@@ -1644,16 +1528,12 @@
 
     move-result v0
 
-    .line 419
-    .local v0, "resId":I
     goto :goto_0
 .end method
 
 .method static getQSDataTypeIcon()I
     .locals 2
 
-    .prologue
-    .line 616
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     const/4 v1, 0x0
@@ -1665,10 +1545,7 @@
 
 .method static getQSDataTypeIcon(I)I
     .locals 1
-    .param p0, "sub"    # I
 
-    .prologue
-    .line 620
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     aget v0, v0, p0
@@ -1679,8 +1556,6 @@
 .method static getSignalNullIcon()I
     .locals 1
 
-    .prologue
-    .line 423
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->getSignalNullIcon(I)I
@@ -1692,29 +1567,21 @@
 
 .method static getSignalNullIcon(I)I
     .locals 5
-    .param p0, "sub"    # I
 
-    .prologue
-    .line 427
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalNullArray:[Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 428
     const/4 v0, 0x0
 
-    .line 433
     :goto_0
     return v0
 
-    .line 430
     :cond_0
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalNullArray:[Ljava/lang/String;
 
     aget-object v1, v2, p0
 
-    .line 431
-    .local v1, "resName":Ljava/lang/String;
     const-string v2, "TelephonyIcons"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1737,7 +1604,6 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 432
     sget-object v2, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const/4 v3, 0x0
@@ -1748,17 +1614,12 @@
 
     move-result v0
 
-    .line 433
-    .local v0, "resId":I
     goto :goto_0
 .end method
 
 .method static getSignalStrengthDes(I)Ljava/lang/String;
     .locals 1
-    .param p0, "level"    # I
 
-    .prologue
-    .line 693
     const/4 v0, 0x0
 
     invoke-static {v0, p0}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->getSignalStrengthDes(II)Ljava/lang/String;
@@ -1770,11 +1631,7 @@
 
 .method static getSignalStrengthDes(II)Ljava/lang/String;
     .locals 1
-    .param p0, "sub"    # I
-    .param p1, "level"    # I
 
-    .prologue
-    .line 697
     sget-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalStrengthDesc:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -1784,19 +1641,13 @@
 
 .method static getSignalStrengthIcon(IIIZ)I
     .locals 12
-    .param p0, "sub"    # I
-    .param p1, "inetCondition"    # I
-    .param p2, "level"    # I
-    .param p3, "isRoaming"    # Z
 
-    .prologue
     const/4 v11, 0x1
 
     const/4 v10, 0x0
 
     const/4 v9, 0x0
 
-    .line 660
     const-string v3, "TelephonyIcons"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1863,10 +1714,8 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 666
     if-nez p3, :cond_0
 
-    .line 667
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -1885,8 +1734,6 @@
 
     move-result-object v2
 
-    .line 674
-    .local v2, "signalStrengthArray":[Ljava/lang/String;
     :goto_0
     const-string v3, "TelephonyIcons"
 
@@ -1908,7 +1755,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 677
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -1929,8 +1775,6 @@
 
     move-result-object v1
 
-    .line 680
-    .local v1, "selectedTypeArray":[Ljava/lang/String;
     const-string v3, "TelephonyIcons"
 
     const-string v4, "selectedTypeArray.length = %d"
@@ -1951,7 +1795,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 683
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -1968,8 +1811,6 @@
 
     move-result-object v0
 
-    .line 686
-    .local v0, "inetArray":[Ljava/lang/String;
     const-string v3, "TelephonyIcons"
 
     const-string v4, "inetArray.length = %d"
@@ -1990,7 +1831,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 689
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     aget-object v4, v0, p2
@@ -2003,10 +1843,6 @@
 
     return v3
 
-    .line 670
-    .end local v0    # "inetArray":[Ljava/lang/String;
-    .end local v1    # "selectedTypeArray":[Ljava/lang/String;
-    .end local v2    # "signalStrengthArray":[Ljava/lang/String;
     :cond_0
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
@@ -2026,18 +1862,12 @@
 
     move-result-object v2
 
-    .restart local v2    # "signalStrengthArray":[Ljava/lang/String;
     goto :goto_0
 .end method
 
 .method static getSignalStrengthIcon(IIZ)I
     .locals 1
-    .param p0, "inetCondition"    # I
-    .param p1, "level"    # I
-    .param p2, "isRoaming"    # Z
 
-    .prologue
-    .line 654
     const/4 v0, 0x0
 
     invoke-static {v0, p0, p1, p2}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->getSignalStrengthIcon(IIIZ)I
@@ -2049,26 +1879,20 @@
 
 .method static initAll(Landroid/content/Context;)V
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 356
     sget-boolean v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->isInitiated:Z
 
     if-eqz v1, :cond_0
 
-    .line 357
     const-string v1, "TelephonyIcons"
 
     const-string v2, "initAll, already initiated!"
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 406
     :goto_0
     return-void
 
-    .line 361
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2076,7 +1900,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
-    .line 363
     :try_start_0
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
@@ -2088,7 +1911,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeArray:[Ljava/lang/String;
 
-    .line 365
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090016
@@ -2099,7 +1921,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
-    .line 367
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090015
@@ -2110,7 +1931,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationArray:[Ljava/lang/String;
 
-    .line 369
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090017
@@ -2121,7 +1941,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationDescArray:[Ljava/lang/String;
 
-    .line 371
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090018
@@ -2132,7 +1951,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataActivityArray:[Ljava/lang/String;
 
-    .line 373
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f09003a
@@ -2143,7 +1961,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalStrengthArray:[Ljava/lang/String;
 
-    .line 375
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f09003b
@@ -2154,7 +1971,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalStrengthRoamingArray:[Ljava/lang/String;
 
-    .line 377
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090079
@@ -2165,7 +1981,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalNullArray:[Ljava/lang/String;
 
-    .line 379
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f09007a
@@ -2176,7 +1991,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mNoSimArray:[Ljava/lang/String;
 
-    .line 381
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const v2, 0x7f090078
@@ -2189,7 +2003,6 @@
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 389
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     if-nez v1, :cond_1
@@ -2200,7 +2013,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 391
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeArray:[Ljava/lang/String;
 
     array-length v1, v1
@@ -2209,7 +2021,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
-    .line 393
     :cond_1
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
@@ -2221,7 +2032,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 395
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeArray:[Ljava/lang/String;
 
     array-length v1, v1
@@ -2230,7 +2040,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
-    .line 397
     :cond_2
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -2242,7 +2051,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 399
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataActivityArray:[Ljava/lang/String;
 
     array-length v1, v1
@@ -2251,7 +2059,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
-    .line 401
     :cond_3
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
@@ -2263,7 +2070,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 403
     sget-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSignalStrengthArray:[Ljava/lang/String;
 
     array-length v1, v1
@@ -2272,7 +2078,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
-    .line 405
     :cond_4
     const/4 v1, 0x1
 
@@ -2280,17 +2085,13 @@
 
     goto/16 :goto_0
 
-    .line 383
     :catch_0
     move-exception v0
 
-    .line 384
-    .local v0, "e":Landroid/content/res/Resources$NotFoundException;
     const/4 v1, 0x0
 
     sput-boolean v1, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->isInitiated:Z
 
-    .line 385
     const-string v1, "TelephonyIcons"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2318,28 +2119,15 @@
 
 .method private static log(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "str"    # Ljava/lang/String;
 
-    .prologue
-    .line 702
     invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 704
     return-void
 .end method
 
 .method static updateDataType(IIZZZI)V
     .locals 9
-    .param p0, "sub"    # I
-    .param p1, "type"    # I
-    .param p2, "showAtLeast3G"    # Z
-    .param p3, "show4GforLte"    # Z
-    .param p4, "hspaDistinguishable"    # Z
-    .param p5, "inetCondition"    # I
 
-    .prologue
-    .line 446
     const-string v3, "TelephonyIcons"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2438,13 +2226,10 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 453
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeArray:[Ljava/lang/String;
 
     aget-object v2, v3, p0
 
-    .line 454
-    .local v2, "resName":Ljava/lang/String;
     const-string v3, "TelephonyIcons"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2467,7 +2252,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 455
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     const/4 v4, 0x0
@@ -2478,8 +2262,6 @@
 
     move-result v1
 
-    .line 456
-    .local v1, "resId":I
     const-string v3, "TelephonyIcons"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2502,18 +2284,14 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 457
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
 
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 459
-    .local v0, "dataTypeArray":[Ljava/lang/String;
     packed-switch p1, :pswitch_data_0
 
-    .line 602
     :pswitch_0
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -2521,33 +2299,28 @@
 
     aput v4, v3, p0
 
-    .line 603
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     const/4 v4, 0x0
 
     aput v4, v3, p0
 
-    .line 604
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     const/4 v4, 0x0
 
     aput v4, v3, p0
 
-    .line 605
     const-string v3, ""
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 606
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x0
 
     aput v4, v3, p0
 
-    .line 609
     :goto_0
     const-string v3, "TelephonyIcons"
 
@@ -2613,14 +2386,11 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 613
     return-void
 
-    .line 461
     :pswitch_1
     if-nez p2, :cond_0
 
-    .line 462
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2637,28 +2407,24 @@
 
     aput v4, v3, p0
 
-    .line 464
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     const/4 v4, 0x0
 
     aput v4, v3, p0
 
-    .line 465
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 466
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x0
 
     aput v4, v3, p0
 
-    .line 467
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x0
@@ -2667,12 +2433,10 @@
 
     goto :goto_0
 
-    .line 473
     :cond_0
     :pswitch_2
     if-nez p2, :cond_1
 
-    .line 474
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2689,7 +2453,6 @@
 
     aput v4, v3, p0
 
-    .line 476
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_E:[I
@@ -2698,21 +2461,18 @@
 
     aput v4, v3, p0
 
-    .line 477
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 478
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x2
 
     aput v4, v3, p0
 
-    .line 479
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x1
@@ -2721,7 +2481,6 @@
 
     goto/16 :goto_0
 
-    .line 486
     :cond_1
     :pswitch_3
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
@@ -2730,7 +2489,6 @@
 
     aput v4, v3, p0
 
-    .line 487
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2747,7 +2505,6 @@
 
     aput v4, v3, p0
 
-    .line 489
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
@@ -2756,14 +2513,12 @@
 
     aput v4, v3, p0
 
-    .line 490
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 491
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/16 v4, 0x8
@@ -2772,18 +2527,15 @@
 
     goto/16 :goto_0
 
-    .line 496
     :pswitch_4
     if-eqz p4, :cond_2
 
-    .line 497
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x6
 
     aput v4, v3, p0
 
-    .line 498
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2800,7 +2552,6 @@
 
     aput v4, v3, p0
 
-    .line 500
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_H:[I
@@ -2809,14 +2560,12 @@
 
     aput v4, v3, p0
 
-    .line 501
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 502
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x4
@@ -2825,7 +2574,6 @@
 
     goto/16 :goto_0
 
-    .line 504
     :cond_2
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -2833,7 +2581,6 @@
 
     aput v4, v3, p0
 
-    .line 505
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2854,7 +2601,6 @@
 
     aput v4, v3, p0
 
-    .line 507
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
@@ -2863,7 +2609,6 @@
 
     aput v4, v3, p0
 
-    .line 508
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationDescArray:[Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -2872,7 +2617,6 @@
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 509
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x2
@@ -2881,18 +2625,15 @@
 
     goto/16 :goto_0
 
-    .line 514
     :pswitch_5
     if-eqz p4, :cond_3
 
-    .line 515
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x7
 
     aput v4, v3, p0
 
-    .line 516
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2909,7 +2650,6 @@
 
     aput v4, v3, p0
 
-    .line 518
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_H:[I
@@ -2918,14 +2658,12 @@
 
     aput v4, v3, p0
 
-    .line 519
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 520
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x5
@@ -2934,7 +2672,6 @@
 
     goto/16 :goto_0
 
-    .line 522
     :cond_3
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -2942,7 +2679,6 @@
 
     aput v4, v3, p0
 
-    .line 523
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -2963,7 +2699,6 @@
 
     aput v4, v3, p0
 
-    .line 525
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
@@ -2972,7 +2707,6 @@
 
     aput v4, v3, p0
 
-    .line 526
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationDescArray:[Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -2981,7 +2715,6 @@
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 527
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x2
@@ -2990,18 +2723,15 @@
 
     goto/16 :goto_0
 
-    .line 532
     :pswitch_6
     if-nez p2, :cond_4
 
-    .line 533
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/16 v4, 0x8
 
     aput v4, v3, p0
 
-    .line 534
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3018,7 +2748,6 @@
 
     aput v4, v3, p0
 
-    .line 536
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_1X:[I
@@ -3027,14 +2756,12 @@
 
     aput v4, v3, p0
 
-    .line 537
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 538
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x7
@@ -3043,19 +2770,16 @@
 
     goto/16 :goto_0
 
-    .line 544
     :cond_4
     :pswitch_7
     if-nez p2, :cond_5
 
-    .line 545
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/16 v4, 0x8
 
     aput v4, v3, p0
 
-    .line 546
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3072,7 +2796,6 @@
 
     aput v4, v3, p0
 
-    .line 548
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_1X:[I
@@ -3081,14 +2804,12 @@
 
     aput v4, v3, p0
 
-    .line 549
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 550
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x6
@@ -3097,7 +2818,6 @@
 
     goto/16 :goto_0
 
-    .line 559
     :cond_5
     :pswitch_8
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
@@ -3106,7 +2826,6 @@
 
     aput v4, v3, p0
 
-    .line 560
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3123,7 +2842,6 @@
 
     aput v4, v3, p0
 
-    .line 562
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
@@ -3132,14 +2850,12 @@
 
     aput v4, v3, p0
 
-    .line 563
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 564
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x2
@@ -3148,18 +2864,15 @@
 
     goto/16 :goto_0
 
-    .line 567
     :pswitch_9
     if-eqz p3, :cond_6
 
-    .line 568
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x5
 
     aput v4, v3, p0
 
-    .line 569
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3180,7 +2893,6 @@
 
     aput v4, v3, p0
 
-    .line 571
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_4G:[I
@@ -3189,7 +2901,6 @@
 
     aput v4, v3, p0
 
-    .line 572
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationDescArray:[Ljava/lang/String;
 
     const/4 v4, 0x1
@@ -3198,7 +2909,6 @@
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 573
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x3
@@ -3207,7 +2917,6 @@
 
     goto/16 :goto_0
 
-    .line 575
     :cond_6
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -3215,7 +2924,6 @@
 
     aput v4, v3, p0
 
-    .line 576
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3232,7 +2940,6 @@
 
     aput v4, v3, p0
 
-    .line 578
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_LTE:[I
@@ -3241,14 +2948,12 @@
 
     aput v4, v3, p0
 
-    .line 579
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 580
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x3
@@ -3257,18 +2962,15 @@
 
     goto/16 :goto_0
 
-    .line 585
     :pswitch_a
     if-nez p2, :cond_7
 
-    .line 586
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
     const/4 v4, 0x1
 
     aput v4, v3, p0
 
-    .line 587
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3285,7 +2987,6 @@
 
     aput v4, v3, p0
 
-    .line 589
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_G:[I
@@ -3294,14 +2995,12 @@
 
     aput v4, v3, p0
 
-    .line 590
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeDescriptionArray:[Ljava/lang/String;
 
     aget-object v3, v3, p1
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 591
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x0
@@ -3310,7 +3009,6 @@
 
     goto/16 :goto_0
 
-    .line 593
     :cond_7
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataActivityIndex:[I
 
@@ -3318,7 +3016,6 @@
 
     aput v4, v3, p0
 
-    .line 594
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mRes:Landroid/content/res/Resources;
@@ -3339,7 +3036,6 @@
 
     aput v4, v3, p0
 
-    .line 596
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedQSDataTypeIcon:[I
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->QS_DATA_3G:[I
@@ -3348,7 +3044,6 @@
 
     aput v4, v3, p0
 
-    .line 597
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mDataTypeGenerationDescArray:[Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -3357,7 +3052,6 @@
 
     sput-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedDataTypeDesc:Ljava/lang/String;
 
-    .line 598
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->mSelectedSignalStreagthIndex:[I
 
     const/4 v4, 0x2
@@ -3366,7 +3060,6 @@
 
     goto/16 :goto_0
 
-    .line 459
     nop
 
     :pswitch_data_0
@@ -3394,14 +3087,7 @@
 
 .method static updateDataType(IZZZI)V
     .locals 6
-    .param p0, "type"    # I
-    .param p1, "showAtLeast3G"    # Z
-    .param p2, "show4GforLte"    # Z
-    .param p3, "hspaDistinguishable"    # Z
-    .param p4, "inetCondition"    # I
 
-    .prologue
-    .line 439
     const/4 v0, 0x0
 
     move v1, p0
@@ -3416,6 +3102,5 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->updateDataType(IIZZZI)V
 
-    .line 441
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WifiTile;)V
     .locals 0
 
-    .prologue
-    .line 68
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x0
 
-    .line 71
     const-string v3, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -70,13 +64,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 73
-    .local v0, "action":Ljava/lang/String;
     const-string v3, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -85,15 +76,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 74
     const-string v3, "wifi_state"
 
     invoke-virtual {p2, v3, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 76
-    .local v2, "state":I
     const-string v3, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -122,7 +110,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
@@ -139,13 +126,10 @@
     # invokes: Lcom/android/systemui/qs/tiles/WifiTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v3, v4}, Lcom/android/systemui/qs/tiles/WifiTile;->access$100(Lcom/android/systemui/qs/tiles/WifiTile;Ljava/lang/Object;)V
 
-    .line 95
-    .end local v2    # "state":I
     :cond_0
     :goto_0
     return-void
 
-    .line 78
     :cond_1
     const-string v3, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
@@ -155,15 +139,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 79
     const-string v3, "wifi_state"
 
     invoke-virtual {p2, v3, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 80
-    .restart local v2    # "state":I
     const-string v3, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -192,7 +173,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     const/16 v3, 0xd
 
     if-eq v2, v3, :cond_2
@@ -201,7 +181,6 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 82
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -221,8 +200,6 @@
 
     goto :goto_0
 
-    .line 83
-    .end local v2    # "state":I
     :cond_3
     const-string v3, "android.net.wifi.WIFI_DIALOG_CANCEL_ACTION"
 
@@ -232,7 +209,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 84
     const-string v3, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -267,7 +243,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
     const-string v3, "called_dialog"
 
     invoke-virtual {p2, v3, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -278,7 +253,6 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 86
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
@@ -301,7 +275,6 @@
 
     goto/16 :goto_0
 
-    .line 88
     :cond_4
     const-string v3, "android.net.wifi.SHOW_INFO_MESSAGE"
 
@@ -311,15 +284,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 89
     const-string v3, "info_type"
 
     invoke-virtual {p2, v3, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 90
-    .local v1, "msgId":I
     const-string v3, "STATUSBAR-WifiQuickSettingButton"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -348,7 +318,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WifiTile;->INFO_TYPE_DPM_WIFI:I
@@ -367,7 +336,6 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 92
     :cond_5
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 

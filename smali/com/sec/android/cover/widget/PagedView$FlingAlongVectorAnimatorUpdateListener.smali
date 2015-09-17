@@ -34,17 +34,9 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;Landroid/graphics/PointF;Landroid/graphics/Rect;JF)V
     .locals 2
-    .param p1, "dragView"    # Landroid/view/View;
-    .param p2, "vel"    # Landroid/graphics/PointF;
-    .param p3, "from"    # Landroid/graphics/Rect;
-    .param p4, "startTime"    # J
-    .param p6, "friction"    # F
 
-    .prologue
-    .line 2469
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2466
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x3f400000    # 0.75f
@@ -53,19 +45,14 @@
 
     iput-object v0, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mAlphaInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 2470
     iput-object p1, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
-    .line 2471
     iput-object p2, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mVelocity:Landroid/graphics/PointF;
 
-    .line 2472
     iput-object p3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFrom:Landroid/graphics/Rect;
 
-    .line 2473
     iput-wide p4, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mPrevTime:J
 
-    .line 2474
     const/high16 v0, 0x3f800000    # 1.0f
 
     iget-object v1, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
@@ -86,7 +73,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFriction:F
 
-    .line 2475
     return-void
 .end method
 
@@ -94,12 +80,9 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 9
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
     const/high16 v8, 0x447a0000    # 1000.0f
 
-    .line 2479
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -110,14 +93,10 @@
 
     move-result v2
 
-    .line 2480
-    .local v2, "t":F
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
-    .line 2482
-    .local v0, "curTime":J
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFrom:Landroid/graphics/Rect;
 
     iget v4, v3, Landroid/graphics/Rect;->left:I
@@ -144,7 +123,6 @@
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
-    .line 2483
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFrom:Landroid/graphics/Rect;
 
     iget v4, v3, Landroid/graphics/Rect;->top:I
@@ -171,7 +149,6 @@
 
     iput v4, v3, Landroid/graphics/Rect;->top:I
 
-    .line 2485
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
     iget-object v4, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFrom:Landroid/graphics/Rect;
@@ -182,7 +159,6 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2486
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
     iget-object v4, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mFrom:Landroid/graphics/Rect;
@@ -193,7 +169,6 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2487
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -208,7 +183,6 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2489
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mVelocity:Landroid/graphics/PointF;
 
     iget v4, v3, Landroid/graphics/PointF;->x:F
@@ -219,7 +193,6 @@
 
     iput v4, v3, Landroid/graphics/PointF;->x:F
 
-    .line 2490
     iget-object v3, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mVelocity:Landroid/graphics/PointF;
 
     iget v4, v3, Landroid/graphics/PointF;->y:F
@@ -230,9 +203,7 @@
 
     iput v4, v3, Landroid/graphics/PointF;->y:F
 
-    .line 2491
     iput-wide v0, p0, Lcom/sec/android/cover/widget/PagedView$FlingAlongVectorAnimatorUpdateListener;->mPrevTime:J
 
-    .line 2492
     return-void
 .end method

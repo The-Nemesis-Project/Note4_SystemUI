@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
 
-    .prologue
-    .line 270
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 274
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 292
     :goto_0
     return-void
 
-    .line 276
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 280
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -65,7 +57,6 @@
 
     goto :goto_0
 
-    .line 284
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -74,7 +65,6 @@
 
     goto :goto_0
 
-    .line 287
     :pswitch_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$1;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
@@ -83,7 +73,6 @@
 
     goto :goto_0
 
-    .line 274
     :pswitch_data_0
     .packed-switch 0x12f0
         :pswitch_0

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
 
-    .prologue
-    .line 2105
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$21;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 3
-    .param p1, "state"    # I
-    .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .prologue
-    .line 2108
     const-string v0, "PowerUI.Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -62,12 +56,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2109
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$21;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # setter for: Lcom/android/systemui/power/PowerNotificationWarnings;->mCallState:I
     invoke-static {v0, p1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$1302(Lcom/android/systemui/power/PowerNotificationWarnings;I)I
 
-    .line 2110
     return-void
 .end method

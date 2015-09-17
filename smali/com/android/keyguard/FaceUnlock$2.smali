@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/FaceUnlock;)V
     .locals 0
 
-    .prologue
-    .line 423
     iput-object p1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;-><init>()V
@@ -36,15 +34,12 @@
 .method public cancel()V
     .locals 2
 
-    .prologue
-    .line 437
     const-string v0, "FULLockscreen"
 
     const-string v1, "cancel()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
     iget-object v0, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -56,16 +51,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 439
     return-void
 .end method
 
 .method public pokeWakelock(I)V
     .locals 4
-    .param p1, "millis"    # I
 
-    .prologue
-    .line 454
     const-string v1, "FULLockscreen"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -94,7 +85,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 455
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -110,8 +100,6 @@
 
     move-result-object v0
 
-    .line 456
-    .local v0, "message":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -121,22 +109,18 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 457
     return-void
 .end method
 
 .method public reportFailedAttempt()V
     .locals 2
 
-    .prologue
-    .line 445
     const-string v0, "FULLockscreen"
 
     const-string v1, "reportFailedAttempt()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 446
     iget-object v0, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -148,22 +132,18 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 447
     return-void
 .end method
 
 .method public unlock()V
     .locals 5
 
-    .prologue
-    .line 428
     const-string v1, "FULLockscreen"
 
     const-string v2, "unlock()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -183,8 +163,6 @@
 
     move-result-object v0
 
-    .line 430
-    .local v0, "message":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -194,6 +172,5 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 431
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 1005
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/service/notification/NotificationListenerService;-><init>()V
@@ -36,8 +34,6 @@
 .method public onListenerConnected()V
     .locals 4
 
-    .prologue
-    .line 1008
     sget-boolean v2, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v2, :cond_0
@@ -48,27 +44,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1009
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar$6;->getActiveNotifications()[Landroid/service/notification/StatusBarNotification;
 
     move-result-object v1
 
-    .line 1010
-    .local v1, "notifications":[Landroid/service/notification/StatusBarNotification;
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar$6;->getCurrentRanking()Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0
 
-    .line 1011
-    .local v0, "currentRanking":Landroid/service/notification/NotificationListenerService$RankingMap;
     if-nez v1, :cond_1
 
-    .line 1021
     :goto_0
     return-void
 
-    .line 1013
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -85,11 +74,7 @@
 
 .method public onNotificationPosted(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 3
-    .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
-    .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .prologue
-    .line 1026
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -116,7 +101,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1027
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -128,16 +112,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 1058
     return-void
 .end method
 
 .method public onNotificationRankingUpdate(Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 2
-    .param p1, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .prologue
-    .line 1078
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -148,7 +128,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1079
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -160,17 +139,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 1085
     return-void
 .end method
 
 .method public onNotificationRemoved(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 3
-    .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
-    .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .prologue
-    .line 1063
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -197,7 +171,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1064
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -209,6 +182,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 1074
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "StatusBarKeyguardViewManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->callbackAfterDraw(Lcom/android/internal/policy/IKeyguardShowCallback;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-.field final synthetic val$callback:Lcom/android/internal/policy/IKeyguardShowCallback;
-
-.field final synthetic val$isBootCompleted:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;Lcom/android/internal/policy/IKeyguardShowCallback;Z)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;)V
     .locals 0
 
-    .prologue
-    .line 206
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
-
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$callback:Lcom/android/internal/policy/IKeyguardShowCallback;
-
-    iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$isBootCompleted:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,68 +34,162 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 7
 
-    .prologue
-    .line 210
-    :try_start_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$callback:Lcom/android/internal/policy/IKeyguardShowCallback;
+    sget-boolean v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->DEBUG:Z
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    if-eqz v4, :cond_0
 
-    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->mContainer:Landroid/view/ViewGroup;
-    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;)Landroid/view/ViewGroup;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getWindowToken()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Lcom/android/internal/policy/IKeyguardShowCallback;->onShown(Landroid/os/IBinder;)V
-
-    .line 211
-    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$isBootCompleted:Z
-
-    if-eqz v1, :cond_0
-
-    .line 212
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
-
-    .line 213
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    const-string v2, "callback.onShown()"
+    const-string v5, "StatusBarKeyguardManager.ServiceConnection.onServiceConnected() : IScreenLockService onServiceConnected"
 
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 218
     :cond_0
+    invoke-static {p2}, Lcom/nttdocomo/android/screenlockservice/IScreenLockService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/nttdocomo/android/screenlockservice/IScreenLockService;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    :try_start_0
+    invoke-interface {v3}, Lcom/nttdocomo/android/screenlockservice/IScreenLockService;->getUnreadCount()I
+
+    move-result v0
+
+    sget-boolean v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->DEBUG:Z
+
+    if-eqz v4, :cond_1
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "StatusBarKeyguardManager.ServiceConnection.onServiceConnected(): spmode cnt="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v4, "jp.co.nttdocomo.carriermail.APP_LINK_RECEIVED_MESSAGE_LOCAL"
+
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "spcnt"
+
+    invoke-virtual {v2, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->mContext:Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;)Landroid/content/Context;
+
+    move-result-object v4
+
+    const-string v5, "com.nttdocomo.android.screenlockservice.DCM_SCREEN"
+
+    invoke-virtual {v4, v2, v5}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_2
     :goto_0
+    :try_start_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->mContext:Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;)Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->mServiceConnection:Landroid/content/ServiceConnection;
+    invoke-static {v5}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$200(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;)Landroid/content/ServiceConnection;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
+
+    :goto_1
     return-void
 
-    .line 215
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 216
-    .local v0, "e":Landroid/os/RemoteException;
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    const-string v2, "Exception calling onShown():"
+    const-string v5, "StatusBarKeyguardManager.ServiceConnection.onServiceConnected(): can\'t get unread count"
 
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    :catch_1
+    move-exception v1
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "StatusBarKeyguardManager.ServiceConnection.onServiceConnected(): "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+.end method
+
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 0
+
+    return-void
 .end method

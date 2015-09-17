@@ -44,47 +44,33 @@
 # direct methods
 .method public constructor <init>(Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;Lcom/android/keyguard/sec/KeyguardEffectViewBase;)V
     .locals 4
-    .param p1, "callback"    # Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
-    .param p2, "unlockView"    # Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mDistance:D
 
-    .line 28
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsKeyguardDismissing:Z
 
-    .line 29
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsMultiTouch:Z
 
-    .line 30
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsUnlockStarted:Z
 
-    .line 31
     iput-boolean v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsIgnoreTouch:Z
 
-    .line 37
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 61
     iput-object p2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 62
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
-    .line 64
     check-cast p1, Landroid/view/View;
 
-    .end local p1    # "callback":Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -93,8 +79,6 @@
 
     move-result-object v0
 
-    .line 65
-    .local v0, "res":Landroid/content/res/Resources;
     sget v1, Lcom/android/keyguard/R$dimen;->keyguard_lockscreen_first_border:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -105,7 +89,6 @@
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mFirstBorder:I
 
-    .line 66
     sget v1, Lcom/android/keyguard/R$dimen;->keyguard_lockscreen_second_border:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -116,16 +99,12 @@
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mSecondBorder:I
 
-    .line 67
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;)Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
-    .prologue
-    .line 17
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     return-object v0
@@ -133,10 +112,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;
 
-    .prologue
-    .line 17
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->launch()V
 
     return-void
@@ -145,8 +121,6 @@
 .method private launch()V
     .locals 3
 
-    .prologue
-    .line 227
     const-string v0, "KeyguardUnlockEventHandler"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -171,39 +145,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
     iget-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsKeyguardDismissing:Z
 
     if-nez v0, :cond_0
 
-    .line 229
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsKeyguardDismissing:Z
 
-    .line 230
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     if-eqz v0, :cond_0
 
-    .line 231
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->onUnlockExecuted()V
 
-    .line 232
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     instance-of v0, v0, Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     if-eqz v0, :cond_0
 
-    .line 235
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     invoke-interface {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->reset()V
 
-    .line 239
     :cond_0
     return-void
 .end method
@@ -213,33 +180,24 @@
 .method public cleanUp()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 250
     const-string v0, "KeyguardUnlockEventHandler"
 
     const-string v1, "cleanUp()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
-    .line 252
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
-    .line 253
     return-void
 .end method
 
 .method public handleTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 18
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 70
     const-string v12, "KeyguardUnlockEventHandler"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -266,31 +224,23 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
-    .line 72
-    .local v2, "action":I
     and-int/lit16 v7, v2, 0xff
 
-    .line 73
-    .local v7, "maskedAction":I
     move-object/from16 v0, p0
 
     iget-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsUnlockStarted:Z
 
     if-eqz v12, :cond_0
 
-    .line 74
     const/4 v12, 0x1
 
-    .line 223
     :goto_0
     return v12
 
-    .line 77
     :cond_0
     move-object/from16 v0, p0
 
@@ -298,7 +248,6 @@
 
     if-eqz v12, :cond_4
 
-    .line 78
     const/4 v12, 0x1
 
     if-eq v2, v12, :cond_1
@@ -307,7 +256,6 @@
 
     if-ne v2, v12, :cond_2
 
-    .line 79
     :cond_1
     const/4 v12, 0x0
 
@@ -315,21 +263,18 @@
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsIgnoreTouch:Z
 
-    .line 80
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     if-eqz v12, :cond_2
 
-    .line 81
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     invoke-interface {v12}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->onUnlockViewReleased()V
 
-    .line 84
     :cond_2
     move-object/from16 v0, p0
 
@@ -356,23 +301,17 @@
 
     goto :goto_0
 
-    .line 87
     :cond_4
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v10
 
-    .line 88
-    .local v10, "touchedEventX":F
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v11
 
-    .line 90
-    .local v11, "touchedEventY":F
     packed-switch v7, :pswitch_data_0
 
-    .line 223
     :cond_5
     :goto_1
     :pswitch_0
@@ -386,7 +325,6 @@
 
     goto :goto_0
 
-    .line 92
     :pswitch_1
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -396,14 +334,12 @@
 
     if-lt v12, v13, :cond_6
 
-    .line 93
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsMultiTouch:Z
 
-    .line 94
     const-string v12, "KeyguardUnlockEventHandler"
 
     const-string v13, "mIsMultiTouch true"
@@ -412,7 +348,6 @@
 
     goto :goto_1
 
-    .line 96
     :cond_6
     const/4 v12, 0x0
 
@@ -420,7 +355,6 @@
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsMultiTouch:Z
 
-    .line 97
     const-string v12, "KeyguardUnlockEventHandler"
 
     const-string v13, "mIsMultiTouch false"
@@ -429,32 +363,27 @@
 
     goto :goto_1
 
-    .line 101
     :pswitch_2
     move-object/from16 v0, p0
 
     iput v10, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mStartX:F
 
-    .line 102
     move-object/from16 v0, p0
 
     iput v11, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mStartY:F
 
-    .line 103
     const-wide/16 v12, 0x0
 
     move-object/from16 v0, p0
 
     iput-wide v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mDistance:D
 
-    .line 105
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     if-eqz v12, :cond_5
 
-    .line 106
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -463,7 +392,6 @@
 
     goto :goto_1
 
-    .line 111
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -471,14 +399,12 @@
 
     if-eqz v12, :cond_7
 
-    .line 112
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     invoke-interface {v12}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->userActivity()V
 
-    .line 115
     :cond_7
     move-object/from16 v0, p0
 
@@ -488,8 +414,6 @@
 
     float-to-int v3, v12
 
-    .line 116
-    .local v3, "diffX":I
     move-object/from16 v0, p0
 
     iget v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mStartY:F
@@ -498,8 +422,6 @@
 
     float-to-int v6, v12
 
-    .line 118
-    .local v6, "diffY":I
     int-to-double v12, v3
 
     const-wide/high16 v14, 0x4000000000000000L    # 2.0
@@ -526,10 +448,8 @@
 
     iput-wide v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mDistance:D
 
-    .line 121
     if-eqz p1, :cond_8
 
-    .line 122
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getHeight()I
 
     move-result v12
@@ -546,14 +466,12 @@
 
     if-gez v12, :cond_a
 
-    .line 123
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     if-eqz v12, :cond_8
 
-    .line 124
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -562,7 +480,6 @@
 
     invoke-interface {v12, v13}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->onUnlockViewSwiped(Z)V
 
-    .line 133
     :cond_8
     :goto_2
     move-object/from16 v0, p0
@@ -585,25 +502,20 @@
 
     if-nez v12, :cond_5
 
-    .line 134
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsUnlockStarted:Z
 
-    .line 136
     const-wide/16 v4, 0x0
 
-    .line 137
-    .local v4, "delay":J
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v12, :cond_9
 
-    .line 138
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -614,10 +526,8 @@
 
     invoke-interface {v12, v0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleUnlock(Landroid/view/View;Landroid/view/MotionEvent;)V
 
-    .line 140
     if-nez p1, :cond_9
 
-    .line 141
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -626,7 +536,6 @@
 
     move-result-wide v4
 
-    .line 145
     :cond_9
     move-object/from16 v0, p0
 
@@ -634,7 +543,6 @@
 
     if-eqz v12, :cond_5
 
-    .line 147
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -651,8 +559,6 @@
 
     goto/16 :goto_1
 
-    .line 127
-    .end local v4    # "delay":J
     :cond_a
     move-object/from16 v0, p0
 
@@ -660,7 +566,6 @@
 
     if-eqz v12, :cond_8
 
-    .line 128
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -671,9 +576,6 @@
 
     goto :goto_2
 
-    .line 161
-    .end local v3    # "diffX":I
-    .end local v6    # "diffY":I
     :pswitch_4
     const v12, 0xff00
 
@@ -681,28 +583,20 @@
 
     shr-int/lit8 v9, v12, 0x8
 
-    .line 162
-    .local v9, "pointer_index":I
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v9}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v8
 
-    .line 163
-    .local v8, "pointer_id":I
     if-nez v8, :cond_b
 
-    .line 164
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsIgnoreTouch:Z
 
-    .line 168
-    .end local v8    # "pointer_id":I
-    .end local v9    # "pointer_index":I
     :cond_b
     :pswitch_5
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getPointerCount()I
@@ -713,21 +607,18 @@
 
     if-gt v12, v13, :cond_c
 
-    .line 169
     const/4 v12, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsMultiTouch:Z
 
-    .line 170
     const-string v12, "KeyguardUnlockEventHandler"
 
     const-string v13, "mIsMultiTouch false"
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
     :cond_c
     move-object/from16 v0, p0
 
@@ -739,14 +630,12 @@
 
     if-ne v7, v12, :cond_d
 
-    .line 174
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     invoke-interface {v12}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->onUnlockViewReleased()V
 
-    .line 176
     :cond_d
     const-wide/16 v12, 0x0
 
@@ -754,7 +643,6 @@
 
     iput-wide v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mDistance:D
 
-    .line 177
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isSimpleHelpText()Z
 
     move-result v12
@@ -775,7 +663,6 @@
 
     goto/16 :goto_1
 
-    .line 180
     :pswitch_6
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -785,21 +672,18 @@
 
     if-gt v12, v13, :cond_e
 
-    .line 181
     const/4 v12, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsMultiTouch:Z
 
-    .line 182
     const-string v12, "KeyguardUnlockEventHandler"
 
     const-string v13, "mIsMultiTouch false"
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
     :cond_e
     move-object/from16 v0, p0
 
@@ -807,14 +691,12 @@
 
     if-eqz v12, :cond_f
 
-    .line 186
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
 
     invoke-interface {v12}, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;->onUnlockViewReleased()V
 
-    .line 189
     :cond_f
     const-string v12, "KeyguardUnlockEventHandler"
 
@@ -842,7 +724,6 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 191
     move-object/from16 v0, p0
 
     iget v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mFirstBorder:I
@@ -877,25 +758,20 @@
 
     if-nez v12, :cond_11
 
-    .line 192
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsUnlockStarted:Z
 
-    .line 193
     const-wide/16 v4, 0x0
 
-    .line 195
-    .restart local v4    # "delay":J
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
 
     if-eqz v12, :cond_10
 
-    .line 196
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -906,10 +782,8 @@
 
     invoke-interface {v12, v0, v1}, Lcom/android/keyguard/sec/KeyguardEffectViewBase;->handleUnlock(Landroid/view/View;Landroid/view/MotionEvent;)V
 
-    .line 199
     if-nez p1, :cond_10
 
-    .line 200
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mUnlockView:Lcom/android/keyguard/sec/KeyguardEffectViewBase;
@@ -918,7 +792,6 @@
 
     move-result-wide v4
 
-    .line 204
     :cond_10
     move-object/from16 v0, p0
 
@@ -926,7 +799,6 @@
 
     if-eqz v12, :cond_5
 
-    .line 205
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mCallback:Lcom/android/keyguard/sec/KeyguardUnlockEventHandler$UnlockCallback;
@@ -943,8 +815,6 @@
 
     goto/16 :goto_1
 
-    .line 216
-    .end local v4    # "delay":J
     :cond_11
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isSimpleHelpText()Z
 
@@ -966,7 +836,6 @@
 
     goto/16 :goto_1
 
-    .line 223
     :cond_12
     move-object/from16 v0, p0
 
@@ -982,7 +851,6 @@
 
     goto/16 :goto_0
 
-    .line 90
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -998,30 +866,23 @@
 .method public reset()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 242
     const-string v0, "KeyguardUnlockEventHandler"
 
     const-string v1, "reset()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 243
     iput-boolean v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsUnlockStarted:Z
 
-    .line 244
     iput-boolean v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsIgnoreTouch:Z
 
-    .line 245
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mDistance:D
 
-    .line 246
     iput-boolean v2, p0, Lcom/android/keyguard/sec/KeyguardUnlockEventHandler;->mIsKeyguardDismissing:Z
 
-    .line 247
     return-void
 .end method

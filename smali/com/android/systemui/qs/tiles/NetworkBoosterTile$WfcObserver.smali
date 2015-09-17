@@ -22,18 +22,14 @@
 .method public constructor <init>(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;)V
     .locals 1
 
-    .prologue
-    .line 226
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
-    .line 227
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 228
     return-void
 .end method
 
@@ -41,15 +37,11 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x2
 
-    .line 232
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 233
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
@@ -62,7 +54,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->mIsWfcRegistered:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->access$202(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Z)Z
 
-    .line 234
     const-string v1, "NetworkBoosterTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -92,7 +83,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 237
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->mIsWfcRegistered:Z
@@ -102,23 +92,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 239
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
-
-    const/4 v1, 0x3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    # invokes: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->refreshState(Ljava/lang/Object;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->access$1600(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Ljava/lang/Object;)V
-
-    .line 247
-    :goto_0
-    return-void
-
-    .line 240
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
@@ -129,7 +102,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 241
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -139,9 +111,9 @@
     # invokes: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->access$1700(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Ljava/lang/Object;)V
 
-    goto :goto_0
+    :goto_0
+    return-void
 
-    .line 242
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
@@ -152,7 +124,6 @@
 
     if-nez v1, :cond_2
 
-    .line 243
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -164,7 +135,6 @@
 
     goto :goto_0
 
-    .line 245
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$WfcObserver;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 

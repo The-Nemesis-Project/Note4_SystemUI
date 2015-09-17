@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 848
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public onInteraction()V
     .locals 1
 
-    .prologue
-    .line 851
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1500(Lcom/android/systemui/volume/VolumePanel;)V
 
-    .line 852
     return-void
 .end method

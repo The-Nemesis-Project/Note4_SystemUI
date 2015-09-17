@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;)V
     .locals 0
 
-    .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$1;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 96
     const-string v0, "AirViewTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,7 +62,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
     const-string v0, "com.samsung.pen.INSERT"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -81,7 +74,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
     const-string v0, "penInsert"
 
     invoke-virtual {p2, v0, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -90,18 +82,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 99
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$1;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/AirViewTile;->mPenDettachedState:Z
     invoke-static {v0, v3}, Lcom/android/systemui/qs/tiles/AirViewTile;->access$002(Lcom/android/systemui/qs/tiles/AirViewTile;Z)Z
 
-    .line 104
     :cond_0
     :goto_0
     return-void
 
-    .line 101
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$1;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 

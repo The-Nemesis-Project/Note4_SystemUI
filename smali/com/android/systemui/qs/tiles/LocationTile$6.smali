@@ -3,12 +3,12 @@
 .source "LocationTile.java"
 
 # interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/qs/tiles/LocationTile;->showConfirmPopup(Z)V
+    value = Lcom/android/systemui/qs/tiles/LocationTile;->showDCMLocationConsentDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
-.field final synthetic val$mGpsCheckBox:Landroid/widget/CheckBox;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/qs/tiles/LocationTile;Landroid/widget/CheckBox;)V
+.method constructor <init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
     .locals 0
 
-    .prologue
-    .line 407
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/LocationTile$6;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
-
-    iput-object p2, p0, Lcom/android/systemui/qs/tiles/LocationTile$6;->val$mGpsCheckBox:Landroid/widget/CheckBox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,25 +34,34 @@
 
 
 # virtual methods
-.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
 
-    .prologue
-    .line 409
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile$6;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
+
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$6;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
-    # setter for: Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
-    invoke-static {v0, p2}, Lcom/android/systemui/qs/tiles/LocationTile;->access$902(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
+    # getter for: Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$100(Lcom/android/systemui/qs/tiles/LocationTile;)Z
 
-    .line 410
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$6;->val$mGpsCheckBox:Landroid/widget/CheckBox;
+    move-result v0
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->playSoundEffect(I)V
+    const/4 v0, 0x1
 
-    .line 411
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    # invokes: Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$900(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
+
     return-void
+
+    :cond_0
+    const/4 v0, 0x2
+
+    goto :goto_0
 .end method

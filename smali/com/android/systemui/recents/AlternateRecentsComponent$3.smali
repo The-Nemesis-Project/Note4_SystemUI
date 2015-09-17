@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/AlternateRecentsComponent;)V
     .locals 0
 
-    .prologue
-    .line 822
     iput-object p1, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$3;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,20 +36,15 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "arg0"    # Landroid/content/DialogInterface;
-    .param p2, "arg1"    # I
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v2, -0x2
 
-    .line 827
     sget-boolean v0, Lcom/android/systemui/statusbar/Feature;->mShowSplitViewHelpPopup:Z
 
     if-eqz v0, :cond_1
 
-    .line 828
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$3;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     iget-object v0, v0, Lcom/android/systemui/recents/AlternateRecentsComponent;->mContext:Landroid/content/Context;
@@ -64,17 +57,14 @@
 
     invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 835
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$3;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->dismissHelpPopup()V
 
-    .line 836
     return-void
 
-    .line 830
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$3;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
@@ -89,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 832
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$3;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     iget-object v0, v0, Lcom/android/systemui/recents/AlternateRecentsComponent;->mContext:Landroid/content/Context;

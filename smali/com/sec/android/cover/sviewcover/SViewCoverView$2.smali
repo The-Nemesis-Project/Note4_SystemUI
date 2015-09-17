@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverView;)V
     .locals 0
 
-    .prologue
-    .line 207
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,33 +37,27 @@
 .method public onScreenOffTimerExpired()V
     .locals 2
 
-    .prologue
-    .line 210
     const-string v0, "SViewCoverView"
 
     const-string v1, "onScreenOffTimerExpired : Screen off timer expired"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 211
     sget-boolean v0, Lcom/sec/android/sviewcover/SViewCoverBase;->mTestModeEnabled:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 212
     const-string v0, "SViewCoverView"
 
     const-string v1, "onScreenOffTimerExpired : but test mode is TRUE => return"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
     :goto_0
     return-void
 
-    .line 216
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
@@ -83,7 +75,6 @@
 
     if-nez v0, :cond_1
 
-    .line 217
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverView$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverView;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverView;->mContext:Landroid/content/Context;
@@ -99,7 +90,6 @@
 
     goto :goto_0
 
-    .line 219
     :cond_1
     const-string v0, "SViewCoverView"
 

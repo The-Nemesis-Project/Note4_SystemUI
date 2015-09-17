@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;)V
     .locals 0
 
-    .prologue
-    .line 119
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,21 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 122
     const-string v1, "logo_show"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 123
-    .local v0, "logoShow":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mOperatorLogoView:Landroid/widget/ImageView;
@@ -59,10 +51,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 124
     if-eqz v0, :cond_1
 
-    .line 126
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mOperatorLogoView:Landroid/widget/ImageView;
@@ -72,7 +62,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 132
     :cond_0
     :goto_0
     const-string v1, "KeyguardStatusBarView"
@@ -97,10 +86,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
     return-void
 
-    .line 128
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 

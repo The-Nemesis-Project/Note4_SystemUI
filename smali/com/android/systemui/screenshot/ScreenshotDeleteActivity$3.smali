@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;)V
     .locals 0
 
-    .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$3;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 6
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "whichButton"    # I
 
-    .prologue
-    .line 101
     new-instance v1, Ljava/io/File;
 
     iget-object v4, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$3;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
@@ -54,11 +48,8 @@
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 102
-    .local v1, "file":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 105
     iget-object v4, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$3;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     const-string v5, "notification"
@@ -69,13 +60,10 @@
 
     check-cast v2, Landroid/app/NotificationManager;
 
-    .line 106
-    .local v2, "notificationManager":Landroid/app/NotificationManager;
     const/16 v4, 0x315
 
     invoke-virtual {v2, v4}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 109
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -101,8 +89,6 @@
 
     move-result-object v3
 
-    .line 110
-    .local v3, "uriString":Ljava/lang/String;
     new-instance v0, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.MEDIA_SCAN"
@@ -113,24 +99,19 @@
 
     invoke-direct {v0, v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 112
-    .local v0, "actionIntent":Landroid/content/Intent;
     const-string v4, "where"
 
     const-string v5, "myfiles"
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 113
     iget-object v4, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$3;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     invoke-virtual {v4, v0, v5}, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 115
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 116
     return-void
 .end method

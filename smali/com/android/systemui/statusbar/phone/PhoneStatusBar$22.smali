@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 1817
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +37,8 @@
 .method public onPreDraw()Z
     .locals 5
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 1820
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
@@ -52,7 +48,6 @@
 
     if-ne v0, v4, :cond_0
 
-    .line 1821
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -63,7 +58,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1822
     const-string v0, "extraRasterBucket"
 
     const v1, 0x3f733333    # 0.95f
@@ -74,7 +68,6 @@
 
     invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1824
     const-string v0, "extraRasterBucket"
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -85,7 +78,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c0315
+    const v2, 0x7f0c031a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -99,7 +92,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0c0316
+    const v3, 0x7f0c031b
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -115,13 +108,11 @@
 
     invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1830
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # operator++ for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$5308(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)I
 
-    .line 1831
     return v4
 .end method

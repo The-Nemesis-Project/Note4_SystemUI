@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar$6;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 0
 
-    .prologue
-    .line 1079
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$4;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$6;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$4;->val$rankingMap:Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 1082
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$4;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$6;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->updateNotificationRanking(Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 1083
     return-void
 .end method

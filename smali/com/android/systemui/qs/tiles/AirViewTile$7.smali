@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirViewTile;)V
     .locals 0
 
-    .prologue
-    .line 438
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirViewTile$7;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 441
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirViewTile$7;->this$0:Lcom/android/systemui/qs/tiles/AirViewTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/AirViewTile;->doPrevious()V
 
-    .line 442
     return-void
 .end method

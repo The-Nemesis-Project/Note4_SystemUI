@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;)V
     .locals 0
 
-    .prologue
-    .line 48
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -36,8 +34,6 @@
 .method public onScreenTurnedOff()V
     .locals 1
 
-    .prologue
-    .line 50
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->mPowerManager:Lcom/sec/android/cover/manager/CoverPowerManager;
@@ -47,11 +43,9 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPowerManager;->cancelScreenOffTimer()V
 
-    .line 51
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity$1;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMissedEventActivity;->finish()V
 
-    .line 52
     return-void
 .end method

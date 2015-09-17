@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverActivity;)V
     .locals 0
 
-    .prologue
-    .line 45
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverActivity;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -36,27 +34,22 @@
 .method public onScreenTurnedOff()V
     .locals 2
 
-    .prologue
-    .line 47
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverActivity;
 
     iget-boolean v0, v0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mNeedtoRemainActivity:Z
 
     if-nez v0, :cond_0
 
-    .line 48
     const-string v0, "SViewCoverActivity"
 
     const-string v1, ""
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 49
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$2;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverActivity;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->finish()V
 
-    .line 51
     :cond_0
     return-void
 .end method

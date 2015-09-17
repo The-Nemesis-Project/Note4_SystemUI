@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/CarModeTile;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 137
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,15 +33,11 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 6
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
     const/4 v2, 0x2
 
     const/4 v1, 0x1
 
-    .line 139
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CarModeTile;->mContext:Landroid/content/Context;
@@ -64,8 +57,6 @@
 
     move-result v0
 
-    .line 141
-    .local v0, "zenmode":I
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CarModeTile;->mZenMode:I
@@ -75,13 +66,11 @@
 
     if-eq v0, v3, :cond_1
 
-    .line 142
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
     # setter for: Lcom/android/systemui/qs/tiles/CarModeTile;->mZenMode:I
     invoke-static {v3, v0}, Lcom/android/systemui/qs/tiles/CarModeTile;->access$302(Lcom/android/systemui/qs/tiles/CarModeTile;I)I
 
-    .line 143
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CarModeTile;->mZenMode:I
@@ -100,7 +89,6 @@
 
     if-ne v3, v1, :cond_2
 
-    .line 145
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 
@@ -113,12 +101,10 @@
     # invokes: Lcom/android/systemui/qs/tiles/CarModeTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/CarModeTile;->access$400(Lcom/android/systemui/qs/tiles/CarModeTile;Ljava/lang/Object;)V
 
-    .line 151
     :cond_1
     :goto_0
     return-void
 
-    .line 148
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CarModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/CarModeTile;
 

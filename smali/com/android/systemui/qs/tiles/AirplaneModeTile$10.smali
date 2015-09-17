@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirplaneModeTile;)V
     .locals 0
 
-    .prologue
-    .line 455
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 457
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$10;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
@@ -67,10 +62,8 @@
     # invokes: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->access$1700(Lcom/android/systemui/qs/tiles/AirplaneModeTile;Ljava/lang/Object;)V
 
-    .line 458
     return-void
 
-    .line 457
     :cond_0
     const/4 v0, 0x2
 

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSignatureView;)V
     .locals 0
 
-    .prologue
-    .line 303
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 6
-    .param p1, "className"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .prologue
-    .line 305
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignServiceRunningLock:Ljava/lang/Object;
@@ -52,7 +46,6 @@
 
     monitor-enter v3
 
-    .line 307
     :try_start_0
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
@@ -63,7 +56,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
     invoke-static {v2, v4}, Lcom/android/keyguard/sec/KeyguardSignatureView;->access$402(Lcom/android/keyguard/sec/KeyguardSignatureView;Lcom/android/internal/policy/ISignServiceInterface;)Lcom/android/internal/policy/ISignServiceInterface;
 
-    .line 308
     const-string v2, "KeyguardSignatureView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -93,7 +85,6 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 309
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
@@ -103,7 +94,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 310
     const-string v2, "KeyguardSignatureView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -133,7 +123,6 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignView:Lcom/android/internal/widget/SignView;
@@ -143,7 +132,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 313
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignView:Lcom/android/internal/widget/SignView;
@@ -160,7 +148,6 @@
 
     invoke-virtual {v2, v4}, Lcom/android/internal/widget/SignView;->setSignService(Lcom/android/internal/policy/ISignServiceInterface;)V
 
-    .line 317
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
@@ -178,7 +165,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mEngineStarted:Z
     invoke-static {v2, v4}, Lcom/android/keyguard/sec/KeyguardSignatureView;->access$602(Lcom/android/keyguard/sec/KeyguardSignatureView;Z)Z
 
-    .line 318
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mEngineStarted:Z
@@ -188,7 +174,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 324
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
@@ -200,7 +185,6 @@
 
     invoke-interface {v2, v4}, Lcom/android/internal/policy/ISignServiceInterface;->delUser(I)I
 
-    .line 326
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
@@ -214,13 +198,10 @@
 
     move-result v1
 
-    .line 327
-    .local v1, "signNum":I
     const/4 v2, 0x3
 
     if-eq v1, v2, :cond_2
 
-    .line 329
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
@@ -235,8 +216,6 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 340
-    .end local v1    # "signNum":I
     :cond_1
     :goto_0
     :try_start_1
@@ -244,11 +223,8 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 341
     return-void
 
-    .line 331
-    .restart local v1    # "signNum":I
     :cond_2
     :try_start_2
     const-string v2, "KeyguardSignatureView"
@@ -278,20 +254,14 @@
 
     goto :goto_0
 
-    .line 337
-    .end local v1    # "signNum":I
     :catch_0
     move-exception v0
 
-    .line 338
-    .local v0, "e":Landroid/os/RemoteException;
     :try_start_3
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 340
-    .end local v0    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
 
@@ -301,7 +271,6 @@
 
     throw v2
 
-    .line 334
     :cond_3
     :try_start_4
     const-string v2, "KeyguardSignatureView"
@@ -318,10 +287,7 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 3
-    .param p1, "className"    # Landroid/content/ComponentName;
 
-    .prologue
-    .line 344
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignServiceRunningLock:Ljava/lang/Object;
@@ -331,7 +297,6 @@
 
     monitor-enter v1
 
-    .line 345
     :try_start_0
     const-string v0, "KeyguardSignatureView"
 
@@ -339,7 +304,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     const/4 v2, 0x0
@@ -347,7 +311,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mSignService:Lcom/android/internal/policy/ISignServiceInterface;
     invoke-static {v0, v2}, Lcom/android/keyguard/sec/KeyguardSignatureView;->access$402(Lcom/android/keyguard/sec/KeyguardSignatureView;Lcom/android/internal/policy/ISignServiceInterface;)Lcom/android/internal/policy/ISignServiceInterface;
 
-    .line 348
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSignatureView$3;->this$0:Lcom/android/keyguard/sec/KeyguardSignatureView;
 
     const/4 v2, 0x0
@@ -355,13 +318,10 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSignatureView;->mEngineStarted:Z
     invoke-static {v0, v2}, Lcom/android/keyguard/sec/KeyguardSignatureView;->access$602(Lcom/android/keyguard/sec/KeyguardSignatureView;Z)Z
 
-    .line 349
     monitor-exit v1
 
-    .line 350
     return-void
 
-    .line 349
     :catchall_0
     move-exception v0
 

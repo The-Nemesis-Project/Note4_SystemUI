@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar$6;Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 0
 
-    .prologue
-    .line 1064
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$3;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$6;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$3;->val$sbn:Landroid/service/notification/StatusBarNotification;
@@ -47,13 +45,10 @@
 .method public run()V
     .locals 3
 
-    .prologue
-    .line 1067
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$3;->val$sbn:Landroid/service/notification/StatusBarNotification;
 
     if-eqz v0, :cond_0
 
-    .line 1068
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6$3;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$6;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -68,11 +63,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->removeNotification(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 1072
     :goto_0
     return-void
 
-    .line 1070
     :cond_0
     const-string v0, "StatusBar"
 

@@ -44,8 +44,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 312
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,10 +51,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$1;
 
-    .prologue
-    .line 312
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;-><init>()V
 
     return-void
@@ -64,10 +59,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;
 
-    .prologue
-    .line 312
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;->isKeyguardShowingAndNotOccluded()Z
 
     move-result v0
@@ -78,8 +70,6 @@
 .method private isKeyguardShowingAndNotOccluded()Z
     .locals 1
 
-    .prologue
-    .line 331
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;->keyguardShowing:Z
 
     if-eqz v0, :cond_0

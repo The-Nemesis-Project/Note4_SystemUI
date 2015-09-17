@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSimPinView$1;II)V
     .locals 0
 
-    .prologue
-    .line 225
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
@@ -47,10 +45,8 @@
 .method public run()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x1
 
-    .line 227
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -59,7 +55,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 228
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -68,13 +63,11 @@
 
     invoke-virtual {v4}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 230
     :cond_0
     iget v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
 
     if-nez v4, :cond_2
 
-    .line 231
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -89,7 +82,6 @@
 
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked()V
 
-    .line 232
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -98,14 +90,12 @@
 
     invoke-interface {v4, v7}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 233
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isSIMToastEnabled()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 234
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -119,8 +109,6 @@
 
     move-result-object v0
 
-    .line 235
-    .local v0, "inflater":Landroid/view/LayoutInflater;
     const v5, 0x109010a
 
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
@@ -139,8 +127,6 @@
 
     move-result-object v1
 
-    .line 240
-    .local v1, "layout":Landroid/view/View;
     const v4, 0x102000b
 
     invoke-virtual {v1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -149,13 +135,10 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 242
-    .local v2, "text":Landroid/widget/TextView;
     sget v4, Lcom/android/keyguard/R$string;->keyguard_pin_accepted:I
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 244
     new-instance v3, Landroid/widget/Toast;
 
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
@@ -169,21 +152,12 @@
 
     invoke-direct {v3, v4}, Landroid/widget/Toast;-><init>(Landroid/content/Context;)V
 
-    .line 245
-    .local v3, "toast":Landroid/widget/Toast;
     invoke-virtual {v3, v7}, Landroid/widget/Toast;->setDuration(I)V
 
-    .line 246
     invoke-virtual {v3, v1}, Landroid/widget/Toast;->setView(Landroid/view/View;)V
 
-    .line 247
     invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    .line 277
-    .end local v0    # "inflater":Landroid/view/LayoutInflater;
-    .end local v1    # "layout":Landroid/view/View;
-    .end local v2    # "text":Landroid/widget/TextView;
-    .end local v3    # "toast":Landroid/widget/Toast;
     :cond_1
     :goto_0
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
@@ -194,7 +168,6 @@
 
     invoke-interface {v4}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 278
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -203,7 +176,6 @@
 
     iput-boolean v5, v4, Lcom/android/keyguard/KeyguardSimPinView;->mSimCheckInProgress:Z
 
-    .line 279
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -213,16 +185,13 @@
     # setter for: Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
     invoke-static {v4, v5}, Lcom/android/keyguard/KeyguardSimPinView;->access$302(Lcom/android/keyguard/KeyguardSimPinView;Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;)Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
-    .line 280
     return-void
 
-    .line 258
     :cond_2
     iget v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
 
     if-ne v4, v7, :cond_4
 
-    .line 259
     iget v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$attemptsRemaining:I
 
     # getter for: Lcom/android/keyguard/KeyguardSimPinView;->maxPinRetry:I
@@ -234,7 +203,6 @@
 
     if-gt v4, v5, :cond_3
 
-    .line 261
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -247,7 +215,6 @@
 
     invoke-virtual {v4}, Landroid/app/Dialog;->show()V
 
-    .line 272
     :goto_1
     const-string v4, "KeyguardSimPinView"
 
@@ -285,7 +252,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v4, v4, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -294,7 +260,6 @@
 
     goto :goto_0
 
-    .line 264
     :cond_3
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
@@ -318,7 +283,6 @@
 
     goto :goto_1
 
-    .line 269
     :cond_4
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 

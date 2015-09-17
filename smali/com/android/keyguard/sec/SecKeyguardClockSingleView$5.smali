@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardClockSingleView;)V
     .locals 0
 
-    .prologue
-    .line 365
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,13 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
-    .param p1, "s"    # Landroid/text/Editable;
 
-    .prologue
-    .line 388
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 5
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "count"    # I
-    .param p4, "after"    # I
 
-    .prologue
-    .line 373
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/SecKeyguardClockSingleView;->mSingleTime:Lcom/android/keyguard/sec/SecKeyguardTextClock;
@@ -64,8 +53,6 @@
 
     check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 374
-    .local v1, "lp":Landroid/widget/LinearLayout$LayoutParams;
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardClockSingleView;->mContext:Landroid/content/Context;
@@ -77,8 +64,6 @@
 
     move-result v0
 
-    .line 376
-    .local v0, "fontSize":I
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/SecKeyguardClockSingleView;->mSingleTime:Lcom/android/keyguard/sec/SecKeyguardTextClock;
@@ -89,7 +74,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 377
     int-to-float v2, v0
 
     const/high16 v3, 0x41700000    # 15.0f
@@ -102,7 +86,6 @@
 
     iput v2, v1, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 382
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
@@ -110,7 +93,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 383
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardClockSingleView$5;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockSingleView;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/SecKeyguardClockSingleView;->mSingleTime:Lcom/android/keyguard/sec/SecKeyguardTextClock;
@@ -121,10 +103,8 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setTextSize(IF)V
 
-    .line 384
     return-void
 
-    .line 379
     :cond_0
     int-to-float v2, v0
 
@@ -141,12 +121,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
-    .prologue
-    .line 368
     return-void
 .end method

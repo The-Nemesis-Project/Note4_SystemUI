@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/MultiWindowTile;)V
     .locals 0
 
-    .prologue
-    .line 241
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/MultiWindowTile$5;->this$0:Lcom/android/systemui/qs/tiles/MultiWindowTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 243
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/MultiWindowTile$5;->this$0:Lcom/android/systemui/qs/tiles/MultiWindowTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/MultiWindowTile;->mSettingMW:Lcom/android/systemui/qs/SystemSetting;
@@ -54,6 +48,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
 
-    .line 244
     return-void
 .end method

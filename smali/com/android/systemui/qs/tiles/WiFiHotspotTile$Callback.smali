@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
     .locals 0
 
-    .prologue
-    .line 345
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;Lcom/android/systemui/qs/tiles/WiFiHotspotTile$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
-    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/WiFiHotspotTile$1;
 
-    .prologue
-    .line 345
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
 
     return-void
@@ -50,15 +44,11 @@
 # virtual methods
 .method public onHotspotChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 348
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->access$300(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
 
-    .line 349
     return-void
 .end method

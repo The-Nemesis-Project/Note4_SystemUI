@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 461
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,10 +30,7 @@
 # virtual methods
 .method public dispatchMediaButtonEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
-    .line 472
     const/4 v0, 0x0
 
     return v0
@@ -44,8 +39,6 @@
 .method public getMediaController()Ljava/lang/Object;
     .locals 1
 
-    .prologue
-    .line 506
     const/4 v0, 0x0
 
     return-object v0
@@ -54,8 +47,6 @@
 .method public getMetadata()Landroid/support/v4/media/MediaMetadataCompat;
     .locals 1
 
-    .prologue
-    .line 487
     const/4 v0, 0x0
 
     return-object v0
@@ -64,8 +55,6 @@
 .method public getPlaybackInfo()Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
     .locals 1
 
-    .prologue
-    .line 497
     const/4 v0, 0x0
 
     return-object v0
@@ -74,8 +63,6 @@
 .method public getPlaybackState()Landroid/support/v4/media/session/PlaybackStateCompat;
     .locals 1
 
-    .prologue
-    .line 482
     const/4 v0, 0x0
 
     return-object v0
@@ -84,8 +71,6 @@
 .method public getRatingType()I
     .locals 1
 
-    .prologue
-    .line 492
     const/4 v0, 0x0
 
     return v0
@@ -94,8 +79,6 @@
 .method public getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
     .locals 1
 
-    .prologue
-    .line 477
     const/4 v0, 0x0
 
     return-object v0
@@ -103,30 +86,18 @@
 
 .method public registerCallback(Landroid/support/v4/media/session/MediaControllerCompat$Callback;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "callback"    # Landroid/support/v4/media/session/MediaControllerCompat$Callback;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .prologue
-    .line 464
     return-void
 .end method
 
 .method public sendCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
     .locals 0
-    .param p1, "command"    # Ljava/lang/String;
-    .param p2, "params"    # Landroid/os/Bundle;
-    .param p3, "cb"    # Landroid/os/ResultReceiver;
 
-    .prologue
-    .line 502
     return-void
 .end method
 
 .method public unregisterCallback(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
     .locals 0
-    .param p1, "callback"    # Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    .prologue
-    .line 468
     return-void
 .end method

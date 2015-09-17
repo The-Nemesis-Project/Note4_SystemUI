@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WiFiHotspotTile;)V
     .locals 0
 
-    .prologue
-    .line 476
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$5;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 5
 
-    .prologue
-    .line 478
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$5;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -56,13 +52,10 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 480
-    .local v0, "mgr":Landroid/net/wifi/WifiManager;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 481
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WiFiHotspotTile$5;->this$0:Lcom/android/systemui/qs/tiles/WiFiHotspotTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/WiFiHotspotTile;->mContext:Landroid/content/Context;
@@ -82,6 +75,5 @@
 
     invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 483
     return-void
 .end method

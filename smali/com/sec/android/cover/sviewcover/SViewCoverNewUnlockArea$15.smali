@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
     .locals 0
 
-    .prologue
-    .line 1078
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$15;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,42 +36,29 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1089
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1093
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$15;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->cancelAllAnimator()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$1300(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
 
-    .line 1094
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1085
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1081
     return-void
 .end method

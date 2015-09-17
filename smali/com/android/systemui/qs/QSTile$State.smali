@@ -44,32 +44,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 410
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 418
     iput v0, p0, Lcom/android/systemui/qs/QSTile$State;->alpha:F
 
-    .line 419
     iput v0, p0, Lcom/android/systemui/qs/QSTile$State;->imageAlpha:F
 
-    .line 420
     iput v0, p0, Lcom/android/systemui/qs/QSTile$State;->textAlpha:F
 
-    .line 421
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSTile$State;->textTruncate:Z
 
-    .line 422
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/qs/QSTile$State;->tintColor:I
 
-    .line 424
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
@@ -81,10 +73,7 @@
 # virtual methods
 .method public copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
     .locals 3
-    .param p1, "other"    # Lcom/android/systemui/qs/QSTile$State;
 
-    .prologue
-    .line 427
     if-nez p1, :cond_0
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -93,7 +82,6 @@
 
     throw v1
 
-    .line 428
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -115,7 +103,6 @@
 
     throw v1
 
-    .line 429
     :cond_1
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
@@ -226,73 +213,57 @@
     :cond_2
     const/4 v0, 0x1
 
-    .line 444
-    .local v0, "changed":Z
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
-    .line 445
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->iconId:I
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->iconId:I
 
-    .line 446
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->icon:Landroid/graphics/drawable/Drawable;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 447
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
-    .line 448
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
-    .line 449
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
-    .line 451
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->alpha:F
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->alpha:F
 
-    .line 452
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->imageAlpha:F
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->imageAlpha:F
 
-    .line 453
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->textAlpha:F
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->textAlpha:F
 
-    .line 454
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->textTruncate:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->textTruncate:Z
 
-    .line 455
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->tintColor:I
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->tintColor:I
 
-    .line 457
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
-    .line 458
     return v0
 
-    .line 429
-    .end local v0    # "changed":Z
     :cond_3
     const/4 v0, 0x0
 
@@ -302,8 +273,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 463
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -318,8 +287,6 @@
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 3
 
-    .prologue
-    .line 467
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -338,8 +305,6 @@
 
     move-result-object v0
 
-    .line 468
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "visible="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -350,7 +315,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 469
     const-string v1, ",iconId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -361,7 +325,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 470
     const-string v1, ",icon="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -372,7 +335,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 471
     const-string v1, ",label="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -383,7 +345,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 472
     const-string v1, ",contentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -394,7 +355,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 473
     const-string v1, ",dualLabelContentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -405,7 +365,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 475
     const-string v1, ",alpha="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -416,7 +375,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 476
     const-string v1, ",imageAlpha="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -427,7 +385,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 477
     const-string v1, ",textAlpha="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -438,7 +395,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 478
     const-string v1, ",textTruncate="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -449,7 +405,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 479
     const-string v1, ",tintColor ="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -460,7 +415,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 481
     const-string v1, ",autoMirrorDrawable="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -471,7 +425,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 482
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

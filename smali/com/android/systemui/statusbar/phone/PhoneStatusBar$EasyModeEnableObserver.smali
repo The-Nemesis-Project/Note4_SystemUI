@@ -22,18 +22,14 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 1
 
-    .prologue
-    .line 6872
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$EasyModeEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 6873
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 6874
     return-void
 .end method
 
@@ -41,17 +37,13 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 6
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    .line 6878
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 6880
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$EasyModeEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$EasyModeEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -83,7 +75,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mEasyModeEnablebySettings:Z
     invoke-static {v3, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$12302(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 6883
     const-string v0, "PhoneStatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -113,7 +104,6 @@
 
     invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6885
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$EasyModeEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$EasyModeEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -140,18 +130,15 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mEasyModeActivated:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11702(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 6886
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 6880
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 6885
     goto :goto_1
 .end method

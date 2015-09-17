@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 56
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 58
     const-string v0, "MiniViewCoverMainPage"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -63,17 +58,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 74
     :cond_0
     :goto_0
     return-void
 
-    .line 61
     :pswitch_0
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
@@ -110,14 +102,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 64
     const-string v0, "MiniViewCoverMainPage"
 
     const-string v1, "hide charging text"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     const/4 v1, 0x1
@@ -125,13 +115,11 @@
     # setter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->isBatteryChargingShown:Z
     invoke-static {v0, v1}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->access$202(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;Z)Z
 
-    .line 66
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->adjustWidgetVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->access$300(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;)V
 
-    .line 67
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage$2;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;
 
     # getter for: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainPage;->mPowerManager:Lcom/sec/android/cover/manager/CoverPowerManager;
@@ -143,7 +131,6 @@
 
     goto :goto_0
 
-    .line 59
     :pswitch_data_0
     .packed-switch 0x4e21
         :pswitch_0

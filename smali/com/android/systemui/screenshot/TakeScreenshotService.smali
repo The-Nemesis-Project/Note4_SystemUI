@@ -17,11 +17,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 30
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 35
     new-instance v0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/screenshot/TakeScreenshotService$1;-><init>(Lcom/android/systemui/screenshot/TakeScreenshotService;)V
@@ -34,8 +31,6 @@
 .method static synthetic access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
     .locals 1
 
-    .prologue
-    .line 30
     sget-object v0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     return-object v0
@@ -43,10 +38,7 @@
 
 .method static synthetic access$002(Lcom/android/systemui/screenshot/GlobalScreenshot;)Lcom/android/systemui/screenshot/GlobalScreenshot;
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/screenshot/GlobalScreenshot;
 
-    .prologue
-    .line 30
     sput-object p0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     return-object p0
@@ -56,10 +48,7 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 63
     new-instance v0, Landroid/os/Messenger;
 
     iget-object v1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mHandler:Landroid/os/Handler;

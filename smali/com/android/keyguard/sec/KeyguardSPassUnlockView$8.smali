@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 1067
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$8;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public dispatchMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 1069
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$8;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->updateAnimationView()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$500(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
 
-    .line 1070
     return-void
 .end method

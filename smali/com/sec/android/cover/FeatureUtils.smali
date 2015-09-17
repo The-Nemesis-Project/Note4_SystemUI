@@ -17,8 +17,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 11
     const-class v0, Lcom/sec/android/cover/FeatureUtils;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -27,7 +25,6 @@
 
     sput-object v0, Lcom/sec/android/cover/FeatureUtils;->TAG:Ljava/lang/String;
 
-    .line 13
     const-string v0, "ro.product.name"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -36,7 +33,6 @@
 
     sput-object v0, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
-    .line 14
     const-string v0, "ro.csc.country_code"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -45,7 +41,6 @@
 
     sput-object v0, Lcom/sec/android/cover/FeatureUtils;->mCountryCode:Ljava/lang/String;
 
-    .line 15
     const-string v0, "ro.csc.sales_code"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -60,8 +55,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,8 +63,6 @@
 .method public static isChinaFeature()Z
     .locals 2
 
-    .prologue
-    .line 26
     const-string v0, "CTC"
 
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->mSalesCode:Ljava/lang/String;
@@ -122,11 +113,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 28
     :cond_0
     const/4 v0, 0x1
 
-    .line 30
     :goto_0
     return v0
 
@@ -139,25 +128,18 @@
 .method public static isHProjectVariant()Z
     .locals 3
 
-    .prologue
-    .line 66
     const/4 v0, 0x0
 
-    .line 67
-    .local v0, "isHProjectVariant":Z
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
     if-nez v1, :cond_1
 
-    .line 68
     const/4 v0, 0x0
 
-    .line 75
     :cond_0
     :goto_0
     return v0
 
-    .line 71
     :cond_1
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
@@ -189,7 +171,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 73
     :cond_2
     const/4 v0, 0x1
 
@@ -199,8 +180,6 @@
 .method public static isJapanModel()Z
     .locals 2
 
-    .prologue
-    .line 92
     sget-object v0, Lcom/sec/android/cover/FeatureUtils;->mSalesCode:Ljava/lang/String;
 
     if-eqz v0, :cond_1
@@ -260,12 +239,8 @@
 .method public static isLGTModel()Z
     .locals 3
 
-    .prologue
-    .line 18
     const/4 v0, 0x0
 
-    .line 19
-    .local v0, "isLgtModel":Z
     const-string v1, "LGT"
 
     sget-object v2, Lcom/sec/android/cover/FeatureUtils;->mSalesCode:Ljava/lang/String;
@@ -296,11 +271,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 20
     :cond_0
     const/4 v0, 0x1
 
-    .line 22
     :cond_1
     return v0
 .end method
@@ -308,20 +281,14 @@
 .method public static isLightTheme()Z
     .locals 5
 
-    .prologue
-    .line 97
     const/4 v0, 0x0
 
-    .line 98
-    .local v0, "isLightTheme":Z
     const-string v2, "ro.build.scafe.cream"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 99
-    .local v1, "mThemeType":Ljava/lang/String;
     if-eqz v1, :cond_0
 
     const-string v2, "white"
@@ -332,10 +299,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 100
     const/4 v0, 0x1
 
-    .line 102
     :cond_0
     sget-object v2, Lcom/sec/android/cover/FeatureUtils;->TAG:Ljava/lang/String;
 
@@ -359,19 +324,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     return v0
 .end method
 
 .method public static isSupportElasticPlugin()Z
     .locals 4
 
-    .prologue
-    .line 108
     const/4 v0, 0x0
 
-    .line 110
-    .local v0, "openTheme":Z
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -394,26 +354,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
     return v0
 .end method
 
 .method public static isTProject()Z
     .locals 4
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 43
     invoke-static {}, Lcom/sec/android/cover/FeatureUtils;->isJapanModel()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 44
     const-string v2, "SC-01G"
 
     sget-object v3, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
@@ -434,12 +390,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 61
     :cond_0
     :goto_0
     return v0
 
-    .line 49
     :cond_1
     sget-object v2, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
@@ -447,10 +401,8 @@
 
     move v0, v1
 
-    .line 50
     goto :goto_0
 
-    .line 53
     :cond_2
     sget-object v2, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
@@ -564,15 +516,12 @@
 
     move v0, v1
 
-    .line 61
     goto :goto_0
 .end method
 
 .method public static isUseFloatingMsg()Z
     .locals 2
 
-    .prologue
-    .line 34
     invoke-static {}, Lcom/sec/android/app/CscFeature;->getInstance()Lcom/sec/android/app/CscFeature;
 
     move-result-object v0
@@ -591,10 +540,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 37
     const/4 v0, 0x1
 
-    .line 39
     :goto_0
     return v0
 
@@ -607,25 +554,18 @@
 .method public static isZeroProject()Z
     .locals 3
 
-    .prologue
-    .line 79
     const/4 v0, 0x0
 
-    .line 80
-    .local v0, "isZeroProjectVariant":Z
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
     if-nez v1, :cond_1
 
-    .line 81
     const/4 v0, 0x0
 
-    .line 88
     :cond_0
     :goto_0
     return v0
 
-    .line 84
     :cond_1
     sget-object v1, Lcom/sec/android/cover/FeatureUtils;->mProductName:Ljava/lang/String;
 
@@ -667,7 +607,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 86
     :cond_2
     const/4 v0, 0x1
 

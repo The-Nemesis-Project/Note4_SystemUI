@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/model/TaskStack;Lcom/android/systemui/recents/model/Task;)V
     .locals 0
 
-    .prologue
-    .line 295
     iput-object p1, p0, Lcom/android/systemui/recents/model/TaskStack$1;->this$0:Lcom/android/systemui/recents/model/TaskStack;
 
     iput-object p2, p0, Lcom/android/systemui/recents/model/TaskStack$1;->val$t:Lcom/android/systemui/recents/model/Task;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public acceptTask(Lcom/android/systemui/recents/model/Task;I)Z
     .locals 2
-    .param p1, "at"    # Lcom/android/systemui/recents/model/Task;
-    .param p2, "i"    # I
 
-    .prologue
-    .line 298
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskStack$1;->val$t:Lcom/android/systemui/recents/model/Task;
 
     iget-object v0, v0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;

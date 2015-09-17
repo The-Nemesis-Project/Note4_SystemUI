@@ -69,20 +69,16 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 40
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
-    .line 59
     const-string v0, "Personal message"
 
     sput-object v0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mDefaultProfile:Ljava/lang/String;
 
-    .line 61
     const-string v0, "Life companion"
 
     sput-object v0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mDefaultProfileLifeCompanion:Ljava/lang/String;
@@ -92,26 +88,19 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 102
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 38
     const-string v0, "SecMyProfile"
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
-    .line 53
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
 
-    .line 55
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 69
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -122,7 +111,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
-    .line 117
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -131,47 +119,36 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 147
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 208
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 103
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 106
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 38
     const-string v0, "SecMyProfile"
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
-    .line 53
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
 
-    .line 55
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 69
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -182,7 +159,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
-    .line 117
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -191,48 +167,36 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 147
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 208
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 107
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 110
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 38
     const-string v0, "SecMyProfile"
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
-    .line 53
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
 
-    .line 55
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 69
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -243,7 +207,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
-    .line 117
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -252,49 +215,36 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 147
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 208
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 111
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 114
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 38
     const-string v0, "SecMyProfile"
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
-    .line 53
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
 
-    .line 55
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 69
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -305,7 +255,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
-    .line 117
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$2;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
@@ -314,30 +263,24 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 147
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$3;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 208
     new-instance v0, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView$4;-><init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 115
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
-    .prologue
-    .line 36
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->updateProfile()V
 
     return-void
@@ -345,10 +288,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
-    .prologue
-    .line 36
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->handleDateOnSettngsChanged()V
 
     return-void
@@ -356,10 +296,7 @@
 
 .method static synthetic access$200(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
-    .prologue
-    .line 36
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->handleClockOnSettngsChanged()V
 
     return-void
@@ -367,10 +304,7 @@
 
 .method static synthetic access$300(Lcom/android/keyguard/sec/SecKeyguardProfileView;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
-    .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -378,10 +312,7 @@
 
 .method static synthetic access$400(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
-    .prologue
-    .line 36
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->refreshOwnerInfo()V
 
     return-void
@@ -390,17 +321,14 @@
 .method private handleClockOnSettngsChanged()V
     .locals 4
 
-    .prologue
     const/16 v2, 0x8
 
     const/4 v1, 0x0
 
-    .line 346
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
     if-eqz v0, :cond_0
 
-    .line 347
     iget-object v3, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -416,13 +344,11 @@
     :goto_0
     invoke-virtual {v3, v0}, Landroid/widget/TextClock;->setVisibility(I)V
 
-    .line 348
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileAmpm:Landroid/widget/TextClock;
 
     if-eqz v0, :cond_1
 
-    .line 349
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileAmpm:Landroid/widget/TextClock;
 
     iget-object v3, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -436,33 +362,27 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setVisibility(I)V
 
-    .line 350
     :cond_1
     return-void
 
     :cond_2
     move v0, v2
 
-    .line 347
     goto :goto_0
 
     :cond_3
     move v1, v2
 
-    .line 349
     goto :goto_1
 .end method
 
 .method private handleDateOnSettngsChanged()V
     .locals 2
 
-    .prologue
-    .line 341
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     if-eqz v0, :cond_0
 
-    .line 342
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -478,11 +398,9 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setVisibility(I)V
 
-    .line 343
     :cond_0
     return-void
 
-    .line 342
     :cond_1
     const/16 v0, 0x8
 
@@ -492,17 +410,13 @@
 .method private refreshOwnerInfo()V
     .locals 6
 
-    .prologue
-    .line 224
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     if-nez v4, :cond_0
 
-    .line 240
     :goto_0
     return-void
 
-    .line 228
     :cond_0
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
@@ -510,16 +424,12 @@
 
     move-result v1
 
-    .line 230
-    .local v1, "isShowInformation":Z
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v4}, Lcom/android/internal/widget/LockPatternUtils;->isOwnerInfoEnabled()Z
 
     move-result v3
 
-    .line 231
-    .local v3, "ownerInfoEnabled":Z
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     const/4 v5, -0x2
@@ -528,8 +438,6 @@
 
     move-result-object v2
 
-    .line 232
-    .local v2, "ownerInfo":Ljava/lang/String;
     if-eqz v1, :cond_1
 
     if-eqz v3, :cond_1
@@ -542,12 +450,10 @@
 
     if-nez v4, :cond_1
 
-    .line 234
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 235
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     const/4 v5, 0x0
@@ -556,7 +462,6 @@
 
     goto :goto_0
 
-    .line 237
     :cond_1
     iget-object v4, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
@@ -564,8 +469,6 @@
 
     move-result v0
 
-    .line 238
-    .local v0, "isAdditionalInfoEnabled":Z
     iget-object v5, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     if-eqz v0, :cond_2
@@ -586,14 +489,12 @@
 .method private updateProfile()V
     .locals 14
 
-    .prologue
     const/16 v10, 0x8
 
     const/4 v9, 0x0
 
     const/4 v13, -0x2
 
-    .line 243
     invoke-static {}, Lcom/samsung/android/feature/FloatingFeature;->getInstance()Lcom/samsung/android/feature/FloatingFeature;
 
     move-result-object v8
@@ -606,12 +507,10 @@
 
     if-nez v8, :cond_0
 
-    .line 244
     sget-object v8, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mDefaultProfileLifeCompanion:Ljava/lang/String;
 
     sput-object v8, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mDefaultProfile:Ljava/lang/String;
 
-    .line 246
     :cond_0
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardProperties;->isVZWModel()Z
 
@@ -619,19 +518,15 @@
 
     if-eqz v8, :cond_1
 
-    .line 247
     const-string v8, "Personal Banner"
 
     sput-object v8, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mDefaultProfile:Ljava/lang/String;
 
-    .line 250
     :cond_1
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 251
-    .local v0, "calendar":Ljava/util/Calendar;
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -646,8 +541,6 @@
 
     move-result v5
 
-    .line 252
-    .local v5, "profileColor":I
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -660,8 +553,6 @@
 
     move-result v4
 
-    .line 253
-    .local v4, "profileBgColor":I
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -674,8 +565,6 @@
 
     move-result-object v3
 
-    .line 255
-    .local v3, "profile":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -688,8 +577,6 @@
 
     move-result-object v2
 
-    .line 256
-    .local v2, "font_pkg":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -702,8 +589,6 @@
 
     move-result-object v1
 
-    .line 258
-    .local v1, "font_file":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -718,8 +603,6 @@
 
     int-to-float v6, v8
 
-    .line 259
-    .local v6, "profileSize":F
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -732,16 +615,12 @@
 
     move-result-object v7
 
-    .line 260
-    .local v7, "tmp":Ljava/lang/String;
     if-eqz v7, :cond_2
 
-    .line 261
     invoke-static {v7}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v6
 
-    .line 263
     :cond_2
     if-eqz v3, :cond_3
 
@@ -753,7 +632,6 @@
 
     if-eqz v8, :cond_4
 
-    .line 264
     :cond_3
     invoke-static {}, Lcom/samsung/android/feature/FloatingFeature;->getInstance()Lcom/samsung/android/feature/FloatingFeature;
 
@@ -767,7 +645,6 @@
 
     if-eqz v8, :cond_5
 
-    .line 265
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     sget v11, Lcom/android/keyguard/R$string;->default_profile_string:I
@@ -776,7 +653,6 @@
 
     move-result-object v3
 
-    .line 271
     :cond_4
     :goto_0
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
@@ -785,12 +661,10 @@
 
     invoke-virtual {v8, v11, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 272
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
 
     invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 273
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
 
     invoke-virtual {p0, v2, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->getTypeface(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -799,17 +673,14 @@
 
     invoke-virtual {v8, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 274
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
 
     invoke-virtual {v8, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 275
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
 
     invoke-virtual {v8, v4}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 277
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     iget-object v11, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -820,7 +691,6 @@
 
     invoke-virtual {v8, v11}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setFormat12Hour(Ljava/lang/CharSequence;)V
 
-    .line 278
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     iget-object v11, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -831,7 +701,6 @@
 
     invoke-virtual {v8, v11}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setFormat24Hour(Ljava/lang/CharSequence;)V
 
-    .line 279
     iget-object v11, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -847,7 +716,6 @@
     :goto_1
     invoke-virtual {v11, v8}, Lcom/android/keyguard/sec/SecKeyguardTextClock;->setVisibility(I)V
 
-    .line 281
     iget-object v11, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -863,7 +731,6 @@
     :goto_2
     invoke-virtual {v11, v8}, Landroid/widget/TextClock;->setVisibility(I)V
 
-    .line 282
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileAmpm:Landroid/widget/TextClock;
 
     iget-object v11, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -877,10 +744,8 @@
     :goto_3
     invoke-virtual {v8, v9}, Landroid/widget/TextClock;->setVisibility(I)V
 
-    .line 283
     return-void
 
-    .line 268
     :cond_5
     iget-object v8, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
@@ -895,19 +760,16 @@
     :cond_6
     move v8, v10
 
-    .line 279
     goto :goto_1
 
     :cond_7
     move v8, v10
 
-    .line 281
     goto :goto_2
 
     :cond_8
     move v9, v10
 
-    .line 282
     goto :goto_3
 .end method
 
@@ -915,21 +777,13 @@
 # virtual methods
 .method public getTypeface(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Typeface;
     .locals 9
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "file"    # Ljava/lang/String;
 
-    .prologue
     const/4 v5, 0x0
 
-    .line 286
     const/4 v1, 0x0
 
-    .line 287
-    .local v1, "fontContext":Landroid/content/Context;
     const/4 v4, 0x0
 
-    .line 288
-    .local v4, "typeface":Landroid/graphics/Typeface;
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -962,7 +816,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 290
     sget-object v6, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -971,7 +824,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 291
     sget-object v5, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     invoke-virtual {v5, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -980,11 +832,9 @@
 
     check-cast v5, Landroid/graphics/Typeface;
 
-    .line 337
     :goto_0
     return-object v5
 
-    .line 294
     :cond_0
     :try_start_0
     const-string v6, "Lindsey"
@@ -995,29 +845,24 @@
 
     if-eqz v6, :cond_1
 
-    .line 295
     new-instance v2, Ljava/io/File;
 
     const-string v6, "/system/fonts/LindseyforSamsung-Regular.ttf"
 
     invoke-direct {v2, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 296
-    .local v2, "lindsey_font":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    .line 297
     const-string v6, "/system/fonts/LindseyforSamsung-Regular.ttf"
 
     invoke-static {v6}, Landroid/graphics/Typeface;->createFromFile(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v4
 
-    .line 298
     sget-object v6, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, p2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1026,16 +871,11 @@
 
     move-object v5, v4
 
-    .line 299
     goto :goto_0
 
-    .line 302
-    .end local v2    # "lindsey_font":Ljava/io/File;
     :catch_0
     move-exception v0
 
-    .line 303
-    .local v0, "e":Ljava/lang/Exception;
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1058,8 +898,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 307
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_1
     :try_start_1
     const-string v6, "NotoSerif-Italic"
@@ -1070,29 +908,24 @@
 
     if-eqz v6, :cond_2
 
-    .line 308
     new-instance v3, Ljava/io/File;
 
     const-string v6, "/system/fonts/NotoSerif-Italic.ttf"
 
     invoke-direct {v3, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 309
-    .local v3, "noto_font":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v6
 
     if-eqz v6, :cond_2
 
-    .line 310
     const-string v6, "/system/fonts/NotoSerif-Italic.ttf"
 
     invoke-static {v6}, Landroid/graphics/Typeface;->createFromFile(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v4
 
-    .line 311
     sget-object v6, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, p2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1101,16 +934,11 @@
 
     move-object v5, v4
 
-    .line 312
     goto :goto_0
 
-    .line 315
-    .end local v3    # "noto_font":Ljava/io/File;
     :catch_1
     move-exception v0
 
-    .line 316
-    .restart local v0    # "e":Ljava/lang/Exception;
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1133,8 +961,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_2
     sget-object v6, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
@@ -1166,7 +992,6 @@
 
     if-eqz v6, :cond_3
 
-    .line 320
     sget-object v5, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1199,7 +1024,6 @@
 
     goto/16 :goto_0
 
-    .line 324
     :cond_3
     :try_start_2
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -1212,7 +1036,6 @@
 
     move-result-object v1
 
-    .line 331
     :try_start_3
     invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
@@ -1222,7 +1045,6 @@
 
     move-result-object v4
 
-    .line 332
     sget-object v6, Lcom/android/keyguard/sec/SecKeyguardProfileView;->sTypeFaceMap:Ljava/util/HashMap;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1253,18 +1075,13 @@
 
     move-object v5, v4
 
-    .line 337
     goto/16 :goto_0
 
-    .line 325
     :catch_2
     move-exception v0
 
-    .line 326
-    .restart local v0    # "e":Ljava/lang/Exception;
     const/4 v1, 0x0
 
-    .line 327
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1289,13 +1106,9 @@
 
     goto/16 :goto_0
 
-    .line 333
-    .end local v0    # "e":Ljava/lang/Exception;
     :catch_3
     move-exception v0
 
-    .line 334
-    .restart local v0    # "e":Ljava/lang/Exception;
     iget-object v6, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1324,13 +1137,10 @@
 .method protected onAttachedToWindow()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x0
 
-    .line 183
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 184
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1347,7 +1157,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 185
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1364,7 +1173,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 186
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1381,7 +1189,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 187
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1398,7 +1205,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 188
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1415,7 +1221,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 189
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1432,7 +1237,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 190
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1449,7 +1253,6 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 191
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1466,25 +1269,20 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 192
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 193
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.DATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 194
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 195
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -1495,27 +1293,20 @@
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 196
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->updateProfile()V
 
-    .line 197
     invoke-direct {p0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->refreshOwnerInfo()V
 
-    .line 198
     return-void
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 3
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
-    .prologue
     const/16 v2, 0x64
 
-    .line 89
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 91
     iget-object v0, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
@@ -1526,12 +1317,10 @@
 
     if-nez v0, :cond_1
 
-    .line 92
     iget-object v0, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     iput-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLocale:Ljava/util/Locale;
 
-    .line 93
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->hasMessages(I)Z
@@ -1540,18 +1329,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 94
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 96
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 98
     :cond_1
     return-void
 .end method
@@ -1559,11 +1345,8 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .prologue
-    .line 202
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 203
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1574,14 +1357,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 204
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 205
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -1592,20 +1373,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 206
     return-void
 .end method
 
 .method protected onFinishInflate()V
     .locals 4
 
-    .prologue
     const/4 v3, 0x1
 
-    .line 158
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 159
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mContext:Landroid/content/Context;
@@ -1614,7 +1391,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 161
     sget v1, Lcom/android/keyguard/R$id;->profile_text:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->findViewById(I)Landroid/view/View;
@@ -1625,7 +1401,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileText:Landroid/widget/TextView;
 
-    .line 162
     sget v1, Lcom/android/keyguard/R$id;->profile_time:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->findViewById(I)Landroid/view/View;
@@ -1636,7 +1411,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
-    .line 163
     sget v1, Lcom/android/keyguard/R$id;->profile_ampm:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->findViewById(I)Landroid/view/View;
@@ -1647,7 +1421,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileAmpm:Landroid/widget/TextClock;
 
-    .line 164
     sget v1, Lcom/android/keyguard/R$id;->profile_date:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->findViewById(I)Landroid/view/View;
@@ -1658,7 +1431,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDate:Lcom/android/keyguard/sec/SecKeyguardTextClock;
 
-    .line 166
     sget v1, Lcom/android/keyguard/R$id;->keyguard_owner_info:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->findViewById(I)Landroid/view/View;
@@ -1669,17 +1441,14 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
-    .line 167
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     if-eqz v1, :cond_0
 
-    .line 168
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mOwnerInfo:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 171
     :cond_0
     const-string v1, "/system/fonts/SamsungSans-Num45.ttf"
 
@@ -1689,14 +1458,12 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mClockTypeface:Landroid/graphics/Typeface;
 
-    .line 173
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mClockTypeface:Landroid/graphics/Typeface;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextClock;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 174
     const-string v1, "/system/fonts/SamsungSans-Num45.ttf"
 
     invoke-static {v1}, Landroid/graphics/Typeface;->createFromFile(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -1705,17 +1472,13 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileDefaultTypeface:Landroid/graphics/Typeface;
 
-    .line 177
     iget-object v1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView;->mProfileTime:Landroid/widget/TextClock;
 
     invoke-virtual {v1}, Landroid/widget/TextClock;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
 
-    .line 178
-    .local v0, "paint":Landroid/text/TextPaint;
     invoke-virtual {v0, v3}, Landroid/text/TextPaint;->setFakeBoldText(Z)V
 
-    .line 179
     return-void
 .end method

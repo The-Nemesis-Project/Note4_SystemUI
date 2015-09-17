@@ -41,51 +41,35 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 81
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/keyguard/KeyguardAccountView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 82
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
-    .line 85
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/keyguard/KeyguardAccountView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 86
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
 
-    .prologue
-    .line 89
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 71
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardAccountView;->isNetworkConnected:Z
 
-    .line 90
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->getContext()Landroid/content/Context;
@@ -96,7 +80,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 91
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -109,16 +92,12 @@
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mShowImeAtScreenOn:Z
 
-    .line 93
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/KeyguardAccountView;)Landroid/widget/EditText;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     return-object v0
@@ -126,10 +105,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/KeyguardAccountView;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mShowImeAtScreenOn:Z
 
     return v0
@@ -137,10 +113,7 @@
 
 .method static synthetic access$200(Lcom/android/keyguard/KeyguardAccountView;)Lcom/android/internal/widget/LockPatternUtils;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     return-object v0
@@ -148,10 +121,7 @@
 
 .method static synthetic access$300(Lcom/android/keyguard/KeyguardAccountView;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -159,10 +129,7 @@
 
 .method static synthetic access$400(Lcom/android/keyguard/KeyguardAccountView;)Lcom/android/keyguard/KeyguardSecurityCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     return-object v0
@@ -170,10 +137,7 @@
 
 .method static synthetic access$500(Lcom/android/keyguard/KeyguardAccountView;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardAccountView;->isNetworkConnected:Z
 
     return v0
@@ -181,10 +145,7 @@
 
 .method static synthetic access$600(Lcom/android/keyguard/KeyguardAccountView;)Lcom/android/keyguard/SecurityMessageDisplay;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     return-object v0
@@ -192,10 +153,7 @@
 
 .method static synthetic access$700(Lcom/android/keyguard/KeyguardAccountView;)Landroid/widget/EditText;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     return-object v0
@@ -203,11 +161,7 @@
 
 .method static synthetic access$800(Lcom/android/keyguard/KeyguardAccountView;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 58
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardAccountView;->postOnCheckPasswordResult(Z)V
 
     return-void
@@ -215,10 +169,7 @@
 
 .method static synthetic access$900(Lcom/android/keyguard/KeyguardAccountView;)Landroid/app/Dialog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardAccountView;
 
-    .prologue
-    .line 58
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardAccountView;->getProgressDialog()Landroid/app/Dialog;
 
     move-result-object v0
@@ -229,15 +180,12 @@
 .method private asyncCheckPassword()V
     .locals 9
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 328
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 329
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -248,8 +196,6 @@
 
     move-result-object v7
 
-    .line 330
-    .local v7, "login":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -260,26 +206,19 @@
 
     move-result-object v8
 
-    .line 331
-    .local v8, "password":Ljava/lang/String;
     invoke-direct {p0, v7}, Lcom/android/keyguard/KeyguardAccountView;->findIntendedAccount(Ljava/lang/String;)Landroid/accounts/Account;
 
     move-result-object v1
 
-    .line 332
-    .local v1, "account":Landroid/accounts/Account;
     if-nez v1, :cond_0
 
-    .line 333
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/KeyguardAccountView;->postOnCheckPasswordResult(Z)V
 
-    .line 362
     :goto_0
     return-void
 
-    .line 336
     :cond_0
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardAccountView;->getProgressDialog()Landroid/app/Dialog;
 
@@ -287,18 +226,14 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 337
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 338
-    .local v2, "options":Landroid/os/Bundle;
     const-string v0, "password"
 
     invoke-virtual {v2, v0, v8}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 339
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
@@ -328,10 +263,7 @@
 
 .method private findIntendedAccount(Ljava/lang/String;)Landroid/accounts/Account;
     .locals 14
-    .param p1, "username"    # Ljava/lang/String;
 
-    .prologue
-    .line 291
     iget-object v10, p0, Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
 
     invoke-static {v10}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
@@ -354,36 +286,23 @@
 
     move-result-object v2
 
-    .line 298
-    .local v2, "accounts":[Landroid/accounts/Account;
     const/4 v4, 0x0
 
-    .line 299
-    .local v4, "bestAccount":Landroid/accounts/Account;
     const/4 v5, 0x0
 
-    .line 300
-    .local v5, "bestScore":I
     move-object v3, v2
 
-    .local v3, "arr$":[Landroid/accounts/Account;
     array-length v8, v3
 
-    .local v8, "len$":I
     const/4 v7, 0x0
 
-    .local v7, "i$":I
     :goto_0
     if-ge v7, v8, :cond_6
 
     aget-object v0, v3, v7
 
-    .line 301
-    .local v0, "a":Landroid/accounts/Account;
     const/4 v9, 0x0
 
-    .line 302
-    .local v9, "score":I
     iget-object v10, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-virtual {p1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -392,28 +311,22 @@
 
     if-eqz v10, :cond_2
 
-    .line 303
     const/4 v9, 0x4
 
-    .line 317
     :cond_0
     :goto_1
     if-le v9, v5, :cond_5
 
-    .line 318
     move-object v4, v0
 
-    .line 319
     move v5, v9
 
-    .line 300
     :cond_1
     :goto_2
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 304
     :cond_2
     iget-object v10, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -423,12 +336,10 @@
 
     if-eqz v10, :cond_3
 
-    .line 305
     const/4 v9, 0x3
 
     goto :goto_1
 
-    .line 306
     :cond_3
     const/16 v10, 0x40
 
@@ -438,7 +349,6 @@
 
     if-gez v10, :cond_0
 
-    .line 307
     iget-object v10, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     const/16 v11, 0x40
@@ -447,11 +357,8 @@
 
     move-result v6
 
-    .line 308
-    .local v6, "i":I
     if-ltz v6, :cond_0
 
-    .line 309
     iget-object v10, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     const/4 v11, 0x0
@@ -460,20 +367,16 @@
 
     move-result-object v1
 
-    .line 310
-    .local v1, "aUsername":Ljava/lang/String;
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
     if-eqz v10, :cond_4
 
-    .line 311
     const/4 v9, 0x2
 
     goto :goto_1
 
-    .line 312
     :cond_4
     invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -481,25 +384,17 @@
 
     if-eqz v10, :cond_0
 
-    .line 313
     const/4 v9, 0x1
 
     goto :goto_1
 
-    .line 320
-    .end local v1    # "aUsername":Ljava/lang/String;
-    .end local v6    # "i":I
     :cond_5
     if-ne v9, v5, :cond_1
 
-    .line 321
     const/4 v4, 0x0
 
     goto :goto_2
 
-    .line 324
-    .end local v0    # "a":Landroid/accounts/Account;
-    .end local v9    # "score":I
     :cond_6
     return-object v4
 .end method
@@ -507,13 +402,10 @@
 .method private getProgressDialog()Landroid/app/Dialog;
     .locals 3
 
-    .prologue
-    .line 365
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     if-nez v0, :cond_0
 
-    .line 366
     new-instance v0, Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
@@ -522,7 +414,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
-    .line 367
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
@@ -535,21 +426,18 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 369
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 370
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 371
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
@@ -560,7 +448,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 374
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
@@ -569,10 +456,7 @@
 
 .method private postOnCheckPasswordResult(Z)V
     .locals 2
-    .param p1, "success"    # Z
 
-    .prologue
-    .line 217
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     new-instance v1, Lcom/android/keyguard/KeyguardAccountView$4;
@@ -581,7 +465,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
 
-    .line 258
     return-void
 .end method
 
@@ -589,58 +472,40 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
-    .param p1, "s"    # Landroid/text/Editable;
 
-    .prologue
-    .line 152
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "count"    # I
-    .param p4, "after"    # I
 
-    .prologue
-    .line 155
     return-void
 .end method
 
 .method public cleanUp()V
     .locals 2
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 201
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 202
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCheckingDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 204
     :cond_0
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .line 205
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 206
     return-void
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
-    .line 262
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
@@ -655,7 +520,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 264
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isPermanentlyLocked()Z
@@ -664,18 +528,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 265
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 269
     :cond_0
     const/4 v0, 0x1
 
-    .line 271
     :goto_0
     return v0
 
@@ -690,8 +551,6 @@
 .method public getCallback()Lcom/android/keyguard/KeyguardSecurityCallback;
     .locals 1
 
-    .prologue
-    .line 147
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     return-object v0
@@ -699,18 +558,13 @@
 
 .method public hideBouncer(I)V
     .locals 0
-    .param p1, "duration"    # I
 
-    .prologue
-    .line 397
     return-void
 .end method
 
 .method public needsInput()Z
     .locals 1
 
-    .prologue
-    .line 171
     const/4 v0, 0x1
 
     return v0
@@ -719,8 +573,6 @@
 .method public needsShowClockandNotifications()Z
     .locals 1
 
-    .prologue
-    .line 176
     const/4 v0, 0x0
 
     return v0
@@ -728,23 +580,17 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 209
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mOk:Landroid/widget/Button;
 
     if-ne p1, v0, :cond_0
 
-    .line 211
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardAccountView;->asyncCheckPassword()V
 
-    .line 213
     :cond_0
     return-void
 .end method
@@ -752,17 +598,14 @@
 .method protected onFinishInflate()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x5
 
     const/4 v6, 0x1
 
     const/4 v5, 0x0
 
-    .line 97
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 99
     sget v2, Lcom/android/keyguard/R$id;->login:I
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardAccountView;->findViewById(I)Landroid/view/View;
@@ -773,7 +616,6 @@
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
-    .line 100
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     new-array v3, v6, [Landroid/text/InputFilter;
@@ -786,24 +628,20 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 101
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     invoke-virtual {v2, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 103
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     invoke-virtual {v2, v7, v5}, Landroid/widget/EditText;->setNewActionPopupMenu(IZ)V
 
-    .line 104
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     const/4 v3, 0x6
 
     invoke-virtual {v2, v3, v5}, Landroid/widget/EditText;->setNewActionPopupMenu(IZ)V
 
-    .line 105
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     new-instance v3, Lcom/android/keyguard/KeyguardAccountView$1;
@@ -812,7 +650,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 113
     sget v2, Lcom/android/keyguard/R$id;->password:I
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardAccountView;->findViewById(I)Landroid/view/View;
@@ -823,17 +660,14 @@
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
-    .line 114
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     invoke-virtual {v2, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 116
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     invoke-virtual {v2, v7, v5}, Landroid/widget/EditText;->setNewActionPopupMenu(IZ)V
 
-    .line 117
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     new-instance v3, Lcom/android/keyguard/KeyguardAccountView$2;
@@ -842,7 +676,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 124
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -855,14 +688,10 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 125
-    .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 126
-    .local v1, "info":Landroid/net/NetworkInfo;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -871,10 +700,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 127
     iput-boolean v6, p0, Lcom/android/keyguard/KeyguardAccountView;->isNetworkConnected:Z
 
-    .line 129
     :cond_0
     sget v2, Lcom/android/keyguard/R$id;->ok:I
 
@@ -886,19 +713,16 @@
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mOk:Landroid/widget/Button;
 
-    .line 130
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mOk:Landroid/widget/Button;
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 132
     new-instance v2, Lcom/android/keyguard/KeyguardMessageArea$Helper;
 
     invoke-direct {v2, p0}, Lcom/android/keyguard/KeyguardMessageArea$Helper;-><init>(Landroid/view/View;)V
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    .line 133
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -913,18 +737,14 @@
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardAccountView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    .line 135
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->reset()V
 
-    .line 136
     return-void
 .end method
 
 .method public onPause()V
     .locals 3
 
-    .prologue
-    .line 379
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->getWindowToken()Landroid/os/IBinder;
@@ -935,17 +755,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 380
     return-void
 .end method
 
 .method protected onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
     .locals 1
-    .param p1, "direction"    # I
-    .param p2, "previouslyFocusedRect"    # Landroid/graphics/Rect;
 
-    .prologue
-    .line 167
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     invoke-virtual {v0, p1, p2}, Landroid/widget/EditText;->requestFocus(ILandroid/graphics/Rect;)Z
@@ -957,35 +772,23 @@
 
 .method public onResume(I)V
     .locals 0
-    .param p1, "reason"    # I
 
-    .prologue
-    .line 384
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAccountView;->reset()V
 
-    .line 385
     return-void
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 1
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
-    .prologue
-    .line 158
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     if-eqz v0, :cond_0
 
-    .line 159
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 161
     :cond_0
     return-void
 .end method
@@ -993,35 +796,28 @@
 .method public reset()V
     .locals 4
 
-    .prologue
-    .line 181
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     const-string v2, ""
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 182
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
 
     const-string v2, ""
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 183
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mLogin:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 184
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->isPermanentlyLocked()Z
 
     move-result v0
 
-    .line 185
-    .local v0, "permLocked":Z
     iget-object v3, p0, Lcom/android/keyguard/KeyguardAccountView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     if-eqz v0, :cond_0
@@ -1038,17 +834,14 @@
     :goto_1
     invoke-interface {v3, v2, v1}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 188
     new-instance v1, Lcom/android/keyguard/KeyguardAccountView$3;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/KeyguardAccountView$3;-><init>(Lcom/android/keyguard/KeyguardAccountView;)V
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardAccountView;->post(Ljava/lang/Runnable;)Z
 
-    .line 197
     return-void
 
-    .line 185
     :cond_0
     sget v1, Lcom/android/keyguard/R$string;->kg_login_instructions:I
 
@@ -1064,59 +857,41 @@
 
 .method public setKeyguardCallback(Lcom/android/keyguard/KeyguardSecurityCallback;)V
     .locals 0
-    .param p1, "callback"    # Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .prologue
-    .line 139
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .line 140
     return-void
 .end method
 
 .method public setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
     .locals 0
-    .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
 
-    .prologue
-    .line 143
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 144
     return-void
 .end method
 
 .method public showBouncer(I)V
     .locals 0
-    .param p1, "duration"    # I
 
-    .prologue
-    .line 393
     return-void
 .end method
 
 .method public showUsabilityHint()V
     .locals 0
 
-    .prologue
-    .line 389
     return-void
 .end method
 
 .method public startAppearAnimation()V
     .locals 0
 
-    .prologue
-    .line 402
     return-void
 .end method
 
 .method public startDisappearAnimation(Ljava/lang/Runnable;)Z
     .locals 1
-    .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
-    .prologue
-    .line 406
     const/4 v0, 0x0
 
     return v0

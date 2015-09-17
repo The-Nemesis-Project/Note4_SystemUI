@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/FloatingMessageTile;)V
     .locals 0
 
-    .prologue
-    .line 255
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$4;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "unused"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 257
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$4;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FloatingMessageTile$4;->this$0:Lcom/android/systemui/qs/tiles/FloatingMessageTile;
@@ -67,10 +62,8 @@
     # invokes: Lcom/android/systemui/qs/tiles/FloatingMessageTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/FloatingMessageTile;->access$500(Lcom/android/systemui/qs/tiles/FloatingMessageTile;Ljava/lang/Object;)V
 
-    .line 258
     return-void
 
-    .line 257
     :cond_0
     const/4 v0, 0x2
 

@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/PagedView;Landroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 2496
     iput-object p1, p0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     iput-object p2, p0, Lcom/sec/android/cover/widget/PagedView$9;->val$dragView:Landroid/view/View;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 22
 
-    .prologue
-    .line 2499
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -61,8 +57,6 @@
 
     move-result v4
 
-    .line 2506
-    .local v4, "dragViewIndex":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -83,7 +77,6 @@
 
     invoke-virtual/range {v16 .. v17}, Lcom/sec/android/cover/widget/PagedView;->getVisiblePages([I)V
 
-    .line 2507
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -106,7 +99,6 @@
 
     invoke-virtual/range {v16 .. v18}, Lcom/sec/android/cover/widget/PagedView;->boundByReorderablePages(Z[I)V
 
-    .line 2508
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -147,8 +139,6 @@
 
     const/4 v7, 0x1
 
-    .line 2509
-    .local v7, "isLastWidgetPage":Z
     :goto_0
     if-nez v7, :cond_0
 
@@ -175,12 +165,9 @@
     :cond_0
     const/4 v13, 0x1
 
-    .line 2512
-    .local v13, "slideFromLeft":Z
     :goto_1
     if-eqz v13, :cond_1
 
-    .line 2513
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -191,14 +178,11 @@
 
     invoke-virtual/range {v16 .. v17}, Lcom/sec/android/cover/widget/PagedView;->snapToPageImmediately(I)V
 
-    .line 2516
     :cond_1
     if-eqz v7, :cond_5
 
     const/4 v5, 0x0
 
-    .line 2517
-    .local v5, "firstIndex":I
     :goto_2
     move-object/from16 v0, p0
 
@@ -232,35 +216,25 @@
 
     move-result v8
 
-    .line 2518
-    .local v8, "lastIndex":I
     if-eqz v13, :cond_6
 
     move v9, v5
 
-    .line 2519
-    .local v9, "lowerIndex":I
     :goto_3
     if-eqz v13, :cond_7
 
     add-int/lit8 v14, v4, -0x1
 
-    .line 2520
-    .local v14, "upperIndex":I
     :goto_4
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2521
-    .local v3, "animations":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/Animator;>;"
     move v6, v9
 
-    .local v6, "i":I
     :goto_5
     if-gt v6, v14, :cond_a
 
-    .line 2522
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -273,22 +247,14 @@
 
     move-result-object v15
 
-    .line 2526
-    .local v15, "v":Landroid/view/View;
     const/4 v11, 0x0
 
-    .line 2527
-    .local v11, "oldX":I
     const/4 v10, 0x0
 
-    .line 2528
-    .local v10, "newX":I
     if-eqz v13, :cond_9
 
-    .line 2529
     if-nez v6, :cond_8
 
-    .line 2531
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -341,7 +307,6 @@
 
     sub-int v11, v16, v17
 
-    .line 2536
     :goto_6
     move-object/from16 v0, p0
 
@@ -367,7 +332,6 @@
 
     add-int v10, v16, v17
 
-    .line 2544
     :goto_7
     invoke-virtual {v15}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -375,14 +339,10 @@
 
     check-cast v2, Landroid/animation/AnimatorSet;
 
-    .line 2545
-    .local v2, "anim":Landroid/animation/AnimatorSet;
     if-eqz v2, :cond_2
 
-    .line 2546
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2551
     :cond_2
     invoke-virtual {v15}, Landroid/view/View;->getAlpha()F
 
@@ -396,7 +356,6 @@
 
     invoke-virtual/range {v15 .. v16}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2552
     sub-int v16, v11, v10
 
     move/from16 v0, v16
@@ -407,14 +366,10 @@
 
     invoke-virtual/range {v15 .. v16}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2553
     new-instance v2, Landroid/animation/AnimatorSet;
 
-    .end local v2    # "anim":Landroid/animation/AnimatorSet;
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2554
-    .restart local v2    # "anim":Landroid/animation/AnimatorSet;
     const/16 v16, 0x2
 
     move/from16 v0, v16
@@ -483,44 +438,24 @@
 
     invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2556
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2557
     invoke-virtual {v15, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 2521
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_5
 
-    .line 2508
-    .end local v2    # "anim":Landroid/animation/AnimatorSet;
-    .end local v3    # "animations":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/Animator;>;"
-    .end local v5    # "firstIndex":I
-    .end local v6    # "i":I
-    .end local v7    # "isLastWidgetPage":Z
-    .end local v8    # "lastIndex":I
-    .end local v9    # "lowerIndex":I
-    .end local v10    # "newX":I
-    .end local v11    # "oldX":I
-    .end local v13    # "slideFromLeft":Z
-    .end local v14    # "upperIndex":I
-    .end local v15    # "v":Landroid/view/View;
     :cond_3
     const/4 v7, 0x0
 
     goto/16 :goto_0
 
-    .line 2509
-    .restart local v7    # "isLastWidgetPage":Z
     :cond_4
     const/4 v13, 0x0
 
     goto/16 :goto_1
 
-    .line 2516
-    .restart local v13    # "slideFromLeft":Z
     :cond_5
     move-object/from16 v0, p0
 
@@ -540,28 +475,16 @@
 
     goto/16 :goto_2
 
-    .line 2518
-    .restart local v5    # "firstIndex":I
-    .restart local v8    # "lastIndex":I
     :cond_6
     add-int/lit8 v9, v4, 0x1
 
     goto/16 :goto_3
 
-    .restart local v9    # "lowerIndex":I
     :cond_7
     move v14, v8
 
-    .line 2519
     goto/16 :goto_4
 
-    .line 2534
-    .restart local v3    # "animations":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/Animator;>;"
-    .restart local v6    # "i":I
-    .restart local v10    # "newX":I
-    .restart local v11    # "oldX":I
-    .restart local v14    # "upperIndex":I
-    .restart local v15    # "v":Landroid/view/View;
     :cond_8
     move-object/from16 v0, p0
 
@@ -589,7 +512,6 @@
 
     goto/16 :goto_6
 
-    .line 2538
     :cond_9
     move-object/from16 v0, p0
 
@@ -617,25 +539,17 @@
 
     sub-int v11, v16, v17
 
-    .line 2539
     const/4 v10, 0x0
 
     goto/16 :goto_7
 
-    .line 2560
-    .end local v10    # "newX":I
-    .end local v11    # "oldX":I
-    .end local v15    # "v":Landroid/view/View;
     :cond_a
     new-instance v12, Landroid/animation/AnimatorSet;
 
     invoke-direct {v12}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2561
-    .local v12, "slideAnimations":Landroid/animation/AnimatorSet;
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 2562
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -657,7 +571,6 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2563
     new-instance v16, Lcom/sec/android/cover/widget/PagedView$9$1;
 
     move-object/from16 v0, v16
@@ -670,10 +583,8 @@
 
     invoke-virtual {v12, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2577
     invoke-virtual {v12}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2579
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -688,7 +599,6 @@
 
     invoke-virtual/range {v16 .. v17}, Lcom/sec/android/cover/widget/PagedView;->removeView(Landroid/view/View;)V
 
-    .line 2580
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/PagedView$9;->this$0:Lcom/sec/android/cover/widget/PagedView;
@@ -705,6 +615,5 @@
 
     invoke-virtual/range {v16 .. v18}, Lcom/sec/android/cover/widget/PagedView;->onRemoveView(Landroid/view/View;Z)V
 
-    .line 2581
     return-void
 .end method

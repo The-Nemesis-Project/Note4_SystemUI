@@ -27,8 +27,6 @@
 .method constructor <init>(Landroid/support/v4/widget/MaterialProgressDrawable;Landroid/support/v4/widget/MaterialProgressDrawable$Ring;)V
     .locals 0
 
-    .prologue
-    .line 313
     iput-object p1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iput-object p2, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -42,27 +40,21 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 321
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->goToNextColor()V
 
-    .line 322
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->storeOriginals()V
 
-    .line 323
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->setShowArrow(Z)V
 
-    .line 324
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     # getter for: Landroid/support/v4/widget/MaterialProgressDrawable;->mParent:Landroid/view/View;
@@ -79,24 +71,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 325
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 329
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 317
     return-void
 .end method

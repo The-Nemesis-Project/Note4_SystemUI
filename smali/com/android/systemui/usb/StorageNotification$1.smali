@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/usb/StorageNotification;)V
     .locals 0
 
-    .prologue
-    .line 121
     iput-object p1, p0, Lcom/android/systemui/usb/StorageNotification$1;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public declared-synchronized onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 15
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 123
     monitor-enter p0
 
     :try_start_0
@@ -47,8 +41,6 @@
 
     move-result-object v1
 
-    .line 124
-    .local v1, "action":Ljava/lang/String;
     const-string v10, "android.intent.action.LOCALE_CHANGED"
 
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -57,7 +49,6 @@
 
     if-eqz v10, :cond_2
 
-    .line 125
     iget-object v10, p0, Lcom/android/systemui/usb/StorageNotification$1;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     iget-object v10, v10, Lcom/android/systemui/usb/StorageNotification;->mContext:Landroid/content/Context;
@@ -72,20 +63,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 127
-    .local v7, "notificationManager":Landroid/app/NotificationManager;
     if-nez v7, :cond_1
 
-    .line 144
-    .end local v7    # "notificationManager":Landroid/app/NotificationManager;
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 129
-    .restart local v7    # "notificationManager":Landroid/app/NotificationManager;
     :cond_1
     :try_start_1
     iget-object v10, p0, Lcom/android/systemui/usb/StorageNotification$1;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -103,7 +88,6 @@
 
     move-result-object v4
 
-    .local v4, "i$":Ljava/util/Iterator;
     :goto_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -117,22 +101,16 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 130
-    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;
 
-    .line 131
-    .local v6, "noti":Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v8
 
-    .line 132
-    .local v8, "r":Landroid/content/res/Resources;
     # getter for: Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->mMediaStorageTitleId:I
     invoke-static {v6}, Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->access$400(Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;)I
 
@@ -142,8 +120,6 @@
 
     move-result-object v9
 
-    .line 133
-    .local v9, "title":Ljava/lang/CharSequence;
     # getter for: Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->mMediaStorageMessageId:I
     invoke-static {v6}, Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->access$500(Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;)I
 
@@ -153,8 +129,6 @@
 
     move-result-object v5
 
-    .line 134
-    .local v5, "message":Ljava/lang/CharSequence;
     # getter for: Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->mMediaStorageNotificationLocale:Landroid/app/Notification;
     invoke-static {v6}, Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->access$600(Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;)Landroid/app/Notification;
 
@@ -162,7 +136,6 @@
 
     iput-object v9, v10, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 135
     # getter for: Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->mMediaStorageNotificationLocale:Landroid/app/Notification;
     invoke-static {v6}, Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;->access$600(Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;)Landroid/app/Notification;
 
@@ -181,15 +154,12 @@
 
     invoke-virtual {v10, v11, v9, v5, v12}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 136
     new-instance v2, Landroid/content/Intent;
 
     const-string v10, "android.systemui.usb.STORAGE_NOTIFICATION_CANCEL"
 
     invoke-direct {v2, v10}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 137
-    .local v2, "deleteIntent":Landroid/content/Intent;
     const-string v11, "nid"
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -200,7 +170,6 @@
 
     invoke-virtual {v2, v11, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 138
     iget-object v10, p0, Lcom/android/systemui/usb/StorageNotification$1;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     # getter for: Lcom/android/systemui/usb/StorageNotification;->mMediaStorageNotification:Landroid/app/Notification;
@@ -224,7 +193,6 @@
 
     iput-object v11, v10, Landroid/app/Notification;->deleteIntent:Landroid/app/PendingIntent;
 
-    .line 139
     const/4 v11, 0x0
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -252,16 +220,6 @@
 
     goto :goto_1
 
-    .line 123
-    .end local v1    # "action":Ljava/lang/String;
-    .end local v2    # "deleteIntent":Landroid/content/Intent;
-    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;>;"
-    .end local v4    # "i$":Ljava/util/Iterator;
-    .end local v5    # "message":Ljava/lang/CharSequence;
-    .end local v6    # "noti":Lcom/android/systemui/usb/StorageNotification$MediaStorageNotificationLocale;
-    .end local v7    # "notificationManager":Landroid/app/NotificationManager;
-    .end local v8    # "r":Landroid/content/res/Resources;
-    .end local v9    # "title":Ljava/lang/CharSequence;
     :catchall_0
     move-exception v10
 
@@ -269,8 +227,6 @@
 
     throw v10
 
-    .line 141
-    .restart local v1    # "action":Ljava/lang/String;
     :cond_2
     :try_start_2
     const-string v10, "android.systemui.usb.STORAGE_NOTIFICATION_CANCEL"
@@ -281,7 +237,6 @@
 
     if-eqz v10, :cond_0
 
-    .line 142
     iget-object v10, p0, Lcom/android/systemui/usb/StorageNotification$1;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     # getter for: Lcom/android/systemui/usb/StorageNotification;->MediaStorageMap:Ljava/util/HashMap;

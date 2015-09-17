@@ -22,22 +22,18 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;)V
     .locals 5
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 2957
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
-    .line 2958
     new-instance v2, Landroid/os/Handler;
 
     invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2960
     iget-object v2, p1, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -58,7 +54,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->mNwboosterSettingEnabled:Z
     invoke-static {p1, v0}, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->access$802(Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;Z)Z
 
-    .line 2962
     # getter for: Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->mDefaultPhoneId:I
     invoke-static {p1}, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;)I
 
@@ -66,7 +61,6 @@
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->refreshViews(I)V
 
-    .line 2963
     const-string v0, "StatusBar.MSimNetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,13 +88,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2964
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 2960
     goto :goto_0
 .end method
 
@@ -108,14 +100,11 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 6
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 2967
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
@@ -140,7 +129,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->mNwboosterSettingEnabled:Z
     invoke-static {v2, v0}, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->access$802(Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;Z)Z
 
-    .line 2969
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl$NWBoosterObserver;->this$0:Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;
@@ -152,7 +140,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/MSimNetworkControllerImpl;->refreshViews(I)V
 
-    .line 2970
     const-string v0, "StatusBar.MSimNetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -182,12 +169,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2971
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 2967
     goto :goto_0
 .end method

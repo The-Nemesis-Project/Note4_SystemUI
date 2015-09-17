@@ -30,8 +30,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 16
     const/4 v0, 0x0
 
     sput-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mInstance:Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
@@ -41,23 +39,17 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
-    .line 25
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
 
-    .line 26
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -70,14 +62,10 @@
 
     move-result-object v1
 
-    .line 29
-    .local v1, "stylesArray":Landroid/content/res/TypedArray;
     if-eqz v1, :cond_1
 
-    .line 30
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->length()I
 
@@ -85,7 +73,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 31
     iget-object v2, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
 
     const/4 v3, 0x0
@@ -100,39 +87,30 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 30
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 34
     :cond_0
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 36
-    .end local v0    # "i":I
     :cond_1
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 39
     sget-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mInstance:Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
 
     if-nez v0, :cond_0
 
-    .line 40
     new-instance v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mInstance:Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
 
-    .line 43
     :cond_0
     sget-object v0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mInstance:Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;
 
@@ -144,8 +122,6 @@
 .method public getCurrentStyleIndex()I
     .locals 1
 
-    .prologue
-    .line 47
     const/4 v0, -0x1
 
     return v0
@@ -154,8 +130,6 @@
 .method public getCurrentStylePreviewDrawable()Landroid/graphics/drawable/Drawable;
     .locals 5
 
-    .prologue
-    .line 93
     invoke-virtual {p0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->getCurrentStyleIndex()I
 
     move-result v3
@@ -164,7 +138,6 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 94
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -177,19 +150,15 @@
 
     move-result-object v0
 
-    .line 103
     :cond_0
     :goto_0
     return-object v0
 
-    .line 96
     :cond_1
     invoke-virtual {p0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->getCurrentStyleResId()I
 
     move-result v2
 
-    .line 97
-    .local v2, "styleResId":I
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -200,22 +169,16 @@
 
     move-result-object v1
 
-    .line 98
-    .local v1, "style":Landroid/content/res/TypedArray;
     const/4 v0, 0x0
 
-    .line 99
-    .local v0, "result":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_0
 
-    .line 100
     const/4 v3, 0x2
 
     invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 101
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_0
@@ -224,22 +187,16 @@
 .method public getCurrentStyleResId()I
     .locals 2
 
-    .prologue
-    .line 85
     invoke-virtual {p0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->getCurrentStyleIndex()I
 
     move-result v0
 
-    .line 86
-    .local v0, "styleIndex":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 87
     const/4 v1, 0x0
 
-    .line 89
     :goto_0
     return v1
 
@@ -271,10 +228,8 @@
         }
     .end annotation
 
-    .prologue
     const/4 v7, 0x0
 
-    .line 66
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v5, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
@@ -285,8 +240,6 @@
 
     invoke-direct {v0, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 67
-    .local v0, "digitalClockStyleNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v5, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -299,24 +252,17 @@
 
     move-result-object v4
 
-    .line 69
-    .local v4, "stylesArray":Landroid/content/res/TypedArray;
     if-eqz v4, :cond_2
 
-    .line 70
     invoke-virtual {v4}, Landroid/content/res/TypedArray;->length()I
 
     move-result v2
 
-    .line 71
-    .local v2, "length":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 72
     iget-object v5, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -331,49 +277,35 @@
 
     move-result-object v3
 
-    .line 74
-    .local v3, "style":Landroid/content/res/TypedArray;
     if-eqz v3, :cond_0
 
-    .line 75
     invoke-virtual {v3, v7}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 76
     invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 71
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 79
-    .end local v3    # "style":Landroid/content/res/TypedArray;
     :cond_1
     invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 81
-    .end local v1    # "i":I
-    .end local v2    # "length":I
     :cond_2
     return-object v0
 .end method
 
 .method public getStylePreviewDrawable(I)Landroid/graphics/drawable/Drawable;
     .locals 6
-    .param p1, "styleIndex"    # I
 
-    .prologue
-    .line 107
     const/4 v3, -0x1
 
     if-ne p1, v3, :cond_1
 
-    .line 108
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -386,12 +318,10 @@
 
     move-result-object v0
 
-    .line 121
     :cond_0
     :goto_0
     return-object v0
 
-    .line 110
     :cond_1
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
 
@@ -401,7 +331,6 @@
 
     if-lt p1, v3, :cond_2
 
-    .line 111
     const-string v3, "MiniViewCoverDigitalClockManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -434,7 +363,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -449,7 +377,6 @@
 
     goto :goto_0
 
-    .line 114
     :cond_2
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
 
@@ -463,8 +390,6 @@
 
     move-result v2
 
-    .line 115
-    .local v2, "styleResId":I
     iget-object v3, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -475,22 +400,16 @@
 
     move-result-object v1
 
-    .line 116
-    .local v1, "style":Landroid/content/res/TypedArray;
     const/4 v0, 0x0
 
-    .line 117
-    .local v0, "result":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_0
 
-    .line 118
     const/4 v3, 0x2
 
     invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 119
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_0
@@ -499,8 +418,6 @@
 .method public isEnabled()Z
     .locals 2
 
-    .prologue
-    .line 51
     invoke-virtual {p0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->getCurrentStyleIndex()I
 
     move-result v0
@@ -522,10 +439,7 @@
 
 .method public setCurrentStyleIndex(I)V
     .locals 3
-    .param p1, "index"    # I
 
-    .prologue
-    .line 55
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mDigitalClockStyles:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -534,7 +448,6 @@
 
     if-lt p1, v0, :cond_0
 
-    .line 56
     const-string v0, "MiniViewCoverDigitalClockManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -567,11 +480,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :goto_0
     return-void
 
-    .line 59
     :cond_0
     const-string v0, "MiniViewCoverDigitalClockManager"
 
@@ -599,7 +510,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverDigitalClockManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/sec/android/cover/manager/CoverDatabaseManager;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/manager/CoverDatabaseManager;

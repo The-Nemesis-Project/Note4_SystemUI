@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->dismissKeyguardThenExecute(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 5156
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,47 +35,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 1
 
-    .prologue
-    .line 5158
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->vibrate()V
-
-    .line 5159
-    const-wide/16 v0, 0xfa
-
-    invoke-static {v0, v1}, Landroid/os/SystemClock;->sleep(J)V
-
-    .line 5160
-    const-string v0, "PhoneStatusBar"
-
-    const-string v1, "startTracing"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5161
-    const-string v0, "/data/statusbar-traces/trace"
-
-    invoke-static {v0}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;)V
-
-    .line 5162
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHandler:Lcom/android/systemui/statusbar/BaseStatusBar$H;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10200(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Lcom/android/systemui/statusbar/BaseStatusBar$H;
+    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10100(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->dismiss()V
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStopTracing:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x2710
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 5163
     return-void
 .end method

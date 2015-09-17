@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardClockDualView;)V
     .locals 0
 
-    .prologue
-    .line 70
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 73
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 91
     :goto_0
     return-void
 
-    .line 75
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 78
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -65,7 +57,6 @@
 
     goto :goto_0
 
-    .line 81
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
@@ -73,13 +64,11 @@
 
     goto :goto_0
 
-    .line 84
     :pswitch_3
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/SecKeyguardClockDualView;->setClockStyle()V
 
-    .line 85
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardClockDualView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardClockDualView;
 
     # invokes: Lcom/android/keyguard/sec/SecKeyguardClockDualView;->setClockContentDesciption()V
@@ -87,7 +76,6 @@
 
     goto :goto_0
 
-    .line 73
     nop
 
     :pswitch_data_0

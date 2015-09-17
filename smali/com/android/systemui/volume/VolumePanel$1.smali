@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 623
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 625
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
 
@@ -51,7 +45,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 626
     const-string v3, "VolumePanel"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -74,14 +67,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 628
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 630
-    .local v0, "action":Ljava/lang/String;
     const-string v3, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -90,14 +80,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 631
     const-string v3, "VolumePanel"
 
     const-string v4, "mCoverBroadcastReceiver: Screen OFF start"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 632
     # getter for: Lcom/android/systemui/volume/VolumePanel;->sSafetyWarning:Landroid/app/AlertDialog;
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$200()Landroid/app/AlertDialog;
 
@@ -116,14 +104,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 633
     const-string v3, "VolumePanel"
 
     const-string v4, "mCoverBroadcastReceiver :  call sSafetyWarning.dismiss()"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 634
     # getter for: Lcom/android/systemui/volume/VolumePanel;->sSafetyWarning:Landroid/app/AlertDialog;
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$200()Landroid/app/AlertDialog;
 
@@ -131,7 +117,6 @@
 
     invoke-virtual {v3}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 636
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
@@ -155,14 +140,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 637
     const-string v3, "VolumePanel"
 
     const-string v4, "mCoverBroadcastReceiver :  call mDialog.dismiss"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 638
     iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
@@ -172,7 +155,6 @@
 
     invoke-virtual {v3}, Landroid/app/Dialog;->dismiss()V
 
-    .line 640
     :cond_2
     const-string v3, "VolumePanel"
 
@@ -180,19 +162,16 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 641
     iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-virtual {v3}, Lcom/android/systemui/volume/VolumePanel;->onDismissSafeVolumeWarning()V
 
-    .line 642
     const-string v3, "VolumePanel"
 
     const-string v4, "mCoverBroadcastReceiver: Screen OFF end"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 645
     :cond_3
     const-string v3, "android.intent.action.HEADSET_PLUG"
 
@@ -202,7 +181,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 646
     const-string v3, "state"
 
     invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -211,8 +189,6 @@
 
     if-ne v3, v1, :cond_7
 
-    .line 647
-    .local v1, "bPluged":Z
     :goto_0
     const-string v2, "VolumePanel"
 
@@ -236,7 +212,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 649
     if-nez v1, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
@@ -248,20 +223,16 @@
 
     if-eqz v2, :cond_4
 
-    .line 650
     const-string v2, "VolumePanel"
 
     const-string v3, "EarJack plug-out, remove waring popup on the s view cover"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 651
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-virtual {v2}, Lcom/android/systemui/volume/VolumePanel;->onDismissSafeVolumeWarning()V
 
-    .line 655
-    .end local v1    # "bPluged":Z
     :cond_4
     const-string v2, "android.view.volumepanel.CLICK_BUTTON1"
 
@@ -271,19 +242,16 @@
 
     if-eqz v2, :cond_5
 
-    .line 656
     const-string v2, "VolumePanel"
 
     const-string v3, "mCoverBroadcastReceiver : call onDismissSafeVolumeWarning() #2"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 657
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-virtual {v2}, Lcom/android/systemui/volume/VolumePanel;->onDismissSafeVolumeWarning()V
 
-    .line 660
     :cond_5
     const-string v2, "android.view.volumepanel.CLICK_BUTTON2"
 
@@ -293,7 +261,6 @@
 
     if-eqz v2, :cond_6
 
-    .line 662
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -303,19 +270,16 @@
 
     invoke-virtual {v2}, Landroid/media/AudioManager;->disableSafeMediaVolume()V
 
-    .line 663
     const-string v2, "VolumePanel"
 
     const-string v3, "mCoverBroadcastReceiver : call onDismissSafeVolumeWarning() #3"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 664
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-virtual {v2}, Lcom/android/systemui/volume/VolumePanel;->onDismissSafeVolumeWarning()V
 
-    .line 666
     :cond_6
     const-string v2, "VolumePanel"
 
@@ -339,12 +303,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 667
     return-void
 
     :cond_7
     move v1, v2
 
-    .line 646
     goto :goto_0
 .end method

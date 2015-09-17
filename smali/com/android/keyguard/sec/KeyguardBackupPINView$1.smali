@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardBackupPINView;)V
     .locals 0
 
-    .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardBackupPINView$1;->this$0:Lcom/android/keyguard/sec/KeyguardBackupPINView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,19 +34,15 @@
 .method public onCMASChanged()V
     .locals 2
 
-    .prologue
-    .line 83
     const-string v0, "KeyguardBackupPINView"
 
     const-string v1, "onCMASChanged()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardBackupPINView$1;->this$0:Lcom/android/keyguard/sec/KeyguardBackupPINView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardBackupPINView;->updateCMASText()V
 
-    .line 85
     return-void
 .end method

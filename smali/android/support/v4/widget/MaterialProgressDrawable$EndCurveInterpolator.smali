@@ -18,8 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 707
     invoke-direct {p0}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
     return-void
@@ -27,10 +25,7 @@
 
 .method synthetic constructor <init>(Landroid/support/v4/widget/MaterialProgressDrawable$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/support/v4/widget/MaterialProgressDrawable$1;
 
-    .prologue
-    .line 707
     invoke-direct {p0}, Landroid/support/v4/widget/MaterialProgressDrawable$EndCurveInterpolator;-><init>()V
 
     return-void
@@ -40,10 +35,7 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 3
-    .param p1, "input"    # F
 
-    .prologue
-    .line 710
     const/4 v0, 0x0
 
     const/high16 v1, 0x3f000000    # 0.5f

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPatternView;)V
     .locals 0
 
-    .prologue
-    .line 212
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$3;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 215
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$3;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
@@ -57,6 +52,5 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->handleTouchEventForPatternLock(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    .line 216
     return-void
 .end method

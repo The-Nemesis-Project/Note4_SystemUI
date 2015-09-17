@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/manager/CoverRemoteViewManager;)V
     .locals 0
 
-    .prologue
-    .line 20
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverRemoteViewManager$1;->this$0:Lcom/sec/android/cover/manager/CoverRemoteViewManager;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onRemoteViewUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 3
-    .param p1, "remoteViewInfo"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    .prologue
-    .line 23
     # getter for: Lcom/sec/android/cover/manager/CoverRemoteViewManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/manager/CoverRemoteViewManager;->access$000()Ljava/lang/String;
 
@@ -68,12 +63,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 24
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverRemoteViewManager$1;->this$0:Lcom/sec/android/cover/manager/CoverRemoteViewManager;
 
     # invokes: Lcom/sec/android/cover/manager/CoverRemoteViewManager;->updateRemoteView(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)Z
     invoke-static {v0, p1}, Lcom/sec/android/cover/manager/CoverRemoteViewManager;->access$100(Lcom/sec/android/cover/manager/CoverRemoteViewManager;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)Z
 
-    .line 25
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;)V
     .locals 0
 
-    .prologue
-    .line 68
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,23 +33,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const v9, 0x104037c
 
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
-    .line 71
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 73
-    .local v0, "action":Ljava/lang/String;
     const-string v4, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -60,17 +52,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 74
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->updateAirplaneMode()V
 
-    .line 127
     :cond_0
     :goto_0
     return-void
 
-    .line 75
     :cond_1
     const-string v4, "android.provider.Telephony.SPN_STRINGS_UPDATED"
 
@@ -80,7 +69,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 76
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "subscription"
@@ -94,12 +82,10 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->subId:J
     invoke-static {v4, v6, v7}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$002(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;J)J
 
-    .line 77
     sget-boolean v4, Lcom/android/systemui/statusbar/Feature;->mIsCGGDuosCTC:Z
 
     if-eqz v4, :cond_3
 
-    .line 78
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "phone"
@@ -111,7 +97,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->phoneId:I
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$102(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;I)I
 
-    .line 82
     :goto_1
     const-string v4, "QuickSim1Button"
 
@@ -159,7 +144,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     # getter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->phoneId:I
@@ -169,7 +153,6 @@
 
     if-nez v4, :cond_2
 
-    .line 84
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "showSpn"
@@ -181,7 +164,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mShowSpn:Z
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$302(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;Z)Z
 
-    .line 85
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "spn"
@@ -193,7 +175,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mSpn:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$402(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 86
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "showPlmn"
@@ -205,7 +186,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mShowPlmn:Z
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$502(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;Z)Z
 
-    .line 87
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     const-string v5, "plmn"
@@ -217,7 +197,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mPlmn:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$602(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 89
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -254,7 +233,6 @@
 
     goto/16 :goto_0
 
-    .line 80
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -277,7 +255,6 @@
 
     goto/16 :goto_1
 
-    .line 90
     :cond_4
     const-string v4, "android.intent.action.ACTION_DEFAULT_VOICE_SUBSCRIPTION_CHANGED"
 
@@ -295,7 +272,6 @@
 
     if-eqz v4, :cond_9
 
-    .line 91
     :cond_5
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -319,7 +295,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->simActive:I
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$802(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;I)I
 
-    .line 92
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultVoicePhoneId()I
@@ -329,7 +304,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->currSimId:I
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$1002(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;I)I
 
-    .line 93
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
@@ -352,7 +326,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mAirplaneMode:I
     invoke-static {v4, v5}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->access$1102(Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;I)I
 
-    .line 94
     const-string v4, "QuickSim1Button"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -409,7 +382,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     # getter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mAirplaneMode:I
@@ -419,14 +391,12 @@
 
     if-ne v4, v7, :cond_6
 
-    .line 97
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->setDeactiveSimUI()V
 
     goto/16 :goto_0
 
-    .line 98
     :cond_6
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -437,14 +407,12 @@
 
     if-nez v4, :cond_7
 
-    .line 99
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->setDeselectedSimUI()V
 
     goto/16 :goto_0
 
-    .line 101
     :cond_7
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -455,14 +423,12 @@
 
     if-nez v4, :cond_8
 
-    .line 102
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->setSelectedSimUI()V
 
     goto/16 :goto_0
 
-    .line 104
     :cond_8
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -470,7 +436,6 @@
 
     goto/16 :goto_0
 
-    .line 107
     :cond_9
     const-string v4, "android.settings.SIMCARD_MGT"
 
@@ -480,15 +445,12 @@
 
     if-eqz v4, :cond_a
 
-    .line 108
     const-string v4, "simcard_sim_id"
 
     invoke-virtual {p2, v4, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 109
-    .local v2, "simId":I
     const-string v4, "simcard_sim_icon"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getExtra(Ljava/lang/String;)Ljava/lang/Object;
@@ -497,8 +459,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 110
-    .local v1, "simIconIndex":Ljava/lang/String;
     const-string v4, "simcard_sim_name"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getExtra(Ljava/lang/String;)Ljava/lang/Object;
@@ -507,8 +467,6 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 111
-    .local v3, "simName":Ljava/lang/String;
     const-string v4, "QuickSim1Button"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -551,7 +509,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     # invokes: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->updateDualSimUiBySettings(ILjava/lang/String;Ljava/lang/String;)V
@@ -559,10 +516,6 @@
 
     goto/16 :goto_0
 
-    .line 113
-    .end local v1    # "simIconIndex":Ljava/lang/String;
-    .end local v2    # "simId":I
-    .end local v3    # "simName":Ljava/lang/String;
     :cond_a
     const-string v4, "android.intent.action.LOCALE_CHANGED"
 
@@ -572,14 +525,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 114
     const-string v4, "QuickSim1Button"
 
     const-string v5, "onReceive() - ACTION_LOCALE_CHANGED : "
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
     invoke-static {}, Lcom/android/systemui/statusbar/Feature;->getOperator()Ljava/lang/String;
 
     move-result-object v4
@@ -592,7 +543,6 @@
 
     if-eqz v4, :cond_b
 
-    .line 116
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     # getter for: Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;->mQuickSim1Text:Landroid/widget/TextView;
@@ -607,7 +557,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d01c9
+    const v6, 0x7f0d01e4
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -617,7 +567,6 @@
 
     goto/16 :goto_0
 
-    .line 118
     :cond_b
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
@@ -639,7 +588,6 @@
 
     if-eqz v4, :cond_c
 
-    .line 119
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
@@ -665,7 +613,6 @@
 
     goto/16 :goto_0
 
-    .line 122
     :cond_c
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout$1;->this$0:Lcom/android/systemui/statusbar/policy/QuickSim1ButtonLayout;
 

@@ -25,23 +25,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 25
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 33
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mNeedtoRemainActivity:Z
 
-    .line 35
     new-instance v0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$1;-><init>(Lcom/sec/android/cover/sviewcover/SViewCoverActivity;)V
 
     iput-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverStateListener:Lcom/samsung/android/sdk/cover/ScoverManager$StateListener;
 
-    .line 45
     new-instance v0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$2;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity$2;-><init>(Lcom/sec/android/cover/sviewcover/SViewCoverActivity;)V
@@ -56,24 +51,18 @@
 .method protected coverCloseEvent()V
     .locals 0
 
-    .prologue
-    .line 163
     return-void
 .end method
 
 .method protected coverOpenEvent()V
     .locals 1
 
-    .prologue
-    .line 166
     sget-boolean v0, Lcom/sec/android/sviewcover/SViewCoverBase;->mTestModeEnabled:Z
 
     if-nez v0, :cond_0
 
-    .line 167
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->finish()V
 
-    .line 169
     :cond_0
     return-void
 .end method
@@ -81,20 +70,16 @@
 .method protected getCoverState()Lcom/samsung/android/sdk/cover/ScoverState;
     .locals 1
 
-    .prologue
-    .line 172
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     if-eqz v0, :cond_0
 
-    .line 173
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     invoke-virtual {v0}, Lcom/samsung/android/sdk/cover/ScoverManager;->getCoverState()Lcom/samsung/android/sdk/cover/ScoverState;
 
     move-result-object v0
 
-    .line 175
     :goto_0
     return-object v0
 
@@ -107,14 +92,10 @@
 .method protected getWallpaperDrawble()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .prologue
-    .line 158
     invoke-static {p0}, Lcom/sec/android/cover/manager/SViewCoverWallpaperManager;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/manager/SViewCoverWallpaperManager;
 
     move-result-object v0
 
-    .line 159
-    .local v0, "wallpaperManager":Lcom/sec/android/cover/manager/SViewCoverWallpaperManager;
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/SViewCoverWallpaperManager;->getCurrentWallpaperDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -125,24 +106,20 @@
 .method protected isCoverOpen()Z
     .locals 3
 
-    .prologue
     const/4 v1, 0x0
 
     const/4 v0, 0x1
 
-    .line 180
     sget-boolean v2, Lcom/sec/android/sviewcover/SViewCoverBase;->mTestModeEnabled:Z
 
     if-ne v2, v0, :cond_1
 
     move v0, v1
 
-    .line 188
     :cond_0
     :goto_0
     return v0
 
-    .line 184
     :cond_1
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
@@ -156,7 +133,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 188
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     invoke-virtual {v2}, Lcom/samsung/android/sdk/cover/ScoverManager;->getCoverState()Lcom/samsung/android/sdk/cover/ScoverState;
@@ -176,26 +152,19 @@
 
 .method protected needToRemainACtivity(Z)V
     .locals 0
-    .param p1, "remain"    # Z
 
-    .prologue
-    .line 126
     iput-boolean p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mNeedtoRemainActivity:Z
 
-    .line 127
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 9
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .prologue
     const/4 v7, 0x1
 
     const/4 v8, -0x1
 
-    .line 57
     const-string v4, "SViewCoverActivity"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -226,10 +195,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 61
     invoke-static {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
     move-result-object v4
@@ -238,18 +205,14 @@
 
     invoke-virtual {v4, v5}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->registerCallback(Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;)V
 
-    .line 64
     const/4 v0, 0x1
 
-    .line 65
-    .local v0, "deviceSupportCoverSDK":Z
     new-instance v4, Lcom/samsung/android/sdk/cover/Scover;
 
     invoke-direct {v4}, Lcom/samsung/android/sdk/cover/Scover;-><init>()V
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mScover:Lcom/samsung/android/sdk/cover/Scover;
 
-    .line 68
     :try_start_0
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mScover:Lcom/samsung/android/sdk/cover/Scover;
 
@@ -258,25 +221,21 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/samsung/android/sdk/SsdkUnsupportedException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 75
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 76
     new-instance v4, Lcom/samsung/android/sdk/cover/ScoverManager;
 
     invoke-direct {v4, p0}, Lcom/samsung/android/sdk/cover/ScoverManager;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
-    .line 78
     iget-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     iget-object v5, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverStateListener:Lcom/samsung/android/sdk/cover/ScoverManager$StateListener;
 
     invoke-virtual {v4, v5}, Lcom/samsung/android/sdk/cover/ScoverManager;->registerListener(Lcom/samsung/android/sdk/cover/ScoverManager$StateListener;)V
 
-    .line 85
     const-string v4, "statusbar"
 
     invoke-virtual {p0, v4}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -287,51 +246,37 @@
 
     iput-object v4, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mStatusBarManager:Landroid/app/StatusBarManager;
 
-    .line 89
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->isCoverOpen()Z
 
     move-result v4
 
     if-ne v4, v7, :cond_1
 
-    .line 90
     const-string v4, "SViewCoverActivity"
 
     const-string v5, "onCreate : The cover is opened! Finishing activity..."
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->finish()V
 
-    .line 114
     :goto_1
     return-void
 
-    .line 69
     :catch_0
     move-exception v1
 
-    .line 70
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
     const/4 v0, 0x0
 
-    .line 73
     goto :goto_0
 
-    .line 71
-    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v1
 
-    .line 72
-    .local v1, "e":Lcom/samsung/android/sdk/SsdkUnsupportedException;
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 80
-    .end local v1    # "e":Lcom/samsung/android/sdk/SsdkUnsupportedException;
     :cond_0
     const-string v4, "SViewCoverActivity"
 
@@ -339,12 +284,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->finish()V
 
     goto :goto_1
 
-    .line 97
     :cond_1
     invoke-static {p0}, Lcom/sec/android/cover/CoverUtils;->isCallActive(Landroid/content/Context;)Z
 
@@ -352,30 +295,23 @@
 
     if-ne v4, v7, :cond_2
 
-    .line 98
     const-string v4, "SViewCoverActivity"
 
     const-string v5, "onCreate : Call is active. Finishing activity..."
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->finish()V
 
     goto :goto_1
 
-    .line 104
     :cond_2
     const/high16 v2, 0x4080000
 
-    .line 106
-    .local v2, "flag":I
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
-    .line 108
-    .local v3, "window":Landroid/view/Window;
     invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v4
@@ -384,7 +320,6 @@
 
     iput-wide v6, v4, Landroid/view/WindowManager$LayoutParams;->userActivityTimeout:J
 
-    .line 109
     invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v4
@@ -393,13 +328,10 @@
 
     iput-wide v6, v4, Landroid/view/WindowManager$LayoutParams;->screenDimDuration:J
 
-    .line 110
     invoke-virtual {v3, v8, v8}, Landroid/view/Window;->setLayout(II)V
 
-    .line 112
     invoke-virtual {v3, v2}, Landroid/view/Window;->addFlags(I)V
 
-    .line 113
     const/4 v4, 0x2
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->clearFlags(I)V
@@ -410,27 +342,22 @@
 .method protected onDestroy()V
     .locals 2
 
-    .prologue
-    .line 147
     const-string v0, "SViewCoverActivity"
 
     const-string v1, "onDestroy"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 148
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     if-eqz v0, :cond_0
 
-    .line 149
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverManager:Lcom/samsung/android/sdk/cover/ScoverManager;
 
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mCoverStateListener:Lcom/samsung/android/sdk/cover/ScoverManager$StateListener;
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/cover/ScoverManager;->unregisterListener(Lcom/samsung/android/sdk/cover/ScoverManager$StateListener;)V
 
-    .line 152
     :cond_0
     invoke-static {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
@@ -440,33 +367,26 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->unregisterCallback(Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;)V
 
-    .line 154
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 155
     return-void
 .end method
 
 .method public onPause()V
     .locals 2
 
-    .prologue
-    .line 139
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 140
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     if-eqz v0, :cond_0
 
-    .line 141
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
-    .line 143
     :cond_0
     return-void
 .end method
@@ -474,39 +394,29 @@
 .method public onResume()V
     .locals 2
 
-    .prologue
-    .line 131
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 132
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     if-eqz v0, :cond_0
 
-    .line 133
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     const/high16 v1, 0x10000
 
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
-    .line 135
     :cond_0
     return-void
 .end method
 
 .method public onWindowFocusChanged(Z)V
     .locals 1
-    .param p1, "hasFocus"    # Z
 
-    .prologue
-    .line 118
     invoke-super {p0, p1}, Landroid/app/Activity;->onWindowFocusChanged(Z)V
 
-    .line 120
     if-eqz p1, :cond_0
 
-    .line 121
     invoke-virtual {p0}, Lcom/sec/android/cover/sviewcover/SViewCoverActivity;->getBaseContext()Landroid/content/Context;
 
     move-result-object v0
@@ -517,7 +427,6 @@
 
     invoke-virtual {v0}, Lcom/sec/android/cover/manager/CoverPowerManager;->resetScreenOffTimer()V
 
-    .line 123
     :cond_0
     return-void
 .end method

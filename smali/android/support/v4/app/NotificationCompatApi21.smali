@@ -45,20 +45,14 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     return-void
 .end method
 
 .method public static getCategory(Landroid/app/Notification;)Ljava/lang/String;
     .locals 1
-    .param p0, "notif"    # Landroid/app/Notification;
 
-    .prologue
-    .line 114
     iget-object v0, p0, Landroid/app/Notification;->category:Ljava/lang/String;
 
     return-object v0

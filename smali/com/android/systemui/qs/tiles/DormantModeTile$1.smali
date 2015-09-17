@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DormantModeTile;)V
     .locals 0
 
-    .prologue
-    .line 113
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 116
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 124
     :goto_0
     return-void
 
-    .line 118
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 121
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DormantModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/DormantModeTile;
 
@@ -65,7 +57,6 @@
 
     goto :goto_0
 
-    .line 116
     :pswitch_data_0
     .packed-switch 0xa
         :pswitch_0

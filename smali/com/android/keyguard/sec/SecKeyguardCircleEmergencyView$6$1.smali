@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6;)V
     .locals 0
 
-    .prologue
-    .line 410
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6$1;->this$1:Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 5
 
-    .prologue
-    .line 413
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -48,20 +44,16 @@
 
     invoke-interface {v2}, Landroid/app/IActivityManager;->keyguardWaitingForActivityDrawn()V
 
-    .line 416
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.DIAL"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 417
-    .local v1, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 418
     iget-object v2, p0, Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6$1;->this$1:Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6;
 
     iget-object v2, v2, Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView$6;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleEmergencyView;
@@ -74,17 +66,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 422
-    .end local v1    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 419
     :catch_0
     move-exception v0
 
-    .line 420
-    .local v0, "e":Ljava/lang/Exception;
     const-string v2, "SecKeyguardCircleEmergencyView"
 
     new-instance v3, Ljava/lang/StringBuilder;

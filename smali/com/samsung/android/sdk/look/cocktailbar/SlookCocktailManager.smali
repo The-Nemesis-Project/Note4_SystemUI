@@ -86,8 +86,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 307
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
@@ -99,20 +97,15 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 340
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
     new-instance v0, Lcom/samsung/android/sdk/look/Slook;
 
     invoke-direct {v0}, Lcom/samsung/android/sdk/look/Slook;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
-    .line 341
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -123,32 +116,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 342
     invoke-static {p1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->getInstance(Landroid/content/Context;)Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
-    .line 344
     :cond_0
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 318
     sget-object v4, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->sManagerCache:Ljava/util/WeakHashMap;
 
     monitor-enter v4
 
-    .line 319
     if-nez p0, :cond_0
 
-    .line 320
     :try_start_0
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -158,7 +144,6 @@
 
     throw v3
 
-    .line 337
     :catchall_0
     move-exception v3
 
@@ -168,14 +153,12 @@
 
     throw v3
 
-    .line 322
     :cond_0
     :try_start_1
     instance-of v3, p0, Landroid/content/ContextWrapper;
 
     if-eqz v3, :cond_1
 
-    .line 323
     move-object v0, p0
 
     check-cast v0, Landroid/content/ContextWrapper;
@@ -188,7 +171,6 @@
 
     if-nez v3, :cond_1
 
-    .line 324
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Base context is null."
@@ -197,7 +179,6 @@
 
     throw v3
 
-    .line 327
     :cond_1
     sget-object v3, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->sManagerCache:Ljava/util/WeakHashMap;
 
@@ -207,35 +188,23 @@
 
     check-cast v1, Ljava/lang/ref/WeakReference;
 
-    .line 328
-    .local v1, "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;>;"
     const/4 v2, 0x0
 
-    .line 329
-    .local v2, "result":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     if-eqz v1, :cond_2
 
-    .line 330
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    .end local v2    # "result":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     check-cast v2, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
 
-    .line 332
-    .restart local v2    # "result":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     :cond_2
     if-nez v2, :cond_3
 
-    .line 333
     new-instance v2, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
 
-    .end local v2    # "result":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     invoke-direct {v2, p0}, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;-><init>(Landroid/content/Context;)V
 
-    .line 334
-    .restart local v2    # "result":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;
     sget-object v3, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->sManagerCache:Ljava/util/WeakHashMap;
 
     new-instance v5, Ljava/lang/ref/WeakReference;
@@ -244,7 +213,6 @@
 
     invoke-virtual {v3, p0, v5}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 336
     :cond_3
     monitor-exit v4
     :try_end_1
@@ -257,11 +225,7 @@
 # virtual methods
 .method public closeCocktail(II)V
     .locals 2
-    .param p1, "cocktailId"    # I
-    .param p2, "category"    # I
 
-    .prologue
-    .line 423
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -272,22 +236,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 424
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->closeCocktail(II)V
 
-    .line 426
     :cond_0
     return-void
 .end method
 
 .method public getCocktailIds(Landroid/content/ComponentName;)[I
     .locals 2
-    .param p1, "provider"    # Landroid/content/ComponentName;
 
-    .prologue
-    .line 448
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -298,14 +257,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 449
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->getCocktailIds(Landroid/content/ComponentName;)[I
 
     move-result-object v0
 
-    .line 451
     :goto_0
     return-object v0
 
@@ -319,10 +276,7 @@
 
 .method public isEnabledCocktail(Landroid/content/ComponentName;)Z
     .locals 2
-    .param p1, "provider"    # Landroid/content/ComponentName;
 
-    .prologue
-    .line 461
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -333,14 +287,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 462
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->isEnabledCocktail(Landroid/content/ComponentName;)Z
 
     move-result v0
 
-    .line 464
     :goto_0
     return v0
 
@@ -352,11 +304,7 @@
 
 .method public notifyCocktailViewDataChanged(II)V
     .locals 2
-    .param p1, "cocktailId"    # I
-    .param p2, "viewId"    # I
 
-    .prologue
-    .line 436
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -367,23 +315,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 437
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->notifyCocktailViewDataChanged(II)V
 
-    .line 439
     :cond_0
     return-void
 .end method
 
 .method public partiallyUpdateCocktail(ILandroid/widget/RemoteViews;)V
     .locals 2
-    .param p1, "cocktailId"    # I
-    .param p2, "contentView"    # Landroid/widget/RemoteViews;
 
-    .prologue
-    .line 395
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -394,10 +336,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 396
     if-nez p2, :cond_0
 
-    .line 397
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "contentView is null."
@@ -406,24 +346,18 @@
 
     throw v0
 
-    .line 399
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->partiallyUpdateCocktail(ILandroid/widget/RemoteViews;)V
 
-    .line 401
     :cond_1
     return-void
 .end method
 
 .method public setCocktailBarStatus(ZZ)V
     .locals 2
-    .param p1, "shift"    # Z
-    .param p2, "transparent"    # Z
 
-    .prologue
-    .line 485
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -434,22 +368,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 486
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->setCocktailBarStatus(ZZ)V
 
-    .line 488
     :cond_0
     return-void
 .end method
 
 .method public setLongPressEnabled(Z)V
     .locals 2
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 473
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -460,22 +389,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 474
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->updateLongpressGesture(Z)V
 
-    .line 476
     :cond_0
     return-void
 .end method
 
 .method public setOnFeedUpdatedListener(Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnFeedUpdatedListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnFeedUpdatedListener;
 
-    .prologue
-    .line 606
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -486,34 +410,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 607
     if-eqz p1, :cond_2
 
-    .line 608
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mFeedsUpdatedListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
 
     if-nez v0, :cond_1
 
-    .line 609
     new-instance v0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
 
     invoke-direct {v0, p0, p1}, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;-><init>(Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnFeedUpdatedListener;)V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mFeedsUpdatedListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
 
-    .line 610
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     iget-object v1, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mFeedsUpdatedListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->registerOnFeedsUpdatedListener(Lcom/samsung/android/cocktailbar/CocktailBarManager$CocktailBarFeedsListener;)V
 
-    .line 619
     :cond_0
     :goto_0
     return-void
 
-    .line 612
     :cond_1
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mFeedsUpdatedListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
 
@@ -521,7 +439,6 @@
 
     goto :goto_0
 
-    .line 615
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
@@ -529,7 +446,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->unregisterOnFeedsUpdatedListener(Lcom/samsung/android/cocktailbar/CocktailBarManager$CocktailBarFeedsListener;)V
 
-    .line 616
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mFeedsUpdatedListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsListenerWrapper;
@@ -539,10 +455,7 @@
 
 .method public setOnStateChangeListener(Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnStateChangeListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnStateChangeListener;
 
-    .prologue
-    .line 521
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -553,34 +466,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 522
     if-eqz p1, :cond_2
 
-    .line 523
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mStateChangeListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
 
     if-nez v0, :cond_1
 
-    .line 524
     new-instance v0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
 
     invoke-direct {v0, p0, p1}, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;-><init>(Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$OnStateChangeListener;)V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mStateChangeListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
 
-    .line 525
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     iget-object v1, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mStateChangeListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->registerListener(Lcom/samsung/android/cocktailbar/CocktailBarManager$CocktailBarStateListener;)V
 
-    .line 534
     :cond_0
     :goto_0
     return-void
 
-    .line 527
     :cond_1
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mStateChangeListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
 
@@ -588,7 +495,6 @@
 
     goto :goto_0
 
-    .line 530
     :cond_2
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
@@ -596,7 +502,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->unregisterListener(Lcom/samsung/android/cocktailbar/CocktailBarManager$CocktailBarStateListener;)V
 
-    .line 531
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mStateChangeListenerWrapper:Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$StateChangeListenerWrapper;
@@ -606,10 +511,7 @@
 
 .method public showCocktail(I)V
     .locals 2
-    .param p1, "cocktailId"    # I
 
-    .prologue
-    .line 410
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -620,23 +522,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 411
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v0, p1}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->showCocktail(I)V
 
-    .line 413
     :cond_0
     return-void
 .end method
 
 .method public updateCocktail(ILcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$CocktailInfo;)V
     .locals 6
-    .param p1, "cocktailId"    # I
-    .param p2, "info"    # Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$CocktailInfo;
 
-    .prologue
-    .line 362
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x7
@@ -647,10 +543,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 363
     if-nez p2, :cond_0
 
-    .line 364
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "CocktailInfo is null."
@@ -659,7 +553,6 @@
 
     throw v0
 
-    .line 366
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
@@ -687,14 +580,12 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->updateCocktail(IIILandroid/widget/RemoteViews;Landroid/os/Bundle;)V
 
-    .line 369
     :cond_1
     return-void
 .end method
 
 .method public updateFeeds(ILjava/util/List;)V
     .locals 7
-    .param p1, "cocktailId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -705,9 +596,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 502
-    .local p2, "feedsInfoList":Ljava/util/List;, "Ljava/util/List<Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsInfo;>;"
     iget-object v4, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v5, 0x7
@@ -718,18 +606,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 503
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 504
-    .local v0, "cFeedsInfoList":Ljava/util/List;, "Ljava/util/List<Lcom/samsung/android/cocktailbar/FeedsInfo;>;"
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -743,8 +627,6 @@
 
     check-cast v2, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsInfo;
 
-    .line 505
-    .local v2, "fi":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsInfo;
     new-instance v4, Lcom/samsung/android/cocktailbar/FeedsInfo$Builder;
 
     iget-object v5, v2, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsInfo;->feedsText:Ljava/lang/CharSequence;
@@ -777,23 +659,15 @@
 
     move-result-object v1
 
-    .line 508
-    .local v1, "cfeedsInfo":Lcom/samsung/android/cocktailbar/FeedsInfo;
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 510
-    .end local v1    # "cfeedsInfo":Lcom/samsung/android/cocktailbar/FeedsInfo;
-    .end local v2    # "fi":Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager$FeedsInfo;
     :cond_0
     iget-object v4, p0, Lcom/samsung/android/sdk/look/cocktailbar/SlookCocktailManager;->mCocktailBarManager:Lcom/samsung/android/cocktailbar/CocktailBarManager;
 
     invoke-virtual {v4, p1, v0}, Lcom/samsung/android/cocktailbar/CocktailBarManager;->updateFeeds(ILjava/util/List;)V
 
-    .line 512
-    .end local v0    # "cFeedsInfoList":Ljava/util/List;, "Ljava/util/List<Lcom/samsung/android/cocktailbar/FeedsInfo;>;"
-    .end local v3    # "i$":Ljava/util/Iterator;
     :cond_1
     return-void
 .end method

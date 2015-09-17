@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 814
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/widget/RemoteViews$OnClickHandler;-><init>()V
@@ -33,13 +31,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/statusbar/BaseStatusBar$3;Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$3;
-    .param p1, "x1"    # Landroid/view/View;
-    .param p2, "x2"    # Landroid/app/PendingIntent;
-    .param p3, "x3"    # Landroid/content/Intent;
 
-    .prologue
-    .line 814
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/BaseStatusBar$3;->superOnClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
     move-result v0
@@ -49,12 +41,7 @@
 
 .method private superOnClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 881
     invoke-super {p0, p1, p2, p3}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
     move-result v0
@@ -66,17 +53,11 @@
 # virtual methods
 .method public onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 11
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 818
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 819
     const-string v0, "StatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -99,19 +80,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 821
     :cond_0
     new-instance v7, Landroid/content/Intent;
 
     invoke-direct {v7}, Landroid/content/Intent;-><init>()V
 
-    .line 822
-    .local v7, "intent":Landroid/content/Intent;
     invoke-virtual {p2}, Landroid/app/PendingIntent;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
 
-    .line 823
     const-string v0, "StatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -148,11 +125,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 824
     const/4 v9, 0x0
 
-    .line 825
-    .local v9, "isPhoneActivity":Z
     const-string v0, "com.android.server.telecom.ACTION_CALL_BACK_FROM_NOTIFICATION"
 
     invoke-virtual {v7}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -177,23 +151,18 @@
 
     if-eqz v0, :cond_4
 
-    .line 827
     :cond_1
     const/4 v9, 0x1
 
-    .line 831
     :goto_0
     invoke-virtual {p2}, Landroid/app/PendingIntent;->isActivity()Z
 
     move-result v8
 
-    .line 832
-    .local v8, "isActivity":Z
     if-nez v8, :cond_2
 
     if-eqz v9, :cond_5
 
-    .line 833
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -203,8 +172,6 @@
 
     move-result v2
 
-    .line 834
-    .local v2, "keyguardShowing":Z
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
@@ -221,8 +188,6 @@
 
     move-result v3
 
-    .line 836
-    .local v3, "afterKeyguardGone":Z
     iget-object v10, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     new-instance v0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;
@@ -245,7 +210,6 @@
 
     invoke-virtual {v10, v0, v3, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->dismissKeyguardThenExecute(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;ZZ)V
 
-    .line 872
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->isInstantDismiss()Z
@@ -258,25 +222,17 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->goToKeyguard()V
 
-    .line 873
     :cond_3
     const/4 v0, 0x1
 
-    .line 875
-    .end local v2    # "keyguardShowing":Z
-    .end local v3    # "afterKeyguardGone":Z
     :goto_1
     return v0
 
-    .line 829
-    .end local v8    # "isActivity":Z
     :cond_4
     const/4 v9, 0x0
 
     goto :goto_0
 
-    .line 875
-    .restart local v8    # "isActivity":Z
     :cond_5
     invoke-super {p0, p1, p2, p3}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 

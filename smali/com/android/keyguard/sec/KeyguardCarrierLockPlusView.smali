@@ -65,69 +65,53 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 137
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 138
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
-    .line 141
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 92
     const-string v1, "0000"
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mPhoneNumber:Ljava/lang/String;
 
-    .line 94
     const-string v1, "com.sec.android.CarrierLock.DISABLED"
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->CARRIER_LOCK_DISABLED:Ljava/lang/String;
 
-    .line 104
     new-instance v1, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$1;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$1;-><init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 115
     new-instance v1, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$2;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$2;-><init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
-    .line 130
     new-instance v1, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$3;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$3;-><init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 367
     new-instance v1, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$7;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$7;-><init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mHandler:Landroid/os/Handler;
 
-    .line 142
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
-    .line 144
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
@@ -136,25 +120,20 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 146
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 147
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "com.sec.android.CarrierLock.DISABLED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 148
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 149
     const-string v1, "phone"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -165,7 +144,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
-    .line 150
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
@@ -174,7 +152,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 151
     const-string v1, "gsm.operator.iso-country"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -183,16 +160,12 @@
 
     iput-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
 
-    .line 152
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -200,10 +173,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Lcom/android/keyguard/KeyguardSecurityCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     return-object v0
@@ -211,10 +181,7 @@
 
 .method static synthetic access$200(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Landroid/widget/Button;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     return-object v0
@@ -222,10 +189,7 @@
 
 .method static synthetic access$300(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMccInfo:Ljava/lang/String;
 
     return-object v0
@@ -233,11 +197,7 @@
 
 .method static synthetic access$302(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .prologue
-    .line 62
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMccInfo:Ljava/lang/String;
 
     return-object p1
@@ -245,11 +205,7 @@
 
 .method static synthetic access$400(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
-    .param p1, "x1"    # I
 
-    .prologue
-    .line 62
     invoke-direct {p0, p1}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->updateButtonVisibility(I)V
 
     return-void
@@ -257,10 +213,7 @@
 
 .method static synthetic access$500(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mPhoneNumber:Ljava/lang/String;
 
     return-object v0
@@ -268,10 +221,7 @@
 
 .method static synthetic access$600(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -279,10 +229,7 @@
 
 .method static synthetic access$700(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)Lcom/android/internal/widget/LockPatternUtils;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
-    .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     return-object v0
@@ -290,11 +237,7 @@
 
 .method static synthetic access$800(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
-    .param p1, "x1"    # I
 
-    .prologue
-    .line 62
     invoke-direct {p0, p1}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->handleTimeout(I)V
 
     return-void
@@ -302,13 +245,9 @@
 
 .method private handleTimeout(I)V
     .locals 2
-    .param p1, "seq"    # I
 
-    .prologue
-    .line 379
     monitor-enter p0
 
-    .line 380
     :try_start_0
     const-string v0, "KeyguardCarrierLockPlusView"
 
@@ -316,24 +255,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 381
     iget v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mWakelockSequence:I
 
     if-ne p1, v0, :cond_0
 
-    .line 382
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->setKeepScreenOn(Z)V
 
-    .line 384
     :cond_0
     monitor-exit p0
 
-    .line 385
     return-void
 
-    .line 384
     :catchall_0
     move-exception v0
 
@@ -347,8 +281,6 @@
 .method private setCarrierLockPlusInfo()V
     .locals 4
 
-    .prologue
-    .line 317
     sget v2, Lcom/android/keyguard/R$id;->carrierlockplus_main_text:I
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -359,12 +291,10 @@
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMaintext:Landroid/widget/TextView;
 
-    .line 318
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMaintext:Landroid/widget/TextView;
 
     if-eqz v2, :cond_0
 
-    .line 319
     const-string v2, "kr"
 
     iget-object v3, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
@@ -375,21 +305,18 @@
 
     if-eqz v2, :cond_3
 
-    .line 320
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMaintext:Landroid/widget/TextView;
 
     sget v3, Lcom/android/keyguard/R$string;->skt_lockscreen_findlostphone_kor:I
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
-    .line 327
     :cond_0
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->parsingCarrierLockPlusMsg()V
 
-    .line 328
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->isCarrierPasswordSaved()Z
@@ -410,30 +337,24 @@
 
     if-eqz v2, :cond_1
 
-    .line 329
     const-string v2, "KeyguardCarrierLockPlusView"
 
     const-string v3, "HostView CarrierPassword NOT exist!!!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 330
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "com.sec.android.FindingLostPhonePlus.SAVELOCK"
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 331
-    .local v0, "IntentForDM":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MASTER_CLEAR"
 
     invoke-virtual {v2, v0, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 334
-    .end local v0    # "IntentForDM":Landroid/content/Intent;
     :cond_1
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -443,8 +364,6 @@
 
     move-result-object v1
 
-    .line 335
-    .local v1, "OwnerInfo":Ljava/lang/String;
     sget v2, Lcom/android/keyguard/R$id;->carrierlockplus_owner_info:I
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -455,22 +374,17 @@
 
     iput-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mOwnerInfo:Landroid/widget/TextView;
 
-    .line 336
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mOwnerInfo:Landroid/widget/TextView;
 
     if-eqz v2, :cond_2
 
-    .line 337
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mOwnerInfo:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 353
     :cond_2
     return-void
 
-    .line 321
-    .end local v1    # "OwnerInfo":Ljava/lang/String;
     :cond_3
     const-string v2, "cn"
 
@@ -482,7 +396,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 322
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMaintext:Landroid/widget/TextView;
 
     sget v3, Lcom/android/keyguard/R$string;->skt_lockscreen_findlostphone_cn:I
@@ -491,7 +404,6 @@
 
     goto :goto_0
 
-    .line 324
     :cond_4
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mMaintext:Landroid/widget/TextView;
 
@@ -504,19 +416,15 @@
 
 .method private updateButtonVisibility(I)V
     .locals 4
-    .param p1, "phoneState"    # I
 
-    .prologue
     const/16 v3, 0x8
 
     const/4 v2, 0x0
 
-    .line 388
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_2
 
-    .line 389
     const-string v0, "kr"
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
@@ -527,14 +435,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 390
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_returntocall_kor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 396
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -544,21 +450,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 402
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 403
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 425
     :goto_1
     return-void
 
-    .line 391
     :cond_0
     const-string v0, "cn"
 
@@ -570,7 +472,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 392
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_returntocall_cn:I
@@ -579,7 +480,6 @@
 
     goto :goto_0
 
-    .line 394
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -589,7 +489,6 @@
 
     goto :goto_0
 
-    .line 405
     :cond_2
     const-string v0, "kr"
 
@@ -601,14 +500,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 406
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_call_owner_kor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 413
     :goto_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -618,19 +515,16 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 422
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 423
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 407
     :cond_3
     const-string v0, "cn"
 
@@ -642,7 +536,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 408
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_call_owner_cn:I
@@ -651,7 +544,6 @@
 
     goto :goto_2
 
-    .line 410
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -667,8 +559,6 @@
 .method public getCallback()Lcom/android/keyguard/KeyguardSecurityCallback;
     .locals 1
 
-    .prologue
-    .line 288
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     return-object v0
@@ -676,10 +566,7 @@
 
 .method public hideBouncer(I)V
     .locals 3
-    .param p1, "duration"    # I
 
-    .prologue
-    .line 298
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEcaView:Landroid/view/View;
@@ -688,15 +575,12 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->hideBouncer(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
 
-    .line 299
     return-void
 .end method
 
 .method public needsInput()Z
     .locals 1
 
-    .prologue
-    .line 258
     const/4 v0, 0x0
 
     return v0
@@ -705,9 +589,7 @@
 .method public needsShowClockandNotifications()Z
     .locals 1
 
-    .prologue
-    .line 313
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -715,11 +597,8 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .prologue
-    .line 273
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 274
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -730,18 +609,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 275
     return-void
 .end method
 
 .method protected onDetachedFromWindow()V
     .locals 3
 
-    .prologue
-    .line 279
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 280
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -752,12 +627,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 281
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
     if-eqz v0, :cond_0
 
-    .line 282
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
@@ -766,7 +639,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 284
     :cond_0
     return-void
 .end method
@@ -774,28 +646,22 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    .prologue
-    .line 169
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 170
     const-string v0, "KeyguardCarrierLockPlusView"
 
     const-string v1, "onFinishInflate()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     invoke-direct {p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->setCarrierLockPlusInfo()V
 
-    .line 174
     new-instance v0, Lcom/android/keyguard/KeyguardMessageArea$Helper;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardMessageArea$Helper;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    .line 175
     sget v0, Lcom/android/keyguard/R$id;->keyguard_selector_fade_container:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -804,7 +670,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEcaView:Landroid/view/View;
 
-    .line 176
     sget v0, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -813,19 +678,16 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mKeyguardBouncerFrameView:Landroid/view/View;
 
-    .line 177
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mKeyguardBouncerFrameView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 178
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mKeyguardBouncerFrameView:Landroid/view/View;
 
     const v1, 0x66ffffff
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 179
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mKeyguardBouncerFrameView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -834,7 +696,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mBouncerFrame:Landroid/graphics/drawable/Drawable;
 
-    .line 181
     :cond_0
     sget v0, Lcom/android/keyguard/R$id;->carrierlockplus_call_button:I
 
@@ -846,7 +707,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
-    .line 182
     sget v0, Lcom/android/keyguard/R$id;->carrierlockplus_unlock_button:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -857,7 +717,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
-    .line 183
     sget v0, Lcom/android/keyguard/R$id;->carrierlockplus_emergency_button:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->findViewById(I)Landroid/view/View;
@@ -868,7 +727,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
-    .line 185
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
     if-eqz v0, :cond_1
@@ -877,7 +735,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 186
     const-string v0, "kr"
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
@@ -888,14 +745,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 187
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_call_owner_kor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 193
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mtelephony:Landroid/telephony/TelephonyManager;
 
@@ -905,7 +760,6 @@
 
     if-nez v0, :cond_6
 
-    .line 194
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$4;
@@ -914,14 +768,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 208
     :cond_1
     :goto_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
     if-eqz v0, :cond_2
 
-    .line 209
     const-string v0, "kr"
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
@@ -932,14 +784,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_unlock_kor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 216
     :goto_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
@@ -949,13 +799,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 226
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
     if-eqz v0, :cond_3
 
-    .line 227
     const-string v0, "kr"
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->countryCode:Ljava/lang/String;
@@ -966,14 +814,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 228
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_emergencycall_kor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 234
     :goto_3
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
@@ -983,11 +829,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 246
     :cond_3
     return-void
 
-    .line 188
     :cond_4
     const-string v0, "cn"
 
@@ -999,7 +843,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 189
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_call_owner_cn:I
@@ -1008,7 +851,6 @@
 
     goto :goto_0
 
-    .line 191
     :cond_5
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -1018,7 +860,6 @@
 
     goto :goto_0
 
-    .line 204
     :cond_6
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallButton:Landroid/widget/Button;
 
@@ -1028,7 +869,6 @@
 
     goto :goto_1
 
-    .line 211
     :cond_7
     const-string v0, "cn"
 
@@ -1040,7 +880,6 @@
 
     if-eqz v0, :cond_8
 
-    .line 212
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_unlock_cn:I
@@ -1049,7 +888,6 @@
 
     goto :goto_2
 
-    .line 214
     :cond_8
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mUnlockButton:Landroid/widget/Button;
 
@@ -1059,7 +897,6 @@
 
     goto :goto_2
 
-    .line 229
     :cond_9
     const-string v0, "cn"
 
@@ -1071,7 +908,6 @@
 
     if-eqz v0, :cond_a
 
-    .line 230
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
     sget v1, Lcom/android/keyguard/R$string;->skt_lockscreen_emergencycall_cn:I
@@ -1080,7 +916,6 @@
 
     goto :goto_3
 
-    .line 232
     :cond_a
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEmergencyButton:Landroid/widget/Button;
 
@@ -1094,42 +929,31 @@
 .method public onPause()V
     .locals 1
 
-    .prologue
-    .line 267
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->getKeepScreenOn()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 268
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->setKeepScreenOn(Z)V
 
-    .line 269
     :cond_0
     return-void
 .end method
 
 .method public onResume(I)V
     .locals 0
-    .param p1, "reason"    # I
 
-    .prologue
-    .line 263
     return-void
 .end method
 
 .method public pokeWakelock(I)V
     .locals 5
-    .param p1, "holdMs"    # I
 
-    .prologue
-    .line 357
     monitor-enter p0
 
-    .line 358
     :try_start_0
     const-string v1, "KeyguardCarrierLockPlusView"
 
@@ -1159,26 +983,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 359
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->setKeepScreenOn(Z)V
 
-    .line 360
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 361
     iget v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mWakelockSequence:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mWakelockSequence:I
 
-    .line 362
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x1
@@ -1191,22 +1011,16 @@
 
     move-result-object v0
 
-    .line 363
-    .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mHandler:Landroid/os/Handler;
 
     int-to-long v2, p1
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 364
     monitor-exit p0
 
-    .line 365
     return-void
 
-    .line 364
-    .end local v0    # "msg":Landroid/os/Message;
     :catchall_0
     move-exception v1
 
@@ -1220,62 +1034,45 @@
 .method public reset()V
     .locals 0
 
-    .prologue
-    .line 250
     return-void
 .end method
 
 .method public resetState()V
     .locals 1
 
-    .prologue
-    .line 163
     invoke-virtual {p0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->getKeepScreenOn()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 164
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->setKeepScreenOn(Z)V
 
-    .line 165
     :cond_0
     return-void
 .end method
 
 .method public setKeyguardCallback(Lcom/android/keyguard/KeyguardSecurityCallback;)V
     .locals 0
-    .param p1, "callback"    # Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .prologue
-    .line 155
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .line 156
     return-void
 .end method
 
 .method public setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
     .locals 0
-    .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
 
-    .prologue
-    .line 159
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 160
     return-void
 .end method
 
 .method public showBouncer(I)V
     .locals 3
-    .param p1, "duration"    # I
 
-    .prologue
-    .line 293
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mEcaView:Landroid/view/View;
@@ -1284,32 +1081,24 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->showBouncerWithScaleAnimation(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/view/View;I)V
 
-    .line 294
     return-void
 .end method
 
 .method public showUsabilityHint()V
     .locals 0
 
-    .prologue
-    .line 254
     return-void
 .end method
 
 .method public startAppearAnimation()V
     .locals 0
 
-    .prologue
-    .line 304
     return-void
 .end method
 
 .method public startDisappearAnimation(Ljava/lang/Runnable;)Z
     .locals 1
-    .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
-    .prologue
-    .line 308
     const/4 v0, 0x1
 
     return v0

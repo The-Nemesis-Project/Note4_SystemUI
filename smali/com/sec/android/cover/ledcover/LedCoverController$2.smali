@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/ledcover/LedCoverController;)V
     .locals 0
 
-    .prologue
-    .line 130
     iput-object p1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$2;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onPowerConnectionUpdate(Z)V
     .locals 2
-    .param p1, "connected"    # Z
 
-    .prologue
-    .line 136
     iget-object v1, p0, Lcom/sec/android/cover/ledcover/LedCoverController$2;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     if-eqz p1, :cond_0
@@ -49,17 +44,14 @@
     # setter for: Lcom/sec/android/cover/ledcover/LedCoverController;->isBatteryCharging:Z
     invoke-static {v1, v0}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$402(Lcom/sec/android/cover/ledcover/LedCoverController;Z)Z
 
-    .line 137
     iget-object v0, p0, Lcom/sec/android/cover/ledcover/LedCoverController$2;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/ledcover/LedCoverController;->sendBatteryChargingInformation(Landroid/content/Intent;)V
 
-    .line 138
     return-void
 
-    .line 136
     :cond_0
     const/4 v0, 0x0
 
@@ -68,15 +60,11 @@
 
 .method public onRemoteViewUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 1
-    .param p1, "remoteViewInfo"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    .prologue
-    .line 132
     iget-object v0, p0, Lcom/sec/android/cover/ledcover/LedCoverController$2;->this$0:Lcom/sec/android/cover/ledcover/LedCoverController;
 
     # invokes: Lcom/sec/android/cover/ledcover/LedCoverController;->updateRemoteView(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     invoke-static {v0, p1}, Lcom/sec/android/cover/ledcover/LedCoverController;->access$300(Lcom/sec/android/cover/ledcover/LedCoverController;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
 
-    .line 133
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/DoNotDisturb;)V
     .locals 0
 
-    .prologue
-    .line 226
     iput-object p1, p0, Lcom/android/systemui/statusbar/DoNotDisturb$1;->this$0:Lcom/android/systemui/statusbar/DoNotDisturb;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 229
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 230
-    .local v0, "intentAction":Ljava/lang/String;
     const-string v1, "StatusBar-DoNotDistrub"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,7 +66,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
     iget-object v1, p0, Lcom/android/systemui/statusbar/DoNotDisturb$1;->this$0:Lcom/android/systemui/statusbar/DoNotDisturb;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/DoNotDisturb$1;->this$0:Lcom/android/systemui/statusbar/DoNotDisturb;
@@ -93,11 +84,9 @@
     # setter for: Lcom/android/systemui/statusbar/DoNotDisturb;->isPrayModeOn:Z
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/DoNotDisturb;->access$002(Lcom/android/systemui/statusbar/DoNotDisturb;Z)Z
 
-    .line 232
     iget-object v1, p0, Lcom/android/systemui/statusbar/DoNotDisturb$1;->this$0:Lcom/android/systemui/statusbar/DoNotDisturb;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/DoNotDisturb;->updateDoNotDisturbStatus()V
 
-    .line 233
     return-void
 .end method

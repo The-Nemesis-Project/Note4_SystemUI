@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;Landroid/content/Intent;)V
     .locals 0
 
-    .prologue
-    .line 518
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$1;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     iput-object p2, p0, Lcom/android/systemui/power/PowerNotificationWarnings$1;->val$dialogIntent:Landroid/content/Intent;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 521
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$1;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # getter for: Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -60,11 +54,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 522
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$1;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-virtual {v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryWarning()V
 
-    .line 523
     return-void
 .end method

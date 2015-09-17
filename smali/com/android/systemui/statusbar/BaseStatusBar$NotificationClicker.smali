@@ -30,57 +30,39 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;Landroid/app/PendingIntent;Ljava/lang/String;Z)V
     .locals 0
-    .param p2, "intent"    # Landroid/app/PendingIntent;
-    .param p3, "notificationKey"    # Ljava/lang/String;
-    .param p4, "forHun"    # Z
 
-    .prologue
-    .line 2748
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2749
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
-    .line 2750
     iput-object p3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mNotificationKey:Ljava/lang/String;
 
-    .line 2751
     iput-boolean p4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIsHeadsUp:Z
 
-    .line 2752
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Z
+.method static synthetic access$1500(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
-    .prologue
-    .line 2743
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIsHeadsUp:Z
 
     return v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Landroid/app/PendingIntent;
+.method static synthetic access$1600(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Landroid/app/PendingIntent;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
-    .prologue
-    .line 2743
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Ljava/lang/String;
+.method static synthetic access$1700(Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
-    .prologue
-    .line 2743
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mNotificationKey:Ljava/lang/String;
 
     return-object v0
@@ -90,14 +72,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 9
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
     const/4 v5, 0x0
 
     const/4 v4, 0x1
 
-    .line 2755
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v6, v6, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -106,8 +85,6 @@
 
     move-result v2
 
-    .line 2756
-    .local v2, "keyguardShowing":Z
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
     if-eqz v6, :cond_2
@@ -142,8 +119,6 @@
 
     move v0, v4
 
-    .line 2760
-    .local v0, "afterKeyguardGone":Z
     :goto_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -157,7 +132,6 @@
 
     invoke-virtual {v6}, Lcom/android/systemui/statusbar/BaseStatusBar;->goToKeyguard()V
 
-    .line 2763
     :cond_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -167,15 +141,10 @@
 
     move v3, v4
 
-    .line 2764
-    .local v3, "onKeyguard":Z
     :goto_1
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
-    # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v6}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$1500(Lcom/android/systemui/statusbar/BaseStatusBar;)Lcom/android/internal/widget/LockPatternUtils;
-
-    move-result-object v6
+    iget-object v6, v6, Lcom/android/systemui/statusbar/BaseStatusBar;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v6}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
 
@@ -185,21 +154,17 @@
 
     move v1, v4
 
-    .line 2765
-    .local v1, "doNotRemoveOverFlow":Z
     :goto_2
     if-eqz v3, :cond_1
 
     if-eqz v1, :cond_1
 
-    .line 2766
     iget-object v4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/BaseStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->disableClockAndClear()V
 
-    .line 2768
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -215,27 +180,18 @@
 
     invoke-virtual {v4, v5, v0, v6}, Lcom/android/systemui/statusbar/BaseStatusBar;->dismissKeyguardThenExecute(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;ZZ)V
 
-    .line 2825
     return-void
 
-    .end local v0    # "afterKeyguardGone":Z
-    .end local v1    # "doNotRemoveOverFlow":Z
-    .end local v3    # "onKeyguard":Z
     :cond_2
     move v0, v5
 
-    .line 2756
     goto :goto_0
 
-    .restart local v0    # "afterKeyguardGone":Z
     :cond_3
     move v3, v5
 
-    .line 2763
     goto :goto_1
 
-    .line 2764
-    .restart local v3    # "onKeyguard":Z
     :cond_4
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 

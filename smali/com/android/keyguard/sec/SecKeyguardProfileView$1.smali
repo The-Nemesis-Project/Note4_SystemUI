@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardProfileView;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .prologue
-    .line 69
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,26 +33,20 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 72
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 84
     :goto_0
     return-void
 
-    .line 74
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
     # invokes: Lcom/android/keyguard/sec/SecKeyguardProfileView;->updateProfile()V
     invoke-static {v0}, Lcom/android/keyguard/sec/SecKeyguardProfileView;->access$000(Lcom/android/keyguard/sec/SecKeyguardProfileView;)V
 
-    .line 76
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
@@ -64,7 +55,6 @@
 
     goto :goto_0
 
-    .line 79
     :pswitch_2
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardProfileView$1;->this$0:Lcom/android/keyguard/sec/SecKeyguardProfileView;
 
@@ -73,7 +63,6 @@
 
     goto :goto_0
 
-    .line 72
     nop
 
     :pswitch_data_0

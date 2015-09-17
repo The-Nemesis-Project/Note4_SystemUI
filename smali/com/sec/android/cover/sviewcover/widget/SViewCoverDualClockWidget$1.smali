@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
     .locals 0
 
-    .prologue
-    .line 74
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;-><init>()V
@@ -36,16 +34,13 @@
 .method public onConfigurationChanged()V
     .locals 4
 
-    .prologue
     const/16 v2, 0x12c2
 
-    .line 89
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 91
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->mClockHandler:Landroid/os/Handler;
@@ -59,7 +54,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->mClockHandler:Landroid/os/Handler;
@@ -69,7 +63,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 93
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
@@ -93,16 +86,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 95
     return-void
 .end method
 
 .method public onContentChanged(Landroid/net/Uri;)V
     .locals 3
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 106
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -115,7 +104,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
@@ -131,13 +119,11 @@
     # setter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->mIs24HTime:Z
     invoke-static {v0, v1}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$302(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;Z)Z
 
-    .line 108
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 111
     :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -151,7 +137,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 112
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$400()Ljava/lang/String;
 
@@ -161,7 +146,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->mContext:Landroid/content/Context;
@@ -177,7 +161,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 116
     :cond_1
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -191,7 +174,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 117
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$400()Ljava/lang/String;
 
@@ -201,7 +183,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->mContext:Landroid/content/Context;
@@ -217,7 +198,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 120
     :cond_2
     return-void
 .end method
@@ -225,85 +205,64 @@
 .method public onDateFormatChanged()V
     .locals 1
 
-    .prologue
-    .line 85
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 86
     return-void
 .end method
 
 .method public onHomeCityChanged()V
     .locals 1
 
-    .prologue
-    .line 102
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 103
     return-void
 .end method
 
 .method public onLocaleChanged()V
     .locals 1
 
-    .prologue
-    .line 123
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->refreshClock()V
 
-    .line 124
     return-void
 .end method
 
 .method public onThemeFontChanged(Ljava/lang/String;)V
     .locals 1
-    .param p1, "fontPath"    # Ljava/lang/String;
 
-    .prologue
-    .line 77
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onThemeFontChanged(Ljava/lang/String;)V
     invoke-static {v0, p1}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$000(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;Ljava/lang/String;)V
 
-    .line 78
     return-void
 .end method
 
 .method public onTimeChanged()V
     .locals 1
 
-    .prologue
-    .line 81
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 82
     return-void
 .end method
 
 .method public onUserSwitched(II)V
     .locals 1
-    .param p1, "newUserId"    # I
-    .param p2, "oldUserId"    # I
 
-    .prologue
-    .line 98
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->onTimeChanged()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;->access$100(Lcom/sec/android/cover/sviewcover/widget/SViewCoverDualClockWidget;)V
 
-    .line 99
     return-void
 .end method

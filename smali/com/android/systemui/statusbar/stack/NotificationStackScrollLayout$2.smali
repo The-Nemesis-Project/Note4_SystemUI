@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
     .locals 0
 
-    .prologue
-    .line 332
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$2;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onLastChildYTranslationChanged(F)V
     .locals 1
-    .param p1, "f"    # F
 
-    .prologue
-    .line 335
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$2;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     # getter for: Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mLastChildYTranslation:F
@@ -53,13 +48,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 336
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$2;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     # setter for: Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mLastChildYTranslation:F
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->access$202(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;F)F
 
-    .line 338
     :cond_0
     return-void
 .end method

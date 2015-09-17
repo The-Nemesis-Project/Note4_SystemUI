@@ -29,26 +29,17 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "info"    # Ljava/lang/Object;
 
-    .prologue
-    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 158
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
-    .line 159
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/Object;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$1;
 
-    .prologue
-    .line 147
     invoke-direct {p0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;-><init>(Ljava/lang/Object;)V
 
     return-void
@@ -59,8 +50,6 @@
 .method public getCurrent()F
     .locals 1
 
-    .prologue
-    .line 162
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat$RangeInfo;->getCurrent(Ljava/lang/Object;)F
@@ -73,8 +62,6 @@
 .method public getMax()F
     .locals 1
 
-    .prologue
-    .line 166
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat$RangeInfo;->getMax(Ljava/lang/Object;)F
@@ -87,8 +74,6 @@
 .method public getMin()F
     .locals 1
 
-    .prologue
-    .line 170
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat$RangeInfo;->getMin(Ljava/lang/Object;)F
@@ -101,8 +86,6 @@
 .method public getType()I
     .locals 1
 
-    .prologue
-    .line 174
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat$RangeInfo;->getType(Ljava/lang/Object;)I

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/MSimKeyguardSimPukView;)V
     .locals 0
 
-    .prologue
-    .line 166
     iput-object p1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,32 +36,41 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 169
-    iget-object v0, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
 
     iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
 
-    # invokes: Lcom/android/keyguard/MSimKeyguardSimPukView;->getSimPukRetry()I
-    invoke-static {v1}, Lcom/android/keyguard/MSimKeyguardSimPukView;->access$400(Lcom/android/keyguard/MSimKeyguardSimPukView;)I
+    iget-object v1, v1, Lcom/android/keyguard/MSimKeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    move-result v1
+    if-nez v1, :cond_0
 
-    # setter for: Lcom/android/keyguard/MSimKeyguardSimPukView;->mRemainingCount:I
-    invoke-static {v0, v1}, Lcom/android/keyguard/MSimKeyguardSimPukView;->access$302(Lcom/android/keyguard/MSimKeyguardSimPukView;I)I
-
-    .line 170
-    iget-object v0, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/MSimKeyguardSimPukView;->doHapticKeyClick()V
-
-    .line 171
-    iget-object v0, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/MSimKeyguardSimPukView;->verifyPasswordAndUnlock()V
-
-    .line 172
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
+
+    iget-object v1, v1, Lcom/android/keyguard/MSimKeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    invoke-interface {v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "com.android.phone.EmergencyDialer.DIAL"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const/high16 v1, 0x10800000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    iget-object v1, p0, Lcom/android/keyguard/MSimKeyguardSimPukView$1;->this$0:Lcom/android/keyguard/MSimKeyguardSimPukView;
+
+    # getter for: Lcom/android/keyguard/MSimKeyguardSimPukView;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/keyguard/MSimKeyguardSimPukView;->access$000(Lcom/android/keyguard/MSimKeyguardSimPukView;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
 .end method

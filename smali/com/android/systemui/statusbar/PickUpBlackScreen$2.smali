@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/PickUpBlackScreen;)V
     .locals 0
 
-    .prologue
-    .line 99
     iput-object p1, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,25 +33,20 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/16 v2, 0x8
 
     const/4 v4, 0x3
 
-    .line 101
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 133
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 103
     :pswitch_1
     const-string v0, "STATUSBAR-PickUpBlackScreen"
 
@@ -61,7 +54,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpBlackScreen;->mVibrator:Landroid/os/SystemVibrator;
@@ -89,7 +81,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/SystemVibrator;->vibrateImmVibe([BI)V
 
-    .line 106
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpBlackScreen;->mHandler:Landroid/os/Handler;
@@ -103,7 +94,6 @@
 
     goto :goto_0
 
-    .line 109
     :pswitch_2
     const-string v0, "STATUSBAR-PickUpBlackScreen"
 
@@ -111,13 +101,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # invokes: Lcom/android/systemui/statusbar/PickUpBlackScreen;->sound()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/PickUpBlackScreen;->access$500(Lcom/android/systemui/statusbar/PickUpBlackScreen;)V
 
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpBlackScreen;->mHandler:Landroid/os/Handler;
@@ -133,7 +121,6 @@
 
     goto :goto_0
 
-    .line 114
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
@@ -144,7 +131,6 @@
 
     goto :goto_0
 
-    .line 117
     :pswitch_4
     const-string v0, "STATUSBAR-PickUpBlackScreen"
 
@@ -152,19 +138,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/PickUpBlackScreen;->setResult(I)V
 
-    .line 119
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/PickUpBlackScreen;->finish()V
 
     goto :goto_0
 
-    .line 122
     :pswitch_5
     const-string v0, "STATUSBAR-PickUpBlackScreen"
 
@@ -172,7 +155,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 123
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpBlackScreen;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -186,7 +168,6 @@
 
     if-nez v0, :cond_0
 
-    .line 124
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     # getter for: Lcom/android/systemui/statusbar/PickUpBlackScreen;->mPhonePutDown:Landroid/widget/FrameLayout;
@@ -198,7 +179,6 @@
 
     goto :goto_0
 
-    .line 128
     :pswitch_6
     const-string v0, "STATUSBAR-PickUpBlackScreen"
 
@@ -206,19 +186,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/PickUpBlackScreen;->setResult(I)V
 
-    .line 130
     iget-object v0, p0, Lcom/android/systemui/statusbar/PickUpBlackScreen$2;->this$0:Lcom/android/systemui/statusbar/PickUpBlackScreen;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/PickUpBlackScreen;->finish()V
 
     goto/16 :goto_0
 
-    .line 101
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1

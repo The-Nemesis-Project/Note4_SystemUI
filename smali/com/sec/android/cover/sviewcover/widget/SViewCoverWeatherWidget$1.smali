@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;)V
     .locals 0
 
-    .prologue
-    .line 71
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 74
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 75
-    .local v0, "action":Ljava/lang/String;
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$000()Ljava/lang/String;
 
@@ -71,7 +63,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
 
     # getter for: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->ACTION_SEC_CHANGE_SETTING:Ljava/lang/String;
@@ -124,20 +115,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 80
     :cond_0
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->handleUpdateWeatherWidget(Landroid/content/Context;Landroid/content/Intent;)V
     invoke-static {v1, p1, p2}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$500(Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 81
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget$1;->this$0:Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;
 
     # invokes: Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->updateWeatherWidgetVisibility()V
     invoke-static {v1}, Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;->access$600(Lcom/sec/android/cover/sviewcover/widget/SViewCoverWeatherWidget;)V
 
-    .line 83
     :cond_1
     return-void
 .end method

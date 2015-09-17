@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;)V
     .locals 0
 
-    .prologue
-    .line 340
     iput-object p1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$7;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
-    .line 344
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$7;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mLiveviewAttributionView:Landroid/view/View;
@@ -64,7 +59,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 345
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$7;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # getter for: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->mContext:Landroid/content/Context;
@@ -82,8 +76,6 @@
 
     move-result-object v0
 
-    .line 348
-    .local v0, "locationUrl":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
@@ -92,14 +84,11 @@
 
     if-nez v1, :cond_0
 
-    .line 349
     iget-object v1, p0, Lcom/android/keyguard/sec/rich/SecAttributionInfoView$7;->this$0:Lcom/android/keyguard/sec/rich/SecAttributionInfoView;
 
     # invokes: Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->launchBrowser(Ljava/lang/String;)V
     invoke-static {v1, v0}, Lcom/android/keyguard/sec/rich/SecAttributionInfoView;->access$800(Lcom/android/keyguard/sec/rich/SecAttributionInfoView;Ljava/lang/String;)V
 
-    .line 352
-    .end local v0    # "locationUrl":Ljava/lang/String;
     :cond_0
     return-void
 .end method

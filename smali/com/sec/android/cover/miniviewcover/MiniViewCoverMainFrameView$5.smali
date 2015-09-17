@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;)V
     .locals 0
 
-    .prologue
-    .line 675
     iput-object p1, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$5;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 678
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$5;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     # invokes: Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->checkCharging()Z
@@ -50,12 +46,10 @@
 
     if-nez v0, :cond_0
 
-    .line 679
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$5;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;->moveToDefaultPage()V
 
-    .line 681
     :cond_0
     iget-object v0, p0, Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView$5;->this$0:Lcom/sec/android/cover/miniviewcover/MiniViewCoverMainFrameView;
 
@@ -68,6 +62,5 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/miniviewcover/MiniViewCoverPageView;->setEnableTouchEvent(Z)V
 
-    .line 682
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;)V
     .locals 0
 
-    .prologue
-    .line 350
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 353
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 361
     :goto_0
     return-void
 
-    .line 355
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 353
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewController;)V
     .locals 0
 
-    .prologue
-    .line 357
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$5;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,23 +33,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "cxt"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 360
     const-string v0, "KeyguardEffectViewController"
 
     const-string v1, "*** mCurrentVoiceCallChnageReceiver - onReceive ***"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewController$5;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewController;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewController;->update()V
 
-    .line 362
     const-string v0, "KeyguardEffectViewController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,6 +70,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 363
     return-void
 .end method

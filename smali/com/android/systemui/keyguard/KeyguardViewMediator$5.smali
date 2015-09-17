@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Looper;
-    .param p3, "x1"    # Landroid/os/Handler$Callback;
-    .param p4, "x2"    # Z
 
-    .prologue
-    .line 1856
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
@@ -38,24 +33,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/4 v4, 0x0
 
     const/4 v3, 0x1
 
-    .line 1859
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1927
     :goto_0
     :pswitch_0
     return-void
 
-    .line 1861
     :pswitch_1
     iget-object v3, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -68,7 +58,6 @@
 
     goto :goto_0
 
-    .line 1864
     :pswitch_2
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -77,7 +66,6 @@
 
     goto :goto_0
 
-    .line 1867
     :pswitch_3
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -86,7 +74,6 @@
 
     goto :goto_0
 
-    .line 1870
     :pswitch_4
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -95,7 +82,6 @@
 
     goto :goto_0
 
-    .line 1873
     :pswitch_5
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -104,7 +90,6 @@
 
     goto :goto_0
 
-    .line 1876
     :pswitch_6
     iget-object v3, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -117,7 +102,6 @@
 
     goto :goto_0
 
-    .line 1879
     :pswitch_7
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -148,7 +132,6 @@
 
     goto :goto_2
 
-    .line 1882
     :pswitch_8
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -157,7 +140,6 @@
 
     goto :goto_0
 
-    .line 1885
     :pswitch_9
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -165,7 +147,6 @@
 
     goto :goto_0
 
-    .line 1888
     :pswitch_a
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -184,13 +165,11 @@
 
     goto :goto_3
 
-    .line 1891
     :pswitch_b
     iget-object v3, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     monitor-enter v3
 
-    .line 1892
     :try_start_0
     iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -199,9 +178,8 @@
     check-cast v2, Landroid/os/Bundle;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->doKeyguardLocked(Landroid/os/Bundle;)V
-    invoke-static {v4, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$1000(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/os/Bundle;)V
+    invoke-static {v4, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$300(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/os/Bundle;)V
 
-    .line 1893
     monitor-exit v3
 
     goto :goto_0
@@ -215,7 +193,6 @@
 
     throw v2
 
-    .line 1896
     :pswitch_c
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -223,14 +200,11 @@
 
     goto :goto_0
 
-    .line 1899
     :pswitch_d
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;
 
-    .line 1900
-    .local v1, "params":Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     iget-wide v4, v1, Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;->startTime:J
@@ -242,8 +216,6 @@
 
     goto :goto_0
 
-    .line 1903
-    .end local v1    # "params":Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;
     :pswitch_e
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -252,7 +224,6 @@
 
     goto/16 :goto_0
 
-    .line 1906
     :pswitch_f
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -264,7 +235,6 @@
 
     goto/16 :goto_0
 
-    .line 1909
     :pswitch_10
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -276,7 +246,6 @@
 
     goto/16 :goto_0
 
-    .line 1912
     :pswitch_11
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -288,14 +257,11 @@
 
     goto/16 :goto_0
 
-    .line 1915
     :pswitch_12
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 1916
-    .local v0, "b":Landroid/os/Bundle;
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     # invokes: Lcom/android/systemui/keyguard/KeyguardViewMediator;->handleUpdateRSSI(Landroid/os/Bundle;)V
@@ -303,8 +269,6 @@
 
     goto/16 :goto_0
 
-    .line 1919
-    .end local v0    # "b":Landroid/os/Bundle;
     :pswitch_13
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -312,7 +276,6 @@
 
     goto/16 :goto_0
 
-    .line 1923
     :pswitch_14
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -325,7 +288,6 @@
 
     goto/16 :goto_0
 
-    .line 1859
     nop
 
     :pswitch_data_0

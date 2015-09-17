@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 74
     iput-object p1, p0, Lcom/android/keyguard/sec/AdaptiveEventContainerSmall$2;->this$0:Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,25 +33,19 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .prologue
-    .line 77
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 78
     const-string v0, "AdaptiveEventContainerSmall"
 
     const-string v1, "onChange()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
     iget-object v0, p0, Lcom/android/keyguard/sec/AdaptiveEventContainerSmall$2;->this$0:Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;
 
     # invokes: Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;->init()V
     invoke-static {v0}, Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;->access$300(Lcom/android/keyguard/sec/AdaptiveEventContainerSmall;)V
 
-    .line 80
     return-void
 .end method

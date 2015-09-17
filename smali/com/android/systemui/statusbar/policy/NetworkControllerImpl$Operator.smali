@@ -79,7 +79,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -90,7 +89,6 @@
 
     const/4 v3, 0x0
 
-    .line 3721
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "OPEN"
@@ -99,7 +97,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->OPEN:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3722
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "ATT"
@@ -108,7 +105,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->ATT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3723
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "AIO"
@@ -117,7 +113,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->AIO:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3724
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "ZIG"
@@ -126,7 +121,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->ZIG:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3725
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "TMO"
@@ -135,7 +129,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->TMO:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3726
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "VZW"
@@ -146,7 +139,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->VZW:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3727
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "SPR"
@@ -157,7 +149,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->SPR:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3728
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "BMC"
@@ -168,7 +159,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->BMC:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3729
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "TLS"
@@ -179,7 +169,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->TLS:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3730
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "SKT"
@@ -190,7 +179,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->SKT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3731
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "KT"
@@ -201,7 +189,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->KT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3732
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "LGT"
@@ -212,7 +199,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->LGT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3733
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "CMCC"
@@ -223,7 +209,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->CMCC:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3734
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "CHC"
@@ -234,7 +219,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->CHC:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3735
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "LHS"
@@ -245,7 +229,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->LHS:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3736
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "CU"
@@ -256,7 +239,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->CU:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3737
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "CTC"
@@ -267,7 +249,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->CTC:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3738
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "DCM"
@@ -278,7 +259,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->DCM:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3739
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "KDDI"
@@ -289,7 +269,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->KDDI:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3740
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "ZVV"
@@ -300,7 +279,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->ZVV:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3741
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "ZTM"
@@ -311,7 +289,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->ZTM:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3742
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "LRA"
@@ -322,7 +299,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->LRA:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3743
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "VMU"
@@ -333,7 +309,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->VMU:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3744
     new-instance v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     const-string v1, "VMC"
@@ -344,7 +319,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->VMC:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
-    .line 3720
     const/16 v0, 0x18
 
     new-array v0, v0, [Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
@@ -496,8 +470,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 3720
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -505,10 +477,7 @@
 
 .method public static final getOperatorFromString(Ljava/lang/String;)Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
     .locals 2
-    .param p0, "Str"    # Ljava/lang/String;
 
-    .prologue
-    .line 3756
     :try_start_0
     invoke-static {p0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->valueOf(Ljava/lang/String;)Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
     :try_end_0
@@ -516,16 +485,12 @@
 
     move-result-object v1
 
-    .line 3758
     :goto_0
     return-object v1
 
-    .line 3757
     :catch_0
     move-exception v0
 
-    .line 3758
-    .local v0, "ex":Ljava/lang/Exception;
     sget-object v1, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->OPEN:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     goto :goto_0
@@ -533,10 +498,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 3720
     const-class v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -551,8 +513,6 @@
 .method public static values()[Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
     .locals 1
 
-    .prologue
-    .line 3720
     sget-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->$VALUES:[Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     invoke-virtual {v0}, [Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->clone()Ljava/lang/Object;
@@ -569,8 +529,6 @@
 .method public isKoreanOperator()Z
     .locals 1
 
-    .prologue
-    .line 3751
     sget-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->SKT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     if-eq p0, v0, :cond_0
@@ -598,8 +556,6 @@
 .method public isNorthAmericanOperator()Z
     .locals 1
 
-    .prologue
-    .line 3747
     sget-object v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;->ATT:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$Operator;
 
     if-eq p0, v0, :cond_0

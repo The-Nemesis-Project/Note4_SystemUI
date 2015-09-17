@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "NotificationPanelView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -22,55 +25,40 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
 
-    .prologue
-    .line 1446
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public run()V
+    .locals 3
 
-    .prologue
-    .line 1449
+    const/16 v2, 0x8
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, 0x0
 
-    # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeaderAnimatingIn:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$902(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+    # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$802(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
 
-    .line 1450
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    const/4 v1, 0x0
-
-    # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
-
-    .line 1451
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainer:Landroid/view/View;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
+    # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimatorUpdater:Landroid/view/View$OnLayoutChangeListener;
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View$OnLayoutChangeListener;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    move-result-object v1
+    # invokes: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setMascotViewVisible(I)V
+    invoke-static {v0, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$900(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
-
-    .line 1452
     return-void
 .end method

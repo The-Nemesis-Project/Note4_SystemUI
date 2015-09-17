@@ -1,94 +1,81 @@
 .class public Lcom/android/keyguard/KeyguardSimPukView;
-.super Lcom/android/keyguard/KeyguardPinBasedInputView;
+.super Landroid/widget/LinearLayout;
 .source "KeyguardSimPukView.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;,
-        Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
-    }
-.end annotation
+# interfaces
+.implements Lcom/android/keyguard/KeyguardSecurityView;
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field static final ACTION_EMERGENCY_DIAL:Ljava/lang/String; = "com.android.phone.EmergencyDialer.DIAL"
 
-.field private static final LOG_TAG:Ljava/lang/String; = "KeyguardSimPukView"
+.field static final DEBUG:Z = false
 
-.field private static final MAX_LENGTH_ENTRY:I = 0x8
+.field private static final TAG:Ljava/lang/String; = "KeyguardSimPukView"
 
-.field public static final TAG:Ljava/lang/String; = "KeyguardSimPukView"
+.field static sVoiceCapable:Z
 
 
 # instance fields
-.field protected volatile mCheckInProgress:Z
+.field private mBouncerFrame:Landroid/graphics/drawable/Drawable;
 
-.field private mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
+.field protected mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-.field protected mPinText:Ljava/lang/String;
+.field private mEcaView:Landroid/view/View;
 
-.field protected mPukText:Ljava/lang/String;
+.field private mEmergencyCallButton:Landroid/widget/Button;
 
-.field private mRemainingAttemptsDialog:Landroid/app/AlertDialog;
+.field private mEmergencyCallButton2:Landroid/widget/Button;
 
-.field protected mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+.field protected mHelpTextView:Landroid/widget/TextView;
 
-.field protected mStateMachine:Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
+.field protected mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+.field protected mPasswordEntry:Landroid/widget/TextView;
+
+.field protected mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
+
+.field private mTempRect:Landroid/graphics/Rect;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/android/keyguard/KeyguardSimPukView;->sVoiceCapable:Z
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 130
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardSimPukView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 131
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
-    .line 134
-    invoke-direct {p0, p1, p2}, Lcom/android/keyguard/KeyguardPinBasedInputView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 55
-    const/4 v0, 0x0
+    new-instance v0, Landroid/graphics/Rect;
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 59
-    new-instance v0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
+    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;-><init>(Lcom/android/keyguard/KeyguardSimPukView;)V
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mStateMachine:Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
-
-    .line 135
-    const/16 v0, 0x8
-
-    invoke-super {p0, v0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->setMaxLength(I)V
-
-    .line 153
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/KeyguardSimPukView;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPukView;
 
-    .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -96,551 +83,366 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/KeyguardSimPukView;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPukView;
 
-    .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method static synthetic access$202(Lcom/android/keyguard/KeyguardSimPukView;Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;)Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-    .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPukView;
-    .param p1, "x1"    # Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-
-    .prologue
-    .line 45
-    iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-
-    return-object p1
-.end method
-
 
 # virtual methods
-.method protected checkPin()Z
-    .locals 2
-
-    .prologue
-    .line 275
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
-
-    invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    .line 276
-    .local v0, "length":I
-    const/4 v1, 0x4
-
-    if-lt v0, v1, :cond_0
-
-    const/16 v1, 0x8
-
-    if-gt v0, v1, :cond_0
-
-    .line 277
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
-
-    invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPinText:Ljava/lang/String;
-
-    .line 278
-    const/4 v1, 0x1
-
-    .line 280
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected checkPuk()Z
-    .locals 2
-
-    .prologue
-    .line 266
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_0
-
-    .line 267
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPukText:Ljava/lang/String;
-
-    .line 268
-    const/4 v0, 0x1
-
-    .line 270
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public confirmPin()Z
-    .locals 2
-
-    .prologue
-    .line 284
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPinText:Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
-
-    invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected getPasswordTextViewId()I
+.method public getCallback()Lcom/android/keyguard/KeyguardSecurityCallback;
     .locals 1
 
-    .prologue
-    .line 168
-    sget v0, Lcom/android/keyguard/R$id;->pukEntry:I
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    return-object v0
+.end method
+
+.method public hideBouncer(I)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEcaView:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mBouncerFrame:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->hideBouncer(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
+
+    return-void
+.end method
+
+.method public needsInput()Z
+    .locals 1
+
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method protected getPukPasswordErrorMessage(I)Ljava/lang/String;
+.method public needsShowClockandNotifications()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method protected onFinishInflate()V
     .locals 6
-    .param p1, "attemptsRemaining"    # I
 
-    .prologue
-    .line 115
-    if-nez p1, :cond_0
+    const/4 v5, 0x0
 
-    .line 116
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPukView;->getContext()Landroid/content/Context;
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    move-result-object v1
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    sget v2, Lcom/android/keyguard/R$string;->kg_password_wrong_puk_code_dead:I
+    if-nez v2, :cond_4
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    new-instance v2, Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+
+    invoke-direct {v2, v3}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+
+    :goto_0
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    sget v2, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
+
+    invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 124
-    .local v0, "displayMessage":Ljava/lang/String;
-    :goto_0
-    const-string v1, "KeyguardSimPukView"
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mBouncerFrame:Landroid/graphics/drawable/Drawable;
+
+    :cond_0
+    sget v2, Lcom/android/keyguard/R$id;->keyguard_unlock_view_help_text:I
+
+    invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mHelpTextView:Landroid/widget/TextView;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mHelpTextView:Landroid/widget/TextView;
+
+    if-eqz v2, :cond_1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "getPukPasswordErrorMessage: attemptsRemaining="
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+
+    sget v4, Lcom/android/keyguard/R$string;->lockscreen_sim_puk_tmo_help_pin_blocked:I
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " displayMessage="
+    const-string v3, "\n"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+
+    sget v4, Lcom/android/keyguard/R$string;->lockscreen_sim_puk_tmo_help_contact_service_provider:I
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->isEmergencyCallCapable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v3, "\n"
 
-    .line 126
-    return-object v0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 117
-    .end local v0    # "displayMessage":Ljava/lang/String;
-    :cond_0
-    if-lez p1, :cond_1
+    move-result-object v2
 
-    .line 118
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPukView;->getContext()Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+
+    sget v4, Lcom/android/keyguard/R$string;->emergency_calls_only:I
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mHelpTextView:Landroid/widget/TextView;
 
-    move-result-object v1
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    sget v2, Lcom/android/keyguard/R$plurals;->kg_password_wrong_puk_code:I
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, p1, v3}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .restart local v0    # "displayMessage":Ljava/lang/String;
-    goto :goto_0
-
-    .line 122
-    .end local v0    # "displayMessage":Ljava/lang/String;
     :cond_1
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPukView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    sget v2, Lcom/android/keyguard/R$string;->kg_password_puk_failed:I
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .restart local v0    # "displayMessage":Ljava/lang/String;
-    goto :goto_0
-.end method
-
-.method protected getPukRemainingAttemptsDialog(I)Landroid/app/Dialog;
-    .locals 4
-    .param p1, "remaining"    # I
-
-    .prologue
-    .line 249
-    invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardSimPukView;->getPukPasswordErrorMessage(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 250
-    .local v1, "msg":Ljava/lang/String;
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
-
-    if-nez v2, :cond_0
-
-    .line 251
-    new-instance v0, Landroid/app/AlertDialog$Builder;
-
+    :goto_1
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 252
-    .local v0, "builder":Landroid/app/AlertDialog$Builder;
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    .line 253
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    .line 254
-    sget v2, Lcom/android/keyguard/R$string;->ok:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 255
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
+    const v3, 0x1120045
 
-    .line 256
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    move-result v2
+
+    sput-boolean v2, Lcom/android/keyguard/KeyguardSimPukView;->sVoiceCapable:Z
+
+    sget v2, Lcom/android/keyguard/R$id;->emergency_call_button:I
+
+    invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    const/16 v3, 0x7d9
+    check-cast v2, Landroid/widget/Button;
 
-    invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
 
-    .line 261
-    .end local v0    # "builder":Landroid/app/AlertDialog$Builder;
-    :goto_0
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
 
-    return-object v2
+    if-eqz v2, :cond_2
 
-    .line 259
-    :cond_0
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    invoke-virtual {v2, v1}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->isEmergencyCallCapable()Z
 
-    goto :goto_0
-.end method
+    move-result v2
 
-.method protected getSimUnlockProgressDialog()Landroid/app/Dialog;
-    .locals 3
+    if-eqz v2, :cond_6
 
-    .prologue
-    .line 234
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
 
-    if-nez v0, :cond_0
+    sget v3, Lcom/android/keyguard/R$string;->kg_emergency_call_label:I
 
-    .line 235
-    new-instance v0, Landroid/app/ProgressDialog;
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+    :goto_2
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
 
-    invoke-direct {v0, v1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
+    new-instance v3, Lcom/android/keyguard/KeyguardSimPukView$1;
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    invoke-direct {v3, p0}, Lcom/android/keyguard/KeyguardSimPukView$1;-><init>(Lcom/android/keyguard/KeyguardSimPukView;)V
 
-    .line 236
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+    :cond_2
+    sget-boolean v2, Lcom/android/keyguard/KeyguardSimPukView;->sVoiceCapable:Z
 
-    sget v2, Lcom/android/keyguard/R$string;->kg_sim_unlock_progress_dialog_message:I
+    if-eqz v2, :cond_3
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    sget v2, Lcom/android/keyguard/R$id;->forgot_password_button:I
 
-    move-result-object v1
+    invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
+    move-result-object v2
 
-    .line 238
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    check-cast v2, Landroid/widget/Button;
 
-    const/4 v1, 0x1
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton2:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton2:Landroid/widget/Button;
 
-    .line 239
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    if-eqz v2, :cond_3
 
-    const/4 v1, 0x0
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton2:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v2, v5}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 240
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton2:Landroid/widget/Button;
 
-    instance-of v0, v0, Landroid/app/Activity;
+    const-string v3, "SOS"
 
-    if-nez v0, :cond_0
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 241
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton2:Landroid/widget/Button;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
+    new-instance v3, Lcom/android/keyguard/KeyguardSimPukView$2;
 
-    move-result-object v0
+    invoke-direct {v3, p0}, Lcom/android/keyguard/KeyguardSimPukView$2;-><init>(Lcom/android/keyguard/KeyguardSimPukView;)V
 
-    const/16 v1, 0x7d9
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
-
-    .line 245
-    :cond_0
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
-
-    return-object v0
-.end method
-
-.method protected onFinishInflate()V
-    .locals 2
-
-    .prologue
-    .line 173
-    invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onFinishInflate()V
-
-    .line 175
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lcom/android/keyguard/SecurityMessageDisplay;->setTimeout(I)V
-
-    .line 180
+    :cond_3
     return-void
+
+    :cond_4
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    goto/16 :goto_0
+
+    :cond_5
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mHelpTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_6
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
+
+    const-string v3, "Enter Unlock Code"
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEmergencyCallButton:Landroid/widget/Button;
+
+    sget v3, Lcom/android/keyguard/R$drawable;->ic_dialog_dialer:I
+
+    invoke-virtual {v2, v3, v5, v5, v5}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    goto :goto_2
 .end method
 
 .method public onPause()V
-    .locals 1
+    .locals 0
 
-    .prologue
-    .line 189
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
-
-    if-eqz v0, :cond_0
-
-    .line 190
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-    .line 191
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
-
-    .line 193
-    :cond_0
     return-void
 .end method
 
-.method public resetState()V
-    .locals 1
+.method public onResume(I)V
+    .locals 0
 
-    .prologue
-    .line 156
-    invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->resetState()V
-
-    .line 157
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mStateMachine:Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->reset()V
-
-    .line 158
     return-void
 .end method
 
-.method protected shouldLockout(J)Z
-    .locals 1
-    .param p1, "deadline"    # J
+.method public reset()V
+    .locals 0
 
-    .prologue
-    .line 163
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    return v0
+.method public setKeyguardCallback(Lcom/android/keyguard/KeyguardSecurityCallback;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    return-void
+.end method
+
+.method public setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    return-void
+.end method
+
+.method public showBouncer(I)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mEcaView:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mBouncerFrame:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->showBouncer(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
+
+    return-void
 .end method
 
 .method public showUsabilityHint()V
     .locals 0
 
-    .prologue
-    .line 184
     return-void
 .end method
 
 .method public startAppearAnimation()V
     .locals 0
 
-    .prologue
-    .line 369
     return-void
 .end method
 
 .method public startDisappearAnimation(Ljava/lang/Runnable;)Z
     .locals 1
-    .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
-    .prologue
-    .line 373
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method protected updateSim()V
-    .locals 3
-
-    .prologue
-    .line 288
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPukView;->getSimUnlockProgressDialog()Landroid/app/Dialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
-
-    .line 290
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-
-    if-nez v0, :cond_0
-
-    .line 291
-    new-instance v0, Lcom/android/keyguard/KeyguardSimPukView$1;
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPukText:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView;->mPinText:Ljava/lang/String;
-
-    invoke-direct {v0, p0, v1, v2}, Lcom/android/keyguard/KeyguardSimPukView$1;-><init>(Lcom/android/keyguard/KeyguardSimPukView;Ljava/lang/String;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-
-    .line 354
-    iget-boolean v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckInProgress:Z
-
-    if-nez v0, :cond_0
-
-    .line 355
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckInProgress:Z
-
-    .line 356
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->start()V
-
-    .line 359
-    :cond_0
-    return-void
-.end method
-
-.method protected verifyPasswordAndUnlock()V
-    .locals 1
-
-    .prologue
-    .line 363
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView;->mStateMachine:Lcom/android/keyguard/KeyguardSimPukView$StateMachine;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->next()V
-
-    .line 364
-    return-void
 .end method

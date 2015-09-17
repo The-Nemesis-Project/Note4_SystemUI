@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
 
-    .prologue
-    .line 528
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,26 +36,20 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 531
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     iput-object v1, v0, Lcom/android/systemui/power/PowerNotificationWarnings;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
-    .line 532
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     iput-object v1, v0, Lcom/android/systemui/power/PowerNotificationWarnings;->mBatteryLevelTextView:Landroid/widget/TextView;
 
-    .line 533
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-virtual {v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryWarning()V
 
-    .line 534
     return-void
 .end method

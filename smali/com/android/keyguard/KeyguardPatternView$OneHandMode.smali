@@ -35,12 +35,10 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 147
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
     const-string v1, "Left"
@@ -49,7 +47,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;->Left:Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
-    .line 148
     new-instance v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
     const-string v1, "Right"
@@ -58,7 +55,6 @@
 
     sput-object v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;->Right:Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
-    .line 146
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
@@ -84,8 +80,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 146
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -93,10 +87,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 146
     const-class v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -111,8 +102,6 @@
 .method public static values()[Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
     .locals 1
 
-    .prologue
-    .line 146
     sget-object v0, Lcom/android/keyguard/KeyguardPatternView$OneHandMode;->$VALUES:[Lcom/android/keyguard/KeyguardPatternView$OneHandMode;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/KeyguardPatternView$OneHandMode;->clone()Ljava/lang/Object;

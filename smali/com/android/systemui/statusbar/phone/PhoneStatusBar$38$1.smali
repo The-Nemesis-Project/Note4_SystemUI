@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;)V
     .locals 0
 
-    .prologue
-    .line 4517
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 4520
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
@@ -54,14 +50,12 @@
 
     if-nez v0, :cond_0
 
-    .line 4521
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->keyguardWaitingForActivityDrawn()V
 
-    .line 4524
     :cond_0
     const-string v0, "com.samsung.android.personalpage.action.ACTION_SHOW_DISCLAIMER"
 
@@ -79,14 +73,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 4525
     const-string v0, "PhoneStatusBar"
 
     const-string v1, "startActivityDismissingKeyguard :: startService"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4526
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -99,7 +91,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 4533
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
@@ -122,11 +113,9 @@
     :goto_1
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->overrideActivityPendingAppTransition(Z)V
 
-    .line 4537
     :goto_2
     return-void
 
-    .line 4528
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
@@ -136,7 +125,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 4530
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -159,13 +147,11 @@
 
     goto :goto_0
 
-    .line 4535
     :catch_0
     move-exception v0
 
     goto :goto_2
 
-    .line 4533
     :cond_2
     const/4 v0, 0x0
 

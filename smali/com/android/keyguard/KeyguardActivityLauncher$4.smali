@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardActivityLauncher;)V
     .locals 0
 
-    .prologue
-    .line 311
     iput-object p1, p0, Lcom/android/keyguard/KeyguardActivityLauncher$4;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +37,8 @@
 .method public onDismiss()Z
     .locals 7
 
-    .prologue
     const/4 v6, 0x0
 
-    .line 314
     iget-object v2, p0, Lcom/android/keyguard/KeyguardActivityLauncher$4;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     # getter for: Lcom/android/keyguard/KeyguardActivityLauncher;->mLandingPageUrl:Ljava/lang/String;
@@ -65,12 +61,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 323
     :cond_0
     :goto_0
     return v6
 
-    .line 317
     :cond_1
     new-instance v2, Landroid/content/Intent;
 
@@ -93,13 +87,10 @@
 
     move-result-object v0
 
-    .line 318
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 320
     iget-object v2, p0, Lcom/android/keyguard/KeyguardActivityLauncher$4;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     iget-object v2, v2, Lcom/android/keyguard/KeyguardActivityLauncher;->mDelayedStartActivityHandler:Landroid/os/Handler;
@@ -110,8 +101,6 @@
 
     move-result-object v1
 
-    .line 321
-    .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/keyguard/KeyguardActivityLauncher$4;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     iget-object v2, v2, Lcom/android/keyguard/KeyguardActivityLauncher;->mDelayedStartActivityHandler:Landroid/os/Handler;

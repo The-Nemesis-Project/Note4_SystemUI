@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
     .locals 0
 
-    .prologue
-    .line 244
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$5;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,17 @@
 # virtual methods
 .method public OnUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 2
-    .param p1, "info"    # Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    .prologue
-    .line 247
     const-string v0, "SViewCoverMainPage"
 
     const-string v1, "mMusicPlayerContainer OnUpdated"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 248
     iget-object v0, p0, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage$5;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;
 
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->adjustWidgetVisibility()V
     invoke-static {v0}, Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;->access$500(Lcom/sec/android/cover/sviewcover/SViewCoverMainPage;)V
 
-    .line 249
     return-void
 .end method

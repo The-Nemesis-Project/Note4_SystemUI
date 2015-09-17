@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;)V
     .locals 0
 
-    .prologue
-    .line 401
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$3;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,9 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 405
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion$3;->this$0:Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardEffectViewIndigoDiffusion;->clearScreen()V
 
-    .line 406
     return-void
 .end method

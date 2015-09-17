@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/SmartScrollTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/os/Handler;
-    .param p4, "x2"    # Ljava/lang/String;
 
-    .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/SmartScrollTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartScrollTile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -38,12 +33,9 @@
 # virtual methods
 .method protected handleValueChanged(I)V
     .locals 3
-    .param p1, "value"    # I
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 70
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/SmartScrollTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartScrollTile;
 
     if-ne p1, v0, :cond_0
@@ -52,7 +44,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/SmartScrollTile;->mSmartState:Z
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/SmartScrollTile;->access$002(Lcom/android/systemui/qs/tiles/SmartScrollTile;Z)Z
 
-    .line 71
     const-string v0, "SmartScrollTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,16 +73,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SmartScrollTile$1;->this$0:Lcom/android/systemui/qs/tiles/SmartScrollTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/SmartScrollTile;->updateButtonStatus()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/SmartScrollTile;->access$100(Lcom/android/systemui/qs/tiles/SmartScrollTile;)V
 
-    .line 73
     return-void
 
-    .line 70
     :cond_0
     const/4 v0, 0x0
 

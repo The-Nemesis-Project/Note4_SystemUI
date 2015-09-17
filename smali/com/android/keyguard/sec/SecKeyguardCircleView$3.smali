@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/SecKeyguardCircleView;Landroid/content/Context;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .prologue
-    .line 179
     iput-object p1, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 3
-    .param p1, "orientation"    # I
 
-    .prologue
-    .line 182
     const-string v0, "SecKeyguardCircleView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -62,7 +56,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 183
     const/16 v0, 0x145
 
     if-ge p1, v0, :cond_0
@@ -71,7 +64,6 @@
 
     if-le v0, p1, :cond_2
 
-    .line 184
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
@@ -79,12 +71,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/SecKeyguardCircleView;->rotateIcon(I)V
 
-    .line 195
     :cond_1
     :goto_0
     return-void
 
-    .line 185
     :cond_2
     const/16 v0, 0x37
 
@@ -94,7 +84,6 @@
 
     if-le v0, p1, :cond_3
 
-    .line 186
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardCircleView;->mIsLandscapeAvailable:Z
@@ -104,7 +93,6 @@
 
     if-nez v0, :cond_1
 
-    .line 187
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     const/16 v1, 0x10e
@@ -113,7 +101,6 @@
 
     goto :goto_0
 
-    .line 188
     :cond_3
     const/16 v0, 0x91
 
@@ -123,7 +110,6 @@
 
     if-le v0, p1, :cond_4
 
-    .line 189
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardCircleView;->mIsLandscapeAvailable:Z
@@ -133,7 +119,6 @@
 
     if-nez v0, :cond_1
 
-    .line 190
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     const/16 v1, 0xb4
@@ -142,7 +127,6 @@
 
     goto :goto_0
 
-    .line 191
     :cond_4
     const/16 v0, 0xeb
 
@@ -152,7 +136,6 @@
 
     if-le v0, p1, :cond_1
 
-    .line 192
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     # getter for: Lcom/android/keyguard/sec/SecKeyguardCircleView;->mIsLandscapeAvailable:Z
@@ -162,7 +145,6 @@
 
     if-nez v0, :cond_1
 
-    .line 193
     iget-object v0, p0, Lcom/android/keyguard/sec/SecKeyguardCircleView$3;->this$0:Lcom/android/keyguard/sec/SecKeyguardCircleView;
 
     const/16 v1, 0x5a

@@ -26,8 +26,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .prologue
-    .line 227
     const-string v0, "ro.csc.sales_code"
 
     const-string v1, "NONE"
@@ -46,7 +44,6 @@
 
     sput-object v0, Lcom/android/systemui/power/PowerUI$Sales;->SALES_CODE:Ljava/lang/String;
 
-    .line 228
     const-string v0, "VZW"
 
     sget-object v1, Lcom/android/systemui/power/PowerUI$Sales;->SALES_CODE:Ljava/lang/String;
@@ -57,7 +54,6 @@
 
     sput-boolean v0, Lcom/android/systemui/power/PowerUI$Sales;->VZW:Z
 
-    .line 229
     const-string v0, "ATT"
 
     sget-object v1, Lcom/android/systemui/power/PowerUI$Sales;->SALES_CODE:Ljava/lang/String;
@@ -74,8 +70,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

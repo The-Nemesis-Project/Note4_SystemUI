@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;)V
     .locals 0
 
-    .prologue
-    .line 443
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$9;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 446
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$9;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # invokes: Lcom/android/systemui/statusbar/phone/ScrimController;->updateScrimEffectBehindDrawingMode()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$1700(Lcom/android/systemui/statusbar/phone/ScrimController;)V
 
-    .line 447
     return-void
 .end method

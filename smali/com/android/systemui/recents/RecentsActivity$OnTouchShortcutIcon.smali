@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
 
-    .prologue
-    .line 1154
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$OnTouchShortcutIcon;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/RecentsActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/recents/RecentsActivity;
-    .param p2, "x1"    # Lcom/android/systemui/recents/RecentsActivity$1;
 
-    .prologue
-    .line 1154
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/RecentsActivity$OnTouchShortcutIcon;-><init>(Lcom/android/systemui/recents/RecentsActivity;)V
 
     return-void
@@ -50,24 +44,17 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 1156
     move-object v0, p1
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 1158
-    .local v0, "iv":Landroid/widget/ImageView;
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1159
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -76,7 +63,6 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1162
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -86,7 +72,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 1163
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -95,7 +80,6 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1166
     :cond_1
     const/4 v1, 0x0
 

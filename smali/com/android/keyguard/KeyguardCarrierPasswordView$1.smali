@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardCarrierPasswordView;)V
     .locals 0
 
-    .prologue
-    .line 121
     iput-object p1, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 123
     iget-object v0, p0, Lcom/android/keyguard/KeyguardCarrierPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardCarrierPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardCarrierPasswordView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -51,6 +46,5 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 124
     return-void
 .end method

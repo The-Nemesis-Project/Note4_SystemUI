@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
     .locals 0
 
-    .prologue
-    .line 1397
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x2
@@ -48,24 +44,20 @@
 
     const/4 v3, 0x0
 
-    .line 1400
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1527
     :cond_0
     :goto_0
     return-void
 
-    .line 1402
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mMessageUpdateNotDone:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1402(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1403
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -78,7 +70,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPreSvcSate:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1502(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1404
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -91,7 +82,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1406
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,7 +128,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1408
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPreSvcSate:I
@@ -148,19 +137,16 @@
 
     if-nez v0, :cond_1
 
-    .line 1410
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mShowAirPlane:Z
     invoke-static {v0, v4}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1802(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1411
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1902(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1412
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     const/4 v1, -0x1
@@ -168,12 +154,10 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2002(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1413
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->refreshViews()V
 
-    .line 1414
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPreSvcSate:I
@@ -190,7 +174,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1415
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -213,7 +196,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1417
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
@@ -223,7 +205,6 @@
 
     if-ne v0, v6, :cond_0
 
-    .line 1418
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
@@ -231,7 +212,6 @@
 
     goto/16 :goto_0
 
-    .line 1421
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -242,19 +222,16 @@
 
     if-ne v0, v4, :cond_5
 
-    .line 1422
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mShowAirPlane:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1802(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1423
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1902(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1424
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     const/4 v1, -0x1
@@ -262,35 +239,30 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2002(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1427
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-boolean v0, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mVoiceCapable:Z
 
     if-eqz v0, :cond_3
 
-    .line 1428
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f0206b7
+    const v1, 0x7f0206c2
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPhoneSignalIconId:I
 
-    .line 1429
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f0206b7
+    const v1, 0x7f0206c2
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mDataSignalIconId:I
 
-    .line 1441
     :cond_2
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->refreshViews()V
 
-    .line 1442
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPreSvcSate:I
@@ -307,7 +279,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1443
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -330,7 +301,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1445
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
@@ -340,7 +310,6 @@
 
     if-ne v0, v6, :cond_0
 
-    .line 1446
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
@@ -348,7 +317,6 @@
 
     goto/16 :goto_0
 
-    .line 1430
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -362,45 +330,39 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 1431
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f0206b8
+    const v1, 0x7f0206c3
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPhoneSignalIconId:I
 
-    .line 1432
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f0206b8
+    const v1, 0x7f0206c3
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mDataSignalIconId:I
 
     goto :goto_1
 
-    .line 1434
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f020569
+    const v1, 0x7f020571
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mPhoneSignalIconId:I
 
-    .line 1435
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    const v1, 0x7f020569
+    const v1, 0x7f020571
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mDataSignalIconId:I
 
-    .line 1436
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mSignalStrength:Landroid/telephony/SignalStrength;
 
     if-nez v0, :cond_2
 
-    .line 1437
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -422,7 +384,6 @@
 
     goto :goto_1
 
-    .line 1449
     :cond_5
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -433,13 +394,11 @@
 
     if-ne v0, v6, :cond_0
 
-    .line 1450
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mShowAirPlane:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1802(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1451
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
@@ -449,13 +408,11 @@
 
     if-ne v0, v4, :cond_a
 
-    .line 1452
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2202(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1453
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
@@ -472,7 +429,6 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 1454
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -519,13 +475,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1455
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
     invoke-static {v0, v4}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1456
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -550,20 +504,17 @@
 
     goto/16 :goto_0
 
-    .line 1459
     :cond_6
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
     invoke-static {v0, v6}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1460
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
     invoke-static {v0, v4}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1902(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1502
     :cond_7
     :goto_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -582,13 +533,11 @@
 
     if-ge v0, v1, :cond_11
 
-    .line 1503
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # operator++ for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2008(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)I
 
-    .line 1507
     :cond_8
     :goto_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -600,13 +549,11 @@
 
     if-le v0, v7, :cond_12
 
-    .line 1508
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
     invoke-static {v0, v7}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2002(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1512
     :cond_9
     :goto_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -621,7 +568,6 @@
     # invokes: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->displaySignalStrength(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2400(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)V
 
-    .line 1513
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -646,7 +592,6 @@
 
     goto/16 :goto_0
 
-    .line 1463
     :cond_a
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -657,13 +602,11 @@
 
     if-nez v0, :cond_c
 
-    .line 1464
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2202(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1465
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
@@ -680,7 +623,6 @@
 
     if-ne v0, v1, :cond_b
 
-    .line 1466
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -727,13 +669,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1467
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1468
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -758,14 +698,12 @@
 
     goto/16 :goto_0
 
-    .line 1471
     :cond_b
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurSvcSate:I
     invoke-static {v0, v6}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1602(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1472
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
@@ -773,7 +711,6 @@
 
     goto/16 :goto_2
 
-    .line 1475
     :cond_c
     const-string v0, "StatusBar.NetworkController"
 
@@ -804,7 +741,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1476
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mKeepFakeState:Z
@@ -814,7 +750,6 @@
 
     if-eqz v0, :cond_e
 
-    .line 1477
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -827,7 +762,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2202(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1480
     :goto_5
     const-string v0, "StatusBar.NetworkController"
 
@@ -875,7 +809,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1481
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
@@ -885,7 +818,6 @@
 
     if-le v0, v7, :cond_f
 
-    .line 1482
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -915,13 +847,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1483
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
     invoke-static {v0, v7}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2202(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)I
 
-    .line 1488
     :cond_d
     :goto_6
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -940,7 +870,6 @@
 
     if-ne v0, v1, :cond_10
 
-    .line 1489
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -987,13 +916,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1490
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$1902(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1492
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mBluetoothTetherDisconnected:Z
@@ -1003,7 +930,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1493
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
@@ -1016,7 +942,6 @@
     # invokes: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->displaySignalStrength(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$2400(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;I)V
 
-    .line 1494
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mBluetoothTetherDisconnected:Z
@@ -1024,7 +949,6 @@
 
     goto/16 :goto_0
 
-    .line 1479
     :cond_e
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -1041,7 +965,6 @@
 
     goto/16 :goto_5
 
-    .line 1484
     :cond_f
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -1052,7 +975,6 @@
 
     if-gez v0, :cond_d
 
-    .line 1485
     const-string v0, "StatusBar.NetworkController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1082,7 +1004,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1486
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTargetSignalStrength:I
@@ -1090,7 +1011,6 @@
 
     goto/16 :goto_6
 
-    .line 1498
     :cond_10
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -1101,7 +1021,6 @@
 
     if-nez v0, :cond_7
 
-    .line 1499
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mTransitionState:Z
@@ -1109,7 +1028,6 @@
 
     goto/16 :goto_2
 
-    .line 1504
     :cond_11
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -1127,7 +1045,6 @@
 
     if-le v0, v1, :cond_8
 
-    .line 1505
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # operator-- for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
@@ -1135,7 +1052,6 @@
 
     goto/16 :goto_3
 
-    .line 1509
     :cond_12
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -1146,7 +1062,6 @@
 
     if-gez v0, :cond_9
 
-    .line 1510
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mCurrentSignalStrength:I
@@ -1154,7 +1069,6 @@
 
     goto/16 :goto_4
 
-    .line 1518
     :pswitch_1
     const-string v0, "StatusBar.NetworkController"
 
@@ -1162,13 +1076,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1519
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # setter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mKeepFakeState:Z
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$802(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)Z
 
-    .line 1520
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$NetworkControllerHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mHandler:Landroid/os/Handler;
@@ -1193,7 +1105,6 @@
 
     goto/16 :goto_0
 
-    .line 1400
     nop
 
     :pswitch_data_0

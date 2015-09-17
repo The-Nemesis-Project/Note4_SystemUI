@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;)V
     .locals 0
 
-    .prologue
-    .line 177
     iput-object p1, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$1;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,21 +37,17 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 180
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$1;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->this$0:Lcom/sec/android/cover/widget/CoverHideEffectView;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/widget/CoverHideEffectView;->bringToFront()V
 
-    .line 181
     iget-object v0, p0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer$1;->this$1:Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;
 
     iget-object v0, v0, Lcom/sec/android/cover/widget/CoverHideEffectView$CloseEffectRenderer;->this$0:Lcom/sec/android/cover/widget/CoverHideEffectView;
 
     invoke-virtual {v0}, Lcom/sec/android/cover/widget/CoverHideEffectView;->requestLayout()V
 
-    .line 182
     return-void
 .end method

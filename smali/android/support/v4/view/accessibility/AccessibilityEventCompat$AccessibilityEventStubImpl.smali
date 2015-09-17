@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,21 +30,13 @@
 # virtual methods
 .method public appendRecord(Landroid/view/accessibility/AccessibilityEvent;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
-    .param p2, "record"    # Ljava/lang/Object;
 
-    .prologue
-    .line 39
     return-void
 .end method
 
 .method public getRecord(Landroid/view/accessibility/AccessibilityEvent;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
-    .param p2, "index"    # I
 
-    .prologue
-    .line 43
     const/4 v0, 0x0
 
     return-object v0
@@ -54,10 +44,7 @@
 
 .method public getRecordCount(Landroid/view/accessibility/AccessibilityEvent;)I
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .prologue
-    .line 48
     const/4 v0, 0x0
 
     return v0

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/GlobalScreenshot;)V
     .locals 0
 
-    .prologue
-    .line 1143
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$5;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,16 +37,13 @@
 .method public run()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 1147
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$5;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     # invokes: Lcom/android/systemui/screenshot/GlobalScreenshot;->playCaptureSound()V
     invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshot;->access$500(Lcom/android/systemui/screenshot/GlobalScreenshot;)V
 
-    .line 1150
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$5;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     # getter for: Lcom/android/systemui/screenshot/GlobalScreenshot;->mDirection:I
@@ -58,7 +53,6 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 1151
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$5;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     # getter for: Lcom/android/systemui/screenshot/GlobalScreenshot;->mCaptureView:Lcom/android/systemui/screenshot/CaptureEffectView;
@@ -77,11 +71,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/screenshot/CaptureEffectView;->show(Landroid/graphics/Bitmap;I)V
 
-    .line 1155
     :goto_0
     return-void
 
-    .line 1153
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$5;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 

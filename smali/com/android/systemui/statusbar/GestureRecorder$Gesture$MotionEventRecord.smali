@@ -23,26 +23,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/GestureRecorder$Gesture;JLandroid/view/MotionEvent;)V
     .locals 2
-    .param p2, "when"    # J
-    .param p4, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$MotionEventRecord;->this$1:Lcom/android/systemui/statusbar/GestureRecorder$Gesture;
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$Record;-><init>(Lcom/android/systemui/statusbar/GestureRecorder$Gesture;)V
 
-    .line 48
     iput-wide p2, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$MotionEventRecord;->time:J
 
-    .line 49
     invoke-static {p4}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$MotionEventRecord;->event:Landroid/view/MotionEvent;
 
-    .line 50
     return-void
 .end method
 
@@ -50,13 +43,9 @@
 # virtual methods
 .method actionName(I)Ljava/lang/String;
     .locals 1
-    .param p1, "action"    # I
 
-    .prologue
-    .line 52
     packed-switch p1, :pswitch_data_0
 
-    .line 62
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
@@ -64,31 +53,26 @@
     :goto_0
     return-object v0
 
-    .line 54
     :pswitch_0
     const-string v0, "down"
 
     goto :goto_0
 
-    .line 56
     :pswitch_1
     const-string v0, "up"
 
     goto :goto_0
 
-    .line 58
     :pswitch_2
     const-string v0, "move"
 
     goto :goto_0
 
-    .line 60
     :pswitch_3
     const-string v0, "cancel"
 
     goto :goto_0
 
-    .line 52
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -101,8 +85,6 @@
 .method public toJson()Ljava/lang/String;
     .locals 6
 
-    .prologue
-    .line 66
     const-string v0, "{\"type\":\"motion\", \"time\":%d, \"action\":\"%s\", \"x\":%.2f, \"y\":%.2f, \"s\":%.2f, \"p\":%.2f}"
 
     const/4 v1, 0x6

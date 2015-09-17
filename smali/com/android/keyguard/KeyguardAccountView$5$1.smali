@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardAccountView$5;)V
     .locals 0
 
-    .prologue
-    .line 354
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAccountView$5$1;->this$1:Lcom/android/keyguard/KeyguardAccountView$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 356
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAccountView$5$1;->this$1:Lcom/android/keyguard/KeyguardAccountView$5;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardAccountView$5;->this$0:Lcom/android/keyguard/KeyguardAccountView;
@@ -52,6 +48,5 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->hide()V
 
-    .line 357
     return-void
 .end method

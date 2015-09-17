@@ -27,8 +27,6 @@
 .method constructor <init>(Landroid/support/v4/widget/MaterialProgressDrawable;Landroid/support/v4/widget/MaterialProgressDrawable$Ring;)V
     .locals 0
 
-    .prologue
-    .line 365
     iput-object p1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iput-object p2, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -42,29 +40,21 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 375
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 3
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 379
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->storeOriginals()V
 
-    .line 380
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->goToNextColor()V
 
-    .line 381
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     iget-object v1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->val$ring:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -75,7 +65,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->setStartTrim(F)V
 
-    .line 382
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iget-object v1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
@@ -96,16 +85,12 @@
     # setter for: Landroid/support/v4/widget/MaterialProgressDrawable;->mRotationCount:F
     invoke-static {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->access$602(Landroid/support/v4/widget/MaterialProgressDrawable;F)F
 
-    .line 383
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .prologue
-    .line 369
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$4;->this$0:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     const/4 v1, 0x0
@@ -113,6 +98,5 @@
     # setter for: Landroid/support/v4/widget/MaterialProgressDrawable;->mRotationCount:F
     invoke-static {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->access$602(Landroid/support/v4/widget/MaterialProgressDrawable;F)F
 
-    .line 370
     return-void
 .end method

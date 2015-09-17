@@ -22,18 +22,14 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 1
 
-    .prologue
-    .line 6810
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 6811
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 6812
     return-void
 .end method
 
@@ -41,17 +37,13 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 5
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 6816
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 6817
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -62,7 +54,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 6818
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -86,8 +77,6 @@
 
     if-nez v2, :cond_1
 
-    .line 6821
-    .local v0, "val":Z
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -98,13 +87,11 @@
 
     if-eq v2, v0, :cond_0
 
-    .line 6822
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTickerEnablebyCocktailSettings:Z
     invoke-static {v2, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$7302(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 6823
     const-string v2, "PhoneStatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -134,7 +121,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6824
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTicking:Z
@@ -153,25 +139,20 @@
 
     if-nez v2, :cond_0
 
-    .line 6825
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->haltTicker()V
 
-    .line 6826
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$CocktailTickerEnableObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTicking:Z
     invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$7402(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 6830
-    .end local v0    # "val":Z
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 6818
     goto :goto_0
 .end method

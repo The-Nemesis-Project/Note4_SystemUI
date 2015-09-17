@@ -38,37 +38,29 @@
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mBroadcastInfoTable:Ljava/util/HashMap;
 
-    .line 21
     new-instance v0, Lcom/sec/android/cover/manager/CoverBroadcastManager$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/manager/CoverBroadcastManager$1;-><init>(Lcom/sec/android/cover/manager/CoverBroadcastManager;)V
 
     iput-object v0, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mUpdateMonitorCallback:Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;
 
-    .line 62
     sget-object v0, Lcom/sec/android/sviewcover/SViewCoverBase;->TAG:Ljava/lang/String;
 
     const-string v1, "create CoverBroadcastManager"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     iput-object p1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mContext:Landroid/content/Context;
 
-    .line 66
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
@@ -79,16 +71,12 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->registerCallback(Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;)V
 
-    .line 67
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/sec/android/cover/manager/CoverBroadcastManager;)Ljava/util/HashMap;
     .locals 1
-    .param p0, "x0"    # Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
-    .prologue
-    .line 13
     iget-object v0, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mBroadcastInfoTable:Ljava/util/HashMap;
 
     return-object v0
@@ -96,22 +84,17 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/sec/android/cover/manager/CoverBroadcastManager;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 54
     sget-object v0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->instance:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
     if-nez v0, :cond_0
 
-    .line 55
     new-instance v0, Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
     invoke-direct {v0, p0}, Lcom/sec/android/cover/manager/CoverBroadcastManager;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->instance:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
-    .line 58
     :cond_0
     sget-object v0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->instance:Lcom/sec/android/cover/manager/CoverBroadcastManager;
 
@@ -122,10 +105,7 @@
 # virtual methods
 .method public getLastBroadcastInfo(Ljava/lang/String;)Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
     .locals 2
-    .param p1, "action"    # Ljava/lang/String;
 
-    .prologue
-    .line 70
     iget-object v1, p0, Lcom/sec/android/cover/manager/CoverBroadcastManager;->mBroadcastInfoTable:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -134,7 +114,5 @@
 
     check-cast v0, Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
 
-    .line 71
-    .local v0, "item":Lcom/sec/android/cover/manager/CoverBroadcastManager$BroadcastInfo;
     return-object v0
 .end method

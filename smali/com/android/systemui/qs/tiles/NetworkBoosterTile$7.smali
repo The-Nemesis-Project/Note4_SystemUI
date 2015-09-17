@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/NetworkBoosterTile;Landroid/widget/CheckBox;)V
     .locals 0
 
-    .prologue
-    .line 408
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$7;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$7;->val$mDisableAlertCheckBox:Landroid/widget/CheckBox;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 410
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$7;->val$mDisableAlertCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
@@ -55,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 411
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NetworkBoosterTile$7;->this$0:Lcom/android/systemui/qs/tiles/NetworkBoosterTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/NetworkBoosterTile;->mContentResolver:Landroid/content/ContentResolver;
@@ -71,10 +64,8 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 412
     :cond_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 413
     return-void
 .end method

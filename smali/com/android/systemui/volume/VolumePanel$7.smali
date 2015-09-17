@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 1187
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onExpanded(Z)V
     .locals 2
-    .param p1, "expanded"    # Z
 
-    .prologue
-    .line 1224
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelExpanded:Z
@@ -51,31 +46,26 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 1229
     :goto_0
     return-void
 
-    .line 1225
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # setter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelExpanded:Z
     invoke-static {v0, p1}, Lcom/android/systemui/volume/VolumePanel;->access$2302(Lcom/android/systemui/volume/VolumePanel;Z)Z
 
-    .line 1226
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->updateTimeoutDelay()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$2400(Lcom/android/systemui/volume/VolumePanel;)V
 
-    .line 1227
     const-string v0, "VolumePanel"
 
     const-string v1, "initZenModePanel : onExpanded : call resetTimeout()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1228
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
@@ -87,29 +77,23 @@
 .method public onInteraction()V
     .locals 2
 
-    .prologue
-    .line 1197
     const-string v0, "VolumePanel"
 
     const-string v1, "initZenModePanel : onInteraction : call resetTimeout()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1198
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1500(Lcom/android/systemui/volume/VolumePanel;)V
 
-    .line 1199
     return-void
 .end method
 
 .method public onMoreSettings()V
     .locals 1
 
-    .prologue
-    .line 1190
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
@@ -119,7 +103,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1191
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
@@ -129,21 +112,17 @@
 
     invoke-interface {v0}, Lcom/android/systemui/volume/VolumePanel$Callback;->onZenSettings()V
 
-    .line 1193
     :cond_0
     return-void
 .end method
 
 .method public onNotifyZen(I)V
     .locals 7
-    .param p1, "currentZen"    # I
 
-    .prologue
     const/4 v6, 0x2
 
     const/4 v5, 0x1
 
-    .line 1203
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -155,8 +134,6 @@
 
     move-result v0
 
-    .line 1204
-    .local v0, "ringerMode":I
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
@@ -170,8 +147,6 @@
 
     check-cast v1, Lcom/android/systemui/volume/VolumePanel$StreamControl;
 
-    .line 1206
-    .local v1, "sc":Lcom/android/systemui/volume/VolumePanel$StreamControl;
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
 
@@ -201,7 +176,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1207
     :cond_0
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$400()Z
@@ -232,50 +206,41 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1209
     :cond_1
     if-ne v0, v6, :cond_3
 
-    .line 1210
     iget-object v2, v1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const v3, 0x1080a5b
+    const v3, 0x1080a5c
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1211
     if-ne p1, v5, :cond_2
 
-    .line 1212
     iget-object v2, v1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const v3, 0x1080a5f
+    const v3, 0x1080a60
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1220
     :cond_2
     :goto_0
     return-void
 
-    .line 1214
     :cond_3
     if-ne v0, v5, :cond_2
 
-    .line 1215
     iget-object v2, v1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const v3, 0x1080a61
+    const v3, 0x1080a62
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1216
     if-ne p1, v5, :cond_2
 
-    .line 1217
     iget-object v2, v1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const v3, 0x1080a63
+    const v3, 0x1080a64
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

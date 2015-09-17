@@ -18,15 +18,12 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .prologue
-    .line 25
     new-instance v0, Landroid/support/v4/widget/BakedBezierInterpolator;
 
     invoke-direct {v0}, Landroid/support/v4/widget/BakedBezierInterpolator;-><init>()V
 
     sput-object v0, Landroid/support/v4/widget/BakedBezierInterpolator;->INSTANCE:Landroid/support/v4/widget/BakedBezierInterpolator;
 
-    .line 48
     const/16 v0, 0x65
 
     new-array v0, v0, [F
@@ -35,7 +32,6 @@
 
     sput-object v0, Landroid/support/v4/widget/BakedBezierInterpolator;->VALUES:[F
 
-    .line 61
     const/high16 v0, 0x3f800000    # 1.0f
 
     sget-object v1, Landroid/support/v4/widget/BakedBezierInterpolator;->VALUES:[F
@@ -52,7 +48,6 @@
 
     return-void
 
-    .line 48
     :array_0
     .array-data 4
         0x0
@@ -162,19 +157,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     return-void
 .end method
 
 .method public static final getInstance()Landroid/support/v4/widget/BakedBezierInterpolator;
     .locals 1
 
-    .prologue
-    .line 28
     sget-object v0, Landroid/support/v4/widget/BakedBezierInterpolator;->INSTANCE:Landroid/support/v4/widget/BakedBezierInterpolator;
 
     return-object v0
@@ -184,23 +174,18 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 7
-    .param p1, "input"    # F
 
-    .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v5, 0x0
 
-    .line 65
     cmpl-float v6, p1, v4
 
     if-ltz v6, :cond_0
 
-    .line 81
     :goto_0
     return v4
 
-    .line 69
     :cond_0
     cmpg-float v4, p1, v5
 
@@ -208,10 +193,8 @@
 
     move v4, v5
 
-    .line 70
     goto :goto_0
 
-    .line 73
     :cond_1
     sget-object v4, Landroid/support/v4/widget/BakedBezierInterpolator;->VALUES:[F
 
@@ -235,26 +218,18 @@
 
     move-result v1
 
-    .line 77
-    .local v1, "position":I
     int-to-float v4, v1
 
     sget v5, Landroid/support/v4/widget/BakedBezierInterpolator;->STEP_SIZE:F
 
     mul-float v2, v4, v5
 
-    .line 78
-    .local v2, "quantized":F
     sub-float v0, p1, v2
 
-    .line 79
-    .local v0, "difference":F
     sget v4, Landroid/support/v4/widget/BakedBezierInterpolator;->STEP_SIZE:F
 
     div-float v3, v0, v4
 
-    .line 81
-    .local v3, "weight":F
     sget-object v4, Landroid/support/v4/widget/BakedBezierInterpolator;->VALUES:[F
 
     aget v4, v4, v1

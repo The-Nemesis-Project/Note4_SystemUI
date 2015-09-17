@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/WifiCallingTile;)V
     .locals 0
 
-    .prologue
-    .line 108
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 3
-    .param p1, "state"    # I
-    .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .prologue
-    .line 111
     const-string v0, "WifiCallingTile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -62,10 +56,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
     if-nez p1, :cond_1
 
-    .line 114
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
@@ -87,17 +79,14 @@
     # invokes: Lcom/android/systemui/qs/tiles/WifiCallingTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->access$400(Lcom/android/systemui/qs/tiles/WifiCallingTile;Ljava/lang/Object;)V
 
-    .line 118
     :goto_1
     return-void
 
-    .line 114
     :cond_0
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 116
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$1;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 

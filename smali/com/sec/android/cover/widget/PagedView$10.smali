@@ -33,25 +33,20 @@
 .method constructor <init>(Lcom/sec/android/cover/widget/PagedView;J)V
     .locals 2
 
-    .prologue
-    .line 2593
     iput-object p1, p0, Lcom/sec/android/cover/widget/PagedView$10;->this$0:Lcom/sec/android/cover/widget/PagedView;
 
     iput-wide p2, p0, Lcom/sec/android/cover/widget/PagedView$10;->val$startTime:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2594
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
-    .line 2598
     iget-wide v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->val$startTime:J
 
     iput-wide v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mStartTime:J
 
-    .line 2599
     return-void
 .end method
 
@@ -59,22 +54,17 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 6
-    .param p1, "t"    # F
 
-    .prologue
-    .line 2603
     iget v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
     if-gez v0, :cond_1
 
-    .line 2604
     iget v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
-    .line 2611
     :cond_0
     :goto_0
     const/high16 v0, 0x3f800000    # 1.0f
@@ -89,13 +79,11 @@
 
     return v0
 
-    .line 2605
     :cond_1
     iget v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
     if-nez v0, :cond_0
 
-    .line 2606
     const/high16 v0, 0x3f000000    # 0.5f
 
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -125,7 +113,6 @@
 
     iput v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mOffset:F
 
-    .line 2609
     iget v0, p0, Lcom/sec/android/cover/widget/PagedView$10;->mCount:I
 
     add-int/lit8 v0, v0, 0x1

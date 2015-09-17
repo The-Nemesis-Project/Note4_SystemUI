@@ -24,8 +24,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 329
     invoke-static {}, Lcom/android/internal/telephony/IccCardConstants$State;->values()[Lcom/android/internal/telephony/IccCardConstants$State;
 
     move-result-object v0
@@ -179,7 +177,6 @@
     :try_end_8
     .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_9
 
-    .line 218
     :goto_8
     invoke-static {}, Lcom/android/keyguard/CarrierText$StatusMode;->values()[Lcom/android/keyguard/CarrierText$StatusMode;
 
@@ -382,7 +379,6 @@
 
     goto :goto_9
 
-    .line 329
     :catch_9
     move-exception v0
 

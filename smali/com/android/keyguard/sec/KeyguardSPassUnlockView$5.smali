@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 253
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$5;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public onDismiss()V
     .locals 2
 
-    .prologue
-    .line 257
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$5;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -50,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 258
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$5;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mEcaView:Landroid/view/View;
@@ -62,7 +57,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 260
     :cond_0
     return-void
 .end method

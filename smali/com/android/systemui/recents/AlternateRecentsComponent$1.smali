@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/AlternateRecentsComponent;)V
     .locals 0
 
-    .prologue
-    .line 689
     iput-object p1, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$1;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 692
     invoke-virtual {p0}, Lcom/android/systemui/recents/AlternateRecentsComponent$1;->getResultCode()I
 
     move-result v0
@@ -48,14 +42,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 693
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$1;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/AlternateRecentsComponent;->mStartAnimationTriggered:Z
 
-    .line 694
     sget-boolean v0, Lcom/android/systemui/statusbar/Feature;->mShowRecentOnLongPressHome:Z
 
     if-nez v0, :cond_0
@@ -64,17 +56,14 @@
 
     if-nez v0, :cond_0
 
-    .line 695
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$1;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->showRecentHelpPopup()V
 
-    .line 706
     :cond_0
     :goto_0
     return-void
 
-    .line 700
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$1;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
 

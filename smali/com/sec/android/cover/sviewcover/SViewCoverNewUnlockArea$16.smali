@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 1339
     invoke-static {}, Lcom/sec/android/cover/sviewcover/SViewCoverAbstractUnlockArea$Container;->values()[Lcom/sec/android/cover/sviewcover/SViewCoverAbstractUnlockArea$Container;
 
     move-result-object v0

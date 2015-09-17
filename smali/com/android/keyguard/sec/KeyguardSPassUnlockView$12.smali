@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;JJ)V
     .locals 0
-    .param p2, "x0"    # J
-    .param p4, "x1"    # J
 
-    .prologue
-    .line 1531
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -38,10 +34,8 @@
 .method public onFinish()V
     .locals 4
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 1549
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mState:Z
@@ -51,11 +45,9 @@
 
     if-nez v0, :cond_0
 
-    .line 1562
     :goto_0
     return-void
 
-    .line 1551
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
@@ -88,7 +80,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mTotalFailedSPassAttempts:I
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$1802(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;I)I
 
-    .line 1553
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mCountdownTimer:Landroid/os/CountDownTimer;
@@ -98,7 +89,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1554
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mCountdownTimer:Landroid/os/CountDownTimer;
@@ -108,7 +98,6 @@
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
 
-    .line 1555
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     const/4 v1, 0x0
@@ -116,20 +105,17 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mCountdownTimer:Landroid/os/CountDownTimer;
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$1902(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Landroid/os/CountDownTimer;)Landroid/os/CountDownTimer;
 
-    .line 1556
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->maybeStartBiometricUnlock()V
     invoke-static {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$2000(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
 
-    .line 1559
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # setter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mIsPermLocked:Z
     invoke-static {v0, v3}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$2102(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Z)Z
 
-    .line 1560
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     const/4 v1, 0x1
@@ -137,7 +123,6 @@
     # invokes: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->startAnimation(I)V
     invoke-static {v0, v1}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$2200(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;I)V
 
-    .line 1561
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->reset()V
@@ -147,20 +132,15 @@
 
 .method public onTick(J)V
     .locals 7
-    .param p1, "millisUntilFinished"    # J
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 1535
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v0, v2
 
-    .line 1536
-    .local v0, "secondsRemaining":I
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mStatusText:Landroid/widget/TextView;
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$1500()Landroid/widget/TextView;
 
@@ -168,10 +148,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 1537
     if-ne v0, v4, :cond_1
 
-    .line 1538
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     iget-object v2, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
@@ -193,7 +171,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->remainText:Ljava/lang/String;
     invoke-static {v1, v2}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$1602(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1543
     :goto_0
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mStatusText:Landroid/widget/TextView;
     invoke-static {}, Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->access$1500()Landroid/widget/TextView;
@@ -209,11 +186,9 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1545
     :cond_0
     return-void
 
-    .line 1540
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$12;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 

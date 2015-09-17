@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ApnTile;J)V
     .locals 0
-    .param p2, "x0"    # J
 
-    .prologue
-    .line 287
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     invoke-direct {p0, p2, p3}, Landroid/telephony/PhoneStateListener;-><init>(J)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onDataConnectionStateChanged(I)V
     .locals 4
-    .param p1, "state"    # I
 
-    .prologue
-    .line 299
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-wide v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->mSubId:J
@@ -49,16 +43,12 @@
 
     move-result v0
 
-    .line 300
-    .local v0, "phoneId":I
     packed-switch p1, :pswitch_data_0
 
-    .line 309
     :goto_0
     :pswitch_0
     return-void
 
-    .line 303
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
@@ -72,7 +62,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mMobileData:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/ApnTile;->access$102(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 304
     const-string v1, "ApnTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -122,7 +111,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 306
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
@@ -130,7 +118,6 @@
 
     goto :goto_0
 
-    .line 300
     nop
 
     :pswitch_data_0
@@ -143,10 +130,7 @@
 
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
     .locals 4
-    .param p1, "state"    # Landroid/telephony/ServiceState;
 
-    .prologue
-    .line 290
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-wide v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->mSubId:J
@@ -156,8 +140,6 @@
 
     move-result v0
 
-    .line 291
-    .local v0, "phoneId":I
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
@@ -170,7 +152,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/ApnTile;->mMobileData:Z
     invoke-static {v1, v2}, Lcom/android/systemui/qs/tiles/ApnTile;->access$102(Lcom/android/systemui/qs/tiles/ApnTile;Z)Z
 
-    .line 292
     const-string v1, "ApnTile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -224,12 +205,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 294
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ApnTile$4;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/ApnTile;->access$200(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 295
     return-void
 .end method

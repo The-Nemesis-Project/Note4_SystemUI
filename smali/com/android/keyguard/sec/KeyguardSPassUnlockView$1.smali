@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardSPassUnlockView;)V
     .locals 0
 
-    .prologue
-    .line 197
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$1;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     invoke-direct {p0}, Lcom/samsung/android/fingerprint/IFingerprintClient$Stub;-><init>()V
@@ -35,22 +33,16 @@
 # virtual methods
 .method public onFingerprintEvent(Lcom/samsung/android/fingerprint/FingerprintEvent;)V
     .locals 4
-    .param p1, "evt"    # Lcom/samsung/android/fingerprint/FingerprintEvent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .prologue
-    .line 199
     move-object v0, p1
 
-    .line 200
-    .local v0, "event":Lcom/samsung/android/fingerprint/FingerprintEvent;
     if-eqz v0, :cond_0
 
-    .line 201
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardSPassUnlockView$1;->this$0:Lcom/android/keyguard/sec/KeyguardSPassUnlockView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardSPassUnlockView;->mHandler:Landroid/os/Handler;
@@ -73,11 +65,9 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 205
     :goto_0
     return-void
 
-    .line 203
     :cond_0
     const-string v1, "KeyguardSPassUnlock"
 

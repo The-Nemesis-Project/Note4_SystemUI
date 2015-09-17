@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;)V
     .locals 0
 
-    .prologue
-    .line 1007
     iput-object p1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 1009
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -52,8 +47,6 @@
 
     move-result v0
 
-    .line 1010
-    .local v0, "value":F
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -68,7 +61,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->strokeAnimationValue:F
     invoke-static {v1, v2}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$3702(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;F)F
 
-    .line 1011
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -83,7 +75,6 @@
     # setter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->dragAnimationValue:F
     invoke-static {v1, v2}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$4102(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;F)F
 
-    .line 1012
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mCameraCircleEffect:Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;
@@ -100,7 +91,6 @@
 
     invoke-virtual {v1, v2}, Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;->strokeAnimationUpdate(F)V
 
-    .line 1013
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     # getter for: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->mCameraCircleEffect:Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;
@@ -117,7 +107,6 @@
 
     invoke-virtual {v1, v2}, Lcom/sec/android/cover/sviewcover/SViewCoverUnlockCircleEffect;->dragAnimationUpdate(F)V
 
-    .line 1014
     iget-object v1, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
 
     iget-object v2, p0, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea$10;->this$0:Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;
@@ -137,6 +126,5 @@
     # invokes: Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->setAlphaAndVisibility(Landroid/view/View;F)V
     invoke-static {v1, v2, v3}, Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;->access$3900(Lcom/sec/android/cover/sviewcover/SViewCoverNewUnlockArea;Landroid/view/View;F)V
 
-    .line 1015
     return-void
 .end method

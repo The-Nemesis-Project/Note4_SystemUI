@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackView;)V
     .locals 0
 
-    .prologue
-    .line 425
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 428
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v2, v2, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -59,22 +55,16 @@
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 429
-    .local v0, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v2, v0}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v1
 
-    .line 430
-    .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v1, :cond_0
 
-    .line 431
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->setFocusedTask()V
 
-    .line 433
     :cond_0
     return-void
 .end method

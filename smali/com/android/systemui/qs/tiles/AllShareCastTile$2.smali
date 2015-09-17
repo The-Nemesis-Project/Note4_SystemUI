@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AllShareCastTile;)V
     .locals 0
 
-    .prologue
-    .line 130
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$2;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,19 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v1, 0x2
 
-    .line 133
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 134
-    .local v0, "action":Ljava/lang/String;
     const-string v2, "AllShareCastTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -70,7 +62,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
     const-string v2, "android.hardware.display.action.WIFI_DISPLAY_STATUS_CHANGED"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -79,7 +70,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 137
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$2;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$2;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
@@ -96,7 +86,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/AllShareCastTile;->mWifiDisplayStatus:Landroid/hardware/display/WifiDisplayStatus;
     invoke-static {v2, v3}, Lcom/android/systemui/qs/tiles/AllShareCastTile;->access$002(Lcom/android/systemui/qs/tiles/AllShareCastTile;Landroid/hardware/display/WifiDisplayStatus;)Landroid/hardware/display/WifiDisplayStatus;
 
-    .line 138
     const-string v2, "AllShareCastTile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -151,7 +140,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 141
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$2;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AllShareCastTile$2;->this$0:Lcom/android/systemui/qs/tiles/AllShareCastTile;
@@ -192,7 +180,6 @@
     # invokes: Lcom/android/systemui/qs/tiles/AllShareCastTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v2, v1}, Lcom/android/systemui/qs/tiles/AllShareCastTile;->access$300(Lcom/android/systemui/qs/tiles/AllShareCastTile;Ljava/lang/Object;)V
 
-    .line 144
     :cond_1
     return-void
 .end method

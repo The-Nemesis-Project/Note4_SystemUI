@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;)V
     .locals 0
 
-    .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$5;->this$0:Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$5;->this$0:Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -55,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 220
     iget-object v0, p0, Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView$5;->this$0:Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;
 
     # getter for: Lcom/android/keyguard/sec/KeyguardCarrierLockPlusView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -67,7 +61,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->showBackupSecurity(Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;)V
 
-    .line 222
     :cond_0
     return-void
 .end method

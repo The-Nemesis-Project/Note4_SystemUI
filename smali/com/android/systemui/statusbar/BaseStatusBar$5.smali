@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 955
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v9, -0x1
 
-    .line 958
     if-nez p2, :cond_1
 
-    .line 959
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->KNOX_DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$000()Z
 
@@ -58,12 +51,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1000
     :cond_0
     :goto_0
     return-void
 
-    .line 963
     :cond_1
     const-string v6, "samsung.knox.intent.action.RCP_POLICY_CHANGED"
 
@@ -77,7 +68,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 964
     const-string v6, "policyChangedBundle"
 
     invoke-virtual {p2, v6}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -86,7 +76,6 @@
 
     if-nez v6, :cond_2
 
-    .line 965
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->KNOX_DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$000()Z
 
@@ -102,7 +91,6 @@
 
     goto :goto_0
 
-    .line 969
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -114,11 +102,8 @@
 
     move-result-object v2
 
-    .line 970
-    .local v2, "policyChangedBundle":Landroid/os/Bundle;
     if-nez v2, :cond_3
 
-    .line 971
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->KNOX_DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$000()Z
 
@@ -134,7 +119,6 @@
 
     goto :goto_0
 
-    .line 975
     :cond_3
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->KNOX_DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$000()Z
@@ -165,7 +149,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 978
     :cond_4
     const-string v6, "personaId"
 
@@ -173,39 +156,30 @@
 
     move-result v1
 
-    .line 979
-    .local v1, "pId":I
     const-string v6, "syncerList"
 
     invoke-virtual {v2, v6}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v5
 
-    .line 980
-    .local v5, "syncerList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v6, "policyName"
 
     invoke-virtual {v2, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 981
-    .local v3, "policyName":Ljava/lang/String;
     const-string v6, "policyValue"
 
     invoke-virtual {v2, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 983
-    .local v4, "policyValue":Ljava/lang/String;
     if-eq v1, v9, :cond_5
 
     if-eqz v5, :cond_5
 
     if-nez v3, :cond_6
 
-    .line 984
     :cond_5
     const-string v6, "KnoxNotification"
 
@@ -251,12 +225,9 @@
 
     goto/16 :goto_0
 
-    .line 991
     :cond_6
     const-string v0, "Notifications"
 
-    .line 992
-    .local v0, "NOTIFICATIONS_STR":Ljava/lang/String;
     const-string v6, "Notifications"
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -265,7 +236,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 993
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mSanitizeDataPolicyForUserCache:Landroid/util/SparseArray;
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$700()Landroid/util/SparseArray;
 
@@ -273,7 +243,6 @@
 
     invoke-virtual {v6}, Landroid/util/SparseArray;->clear()V
 
-    .line 994
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mExportDataPolicyForUserCache:Landroid/util/SparseArray;
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$800()Landroid/util/SparseArray;
 
@@ -281,7 +250,6 @@
 
     invoke-virtual {v6}, Landroid/util/SparseArray;->clear()V
 
-    .line 995
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mImportDataPolicyForUserCache:Landroid/util/SparseArray;
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$900()Landroid/util/SparseArray;
 
@@ -289,12 +257,10 @@
 
     invoke-virtual {v6}, Landroid/util/SparseArray;->clear()V
 
-    .line 996
     iget-object v6, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v6}, Lcom/android/systemui/statusbar/BaseStatusBar;->updateNotifications()V
 
-    .line 997
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->KNOX_DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$000()Z
 

@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
 
-    .prologue
-    .line 1117
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchGoogleButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/RecentsActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/recents/RecentsActivity;
-    .param p2, "x1"    # Lcom/android/systemui/recents/RecentsActivity$1;
 
-    .prologue
-    .line 1117
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchGoogleButton;-><init>(Lcom/android/systemui/recents/RecentsActivity;)V
 
     return-void
@@ -50,10 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 6
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 1126
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchGoogleButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -83,16 +74,12 @@
 
     move-result-object v1
 
-    .line 1129
-    .local v1, "intent":Landroid/content/Intent;
     if-eqz v1, :cond_0
 
-    .line 1130
     const v2, 0x10004000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1132
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$OnClickLaunchGoogleButton;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/RecentsActivity;->getBaseContext()Landroid/content/Context;
@@ -111,18 +98,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1140
-    .end local v1    # "intent":Landroid/content/Intent;
     :cond_0
     :goto_0
     return-void
 
-    .line 1137
     :catch_0
     move-exception v0
 
-    .line 1138
-    .local v0, "e":Ljava/lang/Exception;
     const-string v2, "StatusBar_Recents"
 
     new-instance v3, Ljava/lang/StringBuilder;

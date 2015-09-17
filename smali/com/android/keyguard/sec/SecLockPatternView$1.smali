@@ -22,8 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .prologue
-    .line 295
     invoke-static {}, Lcom/android/keyguard/sec/SecLockPatternView$MorphStatus;->values()[Lcom/android/keyguard/sec/SecLockPatternView$MorphStatus;
 
     move-result-object v0

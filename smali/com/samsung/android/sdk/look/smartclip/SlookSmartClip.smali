@@ -26,40 +26,29 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     new-instance v0, Lcom/samsung/android/sdk/look/Slook;
 
     invoke-direct {v0}, Lcom/samsung/android/sdk/look/Slook;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
-    .line 72
     iput-object v1, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
-    .line 73
     iput-object v1, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mDataExtractionListener:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;
 
-    .line 81
     iput-object p1, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
-    .line 82
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;)Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;
     .locals 1
-    .param p0, "x0"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;
 
-    .prologue
-    .line 35
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mDataExtractionListener:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;
 
     return-object v0
@@ -67,10 +56,7 @@
 
 .method private isSupport(I)Z
     .locals 2
-    .param p1, "ver"    # I
 
-    .prologue
-    .line 164
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x2
@@ -81,10 +67,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 165
     const/4 v0, 0x1
 
-    .line 167
     :goto_0
     return v0
 
@@ -98,10 +82,7 @@
 # virtual methods
 .method public addMetaTag(Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipMetaTag;)V
     .locals 1
-    .param p1, "metaTag"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipMetaTag;
 
-    .prologue
-    .line 90
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->isSupport(I)Z
@@ -110,11 +91,9 @@
 
     if-nez v0, :cond_0
 
-    .line 95
     :goto_0
     return-void
 
-    .line 94
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
@@ -126,8 +105,6 @@
 .method public clearAllMetaTag()V
     .locals 1
 
-    .prologue
-    .line 116
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->isSupport(I)Z
@@ -136,11 +113,9 @@
 
     if-nez v0, :cond_0
 
-    .line 121
     :goto_0
     return-void
 
-    .line 120
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
@@ -151,11 +126,7 @@
 
 .method public extractDefaultSmartClipData(Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipDataElement;Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipCroppedArea;)I
     .locals 1
-    .param p1, "resultElement"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipDataElement;
-    .param p2, "croppedArea"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClipCroppedArea;
 
-    .prologue
-    .line 152
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->isSupport(I)Z
@@ -164,10 +135,8 @@
 
     if-nez v0, :cond_0
 
-    .line 153
     const/4 v0, 0x0
 
-    .line 156
     :goto_0
     return v0
 
@@ -183,10 +152,7 @@
 
 .method public removeMetaTag(Ljava/lang/String;)V
     .locals 1
-    .param p1, "tagType"    # Ljava/lang/String;
 
-    .prologue
-    .line 104
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->isSupport(I)Z
@@ -195,11 +161,9 @@
 
     if-nez v0, :cond_0
 
-    .line 109
     :goto_0
     return-void
 
-    .line 108
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
@@ -210,10 +174,7 @@
 
 .method public setDataExtractionListener(Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;
 
-    .prologue
-    .line 130
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->isSupport(I)Z
@@ -222,15 +183,12 @@
 
     if-nez v0, :cond_0
 
-    .line 142
     :goto_0
     return-void
 
-    .line 133
     :cond_0
     iput-object p1, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mDataExtractionListener:Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$DataExtractionListener;
 
-    .line 135
     iget-object v0, p0, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip;->mView:Landroid/view/View;
 
     new-instance v1, Lcom/samsung/android/sdk/look/smartclip/SlookSmartClip$1;

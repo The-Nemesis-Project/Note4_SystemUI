@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;)V
     .locals 0
 
-    .prologue
-    .line 123
     iput-object p1, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$1;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,42 +36,32 @@
 # virtual methods
 .method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
     const/4 v0, 0x1
 
-    .line 125
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v1
 
     if-ne v1, v0, :cond_0
 
-    .line 127
     packed-switch p2, :pswitch_data_0
 
-    .line 135
     :cond_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 130
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity$1;->this$0:Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;
 
     invoke-virtual {v1, p2, p3}, Lcom/android/systemui/screenshot/ScreenshotDeleteActivity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
-    .line 131
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     goto :goto_0
 
-    .line 127
     nop
 
     :pswitch_data_0

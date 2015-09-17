@@ -18,8 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,16 +25,10 @@
 
 .method public static setDescription(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p0, "routeObj"    # Ljava/lang/Object;
-    .param p1, "description"    # Ljava/lang/CharSequence;
 
-    .prologue
-    .line 41
     check-cast p0, Landroid/media/MediaRouter$UserRouteInfo;
 
-    .end local p0    # "routeObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaRouter$UserRouteInfo;->setDescription(Ljava/lang/CharSequence;)V
 
-    .line 42
     return-void
 .end method

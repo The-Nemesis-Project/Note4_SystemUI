@@ -1,14 +1,11 @@
 .class Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
-.super Ljava/lang/Object;
+.super Landroid/view/OrientationEventListener;
 .source "NotificationPanelView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->flingTopOverscroll(FZ)V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onAttachedToWindow()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,44 +19,25 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/content/Context;)V
     .locals 0
 
-    .prologue
-    .line 1326
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onOrientationChanged(I)V
+    .locals 1
 
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1329
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStackScrollerOverscrolling:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$502(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+    # invokes: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setPanelEndMagin()V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$000(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    .line 1330
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionFromOverscroll:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$602(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
-
-    .line 1331
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    # invokes: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateQsState()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
-
-    .line 1332
     return-void
 .end method

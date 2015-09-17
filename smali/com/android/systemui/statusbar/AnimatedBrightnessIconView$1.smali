@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/AnimatedBrightnessIconView;)V
     .locals 0
 
-    .prologue
-    .line 106
     iput-object p1, p0, Lcom/android/systemui/statusbar/AnimatedBrightnessIconView$1;->this$0:Lcom/android/systemui/statusbar/AnimatedBrightnessIconView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 2
-    .param p1, "input"    # F
 
-    .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 109
     div-float v0, p1, v1
 
     sub-float p1, v0, v1

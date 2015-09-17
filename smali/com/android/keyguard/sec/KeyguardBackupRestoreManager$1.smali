@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;)V
     .locals 0
 
-    .prologue
-    .line 97
     iput-object p1, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$1;->this$0:Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 99
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 100
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "KeyguardBackupRestoreManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,7 +66,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
     const-string v1, "com.sec.android.intent.action.REQUEST_BACKUP_LOCKSCREEN"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -83,7 +74,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 102
     const-string v1, "SAVE_PATH"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -93,7 +83,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->basePath:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->access$002(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 103
     const-string v1, "SOURCE"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -103,7 +92,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->source:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->access$102(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 104
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$1;->this$0:Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;
 
     const/4 v2, 0x1
@@ -120,12 +108,10 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->launchKeyguardBackuporRestore(ZLjava/lang/String;Ljava/lang/String;)V
 
-    .line 110
     :cond_0
     :goto_0
     return-void
 
-    .line 105
     :cond_1
     const-string v1, "com.sec.android.intent.action.REQUEST_RESTORE_LOCKSCREEN"
 
@@ -135,7 +121,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 106
     const-string v1, "SAVE_PATH"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -145,7 +130,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->basePath:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->access$002(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 107
     const-string v1, "SOURCE"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -155,7 +139,6 @@
     # setter for: Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->source:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;->access$102(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 108
     iget-object v1, p0, Lcom/android/keyguard/sec/KeyguardBackupRestoreManager$1;->this$0:Lcom/android/keyguard/sec/KeyguardBackupRestoreManager;
 
     const/4 v2, 0x0

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/sec/AdaptiveEventManager;)V
     .locals 0
 
-    .prologue
-    .line 184
     iput-object p1, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,10 +34,8 @@
 .method public onBootCompleted()V
     .locals 7
 
-    .prologue
     const/4 v3, 0x1
 
-    .line 187
     iget-object v4, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     # getter for: Lcom/android/keyguard/sec/AdaptiveEventManager;->mContext:Landroid/content/Context;
@@ -63,12 +59,9 @@
 
     move v0, v3
 
-    .line 189
-    .local v0, "isShowInformation":Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 190
     iget-object v4, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     # getter for: Lcom/android/keyguard/sec/AdaptiveEventManager;->mContext:Landroid/content/Context;
@@ -80,11 +73,8 @@
 
     move-result v1
 
-    .line 191
-    .local v1, "isWeatherEnabled":Z
     if-eqz v1, :cond_0
 
-    .line 192
     new-instance v2, Landroid/content/Intent;
 
     iget-object v4, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
@@ -96,20 +86,16 @@
 
     invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 193
-    .local v2, "weatherTrigger":Landroid/content/Intent;
     const-string v4, "START"
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 194
     const-string v3, "PACKAGE"
 
     const-string v4, "com.android.systemui"
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 195
     const-string v3, "CP"
 
     iget-object v4, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
@@ -121,7 +107,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 196
     iget-object v3, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     # getter for: Lcom/android/keyguard/sec/AdaptiveEventManager;->mContext:Landroid/content/Context;
@@ -131,14 +116,9 @@
 
     invoke-virtual {v3, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 199
-    .end local v1    # "isWeatherEnabled":Z
-    .end local v2    # "weatherTrigger":Landroid/content/Intent;
     :cond_0
     return-void
 
-    .line 187
-    .end local v0    # "isShowInformation":Z
     :cond_1
     const/4 v0, 0x0
 
@@ -147,10 +127,7 @@
 
 .method public onPackageChanged(Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .prologue
-    .line 202
     const-string v0, "com.sec.android.app.shealth"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -159,14 +136,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 203
     iget-object v0, p0, Lcom/android/keyguard/sec/AdaptiveEventManager$4;->this$0:Lcom/android/keyguard/sec/AdaptiveEventManager;
 
     const-string v1, "com.sec.android.app.shealth.walkingmate.service.WalkingMateDayStepService"
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/sec/AdaptiveEventManager;->removeAdaptiveEvent(Ljava/lang/String;)V
 
-    .line 205
     :cond_0
     return-void
 .end method

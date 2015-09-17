@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/ApnTile;)V
     .locals 0
 
-    .prologue
-    .line 381
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ApnTile$6;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +36,13 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "arg1"    # I
 
-    .prologue
-    .line 383
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ApnTile$6;->this$0:Lcom/android/systemui/qs/tiles/ApnTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ApnTile;->updateActivateStatus()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/ApnTile;->access$200(Lcom/android/systemui/qs/tiles/ApnTile;)V
 
-    .line 384
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 385
     return-void
 .end method

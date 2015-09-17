@@ -17,27 +17,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
     new-instance v0, Lcom/samsung/android/sdk/look/Slook;
 
     invoke-direct {v0}, Lcom/samsung/android/sdk/look/Slook;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/android/sdk/look/SlookPointerIcon;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
-    .line 26
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/samsung/android/sdk/look/SlookPointerIcon;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p0, "x0"    # Lcom/samsung/android/sdk/look/SlookPointerIcon;
 
-    .prologue
-    .line 16
     iget-object v0, p0, Lcom/samsung/android/sdk/look/SlookPointerIcon;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -45,10 +38,7 @@
 
 .method private isSupport(I)Z
     .locals 2
-    .param p1, "ver"    # I
 
-    .prologue
-    .line 117
     iget-object v0, p0, Lcom/samsung/android/sdk/look/SlookPointerIcon;->mSlook:Lcom/samsung/android/sdk/look/Slook;
 
     const/4 v1, 0x4
@@ -59,10 +49,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 118
     const/4 v0, 0x1
 
-    .line 120
     :goto_0
     return v0
 
@@ -76,10 +64,7 @@
 # virtual methods
 .method public setDefaultCustomIcon(Landroid/graphics/drawable/Drawable;)V
     .locals 3
-    .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
-    .prologue
-    .line 83
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/samsung/android/sdk/look/SlookPointerIcon;->isSupport(I)Z
@@ -88,19 +73,15 @@
 
     if-nez v1, :cond_1
 
-    .line 98
     :cond_0
     :goto_0
     return-void
 
-    .line 87
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 91
     iput-object p1, p0, Lcom/samsung/android/sdk/look/SlookPointerIcon;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 94
     const/4 v1, 0x2
 
     :try_start_0
@@ -112,12 +93,9 @@
 
     goto :goto_0
 
-    .line 95
     :catch_0
     move-exception v0
 
-    .line 96
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
@@ -126,8 +104,6 @@
 .method public setDisableDefaultCustomIcon()V
     .locals 2
 
-    .prologue
-    .line 101
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/samsung/android/sdk/look/SlookPointerIcon;->isSupport(I)Z
@@ -136,11 +112,9 @@
 
     if-nez v1, :cond_0
 
-    .line 110
     :goto_0
     return-void
 
-    .line 106
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/view/PointerIcon;->setDisableCustomDefaultIcon()V
@@ -149,12 +123,9 @@
 
     goto :goto_0
 
-    .line 107
     :catch_0
     move-exception v0
 
-    .line 108
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
@@ -162,28 +133,21 @@
 
 .method public setHoverIcon(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "d"    # Landroid/graphics/drawable/Drawable;
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 36
     invoke-direct {p0, v1}, Lcom/samsung/android/sdk/look/SlookPointerIcon;->isSupport(I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 80
     :goto_0
     return-void
 
-    .line 39
     :cond_0
     if-nez p1, :cond_1
 
-    .line 40
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "view is null."
@@ -192,16 +156,13 @@
 
     throw v1
 
-    .line 43
     :cond_1
     if-nez p2, :cond_2
 
-    .line 44
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
 
-    .line 46
     const/4 v1, 0x1
 
     const/4 v2, -0x1
@@ -213,22 +174,16 @@
 
     goto :goto_0
 
-    .line 47
     :catch_0
     move-exception v0
 
-    .line 48
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 53
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_2
     iput-object p2, p0, Lcom/samsung/android/sdk/look/SlookPointerIcon;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 55
     new-instance v1, Lcom/samsung/android/sdk/look/SlookPointerIcon$1;
 
     invoke-direct {v1, p0}, Lcom/samsung/android/sdk/look/SlookPointerIcon$1;-><init>(Lcom/samsung/android/sdk/look/SlookPointerIcon;)V

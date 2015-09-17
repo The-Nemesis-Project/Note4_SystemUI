@@ -55,38 +55,29 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 5
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
     const/4 v2, 0x1
 
     const/4 v0, 0x0
 
-    .line 103
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 77
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
-    .line 78
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mPreviousGPSState:Z
 
-    .line 79
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
 
-    .line 80
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mVzwGpsIntent:Landroid/content/Intent;
 
-    .line 90
     new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LocationTile$1;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 105
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.nim.vznavigator.app2app"
@@ -95,7 +86,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mVzwGpsIntent:Landroid/content/Intent;
 
-    .line 106
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->readLocationMode()I
 
     move-result v0
@@ -106,7 +96,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mPreviousGPSState:Z
 
-    .line 108
     new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile$2;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
@@ -119,7 +108,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
-    .line 136
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->readLocationMode()I
 
     move-result v0
@@ -130,19 +118,16 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
 
-    .line 137
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->isUserLocationRestricted()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
-    .line 139
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
     if-eqz v0, :cond_0
 
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -151,16 +136,13 @@
 
     iput v1, v0, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 145
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 146
     return-void
 
-    .line 142
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -185,10 +167,7 @@
 
 .method static synthetic access$000(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/app/AlertDialog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -196,34 +175,23 @@
 
 .method static synthetic access$100(Lcom/android/systemui/qs/tiles/LocationTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
 
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Ljava/lang/Object;
+.method static synthetic access$1000(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+    .locals 1
 
-    .prologue
-    .line 66
-    invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    return-void
+    return-object v0
 .end method
 
 .method static synthetic access$102(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 66
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
 
     return p1
@@ -231,34 +199,71 @@
 
 .method static synthetic access$1100(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/qs/tiles/LocationTile;Z)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Z
+.method static synthetic access$1200(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+    .locals 1
 
-    .prologue
-    .line 66
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1400(Lcom/android/systemui/qs/tiles/LocationTile;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1402(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1500(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1600(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1700(Lcom/android/systemui/qs/tiles/LocationTile;Z)V
+    .locals 0
+
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->setGpsMode(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
+.method static synthetic access$1800(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 66
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -266,10 +271,7 @@
 
 .method static synthetic access$200(Lcom/android/systemui/qs/tiles/LocationTile;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->readLocationMode()I
 
     move-result v0
@@ -279,11 +281,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/qs/tiles/LocationTile;I)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # I
 
-    .prologue
-    .line 66
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->isGpsOn(I)Z
 
     move-result v0
@@ -293,10 +291,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/qs/tiles/LocationTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
     return v0
@@ -304,11 +299,7 @@
 
 .method static synthetic access$402(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 66
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
     return p1
@@ -316,10 +307,7 @@
 
 .method static synthetic access$500(Lcom/android/systemui/qs/tiles/LocationTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->isUserLocationRestricted()Z
 
     move-result v0
@@ -329,11 +317,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 66
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -341,11 +325,7 @@
 
 .method static synthetic access$700(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 66
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -353,10 +333,7 @@
 
 .method static synthetic access$800(Lcom/android/systemui/qs/tiles/LocationTile;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
-    .prologue
-    .line 66
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mPreviousGPSState:Z
 
     return v0
@@ -364,45 +341,23 @@
 
 .method static synthetic access$802(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 66
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mPreviousGPSState:Z
 
     return p1
 .end method
 
-.method static synthetic access$900(Lcom/android/systemui/qs/tiles/LocationTile;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-
-    .prologue
-    .line 66
-    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
-
-    return v0
-.end method
-
-.method static synthetic access$902(Lcom/android/systemui/qs/tiles/LocationTile;Z)Z
+.method static synthetic access$900(Lcom/android/systemui/qs/tiles/LocationTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 66
-    iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
+    invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
 
-    return p1
+    return-void
 .end method
 
 .method private isGpsOn(I)Z
     .locals 1
-    .param p1, "locationMode"    # I
 
-    .prologue
-    .line 315
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
@@ -419,19 +374,14 @@
 .method private isTablet()Z
     .locals 2
 
-    .prologue
-    .line 470
     const/4 v0, 0x0
 
-    .line 471
-    .local v0, "deviceType":Ljava/lang/String;
     const-string v1, "ro.build.characteristics"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 472
     if-eqz v0, :cond_0
 
     const-string v1, "tablet"
@@ -456,14 +406,10 @@
 .method private isUserLocationRestricted()Z
     .locals 4
 
-    .prologue
-    .line 308
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
-    .line 309
-    .local v0, "currentUserId":I
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v3, "user"
@@ -474,8 +420,6 @@
 
     check-cast v1, Landroid/os/UserManager;
 
-    .line 310
-    .local v1, "um":Landroid/os/UserManager;
     const-string v2, "no_share_location"
 
     new-instance v3, Landroid/os/UserHandle;
@@ -492,8 +436,6 @@
 .method private readLocationMode()I
     .locals 4
 
-    .prologue
-    .line 319
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -515,20 +457,15 @@
 
 .method private setGpsMode(Z)V
     .locals 6
-    .param p1, "state"    # Z
 
-    .prologue
     const/4 v5, -0x2
 
-    .line 325
     if-eqz p1, :cond_0
 
-    .line 326
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v2}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 327
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -541,7 +478,6 @@
 
     invoke-static {v2, v3, v4, v5}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 340
     :goto_0
     new-instance v0, Landroid/content/Intent;
 
@@ -549,22 +485,15 @@
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 341
-    .local v0, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 342
     return-void
 
-    .line 332
-    .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v1, 0x0
 
-    .line 337
-    .local v1, "newMode":I
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -581,19 +510,14 @@
 .method private setVzwProviderAndMode()V
     .locals 0
 
-    .prologue
-    .line 487
     return-void
 .end method
 
 .method private showConfirmPopup(Z)V
     .locals 13
-    .param p1, "state"    # Z
 
-    .prologue
     const/4 v12, 0x0
 
-    .line 391
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v10, "layout_inflater"
@@ -604,9 +528,7 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 393
-    .local v1, "mGpsAlertLayoutInflater":Landroid/view/LayoutInflater;
-    const v9, 0x7f0400c5
+    const v9, 0x7f0400c6
 
     const/4 v10, 0x0
 
@@ -614,9 +536,7 @@
 
     move-result-object v2
 
-    .line 396
-    .local v2, "mGpsAlertView":Landroid/view/View;
-    const v9, 0x7f0e03be
+    const v9, 0x7f0e03c2
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -624,9 +544,7 @@
 
     check-cast v3, Landroid/widget/CheckBox;
 
-    .line 399
-    .local v3, "mGpsCheckBox":Landroid/widget/CheckBox;
-    const v9, 0x7f0e03ba
+    const v9, 0x7f0e03be
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -634,9 +552,7 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    .line 400
-    .local v7, "mVzwText":Landroid/widget/TextView;
-    const v9, 0x7f0e03bb
+    const v9, 0x7f0e03bf
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -644,9 +560,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 401
-    .local v6, "mUsccTitle":Landroid/widget/TextView;
-    const v9, 0x7f0e03bc
+    const v9, 0x7f0e03c0
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -654,9 +568,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 402
-    .local v4, "mUsccBody":Landroid/widget/TextView;
-    const v9, 0x7f0e03bd
+    const v9, 0x7f0e03c1
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -664,22 +576,18 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 404
-    .local v5, "mUsccBottom":Landroid/widget/TextView;
     invoke-virtual {v3}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v9
 
     iput-boolean v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mIsPrefChecked:Z
 
-    .line 406
-    new-instance v9, Lcom/android/systemui/qs/tiles/LocationTile$6;
+    new-instance v9, Lcom/android/systemui/qs/tiles/LocationTile$9;
 
-    invoke-direct {v9, p0, v3}, Lcom/android/systemui/qs/tiles/LocationTile$6;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;Landroid/widget/CheckBox;)V
+    invoke-direct {v9, p0, v3}, Lcom/android/systemui/qs/tiles/LocationTile$9;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v3, v9}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 415
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v9
@@ -688,8 +596,6 @@
 
     move-result v8
 
-    .line 416
-    .local v8, "value":Z
     new-instance v10, Landroid/app/AlertDialog$Builder;
 
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
@@ -700,18 +606,18 @@
 
     if-eqz v9, :cond_0
 
-    const v9, 0x7f0d0416
+    const v9, 0x7f0d0437
 
     :goto_0
     invoke-virtual {v10, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v9
 
-    const v10, 0x7f0d040f
+    const v10, 0x7f0d0430
 
-    new-instance v11, Lcom/android/systemui/qs/tiles/LocationTile$8;
+    new-instance v11, Lcom/android/systemui/qs/tiles/LocationTile$11;
 
-    invoke-direct {v11, p0, v8}, Lcom/android/systemui/qs/tiles/LocationTile$8;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;Z)V
+    invoke-direct {v11, p0, v8}, Lcom/android/systemui/qs/tiles/LocationTile$11;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;Z)V
 
     invoke-virtual {v9, v10, v11}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -719,9 +625,9 @@
 
     const/high16 v10, 0x1040000
 
-    new-instance v11, Lcom/android/systemui/qs/tiles/LocationTile$7;
+    new-instance v11, Lcom/android/systemui/qs/tiles/LocationTile$10;
 
-    invoke-direct {v11, p0}, Lcom/android/systemui/qs/tiles/LocationTile$7;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    invoke-direct {v11, p0}, Lcom/android/systemui/qs/tiles/LocationTile$10;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     invoke-virtual {v9, v10, v11}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -737,41 +643,33 @@
 
     iput-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 440
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
-    new-instance v10, Lcom/android/systemui/qs/tiles/LocationTile$9;
+    new-instance v10, Lcom/android/systemui/qs/tiles/LocationTile$12;
 
-    invoke-direct {v10, p0}, Lcom/android/systemui/qs/tiles/LocationTile$9;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    invoke-direct {v10, p0}, Lcom/android/systemui/qs/tiles/LocationTile$12;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     invoke-virtual {v9, v10}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 448
     sget-boolean v9, Lcom/android/systemui/statusbar/Feature;->mShowGPSlicensPopup:Z
 
     if-eqz v9, :cond_1
 
-    .line 449
     invoke-virtual {v6, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 450
     invoke-virtual {v4, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 451
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 452
     const/high16 v9, 0x41600000    # 14.0f
 
     invoke-virtual {v3, v9}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 457
     :goto_1
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v9}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 460
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v10, "keyguard"
@@ -782,8 +680,6 @@
 
     check-cast v0, Landroid/app/KeyguardManager;
 
-    .line 461
-    .local v0, "kgm":Landroid/app/KeyguardManager;
     if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
@@ -792,7 +688,6 @@
 
     if-eqz v9, :cond_2
 
-    .line 462
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v9}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -803,30 +698,23 @@
 
     invoke-virtual {v9, v10}, Landroid/view/Window;->setType(I)V
 
-    .line 466
     :goto_2
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v9}, Landroid/app/AlertDialog;->show()V
 
-    .line 467
     return-void
 
-    .line 416
-    .end local v0    # "kgm":Landroid/app/KeyguardManager;
     :cond_0
-    const v9, 0x7f0d040b
+    const v9, 0x7f0d042c
 
     goto :goto_0
 
-    .line 454
     :cond_1
     invoke-virtual {v7, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 464
-    .restart local v0    # "kgm":Landroid/app/KeyguardManager;
     :cond_2
     iget-object v9, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -841,12 +729,191 @@
     goto :goto_2
 .end method
 
+.method private showDCMLocationConsentDialog()V
+    .locals 7
+
+    const/16 v6, 0x7d8
+
+    const-string v3, "STATUSBAR-LocationQuickSettingButton"
+
+    const-string v4, "showDCMLocationConsentDialog()"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v3, Landroid/app/AlertDialog$Builder;
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f0d04d8
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f0d04d7
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f0d0430
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Lcom/android/systemui/qs/tiles/LocationTile$8;
+
+    invoke-direct {v5, p0}, Lcom/android/systemui/qs/tiles/LocationTile$8;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
+
+    invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f0d0431
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Lcom/android/systemui/qs/tiles/LocationTile$7;
+
+    invoke-direct {v5, p0}, Lcom/android/systemui/qs/tiles/LocationTile$7;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
+
+    invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v3
+
+    new-instance v4, Lcom/android/systemui/qs/tiles/LocationTile$6;
+
+    invoke-direct {v4, p0}, Lcom/android/systemui/qs/tiles/LocationTile$6;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
+
+    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
+
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    invoke-interface {v3}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isSecure()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    const/4 v1, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_3
+
+    sget-boolean v3, Lcom/android/systemui/statusbar/Feature;->upgradeLollipop:Z
+
+    if-nez v3, :cond_2
+
+    if-eqz v1, :cond_2
+
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Landroid/view/Window;->setType(I)V
+
+    :cond_0
+    :goto_1
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->show()V
+
+    return-void
+
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v3
+
+    const/16 v4, 0x7d9
+
+    invoke-virtual {v3, v4}, Landroid/view/Window;->setType(I)V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Landroid/view/Window;->setType(I)V
+
+    goto :goto_1
+.end method
+
 
 # virtual methods
 .method protected handleClick()V
     .locals 15
 
-    .prologue
     const/4 v14, 0x3
 
     const/4 v9, 0x0
@@ -857,7 +924,6 @@
 
     const/4 v12, -0x2
 
-    .line 176
     const-string v10, "STATUSBAR-LocationQuickSettingButton"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -886,15 +952,12 @@
 
     invoke-static {v10, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 178
     new-array v6, v7, [Ljava/lang/String;
 
     const-string v8, "false"
 
     aput-object v8, v6, v9
 
-    .line 179
-    .local v6, "selectionArgs":[Ljava/lang/String;
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v10, "content://com.sec.knox.provider/RestrictionPolicy3"
@@ -905,8 +968,6 @@
 
     move-result v4
 
-    .line 181
-    .local v4, "isSettingsChangesAllowed":I
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v10, "content://com.sec.knox.provider/LocationPolicy"
@@ -917,8 +978,6 @@
 
     move-result v2
 
-    .line 183
-    .local v2, "isLocationProviderBlocked":I
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v10, "content://com.sec.knox.provider/LocationPolicy"
@@ -929,22 +988,18 @@
 
     move-result v3
 
-    .line 185
-    .local v3, "isLocationStateChangeBlocked":I
     if-eq v4, v13, :cond_2
 
     if-eq v2, v13, :cond_2
 
     if-eq v3, v13, :cond_2
 
-    .line 186
     if-eqz v4, :cond_0
 
     if-eq v2, v7, :cond_0
 
     if-nez v3, :cond_2
 
-    .line 187
     :cond_0
     const-string v8, "STATUSBAR-LocationQuickSettingButton"
 
@@ -952,12 +1007,10 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
     :cond_1
     :goto_0
     return-void
 
-    .line 193
     :cond_2
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -967,7 +1020,6 @@
 
     if-eq v8, v14, :cond_1
 
-    .line 196
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v8, Lcom/android/systemui/qs/QSTile$MultiState;
@@ -978,8 +1030,6 @@
 
     if-ne v8, v10, :cond_3
 
-    .line 198
-    .local v7, "state":Z
     :goto_1
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->isUserLocationRestricted()Z
 
@@ -987,19 +1037,16 @@
 
     iput-boolean v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
-    .line 199
     iget-boolean v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisabledByUserRestrictions:Z
 
     if-eqz v8, :cond_4
 
-    .line 200
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {p0, v8}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 201
     const-string v8, "STATUSBAR-LocationQuickSettingButton"
 
     const-string v9, "onClick(): mDisabledByUserRestrictions..."
@@ -1008,53 +1055,56 @@
 
     goto :goto_0
 
-    .end local v7    # "state":Z
     :cond_3
     move v7, v9
 
-    .line 196
     goto :goto_1
 
-    .line 216
-    .restart local v7    # "state":Z
     :cond_4
     sget-boolean v8, Lcom/android/systemui/statusbar/Feature;->mShowGPSlicensPopup:Z
 
     if-eqz v8, :cond_5
 
-    .line 222
     invoke-direct {p0, v7}, Lcom/android/systemui/qs/tiles/LocationTile;->setGpsMode(Z)V
 
     goto :goto_0
 
-    .line 226
     :cond_5
     iget-boolean v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mGpsActivated:Z
 
     if-eq v7, v8, :cond_1
 
-    .line 227
     const/4 v5, 0x0
 
-    .line 228
-    .local v5, "newMode":I
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->readLocationMode()I
 
     move-result v0
 
-    .line 230
-    .local v0, "currMode":I
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_8
 
-    .line 231
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     invoke-interface {v8}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
 
-    .line 232
+    const-string v8, "DCM"
+
+    invoke-static {}, Lcom/android/systemui/statusbar/Feature;->getOperator()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_6
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->showDCMLocationConsentDialog()V
+
+    goto :goto_0
+
+    :cond_6
     const/4 v5, 0x3
 
-    .line 233
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1065,7 +1115,6 @@
 
     invoke-static {v8, v9, v5, v12}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 243
     :goto_2
     new-instance v1, Landroid/content/Intent;
 
@@ -1073,37 +1122,28 @@
 
     invoke-direct {v1, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 244
-    .local v1, "intent":Landroid/content/Intent;
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 245
     sget-boolean v8, Lcom/android/systemui/statusbar/Feature;->mEnableNLPAlertForCHN:Z
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_7
 
-    .line 246
     new-instance v1, Landroid/content/Intent;
 
-    .end local v1    # "intent":Landroid/content/Intent;
     const-string v8, "com.android.settings.location.MODE_CHANGING"
 
     invoke-direct {v1, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 247
-    .restart local v1    # "intent":Landroid/content/Intent;
     const-string v8, "CURRENT_MODE"
 
     invoke-virtual {v1, v8, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 248
     const-string v8, "NEW_MODE"
 
     invoke-virtual {v1, v8, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 249
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     new-instance v9, Landroid/os/UserHandle;
@@ -1112,8 +1152,7 @@
 
     invoke-virtual {v8, v1, v9}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 251
-    :cond_6
+    :cond_7
     const-string v8, "STATUSBAR-LocationQuickSettingButton"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1144,12 +1183,9 @@
 
     goto/16 :goto_0
 
-    .line 236
-    .end local v1    # "intent":Landroid/content/Intent;
-    :cond_7
+    :cond_8
     const/4 v5, 0x0
 
-    .line 240
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1166,33 +1202,26 @@
 .method protected handleDestroy()V
     .locals 2
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 169
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 170
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/LocationTile;->setListening(Z)V
 
-    .line 171
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 172
     return-void
 .end method
 
 .method public handleLongClick()V
     .locals 8
 
-    .prologue
     const/4 v7, 0x1
 
     const/4 v6, -0x1
 
-    .line 264
     new-array v2, v7, [Ljava/lang/String;
 
     const/4 v3, 0x0
@@ -1201,8 +1230,6 @@
 
     aput-object v4, v2, v3
 
-    .line 265
-    .local v2, "selectionArgs":[Ljava/lang/String;
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v4, "content://com.sec.knox.provider/RestrictionPolicy3"
@@ -1213,8 +1240,6 @@
 
     move-result v1
 
-    .line 267
-    .local v1, "isSettingsChangesAllowed":I
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const-string v4, "content://com.sec.knox.provider/LocationPolicy"
@@ -1225,18 +1250,14 @@
 
     move-result v0
 
-    .line 269
-    .local v0, "isLocationProviderBlocked":I
     if-eq v1, v6, :cond_1
 
     if-eq v0, v6, :cond_1
 
-    .line 270
     if-eqz v1, :cond_0
 
     if-ne v0, v7, :cond_1
 
-    .line 271
     :cond_0
     const-string v3, "STATUSBAR-LocationQuickSettingButton"
 
@@ -1244,11 +1265,9 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 277
     :goto_0
     return-void
 
-    .line 276
     :cond_1
     const-string v3, "com.android.settings"
 
@@ -1262,48 +1281,36 @@
 .method public handleSecondaryClick()V
     .locals 0
 
-    .prologue
-    .line 258
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->handleLongClick()V
 
-    .line 259
     return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$MultiState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
-    const v3, 0x7f0d0343
+    const v3, 0x7f0d035e
 
-    .line 281
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
-    .end local p2    # "arg":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 282
-    .local v0, "value":I
     :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$MultiState;->value:I
 
-    .line 283
     const/4 v1, 0x1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->visible:Z
 
-    .line 284
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d0363
+    const v2, 0x7f0d037f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1311,16 +1318,11 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->label:Ljava/lang/String;
 
-    .line 285
     packed-switch v0, :pswitch_data_0
 
-    .line 305
     :goto_1
     return-void
 
-    .line 281
-    .end local v0    # "value":I
-    .restart local p2    # "arg":Ljava/lang/Object;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -1330,16 +1332,12 @@
 
     goto :goto_0
 
-    .line 287
-    .end local p2    # "arg":Ljava/lang/Object;
-    .restart local v0    # "value":I
     :pswitch_0
-    const v1, 0x7f02061e
+    const v1, 0x7f020626
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 288
-    const v1, 0x7f0d033b
+    const v1, 0x7f0d0356
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/LocationTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -1349,14 +1347,12 @@
 
     goto :goto_1
 
-    .line 293
     :pswitch_1
-    const v1, 0x7f02061d
+    const v1, 0x7f020625
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 294
-    const v1, 0x7f0d033c
+    const v1, 0x7f0d0357
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/LocationTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -1366,14 +1362,12 @@
 
     goto :goto_1
 
-    .line 299
     :pswitch_2
-    const v1, 0x7f02061c
+    const v1, 0x7f020624
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$MultiState;->iconId:I
 
-    .line 300
-    const v1, 0x7f0d033d
+    const v1, 0x7f0d0358
 
     invoke-virtual {p0, v3, v1}, Lcom/android/systemui/qs/tiles/LocationTile;->makeContentDescription(II)Ljava/lang/String;
 
@@ -1383,7 +1377,6 @@
 
     goto :goto_1
 
-    .line 285
     nop
 
     :pswitch_data_0
@@ -1396,14 +1389,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 66
     check-cast p1, Lcom/android/systemui/qs/QSTile$MultiState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/LocationTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$MultiState;Ljava/lang/Object;)V
 
     return-void
@@ -1412,8 +1400,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
     .locals 1
 
-    .prologue
-    .line 150
     new-instance v0, Lcom/android/systemui/qs/QSTile$MultiState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$MultiState;-><init>()V
@@ -1424,8 +1410,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->newTileState()Lcom/android/systemui/qs/QSTile$MultiState;
 
     move-result-object v0
@@ -1435,37 +1419,27 @@
 
 .method public setListening(Z)V
     .locals 3
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 155
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mListening:Z
 
     if-ne v1, p1, :cond_0
 
-    .line 165
     :goto_0
     return-void
 
-    .line 156
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mListening:Z
 
-    .line 157
     if-eqz p1, :cond_1
 
-    .line 158
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 159
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 160
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -1474,8 +1448,6 @@
 
     goto :goto_0
 
-    .line 162
-    .end local v0    # "filter":Landroid/content/IntentFilter;
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
@@ -1489,7 +1461,5 @@
 .method public showVzwLocationConsentDialog()V
     .locals 0
 
-    .prologue
-    .line 387
     return-void
 .end method

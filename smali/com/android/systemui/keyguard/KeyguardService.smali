@@ -19,11 +19,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 41
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 72
     new-instance v0, Lcom/android/systemui/keyguard/KeyguardService$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/keyguard/KeyguardService$1;-><init>(Lcom/android/systemui/keyguard/KeyguardService;)V
@@ -35,10 +32,7 @@
 
 .method static synthetic access$000(Lcom/android/systemui/keyguard/KeyguardService;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/keyguard/KeyguardService;
 
-    .prologue
-    .line 41
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     return-object v0
@@ -49,8 +43,6 @@
 .method checkPermission()V
     .locals 3
 
-    .prologue
-    .line 65
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getBaseContext()Landroid/content/Context;
 
     move-result-object v0
@@ -63,7 +55,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
     const-string v0, "KeyguardService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,7 +81,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,34 +121,27 @@
 
     throw v0
 
-    .line 70
     :cond_0
     return-void
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 56
     invoke-static {}, Lcom/android/systemui/Utils;->isDeviceEncrypting()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 57
     const-string v0, "KeyguardService"
 
     const-string v1, "encrypt_progres goes on so mBinder returns null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 58
     const/4 v0, 0x0
 
-    .line 61
     :goto_0
     return-object v0
 
@@ -171,8 +154,6 @@
 .method public onCreate()V
     .locals 2
 
-    .prologue
-    .line 49
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -181,7 +162,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/SystemUIApplication;->startServicesIfNeeded()V
 
-    .line 50
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -198,6 +178,5 @@
 
     iput-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 52
     return-void
 .end method

@@ -51,6 +51,8 @@
 
 .field public static final config_show4GForLTE:I = 0x7f0b0022
 
+.field public static final config_show4GForLTE_ATO:I = 0x7f0b0031
+
 .field public static final config_showDataConnectionView:I = 0x7f0b0024
 
 .field public static final config_showEmergencyButton:I = 0x7f0b0013
@@ -101,7 +103,7 @@
 
 .field public static final recents_has_transposed_search_bar:I = 0x7f0b0027
 
-.field public static final recents_transpose_search_layout_with_orientation:I = 0x7f0b0031
+.field public static final recents_transpose_search_layout_with_orientation:I = 0x7f0b0032
 
 .field public static final show_ongoing_ime_switcher:I = 0x7f0b0010
 
@@ -120,8 +122,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 967
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

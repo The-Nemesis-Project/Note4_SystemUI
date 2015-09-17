@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/SignalClusterView;)V
     .locals 0
 
-    .prologue
-    .line 215
     iput-object p1, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
 
     # invokes: Lcom/android/systemui/statusbar/SignalClusterView;->apply()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/SignalClusterView;->access$000(Lcom/android/systemui/statusbar/SignalClusterView;)V
 
-    .line 220
     return-void
 .end method

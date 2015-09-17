@@ -19,8 +19,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 23
     const v0, 0x3f4ccccd    # 0.8f
 
     sput v0, Lcom/android/systemui/recent/Constants;->ALPHA_FADE_START:F
@@ -31,8 +29,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

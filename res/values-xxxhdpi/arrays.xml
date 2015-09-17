@@ -7,7 +7,7 @@
         <item>@drawable/lock_circle_01_default</item>
         <item>@drawable/main_circle_ic_settings</item>
         <item>@drawable/lock_circle_ic_camera</item>
-        <item>@drawable/APKTOOL_DUMMY_022f</item>
+        <item>@drawable/APKTOOL_DUMMY_0236</item>
         <item>@drawable/sc_n_lock_circle_ic_message_1</item>
         <item>@drawable/sc_n_lock_circle_ic_missed_call_1</item>
         <item>@color/sview_cover_wallpaper_title_text_color</item>
@@ -31,7 +31,7 @@
         <item>@drawable/lock_circle_style_02_default</item>
         <item>@drawable/lock_circle_ic_style_02_settings</item>
         <item>@drawable/lock_circle_ic_style_02_camera</item>
-        <item>@drawable/APKTOOL_DUMMY_023f</item>
+        <item>@drawable/APKTOOL_DUMMY_0246</item>
         <item>@drawable/sc_lock_circle_ic_style_02_message_1</item>
         <item>@drawable/sc_lock_circle_ic_style_02_missed_call_1</item>
         <item>@color/sview_cover_analog_02_text_color</item>

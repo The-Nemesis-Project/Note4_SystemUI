@@ -628,6 +628,11 @@
     <dimen name="wallpaper_widget_width_include_ripple">40.0dip</dimen>
     <dimen name="wallpaper_widget_height">90.0dip</dimen>
     <dimen name="wallpaper_widget_background_thickness">1.0dip</dimen>
+    <dimen name="dcm_keyguard_indication_margin_bottom">72.0dip</dimen>
+    <dimen name="dcm_keyguard_indication_text_size">13.0dip</dimen>
+    <dimen name="dcm_keyguard_affordance_height">64.0dip</dimen>
+    <dimen name="dcm_keyguard_affordance_width">64.0dip</dimen>
+    <dimen name="dcm_keyguard_affordance_text_size">12.0dip</dimen>
     <dimen name="status_bar_edge_ignore">5.0dip</dimen>
     <dimen name="status_bar_recents_app_icon_max_width">48.0dip</dimen>
     <dimen name="status_bar_recents_app_icon_max_height">48.0dip</dimen>
@@ -880,7 +885,7 @@
     <dimen name="finder_connect_button_padding_left">13.0dip</dimen>
     <dimen name="finder_connect_button_padding_top">11.0dip</dimen>
     <dimen name="finder_connect_button_height">35.0dip</dimen>
-    <dimen name="finder_connect_layout_height">57.0dip</dimen>
+    <dimen name="finder_connect_layout_height">0.0dip</dimen>
     <dimen name="tw_quick_panel_sfinder_qconnect_button_text_size">16.0dip</dimen>
     <dimen name="tw_quick_panel_sfinder_qconnect_drawable_padding">5.0dip</dimen>
     <dimen name="notificatoin_big_picture_height">176.0dip</dimen>
@@ -981,7 +986,14 @@
     <dimen name="tw_zen_second_button_leftmargin_nonemute">44.0dip</dimen>
     <dimen name="tw_zen_subhead_height_expand">40.0dip</dimen>
     <dimen name="tw_zen_subhead_height_noneexpand">62.0dip</dimen>
-    <dimen name="clear_all_end_padding">12.0dip</dimen>
+    <dimen name="mascot_display_height">80.0dip</dimen>
+    <dimen name="mascot_top_margin">5.0dip</dimen>
+    <dimen name="mascot_bottom_margin">5.0dip</dimen>
+    <dimen name="attentionDialogTopPadding">20.0dip</dimen>
+    <dimen name="attentionDialogStartPadding">25.0dip</dimen>
+    <dimen name="attentionDialogEndPadding">20.0dip</dimen>
+    <dimen name="attentionDialogBottomPadding">20.0dip</dimen>
+    <dimen name="attentionDialogTextSize">16.0dip</dimen>
     <item type="dimen" name="status_bar_height">@android:dimen/status_bar_height</item>
     <item type="dimen" name="navigation_bar_height">@android:dimen/navigation_bar_height</item>
     <dimen name="obstacle_spacing">380.0dip</dimen>
@@ -1009,4 +1021,5 @@
     <dimen name="player_z">18.0dip</dimen>
     <dimen name="player_z_boost">20.0dip</dimen>
     <dimen name="hud_z">35.0dip</dimen>
+    <dimen name="network_stats_text_size">8.0dip</dimen>
 </resources>

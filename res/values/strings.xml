@@ -211,6 +211,9 @@
     <string name="skt_lockscreen_returntocall_kor" />
     <string name="skt_lockscreen_returntocall_cn" />
     <string name="skt_lockscreen_returntocall_eng" />
+    <string name="lockscreen_low_battery_nexti" />
+    <string name="lockscreen_charged_nexti" />
+    <string name="lockscreen_plugged_in_nexti" />
     <string name="app_name">Keyguard</string>
     <string name="keyguard_password_enter_pin_code">Type PIN code</string>
     <string name="theme_pin_digit_font">/system/fonts/SamsungSans-Num4Tv.ttf</string>
@@ -453,6 +456,15 @@ Try again in %d seconds."</string>
     <string name="lockscreen_pin_unblocked">PIN unblocked!</string>
     <string name="lockscreen_cmas_text_vzw">Emergency alert</string>
     <string name="lockscreen_cmas_text_spr">Presidential alert</string>
+    <string name="accessibility_camera_button_nexti">Camera</string>
+    <string name="accessibility_phone_icon_nexti">Phone</string>
+    <string name="accessibility_unlock_button_nexti">Unlock</string>
+    <string name="accessibility_email_icon_nexti">docomo mail</string>
+    <string name="accessibility_mic_button_nexti">Shabette-Concier</string>
+    <string name="lockscreen_indication_charging_time_nexti">Charging (%s until full)</string>
+    <string name="lockscreen_indication_trust_disabled_nexti">Device will stay locked until you manually unlock</string>
+    <string name="lockscreen_notification_tap_again_nexti">Touch again to open</string>
+    <string name="dcm_lockscreen_unlock_help_text">Tap the unlock icon</string>
     <string name="config_statusBarComponent">com.android.systemui.statusbar.phone.PhoneStatusBar</string>
     <string name="quick_settings_tiles_default">Wifi;Location;SilentMode;AutoRotation;Bluetooth;AirplaneMode;MobileData;Nfc;MultiWindow;PowerSaving;UltraPowerSaving;CarMode;DormantMode;ScreenMirroring;</string>
     <string name="quick_settings_tiles">default</string>
@@ -923,6 +935,7 @@ Mirroring"</string>
     <string name="quickpanel_car_mode_content_description">Car mode</string>
     <string name="quickpanel_dormant_mode_content_description">Do not disturb</string>
     <string name="quickpanel_wifi_hotspot_content_description">Mobile hotspot</string>
+    <string name="quickpanel_wifi_hotspot_content_jpn_description">Wi-Fi tethering</string>
     <string name="quickpanel_touch_sensitivity_content_description">Touch sensitivity</string>
     <string name="quickpanel_smart_stay_content_description">Smart stay</string>
     <string name="quickpanel_smart_scroll_content_description">Smart scroll</string>
@@ -967,6 +980,8 @@ mode"</string>
 disturb"</string>
     <string name="quickpanel_wifi_hotspot_text">"Mobile
 hotspot"</string>
+    <string name="quickpanel_wifi_hotspot_jpn_text">"Wi-Fi
+tethering"</string>
     <string name="quickpanel_touch_sensitivity_text">"Touch
 sensitivity"</string>
     <string name="quickpanel_smart_stay_text">"Smart
@@ -994,8 +1009,12 @@ mode"</string>
 connect"</string>
     <string name="quickpanel_side_key_text">"Side key
 panel"</string>
+    <string name="quickpanel_toddler_mode_text">"Network
+restriction"</string>
     <string name="accessibility_power_saving_mode">To enable Power saving mode, enable at least one function</string>
     <string name="accessibility_power_saving_mode_title">Power saving mode</string>
+    <string name="accessibility_toddler_mode_activate">In Network restriction mode, you can use all your applications without connecting to the network. You can also receive calls and SMS messages. Network restriction mode will be enabled.</string>
+    <string name="accessibility_toddler_mode_deactivate">Network restriction mode will be disabled.</string>
     <string name="insert_sim_card">Insert SIM card</string>
     <string name="insert_sim_card_message">Insert SIM card to access network services.</string>
     <string name="insert_uim_or_sim_card">Insert UIM/SIM card.</string>
@@ -1146,6 +1165,7 @@ Using your device in a hot environment."</string>
     <string name="highvoltage_charger_notice_title">Use Fast charging</string>
     <string name="highvoltage_charger_notice_text">This will charge your battery more quickly, especially while the screen or the device is turned off.</string>
     <string name="highvoltage_charger_notice_positivebutton_text">Turn off screen</string>
+    <string name="highvoltage_charger_notification_title">Fast charging</string>
     <string name="highvoltage_charger_notification_text">Fast charger connected.</string>
     <string name="face_detection_failure_text">Smart stay cannot detect your eyes.</string>
     <string name="screen_capture_fail_for_storage_capacity">Not enough space in device storage. Delete some files and try again.</string>
@@ -1362,8 +1382,31 @@ only"</string>
     <string name="tw_interruption_level_all_vzw">Always interrupt</string>
     <string name="tw_mute_priority_toast_description">"No interruptions
 (not even alarms)"</string>
+    <string name="gpsAlertTitle">User consent</string>
+    <string name="gpsAlertDetail">GPS location and use of your location data are controlled by the applications you use.</string>
     <string name="dnd_noti_title">Do not disturb mode enabled</string>
     <string name="dnd_noti_message">Alarms muted</string>
     <string name="dnd_noti_action_disable">Disable</string>
     <string name="unablechange_soundmode_incarmode">Unable to change sound mode while Car mode enabled.</string>
+    <string name="quickpanel_flashlight_text">Torch</string>
+    <string name="cpu_ide">idle</string>
+    <string name="quickpanel_camera_text">Camera</string>
+    <string name="quickpanel_camera_content_description">Camera</string>
+    <string name="quickpanel_flashlight_content_description">Torch</string>
+    <string name="quickpanel_cs_text">"ROM
+Control"</string>
+    <string name="quickpanel_battery_text">"Battery
+Stats"</string>
+    <string name="quickpanel_Power_Off">Power Off</string>
+    <string name="quickpanel_cs_content_description">ROM Control</string>
+    <string name="quickpanel_battery_content_description">Battery</string>
+    <string name="quickpanel_poweroff_content_description">"Power
+Off"</string>
+    <string name="quickpanel_Reboot">Reboot</string>
+    <string name="quickpanel_Recovery">Recovery</string>
+    <string name="quickpanel_OTA">OTA</string>
+    <string name="quickpanel_ota_content_description">OTA</string>
+    <string name="quickpanel_filemanager_text">"File
+Manager"</string>
+    <string name="quickpanel_filemanager_content_description">File Manager</string>
 </resources>

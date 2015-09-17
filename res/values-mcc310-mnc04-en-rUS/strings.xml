@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="s_view_cover_missed_event_secured_popup">Phone locked. Open cover to view more details.</string>
+    <item type="string" name="APKTOOL_DUMMY_0050">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0051">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01bf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c1">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c2">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c3">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c8">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01c9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01ca">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01cb">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01cc">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01cd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01ce">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01cf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d1">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d2">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d3">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_01d7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0516">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0517">false</item>
+</resources>

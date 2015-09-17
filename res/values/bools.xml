@@ -29,7 +29,7 @@
     <bool name="config_status_bar_scrim_behind_use_src">true</bool>
     <bool name="config_dead_zone_flash">false</bool>
     <bool name="quick_settings_rssi_tile_capitalization">true</bool>
-    <bool name="config_show4GForLTE">true</bool>
+    <bool name="config_show4GForLTE">false</bool>
     <bool name="config_showEmergencyCallLabelOnly">true</bool>
     <bool name="config_showDataConnectionView">true</bool>
     <bool name="config_disableWifiAndBluetooth">false</bool>
@@ -41,7 +41,8 @@
     <bool name="config_keyguardUserSwitcher">false</bool>
     <bool name="doze_display_state_supported">true</bool>
     <bool name="doze_pulse_on_significant_motion">false</bool>
-    <bool name="doze_pulse_on_pick_up">false</bool>
+    <bool name="doze_pulse_on_pick_up">true</bool>
     <bool name="doze_pulse_on_notifications">true</bool>
     <bool name="config_enableDataSwitch">false</bool>
+    <bool name="config_show4GForLTE_ATO">true</bool>
 </resources>

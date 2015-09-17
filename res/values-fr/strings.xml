@@ -276,6 +276,7 @@ Réessayez dans %3$d secondes."</string>
     <string name="keyguard_accessibility_change_input_method">Modifier le mode de saisie</string>
     <string name="status_bar_date_format_day_month">E d MMMM</string>
     <string name="status_bar_date_format_month_day">E MMMM d</string>
+    <string name="mobile_data_enable_dialog_text">La connexion via les réseaux mobiles peut entraîner des frais supplémentaires en fonction de votre forfait. Continuer ?</string>
     <string name="app_label">IU syst.</string>
     <string name="status_bar_clear_all_button">Effacer</string>
     <string name="status_bar_recent_remove_item_title">Supprimer de la liste</string>
@@ -416,7 +417,7 @@ Réessayez dans %3$d secondes."</string>
     <string name="accessibility_desc_quick_settings">Paramètres rapides</string>
     <string name="accessibility_desc_lock_screen">Écran de verrouillage</string>
     <string name="accessibility_desc_settings">Paramètres</string>
-    <string name="accessibility_desc_recent_apps">Écrans récents</string>
+    <string name="accessibility_desc_recent_apps">Applications récentes</string>
     <string name="accessibility_quick_settings_user">Utilisateur %s</string>
     <string name="accessibility_quick_settings_wifi">%1$s</string>
     <string name="accessibility_quick_settings_wifi_changed_off">Wi-Fi désactivé.</string>
@@ -455,10 +456,8 @@ Réessayez dans %3$d secondes."</string>
     <string name="data_usage_disabled_dialog_4g_title">Données 4G désactivées</string>
     <string name="data_usage_disabled_dialog_mobile_title">Données mobiles désactivées</string>
     <string name="data_usage_disabled_dialog_title">Données désactivées</string>
-    <string name="data_usage_disabled_dialog">"Votre appareil a désactivé les données, car il a atteint la limite que vous avez définie.
-
-Si vous les réactivez, votre opérateur risque de vous facturer des frais supplémentaires."</string>
-    <string name="data_usage_disabled_dialog_enable">Réact. connex. des données</string>
+    <string name="data_usage_disabled_dialog">"Limite d'utilisation des données atteinte. L'utilisation de données supplémentaires peut être facturée par l'opérateur."</string>
+    <string name="data_usage_disabled_dialog_enable">Activ. données mob.</string>
     <string name="status_bar_settings_signal_meter_disconnected">Pas de connexion Internet</string>
     <string name="status_bar_settings_signal_meter_wifi_nossid">Wi-Fi connecté</string>
     <string name="gps_notification_searching_text">"Recherche à l'aide du GPS en cours…"</string>
@@ -487,7 +486,7 @@ Si vous les réactivez, votre opérateur risque de vous facturer des frais suppl
     <string name="wifi_authentication_invalid_value">"Échec de l'authentification. Vérifiez l'identifiant et le mot de passe."</string>
     <string name="wifi_setup_title_connected_network">Connecté au réseau Wi-Fi %s</string>
     <string name="quick_settings_airplane_mode_label">Mode Hors-ligne</string>
-    <string name="quick_settings_battery_charging_label">En charge (%d%%)</string>
+    <string name="quick_settings_battery_charging_label">Charge : %d %%</string>
     <string name="quick_settings_battery_charged_label">Chargé</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_multiple_devices_label">Bluetooth (%d appareils)</string>
@@ -523,8 +522,8 @@ Si vous les réactivez, votre opérateur risque de vous facturer des frais suppl
     <string name="quick_settings_brightness_dialog_auto_brightness_label">Auto.</string>
     <string name="quick_settings_inversion_label">Inverser les couleurs</string>
     <string name="quick_settings_color_space_label">Mode de correction des couleurs</string>
-    <string name="quick_settings_more_settings">Plus de paramètres</string>
-    <string name="quick_settings_done">OK</string>
+    <string name="quick_settings_more_settings">PARAMÈTRES</string>
+    <string name="quick_settings_done">Terminé</string>
     <string name="quick_settings_connected">Connecté</string>
     <string name="quick_settings_connecting">Connexion en cours…</string>
     <string name="quick_settings_tethering_label">Partage de connexion</string>
@@ -539,7 +538,7 @@ Si vous les réactivez, votre opérateur risque de vous facturer des frais suppl
     <string name="quick_settings_cellular_detail_data_limit">%s au maximum</string>
     <string name="quick_settings_cellular_detail_data_warning">Avertissement : %s</string>
     <string name="quick_settings_torch_label">Lampe</string>
-    <string name="recents_empty_message">Aucune application récente</string>
+    <string name="recents_empty_message">Aucune application récemment utilisée</string>
     <string name="recents_app_info_button_label">"Informations sur l'application"</string>
     <string name="recents_lock_to_app_button_label">"verrouiller sur l'application"</string>
     <string name="recents_search_bar_label">rechercher</string>
@@ -571,14 +570,18 @@ Si vous les réactivez, votre opérateur risque de vous facturer des frais suppl
     <string name="user_new_user_name">Nouvel utilisateur</string>
     <string name="guest_nickname">Invité</string>
     <string name="guest_new_guest">Ajouter un invité</string>
-    <string name="guest_exit_guest">"Supprimer l'invité"</string>
-    <string name="guest_exit_guest_dialog_title">"Supprimer l'invité ?"</string>
-    <string name="guest_exit_guest_dialog_message">Toutes les applications et les données de cette session seront supprimées.</string>
+    <string name="guest_exit_guest">Supprimer un invité</string>
+    <string name="guest_exit_guest_dialog_title">Supprimer le profil invité</string>
+    <string name="guest_exit_guest_dialog_message">Ce profil va être supprimé, ainsi que toutes les applications téléchargées et les données associées. Ces données ne pourront pas être récupérées.</string>
     <string name="guest_exit_guest_dialog_remove">Supprimer</string>
-    <string name="guest_wipe_session_title">Bienvenue à nouveau dans la session Invité</string>
+    <string name="guest_wipe_session_title">Poursuivre la session</string>
     <string name="guest_wipe_session_message">Voulez-vous poursuivre la session ?</string>
-    <string name="guest_wipe_session_wipe">Démarrer</string>
+    <string name="guest_wipe_session_wipe">Lancer</string>
     <string name="guest_wipe_session_dontwipe">Oui, continuer</string>
+    <string name="user_add_user_title">Ajouter un utilisateur</string>
+    <string name="user_add_user_message_short">"Lorsque vous ajoutez un nouvel utilisateur, il doit configurer son propre espace.
+
+Chaque utilisateur peut mettre à jour les applications pour tous les utilisateurs."</string>
     <string name="battery_saver_notification_title">"L'économiseur de batterie est activé"</string>
     <string name="battery_saver_notification_text">Limite les performances et les données en arrière-plan.</string>
     <string name="battery_saver_notification_action_text">"Désactiver l'économiseur de batterie"</string>
@@ -697,6 +700,7 @@ Hors-ligne"</string>
     <string name="quickpanel_car_mode_content_description">Mode Voiture</string>
     <string name="quickpanel_dormant_mode_content_description">Ne pas déranger</string>
     <string name="quickpanel_wifi_hotspot_content_description">"Point d'accès mobile"</string>
+    <string name="quickpanel_wifi_hotspot_content_jpn_description">Modem Wi-Fi</string>
     <string name="quickpanel_touch_sensitivity_content_description">Sensibilité tactile</string>
     <string name="quickpanel_smart_stay_content_description">Smart Stay</string>
     <string name="quickpanel_smart_scroll_content_description">Smart Scroll</string>
@@ -738,6 +742,8 @@ mains-lib."</string>
 déranger"</string>
     <string name="quickpanel_wifi_hotspot_text">"Pt accès
 mobile"</string>
+    <string name="quickpanel_wifi_hotspot_jpn_text">"Modem
+Wi-Fi"</string>
     <string name="quickpanel_touch_sensitivity_text">"Sensib.
 tactile"</string>
     <string name="quickpanel_smart_stay_text">"Smart
@@ -747,7 +753,8 @@ Scroll"</string>
     <string name="quickpanel_sync_text">Synchro.</string>
     <string name="quickpanel_vowifi_text">"Appels
 Wi-Fi"</string>
-    <string name="quickpanel_toolbox_text">Boîte à outils</string>
+    <string name="quickpanel_toolbox_text">"Boîte à
+outils"</string>
     <string name="quickpanel_smart_pause_text">"Smart
 Pause"</string>
     <string name="quickpanel_adaptive_mode_text">"Adapt
@@ -765,8 +772,11 @@ Privé"</string>
 rapide"</string>
     <string name="quickpanel_side_key_text">"Volet
 latéral"</string>
+    <string name="quickpanel_toddler_mode_text">Restriction de réseau</string>
     <string name="accessibility_power_saving_mode">"Pour activer le mode Économie d'énergie, activez au moins une fonction."</string>
-    <string name="accessibility_power_saving_mode_title">"Mode Éco. d'énergie"</string>
+    <string name="accessibility_power_saving_mode_title">"Mode Économie d'énergie"</string>
+    <string name="accessibility_toddler_mode_activate">In Network restriction mode, you can use all your applications without connecting to the network. You can also receive calls and SMS messages. Network restriction mode will be enabled.</string>
+    <string name="accessibility_toddler_mode_deactivate">Le mode Restriction de réseau va être désactivé</string>
     <string name="insert_sim_card">Insérez la carte SIM</string>
     <string name="insert_sim_card_message">Insérez une carte SIM pour accéder aux services réseau.</string>
     <string name="insert_uim_or_sim_card">Insérez une carte UIM/SIM</string>
@@ -783,7 +793,10 @@ latéral"</string>
     <string name="quickpanel_air_view_warning_pen_support">Pour activer Air View, activez au moins une fonction du mode Air View sélectionné.</string>
     <string name="quickpanel_air_gesture_warning">Pour activer Air Gesture, activez au moins un paramètre approprié.</string>
     <string name="quickpanel_air_gesture_warning_continue">Maintenez votre doigt appuyé sur un bouton de configuration rapide pour accéder à ses paramètres.</string>
-    <string name="data_usage_disable_mobile_vzw_1">"A moins que vous n'utilisiez le Wi-Fi, vous ne pourrez plus utiliser Internet, la messagerie électronique ou d'autres applications nécessitant une connexion de données."</string>
+    <string name="mobile_data_dialog_text">"Vous ne pourrez plus utiliser les applications telles qu'Internet, la messagerie et YouTube via les réseaux mobiles. Continuer ?"</string>
+    <string name="data_usage_disable_mobile_vzw_1">"Lorsque le mode Hors ligne est activé, vous ne pouvez pas utiliser Internet, la messagerie électronique ou d'autres applications nécessitant une connexion de données (sauf si vous utilisez le Wi-Fi). Les appels visio sont impossibles en mode Hors ligne.
+
+Activer le mode Hors ligne ?"</string>
     <string name="data_usage_disable_mobile_vzw_2">Désactiver la connexion des données mobiles ?</string>
     <string name="data_usage_disable_mobile_vzw">"A moins que vous n'utilisiez le Wi-Fi, vous ne pourrez plus utiliser internet, la messagerie électronique ou d'autres applications nécessitant une connexion de données.
 
@@ -834,6 +847,7 @@ lecture"</string>
     <string name="critical_low_battery_text">"Branchez votre appareil à un chargeur. Le fait d'utiliser votre appareil pendant son chargement risque d'affecter l'efficacité du chargement."</string>
     <string name="critical_low_battery_text_charged_via_usb">"Pour charger plus rapidement, branchez votre appareil à une prise et fermez les applications inutilisées dans %s. Une utilisation prolongée pendant le chargement risque d'altérer l'efficacité du chargement."</string>
     <string name="critical_low_battery_text_charged_via_ta">"Fermez les applications inutilisées dans %s. Une utilisation prolongée pendant le chargement risque d'en altérer l'efficacité."</string>
+    <string name="low_battery_title">Batterie faible</string>
     <string name="low_battery_text">"Branchez votre appareil à un chargeur. Le fait d'utiliser votre appareil pendant son chargement risque d'affecter l'efficacité du chargement."</string>
     <string name="low_battery_text_charged_via_usb">"Pour charger plus rapidement, branchez votre appareil à une prise et fermez les applications inutilisées dans %s. Une utilisation prolongée pendant le chargement risque d'altérer l'efficacité du chargement."</string>
     <string name="low_battery_text_charged_via_ta">"Fermez les applications inutilisées dans %s. Une utilisation prolongée pendant le chargement risque d'en altérer l'efficacité."</string>
@@ -888,6 +902,7 @@ Utilisation de votre appareil dans un lieu chaud."</string>
     <string name="highvoltage_charger_notice_title">Utiliser le chargement rapide</string>
     <string name="highvoltage_charger_notice_text">"Votre batterie se chargera ainsi plus rapidement, en particulier si l'écran ou l'appareil est éteint."</string>
     <string name="highvoltage_charger_notice_positivebutton_text">"Éteindre l'écran"</string>
+    <string name="highvoltage_charger_notification_title">Charg. rapide</string>
     <string name="highvoltage_charger_notification_text">Chargeur rapide branché.</string>
     <string name="face_detection_failure_text">Smart Stay ne détecte pas les yeux.</string>
     <string name="screen_capture_fail_for_storage_capacity">"L'espace de stockage n'est pas suffisant. Merci de réessayer après avoir supprimé certains fichiers."</string>
@@ -941,6 +956,7 @@ La détermination de votre position requiert une connexion à un réseau mobile.
     <string name="airplane_mode_message_on_for_vzw_only">"Le mode Hors-ligne désactive les fonctions d'appel, de messagerie et de réseaux mobiles."</string>
     <string name="tw_safe_media_volume_warning">"Une écoute prolongée à fort volume peut endommager vos oreilles. Appuyez sur OK pour autoriser l'augmentation du volume au-delà du seuil de sécurité."</string>
     <string name="tw_cover_volume_warning_message">"L'écoute prolongée à un volume élevé risque d'endommager votre ouïe. Pour augmenter le volume, ouvrez le clapet."</string>
+    <string name="tw_safe_media_volume_warning_kids_mode">En mode Enfant, le volume ne peut pas dépasser le niveau de sécurité recommandé (%s) lorsque des écouteurs sont branchés.</string>
     <string name="global_actions_toggle_airplane_mode_enable">Activer le mode Hors-ligne</string>
     <string name="global_actions_toggle_airplane_mode">Mode Hors-ligne</string>
     <string name="global_actions_airplane_mode_on_status_confirm_body">"Le mode Hors-ligne vous permet de désactiver les fonctions d'appel, de SMS et de réseaux mobiles."</string>
@@ -961,8 +977,8 @@ La détermination de votre position requiert une connexion à un réseau mobile.
     <string name="smart_stay_use_popup_msg">TalkBack et Smart Stay ne peuvent pas être activés en même temps. TalkBack va être désactivé.</string>
     <string name="toolbox_use_popup_title">Activer Toolbox</string>
     <string name="toolbox_use_popup_msg">Toolbox et TalkBack ne peuvent pas être activés en même temps. TalkBack va être désactivé.</string>
-    <string name="sidekey_use_popup_title">Activer le panneau de touches latéral</string>
-    <string name="sidekey_use_popup_msg">Le panneau de touches latéral et TalkBack ne peuvent pas être activés en même temps. TalkBack va être désactivé.</string>
+    <string name="sidekey_use_popup_title">Activer le volet de touches latérales</string>
+    <string name="sidekey_use_popup_msg">Le volet de touches latérales et TalkBack ne peuvent pas être activés en même temps. TalkBack va être désactivé.</string>
     <string name="airplane_mode_usb_3_popup_text">La désactivation du mode Hors-ligne interrompra votre connexion USB 3.0, ainsi que les transferts de données en cours.</string>
     <string name="airplane_mode_usb_3_popup_title">Avis</string>
     <string name="airplane_mode_usb_3_popup_ok_button">Arr. USB 3.0</string>
@@ -976,12 +992,12 @@ La détermination de votre position requiert une connexion à un réseau mobile.
     <string name="recent_menukey_press_description_for_split_view_2">"Maintenez votre doigt appuyé sur la fenêtre d'une application pour l'ouvrir dans une fenêtre contextuelle. Pour passer de l'affichage contextuel à un affichage fractionné, faites glisser la fenêtre de l'application vers le haut ou le bas de l'écran."</string>
     <string name="recent_menukey_help_button">Aide</string>
     <string name="btn_text_yes">OK</string>
-    <string name="qs_edit_settings_title">Panneau des notifications</string>
+    <string name="qs_edit_settings_title">Définir les options de configuration rapide</string>
     <string name="qs_edit_settings_available_button">Options disponibles</string>
     <string name="qs_edit_setting_button_summary_vzw">Vous pouvez choisir les boutons de configuration rapide à afficher en premier en haut du volet des raccourcis. Maintenez votre doigt appuyé sur les boutons, puis déplacez-les pour les ajouter, les masquer ou les réorganiser.</string>
-    <string name="qs_edit_setting_button_summary">Vous pouvez choisir les boutons de configuration rapide à afficher en premier en haut du panneau des notifications. Maintenez votre doigt appuyé sur les boutons, puis déplacez-les pour les ajouter, les masquer ou les réorganiser.</string>
+    <string name="qs_edit_setting_button_summary">Faites glisser les boutons vers la gauche/la droite pour afficher ceux dans la zone en surbrillance.</string>
     <string name="notification_panel_unable_remove_minimum">"Impossible de supprimer l'option. Nombre minimum d'options (%d) atteint."</string>
-    <string name="qs_edit_setting_edit_button">Réorganiser</string>
+    <string name="qs_edit_setting_edit_button">MODIFIER</string>
     <string name="global_actions_airplane_mode_on_status_confirm">"Le mode Hors-ligne vous permet de désactiver les fonctions de réseau de données, de SMS et d'appel. Il désactive également les fonctions de connectivité comme le Wi-Fi et le Bluetooth. Pour utiliser le Wi-Fi et le Bluetooth, activez-les dans Paramètres ou le volet des notifications."</string>
     <string name="pickup_tutorial_title">Essayer Smart Alert</string>
     <string name="put_your_phone">"Une fois votre appareil posé, l'écran s'éteint."</string>
@@ -1053,29 +1069,95 @@ Une fois la tablette refroidie, ses fonctionnalités et capacités seront rétab
     <string name="qs_silent_popup_vibrate">Vibreur</string>
     <string name="qs_rotate_popup_title">"Rotation de l'écran"</string>
     <string name="qs_rotate_popup_all">Toutes</string>
+    <string name="qs_rotate_popup_only_gallery_video">Seul. dans Gal. et Vidéo</string>
     <string name="qs_torch_popup_title">Lampe</string>
     <string name="qs_torch_popup_brightness">Luminosité</string>
+    <string name="qs_torch_popup_auto_turnoff">Désactivation automatique</string>
     <string name="qs_torch_popup_auto_turnoff_none">Aucune</string>
+    <string name="qs_torch_popup_auto_turnoff_5min">5 minutes</string>
+    <string name="qs_torch_popup_auto_turnoff_10min">10 minutes</string>
     <string name="disable_multi_window_dialog_title">Désactiver la fonction Multi-fenêtres</string>
     <string name="disable_multi_window_dialog_text">"L'affichage Multi-fenêtres sera désactivé et les applications ouvertes dans des fenêtres contextuelles seront fermées."</string>
     <string name="AirplaneNoti_title">Mode Hors-ligne activé</string>
-    <string name="AirplaneNoti_text">Désactiver</string>
-    <string name="quickpanel_interruption_always_interrupt">"Autor.
-interrupt."</string>
+    <string name="AirplaneNoti_text">Désactivé</string>
+    <string name="recent_multiwindow_guide_text">"L'écran actuel ne prend pas en charge l'affichage fractionné. Sélectionnez deux applications ci-dessous à ouvrir en affichage fractionné."</string>
+    <string name="quickpanel_interruption_always_interrupt">"Autoris.
+interr."</string>
     <string name="quickpanel_interruption_priority_only">"Priorité
 uniq."</string>
     <string name="tw_sound_priority_desciption">Son pour les interruptions prioritaires</string>
     <string name="tw_vibrate_priority_desciption">Vibreur pour les interruptions prior.</string>
     <string name="tw_mute_priority_desciption">Aucune interruption (alarmes incluses)</string>
-    <string name="tw_zen_off_interruptions">Autoriser interruptions</string>
+    <string name="tw_zen_off_interruptions">"À la réception d'appels et de notifications"</string>
     <string name="tw_interruption_level_priority">Priorité uniquement</string>
     <string name="tw_zen_off_interruptions_vzw">"À la réception d'appels et de notifications"</string>
     <string name="tw_interruption_level_priority_vzw">Autoriser uniquement les interruptions prioritaires</string>
     <string name="tw_interruption_level_all_vzw">Autoriser les interruptions</string>
     <string name="tw_mute_priority_toast_description">"Aucune interruption
 (alarmes incluses)"</string>
+    <string name="gpsAlertTitle">"Accord de l'utilisateur"</string>
+    <string name="gpsAlertDetail">"La position GPS et l'utilisation des données de votre position sont contrôlées par les applications que vous utilisez."</string>
     <string name="dnd_noti_title">Mode Ne pas déranger activé</string>
     <string name="dnd_noti_message">Son des alarmes désactivé</string>
     <string name="dnd_noti_action_disable">Désactiver</string>
     <string name="unablechange_soundmode_incarmode">Impossible de modifier le mode Son lorsque le mode Voiture est activé.</string>
+    <string name="wifi_authentication_not_subscribed">La connexion au réseau %s est impossible. Abonnez-vous au service, puis réessayez.</string>
+    <string name="wifi_failed_connect_message">Échec de la connexion au réseau</string>
+    <string name="quick_settings_brightness_overheat_dialog_message">Pour éviter une surchauffe de votre appareil, vous ne pouvez pas augmenter davantage la luminosité.</string>
+    <string name="data_usage_enable_mobile_warning_by_app">%1$s is requesting permission to use %2$s. Allow?</string>
+    <string name="charging_interruption_by_terminal_open_galaxy_text">Unable to charge your device. Make sure you are using a Galaxy compatible battery and charger and that your device is properly connected to the charger.</string>
+    <string name="full_battery_noti_text">Batterie chargée</string>
+    <string name="time_format_hour_minute">%1$d h %2$d min</string>
+    <string name="time_format_hour">%d h</string>
+    <string name="time_format_minute">%d min</string>
+    <string name="charging_noti_text">"Charge : %1$d %%
+(%2$s avant pleine charge)"</string>
+    <string name="charging_noti_text_another">"Chargement : %1$d %%
+(La batterie sera entièrement chargée dans environ %2$s)"</string>
+    <string name="charging_noti_ticker_cable">Chargeur branché</string>
+    <string name="charging_noti_ticker_wireless">Le chargeur sans fil est branché.</string>
+    <string name="charging_noti_ticker_wireless_another">Chargement sans fil…</string>
+    <string name="charging_noti_ticker_fast">Chargeur rapide branché.</string>
+    <string name="battery_low_hun_remaining_charging_time_format">"Prolongez de %d min l'autonomie avec le mode Éco d'énergie."</string>
+    <string name="battery_low_hun_remaining_using_time_format">Temps restant : %s</string>
+    <string name="battery_low_hun_connect_to_charger">Connectez un chargeur à votre appareil.</string>
+    <string name="battery_low_hun_remaining_battery_level_format">Il reste %d %% de batterie. Branchez votre appareil à un chargeur.</string>
+    <string name="button_close">Fermer</string>
+    <string name="wireless_charging_text_for_jpn">"Charging wirelessly…
+Take care not to get any dust on charging pad."</string>
+    <string name="incompatible_charger_ticker">Pas en charge</string>
+    <string name="wireless_charging_disconnect_title">Chargement sans fil</string>
+    <string name="wireless_charging_disconnect_text">Le chargement sans fil a été interrompu.</string>
+    <string name="global_actions_airplane_mode_on_status_confirm_wifi">Le mode Hors-ligne vous permet de désactiver les fonctions réseau, y compris le Wi-Fi et le Bluetooth. Pour utiliser le Wi-Fi et le Bluetooth, activez-les en accédant à Paramètres ou au volet des notifications.</string>
+    <string name="tw_global_actions_airplane_mode_on_status_confirm_china">Flight mode allows you to turn off calling, messaging and data network features. It also turns off connectivity features such as WLAN and Bluetooth. To use WLAN and Bluetooth, turn them on in Settings or on the notification panel.</string>
+    <string name="recent_help_dialog_title_for_popup_view">Utilisation de la vue Multi-fenêtres</string>
+    <string name="recent_menukey_press_description_for_popup_view_1">"Pour ouvrir des applications en affichage fractionné, appuyez sur %s dans la barre de titre de la fenêtre de l'application. Cette icône apparaît lorsque l'application prend en charge l'affichage fractionné."</string>
+    <string name="recent_menukey_press_description_for_popup_view_1_talk">"Pour ouvrir des applications en affichage fractionné, appuyez sur l'icône d'écran fractionné dans la barre de titre de la fenêtre de l'application. Cette icône apparaît lorsque l'application prend en charge l'affichage fractionné."</string>
+    <string name="recent_menukey_press_description_for_popup_view_2">Vous pouvez également maintenir votre doigt appuyé sur la touche Applications récentes pour ouvrir des applications en affichage fractionné.</string>
+    <string name="recent_menukey_press_description_for_popup_view_3">"Lorsque l'application est ouverte et affichée à l'écran, vous pouvez l'afficher dans une fenêtre contextuelle en faisant glisser votre doigt en diagonale de haut en bas depuis l'un des coins de l'écran."</string>
+    <string name="qs_edit_settings_active_button">Boutons actifs</string>
+    <string name="qs_edit_settings_cancel_button">ANNULER</string>
+    <string name="qs_edit_settings_done_button">OK</string>
+    <string name="notification_panel_unable_remove_maximum">"Impossible d'ajouter le bouton. Le nombre maximal d'options (%d) a été atteint."</string>
+    <string name="accessibility_qs_edit_button">Touche Modifier</string>
+    <string name="accessibility_button">Touche</string>
+    <string name="accessibility_selected">Sélectionné</string>
+    <string name="accessibility_not_selected">Non sélectionné</string>
+    <string name="ctc_sim_registration_title">Register device with China Telecom</string>
+    <string name="ctc_sim_registration_message">Your device information will be registered with the China Telecom server. The registration will use WLAN or Mobile data. Connecting to a mobile network may result in additional charges depending on your payment plan.</string>
+    <string name="ctc_sim_registration_agree">"J'accepte."</string>
+    <string name="ctc_sim_registration_confirm">Confirmer</string>
+    <string name="recent_multiwindow_empty_message">"Aucune application récemment utilisée compatible avec l'affichage fractionné"</string>
+    <string name="recent_cannot_open_popup_toast_1">"Impossible d'ouvrir %s dans l'affichage contextuel."</string>
+    <string name="recent_cannot_open_popup_toast_2">"Impossible d'ouvrir l'application dans l'affichage contextuel."</string>
+    <string name="torch_light_notification_title">Lampe allumée</string>
+    <string name="torch_light_notification_message">Désactiver</string>
+    <string name="torch_light_disabled_by_low_battery">"Impossible d'allumer la lampe. La batterie est faible."</string>
+    <string name="torch_light_turn_off_by_low_battery">Batterie faible. La lampe va être désactivée.</string>
+    <string name="notification_clear">Effacer</string>
+    <string name="notification_keep">Conserver</string>
+    <string name="wallpaper_crop_button_done">OK</string>
+    <string name="accessibility_desc_notification_panel">Volet des raccourcis</string>
+    <string name="cover_quick_setting_warning_message">Ouvrez le rabat pour utiliser les boutons de raccourci.</string>
+    <string name="cover_device_locked_message">Appareil verrouillé. Ouvrez le clapet.</string>
 </resources>

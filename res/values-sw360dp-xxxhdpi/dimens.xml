@@ -27,13 +27,13 @@
     <dimen name="sview_cover_mini_fpopup_height">96.0dip</dimen>
     <dimen name="sview_cover_mini_fpopup_indicator_height">29.0dip</dimen>
     <dimen name="status_bar_carrier_text_size">14.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_0275">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_0276">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_0277">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_0278">false</item>
     <item type="dimen" name="APKTOOL_DUMMY_027a">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_03df">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_03e0">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_03e1">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_03e2">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027b">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027c">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027d">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_027f">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03eb">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ec">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ed">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_03ee">false</item>
 </resources>

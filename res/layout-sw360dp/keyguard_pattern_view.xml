@@ -13,7 +13,7 @@
         </LinearLayout>
         <com.android.keyguard.sec.SecKeyguardBottomAreaView android:gravity="bottom|center" android:layout_gravity="bottom|center" android:id="@id/sec_keyguard_bottom_area" android:layout_width="fill_parent" android:layout_height="fill_parent" androidprv:useBackUp="true" androidprv:useCenteredMessageArea="true">
             <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-                <ViewStub android:layout_gravity="center|top" android:id="@id/stub_secure_message_area_usa" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout="@layout/keyguard_message_area" android:inflatedId="@id/keyguard_message_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-5.0dip" />
+                <ViewStub android:layout_gravity="center|top" android:id="@id/stub_secure_message_area_usa" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout="@layout/keyguard_message_area" android:inflatedId="@id/keyguard_message_area" android:layout_width="fill_parent" android:layout_height="wrap_content" />
                 <include android:gravity="bottom|center" android:layout_gravity="bottom|center" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/sec_keyguard_bottom_area" />
             </FrameLayout>
         </com.android.keyguard.sec.SecKeyguardBottomAreaView>

@@ -30,5 +30,5 @@
         </LinearLayout>
         <View android:id="@id/divider" android:background="#55ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
     </LinearLayout>
-    <include android:gravity="center_horizontal" android:layout_gravity="bottom|center" android:orientation="vertical" android:id="@id/keyguard_selector_fade_container" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/keyguard_eca" />
+    <include android:gravity="center_horizontal" android:layout_gravity="bottom|center" android:orientation="vertical" android:id="@id/keyguard_selector_fade_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" layout="@layout/keyguard_eca" />
 </com.android.keyguard.sec.KeyguardBackupPINView>
